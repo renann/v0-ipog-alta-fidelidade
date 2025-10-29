@@ -2,9 +2,8 @@
 
 import { useState, useMemo } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MapPin, Check, Search } from "lucide-react"
+import { MapPin, Search } from "lucide-react"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { cn } from "@/lib/utils"
 
@@ -63,7 +62,6 @@ const BRAZILIAN_CITIES = [
 
 export function LocationDialog() {
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCity, setSelectedCity] = useState("")
   const { dialogOpen, closeDialog, setGeoLocation } = useGeoLocation()
 
   const filteredCities = useMemo(() => {
@@ -73,22 +71,15 @@ export function LocationDialog() {
     return BRAZILIAN_CITIES.filter((city) => city.label.toLowerCase().includes(query))
   }, [searchQuery])
 
-  const handleConfirm = () => {
-    if (selectedCity) {
-      const cityLabel = BRAZILIAN_CITIES.find((city) => city.value === selectedCity)?.label || selectedCity
-      setGeoLocation(cityLabel)
-      closeDialog()
-    }
-  }
-
   const handleCitySelect = (cityValue: string) => {
-    setSelectedCity(cityValue)
+    const cityLabel = BRAZILIAN_CITIES.find((city) => city.value === cityValue)?.label || cityValue
+    setGeoLocation(cityLabel)
+    closeDialog()
   }
 
   const handleDialogClose = (open: boolean) => {
     if (!open) {
       setSearchQuery("")
-      setSelectedCity("")
       closeDialog()
     }
   }
@@ -132,12 +123,8 @@ export function LocationDialog() {
                         "flex w-full items-center gap-2 rounded-sm px-3 py-2 text-sm transition-colors",
                         "hover:bg-accent hover:text-accent-foreground",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                        selectedCity === city.value && "bg-accent",
                       )}
                     >
-                      <Check
-                        className={cn("h-4 w-4 shrink-0", selectedCity === city.value ? "opacity-100" : "opacity-0")}
-                      />
                       <MapPin className="h-4 w-4 shrink-0 text-muted-foreground" />
                       <span className="flex-1 text-left">{city.label}</span>
                     </button>
@@ -146,10 +133,6 @@ export function LocationDialog() {
               )}
             </div>
           </div>
-
-          <Button onClick={handleConfirm} disabled={!selectedCity} className="w-full">
-            Confirmar localização
-          </Button>
         </div>
       </DialogContent>
     </Dialog>
