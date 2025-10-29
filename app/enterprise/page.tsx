@@ -14,6 +14,7 @@ import { TrendingUp, Users, Target, Building2, Award, Briefcase, MessageCircle, 
 import { openAssistantWithFlow } from "@/lib/assistant-events"
 import { useRouter } from "next/navigation"
 import { Footer } from "@/components/footer"
+import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
 export default function EnterprisePage() {
   const router = useRouter()
@@ -21,6 +22,7 @@ export default function EnterprisePage() {
   return (
     <>
       <Header />
+      <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Enterprise" }]} />
       <main className="min-h-screen">
         {/* Hero Section */}
         <Hero

@@ -34,13 +34,17 @@ export default function CeoPage() {
       <Header />
       <main className="min-h-screen">
         {/* Breadcrumb Section */}
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Enterprise", href: "/enterprise" },
-            { label: "CEO / Diretor Executivo" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Enterprise", href: "/enterprise" },
+                { label: "CEO / Diretor Executivo" },
+              ]}
+            />
+          </div>
+        </div>
 
         {/* Hero Section */}
         <Hero
