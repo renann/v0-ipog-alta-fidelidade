@@ -39,6 +39,7 @@ import { CicloSelector } from "@/components/ciclo-selector"
 import { CursosAlternativos } from "@/components/pos-graduacao/cursos-alternativos"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { getCourse } from "@/lib/mock-courses"
+import { formatCurrency } from "@/lib/utils"
 
 function CheckoutContent() {
   const searchParams = useSearchParams()
@@ -297,20 +298,20 @@ function CheckoutContent() {
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
       if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${calculation.firstInstallment.toFixed(2).replace(".", ",")} + ${calculation.remainingInstallments.quantity}x de R$ ${calculation.remainingInstallments.value.toFixed(2).replace(".", ",")}`
+        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
       }
-      return `${parcelas}x de R$ ${(calculation.total / numParcelas).toFixed(2).replace(".", ",")}`
+      return `${parcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
     }
 
     if (paymentMethod === "recorrente") {
       if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${calculation.firstInstallment.toFixed(2).replace(".", ",")} + ${calculation.remainingInstallments.quantity}x de R$ ${calculation.remainingInstallments.value.toFixed(2).replace(".", ",")}`
+        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
       }
-      return `18x de R$ ${course.monthlyPrice.toFixed(2).replace(".", ",")}`
+      return `18x de R$ ${formatCurrency(course.monthlyPrice)}`
     }
 
     if (paymentMethod === "pix" || paymentMethod === "boleto") {
-      return `R$ ${calculation.total.toFixed(2).replace(".", ",")} à vista`
+      return `R$ ${formatCurrency(calculation.total)} à vista`
     }
 
     return "Selecione uma forma de pagamento"
@@ -680,16 +681,15 @@ function CheckoutContent() {
                                 return (
                                   <SelectItem key={num} value={num.toString()}>
                                     {num === 1
-                                      ? `À vista: R$ ${calc.total.toFixed(2).replace(".", ",")}`
-                                      : `${num}x - 1ª: R$ ${calc.firstInstallment?.toFixed(2).replace(".", ",")} + ${num - 1}x de R$ ${calc.remainingInstallments?.value.toFixed(2).replace(".", ",")}`}
+                                      ? `À vista: R$ ${formatCurrency(calc.total)}`
+                                      : `${num}x - 1ª: R$ ${formatCurrency(calc.firstInstallment!)} + ${num - 1}x de R$ ${formatCurrency(calc.remainingInstallments!.value)}`}
                                   </SelectItem>
                                 )
                               })}
                             </SelectContent>
                           </Select>
                           <p className="text-xs text-muted-foreground">
-                            A matrícula (R$ {course.enrollmentValue.toFixed(2).replace(".", ",")}) é paga 100% na
-                            primeira parcela
+                            A matrícula (R$ {formatCurrency(course.enrollmentValue)}) é paga 100% na primeira parcela
                           </p>
                         </div>
                       </div>
@@ -709,14 +709,14 @@ function CheckoutContent() {
                       <div className="ml-6 space-y-4 border-l-2 border-muted pl-4">
                         <div className="space-y-2">
                           <p className="text-sm font-medium">
-                            1ª parcela: R$ {(course.enrollmentValue + course.monthlyPrice).toFixed(2).replace(".", ",")}
+                            1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            Matrícula (R$ {course.enrollmentValue.toFixed(2).replace(".", ",")}) + 1ª mensalidade (R${" "}
-                            {course.monthlyPrice.toFixed(2).replace(".", ",")})
+                            Matrícula (R$ {formatCurrency(course.enrollmentValue)}) + 1ª mensalidade (R${" "}
+                            {formatCurrency(course.monthlyPrice)})
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            Demais parcelas: 17x de R$ {course.monthlyPrice.toFixed(2).replace(".", ",")}
+                            Demais parcelas: 17x de R$ {formatCurrency(course.monthlyPrice)}
                           </p>
                         </div>
                         <div className="grid gap-2">
@@ -912,19 +912,19 @@ function CheckoutContent() {
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Valor do curso</span>
                   <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
-                    R$ {course.price.toFixed(2).replace(".", ",")}
+                    R$ {formatCurrency(course.price)}
                   </span>
                 </div>
 
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Matrícula</span>
-                  <span className="font-medium">R$ {course.enrollmentValue.toFixed(2).replace(".", ",")}</span>
+                  <span className="font-medium">R$ {formatCurrency(course.enrollmentValue)}</span>
                 </div>
 
                 <div className="flex justify-between text-lg font-bold pt-2 border-t">
                   <span>Subtotal</span>
                   <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
-                    R$ {(course.price + course.enrollmentValue).toFixed(2).replace(".", ",")}
+                    R$ {formatCurrency(course.price + course.enrollmentValue)}
                   </span>
                 </div>
 
@@ -941,7 +941,7 @@ function CheckoutContent() {
                               : `${DISCOUNT_CONFIG.cash.label} (${DISCOUNT_CONFIG.cash.percentage}%)`}
                       </span>
                       <span className="text-gray-600 dark:text-gray-400 font-medium">
-                        - R$ {getDiscountInfo()!.discountAmount.toFixed(2).replace(".", ",")}
+                        - R$ {formatCurrency(getDiscountInfo()!.discountAmount)}
                       </span>
                     </div>
                   </>
