@@ -85,7 +85,7 @@ export function MetodoExtensao() {
 
         <div className="text-center">
           <Button size="lg" variant="outline" onClick={openAssistantForConsultor}>
-            Descobrir minha trilha
+            Construa sua trilha
           </Button>
         </div>
       </div>

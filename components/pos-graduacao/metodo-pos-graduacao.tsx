@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { MonitorPlay, Video, Users } from "lucide-react"
+import { GeoLink } from "@/components/geo-link"
 
 export function MetodoPosGraduacao() {
   const modalidades = [
@@ -10,16 +11,19 @@ export function MetodoPosGraduacao() {
       icon: MonitorPlay,
       title: "EAD (Gravado)",
       description: "Autonomia e flexibilidade total para aprender no seu ritmo",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=ead",
     },
     {
       icon: Video,
       title: "Ao Vivo (Online)",
       description: "Mentoria e interação em tempo real com especialistas",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=ao-vivo",
     },
     {
       icon: Users,
       title: "Presencial",
       description: "Imersão e networking de alto valor",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=presencial",
     },
   ]
 
@@ -48,15 +52,17 @@ export function MetodoPosGraduacao() {
                 const Icon = modalidade.icon
                 return (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%]">
-                    <Card className="p-6 text-center h-full">
-                      <div className="flex justify-center mb-4">
-                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                          <Icon className="w-8 h-8 text-primary" />
+                    <GeoLink href={modalidade.href}>
+                      <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow cursor-pointer">
+                        <div className="flex justify-center mb-4">
+                          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                            <Icon className="w-8 h-8 text-primary" />
+                          </div>
                         </div>
-                      </div>
-                      <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
-                      <p className="text-sm text-muted-foreground">{modalidade.description}</p>
-                    </Card>
+                        <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
+                        <p className="text-sm text-muted-foreground">{modalidade.description}</p>
+                      </Card>
+                    </GeoLink>
                   </CarouselItem>
                 )
               })}
@@ -68,15 +74,17 @@ export function MetodoPosGraduacao() {
           {modalidades.map((modalidade, index) => {
             const Icon = modalidade.icon
             return (
-              <Card key={index} className="p-6 text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-primary" />
+              <GeoLink key={index} href={modalidade.href}>
+                <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
-                <p className="text-sm text-muted-foreground">{modalidade.description}</p>
-              </Card>
+                  <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
+                  <p className="text-sm text-muted-foreground">{modalidade.description}</p>
+                </Card>
+              </GeoLink>
             )
           })}
         </div>

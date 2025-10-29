@@ -13,7 +13,7 @@ export function CursosAlternativos() {
       type: "Graduação",
       duration: "5 anos",
       icon: GraduationCap,
-      link: "/graduacao/jovem-ingresso/psicologia-ead",
+      link: "/graduacao/curso/psicologia-ead",
     },
     {
       id: "lideranca",

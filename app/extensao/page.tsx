@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -11,6 +13,7 @@ import { Footer } from "@/components/footer"
 import { Zap, TrendingUp, RefreshCw, Clock, Users, Award, BookOpen } from "lucide-react"
 import { ResultadosReais } from "@/components/resultados-reais"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function ExtensaoPage() {
   return (
@@ -33,7 +36,7 @@ export default function ExtensaoPage() {
             { icon: "Users", text: "Networking Ativo" },
           ]}
           primaryCTA={{ text: "Ver cursos de extensão", href: "/catalogo?tipo=extensao" }}
-          secondaryCTA={{ text: "Falar com consultor", href: "/central-atendimento" }}
+          secondaryCTA={{ text: "Falar com consultor" }}
         />
 
         <section className="w-full py-12 md:py-16">
@@ -140,7 +143,7 @@ export default function ExtensaoPage() {
               },
             ]}
             ctaText="Ver curso"
-            ctaLink="/catalogo?formacao=Extensão"
+            ctaLink="/extensao/curso/gestao-projetos-ageis"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
               link: "/catalogo?formacao=Extensão",
@@ -280,7 +283,7 @@ export default function ExtensaoPage() {
             }}
             botaoSecundario={{
               texto: "Falar com consultor",
-              href: "/central-atendimento",
+              onClick: openAssistantForConsultor,
             }}
           />
         </section>

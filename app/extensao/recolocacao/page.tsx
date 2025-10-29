@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -11,6 +12,7 @@ import { Footer } from "@/components/footer"
 import { Users, Briefcase, Network, FileQuestion, TrendingDown, TrendingUp, Award, Building } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function RecolocacaoPage() {
   return (
@@ -247,7 +249,7 @@ export default function RecolocacaoPage() {
             }}
             botaoSecundario={{
               texto: "Falar com consultor de carreira",
-              href: "/falar-com-consultor",
+              onClick: openAssistantForConsultor,
             }}
           />
         </section>

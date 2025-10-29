@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -28,6 +30,7 @@ import {
   Brain,
 } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function PosGraduacaoPage() {
   return (
@@ -69,7 +72,7 @@ export default function PosGraduacaoPage() {
               promessa: "Torne-se especialista com quem forma líderes há mais de 20 anos.",
               ganho: "",
               cta: "Descubra sua primeira pós",
-              onClick: "openAssistantForConsultor",
+              href: "/pos-graduacao/primeira-pos",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8" />,
@@ -78,7 +81,7 @@ export default function PosGraduacaoPage() {
               promessa: "Faça uma transição segura com apoio e mentoria de especialistas.",
               ganho: "",
               cta: "Planeje sua transição",
-              onClick: "openAssistantForConsultor",
+              href: "/pos-graduacao/transicao-area",
             },
             {
               icon: <TrendingUp className="w-8 h-8" />,
@@ -87,7 +90,7 @@ export default function PosGraduacaoPage() {
               promessa: "Aprofunde-se com o IPOG+ e mantenha sua curva de aprendizado ativa.",
               ganho: "",
               cta: "Conheça o IPOG+",
-              onClick: "openAssistantForConsultor",
+              href: "/pos-graduacao/lifelong-learning",
             },
           ]}
           bgColor="bg-muted/30"
@@ -120,6 +123,7 @@ export default function PosGraduacaoPage() {
             },
           ]}
           ctaText="Ver curso"
+          ctaLink="/pos-graduacao/curso/avaliacao-psicologica"
         />
 
         <Beneficios
@@ -151,11 +155,9 @@ export default function PosGraduacaoPage() {
               itens: [],
             },
           ]}
-          botaoCta={{
-            texto: "Conheça os benefícios IPOG+",
-            href: "/falar-com-consultor",
-          }}
-          bgColor="bg-muted/30"
+          textoBotao="Conheça os benefícios IPOG+"
+          onClickBotao={openAssistantForConsultor}
+          corFundo="bg-muted/30"
         />
         <Trilha
           titulo="Construa sua jornada de especialização e liderança"
@@ -187,10 +189,8 @@ export default function PosGraduacaoPage() {
               beneficios: ["Mentoria", "Comunidade"],
             },
           ]}
-          botaoCta={{
-            texto: "Ver trilha completa",
-            href: "/falar-com-consultor",
-          }}
+          onClickBotao={openAssistantForConsultor}
+          textoBotao="Monte sua trilha"
         />
         <Empregabilidade
           titulo="Empregabilidade que transforma carreiras"
@@ -320,7 +320,7 @@ export default function PosGraduacaoPage() {
           }}
           botaoSecundario={{
             texto: "Monte sua trilha de Pós",
-            href: "/assistente-navegacao",
+            onClick: openAssistantForConsultor,
           }}
         />
       </main>

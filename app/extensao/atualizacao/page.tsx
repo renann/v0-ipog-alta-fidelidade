@@ -14,6 +14,7 @@ import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { TrendingUp, Target, Clock, BookOpen, Users, Award, Building, Lightbulb, Rocket, Trophy } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function AtualizacaoPage() {
   return (
@@ -164,6 +165,7 @@ export default function AtualizacaoPage() {
               },
             ]}
             ctaText="Ver curso"
+            ctaLink="/extensao/curso/inteligencia-artificial-aplicada"
           />
         </section>
 
@@ -369,7 +371,7 @@ export default function AtualizacaoPage() {
             }}
             botaoSecundario={{
               texto: "Falar com consultor",
-              href: "/falar-com-consultor",
+              onClick: openAssistantForConsultor,
             }}
           />
         </section>

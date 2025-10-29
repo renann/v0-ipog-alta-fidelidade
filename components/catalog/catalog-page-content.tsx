@@ -150,7 +150,7 @@ export function CatalogPageContent() {
         {
           tipo: "EAD",
           opcoes: ["JANEIRO"],
-          link: "/graduacao/jovem-ingresso/psicologia-ead",
+          link: "/graduacao/curso/psicologia-ead",
         },
       ],
     },

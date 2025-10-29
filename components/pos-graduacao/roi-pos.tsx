@@ -1,7 +1,9 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, DollarSign } from "lucide-react"
-import Link from "next/link"
+import { GeoLink } from "@/components/geo-link"
 
 export function ROIPos() {
   const projecoes = [
@@ -50,7 +52,7 @@ export function ROIPos() {
 
         <div className="text-center">
           <Button size="lg" variant="outline" asChild>
-            <Link href="/falar-com-consultor">Simule seu ROI com a Pós IPOG</Link>
+            <GeoLink href="/catalogo?formacao=pos-graduacao">Encontre seu curso</GeoLink>
           </Button>
         </div>
       </div>

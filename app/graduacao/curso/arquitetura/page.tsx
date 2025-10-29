@@ -1,21 +1,16 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
-import { PropostaValorPsicologia } from "@/components/curso-psicologia/proposta-valor-psicologia"
-import { JornadaAcademicaPsicologia } from "@/components/curso-psicologia/jornada-academica-psicologia"
 import { Modalidades } from "@/components/modalidades"
-import { RetornoInvestimentoPsicologia } from "@/components/curso-psicologia/retorno-investimento-psicologia"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
-import { FaqPsicologia } from "@/components/curso-psicologia/faq-psicologia"
-import { CtaFinalPsicologia } from "@/components/curso-psicologia/cta-final-psicologia"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { GraduationCap, Clock, Award } from "lucide-react"
-import { TrendingUp, Briefcase } from "lucide-react"
+import { AcaoFinal } from "@/components/acao-final"
+import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
-export default function PsicologiaEadPage() {
+export default function ArquiteturaPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -24,14 +19,13 @@ export default function PsicologiaEadPage() {
           items={[
             { label: "Início", href: "/" },
             { label: "Graduação", href: "/graduacao" },
-            { label: "Jovem Ingresso", href: "/graduacao/jovem-ingresso" },
-            { label: "Psicologia EAD" },
+            { label: "Arquitetura e Urbanismo" },
           ]}
         />
         <Hero
           badge="GRADUAÇÃO"
-          title="Psicologia EAD"
-          description="Forme-se em Psicologia com flexibilidade, qualidade e reconhecimento MEC."
+          title="Arquitetura e Urbanismo"
+          description="Forme-se em Arquitetura e Urbanismo com visão criativa, técnica e sustentável, reconhecido pelo MEC."
           valueBadges={[
             { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
@@ -40,8 +34,42 @@ export default function PsicologiaEadPage() {
           primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
-        <PropostaValorPsicologia />
-        <JornadaAcademicaPsicologia />
+
+        <section className="w-full py-16 px-4 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Por que escolher Arquitetura no IPOG?</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Formação completa com foco em projetos reais, tecnologias BIM e desenvolvimento sustentável.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-background p-6 rounded-lg">
+                <Ruler className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Projetos Reais</h3>
+                <p className="text-muted-foreground">
+                  Desenvolva projetos arquitetônicos e urbanísticos desde o primeiro semestre com orientação
+                  especializada.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <Briefcase className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Tecnologia BIM</h3>
+                <p className="text-muted-foreground">
+                  Domine as principais ferramentas do mercado: AutoCAD, Revit, SketchUp e softwares de renderização.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <Award className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Sustentabilidade</h3>
+                <p className="text-muted-foreground">
+                  Foco em arquitetura sustentável, eficiência energética e certificações ambientais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"
           subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."
@@ -74,26 +102,26 @@ export default function PsicologiaEadPage() {
             },
           ]}
         />
-        <RetornoInvestimentoPsicologia />
+
         <Empregabilidade
           titulo="Empregabilidade após a graduação"
           subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "82%",
+              valor: "88%",
               descricao: "empregados ou promovidos",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "4-6 m",
+              valor: "4-7 m",
               descricao: "para nova posição",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "+45%",
+              valor: "+55%",
               descricao: "em média após formação",
               label: "AUMENTO SALARIAL*",
             },
@@ -105,7 +133,8 @@ export default function PsicologiaEadPage() {
             "Indicações para vagas parceiras",
           ]}
           depoimento={{
-            texto: "Consegui meu primeiro estágio através do programa de mentoria IPOG.",
+            texto:
+              "O portfólio desenvolvido durante o curso foi essencial para conseguir meu primeiro projeto como arquiteto.",
             autor: "Aluno IPOG",
           }}
           botaoCta={{
@@ -115,40 +144,39 @@ export default function PsicologiaEadPage() {
           observacao="* Dados baseados em pesquisa de interna."
           bgColor="bg-white"
         />
+
         <Trilha
           titulo="Trilha de Aprendizado"
           subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
           etapas={[
             {
-              titulo: "Fundamentos da Psicologia",
+              titulo: "Fundamentos da Arquitetura",
               descricao:
-                "Base teórica sólida em processos psicológicos, desenvolvimento humano e história da psicologia",
+                "Base teórica em história da arquitetura, desenho técnico e introdução aos softwares de projeto",
               beneficios: [
-                "Compreensão dos principais conceitos e teorias",
-                "Visão crítica sobre diferentes abordagens",
+                "Domínio de desenho técnico e representação gráfica",
+                "Compreensão da evolução arquitetônica",
               ],
               badges: ["1º e 2º semestre"],
             },
             {
-              titulo: "Processos e Avaliação",
+              titulo: "Projeto e Tecnologia",
               descricao:
-                "Aprofundamento em técnicas de avaliação psicológica e processos cognitivos, emocionais e sociais",
-              beneficios: ["Domínio de instrumentos de avaliação", "Análise de casos práticos"],
+                "Desenvolvimento de projetos arquitetônicos com foco em tecnologias construtivas e sistemas estruturais",
+              beneficios: ["Projetos residenciais e comerciais", "Domínio de softwares BIM"],
               badges: ["3º e 4º semestre"],
             },
             {
-              titulo: "Intervenções e Práticas",
-              descricao:
-                "Desenvolvimento de competências em diferentes contextos de atuação: clínica, organizacional, educacional e social",
-              beneficios: ["Experiência em supervisão clínica", "Projetos de intervenção comunitária"],
+              titulo: "Urbanismo e Sustentabilidade",
+              descricao: "Planejamento urbano, paisagismo e arquitetura sustentável com projetos de impacto social",
+              beneficios: ["Projetos urbanísticos", "Certificações ambientais"],
               badges: ["5º e 6º semestre"],
             },
             {
-              titulo: "Estágios e TCC",
-              descricao:
-                "Prática supervisionada em diferentes áreas e desenvolvimento do Trabalho de Conclusão de Curso",
-              beneficios: ["400h de estágio supervisionado", "Orientação individualizada para TCC"],
-              badges: ["7º e 8º semestre"],
+              titulo: "TFG e Estágios",
+              descricao: "Trabalho Final de Graduação e estágios supervisionados em escritórios e construtoras",
+              beneficios: ["Portfólio profissional completo", "Experiência em projetos reais"],
+              badges: ["7º ao 10º semestre"],
               destaque: true,
             },
           ]}
@@ -174,9 +202,19 @@ export default function PsicologiaEadPage() {
           </div>
         </section>
 
-        <FaqPsicologia />
         <FormasIngresso />
-        <CtaFinalPsicologia />
+        <AcaoFinal
+          titulo="Pronto para transformar espaços e criar o futuro?"
+          subtitulo="Inscreva-se agora e garanta sua vaga no curso de Arquitetura e Urbanismo do IPOG"
+          botaoPrimario={{
+            texto: "Inscrever-se agora",
+            href: "/catalogo?formacao=graduacao&curso=arquitetura",
+          }}
+          botaoSecundario={{
+            texto: "Falar com consultor",
+            onClick: "openAssistantForConsultor",
+          }}
+        />
       </main>
       <Footer />
     </div>

@@ -16,19 +16,27 @@
 - `/extensao/atualizacao` - Atualização profissional
 - `/extensao/gap-imediato` - Gap imediato
 - `/extensao/recolocacao` - Recolocação profissional
+- `/extensao/curso/gestao-projetos-ageis` - Gestão de Projetos Ágeis
+- `/extensao/curso/inteligencia-artificial-aplicada` - Inteligência Artificial Aplicada
+- `/extensao/curso/marketing-digital` - Marketing Digital
 
 ## Graduação
 - `/graduacao` - Graduação (página principal)
 - `/graduacao/jovem-ingresso` - Jovem ingresso
-- `/graduacao/jovem-ingresso/psicologia-ead` - Psicologia EAD
 - `/graduacao/segunda-graduacao` - Segunda graduação
 - `/graduacao/transferencia` - Transferência
+- `/graduacao/curso/psicologia-ead` - Psicologia EAD
+- `/graduacao/curso/direito` - Direito
+- `/graduacao/curso/arquitetura` - Arquitetura e Urbanismo
 
 ## Pós-Graduação
 - `/pos-graduacao` - Pós-graduação (página principal)
 - `/pos-graduacao/primeira-pos` - Primeira pós-graduação
 - `/pos-graduacao/lifelong-learning` - Lifelong learning
 - `/pos-graduacao/transicao-area` - Transição de área
+- `/pos-graduacao/curso/avaliacao-psicologica` - Avaliação Psicológica
+- `/pos-graduacao/curso/engenharia-estrutural` - Engenharia Estrutural e Fundações
+- `/pos-graduacao/curso/intervencao-aba` - Intervenção ABA Aplicada ao TEA
 
 ## Enterprise
 - `/enterprise` - Enterprise (página principal)
@@ -61,15 +69,15 @@
 
 ---
 
-## Total de URLs: 37
+## Total de URLs: 48
 
 ### Estrutura por Categoria:
 - **Principal:** 1 URL
 - **Busca/Catálogo:** 2 URLs
 - **Checkout:** 2 URLs
-- **Extensão:** 4 URLs
-- **Graduação:** 5 URLs
-- **Pós-Graduação:** 4 URLs
+- **Extensão:** 7 URLs
+- **Graduação:** 7 URLs
+- **Pós-Graduação:** 7 URLs
 - **Enterprise:** 3 URLs
 - **Pós-Venda:** 1 URL
 - **Institucional:** 13 URLs

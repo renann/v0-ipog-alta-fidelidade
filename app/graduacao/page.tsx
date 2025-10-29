@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { MetodoIpog } from "@/components/graduacao/metodo-ipog"
@@ -10,6 +12,7 @@ import { Footer } from "@/components/footer"
 import { GraduationCap, Briefcase, ArrowRightLeft, TrendingUp, Users, Building2, Award, BookOpen } from "lucide-react"
 import { Dilema } from "@/components/dilema"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function GraduacaoPage() {
   return (
@@ -32,7 +35,7 @@ export default function GraduacaoPage() {
             { icon: <GraduationCap className="h-5 w-5" />, text: "Flexibilidade Total" },
           ]}
           primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?formacao=graduacao" }}
-          secondaryCTA={{ text: "Falar com consultor", href: "/central-atendimento" }}
+          secondaryCTA={{ text: "Falar com consultor" }}
         />
         <Dilema
           titulo="O mercado exige profissionais preparados"
@@ -72,7 +75,7 @@ export default function GraduacaoPage() {
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/catalogo?formacao=graduacao"
+          ctaLink="/graduacao/curso/psicologia-ead"
         />
         <Jornadas
           title="Encontre sua jornada acadêmica"
@@ -189,7 +192,7 @@ export default function GraduacaoPage() {
           }}
           botaoSecundario={{
             texto: "Falar com consultor",
-            href: "/central-atendimento",
+            onClick: openAssistantForConsultor,
           }}
         />
       </main>

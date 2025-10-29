@@ -1,3 +1,4 @@
+"use client"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -11,6 +12,7 @@ import { Footer } from "@/components/footer"
 import { Zap, Target, FileText, Clock, TrendingUp, Users, Award, Building } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function GapImediatoPage() {
   return (
@@ -90,6 +92,7 @@ export default function GapImediatoPage() {
               },
             ]}
             ctaText="Ver curso"
+            ctaLink="/extensao/curso/marketing-digital"
           />
         </section>
 
@@ -225,7 +228,7 @@ export default function GapImediatoPage() {
             }}
             botaoSecundario={{
               texto: "Falar com consultor",
-              href: "/falar-com-consultor",
+              onClick: openAssistantForConsultor,
             }}
           />
         </section>

@@ -1,6 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Link from "next/link"
 
 interface Etapa {
   numero: string
@@ -8,21 +9,28 @@ interface Etapa {
   descricao: string
   beneficios?: string[]
   badges?: string[]
+  destaque?: boolean
 }
 
 interface TrilhaProps {
   titulo: string
   subtitulo: string
   etapas: Etapa[]
-  botaoCta?: {
-    texto: string
-    href: string
-  }
+  onClickBotao?: () => void
+  textoBotao?: string
   observacao?: string
   bgColor?: string
 }
 
-export function Trilha({ titulo, subtitulo, etapas, botaoCta, observacao, bgColor = "bg-white" }: TrilhaProps) {
+export function Trilha({
+  titulo,
+  subtitulo,
+  etapas,
+  onClickBotao,
+  textoBotao,
+  observacao,
+  bgColor = "bg-white",
+}: TrilhaProps) {
   return (
     <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
@@ -32,13 +40,11 @@ export function Trilha({ titulo, subtitulo, etapas, botaoCta, observacao, bgColo
         </div>
 
         <div className="max-w-3xl mx-auto relative">
-          {/* Timeline line - conecta os círculos */}
           <div className="absolute left-[29px] top-12 bottom-12 w-0.5 bg-gray-300 hidden md:block" />
 
           <div className="space-y-8">
             {etapas.map((etapa, index) => (
               <div key={index} className="relative flex gap-6">
-                {/* Timeline dot com número */}
                 <div className="hidden md:flex items-start pt-4 flex-shrink-0">
                   <div className="w-[60px] h-[60px] bg-black rounded-full flex items-center justify-center relative z-10">
                     <span className="text-white text-xl font-bold">{etapa.numero}</span>
@@ -46,7 +52,6 @@ export function Trilha({ titulo, subtitulo, etapas, botaoCta, observacao, bgColo
                 </div>
 
                 <Card className="flex-grow p-6 md:p-8 bg-gray-50 border-2">
-                  {/* Número mobile */}
                   <div className="md:hidden mb-4">
                     <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
                       <span className="text-white text-lg font-bold">{etapa.numero}</span>
@@ -85,10 +90,10 @@ export function Trilha({ titulo, subtitulo, etapas, botaoCta, observacao, bgColo
           </div>
         </div>
 
-        {botaoCta && (
+        {textoBotao && onClickBotao && (
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-black hover:bg-gray-800 text-white mb-6">
-              <Link href={botaoCta.href}>{botaoCta.texto}</Link>
+            <Button size="lg" className="bg-black hover:bg-gray-800 text-white mb-6" onClick={onClickBotao}>
+              {textoBotao}
             </Button>
             {observacao && <p className="text-sm text-gray-600 max-w-2xl mx-auto">{observacao}</p>}
           </div>

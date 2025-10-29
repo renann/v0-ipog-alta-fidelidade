@@ -25,7 +25,7 @@ const verticais = [
     diferenciais: ["Corpo docente qualificado", "Networking executivo", "Certificação reconhecida pelo MEC"],
     href: "/catalogo?categoria=pos-graduacao",
     color: "bg-muted",
-    active: false,
+    active: true,
   },
   {
     icon: Zap,
@@ -35,7 +35,7 @@ const verticais = [
     diferenciais: ["Cursos de curta duração", "Conteúdo aplicável", "Certificação universitária"],
     href: "/catalogo?categoria=extensao",
     color: "bg-muted",
-    active: false,
+    active: true,
   },
   {
     icon: Building2,
@@ -46,7 +46,7 @@ const verticais = [
     href: "/enterprise",
     ctaText: "Solicitar diagnóstico corporativo",
     color: "bg-muted",
-    active: false,
+    active: true,
   },
 ]
 

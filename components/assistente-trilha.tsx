@@ -15,19 +15,19 @@ const personas = [
     icon: TrendingUp,
     title: "Quero me especializar",
     description: "Pós-Graduação",
-    link: null,
+    link: "/pos-graduacao",
   },
   {
     icon: RefreshCw,
     title: "Preciso me atualizar",
     description: "Extensão",
-    link: null,
+    link: "/extensao",
   },
   {
     icon: Building2,
     title: "Sou empresa",
     description: "Enterprise",
-    link: null,
+    link: "/enterprise",
   },
 ]
 

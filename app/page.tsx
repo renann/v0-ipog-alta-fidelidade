@@ -14,6 +14,7 @@ import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { RoiSection } from "@/components/roi-section"
 import { useGeoLocation } from "@/hooks/use-geo-location"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function HomePage() {
   const { openDialog } = useGeoLocation()
@@ -48,7 +49,7 @@ export default function HomePage() {
           }}
           botaoSecundario={{
             texto: "Falar com consultor",
-            href: "/central-atendimento",
+            onClick: openAssistantForConsultor,
           }}
         />
       </main>
