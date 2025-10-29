@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
+import { MOCK_COURSES, type Course } from "@/lib/mock-courses"
 
 export function CatalogPageContent() {
   const router = useRouter()
@@ -138,59 +139,90 @@ export function CatalogPageContent() {
     router.push(`/busca?${params.toString()}`)
   }
 
-  const cursos = [
-    {
-      tipo: "GRADUAÇÃO",
-      nome: "Psicologia",
-      duracao: "5 anos",
-      idealPara: "Jovens que desejam compreender o comportamento humano e transformar vidas",
-      textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar sua escuta em acolhimento, sua percepção em compreensão, sua vocação em profissão.",
+  const cursos = useMemo(() => {
+    const allCourses = Object.values(MOCK_COURSES)
+
+    // Aplicar filtros
+    let filtered = allCourses
+
+    // Filtrar por tipo de formação
+    const formacaoFilters = activeFilters.filter((f) => f.type === "formacao").map((f) => f.value)
+    if (formacaoFilters.length > 0) {
+      filtered = filtered.filter((course) => formacaoFilters.includes(course.type))
+    }
+
+    // Filtrar por modalidade
+    const modalidadeFilters = activeFilters.filter((f) => f.type === "modalidade").map((f) => f.value)
+    if (modalidadeFilters.length > 0) {
+      filtered = filtered.filter((course) => modalidadeFilters.includes(course.modality))
+    }
+
+    // Filtrar por busca de texto
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase()
+      filtered = filtered.filter((course) => course.name.toLowerCase().includes(query))
+    }
+
+    // Converter para o formato do catálogo
+    return filtered.map((course) => ({
+      tipo: course.type.toUpperCase(),
+      nome: course.name,
+      duracao: course.duration,
+      idealPara: getIdealParaText(course),
+      textoValor: getTextoValorText(course),
       modalidades: [
         {
-          tipo: "EAD",
-          opcoes: ["JANEIRO"],
-          link: "/graduacao/curso/psicologia-ead",
+          tipo: course.modality,
+          opcoes: getOpcoesText(course),
+          link: getCourseLink(course),
         },
       ],
-    },
-    {
-      tipo: "GRADUAÇÃO",
-      nome: "Avaliação Psicológica: Práticas Imersivas Avançadas",
-      duracao: "18 meses",
-      idealPara: "Lorem ipsum dolor sit amet vaccum ipsis.",
-      textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar sua escuta em precisão, sua percepção em evidência, sua atuação em autoridade.",
-      modalidades: [
-        {
-          tipo: "PRESENCIAL",
-          opcoes: ["GO", "DF"],
-        },
-        {
-          tipo: "EAD",
-          opcoes: ["JANEIRO"],
-        },
-      ],
-    },
-    {
-      tipo: "PÓS-GRADUAÇÃO",
-      nome: "Gestão Estratégica de Pessoas",
-      duracao: "12 meses",
-      idealPara: "Profissionais que buscam desenvolver competências em gestão de talentos",
-      textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar equipes em resultados, pessoas em talentos, sua gestão em liderança.",
-      modalidades: [
-        {
-          tipo: "PRESENCIAL",
-          opcoes: ["SP", "RJ"],
-        },
-        {
-          tipo: "EAD",
-          opcoes: ["MARÇO"],
-        },
-      ],
-    },
-  ]
+    }))
+  }, [activeFilters, searchQuery])
+
+  function getIdealParaText(course: Course): string {
+    const idealParaMap: Record<string, string> = {
+      "psicologia-ead": "Jovens que desejam compreender o comportamento humano e transformar vidas",
+      direito: "Profissionais que buscam atuar na defesa de direitos e justiça social",
+      arquitetura: "Criativos que desejam transformar espaços e impactar a vida das pessoas",
+      "avaliacao-psicologica": "Psicólogos que buscam especialização em técnicas de avaliação",
+      "engenharia-estrutural": "Engenheiros que desejam dominar projetos estruturais complexos",
+      "intervencao-aba": "Profissionais que trabalham com autismo e desenvolvimento infantil",
+      "gestao-projetos-ageis": "Profissionais que buscam liderar projetos com metodologias ágeis",
+      "inteligencia-artificial-aplicada": "Profissionais que desejam aplicar IA em seus negócios",
+      "marketing-digital": "Empreendedores e profissionais que querem dominar o marketing online",
+    }
+    return idealParaMap[course.id] || `Profissionais que buscam especialização em ${course.name}`
+  }
+
+  function getTextoValorText(course: Course): string {
+    if (course.type === "Graduação") {
+      return "Você não está escolhendo apenas um curso. Está escolhendo transformar sua vocação em profissão, seu potencial em realização."
+    } else if (course.type === "Pós-Graduação") {
+      return "Você não está escolhendo apenas um curso. Está escolhendo transformar sua experiência em especialização, sua carreira em autoridade."
+    } else {
+      return "Você não está escolhendo apenas um curso. Está escolhendo transformar conhecimento em ação, aprendizado em resultado imediato."
+    }
+  }
+
+  function getOpcoesText(course: Course): string[] {
+    if (course.modality === "EAD") {
+      return ["JANEIRO", "MARÇO", "JULHO"]
+    } else if (course.modality === "Presencial") {
+      return ["SP", "DF", "GO"]
+    } else {
+      return ["EAD", "PRESENCIAL"]
+    }
+  }
+
+  function getCourseLink(course: Course): string {
+    const typeMap: Record<string, string> = {
+      Graduação: "graduacao",
+      "Pós-Graduação": "pos-graduacao",
+      Extensão: "extensao",
+    }
+    return `/${typeMap[course.type]}/curso/${course.id}`
+  }
 
   return (
     <main className="flex-1 bg-gray-50 min-h-screen">
@@ -242,58 +274,78 @@ export function CatalogPageContent() {
         </div>
 
         {/* Lista de cursos */}
-        <div className="space-y-6">
-          {cursos.map((curso, index) => (
-            <Card key={index} className="w-full">
-              <CardContent className="p-6 md:p-8">
-                <Badge variant="outline" className="w-fit mb-6 text-xs font-bold px-4 py-1.5 rounded-full">
-                  {curso.tipo}
-                </Badge>
+        {cursos.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-lg text-muted-foreground">Nenhum curso encontrado com os filtros selecionados.</p>
+            <Button
+              variant="outline"
+              className="mt-4 bg-transparent"
+              onClick={() => {
+                setActiveFilters([])
+                setSearchQuery("")
+              }}
+            >
+              Limpar filtros
+            </Button>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {cursos.map((curso, index) => (
+              <Card key={index} className="w-full">
+                <CardContent className="p-6 md:p-8">
+                  <Badge variant="outline" className="w-fit mb-6 text-xs font-bold px-4 py-1.5 rounded-full">
+                    {curso.tipo}
+                  </Badge>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{curso.nome}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{curso.nome}</h3>
 
-                <div className="mb-4 space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">Duração:</span> {curso.duracao}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">Ideal para quem:</span> {curso.idealPara}
-                  </p>
-                </div>
+                  <div className="mb-4 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-medium text-foreground">Duração:</span> {curso.duracao}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-medium text-foreground">Ideal para quem:</span> {curso.idealPara}
+                    </p>
+                  </div>
 
-                <p className="text-base mb-8">{curso.textoValor}</p>
+                  <p className="text-base mb-8">{curso.textoValor}</p>
 
-                <div className="space-y-4 border-t pt-6">
-                  {curso.modalidades.map((modalidade, idx) => {
-                    const content = (
-                      <div className="flex items-center justify-between gap-4">
-                        <span className="text-lg font-bold">{modalidade.tipo}</span>
-                        <div className="flex items-center gap-2">
-                          {modalidade.opcoes.map((opcao, opIdx) => (
-                            <Badge key={opIdx} variant="outline" className="text-xs font-medium px-3 py-1 rounded-full">
-                              {opcao}
-                            </Badge>
-                          ))}
-                          <ArrowRight className="w-5 h-5 ml-2" />
+                  <div className="space-y-4 border-t pt-6">
+                    {curso.modalidades.map((modalidade, idx) => {
+                      const content = (
+                        <div className="flex items-center justify-between gap-4">
+                          <span className="text-lg font-bold">{modalidade.tipo}</span>
+                          <div className="flex items-center gap-2">
+                            {modalidade.opcoes.map((opcao, opIdx) => (
+                              <Badge
+                                key={opIdx}
+                                variant="outline"
+                                className="text-xs font-medium px-3 py-1 rounded-full"
+                              >
+                                {opcao}
+                              </Badge>
+                            ))}
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                          </div>
                         </div>
-                      </div>
-                    )
-
-                    if (modalidade.link) {
-                      return (
-                        <Link key={idx} href={modalidade.link} className="block hover:opacity-80 transition-opacity">
-                          {content}
-                        </Link>
                       )
-                    }
 
-                    return <div key={idx}>{content}</div>
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                      if (modalidade.link) {
+                        return (
+                          <Link key={idx} href={modalidade.link} className="block hover:opacity-80 transition-opacity">
+                            {content}
+                          </Link>
+                        )
+                      }
+
+                      return <div key={idx}>{content}</div>
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </main>
   )

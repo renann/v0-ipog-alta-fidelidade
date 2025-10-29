@@ -163,6 +163,12 @@ export default function PsicologiaEadPage() {
           backgroundColor="bg-muted/30"
         />
 
+        <FaqPsicologia />
+        <FormasIngresso />
+        <div id="acao-final">
+          <CtaFinalPsicologia />
+        </div>
+
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
@@ -176,12 +182,6 @@ export default function PsicologiaEadPage() {
             </div>
           </div>
         </section>
-
-        <FaqPsicologia />
-        <FormasIngresso />
-        <div id="acao-final">
-          <CtaFinalPsicologia />
-        </div>
       </main>
       <Footer />
     </div>
