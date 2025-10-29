@@ -257,6 +257,66 @@ export function CatalogPageContent() {
         },
       ],
     },
+    {
+      tipo: "EXTENSÃO",
+      nome: "Inteligência Artificial Aplicada",
+      duracao: "3 meses",
+      idealPara: "Profissionais que desejam dominar IA e aplicar em seus projetos",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar dados em insights, algoritmos em soluções, sua carreira em inovação.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["FEVEREIRO", "MAIO"],
+          link: "/extensao/curso/inteligencia-artificial-aplicada",
+        },
+        {
+          tipo: "AO VIVO",
+          opcoes: ["MARÇO"],
+          link: "/extensao/curso/inteligencia-artificial-aplicada",
+        },
+      ],
+    },
+    {
+      tipo: "EXTENSÃO",
+      nome: "Marketing Digital",
+      duracao: "2 meses",
+      idealPara: "Profissionais que buscam dominar estratégias digitais e aumentar resultados",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar cliques em conversões, audiência em comunidade, sua marca em referência.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["JANEIRO", "ABRIL"],
+          link: "/extensao/curso/marketing-digital",
+        },
+        {
+          tipo: "PRESENCIAL",
+          opcoes: ["SP", "RJ"],
+          link: "/extensao/curso/marketing-digital",
+        },
+      ],
+    },
+    {
+      tipo: "EXTENSÃO",
+      nome: "Gestão de Projetos Ágeis",
+      duracao: "2 meses",
+      idealPara: "Profissionais que desejam implementar metodologias ágeis em suas equipes",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar processos em agilidade, equipes em alta performance, sua gestão em resultados.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["MARÇO", "JUNHO"],
+          link: "/extensao/curso/gestao-projetos-ageis",
+        },
+        {
+          tipo: "AO VIVO",
+          opcoes: ["ABRIL"],
+          link: "/extensao/curso/gestao-projetos-ageis",
+        },
+      ],
+    },
   ]
 
   const cursosFiltrados = useMemo(() => {
