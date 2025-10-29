@@ -21,7 +21,7 @@ export default function PsicologiaEadPage() {
       <Header />
       <main className="w-full">
         <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
             <BreadcrumbWithItems
               items={[
                 { label: "Início", href: "/" },
