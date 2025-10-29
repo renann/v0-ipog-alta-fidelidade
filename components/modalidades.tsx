@@ -38,9 +38,9 @@ export function Modalidades({ titulo, subtitulo, modalidades, backgroundColor = 
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {modalidades.map((modalidade, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="basis-[85%] md:basis-1/2 lg:basis-1/3 pl-2 md:pl-4">
                   <Card className="p-6 flex flex-col h-full min-h-[480px]">
                     <div className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm font-medium mb-4 self-start">
                       {modalidade.badge}
@@ -64,8 +64,8 @@ export function Modalidades({ titulo, subtitulo, modalidades, backgroundColor = 
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="-left-12" />
-            <CarouselNext className="-right-12" />
+            <CarouselPrevious className="hidden md:flex -left-12" />
+            <CarouselNext className="hidden md:flex -right-12" />
           </Carousel>
         </div>
       </div>

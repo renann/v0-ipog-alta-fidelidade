@@ -70,8 +70,8 @@ export default function ExtensaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            title="Escolha o formato ideal para você"
-            subtitle="Três modalidades, mesma qualidade e certificação IPOG"
+            titulo="Escolha o formato ideal para você"
+            subtitulo="Três modalidades, mesma qualidade e certificação IPOG"
             modalidades={[
               {
                 badge: "EXTENSÃO",
