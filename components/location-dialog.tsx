@@ -1,11 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { MapPin, Check, ChevronsUpDown } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { MapPin, Check, Search } from "lucide-react"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { cn } from "@/lib/utils"
 
@@ -63,9 +62,16 @@ const BRAZILIAN_CITIES = [
 ]
 
 export function LocationDialog() {
-  const [comboboxOpen, setComboboxOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
   const [selectedCity, setSelectedCity] = useState("")
   const { dialogOpen, closeDialog, setGeoLocation } = useGeoLocation()
+
+  const filteredCities = useMemo(() => {
+    if (!searchQuery.trim()) return BRAZILIAN_CITIES
+
+    const query = searchQuery.toLowerCase().trim()
+    return BRAZILIAN_CITIES.filter((city) => city.label.toLowerCase().includes(query))
+  }, [searchQuery])
 
   const handleConfirm = () => {
     if (selectedCity) {
@@ -76,12 +82,19 @@ export function LocationDialog() {
   }
 
   const handleCitySelect = (cityValue: string) => {
-    setSelectedCity(cityValue === selectedCity ? "" : cityValue)
-    setComboboxOpen(false)
+    setSelectedCity(cityValue)
+  }
+
+  const handleDialogClose = (open: boolean) => {
+    if (!open) {
+      setSearchQuery("")
+      setSelectedCity("")
+      closeDialog()
+    }
   }
 
   return (
-    <Dialog open={dialogOpen} onOpenChange={closeDialog}>
+    <Dialog open={dialogOpen} onOpenChange={handleDialogClose}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-xl">
@@ -94,50 +107,46 @@ export function LocationDialog() {
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
-          <Popover open={comboboxOpen} onOpenChange={setComboboxOpen}>
-            <PopoverTrigger asChild>
-              <Button
-                variant="outline"
-                role="combobox"
-                aria-expanded={comboboxOpen}
-                className="w-full justify-between bg-transparent"
-              >
-                {selectedCity ? (
-                  <span className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    {BRAZILIAN_CITIES.find((city) => city.value === selectedCity)?.label}
-                  </span>
-                ) : (
-                  "Selecione sua cidade..."
-                )}
-                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-[var(--radix-popover-trigger-width)] max-w-[500px] p-0" align="start">
-              <Command>
-                <CommandInput placeholder="Buscar cidade..." />
-                <CommandList>
-                  <CommandEmpty>Nenhuma cidade encontrada.</CommandEmpty>
-                  <CommandGroup>
-                    {BRAZILIAN_CITIES.map((city) => (
-                      <CommandItem
-                        key={city.value}
-                        value={city.value}
-                        onSelect={(currentValue) => handleCitySelect(currentValue)}
-                        className="cursor-pointer"
-                      >
-                        <Check
-                          className={cn("mr-2 h-4 w-4", selectedCity === city.value ? "opacity-100" : "opacity-0")}
-                        />
-                        <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
-                        {city.label}
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
-                </CommandList>
-              </Command>
-            </PopoverContent>
-          </Popover>
+          <div className="space-y-2">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                placeholder="Buscar cidade..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9"
+              />
+            </div>
+
+            <div className="max-h-[300px] overflow-y-auto rounded-md border">
+              {filteredCities.length === 0 ? (
+                <div className="p-4 text-center text-sm text-muted-foreground">Nenhuma cidade encontrada.</div>
+              ) : (
+                <div className="p-1">
+                  {filteredCities.map((city) => (
+                    <button
+                      key={city.value}
+                      type="button"
+                      onClick={() => handleCitySelect(city.value)}
+                      className={cn(
+                        "flex w-full items-center gap-2 rounded-sm px-3 py-2 text-sm transition-colors",
+                        "hover:bg-accent hover:text-accent-foreground",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                        selectedCity === city.value && "bg-accent",
+                      )}
+                    >
+                      <Check
+                        className={cn("h-4 w-4 shrink-0", selectedCity === city.value ? "opacity-100" : "opacity-0")}
+                      />
+                      <MapPin className="h-4 w-4 shrink-0 text-muted-foreground" />
+                      <span className="flex-1 text-left">{city.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
           <Button onClick={handleConfirm} disabled={!selectedCity} className="w-full">
             Confirmar localização
           </Button>
