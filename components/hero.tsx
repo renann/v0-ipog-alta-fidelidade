@@ -44,7 +44,7 @@ export function Hero({
     <section className="w-full relative" style={{ minHeight }}>
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
-        <div className="w-full h-full bg-gradient-to-br from-muted/50 to-muted">
+        <div className="w-full h-full bg-white">
           {/* Placeholder for background image */}
           <div className="w-full h-full flex items-center justify-center text-muted-foreground">
             {/* Background image placeholder */}
