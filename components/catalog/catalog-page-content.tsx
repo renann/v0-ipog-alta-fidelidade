@@ -88,7 +88,70 @@ export function CatalogPageContent() {
   }, [computedFilters, queryParam])
 
   const removeFilter = (index: number) => {
-    setActiveFilters((prev) => prev.filter((_, i) => i !== index))
+    const filterToRemove = activeFilters[index]
+    const remainingFilters = activeFilters.filter((_, i) => i !== index)
+
+    // Build new URL params based on remaining filters
+    const params = new URLSearchParams()
+
+    // Add formacao filters
+    const formacoes = remainingFilters
+      .filter((f) => f.type === "formacao")
+      .map((f) => {
+        const formacaoIds: Record<string, string> = {
+          Graduação: "graduacao",
+          "Pós-graduação": "pos-graduacao",
+          Extensão: "extensao",
+          Enterprise: "enterprise",
+        }
+        return formacaoIds[f.value] || f.value
+      })
+      .join(",")
+    if (formacoes) params.set("formacao", formacoes)
+
+    // Add modalidade filters
+    const modalidades = remainingFilters
+      .filter((f) => f.type === "modalidade")
+      .map((f) => {
+        const modalidadeIds: Record<string, string> = {
+          EAD: "ead",
+          "Ao Vivo": "ao-vivo",
+          Presencial: "presencial",
+        }
+        return modalidadeIds[f.value] || f.value
+      })
+      .join(",")
+    if (modalidades) params.set("modalidade", modalidades)
+
+    // Add area filter
+    const area = remainingFilters.find((f) => f.type === "area")
+    if (area) {
+      const areaIds: Record<string, string> = {
+        Psicologia: "psicologia",
+        Direito: "direito",
+        Engenharia: "engenharia",
+        Administração: "administracao",
+        Educação: "educacao",
+        Saúde: "saude",
+        "Tecnologia da Informação": "tecnologia",
+        Marketing: "marketing",
+        "Recursos Humanos": "recursos-humanos",
+        Finanças: "financas",
+        "Gestão de Projetos": "gestao",
+        Arquitetura: "arquitetura",
+        Design: "design",
+        Comunicação: "comunicacao",
+        "Meio Ambiente": "meio-ambiente",
+      }
+      params.set("area", areaIds[area.value] || area.value)
+    }
+
+    // Keep search query if exists
+    if (searchQuery) params.set("q", searchQuery)
+
+    // Navigate to new URL
+    const newUrl = params.toString() ? `/catalogo?${params.toString()}` : "/catalogo"
+    router.push(newUrl)
   }
 
   const handleOpenFilters = () => {
@@ -128,7 +191,7 @@ export function CatalogPageContent() {
         "Gestão de Projetos": "gestao",
         Arquitetura: "arquitetura",
         Design: "design",
-        Comunicação: "comunicação",
+        Comunicação: "comunicacao",
         "Meio Ambiente": "meio-ambiente",
       }
       params.set("area", areaIds[area] || area)
