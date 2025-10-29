@@ -219,41 +219,101 @@ export function CatalogPageContent() {
     },
     {
       tipo: "GRADUAÇÃO",
-      nome: "Avaliação Psicológica: Práticas Imersivas Avançadas",
-      duracao: "18 meses",
-      idealPara: "Lorem ipsum dolor sit amet vaccum ipsis.",
+      nome: "Direito",
+      duracao: "5 anos",
+      idealPara: "Profissionais que buscam atuar na defesa da justiça e dos direitos",
       textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar sua escuta em precisão, sua percepção em evidência, sua atuação em autoridade.",
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar argumentos em justiça, conhecimento em defesa, sua vocação em advocacia.",
       modalidades: [
         {
-          tipo: "PRESENCIAL",
-          opcoes: ["GO", "DF"],
+          tipo: "EAD",
+          opcoes: ["FEVEREIRO", "AGOSTO"],
+          link: "/graduacao/curso/direito",
         },
         {
+          tipo: "PRESENCIAL",
+          opcoes: ["SP", "RJ", "DF"],
+          link: "/graduacao/curso/direito",
+        },
+      ],
+    },
+    {
+      tipo: "GRADUAÇÃO",
+      nome: "Arquitetura e Urbanismo",
+      duracao: "5 anos",
+      idealPara: "Criativos que desejam projetar espaços que transformam a vida das pessoas",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar ideias em projetos, espaços em experiências, sua criatividade em construção.",
+      modalidades: [
+        {
           tipo: "EAD",
-          opcoes: ["JANEIRO"],
+          opcoes: ["MARÇO", "SETEMBRO"],
+          link: "/graduacao/curso/arquitetura",
+        },
+        {
+          tipo: "PRESENCIAL",
+          opcoes: ["SP", "MG"],
+          link: "/graduacao/curso/arquitetura",
         },
       ],
     },
     {
       tipo: "PÓS-GRADUAÇÃO",
-      nome: "Gestão Estratégica de Pessoas",
+      nome: "Avaliação Psicológica",
       duracao: "12 meses",
-      idealPara: "Profissionais que buscam desenvolver competências em gestão de talentos",
+      idealPara: "Psicólogos que buscam especialização em técnicas de avaliação",
       textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar equipes em resultados, pessoas em talentos, sua gestão em liderança.",
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar testes em diagnósticos, dados em compreensão, sua prática em excelência.",
       modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["MARÇO", "SETEMBRO"],
+          link: "/pos-graduacao/curso/avaliacao-psicologica",
+        },
+        {
+          tipo: "AO VIVO",
+          opcoes: ["ABRIL"],
+          link: "/pos-graduacao/curso/avaliacao-psicologica",
+        },
+      ],
+    },
+    {
+      tipo: "PÓS-GRADUAÇÃO",
+      nome: "Engenharia Estrutural",
+      duracao: "18 meses",
+      idealPara: "Engenheiros que desejam especialização em projetos estruturais",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar cálculos em segurança, projetos em solidez, sua engenharia em confiança.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["FEVEREIRO", "AGOSTO"],
+          link: "/pos-graduacao/curso/engenharia-estrutural",
+        },
         {
           tipo: "PRESENCIAL",
           opcoes: ["SP", "RJ"],
+          link: "/pos-graduacao/curso/engenharia-estrutural",
+        },
+      ],
+    },
+    {
+      tipo: "PÓS-GRADUAÇÃO",
+      nome: "Intervenção ABA",
+      duracao: "12 meses",
+      idealPara: "Profissionais que buscam especialização em análise do comportamento aplicada",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar comportamentos em desenvolvimento, intervenções em resultados, sua prática em transformação.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["JANEIRO", "JULHO"],
+          link: "/pos-graduacao/curso/intervencao-aba",
         },
         {
           tipo: "AO VIVO",
           opcoes: ["MARÇO"],
-        },
-        {
-          tipo: "EAD",
-          opcoes: ["MARÇO"],
+          link: "/pos-graduacao/curso/intervencao-aba",
         },
       ],
     },
