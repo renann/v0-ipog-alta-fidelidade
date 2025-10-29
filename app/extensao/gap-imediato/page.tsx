@@ -19,9 +19,17 @@ export default function GapImediatoPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[{ label: "Início", href: "/" }, { label: "Extensão", href: "/extensao" }, { label: "Gap Imediato" }]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Gap Imediato" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="EXTENSÃO"
           title="Gap Imediato"

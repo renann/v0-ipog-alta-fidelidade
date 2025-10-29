@@ -19,13 +19,17 @@ export default function TransicaoAreaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Transição de Área" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Transição de Área" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Transição de Área"

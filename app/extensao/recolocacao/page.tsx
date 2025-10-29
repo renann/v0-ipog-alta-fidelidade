@@ -1,6 +1,5 @@
 "use client"
 import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoRecolocacao } from "@/components/recolocacao/metodo-recolocacao"
 import { Cursos } from "@/components/cursos"
@@ -9,7 +8,7 @@ import { ResultadosReais } from "@/components/resultados-reais"
 import { EntregaveisRecolocacao } from "@/components/recolocacao/entregaveis-recolocacao"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { Users, Briefcase, Network, FileQuestion, TrendingDown, TrendingUp, Award, Building } from "lucide-react"
+import { Users, Briefcase, FileQuestion, TrendingDown, TrendingUp, Award, Building } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
@@ -19,21 +18,17 @@ export default function RecolocacaoPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[{ label: "Início", href: "/" }, { label: "Extensão", href: "/extensao" }, { label: "Recolocação" }]}
-        />
-        <Hero
-          badge="EXTENSÃO"
-          title="Recolocação"
-          description="Construa seu portfólio agora. Retorne ao mercado com confiança, portfólio comprovado e networking estratégico."
-          valueBadges={[
-            { icon: <Users className="h-5 w-5" />, text: "Mentoria Estruturada" },
-            { icon: <Briefcase className="h-5 w-5" />, text: "Portfólio Comprovado" },
-            { icon: <Network className="h-5 w-5" />, text: "Networking Estratégico" },
-          ]}
-          primaryCTA={{ text: "Construir portfólio", href: "#cursos" }}
-          secondaryCTA={{ text: "Falar com consultor de carreira", href: "#contato" }}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Recolocação" },
+              ]}
+            />
+          </div>
+        </div>
 
         {/* 2. Dilema da Recolocação */}
         <section className="w-full py-12 md:py-16">

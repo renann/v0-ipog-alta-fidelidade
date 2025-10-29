@@ -16,13 +16,17 @@ export default function JovemIngressoPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Graduação", href: "/graduacao" },
-            { label: "Jovem Ingresso" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Graduação", href: "/graduacao" },
+                { label: "Jovem Ingresso" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="GRADUAÇÃO"
           title="Comece sua carreira com segurança e propósito"

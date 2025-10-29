@@ -16,13 +16,17 @@ export default function SegundaGraduacaoPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Graduação", href: "/graduacao" },
-            { label: "Segunda Graduação" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Graduação", href: "/graduacao" },
+                { label: "Segunda Graduação" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="GRADUAÇÃO"
           title="Conquiste um novo diploma no seu ritmo"
