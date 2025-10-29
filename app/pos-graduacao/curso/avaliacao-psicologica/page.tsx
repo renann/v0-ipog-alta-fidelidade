@@ -5,7 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -14,13 +14,18 @@ export default function AvaliacaoPsicologicaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Avaliação Psicológica" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Avaliação Psicológica" },
+              ]}
+            />
+          </div>
+        </div>
+        {/* </CHANGE> */}
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Avaliação Psicológica: Práticas Imersivas Avançadas"
@@ -30,7 +35,7 @@ export default function AvaliacaoPsicologicaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "18 meses" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <Modalidades
@@ -151,19 +156,8 @@ export default function AvaliacaoPsicologicaPage() {
           </div>
         </section>
 
-        <div id="inscricao">
-          <AcaoFinal
-            titulo="Pronto para dar o próximo passo na sua carreira?"
-            descricao="Inscreva-se agora na Pós-Graduação em Avaliação Psicológica e transforme sua prática profissional com conhecimento avançado e reconhecimento MEC."
-            botaoPrimario={{
-              texto: "Inscrever-se agora",
-              href: "/checkout",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              href: "/central-atendimento",
-            }}
-          />
+        <div id="preco">
+          <CtaFinal monthlyFee="R$ 399,00" duration="18 meses" totalCost="R$ 7.282,00" />
         </div>
       </main>
       <Footer />

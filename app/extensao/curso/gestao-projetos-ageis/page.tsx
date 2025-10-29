@@ -6,7 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -36,7 +36,7 @@ export default function GestaoProjetosAgeisPage() {
             { icon: <Target className="h-5 w-5" />, text: "100% Prático" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar conteúdo programático", href: "#grade" }}
         />
 
@@ -202,20 +202,7 @@ export default function GestaoProjetosAgeisPage() {
 
         <FormasIngresso />
 
-        <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
-            titulo="Comece a gerenciar projetos com agilidade"
-            descricao="Inscreva-se agora e transforme a forma como você gerencia projetos em apenas 40 horas"
-            botaoPrimario={{
-              texto: "Inscrever-se agora",
-              href: "#inscricao",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: "openAssistantForConsultor",
-            }}
-          />
-        </section>
+        <CtaFinal monthlyFee="R$ 279,00" duration="2 meses" totalCost="R$ 658,00" />
       </main>
       <Footer />
     </div>

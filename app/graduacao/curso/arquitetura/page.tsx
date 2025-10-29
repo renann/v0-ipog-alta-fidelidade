@@ -6,7 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -15,13 +15,18 @@ export default function ArquiteturaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Graduação", href: "/graduacao" },
-            { label: "Arquitetura e Urbanismo" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Graduação", href: "/graduacao" },
+                { label: "Arquitetura e Urbanismo" },
+              ]}
+            />
+          </div>
+        </div>
+        {/* </CHANGE> */}
         <Hero
           badge="GRADUAÇÃO"
           title="Arquitetura e Urbanismo"
@@ -31,7 +36,7 @@ export default function ArquiteturaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
@@ -203,18 +208,7 @@ export default function ArquiteturaPage() {
         </section>
 
         <FormasIngresso />
-        <AcaoFinal
-          titulo="Pronto para transformar espaços e criar o futuro?"
-          subtitulo="Inscreva-se agora e garanta sua vaga no curso de Arquitetura e Urbanismo do IPOG"
-          botaoPrimario={{
-            texto: "Inscrever-se agora",
-            href: "/catalogo?formacao=graduacao&curso=arquitetura",
-          }}
-          botaoSecundario={{
-            texto: "Falar com consultor",
-            onClick: "openAssistantForConsultor",
-          }}
-        />
+        <CtaFinal monthlyFee="R$ 599,00" duration="5 anos" totalCost="R$ 35.940,00" />
       </main>
       <Footer />
     </div>

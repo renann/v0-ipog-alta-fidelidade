@@ -6,7 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Scale } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -15,9 +15,14 @@ export default function DireitoPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[{ label: "Início", href: "/" }, { label: "Graduação", href: "/graduacao" }, { label: "Direito" }]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[{ label: "Início", href: "/" }, { label: "Graduação", href: "/graduacao" }, { label: "Direito" }]}
+            />
+          </div>
+        </div>
+        {/* </CHANGE> */}
         <Hero
           badge="GRADUAÇÃO"
           title="Direito"
@@ -27,7 +32,7 @@ export default function DireitoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
@@ -200,18 +205,7 @@ export default function DireitoPage() {
         </section>
 
         <FormasIngresso />
-        <AcaoFinal
-          titulo="Pronto para começar sua carreira no Direito?"
-          subtitulo="Inscreva-se agora e garanta sua vaga no curso de Direito do IPOG"
-          botaoPrimario={{
-            texto: "Inscrever-se agora",
-            href: "/catalogo?formacao=graduacao&curso=direito",
-          }}
-          botaoSecundario={{
-            texto: "Falar com consultor",
-            onClick: "openAssistantForConsultor",
-          }}
-        />
+        <CtaFinal monthlyFee="R$ 549,00" duration="5 anos" totalCost="R$ 32.940,00" />
       </main>
       <Footer />
     </div>

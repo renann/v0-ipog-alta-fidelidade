@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Brain, Zap, Target, TrendingUp, Award, Rocket } from "lucide-react"
@@ -15,14 +15,18 @@ export default function InteligenciaArtificialAplicadaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Extensão", href: "/extensao" },
-            { label: "Atualização", href: "/extensao/atualizacao" },
-            { label: "Inteligência Artificial Aplicada" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Atualização", href: "/extensao/atualizacao" },
+                { label: "Inteligência Artificial Aplicada" },
+              ]}
+            />
+          </div>
+        </div>
 
         <Hero
           badge="EXTENSÃO • 4 MESES"
@@ -33,7 +37,7 @@ export default function InteligenciaArtificialAplicadaPage() {
             { icon: <Zap className="h-5 w-5" />, text: "Automação Prática" },
             { icon: <Target className="h-5 w-5" />, text: "Aplicação Imediata" },
           ]}
-          primaryCTA={{ text: "Inscrever-se no curso", href: "/catalogo?curso=ia-aplicada" }}
+          primaryCTA={{ text: "Inscrever-se no curso", href: "#preco" }}
           secondaryCTA={{ text: "Falar com consultor", onClick: openAssistantForConsultor }}
         />
 
@@ -133,18 +137,7 @@ export default function InteligenciaArtificialAplicadaPage() {
         </section>
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
-            titulo="Domine IA e transforme sua carreira"
-            descricao="4 meses de aprendizado prático com ferramentas de ponta. Aplicação imediata no seu trabalho."
-            botaoPrimario={{
-              texto: "Inscrever-se no curso",
-              href: "/catalogo?curso=ia-aplicada",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: openAssistantForConsultor,
-            }}
-          />
+          <CtaFinal monthlyFee="R$ 299,00" duration="3 meses" totalCost="R$ 997,00" />
         </section>
       </main>
       <Footer />

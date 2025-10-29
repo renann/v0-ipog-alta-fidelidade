@@ -7,19 +7,25 @@ import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { CtaFinal } from "@/components/cta-final"
 
 export default function IntervencaoAbaPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Intervenção ABA Aplicada ao TEA" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Intervenção ABA Aplicada ao TEA" },
+              ]}
+            />
+          </div>
+        </div>
+        {/* </CHANGE> */}
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Intervenção ABA Aplicada ao TEA"
@@ -29,7 +35,7 @@ export default function IntervencaoAbaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "12 meses" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <Modalidades
@@ -136,6 +142,7 @@ export default function IntervencaoAbaPage() {
             </div>
           </div>
         </section>
+        <CtaFinal monthlyFee="R$ 429,00" duration="12 meses" totalCost="R$ 5.248,00" />
       </main>
       <Footer />
     </div>

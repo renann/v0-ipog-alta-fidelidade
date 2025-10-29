@@ -9,24 +9,29 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FaqPsicologia } from "@/components/curso-psicologia/faq-psicologia"
-import { CtaFinalPsicologia } from "@/components/curso-psicologia/cta-final-psicologia"
-import { FormasIngresso } from "@/components/formas-ingresso"
+import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award } from "lucide-react"
 import { TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { FormasIngresso } from "@/components/formas-ingresso"
 
 export default function PsicologiaEadPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Graduação", href: "/graduacao" },
-            { label: "Psicologia EAD" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Graduação", href: "/graduacao" },
+                { label: "Psicologia EAD" },
+              ]}
+            />
+          </div>
+        </div>
+        {/* Fim da adição */}
         <Hero
           badge="GRADUAÇÃO"
           title="Psicologia EAD"
@@ -36,7 +41,7 @@ export default function PsicologiaEadPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#inscricao" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <PropostaValorPsicologia />
@@ -175,7 +180,7 @@ export default function PsicologiaEadPage() {
 
         <FaqPsicologia />
         <FormasIngresso />
-        <CtaFinalPsicologia />
+        <CtaFinal monthlyFee="R$ 499,00" duration="5 anos" totalCost="R$ 29.940,00" />
       </main>
       <Footer />
     </div>

@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { TrendingUp, Target, Award, Rocket, Zap } from "lucide-react"
@@ -15,14 +15,19 @@ export default function MarketingDigitalPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Extensão", href: "/extensao" },
-            { label: "Gap Imediato", href: "/extensao/gap-imediato" },
-            { label: "Marketing Digital" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Gap Imediato", href: "/extensao/gap-imediato" },
+                { label: "Marketing Digital" },
+              ]}
+            />
+          </div>
+        </div>
+        {/* </CHANGE> */}
 
         <Hero
           badge="EXTENSÃO • 3 MESES"
@@ -33,7 +38,7 @@ export default function MarketingDigitalPage() {
             { icon: <Target className="h-5 w-5" />, text: "100% Prático" },
             { icon: <Zap className="h-5 w-5" />, text: "Templates Prontos" },
           ]}
-          primaryCTA={{ text: "Inscrever-se no curso", href: "/catalogo?curso=marketing-digital" }}
+          primaryCTA={{ text: "Inscrever-se no curso", href: "#preco" }}
           secondaryCTA={{ text: "Falar com consultor", onClick: openAssistantForConsultor }}
         />
 
@@ -133,18 +138,7 @@ export default function MarketingDigitalPage() {
         </section>
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
-            titulo="Domine marketing digital e gere resultados"
-            descricao="3 meses de estratégias práticas com templates prontos. Aplicação imediata no seu trabalho."
-            botaoPrimario={{
-              texto: "Inscrever-se no curso",
-              href: "/catalogo?curso=marketing-digital",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: openAssistantForConsultor,
-            }}
-          />
+          <CtaFinal monthlyFee="R$ 249,00" duration="2 meses" totalCost="R$ 598,00" />
         </section>
       </main>
       <Footer />
