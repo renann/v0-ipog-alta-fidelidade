@@ -45,21 +45,14 @@ export default function GraduacaoPage() {
         <MetodoIpog />
         <Cursos
           badge="GRADUAÇÃO"
-          title="Escolha o curso que combina com sua trajetória profissional"
+          titulo="Cursos de Graduação"
+          subtitulo="Escolha o curso que combina com sua trajetória profissional"
           cursos={[
             {
-              nome: "Administração",
-              duracao: "4 anos",
-              descricao:
-                "Gestão estratégica e liderança empresarial para formar profissionais preparados para o mercado.",
-              modalidade: "EAD • Presencial",
-            },
-            {
-              nome: "Psicologia",
+              nome: "Psicologia EAD",
               duracao: "5 anos",
-              descricao:
-                "Ciências humanas e comportamento para transformar vidas através da compreensão do ser humano.",
-              modalidade: "EAD • Presencial",
+              descricao: "Formação completa em Psicologia com flexibilidade total para estudar onde e quando quiser.",
+              modalidade: "EAD",
             },
             {
               nome: "Direito",
@@ -68,14 +61,18 @@ export default function GraduacaoPage() {
               modalidade: "EAD • Presencial",
             },
             {
-              nome: "Engenharia",
+              nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
-              descricao: "Tecnologia e inovação para desenvolver soluções que transformam o mundo.",
+              descricao: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
               modalidade: "EAD • Presencial",
             },
           ]}
           ctaText="Ver curso"
           ctaLink="/graduacao/curso/psicologia-ead"
+          footerCTA={{
+            text: "Ver todos os cursos de Graduação",
+            link: "/catalogo?formacao=graduacao",
+          }}
         />
         <Jornadas
           title="Encontre sua jornada acadêmica"

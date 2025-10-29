@@ -120,26 +120,26 @@ export default function ExtensaoPage() {
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
             badge="EXTENSÃO"
-            title="Encontre o curso que resolve seu desafio agora"
-            subtitle="Cursos curtos e objetivos para quem busca resultado imediato"
+            title="Cursos de Extensão"
+            subtitulo="Encontre o curso que resolve seu desafio agora"
             cursos={[
               {
                 nome: "Gestão de Projetos Ágeis",
                 duracao: "40h",
                 descricao: "Aplique Scrum e Kanban na prática e gerencie projetos com agilidade e eficiência.",
-                modalidade: "EAD",
+                modalidade: "EAD • Ao Vivo • Presencial",
               },
               {
-                nome: "Power BI Express",
-                duracao: "24h",
-                descricao: "Domine dashboards em uma semana e transforme dados em insights estratégicos.",
-                modalidade: "Ao Vivo",
-              },
-              {
-                nome: "Comunicação e Liderança",
+                nome: "Inteligência Artificial Aplicada",
                 duracao: "60h",
-                descricao: "Fale, influencie, lidere. Desenvolva habilidades essenciais para liderança efetiva.",
-                modalidade: "Presencial",
+                descricao: "Domine ferramentas de IA e aplique no seu dia a dia profissional com resultados imediatos.",
+                modalidade: "EAD • Ao Vivo",
+              },
+              {
+                nome: "Marketing Digital",
+                duracao: "80h",
+                descricao: "Estratégias práticas de marketing digital para impulsionar resultados e vendas.",
+                modalidade: "EAD • Presencial",
               },
             ]}
             ctaText="Ver curso"
