@@ -15,8 +15,6 @@ import { Footer } from "@/components/footer"
 import { RoiSection } from "@/components/roi-section"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
-import { Hero } from "@/components/hero"
-import { Award, TrendingUp, Target } from "lucide-react"
 
 export default function HomePage() {
   const { openDialog } = useGeoLocation()
@@ -31,33 +29,19 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSection />
 
-        <Hero
-          badge="SMART CHOICE"
-          title="IPOG: A Escolha Inteligente para Sua Carreira"
-          description="A melhor escolha para quem busca ensino de excelência, com valor acessível e resultados reais na carreira"
-          valueBadges={[
-            {
-              icon: <Award className="w-5 h-5 text-primary" />,
-              text: "Excelência Reconhecida",
-            },
-            {
-              icon: <Target className="w-5 h-5 text-primary" />,
-              text: "Investimento Acessível",
-            },
-            {
-              icon: <TrendingUp className="w-5 h-5 text-primary" />,
-              text: "Resultados Comprovados",
-            },
-          ]}
-          primaryCTA={{
-            text: "Explorar cursos",
-            href: "/catalogo",
-          }}
-          secondaryCTA={{
-            text: "Falar com consultor",
-            onClick: openAssistantForConsultor,
-          }}
-        />
+        <section className="w-full py-16 md:py-24 bg-background">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                IPOG: A Escolha Inteligente para Sua Carreira
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                A melhor escolha para quem busca ensino de excelência, com valor acessível e resultados reais na
+                carreira
+              </p>
+            </div>
+          </div>
+        </section>
 
         <CourseSearch
           title="Encontre seu curso"
