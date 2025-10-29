@@ -1,0 +1,345 @@
+import { Header } from "@/components/header"
+import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import Footer from "@/components/footer"
+import Link from "next/link"
+import { Check, Star, Users, Award, TrendingUp, Gift } from "lucide-react"
+
+export default function AlunoDiamantePage() {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-background">
+        {/* Breadcrumb + Header Section */}
+        <section className="w-full border-b bg-background py-8">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Programas e Benefícios", href: "/programas-beneficios" },
+                { label: "Aluno Diamante" },
+              ]}
+            />
+            <div className="mt-6 space-y-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-balance">
+                Transforme sua rede em benefícios exclusivos
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-[700px]">
+                O programa Aluno Diamante premia quem indica novos alunos para o IPOG. Quanto mais você indica, mais
+                benefícios exclusivos você ganha.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Tabs Navigation */}
+        <section className="w-full bg-background py-6 border-b">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <Tabs defaultValue="aluno-diamante" className="w-full">
+              <TabsList className="grid w-full max-w-md grid-cols-2">
+                <TabsTrigger value="aluno-diamante" asChild>
+                  <Link href="/programas-beneficios/aluno-diamante">Aluno Diamante</Link>
+                </TabsTrigger>
+                <TabsTrigger value="ipog-plus" asChild>
+                  <Link href="/programas-beneficios/ipog-plus">IPOG+</Link>
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </section>
+
+        {/* Initial Testimonial */}
+        <section className="w-full py-16 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <Card className="border-2">
+              <CardContent className="pt-6">
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Star className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 space-y-4">
+                    <p className="text-lg leading-relaxed">
+                      "Indiquei 3 amigos para o IPOG e ganhei desconto na minha próxima especialização. É incrível ver
+                      como minha rede de contatos se transformou em benefícios reais!"
+                    </p>
+                    <div>
+                      <p className="font-semibold">Maria Silva</p>
+                      <p className="text-sm text-muted-foreground">Aluna Diamante desde 2023</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="w-full py-16">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Sua rede de influência pode gerar benefícios reais
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-[700px] mx-auto">
+                Compartilhe sua experiência no IPOG e seja recompensado por cada indicação bem-sucedida
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Gift className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle>Descontos progressivos</CardTitle>
+                  <CardDescription>
+                    Ganhe descontos crescentes em novos cursos conforme aumenta o número de indicações
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle>Reconhecimento exclusivo</CardTitle>
+                  <CardDescription>
+                    Receba certificados e badges especiais que destacam sua contribuição para a comunidade IPOG
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle>Networking ampliado</CardTitle>
+                  <CardDescription>
+                    Expanda sua rede profissional conectando pessoas que compartilham seus valores educacionais
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* System Explanation */}
+        <section className="w-full py-16 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Sistema simples: mais indicações = mais benefícios
+              </h2>
+
+              <div className="space-y-4">
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Indique amigos e colegas</h3>
+                    <p className="text-muted-foreground">
+                      Compartilhe sua experiência no IPOG com pessoas que valorizam educação de qualidade
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Acompanhe suas indicações</h3>
+                    <p className="text-muted-foreground">
+                      Receba notificações quando suas indicações se matricularem e começarem a estudar
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Acumule benefícios</h3>
+                    <p className="text-muted-foreground">
+                      Cada indicação confirmada gera pontos que podem ser trocados por descontos e vantagens
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <Check className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Resgate suas recompensas</h3>
+                    <p className="text-muted-foreground">
+                      Use seus benefícios em novos cursos, especializações ou até mesmo em produtos parceiros
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefit Levels */}
+        <section className="w-full py-16">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Escolha seu nível de benefício</h2>
+              <p className="text-lg text-muted-foreground max-w-[700px] mx-auto">
+                Quanto mais você indica, maiores são as vantagens que você conquista
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <Card className="border-2">
+                <CardHeader>
+                  <Badge className="w-fit mb-2">Nível Inicial</Badge>
+                  <CardTitle className="text-2xl">1 Indicação</CardTitle>
+                  <CardDescription>Comece a acumular benefícios com sua primeira indicação</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>10% de desconto em cursos EAD</span>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Certificado digital de reconhecimento</span>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Acesso a eventos exclusivos online</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button className="flex-1">Indicar para EAD</Button>
+                    <Button variant="outline" className="flex-1 bg-transparent">
+                      Indicar Presencial
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary">
+                <CardHeader>
+                  <Badge className="w-fit mb-2 bg-primary">Nível Avançado</Badge>
+                  <CardTitle className="text-2xl">5 Indicações</CardTitle>
+                  <CardDescription>Maximize seus benefícios com múltiplas indicações bem-sucedidas</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>25% de desconto em cursos EAD</span>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>15% de desconto em cursos presenciais</span>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Badge exclusivo Aluno Diamante</span>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Prioridade em eventos presenciais</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button className="flex-1">Indicar para EAD</Button>
+                    <Button variant="outline" className="flex-1 bg-transparent">
+                      Indicar Presencial
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics */}
+        <section className="w-full py-16 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dados sobre o programa</h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader className="text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">12.500+</div>
+                  <CardTitle>Alunos Diamante</CardTitle>
+                  <CardDescription>Participantes ativos no programa</CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader className="text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">35.000+</div>
+                  <CardTitle>Indicações realizadas</CardTitle>
+                  <CardDescription>Novos alunos chegaram via indicação</CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader className="text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">R$ 2,5M</div>
+                  <CardTitle>Em benefícios distribuídos</CardTitle>
+                  <CardDescription>Valor total em descontos concedidos</CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Final Testimonial + CTA */}
+        <section className="w-full py-16">
+          <div className="max-w-screen-xl mx-auto px-4 md:px-6">
+            <Card className="border-2">
+              <CardContent className="pt-6">
+                <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <TrendingUp className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 space-y-4">
+                    <p className="text-lg leading-relaxed">
+                      "O programa Aluno Diamante mudou minha forma de ver networking. Hoje, compartilhar conhecimento e
+                      oportunidades se tornou parte da minha rotina, e os benefícios são apenas a cereja do bolo!"
+                    </p>
+                    <div>
+                      <p className="font-semibold">João Santos</p>
+                      <p className="text-sm text-muted-foreground">Aluno Diamante Nível Avançado</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center pt-6 border-t">
+                  <h3 className="text-2xl font-bold mb-4">Pronto para começar a indicar?</h3>
+                  <p className="text-muted-foreground mb-6 max-w-[600px] mx-auto">
+                    Faça login na sua área do aluno e comece a compartilhar sua experiência IPOG hoje mesmo
+                  </p>
+                  <Button size="lg">Acessar área do aluno</Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
