@@ -49,9 +49,9 @@ export function Cursos({
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {cursos.map((curso, index) => (
-                <CarouselItem key={index} className={carouselBasis}>
+                <CarouselItem key={index} className={`pl-2 md:pl-4 basis-[85%] ${carouselBasis}`}>
                   <Card className="h-full min-h-[500px] border-border bg-background">
                     <CardContent className="flex h-full min-h-[500px] flex-col p-6">
                       <Badge variant="outline" className="mb-4 w-fit">
@@ -78,8 +78,8 @@ export function Cursos({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
       </div>
