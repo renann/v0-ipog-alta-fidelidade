@@ -15,6 +15,8 @@ import { Footer } from "@/components/footer"
 import { RoiSection } from "@/components/roi-section"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
+import { Hero } from "@/components/hero"
+import { Award, TrendingUp, Target } from "lucide-react"
 
 export default function HomePage() {
   const { openDialog } = useGeoLocation()
@@ -28,6 +30,35 @@ export default function HomePage() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+
+        <Hero
+          badge="SMART CHOICE"
+          title="IPOG: A Escolha Inteligente para Sua Carreira"
+          description="A melhor escolha para quem busca ensino de excelência, com valor acessível e resultados reais na carreira"
+          valueBadges={[
+            {
+              icon: <Award className="w-5 h-5 text-primary" />,
+              text: "Excelência Reconhecida",
+            },
+            {
+              icon: <Target className="w-5 h-5 text-primary" />,
+              text: "Investimento Acessível",
+            },
+            {
+              icon: <TrendingUp className="w-5 h-5 text-primary" />,
+              text: "Resultados Comprovados",
+            },
+          ]}
+          primaryCTA={{
+            text: "Explorar cursos",
+            href: "/catalogo",
+          }}
+          secondaryCTA={{
+            text: "Falar com consultor",
+            onClick: openAssistantForConsultor,
+          }}
+        />
+
         <CourseSearch
           title="Encontre seu curso"
           description="Busque por área de atuação e descubra os melhores cursos para sua carreira"

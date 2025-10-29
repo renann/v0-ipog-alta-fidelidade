@@ -41,8 +41,17 @@ export function HeroSection() {
             <CarouselItem key={highlight.id}>
               <div className="relative">
                 {/* Image area */}
-                <div className="aspect-[16/9] w-full bg-muted flex items-center justify-center">
+                <div className="aspect-[16/9] w-full bg-muted flex items-center justify-center relative">
                   <ImageIcon className="h-16 w-16 text-muted-foreground" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex flex-col justify-end p-8 md:p-12">
+                    <div className="max-w-3xl space-y-3">
+                      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                        {highlight.title}
+                      </h1>
+                      <p className="text-base md:text-lg text-white/90 leading-relaxed">{highlight.description}</p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Navigation arrows */}
@@ -50,12 +59,6 @@ export function HeroSection() {
                   <CarouselPrevious className="pointer-events-auto static translate-y-0 h-12 w-12 rounded-full bg-white shadow-lg" />
                   <CarouselNext className="pointer-events-auto static translate-y-0 h-12 w-12 rounded-full bg-white shadow-lg" />
                 </div>
-              </div>
-
-              {/* Content below image */}
-              <div className="px-4 py-6 space-y-3">
-                <h1 className="text-2xl font-bold leading-tight">{highlight.title}</h1>
-                <p className="text-sm text-muted-foreground">{highlight.description}</p>
               </div>
             </CarouselItem>
           ))}
