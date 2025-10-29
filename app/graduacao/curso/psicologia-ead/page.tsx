@@ -55,8 +55,8 @@ export default function PsicologiaEadPage() {
                 "Tutoria online e suporte contínuo;",
                 "Certificação igual ao curso presencial.",
               ],
-              link: "#preco",
-              buttonText: "Quero me inscrever",
+              link: "#acao-final",
+              buttonText: "Se inscrever",
             },
             {
               badge: "GRADUAÇÃO",
@@ -68,8 +68,8 @@ export default function PsicologiaEadPage() {
                 "Estrutura moderna e laboratórios equipados;",
                 "Networking acadêmico e profissional.",
               ],
-              link: "#preco",
-              buttonText: "Ver unidades presenciais",
+              link: "#acao-final",
+              buttonText: "Se inscrever",
             },
           ]}
         />
@@ -175,7 +175,9 @@ export default function PsicologiaEadPage() {
 
         <FaqPsicologia />
         <FormasIngresso />
-        <CtaFinalPsicologia />
+        <div id="acao-final">
+          <CtaFinalPsicologia />
+        </div>
       </main>
       <Footer />
     </div>

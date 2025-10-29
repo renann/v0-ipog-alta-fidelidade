@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinalCurso } from "@/components/cta-final-curso"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { TrendingUp, Target, Award, Rocket, Zap } from "lucide-react"
@@ -52,8 +52,8 @@ export default function MarketingDigitalPage() {
                   "Suporte de especialistas",
                   "Certificação reconhecida",
                 ],
-                buttonText: "Ver detalhes do curso",
-                link: "/catalogo?curso=marketing-digital&modalidade=ead",
+                buttonText: "Se inscrever",
+                link: "#acao-final",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -132,18 +132,18 @@ export default function MarketingDigitalPage() {
           />
         </section>
 
-        <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
+        <section id="acao-final" className="w-full py-12 md:py-16 bg-muted/30">
+          <CtaFinalCurso
             titulo="Domine marketing digital e gere resultados"
-            descricao="3 meses de estratégias práticas com templates prontos. Aplicação imediata no seu trabalho."
-            botaoPrimario={{
-              texto: "Inscrever-se no curso",
-              href: "/catalogo?curso=marketing-digital",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: openAssistantForConsultor,
-            }}
+            descricao="Curso criado para quem busca resultados rápidos, com estratégias práticas e templates prontos para usar."
+            taxaMatricula="R$ 100,00"
+            mensalidade="R$ 349,00"
+            duracao="3 meses"
+            totalCurso="R$ 1.147,00"
+            badge1="Certificação IPOG reconhecida"
+            badge2="Comunidade com +70 mil alunos"
+            proximasTurmas="Próximas turmas iniciam em Novembro"
+            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
           />
         </section>
       </main>

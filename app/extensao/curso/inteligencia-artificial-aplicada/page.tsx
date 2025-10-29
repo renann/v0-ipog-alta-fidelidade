@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinalCurso } from "@/components/cta-final-curso"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Brain, Zap, Target, TrendingUp, Award, Rocket } from "lucide-react"
@@ -52,8 +52,8 @@ export default function InteligenciaArtificialAplicadaPage() {
                   "Suporte de especialistas em IA",
                   "Certificação reconhecida pelo mercado",
                 ],
-                buttonText: "Ver detalhes do curso",
-                link: "/catalogo?curso=ia-aplicada&modalidade=ead",
+                buttonText: "Se inscrever",
+                link: "#acao-final",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -132,18 +132,18 @@ export default function InteligenciaArtificialAplicadaPage() {
           />
         </section>
 
-        <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
+        <section id="acao-final" className="w-full py-12 md:py-16 bg-muted/30">
+          <CtaFinalCurso
             titulo="Domine IA e transforme sua carreira"
-            descricao="4 meses de aprendizado prático com ferramentas de ponta. Aplicação imediata no seu trabalho."
-            botaoPrimario={{
-              texto: "Inscrever-se no curso",
-              href: "/catalogo?curso=ia-aplicada",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: openAssistantForConsultor,
-            }}
+            descricao="Curso criado para quem busca aplicação imediata de IA, com ferramentas de ponta e metodologia prática."
+            taxaMatricula="R$ 100,00"
+            mensalidade="R$ 399,00"
+            duracao="4 meses"
+            totalCurso="R$ 1.696,00"
+            badge1="Certificação IPOG reconhecida"
+            badge2="Comunidade com +70 mil alunos"
+            proximasTurmas="Próximas turmas iniciam em Novembro"
+            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
           />
         </section>
       </main>

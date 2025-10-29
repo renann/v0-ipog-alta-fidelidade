@@ -6,7 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { AcaoFinal } from "@/components/acao-final"
+import { CtaFinalCurso } from "@/components/cta-final-curso"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -88,8 +88,8 @@ export default function GestaoProjetosAgeisPage() {
                 "Suporte online com tutores;",
                 "Certificação igual ao presencial.",
               ],
-              link: "#preco",
-              buttonText: "Quero me inscrever",
+              link: "#acao-final",
+              buttonText: "Se inscrever",
             },
             {
               badge: "EXTENSÃO",
@@ -101,8 +101,8 @@ export default function GestaoProjetosAgeisPage() {
                 "Discussão de casos práticos;",
                 "Networking com outros profissionais.",
               ],
-              link: "#preco",
-              buttonText: "Ver próximas turmas",
+              link: "#acao-final",
+              buttonText: "Se inscrever",
             },
           ]}
         />
@@ -202,20 +202,20 @@ export default function GestaoProjetosAgeisPage() {
 
         <FormasIngresso />
 
-        <section className="w-full py-12 md:py-16 bg-muted/30">
-          <AcaoFinal
+        <div id="acao-final">
+          <CtaFinalCurso
             titulo="Comece a gerenciar projetos com agilidade"
-            descricao="Inscreva-se agora e transforme a forma como você gerencia projetos em apenas 40 horas"
-            botaoPrimario={{
-              texto: "Inscrever-se agora",
-              href: "#inscricao",
-            }}
-            botaoSecundario={{
-              texto: "Falar com consultor",
-              onClick: "openAssistantForConsultor",
-            }}
+            descricao="Curso criado para quem busca aplicação imediata, com metodologia prática e certificação reconhecida pelo mercado."
+            taxaMatricula="R$ 100,00"
+            mensalidade="R$ 299,00"
+            duracao="40 horas"
+            totalCurso="R$ 1.196,00"
+            badge1="Certificação IPOG reconhecida"
+            badge2="Comunidade com +70 mil alunos"
+            proximasTurmas="Próximas turmas iniciam em Novembro"
+            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
           />
-        </section>
+        </div>
       </main>
       <Footer />
     </div>

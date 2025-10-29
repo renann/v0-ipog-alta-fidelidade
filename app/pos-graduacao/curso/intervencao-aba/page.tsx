@@ -7,6 +7,7 @@ import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { CtaFinalCurso } from "@/components/cta-final-curso"
 
 export default function IntervencaoAbaPage() {
   return (
@@ -46,8 +47,8 @@ export default function IntervencaoAbaPage() {
                 "Gravações disponíveis",
                 "Networking com colegas de todo Brasil",
               ],
-              link: "#preco",
-              buttonText: "Quero me inscrever",
+              link: "#acao-final",
+              buttonText: "Se inscrever",
             },
           ]}
         />
@@ -135,6 +136,20 @@ export default function IntervencaoAbaPage() {
               <MetodosPagamento />
             </div>
           </div>
+        </section>
+        <section id="acao-final" className="w-full py-12 md:py-16 bg-muted/30">
+          <CtaFinalCurso
+            titulo="Comece agora sua trajetória com o IPOG e faça parte de uma comunidade que acredita no poder do aprendizado transformador"
+            descricao="Curso criado para quem busca protagonismo, com metodologia aplicada, professores de mercado e acompanhamento próximo em todas as etapas."
+            taxaMatricula="R$ 100,00"
+            mensalidade="R$ 479,00"
+            duracao="12 meses"
+            totalCurso="R$ 5.748,00"
+            badge1="Cursos reconhecidos pelo MEC"
+            badge2="Comunidade com +70 mil alunos"
+            proximasTurmas="Próximas turmas iniciam em Novembro"
+            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
+          />
         </section>
       </main>
       <Footer />
