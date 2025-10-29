@@ -14,13 +14,17 @@ export default function IntervencaoAbaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Intervenção ABA Aplicada ao TEA" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Intervenção ABA Aplicada ao TEA" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Intervenção ABA Aplicada ao TEA"

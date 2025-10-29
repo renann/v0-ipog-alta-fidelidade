@@ -15,13 +15,17 @@ export default function ArquiteturaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Graduação", href: "/graduacao" },
-            { label: "Arquitetura e Urbanismo" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Graduação", href: "/graduacao" },
+                { label: "Arquitetura e Urbanismo" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="GRADUAÇÃO"
           title="Arquitetura e Urbanismo"

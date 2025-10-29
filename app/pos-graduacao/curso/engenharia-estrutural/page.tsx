@@ -14,13 +14,17 @@ export default function EngenhariaEstruturalPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Engenharia Estrutural e Fundações" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Engenharia Estrutural e Fundações" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Engenharia Estrutural e Fundações"

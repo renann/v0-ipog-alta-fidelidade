@@ -15,14 +15,18 @@ export default function MarketingDigitalPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Extensão", href: "/extensao" },
-            { label: "Gap Imediato", href: "/extensao/gap-imediato" },
-            { label: "Marketing Digital" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Gap Imediato", href: "/extensao/gap-imediato" },
+                { label: "Marketing Digital" },
+              ]}
+            />
+          </div>
+        </div>
 
         <Hero
           badge="EXTENSÃO • 3 MESES"

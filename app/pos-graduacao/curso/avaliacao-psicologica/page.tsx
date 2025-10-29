@@ -14,13 +14,17 @@ export default function AvaliacaoPsicologicaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Pós-Graduação", href: "/pos-graduacao" },
-            { label: "Avaliação Psicológica" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Pós-Graduação", href: "/pos-graduacao" },
+                { label: "Avaliação Psicológica" },
+              ]}
+            />
+          </div>
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Avaliação Psicológica: Práticas Imersivas Avançadas"

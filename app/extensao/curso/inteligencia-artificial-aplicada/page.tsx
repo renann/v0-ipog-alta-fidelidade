@@ -15,14 +15,18 @@ export default function InteligenciaArtificialAplicadaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Extensão", href: "/extensao" },
-            { label: "Atualização", href: "/extensao/atualizacao" },
-            { label: "Inteligência Artificial Aplicada" },
-          ]}
-        />
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems
+              items={[
+                { label: "Início", href: "/" },
+                { label: "Extensão", href: "/extensao" },
+                { label: "Atualização", href: "/extensao/atualizacao" },
+                { label: "Inteligência Artificial Aplicada" },
+              ]}
+            />
+          </div>
+        </div>
 
         <Hero
           badge="EXTENSÃO • 4 MESES"
