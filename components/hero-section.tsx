@@ -1,7 +1,7 @@
 "use client"
 
 import { ImageIcon } from "lucide-react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
 const highlights = [
   {
@@ -51,12 +51,6 @@ export function HeroSection() {
                       <p className="text-sm md:text-base text-white/90 leading-relaxed">{highlight.description}</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Navigation arrows */}
-                <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
-                  <CarouselPrevious className="pointer-events-auto static translate-y-0 h-12 w-12 rounded-full bg-white shadow-lg" />
-                  <CarouselNext className="pointer-events-auto static translate-y-0 h-12 w-12 rounded-full bg-white shadow-lg" />
                 </div>
               </div>
             </CarouselItem>
