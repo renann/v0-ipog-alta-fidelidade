@@ -9,7 +9,6 @@
 
 ## Checkout
 - `/checkout` - Checkout
-- `/checkout/test` - Teste de checkout (desenvolvimento)
 
 ## Extensão
 - `/extensao` - Extensão (página principal)
@@ -50,8 +49,8 @@
 - `/sobre` - Sobre nós
 - `/sobre/historia` - História do IPOG
 - `/sobre/governanca` - Governança
-- `/faq` - Perguntas Frequentes (FAQ)
 - `/sobre/estrutura` - Nossa Estrutura IPOG
+- `/faq` - Perguntas Frequentes (FAQ)
 - `/parceiros-internacionais` - Parcerias Internacionais
 - `/unidades` - Unidades IPOG
 - `/programas-beneficios/aluno-diamante` - Aluno Diamante
@@ -69,12 +68,12 @@
 
 ---
 
-## Total de URLs: 48
+## Total de URLs: 47
 
 ### Estrutura por Categoria:
 - **Principal:** 1 URL
 - **Busca/Catálogo:** 2 URLs
-- **Checkout:** 2 URLs
+- **Checkout:** 1 URL
 - **Extensão:** 7 URLs
 - **Graduação:** 7 URLs
 - **Pós-Graduação:** 7 URLs

@@ -1,6 +1,17 @@
 "use client"
 
-import { Search, Menu, User, Home, GraduationCap, Building2, TrendingUp, Factory } from "lucide-react"
+import {
+  Search,
+  Menu,
+  User,
+  Home,
+  GraduationCap,
+  Building2,
+  TrendingUp,
+  Factory,
+  BookOpen,
+  Compass,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useState } from "react"
@@ -16,6 +27,7 @@ interface HeaderProps {
 
 export function Header({ hideMenu = false, onOpenLocationDialog }: HeaderProps) {
   const [open, setOpen] = useState(false)
+  const [userMenuOpen, setUserMenuOpen] = useState(false)
 
   return (
     <>
@@ -226,9 +238,66 @@ export function Header({ hideMenu = false, onOpenLocationDialog }: HeaderProps) 
                 <Search className="h-5 w-5" />
               </GeoLink>
             </Button>
-            <Button variant="ghost" size="icon" aria-label="User">
-              <User className="h-5 w-5" />
-            </Button>
+            <Sheet open={userMenuOpen} onOpenChange={setUserMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="User">
+                  <User className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[340px]">
+                <div className="flex flex-col h-full">
+                  {/* Header with home icon */}
+                  <div className="flex items-center mb-8 pt-2">
+                    <GeoLink href="/" onClick={() => setUserMenuOpen(false)}>
+                      <Home className="h-6 w-6 text-foreground" />
+                    </GeoLink>
+                  </div>
+
+                  {/* Acesso Rápido Section */}
+                  <div>
+                    <h2 className="text-2xl font-bold mb-6 text-foreground">Acesso Rápido</h2>
+                    <nav className="flex flex-col gap-4">
+                      <a
+                        href="https://aluno.ipog.edu.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <GraduationCap className="h-5 w-5" />
+                        <span>Portal do Aluno</span>
+                      </a>
+                      <a
+                        href="https://professor.ipog.edu.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Building2 className="h-5 w-5" />
+                        <span>Portal do Professor</span>
+                      </a>
+                      <a
+                        href="https://coordenador.ipog.edu.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Compass className="h-5 w-5" />
+                        <span>Portal do Coordenador</span>
+                      </a>
+                      <a
+                        href="https://biblioteca.ipog.edu.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <BookOpen className="h-5 w-5" />
+                        <span>Biblioteca</span>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
