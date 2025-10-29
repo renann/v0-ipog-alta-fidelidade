@@ -6,6 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
+import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -25,7 +26,9 @@ export default function AvaliacaoPsicologicaPage() {
             />
           </div>
         </div>
-        {/* </CHANGE> */}
+        <div className="max-w-screen-xl mx-auto px-4 pb-4">
+          <CursoRestritoBadge requiredDegree="Psicologia" />
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Avaliação Psicológica: Práticas Imersivas Avançadas"

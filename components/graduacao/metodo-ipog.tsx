@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { MonitorPlay, Video, Users } from "lucide-react"
+import { MonitorPlay, Users } from "lucide-react"
 
 export function MetodoIpog() {
   const modalidades = [
@@ -10,11 +10,6 @@ export function MetodoIpog() {
       icon: MonitorPlay,
       title: "EAD (Gravado)",
       description: "Autonomia e flexibilidade total para aprender no seu ritmo",
-    },
-    {
-      icon: Video,
-      title: "Ao Vivo (Online)",
-      description: "Mentoria e interação em tempo real com especialistas",
     },
     {
       icon: Users,
@@ -62,7 +57,7 @@ export function MetodoIpog() {
           </Carousel>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-3 gap-4">
+        <div className="hidden md:grid md:grid-cols-2 gap-4">
           {modalidades.map((modalidade, index) => {
             const Icon = modalidade.icon
             return (

@@ -42,9 +42,37 @@ export const DISCOUNT_CONFIG = {
 
 // Mock agreement codes (in production, this would be validated via API)
 export const VALID_AGREEMENT_CODES: Record<string, { name: string; discount: number }> = {
+  // Convênios Empresariais
   CONV2025: { name: "Convênio Empresarial 2025", discount: 15 },
+  EMPRESA10: { name: "Convênio Empresarial Básico", discount: 10 },
+  EMPRESA15: { name: "Convênio Empresarial Plus", discount: 15 },
+  EMPRESA20: { name: "Convênio Empresarial Premium", discount: 20 },
+
+  // Parcerias Institucionais
   PARCEIRO10: { name: "Parceiro Institucional", discount: 10 },
+  PARCEIRO15: { name: "Parceiro Institucional Plus", discount: 15 },
+  UNIVERSIDADE: { name: "Parceria Universitária", discount: 12 },
+
+  // Ex-alunos
   ALUMNI20: { name: "Ex-aluno IPOG", discount: 20 },
+  EXALUNO15: { name: "Ex-aluno IPOG Básico", discount: 15 },
+
+  // Convênios Especiais
+  GOVERNO: { name: "Convênio Servidor Público", discount: 18 },
+  SAUDE: { name: "Convênio Profissionais da Saúde", discount: 15 },
+  EDUCACAO: { name: "Convênio Profissionais da Educação", discount: 15 },
+  OAB2025: { name: "Convênio OAB", discount: 12 },
+  CRP2025: { name: "Convênio CRP", discount: 12 },
+
+  // Códigos de Teste
+  TESTE10: { name: "Código de Teste 10%", discount: 10 },
+  TESTE25: { name: "Código de Teste 25%", discount: 25 },
+  TESTE50: { name: "Código de Teste 50%", discount: 50 },
+
+  // Promoções Temporárias
+  PROMO2025: { name: "Promoção Especial 2025", discount: 20 },
+  BLACKFRIDAY: { name: "Black Friday IPOG", discount: 30 },
+  VERAO2025: { name: "Promoção Verão 2025", discount: 15 },
 }
 
 export function validateAgreementCode(code: string): AgreementCode | null {

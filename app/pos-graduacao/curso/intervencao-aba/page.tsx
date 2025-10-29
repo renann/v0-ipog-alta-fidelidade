@@ -5,6 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
+import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
@@ -25,7 +26,9 @@ export default function IntervencaoAbaPage() {
             />
           </div>
         </div>
-        {/* </CHANGE> */}
+        <div className="max-w-screen-xl mx-auto px-4 pb-4">
+          <CursoRestritoBadge requiredDegree="Psicologia" />
+        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Intervenção ABA Aplicada ao TEA"
