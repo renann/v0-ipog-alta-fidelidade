@@ -43,7 +43,8 @@ const verticais = [
     title: "Soluções Corporativas",
     promessa: "Educação corporativa com resultados mensuráveis",
     diferenciais: ["Metodologia 6DS", "Programas personalizados", "ROI comprovado"],
-    href: "/catalogo?categoria=enterprise",
+    href: "/enterprise",
+    ctaText: "Solicitar diagnóstico corporativo",
     color: "bg-muted",
     active: false,
   },
@@ -91,13 +92,13 @@ export function QuatroVerticais() {
                     {vertical.active ? (
                       <Button asChild className="w-full" size="lg">
                         <Link href={vertical.href}>
-                          Ver cursos de {vertical.tag}
+                          {vertical.ctaText || `Ver cursos de ${vertical.tag}`}
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     ) : (
                       <Button disabled className="w-full" size="lg">
-                        Ver cursos de {vertical.tag}
+                        {vertical.ctaText || `Ver cursos de ${vertical.tag}`}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     )}

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Award, Users, BookOpen, GraduationCap } from "lucide-react"
+import { GeoLink } from "@/components/geo-link"
 
 export function MentoriaNetworking() {
   const professores = [
@@ -67,12 +68,14 @@ export function MentoriaNetworking() {
             <CarouselContent>
               {professores.map((professor, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 text-center h-full">
-                    <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4" />
-                    <h4 className="font-bold mb-1">{professor.nome}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{professor.especialidade}</p>
-                    <p className="text-xs text-muted-foreground">{professor.experiencia}</p>
-                  </Card>
+                  <GeoLink href="/corpo-docente/busca" className="block h-full">
+                    <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow cursor-pointer">
+                      <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4" />
+                      <h4 className="font-bold mb-1">{professor.nome}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{professor.especialidade}</p>
+                      <p className="text-xs text-muted-foreground">{professor.experiencia}</p>
+                    </Card>
+                  </GeoLink>
                 </CarouselItem>
               ))}
             </CarouselContent>

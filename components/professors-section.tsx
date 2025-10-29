@@ -1,6 +1,7 @@
 import { ImageIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { GeoLink } from "@/components/geo-link"
 
 const professors = [
   {
@@ -32,18 +33,22 @@ export function ProfessorsSection() {
             <CarouselContent className="-ml-2 md:-ml-4">
               {professors.map((professor) => (
                 <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
-                  <Card>
-                    <CardContent className="p-0">
-                      <div className="aspect-square bg-muted flex items-center justify-center rounded-t-lg">
-                        <ImageIcon className="h-12 w-12 text-muted-foreground" />
-                      </div>
-                      <div className="p-6 space-y-2">
-                        <h3 className="font-semibold text-lg">{professor.name}</h3>
-                        <p className="text-sm text-muted-foreground">{professor.description}</p>
-                        <button className="text-sm text-foreground hover:underline pt-2">Saiba mais →</button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <GeoLink href="/corpo-docente/busca" className="block h-full">
+                    <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
+                      <CardContent className="p-0">
+                        <div className="aspect-square bg-muted flex items-center justify-center rounded-t-lg">
+                          <ImageIcon className="h-12 w-12 text-muted-foreground" />
+                        </div>
+                        <div className="p-6 space-y-2">
+                          <h3 className="font-semibold text-lg">{professor.name}</h3>
+                          <p className="text-sm text-muted-foreground">{professor.description}</p>
+                          <span className="text-sm text-foreground hover:underline pt-2 inline-block">
+                            Saiba mais →
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </GeoLink>
                 </CarouselItem>
               ))}
             </CarouselContent>

@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Award, Users, BookOpen, GraduationCap } from "lucide-react"
+import { GeoLink } from "@/components/geo-link"
 
 export function SuporteAcompanhamento() {
   const topicos = [
@@ -71,16 +72,18 @@ export function SuporteAcompanhamento() {
             <CarouselContent className="-ml-2 md:-ml-4">
               {professores?.map((professor, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
-                  <Card className="p-6 h-full">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mb-4">
-                        <Users className="w-10 h-10 text-muted-foreground" />
+                  <GeoLink href="/corpo-docente/busca" className="block h-full">
+                    <Card className="p-6 h-full hover:shadow-lg transition-shadow cursor-pointer">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mb-4">
+                          <Users className="w-10 h-10 text-muted-foreground" />
+                        </div>
+                        <h4 className="font-semibold text-lg mb-2">{professor.nome}</h4>
+                        <p className="text-sm font-medium mb-3">{professor.area}</p>
+                        <p className="text-sm text-muted-foreground">{professor.bio}</p>
                       </div>
-                      <h4 className="font-semibold text-lg mb-2">{professor.nome}</h4>
-                      <p className="text-sm font-medium mb-3">{professor.area}</p>
-                      <p className="text-sm text-muted-foreground">{professor.bio}</p>
-                    </div>
-                  </Card>
+                    </Card>
+                  </GeoLink>
                 </CarouselItem>
               ))}
             </CarouselContent>
