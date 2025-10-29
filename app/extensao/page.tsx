@@ -120,7 +120,7 @@ export default function ExtensaoPage() {
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
             badge="EXTENSÃO"
-            title="Cursos de Extensão"
+            titulo="Cursos de Extensão"
             subtitulo="Encontre o curso que resolve seu desafio agora"
             cursos={[
               {
