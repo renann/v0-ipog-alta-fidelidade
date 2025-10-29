@@ -5,6 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
+import { AcaoFinal } from "@/components/acao-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -149,6 +150,21 @@ export default function AvaliacaoPsicologicaPage() {
             </div>
           </div>
         </section>
+
+        <div id="inscricao">
+          <AcaoFinal
+            titulo="Pronto para dar o próximo passo na sua carreira?"
+            descricao="Inscreva-se agora na Pós-Graduação em Avaliação Psicológica e transforme sua prática profissional com conhecimento avançado e reconhecimento MEC."
+            botaoPrimario={{
+              texto: "Inscrever-se agora",
+              href: "/checkout",
+            }}
+            botaoSecundario={{
+              texto: "Falar com consultor",
+              href: "/central-atendimento",
+            }}
+          />
+        </div>
       </main>
       <Footer />
     </div>
