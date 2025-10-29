@@ -12,6 +12,7 @@ export interface Curso {
   duracao: string
   descricao: string
   modalidade: string
+  link?: string
 }
 
 export interface CursosProps {
@@ -22,6 +23,10 @@ export interface CursosProps {
   ctaText?: string
   ctaLink?: string
   carouselBasis?: string
+  footerCTA?: {
+    text: string
+    link: string
+  }
 }
 
 export function Cursos({
@@ -32,6 +37,7 @@ export function Cursos({
   ctaText = "Ver curso",
   ctaLink = "#",
   carouselBasis = "md:basis-1/2 lg:basis-1/3",
+  footerCTA,
 }: CursosProps) {
   return (
     <section className="w-full py-12 md:py-16">
@@ -70,7 +76,7 @@ export function Cursos({
                           </Badge>
                         </div>
                         <Button className="w-full" asChild>
-                          <Link href={ctaLink}>{ctaText}</Link>
+                          <Link href={curso.link || ctaLink}>{ctaText}</Link>
                         </Button>
                       </div>
                     </CardContent>
@@ -82,6 +88,14 @@ export function Cursos({
             <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
+
+        {footerCTA && (
+          <div className="mx-auto mt-8 max-w-5xl text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link href={footerCTA.link}>{footerCTA.text}</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )

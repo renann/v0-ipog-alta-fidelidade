@@ -53,22 +53,24 @@ export default function GraduacaoPage() {
               duracao: "5 anos",
               descricao: "Formação completa em Psicologia com flexibilidade total para estudar onde e quando quiser.",
               modalidade: "EAD",
+              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
               duracao: "5 anos",
               descricao: "Ciências jurídicas e advocacia com foco em justiça e transformação social.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/direito",
             },
             {
               nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
               descricao: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/graduacao/curso/psicologia-ead"
           footerCTA={{
             text: "Ver todos os cursos de Graduação",
             link: "/catalogo?formacao=graduacao",

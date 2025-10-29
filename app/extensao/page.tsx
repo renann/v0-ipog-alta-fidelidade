@@ -128,22 +128,24 @@ export default function ExtensaoPage() {
                 duracao: "40h",
                 descricao: "Aplique Scrum e Kanban na prática e gerencie projetos com agilidade e eficiência.",
                 modalidade: "EAD • Ao Vivo • Presencial",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Inteligência Artificial Aplicada",
                 duracao: "60h",
                 descricao: "Domine ferramentas de IA e aplique no seu dia a dia profissional com resultados imediatos.",
                 modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Marketing Digital",
                 duracao: "80h",
                 descricao: "Estratégias práticas de marketing digital para impulsionar resultados e vendas.",
                 modalidade: "EAD • Presencial",
+                link: "/extensao/curso/marketing-digital",
               },
             ]}
             ctaText="Ver curso"
-            ctaLink="/extensao/curso/gestao-projetos-ageis"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
               link: "/catalogo?formacao=Extensão",

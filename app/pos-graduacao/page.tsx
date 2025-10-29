@@ -108,12 +108,14 @@ export default function PosGraduacaoPage() {
               descricao:
                 "Garanta uma competência fundamental para a psicologia e abra excelentes portas no mercado de trabalho.",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/avaliacao-psicologica",
             },
             {
               nome: "Engenharia Estrutural e Fundações",
               duracao: "12 meses",
               descricao: "A escolha certa para transformar conhecimento técnico em protagonismo no canteiro de obras.",
               modalidade: "Presencial",
+              link: "/pos-graduacao/curso/engenharia-estrutural",
             },
             {
               nome: "Intervenção ABA Aplicada ao TEA",
@@ -121,10 +123,10 @@ export default function PosGraduacaoPage() {
               descricao:
                 "Aprenda como orientar crianças e adultos diagnosticados com TEA através da análise do comportamento aplicada (ABA).",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/intervencao-aba",
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/pos-graduacao/curso/avaliacao-psicologica"
           footerCTA={{
             text: "Ver todos os cursos de Pós-Graduação",
             link: "/catalogo?formacao=pos-graduacao",
