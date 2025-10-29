@@ -40,15 +40,15 @@ export function HeroSection() {
           {highlights.map((highlight) => (
             <CarouselItem key={highlight.id}>
               <div className="relative">
-                <div className="aspect-[3/4] md:aspect-[16/9] w-full flex items-center justify-center relative min-h-[400px] md:min-h-0">
+                <div className="aspect-[16/9] md:aspect-[21/9] w-full flex items-center justify-center relative max-h-[300px] md:max-h-[400px]">
                   <ImageIcon className="h-16 w-16 text-muted-foreground" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex flex-col justify-end p-6 md:p-12">
-                    <div className="max-w-3xl space-y-2 md:space-y-3">
-                      <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex flex-col justify-end p-4 md:p-8">
+                    <div className="max-w-3xl space-y-1 md:space-y-2">
+                      <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
                         {highlight.title}
                       </h1>
-                      <p className="text-sm md:text-lg text-white/90 leading-relaxed">{highlight.description}</p>
+                      <p className="text-sm md:text-base text-white/90 leading-relaxed">{highlight.description}</p>
                     </div>
                   </div>
                 </div>
