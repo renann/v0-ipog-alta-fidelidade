@@ -33,7 +33,7 @@ export function SearchPageContent() {
     }
   }, [searchParams])
 
-  const modalidades = ["EAD", "Presencial", "Ao vivo", "Todas"]
+  const modalidades = ["EAD", "Presencial", "Ao Vivo", "Todas"]
 
   const formacoes = [
     {
