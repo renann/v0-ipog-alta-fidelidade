@@ -136,40 +136,25 @@ export default function AtualizacaoPage() {
             badge="EXTENSÃO"
             cursos={[
               {
+                nome: "Gestão de Projetos Ágeis",
+                duracao: "3 meses",
+                descricao: "Implemente metodologias ágeis imediatamente com templates prontos e frameworks testados",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/gestao-projetos-ageis",
+              },
+              {
                 nome: "Inteligência Artificial Aplicada",
                 duracao: "4 meses",
                 descricao: "Domine IA generativa, automação e ferramentas emergentes para aplicação imediata",
-                modalidade: "EAD",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
-                nome: "Transformação Digital",
-                duracao: "3 meses",
-                descricao: "Estratégias e frameworks atuais para liderar mudanças tecnológicas na sua empresa",
-                modalidade: "Ao Vivo",
-              },
-              {
-                nome: "Gestão Ágil Avançada",
-                duracao: "4 meses",
-                descricao: "Metodologias ágeis de ponta e práticas de liderança para equipes de alta performance",
-                modalidade: "Presencial",
-              },
-              {
-                nome: "Data Analytics & BI",
-                duracao: "3 meses",
-                descricao: "Análise de dados, visualização e tomada de decisão baseada em dados",
-                modalidade: "EAD",
-              },
-              {
-                nome: "Cibersegurança Moderna",
-                duracao: "4 meses",
-                descricao: "Proteção de dados, compliance e gestão de riscos digitais atualizados",
-                modalidade: "Ao Vivo",
-              },
-              {
-                nome: "Marketing Digital Avançado",
+                nome: "Marketing Digital",
                 duracao: "3 meses",
                 descricao: "Estratégias digitais, growth hacking e ferramentas de automação de marketing",
-                modalidade: "Presencial",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/marketing-digital",
               },
             ]}
             ctaText="Ver curso"

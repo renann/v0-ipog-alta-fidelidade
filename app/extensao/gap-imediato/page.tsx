@@ -81,22 +81,25 @@ export default function GapImediatoPage() {
             badge="EXTENSÃO"
             cursos={[
               {
+                nome: "Gestão de Projetos Ágeis",
+                duracao: "3 meses",
+                descricao: "Implemente metodologias ágeis imediatamente com templates prontos e frameworks testados",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/gestao-projetos-ageis",
+              },
+              {
+                nome: "Inteligência Artificial Aplicada",
+                duracao: "4 meses",
+                descricao: "Resolva problemas reais com IA aplicada. Ferramentas práticas e ROI comprovado",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
+              },
+              {
                 nome: "Marketing Digital",
                 duracao: "3 meses",
                 descricao: "Estratégias e ferramentas atuais para resultados rápidos em campanhas digitais",
-                modalidade: "EAD",
-              },
-              {
-                nome: "Gestão de Pessoas",
-                duracao: "4 meses",
-                descricao: "Liderança prática para equipes de alta performance e gestão de conflitos",
-                modalidade: "Ao Vivo",
-              },
-              {
-                nome: "Compliance",
-                duracao: "3 meses",
-                descricao: "Conformidade e gestão de riscos aplicáveis imediatamente na sua empresa",
-                modalidade: "Presencial",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/marketing-digital",
               },
             ]}
             ctaText="Ver curso"
