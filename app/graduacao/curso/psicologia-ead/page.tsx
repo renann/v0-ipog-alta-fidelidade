@@ -20,17 +20,13 @@ export default function PsicologiaEadPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
-            <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Graduação", href: "/graduacao" },
-                { label: "Psicologia EAD" },
-              ]}
-            />
-          </div>
-        </div>
+        <BreadcrumbWithItems
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Graduação", href: "/graduacao" },
+            { label: "Psicologia EAD" },
+          ]}
+        />
         <Hero
           badge="GRADUAÇÃO"
           title="Psicologia EAD"
@@ -59,8 +55,8 @@ export default function PsicologiaEadPage() {
                 "Tutoria online e suporte contínuo;",
                 "Certificação igual ao curso presencial.",
               ],
-              link: "#acao-final",
-              buttonText: "Se inscrever",
+              link: "#preco",
+              buttonText: "Quero me inscrever",
             },
             {
               badge: "GRADUAÇÃO",
@@ -72,8 +68,8 @@ export default function PsicologiaEadPage() {
                 "Estrutura moderna e laboratórios equipados;",
                 "Networking acadêmico e profissional.",
               ],
-              link: "#acao-final",
-              buttonText: "Se inscrever",
+              link: "#preco",
+              buttonText: "Ver unidades presenciais",
             },
           ]}
         />
@@ -163,12 +159,6 @@ export default function PsicologiaEadPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <FaqPsicologia />
-        <FormasIngresso />
-        <div id="acao-final">
-          <CtaFinalPsicologia />
-        </div>
-
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
@@ -182,6 +172,10 @@ export default function PsicologiaEadPage() {
             </div>
           </div>
         </section>
+
+        <FaqPsicologia />
+        <FormasIngresso />
+        <CtaFinalPsicologia />
       </main>
       <Footer />
     </div>

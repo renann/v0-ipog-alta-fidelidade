@@ -70,8 +70,8 @@ export default function ExtensaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            titulo="Escolha o formato ideal para você"
-            subtitulo="Três modalidades, mesma qualidade e certificação IPOG"
+            title="Escolha o formato ideal para você"
+            subtitle="Três modalidades, mesma qualidade e certificação IPOG"
             modalidades={[
               {
                 badge: "EXTENSÃO",
@@ -120,32 +120,30 @@ export default function ExtensaoPage() {
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
             badge="EXTENSÃO"
-            titulo="Cursos de Extensão"
-            subtitulo="Encontre o curso que resolve seu desafio agora"
+            title="Encontre o curso que resolve seu desafio agora"
+            subtitle="Cursos curtos e objetivos para quem busca resultado imediato"
             cursos={[
               {
                 nome: "Gestão de Projetos Ágeis",
                 duracao: "40h",
                 descricao: "Aplique Scrum e Kanban na prática e gerencie projetos com agilidade e eficiência.",
-                modalidade: "EAD • Ao Vivo • Presencial",
-                link: "/extensao/curso/gestao-projetos-ageis",
+                modalidade: "EAD",
               },
               {
-                nome: "Inteligência Artificial Aplicada",
+                nome: "Power BI Express",
+                duracao: "24h",
+                descricao: "Domine dashboards em uma semana e transforme dados em insights estratégicos.",
+                modalidade: "Ao Vivo",
+              },
+              {
+                nome: "Comunicação e Liderança",
                 duracao: "60h",
-                descricao: "Domine ferramentas de IA e aplique no seu dia a dia profissional com resultados imediatos.",
-                modalidade: "EAD • Ao Vivo",
-                link: "/extensao/curso/inteligencia-artificial-aplicada",
-              },
-              {
-                nome: "Marketing Digital",
-                duracao: "80h",
-                descricao: "Estratégias práticas de marketing digital para impulsionar resultados e vendas.",
-                modalidade: "EAD • Presencial",
-                link: "/extensao/curso/marketing-digital",
+                descricao: "Fale, influencie, lidere. Desenvolva habilidades essenciais para liderança efetiva.",
+                modalidade: "Presencial",
               },
             ]}
             ctaText="Ver curso"
+            ctaLink="/extensao/curso/gestao-projetos-ageis"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
               link: "/catalogo?formacao=Extensão",

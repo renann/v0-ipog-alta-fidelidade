@@ -46,28 +46,23 @@ export function FormasIngresso({
 
   return (
     <section className="w-full py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{titulo}</h2>
-          {descricao && <p className="text-lg text-muted-foreground">{descricao}</p>}
+          {descricao && <p className="text-lg text-muted-foreground max-w-2xl">{descricao}</p>}
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {formas.map((forma, index) => (
-              <Card
-                key={index}
-                className="flex flex-col items-center text-center p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="mb-6 p-4 rounded-full bg-primary/10">{forma.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{forma.titulo}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow">{forma.descricao}</p>
-                <Button asChild className="w-full">
-                  <a href={forma.href}>{forma.cta}</a>
-                </Button>
-              </Card>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {formas.map((forma, index) => (
+            <Card key={index} className="flex flex-col items-center text-center p-8 hover:shadow-lg transition-shadow">
+              <div className="mb-6 p-4 rounded-full bg-primary/10">{forma.icon}</div>
+              <h3 className="text-xl font-semibold mb-3">{forma.titulo}</h3>
+              <p className="text-muted-foreground mb-6 flex-grow">{forma.descricao}</p>
+              <Button asChild className="w-full">
+                <a href={forma.href}>{forma.cta}</a>
+              </Button>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

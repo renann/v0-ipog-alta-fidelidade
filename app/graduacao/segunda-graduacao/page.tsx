@@ -74,7 +74,6 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Transforme sua experiência em gestão estratégica. Aproveite seus conhecimentos prévios e acelere sua formação com foco executivo.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/administracao",
             },
             {
               nome: "Psicologia",
@@ -82,7 +81,6 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Combine sua experiência profissional com conhecimento em comportamento humano. Ideal para líderes que buscam desenvolvimento de equipes.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
@@ -90,15 +88,6 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Aproveite sua experiência corporativa e adicione conhecimento jurídico à sua carreira. Perfeito para gestores e empreendedores.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/direito",
-            },
-            {
-              nome: "Arquitetura e Urbanismo",
-              duracao: "3 anos (acelerado)",
-              descricao:
-                "Transforme sua visão estratégica em projetos concretos. Ideal para profissionais que buscam criatividade aplicada.",
-              modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"

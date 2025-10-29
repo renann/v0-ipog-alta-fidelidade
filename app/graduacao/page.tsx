@@ -45,36 +45,37 @@ export default function GraduacaoPage() {
         <MetodoIpog />
         <Cursos
           badge="GRADUAÇÃO"
-          titulo="Cursos de Graduação"
-          subtitulo="Escolha o curso que combina com sua trajetória profissional"
+          title="Escolha o curso que combina com sua trajetória profissional"
           cursos={[
             {
-              nome: "Psicologia EAD",
+              nome: "Administração",
+              duracao: "4 anos",
+              descricao:
+                "Gestão estratégica e liderança empresarial para formar profissionais preparados para o mercado.",
+              modalidade: "EAD • Presencial",
+            },
+            {
+              nome: "Psicologia",
               duracao: "5 anos",
-              descricao: "Formação completa em Psicologia com flexibilidade total para estudar onde e quando quiser.",
-              modalidade: "EAD",
-              link: "/graduacao/curso/psicologia-ead",
+              descricao:
+                "Ciências humanas e comportamento para transformar vidas através da compreensão do ser humano.",
+              modalidade: "EAD • Presencial",
             },
             {
               nome: "Direito",
               duracao: "5 anos",
               descricao: "Ciências jurídicas e advocacia com foco em justiça e transformação social.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/direito",
             },
             {
-              nome: "Arquitetura e Urbanismo",
+              nome: "Engenharia",
               duracao: "5 anos",
-              descricao: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
+              descricao: "Tecnologia e inovação para desenvolver soluções que transformam o mundo.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"
-          footerCTA={{
-            text: "Ver todos os cursos de Graduação",
-            link: "/catalogo?formacao=graduacao",
-          }}
+          ctaLink="/graduacao/curso/psicologia-ead"
         />
         <Jornadas
           title="Encontre sua jornada acadêmica"

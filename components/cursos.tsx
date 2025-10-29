@@ -12,7 +12,6 @@ export interface Curso {
   duracao: string
   descricao: string
   modalidade: string
-  link?: string
 }
 
 export interface CursosProps {
@@ -23,10 +22,6 @@ export interface CursosProps {
   ctaText?: string
   ctaLink?: string
   carouselBasis?: string
-  footerCTA?: {
-    text: string
-    link: string
-  }
 }
 
 export function Cursos({
@@ -37,7 +32,6 @@ export function Cursos({
   ctaText = "Ver curso",
   ctaLink = "#",
   carouselBasis = "md:basis-1/2 lg:basis-1/3",
-  footerCTA,
 }: CursosProps) {
   return (
     <section className="w-full py-12 md:py-16">
@@ -55,9 +49,9 @@ export function Cursos({
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent>
               {cursos.map((curso, index) => (
-                <CarouselItem key={index} className={`pl-2 md:pl-4 basis-[85%] ${carouselBasis}`}>
+                <CarouselItem key={index} className={carouselBasis}>
                   <Card className="h-full min-h-[500px] border-border bg-background">
                     <CardContent className="flex h-full min-h-[500px] flex-col p-6">
                       <Badge variant="outline" className="mb-4 w-fit">
@@ -76,7 +70,7 @@ export function Cursos({
                           </Badge>
                         </div>
                         <Button className="w-full" asChild>
-                          <Link href={curso.link || ctaLink}>{ctaText}</Link>
+                          <Link href={ctaLink}>{ctaText}</Link>
                         </Button>
                       </div>
                     </CardContent>
@@ -84,18 +78,10 @@ export function Cursos({
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </div>
-
-        {footerCTA && (
-          <div className="mx-auto mt-8 max-w-5xl text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link href={footerCTA.link}>{footerCTA.text}</Link>
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   )

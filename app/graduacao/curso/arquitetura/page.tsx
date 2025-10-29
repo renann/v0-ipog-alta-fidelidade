@@ -6,7 +6,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { CtaFinalCurso } from "@/components/cta-final-curso"
+import { AcaoFinal } from "@/components/acao-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -15,17 +15,13 @@ export default function ArquiteturaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
-            <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Graduação", href: "/graduacao" },
-                { label: "Arquitetura e Urbanismo" },
-              ]}
-            />
-          </div>
-        </div>
+        <BreadcrumbWithItems
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Graduação", href: "/graduacao" },
+            { label: "Arquitetura e Urbanismo" },
+          ]}
+        />
         <Hero
           badge="GRADUAÇÃO"
           title="Arquitetura e Urbanismo"
@@ -88,8 +84,8 @@ export default function ArquiteturaPage() {
                 "Tutoria online e suporte contínuo;",
                 "Certificação igual ao curso presencial.",
               ],
-              link: "#acao-final",
-              buttonText: "Se inscrever",
+              link: "#preco",
+              buttonText: "Quero me inscrever",
             },
             {
               badge: "GRADUAÇÃO",
@@ -101,8 +97,8 @@ export default function ArquiteturaPage() {
                 "Estrutura moderna e laboratórios equipados;",
                 "Networking acadêmico e profissional.",
               ],
-              link: "#acao-final",
-              buttonText: "Se inscrever",
+              link: "#preco",
+              buttonText: "Ver unidades presenciais",
             },
           ]}
         />
@@ -192,22 +188,6 @@ export default function ArquiteturaPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <FormasIngresso />
-        <section id="acao-final">
-          <CtaFinalCurso
-            titulo="Comece agora sua trajetória com o IPOG e faça parte de uma comunidade que acredita no poder do aprendizado transformador"
-            descricao="Curso criado para quem busca protagonismo, com metodologia aplicada, professores de mercado e acompanhamento próximo em todas as etapas."
-            taxaMatricula="R$ 100,00"
-            mensalidade="R$ 649,00"
-            duracao="60 meses"
-            totalCurso="R$ 38.940,00"
-            badge1="Cursos reconhecidos pelo MEC"
-            badge2="Comunidade com +70 mil alunos"
-            proximasTurmas="Próximas turmas iniciam em Novembro"
-            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
-          />
-        </section>
-
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
@@ -221,6 +201,20 @@ export default function ArquiteturaPage() {
             </div>
           </div>
         </section>
+
+        <FormasIngresso />
+        <AcaoFinal
+          titulo="Pronto para transformar espaços e criar o futuro?"
+          subtitulo="Inscreva-se agora e garanta sua vaga no curso de Arquitetura e Urbanismo do IPOG"
+          botaoPrimario={{
+            texto: "Inscrever-se agora",
+            href: "/catalogo?formacao=graduacao&curso=arquitetura",
+          }}
+          botaoSecundario={{
+            texto: "Falar com consultor",
+            onClick: "openAssistantForConsultor",
+          }}
+        />
       </main>
       <Footer />
     </div>

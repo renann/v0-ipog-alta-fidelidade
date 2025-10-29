@@ -71,7 +71,6 @@ export default function JovemIngressoPage() {
               descricao:
                 "Compreenda o comportamento humano e transforme vidas. Você não está escolhendo apenas um curso, está escolhendo transformar sua escuta em acolhimento.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
@@ -79,7 +78,6 @@ export default function JovemIngressoPage() {
               descricao:
                 "Justiça e transformação social através do direito. Transforme argumentos em justiça, conhecimento em defesa, sua voz em autoridade.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/direito",
             },
             {
               nome: "Arquitetura e Urbanismo",
@@ -87,7 +85,6 @@ export default function JovemIngressoPage() {
               descricao:
                 "Projete espaços e transforme ambientes. Transforme ideias em projetos, espaços em experiências, sua criatividade em realidade.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"

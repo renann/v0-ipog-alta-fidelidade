@@ -29,18 +29,13 @@ export default function GestoraRHPage() {
     <>
       <Header />
       <main className="min-h-screen">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
-            <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Enterprise", href: "/enterprise" },
-                { label: "Gestora de RH" },
-              ]}
-            />
-          </div>
-        </div>
-
+        <BreadcrumbWithItems
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Enterprise", href: "/enterprise" },
+            { label: "Gestora de RH" },
+          ]}
+        />
         <Hero
           badge="SOLUÇÕES PARA RH"
           title="Programas corporativos ágeis, práticos e mensuráveis"

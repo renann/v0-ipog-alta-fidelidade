@@ -22,8 +22,13 @@ export default function EnterprisePage() {
   return (
     <>
       <Header />
-      <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Enterprise" }]} />
       <main className="min-h-screen">
+        <div className="w-full">
+          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
+            <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Enterprise" }]} />
+          </div>
+        </div>
+
         {/* Hero Section */}
         <Hero
           badge="SOLUÇÕES CORPORATIVAS"

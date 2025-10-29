@@ -71,28 +71,25 @@ export default function RecolocacaoPage() {
             badge="EXTENSÃO"
             cursos={[
               {
-                nome: "Gestão de Projetos Ágeis",
-                duracao: "3 meses",
-                descricao:
-                  "Construa portfólio em gestão ágil e abra portas em uma das áreas mais demandadas do mercado",
-                modalidade: "EAD • Ao Vivo",
-                link: "/extensao/curso/gestao-projetos-ageis",
-              },
-              {
-                nome: "Inteligência Artificial Aplicada",
+                nome: "Marketing Digital",
                 duracao: "4 meses",
                 descricao:
-                  "Reposicione-se em tecnologia com projetos práticos em IA que comprovam suas novas competências",
-                modalidade: "EAD • Ao Vivo",
-                link: "/extensao/curso/inteligencia-artificial-aplicada",
+                  "Reposicione-se em uma das áreas mais aquecidas do mercado com estratégias práticas e portfólio digital.",
+                modalidade: "EAD",
               },
               {
-                nome: "Marketing Digital",
+                nome: "Gestão de Pessoas",
+                duracao: "4 meses",
+                descricao:
+                  "Lidere com empatia e propósito, desenvolvendo competências essenciais para cargos de liderança.",
+                modalidade: "Ao Vivo",
+              },
+              {
+                nome: "Compliance",
                 duracao: "3 meses",
                 descricao:
-                  "Reposicione-se em uma das áreas mais aquecidas do mercado com estratégias práticas e portfólio digital.",
-                modalidade: "EAD • Ao Vivo",
-                link: "/extensao/curso/marketing-digital",
+                  "Traga segurança e credibilidade ao seu perfil com conhecimento em governança e conformidade.",
+                modalidade: "Presencial",
               },
             ]}
             ctaText="Ver curso"

@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { CtaFinalCurso } from "@/components/cta-final-curso"
+import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Brain, Zap, Target, TrendingUp, Award, Rocket } from "lucide-react"
@@ -15,18 +15,14 @@ export default function InteligenciaArtificialAplicadaPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
-            <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Extensão", href: "/extensao" },
-                { label: "Atualização", href: "/extensao/atualizacao" },
-                { label: "Inteligência Artificial Aplicada" },
-              ]}
-            />
-          </div>
-        </div>
+        <BreadcrumbWithItems
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Extensão", href: "/extensao" },
+            { label: "Atualização", href: "/extensao/atualizacao" },
+            { label: "Inteligência Artificial Aplicada" },
+          ]}
+        />
 
         <Hero
           badge="EXTENSÃO • 4 MESES"
@@ -56,8 +52,8 @@ export default function InteligenciaArtificialAplicadaPage() {
                   "Suporte de especialistas em IA",
                   "Certificação reconhecida pelo mercado",
                 ],
-                buttonText: "Se inscrever",
-                link: "#acao-final",
+                buttonText: "Ver detalhes do curso",
+                link: "/catalogo?curso=ia-aplicada&modalidade=ead",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -136,18 +132,18 @@ export default function InteligenciaArtificialAplicadaPage() {
           />
         </section>
 
-        <section id="acao-final" className="w-full py-12 md:py-16 bg-muted/30">
-          <CtaFinalCurso
+        <section className="w-full py-12 md:py-16 bg-muted/30">
+          <AcaoFinal
             titulo="Domine IA e transforme sua carreira"
-            descricao="Curso criado para quem busca aplicação imediata de IA, com ferramentas de ponta e metodologia prática."
-            taxaMatricula="R$ 100,00"
-            mensalidade="R$ 399,00"
-            duracao="4 meses"
-            totalCurso="R$ 1.696,00"
-            badge1="Certificação IPOG reconhecida"
-            badge2="Comunidade com +70 mil alunos"
-            proximasTurmas="Próximas turmas iniciam em Novembro"
-            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
+            descricao="4 meses de aprendizado prático com ferramentas de ponta. Aplicação imediata no seu trabalho."
+            botaoPrimario={{
+              texto: "Inscrever-se no curso",
+              href: "/catalogo?curso=ia-aplicada",
+            }}
+            botaoSecundario={{
+              texto: "Falar com consultor",
+              onClick: openAssistantForConsultor,
+            }}
           />
         </section>
       </main>

@@ -4,7 +4,7 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { CtaFinalCurso } from "@/components/cta-final-curso"
+import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { TrendingUp, Target, Award, Rocket, Zap } from "lucide-react"
@@ -15,18 +15,14 @@ export default function MarketingDigitalPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="w-full">
-        <div className="w-full">
-          <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-0">
-            <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Extensão", href: "/extensao" },
-                { label: "Gap Imediato", href: "/extensao/gap-imediato" },
-                { label: "Marketing Digital" },
-              ]}
-            />
-          </div>
-        </div>
+        <BreadcrumbWithItems
+          items={[
+            { label: "Início", href: "/" },
+            { label: "Extensão", href: "/extensao" },
+            { label: "Gap Imediato", href: "/extensao/gap-imediato" },
+            { label: "Marketing Digital" },
+          ]}
+        />
 
         <Hero
           badge="EXTENSÃO • 3 MESES"
@@ -56,8 +52,8 @@ export default function MarketingDigitalPage() {
                   "Suporte de especialistas",
                   "Certificação reconhecida",
                 ],
-                buttonText: "Se inscrever",
-                link: "#acao-final",
+                buttonText: "Ver detalhes do curso",
+                link: "/catalogo?curso=marketing-digital&modalidade=ead",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -136,18 +132,18 @@ export default function MarketingDigitalPage() {
           />
         </section>
 
-        <section id="acao-final" className="w-full py-12 md:py-16 bg-muted/30">
-          <CtaFinalCurso
+        <section className="w-full py-12 md:py-16 bg-muted/30">
+          <AcaoFinal
             titulo="Domine marketing digital e gere resultados"
-            descricao="Curso criado para quem busca resultados rápidos, com estratégias práticas e templates prontos para usar."
-            taxaMatricula="R$ 100,00"
-            mensalidade="R$ 349,00"
-            duracao="3 meses"
-            totalCurso="R$ 1.147,00"
-            badge1="Certificação IPOG reconhecida"
-            badge2="Comunidade com +70 mil alunos"
-            proximasTurmas="Próximas turmas iniciam em Novembro"
-            prazoCondicoes="Garanta condições exclusivas até 30 de Outubro"
+            descricao="3 meses de estratégias práticas com templates prontos. Aplicação imediata no seu trabalho."
+            botaoPrimario={{
+              texto: "Inscrever-se no curso",
+              href: "/catalogo?curso=marketing-digital",
+            }}
+            botaoSecundario={{
+              texto: "Falar com consultor",
+              onClick: openAssistantForConsultor,
+            }}
           />
         </section>
       </main>
