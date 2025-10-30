@@ -358,7 +358,7 @@ export function VirtualAssistant() {
     }, 300)
   }
 
-  const shouldShowFAB = pathname !== "/busca"
+  const shouldShowFAB = pathname !== "/busca" && pathname !== "/checkout"
 
   return (
     <>
