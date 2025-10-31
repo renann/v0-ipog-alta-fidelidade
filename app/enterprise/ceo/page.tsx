@@ -27,6 +27,8 @@ import {
 import { openAssistantWithFlow } from "@/lib/assistant-events"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
+export const dynamic = "force-dynamic"
+
 export default function CeoPage() {
   return (
     <>
