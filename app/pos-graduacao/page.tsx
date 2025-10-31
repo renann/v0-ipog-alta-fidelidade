@@ -48,9 +48,9 @@ export default function PosGraduacaoPage() {
           title="Especialize-se com quem forma líderes há mais de 20 anos"
           description="Pós-graduação prática e aplicável, com professores de mercado e metodologia validada. Escolha entre EAD, Ao Vivo ou Presencial e acelere sua carreira"
           valueBadges={[
-            { icon: "BadgeCheck", text: "Aplicação Prática" },
-            { icon: "BadgeCheck", text: "Professores de Mercado" },
-            { icon: "BadgeCheck", text: "Certificação Reconhecida" },
+            { text: "Aplicação Prática" },
+            { text: "Professores de Mercado" },
+            { text: "Certificação Reconhecida" },
           ]}
           primaryCTA={{ text: "Encontre sua especialização", href: "/catalogo?categoria=pos-graduacao" }}
           secondaryCTA={{ text: "Monte sua trilha de Pós", onClick: "openAssistantForConsultor" }}

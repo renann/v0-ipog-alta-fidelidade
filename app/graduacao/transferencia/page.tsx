@@ -32,9 +32,9 @@ export default function TransferenciaPage() {
           title="Transfira com segurança e clareza total"
           description="Continue sua graduação com melhor estrutura, reconhecimento de créditos e processo ágil. Conclua com qualidade e sem perda de tempo"
           valueBadges={[
-            { icon: "BadgeCheck", text: "95% Créditos Reconhecidos" },
-            { icon: "BadgeCheck", text: "Processo em 30 Dias" },
-            { icon: "BadgeCheck", text: "Estrutura Superior" },
+            { text: "95% Créditos Reconhecidos" },
+            { text: "Processo em 30 Dias" },
+            { text: "Estrutura Superior" },
           ]}
           primaryCTA={{ text: "Simule sua transferência", onClick: "openAssistantForConsultor" }}
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?categoria=graduacao" }}

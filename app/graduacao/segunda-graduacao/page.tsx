@@ -34,9 +34,9 @@ export default function SegundaGraduacaoPage() {
           title="Conquiste um novo diploma no seu ritmo"
           description="Aproveite sua experiência profissional e acelere sua nova formação com validação de conhecimentos, flexibilidade total e certificação reconhecida"
           valueBadges={[
-            { icon: "BadgeCheck", text: "Validação de Conhecimentos" },
-            { icon: "BadgeCheck", text: "Trilhas Aceleradas" },
-            { icon: "BadgeCheck", text: "Flexibilidade Total" },
+            { text: "Validação de Conhecimentos" },
+            { text: "Trilhas Aceleradas" },
+            { text: "Flexibilidade Total" },
           ]}
           primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao" }}
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}

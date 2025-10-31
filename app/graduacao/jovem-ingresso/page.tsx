@@ -8,7 +8,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 import { SuporteAcompanhamento } from "@/components/jovem-ingresso/suporte-acompanhamento"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { AlertCircle, MapPin, Clock, TrendingUp, Briefcase } from "lucide-react"
+import { AlertCircle, MapPin, Clock, TrendingUp, Briefcase, BadgeCheck } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
 export default function JovemIngressoPage() {
@@ -32,9 +32,9 @@ export default function JovemIngressoPage() {
           title="Comece sua carreira com segurança e propósito"
           description="Sua primeira graduação com acompanhamento próximo, empregabilidade garantida e flexibilidade para estudar do seu jeito"
           valueBadges={[
-            { icon: "BadgeCheck", text: "Acompanhamento Próximo" },
-            { icon: "BadgeCheck", text: "Empregabilidade 92%" },
-            { icon: "BadgeCheck", text: "Flexibilidade Total" },
+            { icon: <BadgeCheck className="w-5 h-5" />, text: "Acompanhamento Próximo" },
+            { icon: <BadgeCheck className="w-5 h-5" />, text: "Empregabilidade 92%" },
+            { icon: <BadgeCheck className="w-5 h-5" />, text: "Flexibilidade Total" },
           ]}
           primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao&persona=jovem-ingresso" }}
           secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
