@@ -133,26 +133,26 @@ export default function PosGraduacaoPage() {
           beneficios={[
             {
               icone: <Gem className="w-8 h-8" />,
-              title: "Descontos exclusivos",
-              subtitle: "em novas formações",
+              titulo: "Descontos exclusivos",
+              subtitulo: "em novas formações",
               itens: [],
             },
             {
               icone: <GraduationCap className="w-8 h-8" />,
-              title: "Mentor de carreira",
-              subtitle: "e empregabilidade",
+              titulo: "Mentor de carreira",
+              subtitulo: "e empregabilidade",
               itens: [],
             },
             {
               icone: <Globe className="w-8 h-8" />,
-              title: "Comunidade Alumni+",
-              subtitle: "networking e conexões",
+              titulo: "Comunidade Alumni+",
+              subtitulo: "networking e conexões",
               itens: [],
             },
             {
               icone: <Brain className="w-8 h-8" />,
-              title: "Acesso antecipado",
-              subtitle: "a novos cursos e certificações",
+              titulo: "Acesso antecipado",
+              subtitulo: "a novos cursos e certificações",
               itens: [],
             },
           ]}

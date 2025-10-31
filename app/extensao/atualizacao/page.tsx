@@ -78,8 +78,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Beneficios
-            titulo="Por que escolher a Atualização IPOG?"
-            subtitulo="Vantagens exclusivas para profissionais que buscam evolução contínua"
+            title="Por que escolher a Atualização IPOG?"
+            subtitle="Vantagens exclusivas para profissionais que buscam evolução contínua"
             beneficios={[
               {
                 icone: <BookOpen className="h-8 w-8" />,
@@ -116,7 +116,7 @@ export default function AtualizacaoPage() {
               },
             ]}
             textoBotao="Começar atualização"
-            acaoBotao={() => {
+            onClickBotao={() => {
               if (typeof window !== "undefined") {
                 window.dispatchEvent(
                   new CustomEvent("openAssistant", {
@@ -125,7 +125,7 @@ export default function AtualizacaoPage() {
                 )
               }
             }}
-            corDeFundo="bg-muted/30"
+            corFundo="bg-muted/30"
           />
         </section>
 

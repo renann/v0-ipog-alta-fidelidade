@@ -249,43 +249,75 @@ export default function LifelongLearningPage() {
         />
         <Beneficios
           titulo="Vantagens que só quem é IPOG+ tem"
+          subtitle=""
           beneficios={[
             {
               icone: <Award className="w-8 h-8" />,
               titulo: "Desconto progressivo & bolsas",
               subtitulo: "Bolsas de fidelidade que valorizam sua jornada contínua com o IPOG",
-              itens: [],
+              itens: [
+                "Descontos crescentes a cada nova formação",
+                "Bolsas exclusivas para alunos IPOG+",
+                "Condições especiais de pagamento",
+                "Benefícios acumulativos",
+              ],
             },
             {
               icone: <Users className="w-8 h-8" />,
               titulo: "Mentorias masterclass",
               subtitulo: "Agenda trimestral com especialistas e executivos do mercado",
-              itens: [],
+              itens: [
+                "Sessões exclusivas com líderes de mercado",
+                "Mentorias em grupo e individuais",
+                "Acesso a eventos executivos",
+                "Networking qualificado",
+              ],
             },
             {
               icone: <Calendar className="w-8 h-8" />,
               titulo: "Eventos executivos",
               subtitulo: "Comunidades temáticas e networking estratégico contínuo",
-              itens: [],
+              itens: [
+                "Encontros presenciais exclusivos",
+                "Comunidades por área de atuação",
+                "Webinars com especialistas",
+                "Acesso prioritário a eventos IPOG",
+              ],
             },
             {
               icone: <Gift className="w-8 h-8" />,
               titulo: "Clube de vantagens",
               subtitulo: "Parceiros exclusivos: idiomas, tech, livros e conferências",
-              itens: [],
+              itens: [
+                "Descontos em cursos de idiomas",
+                "Acesso a plataformas de tecnologia",
+                "Biblioteca digital exclusiva",
+                "Ingressos para conferências",
+              ],
             },
             {
               icone: <Target className="w-8 h-8" />,
               titulo: "Governança de conteúdo",
               subtitulo: "Planejamento anual da sua trilha com curadoria especializada",
-              itens: [],
+              itens: [
+                "Plano de desenvolvimento personalizado",
+                "Curadoria de conteúdo especializada",
+                "Acompanhamento de evolução",
+                "Recomendações estratégicas",
+              ],
             },
           ]}
-          botaoCta={{
-            texto: "Quero aderir ao IPOG+",
-            onClick: "openAssistantForConsultor",
+          textoBotao="Quero aderir ao IPOG+"
+          onClickBotao={() => {
+            if (typeof window !== "undefined") {
+              window.dispatchEvent(
+                new CustomEvent("openAssistant", {
+                  detail: { origin: "beneficios-lifelong" },
+                }),
+              )
+            }
           }}
-          bgColor="bg-muted/30"
+          corFundo="bg-muted/30"
         />
         <AcaoFinal
           titulo="Mantenha sua curva de aprendizado ativa com o IPOG+"
