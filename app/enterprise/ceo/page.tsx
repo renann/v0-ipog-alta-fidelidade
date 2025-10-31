@@ -104,8 +104,8 @@ export default function CeoPage() {
             </div>
 
             <Trilha
-              title="Jornada de Transformação Estratégica"
-              subtitle=""
+              titulo="Jornada de Transformação Estratégica"
+              subtitulo=""
               etapas={[
                 {
                   numero: "1",

@@ -76,8 +76,8 @@ export default function EnterprisePage() {
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          title="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
-          subtitle="Jornada corporativa estruturada com diagnóstico, desenvolvimento e mensuração contínua"
+          titulo="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
+          subtitulo="Jornada corporativa estruturada com diagnóstico, desenvolvimento e mensuração contínua"
           bgColor="bg-background"
           etapas={[
             {

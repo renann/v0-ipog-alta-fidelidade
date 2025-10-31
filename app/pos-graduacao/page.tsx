@@ -174,26 +174,26 @@ export default function PosGraduacaoPage() {
           etapas={[
             {
               numero: "1",
-              title: "Graduação",
+              titulo: "Graduação",
               descricao: "Base e certificação",
               beneficios: ["Portfólio", "Networking"],
             },
             {
               numero: "2",
-              title: "Pós-Graduação",
+              titulo: "Pós-Graduação",
               descricao: "Prática e reconhecimento",
               beneficios: ["Mentoria", "Certificação"],
               destaque: true,
             },
             {
               numero: "3",
-              title: "MBA ou Mestrado",
+              titulo: "MBA ou Mestrado",
               descricao: "Estratégia e posicionamento",
               beneficios: ["Networking", "Liderança"],
             },
             {
               numero: "4",
-              title: "Lifelong / IPOG+",
+              titulo: "Lifelong / IPOG+",
               descricao: "Mentoria contínua",
               beneficios: ["Mentoria", "Comunidade"],
             },
