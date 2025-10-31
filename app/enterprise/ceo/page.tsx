@@ -25,7 +25,6 @@ import {
   TrendingUp,
 } from "lucide-react"
 import { openAssistantWithFlow } from "@/lib/assistant-events"
-import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
 export const dynamic = "force-dynamic"
 
@@ -35,15 +34,6 @@ export default function CeoPage() {
       {/* Header Section */}
       <Header />
       <main className="min-h-screen">
-        {/* Breadcrumb Section */}
-        <BreadcrumbWithItems
-          items={[
-            { label: "Início", href: "/" },
-            { label: "Enterprise", href: "/enterprise" },
-            { label: "CEO / Diretor Executivo" },
-          ]}
-        />
-
         {/* Hero Section */}
         <Hero
           badge="SOLUÇÕES ENTERPRISE"
