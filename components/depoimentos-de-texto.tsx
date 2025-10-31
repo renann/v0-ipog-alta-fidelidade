@@ -2,15 +2,28 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Quote } from "lucide-react"
+import { Quote, Play } from "lucide-react"
 
-interface Depoimento {
+interface DepoimentoTexto {
+  tipo: "texto"
   nome: string
   cargo: string
   area: string
   depoimento: string
   ganho: string
 }
+
+interface DepoimentoVideo {
+  tipo: "video"
+  nome: string
+  cargo: string
+  area: string
+  videoUrl: string
+  thumbnail?: string
+  ganho: string
+}
+
+type Depoimento = DepoimentoTexto | DepoimentoVideo
 
 interface DepoimentosDeTextoProps {
   title: string
@@ -37,17 +50,47 @@ export function DepoimentosDeTexto({ title, depoimentos, corFundo = "bg-backgrou
             <CarouselContent>
               {depoimentos.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full border-border bg-background">
-                    <CardContent className="flex flex-col p-6">
-                      <Quote className="mb-4 h-8 w-8 text-muted-foreground" />
-                      <p className="mb-6 text-sm text-foreground">"{item.depoimento}"</p>
-                      <div className="mt-auto">
-                        <p className="font-semibold text-foreground">{item.nome}</p>
-                        <p className="text-sm text-muted-foreground">
-                          {item.cargo} • {item.area}
-                        </p>
-                        <p className="mt-2 text-sm font-medium text-foreground">{item.ganho}</p>
-                      </div>
+                  <Card className="h-[480px] border-border bg-background">
+                    <CardContent className="flex h-full flex-col p-6">
+                      {item.tipo === "texto" ? (
+                        <>
+                          <Quote className="mb-4 h-8 w-8 text-muted-foreground" />
+                          <p className="mb-6 flex-1 text-sm text-foreground line-clamp-6">"{item.depoimento}"</p>
+                          <div className="mt-auto">
+                            <p className="font-semibold text-foreground">{item.nome}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {item.cargo} • {item.area}
+                            </p>
+                            <p className="mt-2 text-sm font-medium text-foreground">{item.ganho}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="relative mb-4 flex-1 overflow-hidden rounded-lg bg-muted">
+                            <video
+                              className="h-full w-full object-cover"
+                              controls
+                              poster={item.thumbnail}
+                              preload="metadata"
+                            >
+                              <source src={item.videoUrl} type="video/mp4" />
+                              Seu navegador não suporta vídeos.
+                            </video>
+                            {item.thumbnail && (
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/20 pointer-events-none">
+                                <Play className="h-12 w-12 text-white opacity-80" />
+                              </div>
+                            )}
+                          </div>
+                          <div className="mt-auto">
+                            <p className="font-semibold text-foreground">{item.nome}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {item.cargo} • {item.area}
+                            </p>
+                            <p className="mt-2 text-sm font-medium text-foreground">{item.ganho}</p>
+                          </div>
+                        </>
+                      )}
                     </CardContent>
                   </Card>
                 </CarouselItem>
