@@ -7,7 +7,7 @@ import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
-import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Brain } from "lucide-react"
+import { Clock, Award, TrendingUp, Briefcase, Brain, Users, BookOpen } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
@@ -33,69 +33,90 @@ export default function AvaliacaoPsicologicaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Avaliação Psicológica: Práticas Imersivas Avançadas"
-          description="Especialize-se em avaliação psicológica com práticas avançadas e reconhecimento MEC."
+          title="Pós-Graduação em Avaliação Psicológica"
+          description="Prepare-se para atuar com excelência nos contextos mais desafiadores da Psicologia, dominando as análises com profundidade, precisão e ética."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "18 meses" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <Clock className="h-5 w-5" />, text: "648h de Carga Horária" },
+            { icon: <Users className="h-5 w-5" />, text: "Corpo Docente de Referência" },
+            { icon: <Award className="h-5 w-5" />, text: "Certificação Internacional Rorschach (R-PAS)" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."
+          title="A mesma excelência, em formatos que se adaptam à sua carreira"
+          subtitle="Escolha o formato que melhor se encaixa na sua rotina e objetivos profissionais."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "EAD",
-              descricao: "Para quem busca autonomia e flexibilidade total",
+              titulo: "Presencial",
+              descricao: "Para quem aprende melhor com a prática e valoriza o networking presencial.",
               beneficios: [
-                "Estude no seu ritmo",
-                "Conteúdos atualizados e interativos",
-                "Tutoria online e suporte contínuo",
-                "Certificação igual ao curso presencial",
+                "Laboratórios com protocolos originais e simulações de entrevistas.",
+                "Estações rotativas de prática supervisionada.",
+                "Interação direta e construção de uma rede profissional sólida.",
+                "Dinâmicas gamificadas para uma experiência imersiva.",
+              ],
+              link: "#preco",
+              buttonText: "Ver unidades presenciais",
+            },
+            {
+              badge: "PÓS-GRADUAÇÃO",
+              titulo: "On-line e Ao vivo",
+              descricao: "Para quem busca ampliar seu repertório técnico com a conveniência do ambiente digital.",
+              beneficios: [
+                "Interação em tempo real com docentes e colegas via videoconferência.",
+                "Laboratórios síncronos de casos complexos (TDAH/TEA, NRs).",
+                "Demonstrações práticas do uso de IA e scoring automatizado.",
+                "Acesso à biblioteca digital e gravação de módulos-chave.",
               ],
               link: "#preco",
               buttonText: "Quero me inscrever",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao: "Para quem valoriza interação e networking",
+              titulo: "EAD",
+              descricao: "Para quem busca total autonomia para conciliar carreira e especialização.",
               beneficios: [
-                "Aulas presenciais com vivências práticas",
-                "Interação direta com professores e colegas",
-                "Estrutura moderna e laboratórios equipados",
-                "Networking acadêmico e profissional",
+                "Estude no seu ritmo, de onde estiver.",
+                "Acesse nosso conteúdo autoral exclusivo, criado por especialistas.",
+                "Metodologia comprovada com certificação reconhecida pelo MEC.",
+                "Suporte rápido e eficiente de professores e tutores.",
               ],
               link: "#preco",
-              buttonText: "Ver unidades presenciais",
+              buttonText: "Quero me inscrever",
             },
           ]}
         />
         <Trilha
-          titulo="Trilha de Aprendizado"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
+          titulo="Uma Matriz Curricular Robusta para uma Atuação de Destaque"
+          subtitulo="Desenvolva competências práticas e estratégicas em uma jornada de aprendizado projetada por especialistas de mercado."
           etapas={[
             {
-              titulo: "Fundamentos da Avaliação",
-              descricao: "Base teórica em técnicas e instrumentos de avaliação psicológica",
-              beneficios: ["Compreensão dos principais testes psicológicos", "Ética e legislação em avaliação"],
-              badges: ["1º ao 3º mês"],
+              titulo: "Módulo 1: Fundamentos da Avaliação e Ética",
+              descricao: "Base sólida em conceitos, técnicas e questões éticas da avaliação psicológica",
+              beneficios: [
+                "01. Introdução à Avaliação Psicológica e Questões Éticas no uso da IA",
+                "02. Técnicas de Entrevistas e Elaboração de Documentos Psicológicos com uso de IA",
+                "03. Avaliação em Psicopatologia e Saúde Mental",
+                "04. Avaliação da Personalidade - Teste de Autorrelato, Expressivo e Tecnologia Digital",
+                "05. Avaliação da Personalidade - Técnicas Aperceptivo-temáticas e Gráficas",
+              ],
+              badges: ["Fundamentos"],
             },
             {
-              titulo: "Práticas Avançadas",
-              descricao: "Aprofundamento em técnicas específicas e contextos de aplicação",
-              beneficios: ["Avaliação neuropsicológica", "Laudos e pareceres técnicos"],
-              badges: ["4º ao 9º mês"],
-            },
-            {
-              titulo: "Imersão Prática",
-              descricao: "Supervisão de casos reais e desenvolvimento de competências práticas",
-              beneficios: ["Supervisão clínica especializada", "Estudos de caso complexos"],
-              badges: ["10º ao 18º mês"],
+              titulo: "Módulo 2: Domínio de Técnicas e Contextos Específicos",
+              descricao: "Aprofundamento em técnicas avançadas e aplicação em contextos especializados",
+              beneficios: [
+                "06. Avaliação Psicológica de Crianças e Adolescentes",
+                "07. Avaliação Psicológica Pré-Cirúrgica: Imersão Prática",
+                "08. Avaliação Psicológica no Contexto Jurídico",
+                "09. Avaliação Psicológica Organizacional e do Trabalho",
+                "10. Avaliação Neuropsicológica",
+                "11. Rorschach (R-PAS) - Sistema de Avaliação por Desempenho",
+                "12. Laboratórios Práticos Integrados e Supervisão de Casos",
+              ],
+              badges: ["Práticas Avançadas"],
               destaque: true,
             },
           ]}
@@ -107,8 +128,8 @@ export default function AvaliacaoPsicologicaPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Empregabilidade após a especialização"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          titulo="O Investimento que Transforma sua Trajetória Profissional"
+          subtitulo="Nossos alunos relatam impacto direto na carreira em menos de um ano após a formação."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -137,8 +158,8 @@ export default function AvaliacaoPsicologicaPage() {
           ]}
           depoimento={{
             texto:
-              "A especialização em avaliação psicológica abriu portas para atuar em contextos clínicos e organizacionais.",
-            autor: "Aluno IPOG",
+              "O diferencial do IPOG são os professores. Aprender com quem é referência na área e autor de testes que usamos no dia a dia não tem preço. Foi a escolha que me deu segurança para assumir casos mais complexos e ser reconhecida no mercado.",
+            autor: "Psicóloga, ex-aluna IPOG",
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
@@ -150,38 +171,46 @@ export default function AvaliacaoPsicologicaPage() {
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Por que escolher Avaliação Psicológica no IPOG?</h2>
+              <h2 className="text-3xl font-bold mb-4">Diferenciais que Posicionam Você à Frente no Mercado</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Especialização com foco em práticas avançadas, instrumentos atualizados e supervisão clínica de
-                excelência.
+                Uma formação que vai além do básico, com recursos e oportunidades exclusivas.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-background p-6 rounded-lg">
-                <Brain className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Práticas Imersivas</h3>
+                <Users className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Corpo Docente Atuante</h3>
                 <p className="text-muted-foreground">
-                  Supervisão de casos reais com instrumentos atualizados e reconhecidos pelo CFP.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <Briefcase className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Atuação Ampliada</h3>
-                <p className="text-muted-foreground">
-                  Capacitação para atuar em contextos clínicos, organizacionais, jurídicos e educacionais.
+                  Aprenda com peritos judiciais, consultores e autores de testes e livros na área, que trazem protocolos
+                  reais anonimizados para discussão em sala.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Award className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Corpo Docente Especializado</h3>
+                <h3 className="text-xl font-semibold mb-2">Certificação Internacional no Rorschach (R-PAS)</h3>
                 <p className="text-muted-foreground">
-                  Professores com ampla experiência em avaliação psicológica e atuação clínica.
+                  Receba orientação para obter a certificação Coding Proficiency sem custo adicional, um diferencial
+                  competitivo de peso no seu currículo.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <Brain className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Laboratórios Presenciais e Síncronos</h3>
+                <p className="text-muted-foreground">
+                  Participe de sequências didáticas de laboratórios (WISC-IV, Avaliação Terapêutica) que não existem
+                  integradas em outros programas, com práticas supervisionadas.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <BookOpen className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Parcerias com Editoras de Testes</h3>
+                <p className="text-muted-foreground">
+                  Tenha acesso a descontos e manuais, facilitando a construção do seu acervo profissional após o curso.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto px-4 pb-4">
             <div className="max-w-3xl mx-auto">
@@ -195,7 +224,6 @@ export default function AvaliacaoPsicologicaPage() {
             </div>
           </div>
         </section>
-
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
@@ -204,7 +232,6 @@ export default function AvaliacaoPsicologicaPage() {
                 Tire suas dúvidas sobre o curso, instrumentos e atuação profissional.
               </p>
             </div>
-
             <div className="max-w-3xl mx-auto mb-8">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-0">
@@ -235,7 +262,6 @@ export default function AvaliacaoPsicologicaPage() {
                 </AccordionItem>
               </Accordion>
             </div>
-
             <div className="text-center">
               <Button size="lg" variant="outline" asChild>
                 <a href="#contato">Conversar com um Consultor Acadêmico</a>
@@ -243,9 +269,16 @@ export default function AvaliacaoPsicologicaPage() {
             </div>
           </div>
         </section>
-
         <div id="preco">
-          <CtaFinal monthlyFee="R$ 399,00" duration="18 meses" totalCost="R$ 7.282,00" />
+          <CtaFinal
+            monthlyFee="R$ 399,00"
+            duration="18 meses"
+            totalCost="R$ 7.282,00"
+            title="Invista na sua carreira com a instituição que é referência nacional."
+            description="Taxa de Matrícula: R$ 100,00 | Mensalidades: a partir de R$ 399,00*"
+            additionalText="*Consulte as condições com nossa equipe. O IPOG oferece uma formação de excelência com valor acessível e resultados reais na carreira. Seu investimento garante: Corpo docente com autores e peritos renomados, Acesso a laboratórios práticos e supervisão clínica, Networking com profissionais de todo o Brasil, Chancela de uma marca com 98% de satisfação e mais de 300 mil alunos especializados."
+            ctaText="Falar com consultor acadêmico"
+          />
         </div>
       </main>
       <Footer />

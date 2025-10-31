@@ -87,7 +87,7 @@ export default function GapImediatoPage() {
                 descricao:
                   "Resolva o desafio de gerar resultados rápidos em campanhas digitais. Domine ferramentas e estratégias atuais para otimizar seu investimento e comprovar o impacto das suas ações.",
                 modalidade: "EAD",
-                link: "/extensao/curso/marketing-digital",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
               },
               {
                 nome: "Gestão de Pessoas",
@@ -95,7 +95,7 @@ export default function GapImediatoPage() {
                 descricao:
                   "Desenvolva habilidades de liderança prática para engajar equipes, gerenciar conflitos e impulsionar a alta performance. Aplique técnicas imediatas para melhorar o clima e os resultados do seu time.",
                 modalidade: "Ao Vivo",
-                link: "/extensao/curso/gestao-projetos-ageis",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
               },
               {
                 nome: "Compliance",
@@ -103,7 +103,7 @@ export default function GapImediatoPage() {
                 descricao:
                   "Implemente programas de conformidade e gestão de riscos de forma ágil e eficaz. Adquira o conhecimento prático para proteger sua empresa e garantir a integridade dos processos desde o primeiro dia.",
                 modalidade: "Presencial",
-                link: "/extensao/curso/gestao-projetos-ageis",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
               },
             ]}
             ctaText="Ver curso"
@@ -127,7 +127,7 @@ export default function GapImediatoPage() {
                   "Certificação universitária reconhecida",
                 ],
                 buttonText: "Encontrar cursos EAD",
-                link: "/catalogo?categoria=extensao&modalidade=ead",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
               },
               {
                 badge: "EXTENSÃO",
@@ -140,7 +140,7 @@ export default function GapImediatoPage() {
                   "Gravações disponíveis para revisão",
                 ],
                 buttonText: "Encontrar cursos Ao Vivo",
-                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
               },
               {
                 badge: "EXTENSÃO",
@@ -153,7 +153,7 @@ export default function GapImediatoPage() {
                   "Certificação reconhecida pelo mercado",
                 ],
                 buttonText: "Encontrar cursos Presencial",
-                link: "/catalogo?categoria=extensao&modalidade=presencial",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -240,7 +240,7 @@ export default function GapImediatoPage() {
             descricao="IPOG: A escolha que conecta você ao sucesso."
             botaoPrimario={{
               texto: "Comece sua jornada hoje mesmo",
-              href: "/catalogo?categoria=extensao",
+              href: "/catalogo?tipo=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor",

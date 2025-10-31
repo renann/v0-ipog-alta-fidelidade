@@ -36,7 +36,7 @@ export default function ExtensaoPage() {
             { icon: <TrendingUp className="w-5 h-5" />, text: "Aprenda na Prática, Gere Resultados" },
             { icon: <Award className="w-5 h-5" />, text: "Certificação de Peso IPOG" },
           ]}
-          primaryCTA={{ text: "Encontrar meu curso", href: "/catalogo?categoria=extensao" }}
+          primaryCTA={{ text: "Encontrar meu curso", href: "/catalogo?tipo=extensao" }}
           secondaryCTA={{ text: "Falar com consultor", onClick: openAssistantForConsultor }}
         />
 
@@ -91,7 +91,7 @@ export default function ExtensaoPage() {
                   "Materiais práticos para download",
                   "Certificação IPOG reconhecida",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=ead",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
                 buttonText: "Ver cursos de Extensão - EAD",
               },
               {
@@ -105,7 +105,7 @@ export default function ExtensaoPage() {
                   "Networking com profissionais da área",
                   "Exercícios práticos com feedback",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
                 buttonText: "Ver cursos de Extensão - Ao Vivo",
               },
               {
@@ -119,7 +119,7 @@ export default function ExtensaoPage() {
                   "Conexões presenciais fortes",
                   "Certificação imediata",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=presencial",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
                 buttonText: "Ver cursos de Extensão - Presencial",
               },
             ]}
@@ -159,7 +159,7 @@ export default function ExtensaoPage() {
             ctaText="Ver curso"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
-              link: "/catalogo?categoria=extensao",
+              link: "/catalogo?tipo=extensao",
             }}
           />
         </section>
@@ -177,7 +177,7 @@ export default function ExtensaoPage() {
                 dores: "",
                 ganho: "",
                 cta: "Resolver meu gap agora",
-                href: "/extensao/gap-imediato",
+                href: "/catalogo?tipo=extensao",
               },
               {
                 icon: <TrendingUp className="h-6 w-6" />,
@@ -187,7 +187,7 @@ export default function ExtensaoPage() {
                 dores: "",
                 ganho: "",
                 cta: "Construir meu portfólio",
-                href: "/extensao/recolocacao",
+                href: "/catalogo?tipo=extensao",
               },
               {
                 icon: <RefreshCw className="h-6 w-6" />,
@@ -197,7 +197,7 @@ export default function ExtensaoPage() {
                 dores: "",
                 ganho: "",
                 cta: "Ver cursos de atualização",
-                href: "/extensao/atualizacao",
+                href: "/catalogo?tipo=extensao",
               },
             ]}
           />
@@ -303,7 +303,7 @@ export default function ExtensaoPage() {
             descricao="Não adie seu crescimento. Encontre o curso de extensão que resolve seu desafio hoje e comece a aplicar o conhecimento imediatamente."
             botaoPrimario={{
               texto: "Escolher meu curso agora",
-              href: "/catalogo?categoria=extensao",
+              href: "/catalogo?tipo=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor",

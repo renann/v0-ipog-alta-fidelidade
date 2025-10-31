@@ -37,7 +37,7 @@ export default function TransferenciaPage() {
             { text: "Corpo docente de mestres e doutores" },
           ]}
           primaryCTA={{ text: "Simule sua transferência", onClick: "openAssistantForConsultor" }}
-          secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?categoria=graduacao" }}
+          secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
         />
         <Dilema
           titulo="Transferir não deveria ser um risco"
@@ -98,7 +98,7 @@ export default function TransferenciaPage() {
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/catalogo?categoria=graduacao"
+          ctaLink="/catalogo?tipo=graduacao"
         />
         <Modalidades
           titulo="Compare as modalidades e escolha a que mais combina com você"
@@ -115,7 +115,7 @@ export default function TransferenciaPage() {
                 "Suporte rápido e eficiente",
                 "Diploma com reconhecimento nacional",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=ead",
+              link: "/catalogo?tipo=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
             },
             {
@@ -129,7 +129,7 @@ export default function TransferenciaPage() {
                 "Networking que abre portas",
                 "Experiência universitária completa",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=presencial",
+              link: "/catalogo?tipo=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
             },
           ]}
@@ -179,7 +179,7 @@ export default function TransferenciaPage() {
           }}
           botaoSecundario={{
             texto: "Ver cursos de Graduação",
-            href: "/catalogo?categoria=graduacao",
+            href: "/catalogo?tipo=graduacao",
           }}
         />
       </main>

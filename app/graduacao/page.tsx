@@ -34,7 +34,7 @@ export default function GraduacaoPage() {
             { icon: <GraduationCap className="h-5 w-5" />, text: "Corpo Docente de Mercado" },
             { icon: <GraduationCap className="h-5 w-5" />, text: "Formatos Flexíveis" },
           ]}
-          primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?categoria=graduacao" }}
+          primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?tipo=graduacao" }}
           secondaryCTA={{ text: "Falar com consultor" }}
         />
 
@@ -108,7 +108,7 @@ export default function GraduacaoPage() {
               ganho:
                 "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
               cta: "Simule sua transferência",
-              href: "/graduacao/transferencia",
+              href: "/catalogo?tipo=graduacao",
             },
           ]}
         />
@@ -194,7 +194,7 @@ export default function GraduacaoPage() {
           descricao="A escolha que conecta você ao sucesso. Encontre seu curso e comece a construir um futuro de conquistas com a excelência, a prática e o reconhecimento que só o IPOG oferece."
           botaoPrimario={{
             texto: "Encontre seu curso",
-            href: "/catalogo?categoria=graduacao",
+            href: "/catalogo?tipo=graduacao",
           }}
           botaoSecundario={{
             texto: "Falar com consultor",

@@ -52,7 +52,7 @@ export default function PosGraduacaoPage() {
             { text: "Nossos docentes transformam o mercado e a sua carreira." },
             { text: "Nosso networking abre as portas para o seu sucesso." },
           ]}
-          primaryCTA={{ text: "Conheça nossas especializações", href: "/catalogo?categoria=pos-graduacao" }}
+          primaryCTA={{ text: "Conheça nossas especializações", href: "/catalogo?tipo=pos-graduacao" }}
           secondaryCTA={{ text: "Monte sua trilha de Pós", onClick: "openAssistantForConsultor" }}
         />
 
@@ -321,7 +321,7 @@ export default function PosGraduacaoPage() {
           descricao="Construa uma carreira de impacto com professores de mercado, networking de alto nível e a credibilidade de uma instituição com mais de 20 anos de excelência."
           botaoPrimario={{
             texto: "Comece sua jornada para o sucesso hoje mesmo.",
-            href: "/catalogo?categoria=pos-graduacao",
+            href: "/catalogo?tipo=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Monte sua trilha de Pós",

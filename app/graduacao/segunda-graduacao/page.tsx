@@ -38,7 +38,7 @@ export default function SegundaGraduacaoPage() {
             { text: "Trilhas Aceleradas" },
             { text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Valide sua Experiência Agora", href: "/catalogo?categoria=graduacao" }}
+          primaryCTA={{ text: "Valide sua Experiência Agora", href: "/catalogo?tipo=graduacao" }}
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}
         />
         <Dilema
@@ -99,7 +99,7 @@ export default function SegundaGraduacaoPage() {
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/catalogo?categoria=graduacao"
+          ctaLink="/catalogo?tipo=graduacao"
         />
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"
@@ -116,7 +116,7 @@ export default function SegundaGraduacaoPage() {
                 "Reconhecimento oficial que valida sua experiência",
                 "Aplicação do conhecimento em até 90 dias",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=ead",
+              link: "/catalogo?tipo=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
             },
             {
@@ -130,7 +130,7 @@ export default function SegundaGraduacaoPage() {
                 "Networking regional estabelecido e de alto valor",
                 "Estrutura moderna que suporta a aplicação prática do conhecimento",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=presencial",
+              link: "/catalogo?tipo=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
             },
           ]}
@@ -175,7 +175,7 @@ export default function SegundaGraduacaoPage() {
           descricao="Valide sua trajetória, otimize seu tempo e seu investimento. Conquiste um novo diploma com a qualidade e o reconhecimento que sua carreira merece."
           botaoPrimario={{
             texto: "Iniciar Minha Validação",
-            href: "/catalogo?categoria=graduacao",
+            href: "/catalogo?tipo=graduacao",
           }}
           botaoSecundario={{
             texto: "Valide seus conhecimentos",

@@ -32,8 +32,8 @@ export default function TransicaoAreaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Pós-Graduação para Transição de Carreira"
-          description="Conquiste sua nova área com a segurança de um método validado e o apoio de quem transforma o mercado. A escolha que conecta você ao sucesso."
+          title="Transição de Carreira com Segurança e Método"
+          description="Conquiste sua nova área com a segurança de um método validado e o apoio de quem transforma o mercado."
           valueBadges={[
             { icon: <ArrowRightLeft className="h-5 w-5" />, text: "Método Comprovado" },
             { icon: <Users className="h-5 w-5" />, text: "Mentoria Estratégica" },
@@ -45,7 +45,7 @@ export default function TransicaoAreaPage() {
 
         <Dilema
           titulo="A segurança que você precisa para dar o próximo passo"
-          subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos"
+          subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
@@ -85,7 +85,7 @@ export default function TransicaoAreaPage() {
                 "Certificação igual ao curso presencial.",
               ],
               buttonText: "Ver cursos EAD",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -99,7 +99,7 @@ export default function TransicaoAreaPage() {
                 "Atividades práticas guiadas.",
               ],
               buttonText: "Ver cursos Ao Vivo",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -113,7 +113,7 @@ export default function TransicaoAreaPage() {
                 "Certificação reconhecida pelo mercado.",
               ],
               buttonText: "Ver cursos Presencial",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
             },
           ]}
           backgroundColor="bg-muted/30"
@@ -228,7 +228,7 @@ export default function TransicaoAreaPage() {
           descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."
           botaoPrimario={{
             texto: "Receba seu plano de transição",
-            href: "/catalogo?categoria=pos-graduacao",
+            href: "/catalogo?tipo=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Fale com um especialista",

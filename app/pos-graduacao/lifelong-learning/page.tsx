@@ -46,8 +46,8 @@ export default function LifelongLearningPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Lifelong / Aluno+"
-          description="Aprofunde-se com o IPOG+ e mantenha sua curva de aprendizado ativa."
+          title="Lifelong Learning / Aluno+"
+          description="Continue evoluindo com o IPOG+ e mantenha sua curva de aprendizado sempre ativa."
           valueBadges={[
             { icon: <Sparkles className="h-5 w-5" />, text: "Aprendizado Contínuo" },
             { icon: <TrendingUp className="h-5 w-5" />, text: "Atualização Constante" },
@@ -58,8 +58,8 @@ export default function LifelongLearningPage() {
         />
 
         <Dilema
-          titulo="Pouco tempo, altas responsabilidades — mas a evolução não pode parar"
-          subtitulo="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-tempo."
+          titulo="Pouco tempo, muitas responsabilidades — mas a evolução não pode parar"
+          subtitulo="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-benefício de tempo."
           dores={[
             {
               icon: <Clock className="h-5 w-5" />,
@@ -98,7 +98,7 @@ export default function LifelongLearningPage() {
                 "Certificação igual ao curso presencial.",
               ],
               buttonText: "Encontrar cursos EAD",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -111,7 +111,7 @@ export default function LifelongLearningPage() {
                 "Atividades práticas guiadas.",
               ],
               buttonText: "Encontrar cursos Ao Vivo",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -124,7 +124,7 @@ export default function LifelongLearningPage() {
                 "Certificação reconhecida",
               ],
               buttonText: "Encontrar cursos Presencial",
-              link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
+              link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
             },
           ]}
           backgroundColor="bg-muted/30"
@@ -326,7 +326,7 @@ export default function LifelongLearningPage() {
           descricao="Aprofunde-se com roteiros eficientes, evolução escalável e benefícios exclusivos. Aprendizado contínuo sem repetição de conteúdo."
           botaoPrimario={{
             texto: "Começar minha jornada",
-            href: "/catalogo?categoria=pos-graduacao",
+            href: "/catalogo?tipo=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Ver benefícios",

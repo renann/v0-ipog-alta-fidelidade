@@ -206,7 +206,7 @@ export default function AtualizacaoPage() {
                   "Certificação IPOG que o mercado reconhece e valoriza.",
                 ],
                 buttonText: "Ver Cursos EAD",
-                link: "/catalogo?categoria=extensao&modalidade=ead",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
               },
               {
                 badge: "EXTENSÃO",
@@ -219,7 +219,7 @@ export default function AtualizacaoPage() {
                   "Acesse as gravações para revisar o conteúdo sempre que precisar.",
                 ],
                 buttonText: "Ver Cursos Ao Vivo",
-                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
               },
               {
                 badge: "EXTENSÃO",
@@ -232,7 +232,7 @@ export default function AtualizacaoPage() {
                   "Receba a certificação IPOG, com reconhecimento nacional.",
                 ],
                 buttonText: "Ver Cursos Presenciais",
-                link: "/catalogo?categoria=extensao&modalidade=presencial",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
               },
             ]}
             backgroundColor="bg-background"
@@ -391,7 +391,7 @@ export default function AtualizacaoPage() {
             descricao="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
             botaoPrimario={{
               texto: "Inicie Sua Atualização Agora",
-              href: "/catalogo?categoria=extensao",
+              href: "/catalogo?tipo=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor",

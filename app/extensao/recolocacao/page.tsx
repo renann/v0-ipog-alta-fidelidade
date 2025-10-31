@@ -40,7 +40,7 @@ export default function RecolocacaoPage() {
             { icon: <Zap className="h-5 w-5" />, text: "Aplicação Imediata" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG" },
           ]}
-          primaryCTA={{ text: "Conhecer cursos para Recolocação", href: "#cursos" }}
+          primaryCTA={{ text: "Conhecer cursos para Recolocação", href: "/catalogo?tipo=extensao" }}
           secondaryCTA={{ text: "Agendar conversa", onClick: openAssistantForConsultor }}
         />
 
@@ -91,7 +91,7 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Reposicione-se em uma das áreas mais aquecidas do mercado com estratégias práticas e portfólio digital.",
                 modalidade: "EAD",
-                link: "/extensao/curso/marketing-digital",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
               },
               {
                 nome: "Gestão de Pessoas",
@@ -99,7 +99,7 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Lidere com empatia e propósito, desenvolvendo competências essenciais para cargos de liderança.",
                 modalidade: "Ao Vivo",
-                link: "/extensao/curso/gestao-projetos-ageis",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
               },
               {
                 nome: "Compliance",
@@ -107,11 +107,11 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Traga segurança e credibilidade ao seu perfil com conhecimento em governança e conformidade.",
                 modalidade: "Presencial",
-                link: "/extensao/curso/gestao-projetos-ageis",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
               },
             ]}
             ctaText="Ver curso"
-            ctaLink="/catalogo?categoria=extensao"
+            ctaLink="/catalogo?tipo=extensao"
           />
         </section>
 
@@ -131,7 +131,7 @@ export default function RecolocacaoPage() {
                   "Tutoria online com suporte contínuo",
                   "Certificação igual ao curso presencial",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=ead",
+                link: "/catalogo?tipo=extensao&modalidade=ead",
                 buttonText: "Encontrar cursos EAD",
               },
               {
@@ -144,7 +144,7 @@ export default function RecolocacaoPage() {
                   "Troca com colegas de diversas áreas",
                   "Atividades práticas guiadas",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
+                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
                 buttonText: "Encontrar cursos Ao Vivo",
               },
               {
@@ -157,7 +157,7 @@ export default function RecolocacaoPage() {
                   "Projetos aplicados em grupo",
                   "Certificação reconhecida pelo mercado",
                 ],
-                link: "/catalogo?categoria=extensao&modalidade=presencial",
+                link: "/catalogo?tipo=extensao&modalidade=presencial",
                 buttonText: "Encontrar cursos Presencial",
               },
             ]}
@@ -258,7 +258,7 @@ export default function RecolocacaoPage() {
             descricao="Nosso time de consultoria está pronto para ajudar você a definir o curso ideal e entender as melhores condições."
             botaoPrimario={{
               texto: "Quero ver os cursos",
-              href: "/catalogo?categoria=extensao",
+              href: "/catalogo?tipo=extensao",
             }}
             botaoSecundario={{
               texto: "Agendar conversa",

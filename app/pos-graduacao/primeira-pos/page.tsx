@@ -47,7 +47,7 @@ const PrimeiraPosContent = dynamic(
             </div>
             <Hero
               badge="PÓS-GRADUAÇÃO"
-              title="Especialize-se com Flexibilidade e Impacto Imediato na Carreira"
+              title="Especialize-se com Flexibilidade e Impacto Imediato"
               description="Aprenda com os líderes do mercado, construa um networking de alto nível e impulsione sua carreira com a chancela de uma das instituições mais reconhecidas do Brasil."
               valueBadges={[
                 { icon: <GraduationCap className="h-5 w-5" />, text: "Certificação Reconhecida pelo MEC" },
@@ -59,8 +59,8 @@ const PrimeiraPosContent = dynamic(
             />
 
             <Dilema
-              titulo="Medo de investir e não ver retorno?"
-              subtitulo="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado"
+              titulo="Medo de investir e não ver retorno na carreira?"
+              subtitulo="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
               dores={[
                 {
                   icon: <DollarSign className="h-5 w-5" />,
@@ -103,7 +103,7 @@ const PrimeiraPosContent = dynamic(
                     "Acesso a professores especialistas e atuantes no mercado.",
                     "Certificação com o reconhecimento e a credibilidade do IPOG.",
                   ],
-                  link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
+                  link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
                   buttonText: "Encontrar cursos EAD",
                 },
                 {
@@ -116,7 +116,7 @@ const PrimeiraPosContent = dynamic(
                     "Disciplina de encontros semanais com a flexibilidade do online.",
                     "Aulas gravadas para consultar quando e onde quiser.",
                   ],
-                  link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
+                  link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
                   buttonText: "Encontrar cursos Ao Vivo",
                 },
                 {
@@ -129,7 +129,7 @@ const PrimeiraPosContent = dynamic(
                     "Acesso a laboratórios e infraestrutura de ponta.",
                     "Mentoria e orientação próxima de professores que impulsionam sua carreira.",
                   ],
-                  link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
+                  link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
                   buttonText: "Encontrar cursos Presencial",
                 },
               ]}
@@ -320,7 +320,7 @@ const PrimeiraPosContent = dynamic(
               descricao="Invista em uma especialização com metodologia prática, networking de alto nível e a credibilidade de professores que são referência no mercado. Dê o próximo passo para transformar sua carreira."
               botaoPrimario={{
                 texto: "Começar minha jornada",
-                href: "/catalogo?categoria=pos-graduacao",
+                href: "/catalogo?tipo=pos-graduacao",
               }}
               botaoSecundario={{
                 texto: "Falar com consultor",

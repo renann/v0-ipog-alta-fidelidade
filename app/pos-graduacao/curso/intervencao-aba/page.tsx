@@ -33,19 +33,19 @@ export default function IntervencaoAbaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Intervenção ABA Aplicada ao TEA"
-          description="Especialize-se em Análise do Comportamento Aplicada (ABA) para intervenção em Transtorno do Espectro Autista."
+          title="Pós-graduação em Intervenção ABA: Lidere a transformação no TEA e Desenvolvimento Intelectual"
+          description="Desenvolva programas terapêuticos eficazes e torne-se a referência que o mercado, as escolas e as famílias procuram para intervir no Transtorno do Espectro Autista e Desenvolvimento Intelectual."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "12 meses" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Certificação reconhecida pelo MEC" },
+            { icon: <Clock className="h-5 w-5" />, text: "432h de imersão teórica e prática" },
+            { icon: <Award className="h-5 w-5" />, text: "Aprenda com Doutores e Mestres atuantes no mercado" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."
+          title="A excelência do IPOG no formato ideal para sua carreira"
+          subtitle="Nossa metodologia conecta você à prática que o mercado exige, com a flexibilidade que sua rotina precisa. Escolha a modalidade e comece a transformar seu futuro."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -63,24 +63,27 @@ export default function IntervencaoAbaPage() {
           ]}
         />
         <Trilha
-          titulo="Trilha de Aprendizado"
+          titulo="Sua jornada para se tornar um especialista em ABA"
           subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
-              titulo: "Fundamentos da ABA",
-              descricao: "Base teórica em Análise do Comportamento Aplicada e TEA",
+              titulo: "1º ao 3º Mês: Domínio dos Fundamentos",
+              descricao:
+                "Construa uma base sólida com os princípios da Análise do Comportamento Aplicada (ABA) e as especificidades do TEA, preparando-se para as etapas práticas.",
               beneficios: ["Princípios da Análise do Comportamento", "Características do TEA"],
               badges: ["1º ao 3º mês"],
             },
             {
-              titulo: "Técnicas de Intervenção",
-              descricao: "Desenvolvimento de habilidades práticas em intervenção ABA",
+              titulo: "4º ao 8º Mês: Desenvolvimento de Técnicas Avançadas",
+              descricao:
+                "Aprofunde-se em protocolos de avaliação e intervenção, aprendendo a elaborar Planos de Ensino Individualizados (PEI) e a gerenciar comportamentos de forma eficaz.",
               beneficios: ["Programas de ensino individualizado", "Manejo comportamental"],
               badges: ["4º ao 8º mês"],
             },
             {
-              titulo: "Prática Supervisionada",
-              descricao: "Aplicação prática com supervisão especializada",
+              titulo: "9º ao 12º Mês: Domínio Clínico Supervisionado",
+              descricao:
+                "Valide sua expertise através da discussão de casos clínicos reais em vídeo e da construção de planos terapêuticos individualizados, com supervisão direta de especialistas para desenvolver a confiança e a competência técnica que o mercado exige.",
               beneficios: ["Supervisão de casos reais", "Elaboração de planos de intervenção"],
               badges: ["9º ao 12º mês"],
               destaque: true,
@@ -94,13 +97,13 @@ export default function IntervencaoAbaPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Empregabilidade após a especialização"
+          titulo="Resultados que impulsionam sua carreira:"
           subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "85%",
-              descricao: "promovidos ou recolocados",
+              descricao: "dos nossos alunos são promovidos ou se recolocam no mercado.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
@@ -112,7 +115,7 @@ export default function IntervencaoAbaPage() {
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+38%",
-              descricao: "em média após formação",
+              descricao: "de aumento salarial em média após a formação.",
               label: "AUMENTO SALARIAL*",
             },
           ]}
@@ -125,7 +128,7 @@ export default function IntervencaoAbaPage() {
           depoimento={{
             texto:
               "A especialização em ABA transformou minha prática clínica e abriu novas oportunidades profissionais.",
-            autor: "Aluno IPOG",
+            autor: "Aluna IPOG, Pós-graduação.",
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
@@ -137,31 +140,35 @@ export default function IntervencaoAbaPage() {
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Por que escolher Intervenção ABA no IPOG?</h2>
+              <h2 className="text-3xl font-bold mb-4">Diferenciais que conectam você ao sucesso profissional</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Especialização com foco em práticas baseadas em evidências para intervenção em TEA.
+                Nossa pós-graduação foi desenhada para quem busca mais do que um diploma: uma verdadeira transformação
+                de carreira, com foco em aplicabilidade e reconhecimento.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-background p-6 rounded-lg">
                 <Users className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Prática Supervisionada</h3>
+                <h3 className="text-xl font-semibold mb-2">Metodologia com Prática Supervisionada</h3>
                 <p className="text-muted-foreground">
-                  Supervisão de casos reais com profissionais certificados em ABA e experiência em TEA.
+                  Aplique seu conhecimento em casos clínicos reais e receba orientação de especialistas para construir
+                  sua segurança e repertório técnico.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Briefcase className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Mercado em Expansão</h3>
+                <h3 className="text-xl font-semibold mb-2">Diferenciação em um Mercado de Alta Demanda</h3>
                 <p className="text-muted-foreground">
-                  Alta demanda por profissionais qualificados em ABA em clínicas, escolas e atendimento domiciliar.
+                  Prepare-se para atender à crescente procura por especialistas em ABA e posicione-se como um
+                  profissional disputado em clínicas, escolas e atendimentos particulares.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Award className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Certificação Reconhecida</h3>
+                <h3 className="text-xl font-semibold mb-2">Formação com a Chancela IPOG</h3>
                 <p className="text-muted-foreground">
-                  Curso alinhado com as diretrizes internacionais de certificação em ABA.
+                  Receba uma certificação de uma das instituições mais reconhecidas do Brasil, com um currículo que une
+                  rigor técnico e alinhamento às melhores práticas globais.
                 </p>
               </div>
             </div>
@@ -230,7 +237,14 @@ export default function IntervencaoAbaPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 429,00" duration="12 meses" totalCost="R$ 5.248,00" />
+        <CtaFinal
+          title="IPOG: A escolha que conecta você ao sucesso."
+          description="Faça parte de uma instituição com mais de 20 anos de história, corpo docente renomado e uma metodologia focada em resultados reais para a sua carreira."
+          monthlyFee="R$ 429,00"
+          duration="12 meses"
+          totalCost="R$ 5.248,00"
+          additionalInfo="O investimento na sua carreira começa com a taxa de matrícula, que garante sua qualificação no processo seletivo. Após a aprovação, nossa equipe de consultores de carreira apresentará as condições de mensalidade e os planos de pagamento, justificando o retorno sobre o investimento através da nossa metodologia de excelência."
+        />
       </main>
       <Footer />
     </div>

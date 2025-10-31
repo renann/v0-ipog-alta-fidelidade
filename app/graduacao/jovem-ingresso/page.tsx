@@ -38,7 +38,7 @@ export default function JovemIngressoPage() {
           ]}
           primaryCTA={{
             text: "Comece sua jornada para o sucesso",
-            href: "/catalogo?categoria=graduacao&persona=jovem-ingresso",
+            href: "/catalogo?tipo=graduacao&persona=jovem-ingresso",
           }}
           secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
         />
@@ -97,7 +97,7 @@ export default function JovemIngressoPage() {
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/catalogo?categoria=graduacao&persona=jovem-ingresso"
+          ctaLink="/catalogo?tipo=graduacao&persona=jovem-ingresso"
         />
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"
@@ -114,7 +114,7 @@ export default function JovemIngressoPage() {
                 "Tutoria online e suporte contínuo",
                 "Certificação igual ao presencial",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=ead",
+              link: "/catalogo?tipo=graduacao&modalidade=ead",
               buttonText: "Ver cursos EAD",
             },
             {
@@ -128,7 +128,7 @@ export default function JovemIngressoPage() {
                 "Conexões C-level",
                 "Certificação reconhecida",
               ],
-              link: "/catalogo?categoria=graduacao&modalidade=presencial",
+              link: "/catalogo?tipo=graduacao&modalidade=presencial",
               buttonText: "Ver cursos presenciais",
             },
           ]}
@@ -167,7 +167,7 @@ export default function JovemIngressoPage() {
           descricao="Tudo o que você precisa para construir uma carreira de impacto está aqui. Dê o primeiro passo na direção do seu futuro."
           botaoPrimario={{
             texto: "Garanta sua vaga agora",
-            href: "/catalogo?categoria=graduacao&persona=jovem-ingresso",
+            href: "/catalogo?tipo=graduacao&persona=jovem-ingresso",
           }}
           botaoSecundario={{
             texto: "Falar com consultor",

@@ -5,7 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
-import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Building2 } from "lucide-react"
+import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Building2, Users } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -30,30 +30,30 @@ export default function EngenhariaEstruturalPage() {
         {/* */}
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Engenharia Estrutural e Fundações"
-          description="Especialize-se em projetos estruturais e fundações com práticas avançadas e reconhecimento MEC."
+          title="Pós-Graduação em Engenharia Estrutural e Fundações"
+          description="Domine projetos complexos e acelere sua carreira com uma especialização que conecta você à prática, ao mercado e a um networking de alto nível."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "12 meses" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Certificação Reconhecida pelo MEC" },
+            { icon: <Clock className="h-5 w-5" />, text: "Formação em 12 Meses" },
+            { icon: <Award className="h-5 w-5" />, text: "Professores que são Referência de Mercado" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
+          primaryCTA={{ text: "Garanta sua vaga", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         {/* </CHANGE> */}
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."
+          title="Escolha a modalidade ideal para sua rotina"
+          subtitle="A mesma excelência e corpo docente, em formatos pensados para impulsionar sua carreira sem comprometer sua carreira ou sua rotina pessoal."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao: "Para quem valoriza interação e networking",
+              titulo: "Modalidade Presencial",
+              descricao: "Acelere sua carreira com networking presencial e aprendizado prático.",
               beneficios: [
-                "Aulas presenciais com vivências práticas",
-                "Interação direta com professores e colegas",
-                "Estrutura moderna e laboratórios equipados",
-                "Networking acadêmico e profissional",
+                "Aulas com aplicação prática em laboratórios modernos.",
+                "Interação direta para tirar dúvidas com professores atuantes no mercado.",
+                "Conexões reais que abrem portas para novas oportunidades.",
+                "Networking de alto valor com profissionais da sua área.",
               ],
               link: "#preco",
               buttonText: "Ver unidades presenciais",
@@ -61,24 +61,27 @@ export default function EngenhariaEstruturalPage() {
           ]}
         />
         <Trilha
-          titulo="Trilha de Aprendizado"
+          titulo="Uma jornada de aprendizado pensada para sua evolução"
           subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
-              titulo: "Fundamentos Estruturais",
-              descricao: "Base teórica em análise estrutural e dimensionamento",
+              titulo: "1º ao 3º Mês: Fundamentos Estruturais Sólidos",
+              descricao:
+                "Domine as bases teóricas e normativas essenciais para projetar com segurança e eficiência, alinhado às melhores práticas do mercado.",
               beneficios: ["Análise de estruturas de concreto e aço", "Normas técnicas e legislação"],
               badges: ["1º ao 3º mês"],
             },
             {
-              titulo: "Projetos Avançados",
-              descricao: "Desenvolvimento de projetos estruturais complexos",
+              titulo: "4º ao 8º Mês: Domínio de Projetos Avançados",
+              descricao:
+                "Desenvolva projetos estruturais complexos, utilizando modelagem computacional e as tecnologias mais atuais para solucionar desafios reais da engenharia.",
               beneficios: ["Modelagem computacional", "Projetos de fundações especiais"],
               badges: ["4º ao 8º mês"],
             },
             {
-              titulo: "Práticas Profissionais",
-              descricao: "Aplicação prática em projetos reais e estudos de caso",
+              titulo: "9º ao 12º Mês: Aplicação Prática e Liderança Técnica",
+              descricao:
+                "Aplique seu conhecimento em estudos de caso reais, preparando-se para supervisionar obras e liderar projetos com a confiança que o mercado exige.",
               beneficios: ["Supervisão de projetos", "Análise de patologias estruturais"],
               badges: ["9º ao 12º mês"],
               destaque: true,
@@ -92,25 +95,25 @@ export default function EngenhariaEstruturalPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Empregabilidade após a especialização"
+          titulo="O impacto da sua escolha na sua carreira:"
           subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "90%",
-              descricao: "promovidos ou recolocados",
+              valor: "9 de cada 10",
+              descricao: "alunos são promovidos ou recolocados após a formação.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "5-8 m",
-              descricao: "para promoção",
+              valor: "Até 8 meses",
+              descricao: "é o tempo médio para a promoção.",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+40%",
-              descricao: "em média após formação",
+              descricao: "de aumento salarial em média após a conclusão.",
               label: "AUMENTO SALARIAL*",
             },
           ]}
@@ -121,8 +124,9 @@ export default function EngenhariaEstruturalPage() {
             "Indicações para vagas parceiras",
           ]}
           depoimento={{
-            texto: "A especialização me capacitou para liderar projetos estruturais de grande porte.",
-            autor: "Aluno IPOG",
+            texto:
+              "O IPOG me deu a confiança e o conhecimento técnico para assumir a liderança em projetos estruturais de grande porte. A conexão com professores de mercado foi o grande diferencial.",
+            autor: "Nome do Aluno, Cargo e Empresa",
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
@@ -134,31 +138,43 @@ export default function EngenhariaEstruturalPage() {
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Por que escolher Engenharia Estrutural no IPOG?</h2>
+              <h2 className="text-3xl font-bold mb-4">Diferenciais que constroem uma carreira de sucesso</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Especialização com foco em projetos complexos, softwares avançados e práticas de mercado.
+                Aqui, você se conecta à prática que o mercado exige, com uma metodologia validada por mais de 20 anos de
+                excelência.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-background p-6 rounded-lg">
                 <Building2 className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Projetos Reais</h3>
+                <h3 className="text-xl font-semibold mb-2">Conexão com a Prática do Mercado</h3>
                 <p className="text-muted-foreground">
-                  Desenvolvimento de projetos estruturais complexos com supervisão de engenheiros experientes.
+                  Vá além da teoria. Desenvolva projetos completos com a supervisão de engenheiros que são referência no
+                  mercado.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Briefcase className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Softwares Avançados</h3>
+                <h3 className="text-xl font-semibold mb-2">Domínio das Ferramentas do Mercado</h3>
                 <p className="text-muted-foreground">
-                  Domínio de ferramentas como SAP2000, TQS, Eberick e softwares de análise estrutural.
+                  Capacite-se nas plataformas de software mais exigidas, como TQS, Eberick e SAP2000, e torne-se um
+                  profissional disputado.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Award className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Normas Atualizadas</h3>
+                <h3 className="text-xl font-semibold mb-2">Conteúdo Alinhado às Normas Atuais</h3>
                 <p className="text-muted-foreground">
-                  Curso alinhado com as normas técnicas brasileiras (NBR) e práticas internacionais.
+                  Estude com uma matriz curricular sempre atualizada, garantindo que seus projetos estejam em total
+                  conformidade com as normas técnicas (NBR) e práticas globais.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <Users className="h-12 w-12 mb-4 text-primary" />
+                <h3 className="text-xl font-semibold mb-2">Networking de Alto Nível</h3>
+                <p className="text-muted-foreground">
+                  Aqui, você se conecta com as pessoas certas: um corpo docente que transforma o mercado e colegas que
+                  se tornarão parceiros estratégicos para sua carreira.
                 </p>
               </div>
             </div>
@@ -228,7 +244,14 @@ export default function EngenhariaEstruturalPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 449,00" duration="12 meses" totalCost="R$ 5.488,00" />
+        <CtaFinal
+          title="Esta é a escolha que conecta você ao sucesso."
+          description="Uma especialização para quem busca protagonismo, com metodologia aplicada, professores de mercado e o reconhecimento de uma marca com mais de 20 anos de história."
+          monthlyFee="R$ 449,00"
+          duration="12 meses"
+          totalCost="R$ 5.488,00"
+          additionalInfo="A taxa de matrícula é o primeiro passo para garantir sua vaga e iniciar o processo de qualificação. Após a aprovação, um de nossos consultores de carreira entrará em contato para apresentar as opções de investimento, incluindo planos de parcelamento e condições especiais."
+        />
       </main>
       <Footer />
     </div>

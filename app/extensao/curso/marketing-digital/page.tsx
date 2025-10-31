@@ -7,7 +7,7 @@ import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
-import { TrendingUp, Target, Award, Rocket, Zap, Briefcase } from "lucide-react"
+import { TrendingUp, Target, Award, Rocket, Briefcase, Sparkles } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 
@@ -30,14 +30,14 @@ export default function MarketingDigitalPage() {
 
         <Hero
           badge="EXTENSÃO"
-          title="Marketing Digital"
-          description="Estratégias e ferramentas atuais para resultados rápidos em campanhas digitais"
+          title="FORMAÇÃO EM MARKETING DIGITAL COM INTELIGÊNCIA ARTIFICIAL"
+          description="Transforme cliques em clientes. Aprenda a criar funis de vendas inteligentes, dominar tráfego pago e usar IA para escalar resultados reais."
           valueBadges={[
-            { icon: <TrendingUp className="h-5 w-5" />, text: "ROI Rápido" },
-            { icon: <Target className="h-5 w-5" />, text: "100% Prático" },
-            { icon: <Zap className="h-5 w-5" />, text: "Templates Prontos" },
+            { icon: <Target className="h-5 w-5" />, text: "Domine Meta, Google & TikTok Ads" },
+            { icon: <Sparkles className="h-5 w-5" />, text: "Crie conteúdo com IA" },
+            { icon: <TrendingUp className="h-5 w-5" />, text: "Funis de Vendas 5.0" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
+          primaryCTA={{ text: "FALAR COM UM CONSULTOR", onClick: "openAssistantForConsultor" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 
@@ -76,18 +76,19 @@ export default function MarketingDigitalPage() {
         </section>
 
         <Modalidades
-          title="Escolha sua modalidade"
-          subtitle="Curso disponível em formato EAD para máxima flexibilidade"
+          title="Formato Presencial: Aprendizado Imersivo e Networking de Alto Nível"
+          subtitle="Uma jornada prática com encontros presenciais que fortalecem a troca de experiências e aceleram seu desenvolvimento."
           modalidades={[
             {
               badge: "EXTENSÃO",
-              titulo: "EAD",
-              descricao: "Aprenda estratégias digitais no seu ritmo",
+              titulo: "PRESENCIAL",
+              descricao: "Imersão, prática e conexões reais.",
               beneficios: [
-                "Acesso 24/7 ao conteúdo",
-                "Templates e ferramentas prontas",
-                "Suporte de especialistas",
-                "Certificação reconhecida",
+                "100 horas de formação",
+                "5 módulos práticos",
+                "1 final de semana por mês",
+                "Metodologia de Sala de Aula Invertida para máxima aplicação prática",
+                "Atividades Práticas no Ambiente Virtual",
               ],
               buttonText: "Quero me inscrever",
               link: "#preco",
@@ -96,26 +97,26 @@ export default function MarketingDigitalPage() {
         />
 
         <Empregabilidade
-          titulo="Profissionais de marketing digital conquistam mais"
-          subtitulo="Dados reais de quem domina estratégias digitais"
+          titulo="Resultados que comprovam a excelência IPOG"
+          subtitulo="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
           estatisticas={[
             {
-              icon: <TrendingUp className="h-8 w-8" />,
-              valor: "89%",
-              descricao: "aumentaram conversões",
-              label: "MELHORIA DE RESULTADOS*",
+              icon: <Award className="h-8 w-8" />,
+              valor: "98%",
+              descricao: "de satisfação média entre os alunos",
+              label: "EXCELÊNCIA COMPROVADA*",
             },
             {
-              icon: <Award className="h-8 w-8" />,
-              valor: "82%",
-              descricao: "conquistaram promoções",
-              label: "CRESCIMENTO PROFISSIONAL*",
+              icon: <TrendingUp className="h-8 w-8" />,
+              valor: "+300 mil",
+              descricao: "profissionais especializados em todo o Brasil",
+              label: "IMPACTO NACIONAL*",
             },
             {
               icon: <Rocket className="h-8 w-8" />,
-              valor: "91%",
-              descricao: "aplicaram na primeira semana",
-              label: "APLICAÇÃO IMEDIATA*",
+              valor: "Nota máxima",
+              descricao: "de credenciamento no MEC",
+              label: "QUALIDADE RECONHECIDA*",
             },
           ]}
           layoutEstatisticas="carousel"
@@ -125,8 +126,9 @@ export default function MarketingDigitalPage() {
             "Indicações para vagas parceiras",
           ]}
           depoimento={{
-            texto: "As estratégias de marketing digital aumentaram minhas conversões em 45% no primeiro mês.",
-            autor: "Aluno IPOG",
+            texto:
+              "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
+            autor: "Profissional de Marketing, Aluno IPOG",
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
@@ -137,41 +139,84 @@ export default function MarketingDigitalPage() {
         />
 
         <Trilha
-          titulo="Sua jornada em Marketing Digital"
-          subtitulo="3 meses de estratégias práticas e resultados mensuráveis"
+          titulo="DISCIPLINAS"
+          subtitulo="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
           etapas={[
             {
-              titulo: "Fundamentos Digitais",
-              descricao: "Domine os conceitos essenciais do marketing digital",
+              titulo: "Máquina de Vendas 5.0",
+              descricao: "Funis, Jornada e Psicologia da Conversão",
               beneficios: [
-                "Estratégia de marketing digital",
-                "Funis de conversão",
-                "Google Analytics e métricas",
-                "Primeira campanha prática",
+                "Comportamento do consumidor digital",
+                "Funis de atração, conversão e retenção",
+                "Gatilhos mentais e storytelling",
+                "O papel da IA na construção de jornadas personalizadas",
+                "CRM e estratégias de qualificação de leads",
+                "Inside Sales e Customer Success",
               ],
-              badges: ["Mês 1"],
+              badges: ["Módulo 01"],
             },
             {
-              titulo: "Canais e Ferramentas",
-              descricao: "Explore redes sociais, SEO e mídia paga",
+              titulo: "Tráfego Pago I",
+              descricao: "Meta Ads e TikTok Ads para Conversão",
               beneficios: [
-                "Social Media Marketing",
-                "SEO e marketing de conteúdo",
-                "Google Ads e Facebook Ads",
-                "Automação de marketing",
+                "Estrutura das plataformas: Meta Business e TikTok Ads Manager",
+                "Segmentação, públicos personalizados e remarketing",
+                "Criativos de alta performance",
+                "Campanhas para engajamento, leads e vendas",
+                "Testes A/B e otimização",
               ],
-              badges: ["Mês 2"],
+              badges: ["Módulo 02"],
             },
             {
-              titulo: "Otimização e Resultados",
-              descricao: "Maximize ROI e apresente resultados",
+              titulo: "Tráfego Pago II",
+              descricao: "Google Ads, YouTube e Rede de Pesquisa",
               beneficios: [
-                "Análise de dados e otimização",
-                "Growth hacking",
-                "Projeto final com resultados reais",
-                "Certificação e portfólio",
+                "Tipos de campanha: pesquisa, display, vídeo e Performance Max",
+                "Palavras-chave, correspondências e intenção de busca",
+                "SEO x SEM: estratégias integradas",
+                "Planejamento e estrutura de campanhas",
+                "Remarketing e extensões",
+                "Monitoramento de conversões e relatórios",
               ],
-              badges: ["Mês 3"],
+              badges: ["Módulo 03"],
+            },
+            {
+              titulo: "Conteúdo e Criatividade com IA",
+              descricao: "Prompt Engineering, Planejamento e Execução",
+              beneficios: [
+                "Ferramentas de IA para criação de conteúdo (ChatGPT, Midjourney, Canva AI)",
+                "Prompt engineering aplicado ao marketing",
+                "Planejamento de conteúdo estratégico",
+                "Copywriting persuasivo e storytelling",
+                "Produção de vídeos curtos e reels",
+                "Análise de tendências e viralização",
+              ],
+              badges: ["Módulo 04"],
+            },
+            {
+              titulo: "Dados, Métricas e Otimização",
+              descricao: "Analytics, BI e Tomada de Decisão Baseada em Dados",
+              beneficios: [
+                "Google Analytics 4 e Tag Manager",
+                "Dashboards e relatórios automatizados",
+                "KPIs e métricas de performance",
+                "Análise de ROI e ROAS",
+                "Testes A/B e otimização contínua",
+                "Uso de IA para análise preditiva",
+              ],
+              badges: ["Módulo 05"],
+            },
+            {
+              titulo: "Projeto Final Integrado",
+              descricao: "Aplicação Prática e Apresentação de Resultados",
+              beneficios: [
+                "Desenvolvimento de estratégia completa de marketing digital",
+                "Criação de campanhas reais com orçamento simulado",
+                "Apresentação de resultados e aprendizados",
+                "Feedback individualizado dos professores",
+                "Construção de portfólio profissional",
+              ],
+              badges: ["Módulo 06"],
               destaque: true,
             },
           ]}
@@ -182,6 +227,19 @@ export default function MarketingDigitalPage() {
           }}
           backgroundColor="bg-muted/30"
         />
+
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Para quem é esta formação?</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Para empreendedores, gestores, profissionais de marketing, analistas, social media, criadores de
+                conteúdo e profissionais liberais que desejam utilizar o marketing digital com foco em resultados,
+                usando o poder da IA como diferencial competitivo.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto">
@@ -245,7 +303,15 @@ export default function MarketingDigitalPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 249,00" duration="3 meses" totalCost="R$ 747,00" />
+        <CtaFinal
+          monthlyFee="R$ 249,00"
+          duration="3 meses"
+          totalCost="R$ 747,00"
+          title="Dê o próximo passo para se destacar no mercado."
+          description="Conecte-se com especialistas para tirar suas dúvidas e garantir sua vaga na próxima turma."
+          additionalText="Nossos consultores estão prontos para apresentar as melhores condições e mostrar como esta formação irá impulsionar seus resultados."
+          ctaText="FALAR COM UM CONSULTOR"
+        />
       </main>
       <Footer />
     </div>
