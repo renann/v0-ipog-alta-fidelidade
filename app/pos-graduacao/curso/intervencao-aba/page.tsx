@@ -177,6 +177,20 @@ export default function IntervencaoAbaPage() {
 
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto px-4 pb-4">
+              <MetodosPagamento />
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-16 bg-background">
+          <div className="max-w-screen-xl mx-auto px-4">
             <div className="max-w-3xl mx-auto px-4 pb-4">
               <MetodosPagamento />
             </div>
