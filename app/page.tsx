@@ -9,7 +9,7 @@ import { QuatroVerticais } from "@/components/quatro-verticais"
 import { MetodologiaUnificada } from "@/components/metodologia-unificada"
 import { ResultadosComprovados } from "@/components/resultados-comprovados"
 import { ProfessorsSection } from "@/components/professors-section"
-import { ExperienceSection } from "@/components/experience-section"
+import { DepoimentosDeTexto } from "@/components/depoimentos-de-texto"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { useGeoLocation } from "@/hooks/use-geo-location"
@@ -52,7 +52,41 @@ export default function HomePage() {
         <MetodologiaUnificada />
         <ResultadosComprovados />
         <ProfessorsSection />
-        <ExperienceSection />
+
+        <DepoimentosDeTexto
+          titulo="Quem ficou perto do IPOG, ficou na frente"
+          depoimentos={[
+            {
+              texto:
+                "O IPOG transformou minha carreira. A metodologia prática e os professores experientes me deram as ferramentas necessárias para alcançar a posição de liderança que sempre sonhei.",
+              nome: "Ana Paula Silva",
+              cargo: "Gerente de Projetos • Tecnologia",
+              resultado: "Promoção em 8 meses",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              nome: "Carlos Eduardo Santos",
+              cargo: "Diretor de Operações • Logística",
+              resultado: "Novo projeto estratégico",
+            },
+            {
+              texto:
+                "A especialização no IPOG me deu credibilidade no mercado. Hoje sou referência na minha área e tenho oportunidades que antes pareciam impossíveis.",
+              nome: "Mariana Costa",
+              cargo: "Head de RH • Recursos Humanos",
+              resultado: "Expansão de escopo",
+            },
+            {
+              texto:
+                "Networking de alto nível e conteúdo atualizado. O IPOG me conectou com profissionais que se tornaram parceiros de negócios e abriram portas para novos projetos.",
+              nome: "Roberto Mendes",
+              cargo: "Consultor Empresarial • Gestão",
+              resultado: "Consultoria própria",
+            },
+          ]}
+        />
+
         <AcaoFinal
           titulo="Comece sua jornada de transformação profissional"
           descricao="Mais de 20 anos formando especialistas e líderes de mercado. Escolha sua formação e acelere sua carreira"
