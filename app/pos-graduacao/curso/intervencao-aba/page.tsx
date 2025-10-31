@@ -11,7 +11,6 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function IntervencaoAbaPage() {
   return (
@@ -42,7 +41,7 @@ export default function IntervencaoAbaPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"
@@ -130,7 +129,7 @@ export default function IntervencaoAbaPage() {
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
-            onClick: openAssistantForConsultor,
+            onClick: "openAssistantForConsultor",
           }}
           observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"

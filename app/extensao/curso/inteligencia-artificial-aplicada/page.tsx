@@ -10,7 +10,6 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Brain, Zap, Target, TrendingUp, Award, Rocket, Briefcase } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function InteligenciaArtificialAplicadaPage() {
   return (
@@ -39,7 +38,7 @@ export default function InteligenciaArtificialAplicadaPage() {
             { icon: <Target className="h-5 w-5" />, text: "Aplicação Imediata" },
           ]}
           primaryCTA={{ text: "Inscrever-se no curso", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">

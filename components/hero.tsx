@@ -15,7 +15,7 @@ interface ValueBadge {
 interface CTA {
   text: string
   href?: string
-  onClick?: () => void
+  onClick?: (() => void) | string
   variant?: "default" | "outline"
   icon?: ReactNode
 }
@@ -85,7 +85,11 @@ export function Hero({
             className="text-base"
             variant={primaryCTA.variant || "default"}
             asChild={!!primaryCTA.href}
-            onClick={primaryCTA.onClick}
+            onClick={
+              typeof primaryCTA.onClick === "string" && primaryCTA.onClick === "openAssistantForConsultor"
+                ? openAssistantForConsultor
+                : primaryCTA.onClick
+            }
           >
             {primaryCTA.href ? (
               <Link href={primaryCTA.href}>
@@ -106,7 +110,11 @@ export function Hero({
               variant={secondaryCTA.variant || "outline"}
               className="text-base bg-transparent"
               asChild={!!secondaryCTA.href}
-              onClick={secondaryCTA.onClick || openAssistantForConsultor}
+              onClick={
+                typeof secondaryCTA.onClick === "string" && secondaryCTA.onClick === "openAssistantForConsultor"
+                  ? openAssistantForConsultor
+                  : secondaryCTA.onClick || openAssistantForConsultor
+              }
             >
               {secondaryCTA.href ? (
                 <Link href={secondaryCTA.href}>

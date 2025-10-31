@@ -14,7 +14,6 @@ import { GraduationCap, Clock, Award } from "lucide-react"
 import { TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
-import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function PsicologiaEadPage() {
   return (
@@ -43,7 +42,7 @@ export default function PsicologiaEadPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />
         <JornadaAcademicaPsicologia />
