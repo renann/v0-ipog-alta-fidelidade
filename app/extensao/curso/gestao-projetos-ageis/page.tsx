@@ -5,6 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
+import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 
@@ -205,34 +206,7 @@ export default function GestaoProjetosAgeisPage() {
           </div>
         </section>
 
-        {/* Removendo FormasIngresso que não deve aparecer em cursos de extensão */}
-
-        <section className="w-full py-16 bg-primary text-primary-foreground">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Faça a escolha que conecta você ao sucesso.</h2>
-              <p className="text-lg mb-8 opacity-90">
-                Uma formação para quem busca protagonismo, com metodologia prática, professores de mercado e o
-                reconhecimento de uma das instituições mais respeitadas do Brasil.
-              </p>
-              <div className="bg-primary-foreground/10 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-bold mb-4">Investimento no seu protagonismo:</h3>
-                <ul className="text-left space-y-2 max-w-md mx-auto">
-                  <li>
-                    • Taxa de matrícula: <strong>R$ 100,00</strong> (pagamento único)
-                  </li>
-                  <li>
-                    • Mensalidades: <strong>A partir de R$ 279,00</strong>
-                  </li>
-                  <li>• Consulte condições de parcelamento e descontos com nossa equipe após a qualificação.</li>
-                </ul>
-              </div>
-              <button className="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                Falar com um Consultor
-              </button>
-            </div>
-          </div>
-        </section>
+        <CtaFinal monthlyFee="R$ 279,00" duration="40 horas" totalCost="R$ 1.674,00" />
       </main>
       <Footer />
     </div>

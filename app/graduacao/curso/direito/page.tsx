@@ -9,6 +9,7 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { Autoridade } from "@/components/autoridade"
+import { CtaFinal } from "@/components/cta-final"
 
 export default function DireitoPage() {
   return (
@@ -365,45 +366,16 @@ export default function DireitoPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 px-4" id="preco">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">IPOG: A escolha que conecta você ao sucesso.</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Não adie mais o seu futuro. Faça parte de uma instituição com 98% de satisfação e dê o passo decisivo
-                para se tornar um profissional de destaque na área jurídica.
-              </p>
-            </div>
-            <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
-              <div className="border-t pt-6">
-                <h4 className="text-xl font-semibold mb-4">Taxa de Inscrição</h4>
-                <div className="bg-background p-6 rounded-lg mb-4">
-                  <p className="text-lg font-semibold mb-2">R$ 100,00</p>
-                  <p className="text-muted-foreground">
-                    Pagamento único para garantir sua vaga e iniciar a análise do seu perfil. Após a aprovação, nossa
-                    equipe apresentará as condições especiais de mensalidade e bolsas de estudo disponíveis.
-                  </p>
-                </div>
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold mb-2">Informações do Curso</h4>
-                  <p className="text-muted-foreground">Duração: 10 semestres (5 anos)</p>
-                  <p className="text-muted-foreground">
-                    Investimento flexível: Consulte condições especiais e bolsas de até 100% (OVG e Prouni) com nossa
-                    equipe.
-                  </p>
-                </div>
-                <div className="text-center space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    Turmas com início em <strong>Novembro</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Garanta sua vaga em turmas com corpo docente renomado.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CtaFinal
+          title="Invista na sua carreira com a instituição que é referência nacional."
+          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 599,00+"
+          enrollmentFee="R$ 100,00"
+          monthlyFee="R$ 599,00"
+          duration="5 anos"
+          totalCost="R$ 35.940,00"
+          nextClassDate="Novembro"
+          promotionDeadline="30 de Outubro"
+        />
       </main>
       <Footer />
     </div>

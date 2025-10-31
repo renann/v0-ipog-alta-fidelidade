@@ -216,7 +216,16 @@ export default function AdministracaoPage() {
         </section>
 
         <FormasIngresso />
-        <CtaFinal monthlyFee="R$ 449,00" duration="4 anos" totalCost="R$ 21.552,00" />
+        <CtaFinal
+          title="Invista na sua carreira com a instituição que é referência nacional."
+          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 549,00+"
+          enrollmentFee="R$ 100,00"
+          monthlyFee="R$ 549,00"
+          duration="4 anos"
+          totalCost="R$ 26.352,00"
+          nextClassDate="Novembro"
+          promotionDeadline="30 de Outubro"
+        />
       </main>
       <Footer />
     </div>

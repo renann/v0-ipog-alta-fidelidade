@@ -13,6 +13,7 @@ import { TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
 import { Autoridade } from "@/components/autoridade"
+import { CtaFinal } from "@/components/cta-final"
 
 export default function PsicologiaEadPage() {
   return (
@@ -250,42 +251,16 @@ export default function PsicologiaEadPage() {
           ]}
         />
 
-        <section className="w-full py-16 px-4" id="preco">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Comece agora sua trajetória com o IPOG</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Curso criado para quem busca protagonismo, com metodologia aplicada, professores de mercado e
-                acompanhamento próximo em todas as etapas.
-              </p>
-            </div>
-            <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
-              <div className="border-t pt-6">
-                <h4 className="text-xl font-semibold mb-4">Taxa de inscrição</h4>
-                <div className="bg-background p-6 rounded-lg mb-4">
-                  <p className="text-lg font-semibold mb-2">R$ 100,00</p>
-                  <p className="text-muted-foreground">
-                    A inscrição garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial
-                    entrará em contato para apresentar as condições de mensalidade e formas de pagamento.
-                  </p>
-                </div>
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold mb-2">Informações do Curso</h4>
-                  <p className="text-muted-foreground">Mensalidade: R$ 499,00</p>
-                  <p className="text-muted-foreground">Duração: 5 anos • Total do curso: R$ 29.940,00</p>
-                </div>
-                <div className="text-center space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    Próximas turmas iniciam em <strong>Novembro</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Garanta condições exclusivas até <strong>30 de Outubro</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CtaFinal
+          title="Invista na sua carreira com a instituição que é referência nacional."
+          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 499,00+"
+          enrollmentFee="R$ 100,00"
+          monthlyFee="R$ 499,00"
+          duration="5 anos"
+          totalCost="R$ 29.940,00"
+          nextClassDate="Novembro"
+          promotionDeadline="30 de Outubro"
+        />
 
         <FaqPsicologia />
         <FormasIngresso />

@@ -9,6 +9,7 @@ import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucid
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { CtaFinal } from "@/components/cta-final"
 
 export default function ArquiteturaPage() {
   return (
@@ -227,14 +228,13 @@ export default function ArquiteturaPage() {
 
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Arquitetura</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Tire suas dúvidas sobre o curso, softwares e atuação profissional.
-              </p>
-            </div>
-
             <div className="max-w-3xl mx-auto mb-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Arquitetura</h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Tire suas dúvidas sobre o curso, softwares e atuação profissional.
+                </p>
+              </div>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-0">
                   <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
@@ -314,61 +314,16 @@ export default function ArquiteturaPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 px-4" id="preco">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Faça a Escolha que Conecta Você ao Sucesso</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Seu investimento em uma formação no IPOG é um passo decisivo para uma carreira de destaque. Oferecemos
-                uma experiência premium com valor acessível, focada em resultados concretos.
-              </p>
-            </div>
-            <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold mb-6">Sua formação completa inclui:</h3>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Corpo docente de mestres e doutores com experiência de mercado.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Acesso a laboratórios modernos e infraestrutura de ponta.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Cursos gratuitos de reforço em Português, Matemática e Inglês.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Metodologia com projetos práticos e foco em empregabilidade.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Networking com profissionais que são referência na sua área.</span>
-                </li>
-              </ul>
-              <div className="border-t pt-6">
-                <h4 className="text-xl font-semibold mb-4">Primeiro Passo para sua Qualificação:</h4>
-                <div className="bg-background p-6 rounded-lg mb-4">
-                  <p className="text-lg font-semibold mb-2">Taxa de Inscrição: R$ 100,00</p>
-                  <p className="text-muted-foreground">
-                    O pagamento da taxa garante sua análise de perfil e o início do seu processo de ingresso. Após a
-                    aprovação, nossa equipe de consultores apresentará as condições especiais de mensalidade e opções de
-                    parcelamento flexíveis.
-                  </p>
-                </div>
-                <div className="text-center space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    Próximas turmas iniciam em <strong>Novembro</strong>.
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Garanta condições exclusivas até <strong>30 de Outubro</strong>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CtaFinal
+          title="Invista na sua carreira com a instituição que é referência nacional."
+          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 649,00+"
+          enrollmentFee="R$ 100,00"
+          monthlyFee="R$ 649,00"
+          duration="5 anos"
+          totalCost="R$ 38.940,00"
+          nextClassDate="Novembro"
+          promotionDeadline="30 de Outubro"
+        />
       </main>
       <Footer />
     </div>

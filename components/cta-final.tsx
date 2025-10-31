@@ -15,6 +15,7 @@ interface CtaFinalProps {
   totalCost?: string
   nextClassDate?: string
   promotionDeadline?: string
+  isGraduacao?: boolean
 }
 
 export function CtaFinal({
@@ -26,12 +27,19 @@ export function CtaFinal({
   totalCost = "R$ 12.582,00",
   nextClassDate = "Novembro",
   promotionDeadline = "30 de Outubro",
+  isGraduacao = description.includes("Taxa de Inscrição"),
 }: CtaFinalProps) {
   const [isPriceVisible, setIsPriceVisible] = useState(false)
 
   const handleRevealPrice = () => {
     openAssistantForPrice()
   }
+
+  const taxaLabel = isGraduacao ? "Taxa de inscrição" : "Taxa de matrícula"
+  const taxaDescricao = isGraduacao
+    ? "A inscrição garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial entrará em contato para apresentar as condições de mensalidade e formas de pagamento."
+    : "A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial entrará em contato para apresentar as condições de mensalidade e formas de pagamento."
+  const botaoLabel = isGraduacao ? "Inscrever-se no processo seletivo" : "Pagar matrícula agora"
 
   return (
     <section id="preco" className="w-full py-12 md:py-16 bg-gray-100 scroll-mt-20">
@@ -54,7 +62,7 @@ export function CtaFinal({
 
             <div className="space-y-4">
               <div className="space-y-2">
-                <p className="text-lg text-gray-600">Taxa de matrícula</p>
+                <p className="text-lg text-gray-600">{taxaLabel}</p>
                 <p className="text-5xl md:text-6xl font-bold">{enrollmentFee}</p>
                 <p className="text-sm text-gray-600">Pagamento único para qualificação</p>
               </div>
@@ -62,10 +70,7 @@ export function CtaFinal({
               <div className="bg-muted/50 rounded-lg p-4 space-y-2">
                 <div className="flex items-start gap-2 text-sm text-muted-foreground">
                   <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <p className="text-left">
-                    A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial
-                    entrará em contato para apresentar as condições de mensalidade e formas de pagamento.
-                  </p>
+                  <p className="text-left">{taxaDescricao}</p>
                 </div>
               </div>
 
@@ -79,7 +84,7 @@ export function CtaFinal({
             </div>
 
             <Button size="lg" className="w-full md:w-auto px-12 bg-black hover:bg-gray-800">
-              Pagar matrícula agora
+              {botaoLabel}
             </Button>
 
             <div className="flex flex-col gap-3 pt-4">
