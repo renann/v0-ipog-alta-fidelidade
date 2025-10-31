@@ -4,11 +4,11 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Scale } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { Autoridade } from "@/components/autoridade"
 
 export default function DireitoPage() {
   return (
@@ -201,21 +201,86 @@ export default function DireitoPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
+        <Autoridade
+          titulo="Corpo Docente do Curso"
+          subtitulo="Aprenda com magistrados, advogados e professores de referência"
+          credenciais={[
+            "Magistrados e desembargadores em atividade",
+            "Advogados de escritórios renomados",
+            "Mestres e Doutores em Direito",
+            "Experiência em grandes casos e tribunais superiores",
+          ]}
+          professores={[
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Eduardo Carvalho Neto",
+              area: "Direito Constitucional",
+              descricao:
+                "Desembargador do TJ-SP, Doutor em Direito Constitucional pela USP, com mais de 25 anos de magistratura e autor de obras de referência na área.",
+              especialidades: ["Direito Constitucional", "Controle de Constitucionalidade", "Direitos Fundamentais"],
+              biografia:
+                "Desembargador do Tribunal de Justiça de São Paulo desde 2015, com mais de 25 anos de carreira na magistratura. Doutor em Direito Constitucional pela Universidade de São Paulo (USP) e Mestre pela PUC-SP. Autor de três livros sobre controle de constitucionalidade e direitos fundamentais, amplamente utilizados em cursos de graduação e pós-graduação. Professor convidado em diversos programas de mestrado e preparatórios para magistratura.",
+              linkedin: "https://linkedin.com/in/eduardo-carvalho-neto",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dra. Mariana Rodrigues Lima",
+              area: "Direito Penal",
+              descricao:
+                "Juíza Federal, Mestre em Direito Penal, especialista em crimes econômicos e lavagem de dinheiro, com atuação em casos de grande repercussão nacional.",
+              especialidades: ["Direito Penal", "Crimes Econômicos", "Lavagem de Dinheiro"],
+              biografia:
+                "Juíza Federal desde 2012, com atuação em varas criminais especializadas em crimes contra o sistema financeiro e lavagem de dinheiro. Mestre em Direito Penal pela UERJ, com pesquisas sobre criminalidade econômica. Participou de casos de grande repercussão nacional envolvendo corrupção e organizações criminosas. Ministra cursos de formação para magistrados e membros do Ministério Público.",
+              linkedin: "https://linkedin.com/in/mariana-rodrigues-lima",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Ricardo Almeida Santos",
+              area: "Direito Civil e Processo Civil",
+              descricao:
+                "Sócio de escritório de advocacia empresarial, Doutor em Direito Civil, especialista em contratos complexos e litígios empresariais de alto valor.",
+              especialidades: ["Direito Civil", "Contratos", "Processo Civil"],
+              biografia:
+                "Sócio do escritório Santos & Associados, um dos maiores escritórios de advocacia empresarial do país. Doutor em Direito Civil pela USP, com tese sobre contratos empresariais complexos. Atua há 18 anos em litígios de alto valor e assessoria jurídica a grandes corporações. Árbitro da Câmara de Arbitragem da B3 e professor de Direito Civil e Processo Civil em cursos de pós-graduação.",
+              linkedin: "https://linkedin.com/in/ricardo-almeida-santos",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Fernando Henrique Costa",
+              area: "Direito Trabalhista",
+              descricao:
+                "Juiz do Trabalho, Mestre em Direito do Trabalho, especialista em relações sindicais e reforma trabalhista, com vasta experiência em dissídios coletivos.",
+              especialidades: ["Direito do Trabalho", "Relações Sindicais", "Reforma Trabalhista"],
+              biografia:
+                "Juiz do Trabalho desde 2010, atualmente atuando no Tribunal Regional do Trabalho da 2ª Região (SP). Mestre em Direito do Trabalho pela PUC-SP, com pesquisas sobre a reforma trabalhista e seus impactos. Especialista em dissídios coletivos e negociações sindicais. Autor de artigos sobre direito sindical e professor em cursos preparatórios para magistratura do trabalho.",
+              linkedin: "https://linkedin.com/in/fernando-henrique-costa",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dra. Patrícia Mendes Oliveira",
+              area: "Direito Tributário",
+              descricao:
+                "Advogada tributarista, Mestre em Direito Tributário, sócia de escritório especializado, com atuação em planejamento tributário e contencioso fiscal.",
+              especialidades: ["Direito Tributário", "Planejamento Tributário", "Contencioso Fiscal"],
+              biografia:
+                "Sócia do escritório Oliveira Advogados Tributários, especializado em consultoria e contencioso fiscal. Mestre em Direito Tributário pela FGV-SP, com pesquisas sobre reforma tributária. Atua há 15 anos assessorando grandes empresas em planejamento tributário e defesas em processos administrativos e judiciais. Palestrante em congressos nacionais de direito tributário.",
+              linkedin: "https://linkedin.com/in/patricia-mendes-oliveira",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Carlos Alberto Ferreira",
+              area: "Direito Empresarial",
+              descricao:
+                "Advogado empresarial, Doutor em Direito Comercial, especialista em fusões e aquisições, recuperação judicial e direito societário.",
+              especialidades: ["Direito Empresarial", "M&A", "Recuperação Judicial"],
+              biografia:
+                "Sócio-fundador do escritório Ferreira & Associados, com mais de 20 anos de experiência em direito empresarial. Doutor em Direito Comercial pela USP, especialista em operações de fusões e aquisições (M&A) e processos de recuperação judicial. Assessorou mais de 50 operações de M&A e conduziu recuperações judiciais de empresas de médio e grande porte. Professor de Direito Empresarial em programas de MBA.",
+              linkedin: "https://linkedin.com/in/carlos-alberto-ferreira",
+            },
+          ]}
+        />
 
-        <section className="w-full py-12 md:py-16 bg-background">
+        <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre o curso de Direito</h2>

@@ -12,6 +12,7 @@ import { GraduationCap, Clock, Award } from "lucide-react"
 import { TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
+import { Autoridade } from "@/components/autoridade"
 
 export default function PsicologiaEadPage() {
   return (
@@ -168,6 +169,85 @@ export default function PsicologiaEadPage() {
             observacao: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
+        />
+
+        <Autoridade
+          titulo="Corpo Docente do Curso"
+          subtitulo="Aprenda com especialistas reconhecidos em Psicologia"
+          credenciais={[
+            "Mestres e Doutores em Psicologia",
+            "Experiência clínica e organizacional",
+            "Publicações em revistas científicas",
+            "Atuação em hospitais e clínicas renomadas",
+          ]}
+          professores={[
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dra. Ana Carolina Ferreira",
+              area: "Psicologia Clínica",
+              descricao:
+                "Doutora em Psicologia Clínica pela USP, especialista em Terapia Cognitivo-Comportamental com mais de 15 anos de experiência em atendimento clínico e supervisão.",
+              especialidades: ["TCC", "Ansiedade", "Depressão"],
+              biografia:
+                "Doutora em Psicologia Clínica pela Universidade de São Paulo (USP), com especialização em Terapia Cognitivo-Comportamental pelo Beck Institute. Atua há mais de 15 anos em consultório particular e como supervisora clínica. Autora de diversos artigos científicos sobre transtornos de ansiedade e depressão. Coordena o Núcleo de Estudos em TCC do IPOG e ministra cursos de formação para psicólogos.",
+              linkedin: "https://linkedin.com/in/ana-carolina-ferreira",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Roberto Almeida Santos",
+              area: "Psicologia Organizacional",
+              descricao:
+                "Mestre em Psicologia Organizacional, consultor de RH em grandes empresas e especialista em avaliação psicológica e desenvolvimento de lideranças.",
+              especialidades: ["RH", "Liderança", "Avaliação Psicológica"],
+              biografia:
+                "Mestre em Psicologia Organizacional pela PUC-SP, com MBA em Gestão de Pessoas. Atua como consultor organizacional há 12 anos, tendo trabalhado com empresas como Ambev, Natura e Magazine Luiza. Especialista em processos de avaliação psicológica, desenvolvimento de lideranças e programas de bem-estar corporativo. Professor convidado em programas de MBA e pós-graduação.",
+              linkedin: "https://linkedin.com/in/roberto-almeida-santos",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dra. Juliana Martins Costa",
+              area: "Neuropsicologia",
+              descricao:
+                "Doutora em Neuropsicologia, especialista em avaliação neuropsicológica e reabilitação cognitiva, com atuação em hospitais e clínicas especializadas.",
+              especialidades: ["Neuropsicologia", "Reabilitação Cognitiva", "Avaliação"],
+              biografia:
+                "Doutora em Neuropsicologia pela UNIFESP, com pós-doutorado em Neurociências. Atua no Hospital das Clínicas de São Paulo e em consultório particular. Especialista em avaliação neuropsicológica de crianças, adultos e idosos, com foco em transtornos do neurodesenvolvimento e doenças neurodegenerativas. Coordena o Laboratório de Neuropsicologia do IPOG.",
+              linkedin: "https://linkedin.com/in/juliana-martins-costa",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Prof. Dr. Marcelo Henrique Silva",
+              area: "Psicanálise",
+              descricao:
+                "Doutor em Psicanálise, membro da Sociedade Brasileira de Psicanálise, com vasta experiência em clínica psicanalítica e formação de analistas.",
+              especialidades: ["Psicanálise", "Clínica", "Formação de Analistas"],
+              biografia:
+                "Doutor em Psicanálise pela UFRJ, membro efetivo da Sociedade Brasileira de Psicanálise de São Paulo. Atua há 20 anos em consultório particular e como analista didata, formando novos psicanalistas. Autor de três livros sobre teoria psicanalítica contemporânea e articulista regular em revistas especializadas. Coordena grupos de estudos sobre Freud e Lacan.",
+              linkedin: "https://linkedin.com/in/marcelo-henrique-silva",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dra. Fernanda Oliveira Ramos",
+              area: "Psicologia Social",
+              descricao:
+                "Doutora em Psicologia Social, pesquisadora em políticas públicas e saúde mental comunitária, com projetos em comunidades vulneráveis.",
+              especialidades: ["Psicologia Social", "Políticas Públicas", "Saúde Mental Comunitária"],
+              biografia:
+                "Doutora em Psicologia Social pela USP, com pesquisas focadas em políticas públicas de saúde mental e intervenções comunitárias. Coordena projetos sociais em comunidades vulneráveis há 10 anos, desenvolvendo programas de prevenção e promoção de saúde mental. Consultora do Ministério da Saúde e autora de publicações sobre psicologia comunitária.",
+              linkedin: "https://linkedin.com/in/fernanda-oliveira-ramos",
+            },
+            {
+              foto: "/placeholder.svg?height=400&width=400",
+              nome: "Dr. Paulo Ricardo Mendes",
+              area: "Psicologia do Desenvolvimento",
+              descricao:
+                "Mestre em Psicologia do Desenvolvimento, especialista em infância e adolescência, com atuação em escolas e clínicas de atendimento infantil.",
+              especialidades: ["Desenvolvimento Infantil", "Psicologia Escolar", "Adolescência"],
+              biografia:
+                "Mestre em Psicologia do Desenvolvimento pela UFRGS, especialista em atendimento clínico de crianças e adolescentes. Atua há 14 anos em consultório particular e como psicólogo escolar. Desenvolve programas de orientação a pais e professores sobre desenvolvimento infantil e dificuldades de aprendizagem. Autor de artigos sobre transtornos do neurodesenvolvimento.",
+              linkedin: "https://linkedin.com/in/paulo-ricardo-mendes",
+            },
+          ]}
         />
 
         <section className="w-full py-16 px-4" id="preco">
