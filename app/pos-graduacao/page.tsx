@@ -66,33 +66,33 @@ export default function PosGraduacaoPage() {
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8" />,
-              title: "Primeira Pós / Especialização",
+              titulo: "Primeira Pós / Especialização",
               dores: "Quer se destacar, mas sente que ainda falta prática e reconhecimento de mercado.",
               promessa: "Torne-se especialista com quem forma líderes há mais de 20 anos.",
-              ganho: "",
+              ganho: "Certificação reconhecida pelo MEC e networking com profissionais de mercado",
               cta: "Descubra sua primeira pós",
               href: "/pos-graduacao/primeira-pos",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8" />,
-              title: "Transição de Área",
+              titulo: "Transição de Área",
               dores: "Busca mudar de área, mas ainda não sabe como validar suas competências.",
               promessa: "Faça uma transição segura com apoio e mentoria de especialistas.",
-              ganho: "",
+              ganho: "Mentoria especializada e validação de competências para nova área",
               cta: "Planeje sua transição",
               href: "/pos-graduacao/transicao-area",
             },
             {
               icon: <TrendingUp className="w-8 h-8" />,
-              title: "Lifelong / Aluno+",
+              titulo: "Lifelong / Aluno+",
               dores: "Quer continuar evoluindo e se manter atualizado.",
               promessa: "Aprofunde-se com o IPOG+ e mantenha sua curva de aprendizado ativa.",
-              ganho: "",
+              ganho: "Descontos exclusivos e acesso antecipado a novos cursos",
               cta: "Conheça o IPOG+",
               href: "/pos-graduacao/lifelong-learning",
             },
           ]}
-          bgColor="bg-muted/30"
+          backgroundColor="bg-muted/30"
         />
         <MetodoPosGraduacao />
 
