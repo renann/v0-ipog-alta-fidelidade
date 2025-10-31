@@ -9,6 +9,9 @@ import { FormasIngresso } from "@/components/formas-ingresso"
 import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function ArquiteturaPage() {
   return (
@@ -26,7 +29,6 @@ export default function ArquiteturaPage() {
             />
           </div>
         </div>
-        {/* </CHANGE> */}
         <Hero
           badge="GRADUAÇÃO"
           title="Arquitetura e Urbanismo"
@@ -37,7 +39,7 @@ export default function ArquiteturaPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">
@@ -144,7 +146,7 @@ export default function ArquiteturaPage() {
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
-            onClick: "openAssistantForConsultor",
+            onClick: openAssistantForConsultor,
           }}
           observacao="* Dados baseados em pesquisa de interna."
           bgColor="bg-white"
@@ -203,6 +205,56 @@ export default function ArquiteturaPage() {
                 </p>
               </div>
               <MetodosPagamento />
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-16 bg-background">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Arquitetura</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Tire suas dúvidas sobre o curso, softwares e atuação profissional.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto mb-8">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-0">
+                  <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
+                  <AccordionContent>
+                    O curso de Arquitetura e Urbanismo tem duração de 5 anos (10 semestres), com carga horária total
+                    reconhecida pelo MEC e CAU.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left">Quais softwares vou aprender?</AccordionTrigger>
+                  <AccordionContent>
+                    Você aprenderá AutoCAD, Revit, SketchUp, V-Ray, Lumion e outras ferramentas essenciais para o
+                    mercado de arquitetura.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left">Como funciona o TFG?</AccordionTrigger>
+                  <AccordionContent>
+                    O Trabalho Final de Graduação é desenvolvido nos últimos semestres com orientação individualizada,
+                    resultando em um projeto completo para seu portfólio.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left">Posso atuar como arquiteto após formado?</AccordionTrigger>
+                  <AccordionContent>
+                    Sim. Após a formação, você deve se registrar no CAU (Conselho de Arquitetura e Urbanismo) para
+                    exercer a profissão legalmente.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            <div className="text-center">
+              <Button size="lg" variant="outline" asChild>
+                <a href="#contato">Conversar com um Consultor Acadêmico</a>
+              </Button>
             </div>
           </div>
         </section>

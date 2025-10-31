@@ -6,7 +6,7 @@ import Link from "next/link"
 import type { ReactNode } from "react"
 
 interface AcaoFinalProps {
-  titulo: string
+  title: string
   descricao: string
   botaoPrimario: {
     texto: string
@@ -24,7 +24,7 @@ interface AcaoFinalProps {
 }
 
 export function AcaoFinal({
-  titulo,
+  title,
   descricao,
   botaoPrimario,
   botaoSecundario,
@@ -35,7 +35,7 @@ export function AcaoFinal({
       <div className="max-w-screen-xl mx-auto px-4">
         <Card className="p-8 md:p-12 bg-muted">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{titulo}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{title}</h2>
             <p className="text-lg text-muted-foreground mb-8 text-pretty">{descricao}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
               {botaoPrimario.href ? (

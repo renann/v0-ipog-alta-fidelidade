@@ -87,8 +87,8 @@ const PrimeiraPosContent = dynamic(
             <MetodoPrimeiraPos />
 
             <Modalidades
-              title="Compare as modalidades e escolha a que mais combina com você"
-              subtitle="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+              titulo="Compare as modalidades e escolha a que mais combina com você"
+              subtitulo="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
               modalidades={[
                 {
                   badge: "PÓS-GRADUAÇÃO",
@@ -144,6 +144,7 @@ const PrimeiraPosContent = dynamic(
                   descricao:
                     "Garanta uma competência fundamental para a psicologia e abra excelentes portas no mercado de trabalho.",
                   modalidade: "Ao Vivo",
+                  link: "/pos-graduacao/curso/avaliacao-psicologica",
                 },
                 {
                   nome: "Engenharia Estrutural e Fundações: Projeto e Modelagem",
@@ -151,6 +152,7 @@ const PrimeiraPosContent = dynamic(
                   descricao:
                     "A escolha certa para transformar conhecimento técnico em protagonismo no canteiro de obras",
                   modalidade: "Presencial",
+                  link: "/pos-graduacao/curso/engenharia-estrutural",
                 },
                 {
                   nome: "Intervenção ABA Aplicada ao TEA",
@@ -158,6 +160,7 @@ const PrimeiraPosContent = dynamic(
                   descricao:
                     "Aprenda como orientar crianças e adultos diagnosticados com TEA e/ou deficiência intelectual, através da análise do comportamento aplicada (ABA).",
                   modalidade: "Ao Vivo",
+                  link: "/pos-graduacao/curso/intervencao-aba",
                 },
               ]}
               ctaText="Ver curso"

@@ -197,7 +197,8 @@ export default function GestoraRHPage() {
             </div>
 
             <Modalidades
-              titulo=""
+              titulo="Soluções corporativas com suporte contínuo"
+              subtitulo="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
               modalidades={[
                 {
                   badge: "RH",

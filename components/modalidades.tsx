@@ -15,19 +15,19 @@ interface Modalidade {
 }
 
 interface ModalidadesProps {
-  titulo: string
-  subtitulo?: string
+  title: string
+  subtitle?: string
   modalidades: Modalidade[]
   backgroundColor?: string
 }
 
-export function Modalidades({ titulo, subtitulo, modalidades, backgroundColor = "bg-white" }: ModalidadesProps) {
+export function Modalidades({ title, subtitle, modalidades, backgroundColor = "bg-white" }: ModalidadesProps) {
   return (
     <section className={`py-16 md:py-24 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{titulo}</h2>
-          {subtitulo && <p className="text-lg text-gray-600">{subtitulo}</p>}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+          {subtitle && <p className="text-lg text-gray-600">{subtitle}</p>}
         </div>
 
         <div className="max-w-5xl mx-auto">

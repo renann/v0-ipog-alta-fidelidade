@@ -12,33 +12,39 @@ export interface Curso {
   duracao: string
   descricao: string
   modalidade: string
+  link?: string
 }
 
 export interface CursosProps {
-  titulo: string
-  subtitulo?: string
+  title: string
+  subtitle?: string
   cursos: Curso[]
   badge?: string
   ctaText?: string
   ctaLink?: string
   carouselBasis?: string
+  footerCTA?: {
+    text: string
+    link: string
+  }
 }
 
 export function Cursos({
-  titulo,
-  subtitulo,
+  title,
+  subtitle,
   cursos,
   badge = "PÓS-GRADUAÇÃO",
   ctaText = "Ver curso",
   ctaLink = "#",
   carouselBasis = "md:basis-1/2 lg:basis-1/3",
+  footerCTA,
 }: CursosProps) {
   return (
     <section className="w-full py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{titulo}</h2>
-          {subtitulo && <p className="mt-4 text-lg text-muted-foreground text-pretty">{subtitulo}</p>}
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{title}</h2>
+          {subtitle && <p className="mt-4 text-lg text-muted-foreground text-pretty">{subtitle}</p>}
         </div>
 
         <div className="mx-auto mt-12 max-w-5xl">
@@ -70,7 +76,7 @@ export function Cursos({
                           </Badge>
                         </div>
                         <Button className="w-full" asChild>
-                          <Link href={ctaLink}>{ctaText}</Link>
+                          <Link href={curso.link || ctaLink}>{ctaText}</Link>
                         </Button>
                       </div>
                     </CardContent>
@@ -82,6 +88,14 @@ export function Cursos({
             <CarouselNext />
           </Carousel>
         </div>
+
+        {footerCTA && (
+          <div className="mt-8 text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link href={footerCTA.link}>{footerCTA.text}</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )

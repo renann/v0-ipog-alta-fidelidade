@@ -52,8 +52,8 @@ export default function EnterprisePage() {
 
         {/* Dilema Corporativo */}
         <Dilema
-          titulo="A velocidade do mercado exige líderes preparados e equipes alinhadas"
-          subtitulo="Mas o ROI da educação corporativa ainda é difícil de comprovar"
+          title="A velocidade do mercado exige líderes preparados e equipes alinhadas"
+          subtitle="Mas o ROI da educação corporativa ainda é difícil de comprovar"
           backgroundColor="bg-muted/30"
           dores={[
             {
@@ -76,8 +76,8 @@ export default function EnterprisePage() {
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          titulo="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
-          subtitulo="Jornada corporativa estruturada com diagnóstico, desenvolvimento e mensuração contínua"
+          title="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
+          subtitle="Jornada corporativa estruturada com diagnóstico, desenvolvimento e mensuração contínua"
           bgColor="bg-background"
           etapas={[
             {
@@ -116,7 +116,7 @@ export default function EnterprisePage() {
 
         {/* Duas Perspectivas - CEO vs RH */}
         <Jornadas
-          titulo="Soluções para cada tomador de decisão"
+          title="Soluções para cada tomador de decisão"
           backgroundColor="bg-muted/30"
           jornadas={[
             {
@@ -145,8 +145,8 @@ export default function EnterprisePage() {
 
         {/* Resultados e Prova de Impacto */}
         <ResultadosReais
-          titulo="Empresas que escolheram o IPOG Enterprise reportaram ganhos reais de performance e engajamento"
-          subtitulo="Resultados mensuráveis que comprovam o impacto da educação corporativa estratégica"
+          title="Empresas que escolheram o IPOG Enterprise reportaram ganhos reais de performance e engajamento"
+          subtitle="Resultados mensuráveis que comprovam o impacto da educação corporativa estratégica"
           estatisticas={[
             {
               icone: <TrendingUp className="w-10 h-10 text-primary" />,
@@ -201,8 +201,8 @@ export default function EnterprisePage() {
 
         {/* Autoridade e Credibilidade */}
         <Autoridade
-          titulo="Curadoria executiva com o selo IPOG"
-          subtitulo="Professores de mercado, cases corporativos e presença nacional"
+          title="Curadoria executiva com o selo IPOG"
+          subtitle="Professores de mercado, cases corporativos e presença nacional"
           backgroundColor="bg-background"
           credenciais={[
             {
@@ -252,7 +252,7 @@ export default function EnterprisePage() {
 
         {/* Ação Final */}
         <AcaoFinal
-          titulo="Transforme o aprendizado em resultado"
+          title="Transforme o aprendizado em resultado"
           descricao="Solicite um diagnóstico gratuito e descubra como a educação corporativa pode acelerar a performance da sua empresa"
           corFundo="bg-muted/30"
           botaoPrimario={{

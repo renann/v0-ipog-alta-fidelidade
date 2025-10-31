@@ -40,8 +40,8 @@ export default function SegundaGraduacaoPage() {
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}
         />
         <Dilema
-          titulo="Você já tem experiência. Por que começar do zero?"
-          subtitulo="Reconhecemos sua trajetória profissional e aceleramos sua nova formação"
+          title="Você já tem experiência. Por que começar do zero?"
+          subtitle="Reconhecemos sua trajetória profissional e aceleramos sua nova formação"
           dores={[
             {
               icon: <Clock className="h-5 w-5" />,
@@ -66,7 +66,7 @@ export default function SegundaGraduacaoPage() {
         <MetodoSegundaGraduacao />
         <Cursos
           badge="GRADUAÇÃO"
-          titulo="Escolha a área que complementa sua experiência profissional"
+          title="Escolha a área que complementa sua experiência profissional"
           cursos={[
             {
               nome: "Administração",
@@ -74,6 +74,7 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Transforme sua experiência em gestão estratégica. Aproveite seus conhecimentos prévios e acelere sua formação com foco executivo.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/administracao",
             },
             {
               nome: "Psicologia",
@@ -81,6 +82,7 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Combine sua experiência profissional com conhecimento em comportamento humano. Ideal para líderes que buscam desenvolvimento de equipes.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/psicologia",
             },
             {
               nome: "Direito",
@@ -88,6 +90,7 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Aproveite sua experiência corporativa e adicione conhecimento jurídico à sua carreira. Perfeito para gestores e empreendedores.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/direito",
             },
           ]}
           ctaText="Ver curso"
@@ -127,8 +130,8 @@ export default function SegundaGraduacaoPage() {
         />
         <RetornoProfissional />
         <Autoridade
-          titulo="Professores de mercado • Certificação reconhecida • Networking executivo"
-          subtitulo="Uma formação que valoriza sua experiência e acelera sua carreira"
+          title="Professores de mercado • Certificação reconhecida • Networking executivo"
+          subtitle="Uma formação que valoriza sua experiência e acelera sua carreira"
           credenciais={[
             { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
             { icone: <Users className="w-5 h-5 text-muted-foreground" />, texto: "Professores de Mercado" },
@@ -161,7 +164,7 @@ export default function SegundaGraduacaoPage() {
           bgColor="bg-muted/30"
         />
         <AcaoFinal
-          titulo="Acelere sua nova formação com validação de conhecimentos"
+          title="Acelere sua nova formação com validação de conhecimentos"
           descricao="Aproveite sua experiência profissional e conquiste um novo diploma no seu ritmo, com trilhas aceleradas e certificação reconhecida."
           botaoPrimario={{
             texto: "Acelere sua formação",

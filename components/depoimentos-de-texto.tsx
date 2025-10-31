@@ -13,17 +13,17 @@ interface Depoimento {
 }
 
 interface DepoimentosDeTextoProps {
-  titulo: string
+  title: string
   depoimentos: Depoimento[]
   corFundo?: string
 }
 
-export function DepoimentosDeTexto({ titulo, depoimentos, corFundo = "bg-background" }: DepoimentosDeTextoProps) {
+export function DepoimentosDeTexto({ title, depoimentos, corFundo = "bg-background" }: DepoimentosDeTextoProps) {
   return (
     <section className={`w-full ${corFundo} py-16 md:py-24`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{titulo}</h2>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{title}</h2>
         </div>
 
         <div className="mx-auto mt-12 max-w-5xl">

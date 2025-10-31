@@ -131,8 +131,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
-            titulo="Escolha o curso que mantém você relevante"
-            subtitulo="Cursos com atualizações contínuas, conteúdo autoral e biblioteca viva"
+            title="Escolha o curso que mantém você relevante"
+            subtitle="Cursos com atualizações contínuas, conteúdo autoral e biblioteca viva"
             badge="EXTENSÃO"
             cursos={[
               {
@@ -140,36 +140,42 @@ export default function AtualizacaoPage() {
                 duracao: "4 meses",
                 descricao: "Domine IA generativa, automação e ferramentas emergentes para aplicação imediata",
                 modalidade: "EAD",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Transformação Digital",
                 duracao: "3 meses",
                 descricao: "Estratégias e frameworks atuais para liderar mudanças tecnológicas na sua empresa",
                 modalidade: "Ao Vivo",
+                link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão Ágil Avançada",
                 duracao: "4 meses",
                 descricao: "Metodologias ágeis de ponta e práticas de liderança para equipes de alta performance",
                 modalidade: "Presencial",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Data Analytics & BI",
                 duracao: "3 meses",
                 descricao: "Análise de dados, visualização e tomada de decisão baseada em dados",
                 modalidade: "EAD",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Cibersegurança Moderna",
                 duracao: "4 meses",
                 descricao: "Proteção de dados, compliance e gestão de riscos digitais atualizados",
                 modalidade: "Ao Vivo",
+                link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Marketing Digital Avançado",
                 duracao: "3 meses",
                 descricao: "Estratégias digitais, growth hacking e ferramentas de automação de marketing",
                 modalidade: "Presencial",
+                link: "/extensao/curso/marketing-digital",
               },
             ]}
             ctaText="Ver curso"
@@ -179,8 +185,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            title="Formatos que se adaptam à sua rotina"
-            subtitle="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
+            titulo="Formatos que se adaptam à sua rotina"
+            subtitulo="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
             modalidades={[
               {
                 badge: "EXTENSÃO",

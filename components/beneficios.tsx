@@ -13,8 +13,8 @@ interface Beneficio {
 }
 
 interface BeneficiosProps {
-  titulo: string
-  subtitulo: string
+  title: string
+  subtitle: string
   beneficios: Beneficio[]
   textoBotao?: string
   onClickBotao?: () => void
@@ -22,8 +22,8 @@ interface BeneficiosProps {
 }
 
 export function Beneficios({
-  titulo,
-  subtitulo,
+  title,
+  subtitle,
   beneficios,
   textoBotao,
   onClickBotao,
@@ -33,8 +33,8 @@ export function Beneficios({
     <section className={`w-full ${corFundo} py-16 md:py-24`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{titulo}</h2>
-          <p className="mt-4 text-pretty text-lg text-muted-foreground">{subtitulo}</p>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{title}</h2>
+          <p className="mt-4 text-pretty text-lg text-muted-foreground">{subtitle}</p>
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl">

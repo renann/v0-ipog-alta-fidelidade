@@ -12,13 +12,13 @@ interface FormaIngresso {
 }
 
 interface FormasIngressoProps {
-  titulo?: string
-  descricao?: string
+  title?: string
+  description?: string
 }
 
 export function FormasIngresso({
-  titulo = "Formas de ingresso",
-  descricao = "Escolha a melhor forma de ingressar na graduação IPOG",
+  title = "Formas de ingresso",
+  description = "Escolha a melhor forma de ingressar na graduação IPOG",
 }: FormasIngressoProps) {
   const formas: FormaIngresso[] = [
     {
@@ -48,8 +48,8 @@ export function FormasIngresso({
     <section className="w-full py-16 md:py-24 bg-background">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{titulo}</h2>
-          {descricao && <p className="text-lg text-muted-foreground max-w-2xl">{descricao}</p>}
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{title}</h2>
+          {description && <p className="text-lg text-muted-foreground max-w-2xl">{description}</p>}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">

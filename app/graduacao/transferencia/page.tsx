@@ -66,8 +66,8 @@ export default function TransferenciaPage() {
         <MetodoTransferencia />
         <Cursos
           badge="GRADUAÇÃO"
-          titulo="Escolha o curso que reconhece seus créditos"
-          subtitulo="Cursos com maior facilidade de transferência e reconhecimento de disciplinas"
+          title="Escolha o curso que reconhece seus créditos"
+          subtitle="Cursos com maior facilidade de transferência e reconhecimento de disciplinas"
           cursos={[
             {
               nome: "Psicologia",
@@ -75,6 +75,7 @@ export default function TransferenciaPage() {
               descricao:
                 "Transfira com segurança. Reconhecemos até 95% dos seus créditos e você continua sua jornada sem perder tempo ou investimento.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
@@ -82,6 +83,7 @@ export default function TransferenciaPage() {
               descricao:
                 "Processo transparente de análise. Reconhecemos suas disciplinas cursadas e você avança com estrutura de excelência.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/direito",
             },
             {
               nome: "Administração",
@@ -89,6 +91,7 @@ export default function TransferenciaPage() {
               descricao:
                 "Transferência ágil em até 30 dias. Reconhecemos seu histórico e você retoma seus estudos rapidamente.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/administracao",
             },
           ]}
           ctaText="Ver curso"

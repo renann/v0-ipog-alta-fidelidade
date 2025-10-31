@@ -18,8 +18,8 @@ interface Professor {
 }
 
 interface AutoridadeProps {
-  titulo: string
-  subtitulo: string
+  title: string
+  subtitle: string
   credenciais: Credencial[]
   professores: Professor[]
   tituloProfessores?: string
@@ -27,8 +27,8 @@ interface AutoridadeProps {
 }
 
 export function Autoridade({
-  titulo,
-  subtitulo,
+  title,
+  subtitle,
   credenciais,
   professores,
   tituloProfessores = "Conheça alguns de nossos professores executivos",
@@ -38,8 +38,8 @@ export function Autoridade({
     <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">{titulo}</h2>
-          <p className="text-muted-foreground">{subtitulo}</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">{title}</h2>
+          <p className="text-muted-foreground">{subtitle}</p>
         </div>
 
         <div className="mb-12">

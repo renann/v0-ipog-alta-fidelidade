@@ -57,13 +57,12 @@ export default function PosGraduacaoPage() {
         />
 
         <Dilema
-          titulo="O mercado muda rápido."
-          subtitulo="Mas conciliar rotina, aprendizado e investimento parece cada vez mais difícil."
+          title="O mercado muda rápido."
+          subtitle="Mas conciliar rotina, aprendizado e investimento parece cada vez mais difícil."
           solucao="A Pós IPOG foi feita para profissionais como você — que buscam avançar sem abrir mão da vida real."
         />
         <Jornadas
           title="Qual é o seu momento de carreira?"
-          subtitle="Encontre a pós ideal para o seu estágio profissional"
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8" />,
@@ -107,51 +106,53 @@ export default function PosGraduacaoPage() {
               descricao:
                 "Garanta uma competência fundamental para a psicologia e abra excelentes portas no mercado de trabalho.",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/avaliacao-psicologica",
             },
             {
-              nome: "Engenharia Estrutural e Fundações: Projeto e Modelagem",
-              duracao: "12 meses",
-              descricao: "A escolha certa para transformar conhecimento técnico em protagonismo no canteiro de obras",
-              modalidade: "Presencial",
-            },
-            {
-              nome: "Intervenção ABA Aplicada ao Transtorno do Espectro Autista e Desenvolvimento Intelectual",
+              nome: "Intervenção ABA Aplicada ao Transtorno do Espectro Autista",
               duracao: "12 meses",
               descricao:
-                "Aprenda como orientar crianças e adultos diagnosticados com TEA e/ou deficiência intelectual, através da análise do comportamento aplicada (ABA).",
+                "Aprenda como orientar crianças e adultos diagnosticados com TEA através da análise do comportamento aplicada.",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/intervencao-aba",
+            },
+            {
+              nome: "Engenharia Estrutural e Fundações",
+              duracao: "12 meses",
+              descricao: "Transforme conhecimento técnico em protagonismo no canteiro de obras.",
+              modalidade: "Presencial",
+              link: "/pos-graduacao/curso/engenharia-estrutural",
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/pos-graduacao/curso/avaliacao-psicologica"
         />
 
         <Beneficios
-          titulo="Mais que uma Pós, um programa de evolução contínua"
-          subtitulo="O IPOG+ garante benefícios exclusivos para quem continua evoluindo"
+          title="Mais que uma Pós, um programa de evolução contínua"
+          subtitle="O IPOG+ garante benefícios exclusivos para quem continua evoluindo"
           beneficios={[
             {
               icone: <Gem className="w-8 h-8" />,
-              titulo: "Descontos exclusivos",
-              subtitulo: "em novas formações",
+              title: "Descontos exclusivos",
+              subtitle: "em novas formações",
               itens: [],
             },
             {
               icone: <GraduationCap className="w-8 h-8" />,
-              titulo: "Mentor de carreira",
-              subtitulo: "e empregabilidade",
+              title: "Mentor de carreira",
+              subtitle: "e empregabilidade",
               itens: [],
             },
             {
               icone: <Globe className="w-8 h-8" />,
-              titulo: "Comunidade Alumni+",
-              subtitulo: "networking e conexões",
+              title: "Comunidade Alumni+",
+              subtitle: "networking e conexões",
               itens: [],
             },
             {
               icone: <Brain className="w-8 h-8" />,
-              titulo: "Acesso antecipado",
-              subtitulo: "a novos cursos e certificações",
+              title: "Acesso antecipado",
+              subtitle: "a novos cursos e certificações",
               itens: [],
             },
           ]}
@@ -160,31 +161,31 @@ export default function PosGraduacaoPage() {
           corFundo="bg-muted/30"
         />
         <Trilha
-          titulo="Construa sua jornada de especialização e liderança"
-          subtitulo="Veja como sua evolução acontece dentro do ecossistema IPOG"
+          title="Construa sua jornada de especialização e liderança"
+          subtitle="Veja como sua evolução acontece dentro do ecossistema IPOG"
           etapas={[
             {
               numero: "1",
-              titulo: "Graduação",
+              title: "Graduação",
               descricao: "Base e certificação",
               beneficios: ["Portfólio", "Networking"],
             },
             {
               numero: "2",
-              titulo: "Pós-Graduação",
+              title: "Pós-Graduação",
               descricao: "Prática e reconhecimento",
               beneficios: ["Mentoria", "Certificação"],
               destaque: true,
             },
             {
               numero: "3",
-              titulo: "MBA ou Mestrado",
+              title: "MBA ou Mestrado",
               descricao: "Estratégia e posicionamento",
               beneficios: ["Networking", "Liderança"],
             },
             {
               numero: "4",
-              titulo: "Lifelong / IPOG+",
+              title: "Lifelong / IPOG+",
               descricao: "Mentoria contínua",
               beneficios: ["Mentoria", "Comunidade"],
             },
@@ -193,8 +194,8 @@ export default function PosGraduacaoPage() {
           textoBotao="Monte sua trilha"
         />
         <Empregabilidade
-          titulo="Empregabilidade que transforma carreiras"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Empregabilidade que transforma carreiras"
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -226,8 +227,8 @@ export default function PosGraduacaoPage() {
         />
         <ROIPos />
         <ResultadosReais
-          titulo="Mais de 20 anos formando profissionais de alto impacto"
-          subtitulo="Resultados comprovados que transformam carreiras"
+          title="Mais de 20 anos formando profissionais de alto impacto"
+          subtitle="Resultados comprovados que transformam carreiras"
           estatisticas={[
             {
               icone: <TrendingUp className="w-12 h-12 text-primary" />,
@@ -272,8 +273,8 @@ export default function PosGraduacaoPage() {
           ]}
         />
         <Autoridade
-          titulo="Professores de mercado • Metodologia validada • Certificação reconhecida"
-          subtitulo="A marca que transforma carreiras há duas décadas"
+          title="Professores de mercado • Metodologia validada • Certificação reconhecida"
+          subtitle="A marca que transforma carreiras há duas décadas"
           credenciais={[
             { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
             {
@@ -307,12 +308,12 @@ export default function PosGraduacaoPage() {
               area: "Neuropsicologia",
             },
           ]}
-          tituloProfessores="Conheça alguns de nossos professores executivos"
+          titleProfessores="Conheça alguns de nossos professores executivos"
           bgColor="bg-muted/30"
         />
 
         <AcaoFinal
-          titulo="Especialize-se com quem forma líderes há mais de 20 anos"
+          title="Especialize-se com quem forma líderes há mais de 20 anos"
           descricao="Escolha entre EAD, Ao Vivo ou Presencial e acelere sua carreira com metodologia validada"
           botaoPrimario={{
             texto: "Encontrar sua especialização",

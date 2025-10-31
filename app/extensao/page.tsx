@@ -27,37 +27,37 @@ export default function ExtensaoPage() {
         </div>
 
         <Hero
-          badge="EXTENSÃO"
-          title="Aprenda hoje, aplique amanhã"
-          description="Cursos rápidos e práticos para profissionais que precisam de resultados imediatos. Desenvolva habilidades específicas com ROI comprovado"
+          badge="EXTENSÃO IPOG"
+          title="Atualização que vira resultado"
+          description="Cursos curtos, práticos e certificados para fechar gaps, impulsionar recolocação e atualizar competências com agilidade."
           valueBadges={[
-            { icon: "Zap", text: "ROI Rápido" },
-            { icon: "Target", text: "100% Prático" },
-            { icon: "Users", text: "Networking Ativo" },
+            { icon: <Zap className="w-5 h-5" />, text: "Aplicação Imediata" },
+            { icon: <TrendingUp className="w-5 h-5" />, text: "100% Prático" },
+            { icon: <Award className="w-5 h-5" />, text: "Certificação Reconhecida" },
           ]}
-          primaryCTA={{ text: "Ver cursos de extensão", href: "/catalogo?tipo=extensao" }}
-          secondaryCTA={{ text: "Falar com consultor" }}
+          primaryCTA={{ text: "Ver cursos de Extensão", href: "/catalogo?tipo=extensao" }}
+          secondaryCTA={{ text: "Falar com um consultor", onClick: openAssistantForConsultor }}
         />
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="O mercado não espera."
-            subtitulo="Novas tecnologias, novas regras, novas exigências — e o tempo para se atualizar nunca é suficiente."
+            title="Precisa evoluir, mas falta tempo e clareza?"
+            subtitle="No IPOG, a Extensão nasce para aplicar no dia seguinte — com entregáveis práticos e certificação reconhecida."
             dores={[
               {
                 icon: <Zap className="h-5 w-5" />,
-                titulo: "Precisa resolver rápido?",
-                solucao: "Cursos de curta duração com aplicação imediata.",
-              },
-              {
-                icon: <TrendingUp className="h-5 w-5" />,
-                titulo: "Buscando recolocação?",
-                solucao: "Portfólio prático e certificação reconhecida.",
+                titulo: "Muitos cursos parecidos, pouca aplicação real",
+                solucao: "Conteúdo de mercado com aplicação imediata no trabalho.",
               },
               {
                 icon: <Clock className="h-5 w-5" />,
-                titulo: "Quer se atualizar?",
-                solucao: "Conteúdo 100% atual, direto do mercado.",
+                titulo: "Agenda lotada e dificuldade de manter ritmo",
+                solucao: "Formatos flexíveis que se adaptam à sua rotina.",
+              },
+              {
+                icon: <Award className="h-5 w-5" />,
+                titulo: "Dúvida se o certificado tem peso e reconhecimento",
+                solucao: "Certificação IPOG reconhecida nacionalmente.",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -70,47 +70,47 @@ export default function ExtensaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            title="Escolha o formato ideal para você"
-            subtitle="Três modalidades, mesma qualidade e certificação IPOG"
+            title="Três formatos, mesma qualidade IPOG"
+            subtitle="Transparência de entrega: carga horária, cronograma, materiais, entregáveis e certificação"
             modalidades={[
               {
                 badge: "EXTENSÃO",
-                titulo: "EAD",
-                descricao: "Para quem precisa autonomia total e quer aprender no próprio ritmo.",
+                titulo: "EAD (gravado)",
+                descricao: "Autonomia total e conteúdos on-demand.",
                 beneficios: [
-                  "Aulas gravadas e conteúdo prático;",
-                  "Aplicação imediata no trabalho;",
-                  "Suporte online;",
-                  "Certificação igual ao curso presencial.",
+                  "Aulas gravadas disponíveis 24/7",
+                  "Aprenda no seu ritmo",
+                  "Materiais práticos para download",
+                  "Certificação IPOG reconhecida",
                 ],
                 link: "/catalogo?tipo=extensao&modalidade=ead",
-                buttonText: "Encontrar cursos EAD",
+                buttonText: "Ver cursos EAD",
               },
               {
                 badge: "EXTENSÃO",
-                titulo: "Ao Vivo",
-                descricao: "Para quem aprende melhor com interação e acompanhamento direto.",
+                titulo: "Ao vivo (online)",
+                descricao: "Interação em tempo real com docente e turma.",
                 beneficios: [
-                  "Aulas em tempo real;",
-                  "Discussão com mentores e especialistas;",
-                  "Exercícios aplicados com feedback;",
-                  "Networking com colegas de área.",
+                  "Aulas síncronas com especialistas",
+                  "Tire dúvidas em tempo real",
+                  "Networking com profissionais da área",
+                  "Exercícios práticos com feedback",
                 ],
                 link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
-                buttonText: "Encontrar cursos Ao Vivo",
+                buttonText: "Ver cursos Ao Vivo",
               },
               {
                 badge: "EXTENSÃO",
                 titulo: "Presencial",
-                descricao: "Para quem busca imersão e conexões presenciais.",
+                descricao: "Imersão e networking para acelerar prática.",
                 beneficios: [
-                  "Práticas em laboratório e dinâmicas de grupo;",
-                  "Experiência intensiva e real;",
-                  "Certificação imediata;",
-                  "Rede local de contatos.",
+                  "Experiência hands-on intensiva",
+                  "Dinâmicas práticas e estudos de caso",
+                  "Conexões presenciais fortes",
+                  "Certificação imediata",
                 ],
                 link: "/catalogo?tipo=extensao&modalidade=presencial",
-                buttonText: "Encontrar cursos Presencial",
+                buttonText: "Ver cursos Presencial",
               },
             ]}
             bgColor="bg-muted/30"
@@ -119,68 +119,70 @@ export default function ExtensaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
-            badge="EXTENSÃO"
-            title="Encontre o curso que resolve seu desafio agora"
-            subtitle="Cursos curtos e objetivos para quem busca resultado imediato"
+            badge="CURSOS EM DESTAQUE"
+            title="Encontre sua atualização"
+            subtitle="Gestão & Operações • Tecnologia & Dados • Marketing & Vendas • Pessoas & Cultura"
             cursos={[
               {
                 nome: "Gestão de Projetos Ágeis",
                 duracao: "40h",
                 descricao: "Aplique Scrum e Kanban na prática e gerencie projetos com agilidade e eficiência.",
-                modalidade: "EAD",
+                modalidade: "EAD • Presencial",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
-                nome: "Power BI Express",
-                duracao: "24h",
-                descricao: "Domine dashboards em uma semana e transforme dados em insights estratégicos.",
-                modalidade: "Ao Vivo",
-              },
-              {
-                nome: "Comunicação e Liderança",
+                nome: "Marketing Digital",
                 duracao: "60h",
-                descricao: "Fale, influencie, lidere. Desenvolva habilidades essenciais para liderança efetiva.",
-                modalidade: "Presencial",
+                descricao: "Domine estratégias digitais e transforme dados em resultados mensuráveis.",
+                modalidade: "EAD • Ao Vivo",
+                link: "/extensao/curso/marketing-digital",
+              },
+              {
+                nome: "Inteligência Artificial Aplicada",
+                duracao: "80h",
+                descricao: "Implemente soluções de IA no seu negócio e automatize processos estratégicos.",
+                modalidade: "Ao Vivo • Presencial",
+                link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
             ]}
             ctaText="Ver curso"
-            ctaLink="/extensao/curso/gestao-projetos-ageis"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
-              link: "/catalogo?formacao=Extensão",
+              link: "/catalogo?formacao=extensao",
             }}
           />
         </section>
 
         <section className="w-full py-12 md:py-16">
           <Jornadas
-            titulo="Três jornadas, um objetivo: resultado rápido"
+            title="Traga a página certa para o seu objetivo"
             jornadas={[
               {
                 icon: <Zap className="h-6 w-6" />,
                 titulo: "Gap Imediato",
-                promessa: "Aprenda a ferramenta ou técnica exata que você precisa aplicar esta semana.",
-                dores: "Preciso resolver um desafio técnico urgente, mas não tenho tempo para uma formação longa.",
-                ganho: "Domine habilidades específicas com aplicação imediata no trabalho.",
-                cta: "Encontre seu curso",
+                promessa: "Módulos intensivos para resolver lacunas críticas.",
+                dores: "Preciso de uma competência específica agora para um projeto ou desafio urgente.",
+                ganho: "Aprenda e aplique ferramentas e técnicas no mesmo dia.",
+                cta: "Resolver gap agora",
                 href: "/extensao/gap-imediato",
               },
               {
                 icon: <TrendingUp className="h-6 w-6" />,
                 titulo: "Recolocação",
-                promessa: "Construa cases práticos e certificações que validam sua nova expertise.",
-                dores: "Estou em transição de carreira e preciso de portfólio e confiança para entrevistas.",
-                ganho: "Acelere sua recolocação com certificações reconhecidas e portfólio prático.",
-                cta: "Acelere sua recolocação",
+                promessa: "Competências e portfólio para voltar ao mercado melhor.",
+                dores: "Estou em transição e preciso de evidências práticas para entrevistas.",
+                ganho: "Construa portfólio e certificação que validam sua expertise.",
+                cta: "Acelerar recolocação",
                 href: "/extensao/recolocacao",
               },
               {
                 icon: <RefreshCw className="h-6 w-6" />,
                 titulo: "Atualização",
-                promessa: "Domine as tendências atuais com cursos objetivos e certificação reconhecida.",
-                dores: "Minha área evolui rápido e preciso me manter competitivo sem parar de trabalhar.",
-                ganho: "Mantenha-se relevante no mercado com conhecimento atualizado.",
-                cta: "Mantenha-se atualizado",
-                href: "/extensao/atualizacao", // updated link from # to actual page URL
+                promessa: "Tendências, frameworks e ferramentas que importam.",
+                dores: "Minha área evolui rápido e preciso me manter competitivo.",
+                ganho: "Domine as novidades do mercado sem parar de trabalhar.",
+                cta: "Manter-se atualizado",
+                href: "/extensao/atualizacao",
               },
             ]}
           />
@@ -188,69 +190,70 @@ export default function ExtensaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <ResultadosReais
-            titulo="Resultados mensuráveis, em semanas."
-            subtitulo="Nossos alunos aplicam o conhecimento rapidamente e veem impacto real em suas carreiras"
+            title="O que muda quando você faz Extensão no IPOG"
+            subtitle="Aplicação imediata, geração de evidência, mobilidade de carreira e rede de contatos"
             estatisticas={[
               {
-                icone: <TrendingUp className="w-8 h-8 text-primary" />,
+                icone: <Zap className="w-8 h-8 text-primary" />,
                 valor: "92%",
-                descricao: "aplicaram o conteúdo na primeira semana",
+                descricao: "aplicaram no trabalho na primeira semana",
               },
               {
-                icone: <Award className="w-8 h-8 text-primary" />,
-                valor: "80%",
-                descricao: "relataram melhoria de desempenho",
+                icone: <BookOpen className="w-8 h-8 text-primary" />,
+                valor: "85%",
+                descricao: "geraram portfólio e projetos práticos",
+              },
+              {
+                icone: <TrendingUp className="w-8 h-8 text-primary" />,
+                valor: "78%",
+                descricao: "obtiveram promoção ou transição de área",
               },
               {
                 icone: <Users className="w-8 h-8 text-primary" />,
-                valor: "68%",
-                descricao: "obtiveram reconhecimento interno ou promoção",
-              },
-              {
-                icone: <Clock className="w-8 h-8 text-primary" />,
-                valor: "8 semanas",
-                descricao: "tempo médio de recolocação",
+                valor: "50mil+",
+                descricao: "profissionais na rede IPOG",
               },
             ]}
             depoimentos={[
               {
                 tipo: "antes-depois",
-                nome: "Ana Paula Silva",
-                cargo: "Analista de Dados",
-                antes: "Sem conhecimento em Power BI",
-                depois: "Criou dashboards estratégicos em 2 semanas",
-                impacto: "Promoção em 45 dias",
+                nome: "Profissional em Operações",
+                cargo: "Egresso IPOG",
+                antes: "Processos manuais e sem indicadores",
+                depois: "Usei o material do curso já na semana seguinte",
+                impacto: "Economizei horas e melhorei indicadores",
               },
               {
                 tipo: "antes-depois",
-                nome: "Carlos Mendes",
-                cargo: "Gerente de Projetos",
-                antes: "Gestão tradicional sem metodologias ágeis",
-                depois: "Implementou Scrum na equipe",
-                impacto: "Aumento de 40% na produtividade",
+                nome: "Profissional em Marketing",
+                cargo: "Egressa IPOG",
+                antes: "Fora do mercado há 6 meses",
+                depois: "Entreguei um projeto-piloto do curso",
+                impacto: "Voltei ao mercado em 30 dias",
               },
             ]}
           />
         </section>
+
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Certificação reconhecida nacionalmente"
-            subtitulo="Professores que atuam no mercado. Rede de mais de 50 mil profissionais conectados pela prática"
+            title="Quem faz, recomenda"
+            subtitle="Docentes de mercado, entregáveis práticos e comunidade ativa de profissionais"
             credenciais={[
               {
                 icone: <Users className="w-6 h-6 text-foreground" />,
-                texto: "Professores de mercado",
-                descricao: "Especialistas atuantes que ensinam o que realmente funciona",
+                texto: "Docentes de mercado",
+                descricao: "Profissionais atuantes que ensinam o que realmente funciona",
               },
               {
                 icone: <BookOpen className="w-6 h-6 text-foreground" />,
-                texto: "Conteúdo 100% prático",
-                descricao: "Templates e ferramentas prontas para aplicação imediata",
+                texto: "Entregáveis práticos",
+                descricao: "Checklists, templates e projetos que viram portfólio",
               },
               {
                 icone: <Award className="w-6 h-6 text-foreground" />,
-                texto: "Certificação reconhecida",
-                descricao: "Validação nacional que agrega valor ao seu currículo",
+                texto: "Certificação IPOG",
+                descricao: "Reconhecimento nacional com indicação de carga horária",
               },
             ]}
             professores={[
@@ -273,16 +276,17 @@ export default function ExtensaoPage() {
             bgColor="bg-muted/30"
           />
         </section>
+
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Aprenda hoje, aplique amanhã"
-            descricao="Cursos rápidos e práticos com ROI comprovado. Desenvolva habilidades específicas que o mercado valoriza"
+            title="Pronto para fechar seu gap?"
+            descricao="Escolha o tema, o formato e a data de início — comece a usar o que aprender desde a primeira aula."
             botaoPrimario={{
-              texto: "Ver cursos de extensão",
+              texto: "Ver cursos de Extensão",
               href: "/catalogo?tipo=extensao",
             }}
             botaoSecundario={{
-              texto: "Falar com consultor",
+              texto: "Iniciar minha inscrição",
               onClick: openAssistantForConsultor,
             }}
           />

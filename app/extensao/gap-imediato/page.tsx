@@ -76,8 +76,8 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Cursos
-            titulo="Escolha o curso que resolve seu desafio técnico agora"
-            subtitulo="Cursos focados em aplicação imediata com templates prontos e professores atuantes"
+            title="Escolha o curso que resolve seu desafio técnico agora"
+            subtitle="Cursos focados em aplicação imediata com templates prontos e professores atuantes"
             badge="EXTENSÃO"
             cursos={[
               {
@@ -85,18 +85,21 @@ export default function GapImediatoPage() {
                 duracao: "3 meses",
                 descricao: "Estratégias e ferramentas atuais para resultados rápidos em campanhas digitais",
                 modalidade: "EAD",
+                link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão de Pessoas",
                 duracao: "4 meses",
                 descricao: "Liderança prática para equipes de alta performance e gestão de conflitos",
                 modalidade: "Ao Vivo",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Compliance",
                 duracao: "3 meses",
                 descricao: "Conformidade e gestão de riscos aplicáveis imediatamente na sua empresa",
                 modalidade: "Presencial",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
             ]}
             ctaText="Ver curso"
@@ -106,8 +109,8 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            title="Formatos que entregam resultado rápido"
-            subtitle="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
+            titulo="Formatos que entregam resultado rápido"
+            subtitulo="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
             modalidades={[
               {
                 badge: "EXTENSÃO",

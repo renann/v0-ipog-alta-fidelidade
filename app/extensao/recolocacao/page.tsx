@@ -76,6 +76,7 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Reposicione-se em uma das áreas mais aquecidas do mercado com estratégias práticas e portfólio digital.",
                 modalidade: "EAD",
+                link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão de Pessoas",
@@ -83,6 +84,7 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Lidere com empatia e propósito, desenvolvendo competências essenciais para cargos de liderança.",
                 modalidade: "Ao Vivo",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Compliance",
@@ -90,6 +92,7 @@ export default function RecolocacaoPage() {
                 descricao:
                   "Traga segurança e credibilidade ao seu perfil com conhecimento em governança e conformidade.",
                 modalidade: "Presencial",
+                link: "/extensao/curso/gestao-projetos-ageis",
               },
             ]}
             ctaText="Ver curso"

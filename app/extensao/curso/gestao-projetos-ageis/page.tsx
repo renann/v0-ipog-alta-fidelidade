@@ -9,6 +9,7 @@ import { FormasIngresso } from "@/components/formas-ingresso"
 import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function GestaoProjetosAgeisPage() {
   return (
@@ -37,7 +38,7 @@ export default function GestaoProjetosAgeisPage() {
             { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar conteúdo programático", href: "#grade" }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
         />
 
         <section className="w-full py-12 md:py-16 bg-muted/30">

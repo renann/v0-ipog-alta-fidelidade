@@ -32,20 +32,20 @@ interface DepoimentoAntesDepois {
 type Depoimento = DepoimentoSimples | DepoimentoAntesDepois
 
 interface ResultadosReaisProps {
-  titulo: string
-  subtitulo?: string
+  title: string
+  subtitle?: string
   estatisticas: Estatistica[]
   depoimentos?: Depoimento[]
   corFundo?: string
 }
 
-export function ResultadosReais({ titulo, subtitulo, estatisticas, depoimentos = [], corFundo }: ResultadosReaisProps) {
+export function ResultadosReais({ title, subtitle, estatisticas, depoimentos = [], corFundo }: ResultadosReaisProps) {
   return (
     <section className={`w-full py-12 md:py-16 ${corFundo || ""}`}>
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">{titulo}</h2>
-          {subtitulo && <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">{subtitulo}</p>}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">{title}</h2>
+          {subtitle && <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>}
         </div>
 
         <div className="mb-12 px-8 md:px-12">

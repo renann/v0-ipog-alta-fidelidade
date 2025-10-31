@@ -83,7 +83,7 @@ export default function LifelongLearningPage() {
         <MetodoLifelongLearning />
 
         <Modalidades
-          title="Escolha a modalidade que se encaixa na sua rotina"
+          titulo="Escolha a modalidade que se encaixa na sua rotina"
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -139,12 +139,14 @@ export default function LifelongLearningPage() {
               descricao:
                 "Garanta uma competência fundamental para a psicologia e abra excelentes portas no mercado de trabalho.",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/avaliacao-psicologica",
             },
             {
               nome: "Engenharia Estrutural e Fundações: Projeto e Modelagem",
               duracao: "12 meses",
               descricao: "A escolha certa para transformar conhecimento técnico em protagonismo no canteiro de obras",
               modalidade: "Presencial",
+              link: "/pos-graduacao/curso/engenharia-estrutural",
             },
             {
               nome: "Intervenção ABA Aplicada ao Transtorno do Espectro Autista e Desenvolvimento Intelectual",
@@ -152,6 +154,7 @@ export default function LifelongLearningPage() {
               descricao:
                 "Aprenda como orientar crianças e adultos diagnosticados com TEA e/ou deficiência intelectual, através da análise do comportamento aplicada (ABA).",
               modalidade: "Ao Vivo",
+              link: "/pos-graduacao/curso/intervencao-aba",
             },
           ]}
           ctaText="Ver curso"

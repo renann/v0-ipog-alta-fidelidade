@@ -14,8 +14,8 @@ interface DoreSolucao {
 }
 
 interface DilemaProps {
-  titulo: string
-  subtitulo: string
+  title: string
+  subtitle: string
   solucao?: string
   imagemUrl?: string
   backgroundColor?: string
@@ -26,8 +26,8 @@ interface DilemaProps {
 }
 
 export function Dilema({
-  titulo,
-  subtitulo,
+  title,
+  subtitle,
   solucao,
   imagemUrl,
   backgroundColor = "bg-background",
@@ -41,8 +41,8 @@ export function Dilema({
       <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{titulo}</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">{subtitulo}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">{subtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -89,15 +89,15 @@ export function Dilema({
         <Card className="p-6 md:p-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">{titulo}</h2>
-              <p className="text-muted-foreground mb-4">{subtitulo}</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
+              <p className="text-muted-foreground mb-4">{subtitle}</p>
               {solucao && <p className="text-foreground font-medium">{solucao}</p>}
             </div>
             <div className="bg-muted rounded-lg aspect-square flex items-center justify-center">
               {imagemUrl ? (
                 <img
                   src={imagemUrl || "/placeholder.svg"}
-                  alt={titulo}
+                  alt={title}
                   className="w-full h-full object-cover rounded-lg"
                 />
               ) : (

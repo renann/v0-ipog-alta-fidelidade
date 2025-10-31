@@ -40,8 +40,8 @@ export default function JovemIngressoPage() {
           secondaryCTA={{ text: "Falar com consultor acadêmico", onClick: "openAssistantForConsultor" }}
         />
         <Dilema
-          titulo="Escolher o caminho certo é um desafio"
-          subtitulo="O tempo, o trabalho e os custos muitas vezes parecem barreiras. Mas é possível transformar sua rotina em um plano de crescimento — com orientação, clareza e resultados reais"
+          title="Escolher o caminho certo é um desafio"
+          subtitle="O tempo, o trabalho e os custos muitas vezes parecem barreiras. Mas é possível transformar sua rotina em um plano de crescimento — com orientação, clareza e resultados reais"
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
@@ -63,7 +63,7 @@ export default function JovemIngressoPage() {
         <MetodoJovemIngresso />
         <Cursos
           badge="GRADUAÇÃO"
-          titulo="Escolha o curso que abre portas para seu futuro profissional"
+          title="Escolha o curso que abre portas para seu futuro profissional"
           cursos={[
             {
               nome: "Psicologia",
@@ -71,6 +71,7 @@ export default function JovemIngressoPage() {
               descricao:
                 "Compreenda o comportamento humano e transforme vidas. Você não está escolhendo apenas um curso, está escolhendo transformar sua escuta em acolhimento.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
@@ -78,6 +79,7 @@ export default function JovemIngressoPage() {
               descricao:
                 "Justiça e transformação social através do direito. Transforme argumentos em justiça, conhecimento em defesa, sua voz em autoridade.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/direito",
             },
             {
               nome: "Arquitetura e Urbanismo",
@@ -85,14 +87,15 @@ export default function JovemIngressoPage() {
               descricao:
                 "Projete espaços e transforme ambientes. Transforme ideias em projetos, espaços em experiências, sua criatividade em realidade.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"
           ctaLink="/catalogo?categoria=graduacao&persona=jovem-ingresso"
         />
         <Modalidades
-          titulo="Compare as modalidades e escolha a que mais combina com você"
-          subtitulo="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+          title="Compare as modalidades e escolha a que mais combina com você"
+          subtitle="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
           modalidades={[
             {
               badge: "GRADUAÇÃO",
@@ -123,8 +126,8 @@ export default function JovemIngressoPage() {
           ]}
         />
         <Empregabilidade
-          titulo="Milhares de jovens já transformaram suas carreiras"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Milhares de jovens já transformaram suas carreiras"
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -151,7 +154,7 @@ export default function JovemIngressoPage() {
         />
         <SuporteAcompanhamento />
         <AcaoFinal
-          titulo="Comece sua graduação com segurança e propósito"
+          title="Comece sua graduação com segurança e propósito"
           descricao="Acompanhamento próximo, empregabilidade garantida e flexibilidade para estudar do seu jeito. Transforme sua primeira graduação em uma jornada de crescimento real."
           botaoPrimario={{
             texto: "Comece sua graduação",

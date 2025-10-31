@@ -38,8 +38,8 @@ export default function GraduacaoPage() {
           secondaryCTA={{ text: "Falar com consultor" }}
         />
         <Dilema
-          titulo="O mercado exige profissionais preparados"
-          subtitulo="Mas escolher a graduação certa e conciliar estudos com vida pessoal parece cada vez mais desafiador"
+          title="O mercado exige profissionais preparados"
+          subtitle="Mas escolher a graduação certa e conciliar estudos com vida pessoal parece cada vez mais desafiador"
           solucao="A Graduação IPOG conecta você a um aprendizado prático, com suporte acadêmico real e empregabilidade comprovada"
         />
         <MetodoIpog />
@@ -48,41 +48,36 @@ export default function GraduacaoPage() {
           title="Escolha o curso que combina com sua trajetória profissional"
           cursos={[
             {
-              nome: "Administração",
-              duracao: "4 anos",
-              descricao:
-                "Gestão estratégica e liderança empresarial para formar profissionais preparados para o mercado.",
-              modalidade: "EAD • Presencial",
-            },
-            {
               nome: "Psicologia",
               duracao: "5 anos",
               descricao:
                 "Ciências humanas e comportamento para transformar vidas através da compreensão do ser humano.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
               duracao: "5 anos",
               descricao: "Ciências jurídicas e advocacia com foco em justiça e transformação social.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/direito",
             },
             {
-              nome: "Engenharia",
+              nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
-              descricao: "Tecnologia e inovação para desenvolver soluções que transformam o mundo.",
+              descricao: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
               modalidade: "EAD • Presencial",
+              link: "/graduacao/curso/arquitetura",
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/graduacao/curso/psicologia-ead"
         />
         <Jornadas
           title="Encontre sua jornada acadêmica"
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8 text-primary" />,
-              titulo: "Jovem Ingresso",
+              title: "Jovem Ingresso",
               promessa: "Diferencie-se no mercado com conteúdo prático e certificação reconhecida",
               dores: "Excesso de teoria e falta de tempo",
               ganho: "Empregabilidade e networking desde o primeiro semestre",
@@ -91,7 +86,7 @@ export default function GraduacaoPage() {
             },
             {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
-              titulo: "Segunda Graduação",
+              title: "Segunda Graduação",
               promessa: "Acelere sua nova formação com validação de conhecimentos",
               dores: "Sobrecarga e falta de personalização",
               ganho: "Eficiência e continuidade na formação",
@@ -100,7 +95,7 @@ export default function GraduacaoPage() {
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8 text-primary" />,
-              titulo: "Transferência",
+              title: "Transferência",
               promessa: "Continue sua jornada com melhor estrutura e suporte",
               dores: "Falta de suporte e estrutura inadequada",
               ganho: "Continuidade sem perda de tempo",
@@ -110,8 +105,8 @@ export default function GraduacaoPage() {
           ]}
         />
         <ResultadosReais
-          titulo="Mais de 20 anos formando profissionais de alto impacto"
-          subtitulo="Resultados comprovados que transformam carreiras"
+          title="Mais de 20 anos formando profissionais de alto impacto"
+          subtitle="Resultados comprovados que transformam carreiras"
           estatisticas={[
             {
               icone: <TrendingUp className="w-12 h-12 text-primary" />,
@@ -147,8 +142,8 @@ export default function GraduacaoPage() {
           ]}
         />
         <Autoridade
-          titulo="Professores de mercado"
-          subtitulo="Aprenda com quem atua e transforma o mercado"
+          title="Professores de mercado"
+          subtitle="Aprenda com quem atua e transforma o mercado"
           credenciais={[
             { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
             {
@@ -184,7 +179,7 @@ export default function GraduacaoPage() {
           bgColor="bg-muted/30"
         />
         <AcaoFinal
-          titulo="Comece sua graduação com quem forma especialistas"
+          title="Comece sua graduação com quem forma especialistas"
           descricao="Escolha entre EAD ou Presencial e construa seu futuro profissional com suporte real"
           botaoPrimario={{
             texto: "Encontre seu curso",

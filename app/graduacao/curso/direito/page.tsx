@@ -9,6 +9,9 @@ import { FormasIngresso } from "@/components/formas-ingresso"
 import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Scale } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import { openAssistantForConsultor } from "@/lib/assistant-events"
 
 export default function DireitoPage() {
   return (
@@ -22,7 +25,7 @@ export default function DireitoPage() {
             />
           </div>
         </div>
-        {/* </CHANGE> */}
+        {/* */}
         <Hero
           badge="GRADUAÇÃO"
           title="Direito"
@@ -33,9 +36,9 @@ export default function DireitoPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
-          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
+          secondaryCTA={{ text: "Baixar grade curricular", onClick: openAssistantForConsultor }}
         />
-
+        {/* </CHANGE> */}
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
@@ -200,6 +203,56 @@ export default function DireitoPage() {
                 </p>
               </div>
               <MetodosPagamento />
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-16 bg-background">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre o curso de Direito</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Tire suas dúvidas sobre o curso, modalidades e preparação para OAB.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto mb-8">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-0">
+                  <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
+                  <AccordionContent>
+                    O curso de Direito tem duração de 5 anos (10 semestres), com carga horária total reconhecida pelo
+                    MEC.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left">O curso prepara para o Exame da OAB?</AccordionTrigger>
+                  <AccordionContent>
+                    Sim. Nossa metodologia inclui preparação específica para o Exame da Ordem com simulados e
+                    acompanhamento especializado ao longo do curso.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left">Como funcionam os estágios?</AccordionTrigger>
+                  <AccordionContent>
+                    São 300 horas de estágio supervisionado em escritórios, órgãos públicos e no escritório modelo da
+                    instituição, com acompanhamento de professores experientes.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left">O diploma EAD tem o mesmo valor?</AccordionTrigger>
+                  <AccordionContent>
+                    Sim. O diploma EAD tem o mesmo valor e reconhecimento do presencial, permitindo registro na OAB e
+                    atuação profissional.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            <div className="text-center">
+              <Button size="lg" variant="outline" asChild>
+                <a href="#contato">Conversar com um Consultor Acadêmico</a>
+              </Button>
             </div>
           </div>
         </section>
