@@ -41,7 +41,7 @@ export default function AtualizacaoPage() {
             { icon: <BookOpen className="h-5 w-5" />, text: "Biblioteca Viva" },
             { icon: <Users className="h-5 w-5" />, text: "Apoio Especializado" },
           ]}
-          primaryCTA={{ text: "Mantenha-se à frente", href: "#cursos" }}
+          primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
           secondaryCTA={{ text: "Ver conteúdos exclusivos", href: "#biblioteca" }}
         />
 
@@ -199,7 +199,7 @@ export default function AtualizacaoPage() {
                   "Certificação reconhecida pelo mercado",
                 ],
                 buttonText: "Encontrar cursos EAD",
-                link: "/catalogo?tipo=extensao&modalidade=ead",
+                link: "/catalogo?categoria=extensao&modalidade=ead",
               },
               {
                 badge: "EXTENSÃO",
@@ -212,7 +212,7 @@ export default function AtualizacaoPage() {
                   "Gravações disponíveis após cada sessão",
                 ],
                 buttonText: "Encontrar cursos Ao Vivo",
-                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
+                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
               },
               {
                 badge: "EXTENSÃO",
@@ -225,7 +225,7 @@ export default function AtualizacaoPage() {
                   "Certificação IPOG reconhecida nacionalmente",
                 ],
                 buttonText: "Encontrar cursos Presencial",
-                link: "/catalogo?tipo=extensao&modalidade=presencial",
+                link: "/catalogo?categoria=extensao&modalidade=presencial",
               },
             ]}
             backgroundColor="bg-background"
@@ -380,8 +380,8 @@ export default function AtualizacaoPage() {
             titulo="Mantenha-se à frente. Evolua com o IPOG."
             descricao="Cursos com biblioteca viva, conteúdo autoral exclusivo e apoio especializado. Mantenha sua relevância e vantagem competitiva com atualização contínua."
             botaoPrimario={{
-              texto: "Começar atualização",
-              href: "/catalogo?tipo=extensao",
+              texto: "Começar minha jornada",
+              href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor",

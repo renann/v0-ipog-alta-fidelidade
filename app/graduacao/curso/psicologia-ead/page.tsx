@@ -113,7 +113,7 @@ export default function PsicologiaEadPage() {
             autor: "Aluno IPOG",
           }}
           botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
+            texto: "Falar com consultor de carreira",
             onClick: "openAssistantForConsultor",
           }}
           observacao="* Dados baseados em pesquisa de interna."

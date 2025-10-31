@@ -35,8 +35,8 @@ export default function ExtensaoPage() {
             { icon: <TrendingUp className="w-5 h-5" />, text: "100% Prático" },
             { icon: <Award className="w-5 h-5" />, text: "Certificação Reconhecida" },
           ]}
-          primaryCTA={{ text: "Ver cursos de Extensão", href: "/catalogo?tipo=extensao" }}
-          secondaryCTA={{ text: "Falar com um consultor", onClick: openAssistantForConsultor }}
+          primaryCTA={{ text: "Ver cursos de Extensão", href: "/catalogo?categoria=extensao" }}
+          secondaryCTA={{ text: "Falar com consultor", onClick: openAssistantForConsultor }}
         />
 
         <section className="w-full py-12 md:py-16">
@@ -83,8 +83,8 @@ export default function ExtensaoPage() {
                   "Materiais práticos para download",
                   "Certificação IPOG reconhecida",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=ead",
-                buttonText: "Ver cursos EAD",
+                link: "/catalogo?categoria=extensao&modalidade=ead",
+                buttonText: "Ver cursos de Extensão - EAD",
               },
               {
                 badge: "EXTENSÃO",
@@ -96,8 +96,8 @@ export default function ExtensaoPage() {
                   "Networking com profissionais da área",
                   "Exercícios práticos com feedback",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
-                buttonText: "Ver cursos Ao Vivo",
+                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
+                buttonText: "Ver cursos de Extensão - Ao Vivo",
               },
               {
                 badge: "EXTENSÃO",
@@ -109,8 +109,8 @@ export default function ExtensaoPage() {
                   "Conexões presenciais fortes",
                   "Certificação imediata",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=presencial",
-                buttonText: "Ver cursos Presencial",
+                link: "/catalogo?categoria=extensao&modalidade=presencial",
+                buttonText: "Ver cursos de Extensão - Presencial",
               },
             ]}
             bgColor="bg-muted/30"
@@ -148,7 +148,7 @@ export default function ExtensaoPage() {
             ctaText="Ver curso"
             footerCTA={{
               text: "Ver todos os cursos de Extensão",
-              link: "/catalogo?formacao=extensao",
+              link: "/catalogo?categoria=extensao",
             }}
           />
         </section>
@@ -283,10 +283,10 @@ export default function ExtensaoPage() {
             descricao="Escolha o tema, o formato e a data de início — comece a usar o que aprender desde a primeira aula."
             botaoPrimario={{
               texto: "Ver cursos de Extensão",
-              href: "/catalogo?tipo=extensao",
+              href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
-              texto: "Iniciar minha inscrição",
+              texto: "Falar com consultor",
               onClick: openAssistantForConsultor,
             }}
           />

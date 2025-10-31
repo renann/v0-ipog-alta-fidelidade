@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -5,7 +7,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { Download, ChevronRight } from "lucide-react"
 import Footer from "@/components/footer"
-import Link from "next/link"
 
 export default function CalendarioAcademicoPage() {
   return (
@@ -187,11 +188,17 @@ export default function CalendarioAcademicoPage() {
         {/* CTA Final */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
-            <Button size="lg" className="bg-black hover:bg-black/90 text-white rounded-full px-8 gap-2" asChild>
-              <Link href="/central-atendimento">
-                Em caso de dúvidas, fale conosco
-                <ChevronRight className="h-4 w-4" />
-              </Link>
+            <Button
+              size="lg"
+              className="bg-black hover:bg-black/90 text-white rounded-full px-8 gap-2"
+              onClick={() => {
+                if (typeof window !== "undefined" && (window as any).openAssistantForConsultor) {
+                  ;(window as any).openAssistantForConsultor()
+                }
+              }}
+            >
+              Em caso de dúvidas, fale conosco
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </section>

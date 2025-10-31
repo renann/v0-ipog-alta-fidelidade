@@ -52,7 +52,7 @@ export default function PosGraduacaoPage() {
             { icon: "BadgeCheck", text: "Professores de Mercado" },
             { icon: "BadgeCheck", text: "Certificação Reconhecida" },
           ]}
-          primaryCTA={{ text: "Encontre sua especialização", href: "/catalogo?formacao=pos-graduacao" }}
+          primaryCTA={{ text: "Encontre sua especialização", href: "/catalogo?categoria=pos-graduacao" }}
           secondaryCTA={{ text: "Monte sua trilha de Pós", onClick: "openAssistantForConsultor" }}
         />
 
@@ -220,8 +220,8 @@ export default function PosGraduacaoPage() {
             "Indicações para vagas parceiras",
           ]}
           botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
-            onClick: "openAssistantForConsultor",
+            texto: "Falar com consultor de carreira",
+            onClick: openAssistantForConsultor,
           }}
           bgColor="bg-background"
         />
@@ -317,7 +317,7 @@ export default function PosGraduacaoPage() {
           descricao="Escolha entre EAD, Ao Vivo ou Presencial e acelere sua carreira com metodologia validada"
           botaoPrimario={{
             texto: "Encontrar sua especialização",
-            href: "/catalogo?formacao=pos-graduacao",
+            href: "/catalogo?categoria=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Monte sua trilha de Pós",

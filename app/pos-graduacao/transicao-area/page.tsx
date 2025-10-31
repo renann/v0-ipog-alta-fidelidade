@@ -39,7 +39,7 @@ export default function TransicaoAreaPage() {
             { icon: <Users className="h-5 w-5" />, text: "Mentoria Especializada" },
             { icon: <Target className="h-5 w-5" />, text: "Validação de Competências" },
           ]}
-          primaryCTA={{ text: "Planejar minha transição", href: "#cursos" }}
+          primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
           secondaryCTA={{ text: "Falar com mentor", href: "#contato" }}
         />
 
@@ -81,7 +81,7 @@ export default function TransicaoAreaPage() {
                 "Certificação igual ao curso presencial.",
               ],
               buttonText: "Encontrar cursos EAD",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -94,7 +94,7 @@ export default function TransicaoAreaPage() {
                 "Atividades práticas guiadas.",
               ],
               buttonText: "Encontrar cursos Ao Vivo",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -107,7 +107,7 @@ export default function TransicaoAreaPage() {
                 "Certificação reconhecida pelo mercado.",
               ],
               buttonText: "Encontrar cursos Presencial",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
             },
           ]}
           backgroundColor="bg-muted/30"
@@ -215,8 +215,8 @@ export default function TransicaoAreaPage() {
           titulo="Faça uma transição segura com apoio especializado"
           descricao="Mentoria individual, networking estratégico e trilhas com nivelamento. Mude de área com segurança e resultados concretos."
           botaoPrimario={{
-            texto: "Planejar minha transição",
-            href: "/catalogo?tipo=pos-graduacao",
+            texto: "Começar minha jornada",
+            href: "/catalogo?categoria=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Falar com mentor",

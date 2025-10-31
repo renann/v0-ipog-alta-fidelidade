@@ -261,7 +261,7 @@ export default function EnterprisePage() {
             icone: <MessageCircle className="w-5 h-5" />,
           }}
           botaoSecundario={{
-            texto: "Falar com especialista em RH corporativo",
+            texto: "Falar com especialista",
             onClick: () => openAssistantWithFlow("consultor"),
             icone: <ArrowRight className="w-5 h-5" />,
           }}

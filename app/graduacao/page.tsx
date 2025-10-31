@@ -34,7 +34,7 @@ export default function GraduacaoPage() {
             { icon: <GraduationCap className="h-5 w-5" />, text: "Professores Especialistas" },
             { icon: <GraduationCap className="h-5 w-5" />, text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?formacao=graduacao" }}
+          primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?categoria=graduacao" }}
           secondaryCTA={{ text: "Falar com consultor" }}
         />
         <Dilema
@@ -183,7 +183,7 @@ export default function GraduacaoPage() {
           descricao="Escolha entre EAD ou Presencial e construa seu futuro profissional com suporte real"
           botaoPrimario={{
             texto: "Encontre seu curso",
-            href: "/catalogo?formacao=graduacao",
+            href: "/catalogo?categoria=graduacao",
           }}
           botaoSecundario={{
             texto: "Falar com consultor",

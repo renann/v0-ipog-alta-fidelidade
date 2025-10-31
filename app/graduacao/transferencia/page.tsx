@@ -36,8 +36,8 @@ export default function TransferenciaPage() {
             { icon: "BadgeCheck", text: "Processo em 30 Dias" },
             { icon: "BadgeCheck", text: "Estrutura Superior" },
           ]}
-          primaryCTA={{ text: "Simule sua transferência", href: "/central-atendimento" }}
-          secondaryCTA={{ text: "Ver cursos disponíveis", href: "/catalogo?formacao=graduacao" }}
+          primaryCTA={{ text: "Simule sua transferência", onClick: "openAssistantForConsultor" }}
+          secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?categoria=graduacao" }}
         />
         <Dilema
           titulo="Transferir não deveria ser um risco"
@@ -95,7 +95,7 @@ export default function TransferenciaPage() {
             },
           ]}
           ctaText="Ver curso"
-          ctaLink="/catalogo?formacao=graduacao"
+          ctaLink="/catalogo?categoria=graduacao"
         />
         <Modalidades
           titulo="Compare as modalidades e escolha a que mais combina com você"
@@ -111,7 +111,7 @@ export default function TransferenciaPage() {
                 "Suporte acadêmico online",
                 "Certificação igual ao presencial",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=ead",
+              link: "/catalogo?categoria=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
             },
             {
@@ -124,7 +124,7 @@ export default function TransferenciaPage() {
                 "Estrutura moderna",
                 "Certificação reconhecida",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=presencial",
+              link: "/catalogo?categoria=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
             },
           ]}
@@ -170,11 +170,11 @@ export default function TransferenciaPage() {
           descricao="Reconhecemos até 95% dos seus créditos com processo transparente em até 30 dias. Continue sua graduação com melhor estrutura e sem perda de tempo."
           botaoPrimario={{
             texto: "Simule sua transferência",
-            href: "/central-atendimento",
+            onClick: "openAssistantForConsultor",
           }}
           botaoSecundario={{
-            texto: "Ver cursos disponíveis",
-            href: "/catalogo?formacao=graduacao",
+            texto: "Ver cursos de Graduação",
+            href: "/catalogo?categoria=graduacao",
           }}
         />
       </main>

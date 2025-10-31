@@ -143,7 +143,7 @@ export default function CeoPage() {
             ]}
             botaoCta={{
               texto: "Solicitar diagnóstico estratégico",
-              href: "#",
+              onClick: () => openAssistantWithFlow("consultor"),
             }}
             observacao="Metodologia validada por mais de 500 empresas que transformaram aprendizado em resultados mensuráveis"
           />
@@ -164,7 +164,7 @@ export default function CeoPage() {
                 "Aplicação prática imediata",
                 "Mensuração de ROI",
               ],
-              link: "#",
+              onClick: () => openAssistantWithFlow("consultor"),
               buttonText: "Solicitar diagnóstico",
             },
             {
@@ -178,7 +178,7 @@ export default function CeoPage() {
                 "Relatórios executivos",
                 "Impacto mensurável",
               ],
-              link: "#",
+              onClick: () => openAssistantWithFlow("consultor"),
               buttonText: "Conhecer PDL",
             },
             {
@@ -192,7 +192,7 @@ export default function CeoPage() {
                 "Flexibilidade de formatos",
                 "ROI comprovado",
               ],
-              link: "#",
+              onClick: () => openAssistantWithFlow("consultor"),
               buttonText: "Ver especializações",
             },
           ]}
@@ -360,7 +360,7 @@ export default function CeoPage() {
             onClick: () => openAssistantWithFlow("consultor"),
           }}
           botaoSecundario={{
-            texto: "Falar com especialista em RH corporativo",
+            texto: "Falar com especialista",
             onClick: () => openAssistantWithFlow("consultor"),
           }}
           corFundo="bg-muted/30"

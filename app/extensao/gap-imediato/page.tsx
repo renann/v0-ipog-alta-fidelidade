@@ -123,7 +123,7 @@ export default function GapImediatoPage() {
                   "Templates prontos para download",
                 ],
                 buttonText: "Encontrar cursos EAD",
-                link: "/catalogo?tipo=extensao&modalidade=ead",
+                link: "/catalogo?categoria=extensao&modalidade=ead",
               },
               {
                 badge: "EXTENSÃO",
@@ -136,7 +136,7 @@ export default function GapImediatoPage() {
                   "Atividades práticas guiadas",
                 ],
                 buttonText: "Encontrar cursos Ao Vivo",
-                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
+                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
               },
               {
                 badge: "EXTENSÃO",
@@ -149,7 +149,7 @@ export default function GapImediatoPage() {
                   "Certificação reconhecida pelo mercado",
                 ],
                 buttonText: "Encontrar cursos Presencial",
-                link: "/catalogo?tipo=extensao&modalidade=presencial",
+                link: "/catalogo?categoria=extensao&modalidade=presencial",
               },
             ]}
             backgroundColor="bg-muted/30"
@@ -234,8 +234,8 @@ export default function GapImediatoPage() {
             titulo="Aprenda hoje, aplique amanhã"
             descricao="Cursos práticos de 3-4 meses com templates prontos e ROI rápido. Resolva desafios técnicos urgentes com aplicação imediata."
             botaoPrimario={{
-              texto: "Ver cursos",
-              href: "/catalogo?tipo=extensao",
+              texto: "Explorar catálogo completo",
+              href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor",

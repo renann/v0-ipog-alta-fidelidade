@@ -96,7 +96,7 @@ export default function RecolocacaoPage() {
               },
             ]}
             ctaText="Ver curso"
-            ctaLink="/catalogo?tipo=extensao"
+            ctaLink="/catalogo?categoria=extensao"
           />
         </section>
 
@@ -116,7 +116,7 @@ export default function RecolocacaoPage() {
                   "Tutoria online com suporte contínuo",
                   "Certificação igual ao curso presencial",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=ead",
+                link: "/catalogo?categoria=extensao&modalidade=ead",
                 buttonText: "Encontrar cursos EAD",
               },
               {
@@ -129,7 +129,7 @@ export default function RecolocacaoPage() {
                   "Troca com colegas de diversas áreas",
                   "Atividades práticas guiadas",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=ao-vivo",
+                link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
                 buttonText: "Encontrar cursos Ao Vivo",
               },
               {
@@ -142,7 +142,7 @@ export default function RecolocacaoPage() {
                   "Projetos aplicados em grupo",
                   "Certificação reconhecida pelo mercado",
                 ],
-                link: "/catalogo?tipo=extensao&modalidade=presencial",
+                link: "/catalogo?categoria=extensao&modalidade=presencial",
                 buttonText: "Encontrar cursos Presencial",
               },
             ]}
@@ -242,8 +242,8 @@ export default function RecolocacaoPage() {
             titulo="Construa seu portfólio e retorne ao mercado com confiança"
             descricao="Projetos práticos, networking estratégico e mentoria de carreira. Recolocação com portfólio comprovado e validação constante."
             botaoPrimario={{
-              texto: "Construir portfólio",
-              href: "/catalogo?tipo=extensao",
+              texto: "Começar minha jornada",
+              href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
               texto: "Falar com consultor de carreira",

@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,36 +15,35 @@ export default function CentralAtendimentoPage() {
       title: "Fale com a Vic",
       description: "A assistente virtual do IPOG",
       action: "Abrir chat",
-      href: "#", // Will trigger assistant modal
-      onClick: true,
+      onClick: "openAssistantForConsultor",
     },
     {
       icon: Phone,
       title: "Relacionamento",
       description: "Atendimento ao aluno, dúvidas, sugestões e elogios",
       action: "Acessar formulário",
-      href: "/contato/relacionamento",
+      href: "/contato",
     },
     {
       icon: FileText,
       title: "Requerimentos",
       description: "Acesse o Catálogo de Serviços",
       action: "Ver serviços",
-      href: "/servicos",
+      href: "/catalogo",
     },
     {
       icon: Building2,
       title: "Relacionamento Enterprise",
       description: "Atendimento para empresas e parcerias corporativas",
       action: "Falar com consultor",
-      href: "/corporativo",
+      href: "/enterprise/ceo",
     },
     {
       icon: AlertCircle,
       title: "Ouvidoria",
       description: "Reclamações e denúncias",
       action: "Acessar ouvidoria",
-      href: "/ouvidoria",
+      href: "/contato",
     },
   ]
 
@@ -75,18 +76,40 @@ export default function CentralAtendimentoPage() {
                 const Icon = channel.icon
                 return (
                   <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer group">
-                    <Link href={channel.href} className="block">
-                      <CardHeader className="flex flex-row items-start gap-4 space-y-0">
-                        <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                          <Icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <CardTitle className="text-xl mb-2">{channel.title}</CardTitle>
-                          <CardDescription className="text-base">{channel.description}</CardDescription>
-                        </div>
-                        <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                      </CardHeader>
-                    </Link>
+                    {channel.onClick ? (
+                      <div
+                        onClick={() => {
+                          if (typeof window !== "undefined" && (window as any).openAssistantForConsultor) {
+                            ;(window as any).openAssistantForConsultor()
+                          }
+                        }}
+                        className="block"
+                      >
+                        <CardHeader className="flex flex-row items-start gap-4 space-y-0">
+                          <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <CardTitle className="text-xl mb-2">{channel.title}</CardTitle>
+                            <CardDescription className="text-base">{channel.description}</CardDescription>
+                          </div>
+                          <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </CardHeader>
+                      </div>
+                    ) : (
+                      <Link href={channel.href} className="block">
+                        <CardHeader className="flex flex-row items-start gap-4 space-y-0">
+                          <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <CardTitle className="text-xl mb-2">{channel.title}</CardTitle>
+                            <CardDescription className="text-base">{channel.description}</CardDescription>
+                          </div>
+                          <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </CardHeader>
+                      </Link>
+                    )}
                   </Card>
                 )
               })}
@@ -139,11 +162,17 @@ export default function CentralAtendimentoPage() {
         {/* Final CTA Section */}
         <section className="w-full py-16">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
-            <Button size="lg" className="rounded-full px-8 py-6 text-lg font-semibold" asChild>
-              <Link href="/contato">
-                Em caso de dúvidas, fale conosco
-                <ExternalLink className="ml-2 h-5 w-5" />
-              </Link>
+            <Button
+              size="lg"
+              className="rounded-full px-8 py-6 text-lg font-semibold"
+              onClick={() => {
+                if (typeof window !== "undefined" && (window as any).openAssistantForConsultor) {
+                  ;(window as any).openAssistantForConsultor()
+                }
+              }}
+            >
+              Em caso de dúvidas, fale conosco
+              <ExternalLink className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </section>

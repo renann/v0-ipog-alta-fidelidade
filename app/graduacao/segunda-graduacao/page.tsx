@@ -36,7 +36,7 @@ export default function SegundaGraduacaoPage() {
             { icon: "BadgeCheck", text: "Trilhas Aceleradas" },
             { icon: "BadgeCheck", text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Acelere sua nova formação", href: "/catalogo?categoria=graduacao" }}
+          primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao" }}
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}
         />
         <Dilema
@@ -82,7 +82,7 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Combine sua experiência profissional com conhecimento em comportamento humano. Ideal para líderes que buscam desenvolvimento de equipes.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia",
+              link: "/graduacao/curso/psicologia-ead",
             },
             {
               nome: "Direito",
@@ -110,7 +110,7 @@ export default function SegundaGraduacaoPage() {
                 "Suporte executivo dedicado",
                 "Certificação igual ao presencial",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=ead",
+              link: "/catalogo?categoria=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
             },
             {
@@ -123,7 +123,7 @@ export default function SegundaGraduacaoPage() {
                 "Mentoria presencial",
                 "Certificação reconhecida",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=presencial",
+              link: "/catalogo?categoria=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
             },
           ]}
@@ -167,12 +167,12 @@ export default function SegundaGraduacaoPage() {
           title="Acelere sua nova formação com validação de conhecimentos"
           descricao="Aproveite sua experiência profissional e conquiste um novo diploma no seu ritmo, com trilhas aceleradas e certificação reconhecida."
           botaoPrimario={{
-            texto: "Acelere sua formação",
+            texto: "Começar minha jornada",
             href: "/catalogo?categoria=graduacao",
           }}
           botaoSecundario={{
             texto: "Valide seus conhecimentos",
-            href: "/falar-com-consultor",
+            onClick: () => window.openAssistantForConsultor(),
           }}
         />
       </main>

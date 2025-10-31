@@ -51,7 +51,7 @@ export default function LifelongLearningPage() {
             { icon: <TrendingUp className="h-5 w-5" />, text: "Atualização Constante" },
             { icon: <Users className="h-5 w-5" />, text: "Comunidade Exclusiva" },
           ]}
-          primaryCTA={{ text: "Conhecer o IPOG+", href: "#cursos" }}
+          primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
           secondaryCTA={{ text: "Ver benefícios", href: "#beneficios" }}
         />
 
@@ -96,7 +96,7 @@ export default function LifelongLearningPage() {
                 "Certificação igual ao curso presencial.",
               ],
               buttonText: "Encontrar cursos EAD",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -109,7 +109,7 @@ export default function LifelongLearningPage() {
                 "Atividades práticas guiadas.",
               ],
               buttonText: "Encontrar cursos Ao Vivo",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -122,7 +122,7 @@ export default function LifelongLearningPage() {
                 "Certificação reconhecida",
               ],
               buttonText: "Encontrar cursos Presencial",
-              link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
+              link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
             },
           ]}
           backgroundColor="bg-muted/30"
@@ -291,8 +291,8 @@ export default function LifelongLearningPage() {
           titulo="Mantenha sua curva de aprendizado ativa com o IPOG+"
           descricao="Aprofunde-se com roteiros eficientes, evolução escalável e benefícios exclusivos. Aprendizado contínuo sem repetição de conteúdo."
           botaoPrimario={{
-            texto: "Conhecer o IPOG+",
-            href: "/catalogo?tipo=pos-graduacao",
+            texto: "Começar minha jornada",
+            href: "/catalogo?categoria=pos-graduacao",
           }}
           botaoSecundario={{
             texto: "Ver benefícios",

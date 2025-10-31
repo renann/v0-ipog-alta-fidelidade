@@ -17,11 +17,7 @@ export default function AlunoDiamantePage() {
         <section className="w-full border-b bg-background py-8">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <BreadcrumbWithItems
-              items={[
-                { label: "Início", href: "/" },
-                { label: "Programas e Benefícios", href: "/programas-beneficios" },
-                { label: "Aluno Diamante" },
-              ]}
+              items={[{ label: "Início", href: "/" }, { label: "Programas e Benefícios" }, { label: "Aluno Diamante" }]}
             />
             <div className="mt-6 space-y-4">
               <h1 className="text-4xl md:text-5xl font-bold text-balance">

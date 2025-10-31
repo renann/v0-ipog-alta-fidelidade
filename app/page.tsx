@@ -12,7 +12,6 @@ import { ProfessorsSection } from "@/components/professors-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { RoiSection } from "@/components/roi-section"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 
@@ -44,7 +43,7 @@ export default function HomePage() {
         </section>
 
         <CourseSearch
-          title="Encontre seu curso"
+          title="Ver todos os cursos"
           description="Busque por área de atuação e descubra os melhores cursos para sua carreira"
         />
 
@@ -54,12 +53,11 @@ export default function HomePage() {
         <ResultadosComprovados />
         <ProfessorsSection />
         <ExperienceSection />
-        <RoiSection />
         <AcaoFinal
           titulo="Comece sua jornada de transformação profissional"
           descricao="Mais de 20 anos formando especialistas e líderes de mercado. Escolha sua formação e acelere sua carreira"
           botaoPrimario={{
-            texto: "Encontre seu curso",
+            texto: "Ver todos os cursos",
             href: "/catalogo",
           }}
           botaoSecundario={{

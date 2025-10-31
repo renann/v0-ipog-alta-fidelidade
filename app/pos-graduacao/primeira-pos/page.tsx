@@ -54,7 +54,7 @@ const PrimeiraPosContent = dynamic(
                 { icon: <Users className="h-5 w-5" />, text: "Professores de Mercado" },
                 { icon: <TrendingUp className="h-5 w-5" />, text: "ROI Comprovado" },
               ]}
-              primaryCTA={{ text: "Encontrar minha pós", href: "#cursos" }}
+              primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
               secondaryCTA={{ text: "Falar com consultor", href: "#contato" }}
             />
 
@@ -100,7 +100,7 @@ const PrimeiraPosContent = dynamic(
                     "Mentoria online com especialistas;",
                     "Certificação reconhecida pelo MEC.",
                   ],
-                  link: "/catalogo?tipo=pos-graduacao&modalidade=ead",
+                  link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
                   buttonText: "Encontrar cursos EAD",
                 },
                 {
@@ -113,7 +113,7 @@ const PrimeiraPosContent = dynamic(
                     "Gravações disponíveis para revisão;",
                     "Projetos práticos e cases reais.",
                   ],
-                  link: "/catalogo?tipo=pos-graduacao&modalidade=ao-vivo",
+                  link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
                   buttonText: "Encontrar cursos Ao Vivo",
                 },
                 {
@@ -126,7 +126,7 @@ const PrimeiraPosContent = dynamic(
                     "Estrutura moderna e laboratórios equipados;",
                     "Conexões que impulsionam sua carreira.",
                   ],
-                  link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
+                  link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
                   buttonText: "Encontrar cursos Presencial",
                 },
               ]}
@@ -316,8 +316,8 @@ const PrimeiraPosContent = dynamic(
               titulo="Torne-se especialista com ROI comprovado"
               descricao="Primeira pós-graduação com metodologia prática, professores de mercado e certificação MEC. 30% de aumento médio em 6 meses."
               botaoPrimario={{
-                texto: "Encontrar minha pós",
-                href: "/catalogo?tipo=pos-graduacao",
+                texto: "Começar minha jornada",
+                href: "/catalogo?categoria=pos-graduacao",
               }}
               botaoSecundario={{
                 texto: "Falar com consultor",

@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
@@ -5,7 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
 import { Search, ArrowRight } from "lucide-react"
-import Link from "next/link"
 import Footer from "@/components/footer"
 
 export default function CorpoDocentePage() {
@@ -87,13 +88,18 @@ export default function CorpoDocentePage() {
 
               {/* Support CTA */}
               <div className="text-center pt-4">
-                <Link
-                  href="/central-atendimento"
-                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+                <Button
+                  variant="link"
+                  className="inline-flex items-center gap-2 text-primary hover:underline font-medium p-0 h-auto"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && (window as any).openAssistantForConsultor) {
+                      ;(window as any).openAssistantForConsultor()
+                    }
+                  }}
                 >
                   Em caso de dúvidas, fale conosco
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

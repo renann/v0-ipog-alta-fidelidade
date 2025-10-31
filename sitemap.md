@@ -9,6 +9,7 @@
 
 ## Checkout
 - `/checkout` - Checkout
+- `/checkout/test` - Checkout Test
 
 ## Extensão
 - `/extensao` - Extensão (página principal)
@@ -18,6 +19,8 @@
 - `/extensao/curso/gestao-projetos-ageis` - Gestão de Projetos Ágeis
 - `/extensao/curso/inteligencia-artificial-aplicada` - Inteligência Artificial Aplicada
 - `/extensao/curso/marketing-digital` - Marketing Digital
+- `/extensao/curso/gestao-pessoas` - Gestão de Pessoas
+- `/extensao/curso/compliance` - Compliance
 
 ## Graduação
 - `/graduacao` - Graduação (página principal)
@@ -27,6 +30,7 @@
 - `/graduacao/curso/psicologia-ead` - Psicologia EAD
 - `/graduacao/curso/direito` - Direito
 - `/graduacao/curso/arquitetura` - Arquitetura e Urbanismo
+- `/graduacao/curso/administracao` - Administração
 
 ## Pós-Graduação
 - `/pos-graduacao` - Pós-graduação (página principal)
@@ -68,17 +72,22 @@
 
 ---
 
-## Total de URLs: 47
+## Total de URLs: 52
 
 ### Estrutura por Categoria:
 - **Principal:** 1 URL
 - **Busca/Catálogo:** 2 URLs
-- **Checkout:** 1 URL
-- **Extensão:** 7 URLs
-- **Graduação:** 7 URLs
-- **Pós-Graduação:** 7 URLs
+- **Checkout:** 2 URLs
+- **Extensão:** 9 URLs (7 páginas + 5 cursos)
+- **Graduação:** 8 URLs (4 páginas + 4 cursos)
+- **Pós-Graduação:** 7 URLs (4 páginas + 3 cursos)
 - **Enterprise:** 3 URLs
 - **Pós-Venda:** 1 URL
 - **Institucional:** 13 URLs
 - **Atendimento:** 1 URL
 - **Acadêmico:** 1 URL
+
+### Cursos por Vertical:
+- **Extensão:** 5 cursos (Gestão de Projetos Ágeis, IA Aplicada, Marketing Digital, Gestão de Pessoas, Compliance)
+- **Graduação:** 4 cursos (Psicologia EAD, Direito, Arquitetura, Administração)
+- **Pós-Graduação:** 3 cursos (Avaliação Psicológica, Engenharia Estrutural, Intervenção ABA)

@@ -37,7 +37,7 @@ export default function MarketingDigitalPage() {
             { icon: <Target className="h-5 w-5" />, text: "100% Prático" },
             { icon: <Zap className="h-5 w-5" />, text: "Templates Prontos" },
           ]}
-          primaryCTA={{ text: "Inscrever-se no curso", href: "#preco" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 
@@ -239,7 +239,7 @@ export default function MarketingDigitalPage() {
 
             <div className="text-center">
               <Button size="lg" variant="outline" asChild>
-                <a href="#contato">Conversar com um Consultor Acadêmico</a>
+                <a href="#contato">Falar com consultor acadêmico</a>
               </Button>
             </div>
           </div>

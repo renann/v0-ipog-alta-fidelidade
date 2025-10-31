@@ -36,8 +36,8 @@ export default function JovemIngressoPage() {
             { icon: "BadgeCheck", text: "Empregabilidade 92%" },
             { icon: "BadgeCheck", text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Comece sua graduação", href: "/catalogo?categoria=graduacao&persona=jovem-ingresso" }}
-          secondaryCTA={{ text: "Falar com consultor acadêmico", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao&persona=jovem-ingresso" }}
+          secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
         />
         <Dilema
           title="Escolher o caminho certo é um desafio"
@@ -107,7 +107,7 @@ export default function JovemIngressoPage() {
                 "Tutoria online e suporte contínuo",
                 "Certificação igual ao presencial",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=ead",
+              link: "/catalogo?categoria=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
             },
             {
@@ -120,7 +120,7 @@ export default function JovemIngressoPage() {
                 "Conexões C-level",
                 "Certificação reconhecida",
               ],
-              link: "/catalogo?tipo=graduacao&modalidade=presencial",
+              link: "/catalogo?categoria=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
             },
           ]}
@@ -157,12 +157,12 @@ export default function JovemIngressoPage() {
           title="Comece sua graduação com segurança e propósito"
           descricao="Acompanhamento próximo, empregabilidade garantida e flexibilidade para estudar do seu jeito. Transforme sua primeira graduação em uma jornada de crescimento real."
           botaoPrimario={{
-            texto: "Comece sua graduação",
+            texto: "Começar minha jornada",
             href: "/catalogo?categoria=graduacao&persona=jovem-ingresso",
           }}
           botaoSecundario={{
-            texto: "Falar com consultor acadêmico",
-            href: "/falar-com-consultor",
+            texto: "Falar com consultor",
+            onClick: "openAssistantForConsultor",
           }}
         />
       </main>

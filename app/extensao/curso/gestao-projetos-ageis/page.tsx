@@ -5,7 +5,6 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
-import { FormasIngresso } from "@/components/formas-ingresso"
 import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -200,7 +199,7 @@ export default function GestaoProjetosAgeisPage() {
           </div>
         </section>
 
-        <FormasIngresso />
+        {/* Removendo FormasIngresso que não deve aparecer em cursos de extensão */}
 
         <CtaFinal monthlyFee="R$ 279,00" duration="2 meses" totalCost="R$ 658,00" />
       </main>
