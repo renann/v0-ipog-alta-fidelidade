@@ -10,8 +10,9 @@ import { RetornoProfissional } from "@/components/segunda-graduacao/retorno-prof
 import { Autoridade } from "@/components/autoridade"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { Clock, DollarSign, Target, Award, Users, BookOpen, GraduationCap } from "lucide-react"
+import { Clock, DollarSign, Target, Award, Users, BookOpen, GraduationCap, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Empregabilidade } from "@/components/empregabilidade"
 
 export default function SegundaGraduacaoPage() {
   return (
@@ -140,6 +141,35 @@ export default function SegundaGraduacaoPage() {
           ]}
         />
         <RetornoProfissional />
+        <Empregabilidade
+          title="Profissionais que aceleraram suas carreiras com uma segunda graduação"
+          subtitle="Veja como a validação de conhecimentos e uma formação focada transformaram trajetórias profissionais."
+          estatisticas={[
+            {
+              icon: <TrendingUp className="h-8 w-8" />,
+              valor: "87%",
+              descricao: "conseguiram promoção após a segunda graduação",
+            },
+            {
+              icon: <Clock className="h-8 w-8" />,
+              valor: "40%",
+              descricao: "de redução no tempo de formação",
+            },
+            {
+              icon: <Briefcase className="h-8 w-8" />,
+              valor: "92%",
+              descricao: "aplicaram conhecimentos em até 6 meses",
+            },
+          ]}
+          layoutEstatisticas="carousel"
+          depoimento={{
+            texto:
+              "Já tinha 10 anos de experiência em RH quando decidi fazer Psicologia. O IPOG validou minha experiência e reduziu minha formação em quase 2 anos. Hoje sou psicóloga organizacional e minha carreira deu um salto.",
+            autor: "Mariana Costa, Psicóloga Organizacional",
+            cargo: "Ex-Gerente de RH",
+          }}
+          bgColor="bg-background"
+        />
         <Autoridade
           title="Professores de mercado • Certificação reconhecida • Networking executivo"
           subtitle="Uma formação que valoriza sua experiência e acelera sua carreira"

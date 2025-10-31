@@ -7,9 +7,10 @@ import { Cursos } from "@/components/cursos"
 import { Modalidades } from "@/components/modalidades"
 import { ProcessoTransparente } from "@/components/transferencia/processo-transparente"
 import { AcaoFinal } from "@/components/acao-final"
-import { AlertCircle, Clock, Building, Users, Award } from "lucide-react"
+import { AlertCircle, Clock, Building, Users, Award, TrendingUp, BadgeCheck } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Empregabilidade } from "@/components/empregabilidade"
 
 export default function TransferenciaPage() {
   return (
@@ -174,6 +175,35 @@ export default function TransferenciaPage() {
           ]}
         />
         <ProcessoTransparente />
+        <Empregabilidade
+          title="Alunos que fizeram a escolha certa ao transferir para o IPOG"
+          subtitle="Veja como a transferência ágil e o aproveitamento de créditos transformaram suas jornadas acadêmicas."
+          estatisticas={[
+            {
+              icon: <TrendingUp className="h-8 w-8" />,
+              valor: "95%",
+              descricao: "de aproveitamento médio de créditos",
+            },
+            {
+              icon: <Clock className="h-8 w-8" />,
+              valor: "30 dias",
+              descricao: "tempo médio para conclusão da transferência",
+            },
+            {
+              icon: <BadgeCheck className="h-8 w-8" />,
+              valor: "98%",
+              descricao: "de satisfação com o processo",
+            },
+          ]}
+          layoutEstatisticas="carousel"
+          depoimento={{
+            texto:
+              "Estava travado na minha antiga faculdade com problemas de infraestrutura. A transferência para o IPOG foi rápida, aproveitaram quase todas as minhas disciplinas e hoje tenho acesso a laboratórios modernos e professores que realmente fazem diferença.",
+            autor: "Rafael Mendes, Aluno de Psicologia",
+            cargo: "Transferido no 4º semestre",
+          }}
+          bgColor="bg-background"
+        />
         <AcaoFinal
           titulo="Faça a escolha que conecta você ao sucesso."
           descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
