@@ -7,9 +7,7 @@ import { Modalidades } from "@/components/modalidades"
 import { RetornoInvestimentoPsicologia } from "@/components/curso-psicologia/retorno-investimento-psicologia"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { FaqPsicologia } from "@/components/curso-psicologia/faq-psicologia"
-import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award } from "lucide-react"
 import { TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -80,8 +78,8 @@ export default function PsicologiaEadPage() {
         />
         <RetornoInvestimentoPsicologia />
         <Empregabilidade
-          titulo="Empregabilidade após a graduação"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          titulo="Matricule-se na Graduação IPOG"
+          subtitulo="Projeção de evolução salarial após o curso, com base em faixas médias de mercado."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -109,7 +107,8 @@ export default function PsicologiaEadPage() {
             "Indicações para vagas parceiras",
           ]}
           depoimento={{
-            texto: "Consegui meu primeiro estágio através do programa de mentoria IPOG.",
+            texto:
+              "Participei de uma feira de carreira promovida pelo IPOG e saí com meu primeiro estágio garantido. A conexão com o mercado é real.",
             autor: "Aluno IPOG",
           }}
           botaoCta={{
@@ -124,9 +123,9 @@ export default function PsicologiaEadPage() {
           subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
           etapas={[
             {
-              titulo: "Fundamentos da Psicologia",
+              titulo: "Fundamentos da Psicologia (1º e 2º semestre)",
               descricao:
-                "Base teórica sólida em processos psicológicos, desenvolvimento humano e história da psicologia",
+                "Construa uma base sólida com o estudo das principais correntes teóricas, da Psicanálise à Análise do Comportamento, e compreenda as bases biológicas em Neuroanatomofisiologia.",
               beneficios: [
                 "Compreensão dos principais conceitos e teorias",
                 "Visão crítica sobre diferentes abordagens",
@@ -134,25 +133,25 @@ export default function PsicologiaEadPage() {
               badges: ["1º e 2º semestre"],
             },
             {
-              titulo: "Processos e Avaliação",
+              titulo: "Processos e Avaliação (3º e 4º semestre)",
               descricao:
-                "Aprofundamento em técnicas de avaliação psicológica e processos cognitivos, emocionais e sociais",
+                "Aprofunde-se em Psicologia Social, Escolar e da Saúde Mental, dominando as primeiras Técnicas de Avaliação Psicológica para diagnósticos precisos.",
               beneficios: ["Domínio de instrumentos de avaliação", "Análise de casos práticos"],
               badges: ["3º e 4º semestre"],
             },
             {
-              titulo: "Intervenções e Práticas",
+              titulo: "Intervenções e Práticas (5º e 6º semestre)",
               descricao:
-                "Desenvolvimento de competências em diferentes contextos de atuação: clínica, organizacional, educacional e social",
+                "Desenvolva competências de atuação em Psicologia Organizacional e Institucional, aprendendo Técnicas de Grupo e iniciando os estágios básicos supervisionados.",
               beneficios: ["Experiência em supervisão clínica", "Projetos de intervenção comunitária"],
               badges: ["5º e 6º semestre"],
             },
             {
-              titulo: "Estágios e TCC",
+              titulo: "Estágios e TCC (7º ao 10º semestre)",
               descricao:
-                "Prática supervisionada em diferentes áreas e desenvolvimento do Trabalho de Conclusão de Curso",
-              beneficios: ["400h de estágio supervisionado", "Orientação individualizada para TCC"],
-              badges: ["7º e 8º semestre"],
+                "Aplique seu conhecimento em contextos reais com 800h de estágio supervisionado em áreas como Saúde Mental e Práticas Clínicas, enquanto desenvolve seu TCC com orientação individualizada.",
+              beneficios: ["800h de estágio supervisionado", "Orientação individualizada para TCC"],
+              badges: ["7º ao 10º semestre"],
               destaque: true,
             },
           ]}
@@ -164,23 +163,45 @@ export default function PsicologiaEadPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <section className="w-full py-16 px-4">
+        <section className="w-full py-16 px-4" id="preco">
           <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Comece agora sua trajetória com o IPOG</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Curso criado para quem busca protagonismo, com metodologia aplicada, professores de mercado e
+                acompanhamento próximo em todas as etapas.
+              </p>
+            </div>
+            <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
+              <div className="border-t pt-6">
+                <h4 className="text-xl font-semibold mb-4">Taxa de matrícula</h4>
+                <div className="bg-background p-6 rounded-lg mb-4">
+                  <p className="text-lg font-semibold mb-2">R$ 100,00</p>
+                  <p className="text-muted-foreground">
+                    A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial
+                    entrará em contato para apresentar as condições de mensalidade e formas de pagamento.
+                  </p>
+                </div>
+                <div className="mb-4">
+                  <h4 className="text-lg font-semibold mb-2">Informações do Curso</h4>
+                  <p className="text-muted-foreground">Mensalidade: R$ 499,00</p>
+                  <p className="text-muted-foreground">Duração: 5 anos • Total do curso: R$ 29.940,00</p>
+                </div>
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    Próximas turmas iniciam em <strong>Novembro</strong>
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Garanta condições exclusivas até <strong>30 de Outubro</strong>
+                  </p>
+                </div>
               </div>
-              <MetodosPagamento />
             </div>
           </div>
         </section>
 
         <FaqPsicologia />
         <FormasIngresso />
-        <CtaFinal monthlyFee="R$ 499,00" duration="5 anos" totalCost="R$ 29.940,00" />
       </main>
       <Footer />
     </div>

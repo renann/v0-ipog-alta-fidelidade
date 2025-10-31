@@ -5,8 +5,6 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
-import { FormasIngresso } from "@/components/formas-ingresso"
-import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Ruler } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -31,45 +29,50 @@ export default function ArquiteturaPage() {
         <Hero
           badge="GRADUAÇÃO"
           title="Arquitetura e Urbanismo"
-          description="Forme-se em Arquitetura e Urbanismo com visão criativa, técnica e sustentável, reconhecido pelo MEC."
+          description="Construa uma carreira de impacto com a graduação em Arquitetura e Urbanismo do IPOG. Uma formação de excelência, com foco em projetos reais e corpo docente de mercado, que prepara você para liderar transformações urbanas e criar espaços que promovem o desenvolvimento humano."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Qualidade Reconhecida pelo MEC" },
+            { icon: <Clock className="h-5 w-5" />, text: "Metodologia Flexível" },
+            { icon: <Award className="h-5 w-5" />, text: "Docentes com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
+          primaryCTA={{ text: "Garanta sua vaga", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Por que escolher Arquitetura no IPOG?</h2>
+              <h2 className="text-3xl font-bold mb-4">A Escolha Inteligente para Sua Carreira em Arquitetura</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Formação completa com foco em projetos reais, tecnologias BIM e desenvolvimento sustentável.
+                No IPOG, sua formação transcende a sala de aula para se tornar um compromisso com o desenvolvimento
+                humano. Preparamos você para conceber e executar projetos que não apenas atendem a requisitos técnicos,
+                mas que também aperfeiçoam a infraestrutura necessária para o bem-estar da sociedade.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-background p-6 rounded-lg">
                 <Ruler className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Projetos Reais</h3>
+                <h3 className="text-xl font-semibold mb-2">Projetos Reais e Impacto Social</h3>
                 <p className="text-muted-foreground">
-                  Desenvolva projetos arquitetônicos e urbanísticos desde o primeiro semestre com orientação
-                  especializada.
+                  Desenvolva um portfólio robusto com projetos que respondem a desafios reais, desde o primeiro
+                  semestre, recebendo mentoria para criar soluções arquitetônicas e urbanísticas que promovem o
+                  desenvolvimento e a sustentabilidade.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Briefcase className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Tecnologia BIM</h3>
+                <h3 className="text-xl font-semibold mb-2">Domínio das Tecnologias do Futuro</h3>
                 <p className="text-muted-foreground">
-                  Domine as principais ferramentas do mercado: AutoCAD, Revit, SketchUp e softwares de renderização.
+                  Aprenda a fundo as principais ferramentas do mercado, incluindo AutoCAD, Revit e softwares BIM, para
+                  liderar a inovação e entregar projetos com eficiência, precisão e visão de futuro.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
                 <Award className="h-12 w-12 mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">Sustentabilidade</h3>
+                <h3 className="text-xl font-semibold mb-2">Corpo Docente de Referência no Mercado</h3>
                 <p className="text-muted-foreground">
-                  Foco em arquitetura sustentável, eficiência energética e certificações ambientais.
+                  Aprenda com mestres e doutores que trazem a vivência de grandes obras e projetos para a sala de aula,
+                  conectando você com os desafios e as soluções mais atuais da arquitetura e do urbanismo.
                 </p>
               </div>
             </div>
@@ -77,31 +80,31 @@ export default function ArquiteturaPage() {
         </section>
 
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."
+          title="Sua Formação, Seu Ritmo"
+          subtitle="O mesmo diploma de excelência, em formatos que se adaptam à sua jornada. Escolha a modalidade que impulsiona seus objetivos."
           modalidades={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "EAD",
-              descricao: "Para quem busca autonomia e flexibilidade total",
+              titulo: "Graduação EAD",
+              descricao: "Para quem busca autonomia e foco prático.",
               beneficios: [
-                "Estude no seu ritmo;",
-                "Conteúdos atualizados e interativos;",
-                "Tutoria online e suporte contínuo;",
-                "Certificação igual ao curso presencial.",
+                "Conteúdo Autoral e Exclusivo: Aulas criadas pelos próprios professores, alinhadas com o que o mercado exige.",
+                "Suporte Rápido e Eficiente: Professores, tutores e coordenadores à sua disposição para uma jornada com cuidado e atenção.",
+                "Flexibilidade Total: Estude no seu ritmo, de onde estiver, e concilie sua formação com a rotina profissional.",
+                "Certificação Reconhecida: O mesmo diploma do curso presencial, com o peso da marca IPOG.",
               ],
               link: "#preco",
               buttonText: "Quero me inscrever",
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao: "Para quem valoriza interação e networking",
+              titulo: "Graduação Presencial",
+              descricao: "Para quem valoriza a experiência universitária completa.",
               beneficios: [
-                "Aulas presenciais com vivências práticas;",
-                "Interação direta com professores e colegas;",
-                "Estrutura moderna e laboratórios equipados;",
-                "Networking acadêmico e profissional.",
+                "Vivência Prática Intensiva: Aulas em laboratórios modernos e clínicas, com acesso a equipamentos de ponta.",
+                "Networking de Alto Valor: Interação direta com professores de mercado e colegas para construir uma rede de contatos sólida.",
+                "Infraestrutura Moderna: Um campus planejado para o aprendizado real, que inspira a criatividade e a inovação.",
+                "Mentoria Especializada: Acompanhamento próximo para orientar seu desenvolvimento acadêmico e profissional.",
               ],
               link: "#preco",
               buttonText: "Ver unidades presenciais",
@@ -110,25 +113,25 @@ export default function ArquiteturaPage() {
         />
 
         <Empregabilidade
-          titulo="Empregabilidade após a graduação"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          titulo="Resultados que Comprovam: O Impacto do IPOG na Sua Carreira"
+          subtitulo="Mais do que um diploma, entregamos transformação. Nossos alunos conquistam posições de destaque porque nossa metodologia é focada em resultados reais e empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "88%",
-              descricao: "empregados ou promovidos",
+              descricao: "dos nossos alunos são empregados ou promovidos após a formação.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "4-7 m",
-              descricao: "para nova posição",
+              descricao: "Conquista de uma nova posição no mercado",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+55%",
-              descricao: "em média após formação",
+              descricao: "Aumento salarial médio",
               label: "AUMENTO SALARIAL*",
             },
           ]}
@@ -140,48 +143,55 @@ export default function ArquiteturaPage() {
           ]}
           depoimento={{
             texto:
-              "O portfólio desenvolvido durante o curso foi essencial para conseguir meu primeiro projeto como arquiteto.",
-            autor: "Aluno IPOG",
+              "O portfólio desenvolvido durante o curso foi essencial para conseguir meu primeiro projeto como arquiteto. A orientação dos professores, que atuam no mercado, fez toda a diferença.",
+            autor: "Carlos M., Aluno de Arquitetura e Urbanismo",
           }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          observacao="* Dados baseados em pesquisa de interna."
+          observacao="* Dados baseados em pesquisa de interna. + de 300 mil alunos no Brasil já escolheram o IPOG. 98% de satisfação com nossa metodologia e corpo docente."
           bgColor="bg-white"
         />
 
         <Trilha
-          titulo="Trilha de Aprendizado"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
+          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
+          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
           etapas={[
             {
-              titulo: "Fundamentos da Arquitetura",
+              titulo: "Eixo 1: Fundamentos da Criação (1º e 2º semestres)",
               descricao:
-                "Base teórica em história da arquitetura, desenho técnico e introdução aos softwares de projeto",
+                "Desenvolva sua base teórica e de representação gráfica. Domine o desenho técnico, a plástica e a composição visual, e compreenda a evolução da arquitetura e do urbanismo para criar projetos com propósito e repertório cultural.",
               beneficios: [
-                "Domínio de desenho técnico e representação gráfica",
-                "Compreensão da evolução arquitetônica",
+                "Disciplinas-chave: História da Arte e da Arquitetura, Desenho de Observação, Plástica e Composição Visual, Geometria Descritiva, Desenho Técnico Arquitetônico I, Introdução ao Urbanismo.",
               ],
               badges: ["1º e 2º semestre"],
             },
             {
-              titulo: "Projeto e Tecnologia",
+              titulo: "Eixo 2: Projeto e Tecnologia Construtiva (3º e 4º semestres)",
               descricao:
-                "Desenvolvimento de projetos arquitetônicos com foco em tecnologias construtivas e sistemas estruturais",
-              beneficios: ["Projetos residenciais e comerciais", "Domínio de softwares BIM"],
+                "Aplique os fundamentos no desenvolvimento de projetos arquitetônicos, com foco em materiais, técnicas construtivas e conforto ambiental. Domine softwares BIM e prepare-se para os desafios técnicos da profissão, integrando forma, função e estrutura.",
+              beneficios: [
+                "Disciplinas-chave: Projeto Arquitetônico I e II, Materiais e Técnicas Construtivas, Topografia, Conforto Ambiental (Térmico, Lumínico e Acústico), Sistemas Estruturais I, Computação Gráfica Aplicada (BIM).",
+              ],
               badges: ["3º e 4º semestre"],
             },
             {
-              titulo: "Urbanismo e Sustentabilidade",
-              descricao: "Planejamento urbano, paisagismo e arquitetura sustentável com projetos de impacto social",
-              beneficios: ["Projetos urbanísticos", "Certificações ambientais"],
+              titulo: "Eixo 3: Urbanismo, Paisagismo e Sustentabilidade (5º e 6º semestres)",
+              descricao:
+                "Amplie sua visão para a escala da cidade e da paisagem. Aprofunde-se em planejamento urbano, projetos de paisagismo e arquitetura sustentável, compreendendo o impacto social e ambiental de suas intervenções.",
+              beneficios: [
+                "Disciplinas-chave: Planejamento Urbano e Regional, Projeto de Paisagismo, Arquitetura Sustentável, Instalações Prediais (Hidráulica e Elétrica), Sistemas Estruturais II.",
+              ],
               badges: ["5º e 6º semestre"],
             },
             {
-              titulo: "TFG e Estágios",
-              descricao: "Trabalho Final de Graduação e estágios supervisionados em escritórios e construtoras",
-              beneficios: ["Portfólio profissional completo", "Experiência em projetos reais"],
+              titulo: "Eixo 4: Prática Profissional e TFG (7º ao 10º semestres)",
+              descricao:
+                "Consolide sua formação com o Trabalho Final de Graduação (TFG), estágios supervisionados e disciplinas de gestão de projetos e legislação. Saia preparado para atuar com autonomia e responsabilidade técnica no mercado.",
+              beneficios: [
+                "Disciplinas-chave: TFG I e II, Estágio Supervisionado, Legislação e Ética Profissional, Gerenciamento de Projetos, Patrimônio Histórico e Restauro.",
+              ],
               badges: ["7º ao 10º semestre"],
               destaque: true,
             },
@@ -198,7 +208,7 @@ export default function ArquiteturaPage() {
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
                 <p className="text-muted-foreground">
                   Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
                 </p>
@@ -258,8 +268,100 @@ export default function ArquiteturaPage() {
           </div>
         </section>
 
-        <FormasIngresso />
-        <CtaFinal monthlyFee="R$ 599,00" duration="5 anos" totalCost="R$ 35.940,00" />
+        <section className="w-full py-16 px-4 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Comece Sua Jornada no IPOG</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Seja para iniciar sua primeira graduação, usar sua experiência para uma segunda formação ou transferir
+                seu curso, temos o caminho certo para você.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-background p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Vestibular</h3>
+                <p className="text-muted-foreground">
+                  Faça nossa prova de ingresso e garanta sua vaga. Processo seletivo ágil e objetivo.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Nota do ENEM</h3>
+                <p className="text-muted-foreground">
+                  Use sua nota do ENEM para ingressar sem precisar fazer o vestibular.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Portador de Diploma</h3>
+                <p className="text-muted-foreground">
+                  Já tem graduação? Ingresse sem processo seletivo e acelere sua nova carreira.
+                </p>
+              </div>
+              <div className="bg-background p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Transferência</h3>
+                <p className="text-muted-foreground">
+                  Traga seu curso para o IPOG. Oferecemos uma análise de equivalências transparente e um plano de
+                  estudos personalizado para você concluir sua formação com excelência.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 px-4" id="preco">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Faça a Escolha que Conecta Você ao Sucesso</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Seu investimento em uma formação no IPOG é um passo decisivo para uma carreira de destaque. Oferecemos
+                uma experiência premium com valor acessível, focada em resultados concretos.
+              </p>
+            </div>
+            <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold mb-6">Sua formação completa inclui:</h3>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">✓</span>
+                  <span>Corpo docente de mestres e doutores com experiência de mercado.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">✓</span>
+                  <span>Acesso a laboratórios modernos e infraestrutura de ponta.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">✓</span>
+                  <span>Cursos gratuitos de reforço em Português, Matemática e Inglês.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">✓</span>
+                  <span>Metodologia com projetos práticos e foco em empregabilidade.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary">✓</span>
+                  <span>Networking com profissionais que são referência na sua área.</span>
+                </li>
+              </ul>
+              <div className="border-t pt-6">
+                <h4 className="text-xl font-semibold mb-4">Primeiro Passo para sua Qualificação:</h4>
+                <div className="bg-background p-6 rounded-lg mb-4">
+                  <p className="text-lg font-semibold mb-2">Taxa de Matrícula: R$ 100,00</p>
+                  <p className="text-muted-foreground">
+                    O pagamento da taxa garante sua análise de perfil e o início do seu processo de ingresso. Após a
+                    aprovação, nossa equipe de consultores apresentará as condições especiais de mensalidade e opções de
+                    parcelamento flexíveis.
+                  </p>
+                </div>
+                <div className="text-center space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    Próximas turmas iniciam em <strong>Novembro</strong>.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Garanta condições exclusivas até <strong>30 de Outubro</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
