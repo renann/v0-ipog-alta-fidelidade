@@ -112,7 +112,7 @@ export default function GraduacaoPage() {
               ganho:
                 "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
               cta: "Simule sua transferência",
-              href: "/catalogo?tipo=graduacao",
+              href: "/graduacao/transferencia",
             },
           ]}
         />
