@@ -9,6 +9,7 @@ import { Cursos } from "@/components/cursos"
 import { Jornadas } from "@/components/jornadas"
 import { Autoridade } from "@/components/autoridade"
 import { AcaoFinal } from "@/components/acao-final"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { Zap, TrendingUp, RefreshCw, Clock, Users, Award, BookOpen } from "lucide-react"
 import { ResultadosReais } from "@/components/resultados-reais"
@@ -311,6 +312,64 @@ export default function ExtensaoPage() {
             }}
           />
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection
+          title="Perguntas Frequentes sobre Extensão"
+          subtitle="Tire suas dúvidas sobre nossos cursos de extensão universitária"
+          items={[
+            {
+              pergunta: "Qual a diferença entre curso de extensão e pós-graduação?",
+              resposta:
+                "Cursos de extensão são mais curtos e focados em habilidades específicas, com duração de 20 a 120 horas. Já a pós-graduação é mais longa (mínimo 360h) e oferece uma formação mais aprofundada com certificação de especialista. A extensão é ideal para atualização rápida e aplicação imediata, enquanto a pós é voltada para especialização completa.",
+            },
+            {
+              pergunta: "Preciso ter graduação para fazer curso de extensão?",
+              resposta:
+                "Não necessariamente. A maioria dos nossos cursos de extensão está aberta para qualquer profissional interessado em desenvolver novas habilidades, independente de ter ou não diploma de graduação. Alguns cursos específicos podem ter pré-requisitos, que são informados na página do curso.",
+            },
+            {
+              pergunta: "Quanto tempo duram os cursos de extensão?",
+              resposta:
+                "A duração varia de acordo com o curso e pode ir de 20 horas (cursos rápidos para resolver gaps específicos) até 120 horas (cursos mais completos para desenvolvimento de portfólio). Você pode consultar a carga horária específica na página de cada curso.",
+            },
+            {
+              pergunta: "O certificado de extensão tem validade e é reconhecido?",
+              resposta:
+                "Sim! Os certificados de extensão universitária do IPOG são emitidos por uma instituição credenciada pelo MEC e têm validade nacional. Eles podem ser utilizados para comprovação de horas complementares, processos seletivos, progressão de carreira e enriquecimento de currículo.",
+            },
+            {
+              pergunta: "Posso usar o certificado para horas complementares da graduação?",
+              resposta:
+                "Sim! Nossos cursos de extensão são certificados como extensão universitária e podem ser utilizados para cumprimento de horas complementares em cursos de graduação. Verifique com a coordenação do seu curso de graduação as regras específicas para aproveitamento.",
+            },
+            {
+              pergunta: "Como funciona o formato EAD nos cursos de extensão?",
+              resposta:
+                "No formato EAD, você tem acesso a aulas gravadas disponíveis 24/7, materiais complementares para download, exercícios práticos e suporte de tutores. Você estuda no seu ritmo, quando e onde quiser, precisando apenas de conexão com internet. Alguns cursos podem ter encontros síncronos opcionais.",
+            },
+            {
+              pergunta: "Posso fazer vários cursos de extensão ao mesmo tempo?",
+              resposta:
+                "Sim! Como os cursos de extensão são mais curtos e focados, muitos alunos optam por fazer mais de um curso simultaneamente para desenvolver múltiplas competências. Você pode montar sua própria trilha de aprendizado de acordo com seus objetivos profissionais.",
+            },
+            {
+              pergunta: "Qual a carga horária mínima de um curso de extensão?",
+              resposta:
+                "Nossos cursos de extensão variam de 20 a 120 horas. Cursos mais curtos (20-40h) são focados em resolver gaps específicos e aplicação imediata. Cursos mais longos (60-120h) permitem desenvolvimento de projetos práticos e construção de portfólio mais robusto.",
+            },
+            {
+              pergunta: "Como funciona a avaliação nos cursos de extensão?",
+              resposta:
+                "A avaliação varia de acordo com o curso, mas geralmente inclui exercícios práticos, estudos de caso, projetos aplicados e/ou avaliações online. O foco é sempre na aplicação prática do conhecimento. Para receber o certificado, é necessário atingir a nota mínima e a frequência exigida.",
+            },
+            {
+              pergunta: "Qual o investimento médio em um curso de extensão?",
+              resposta:
+                "O investimento varia de acordo com a carga horária e modalidade do curso. Em média, os valores variam de R$ 200 a R$ 800. Oferecemos condições especiais de pagamento, descontos para pagamento à vista e benefícios para alunos IPOG+. Consulte a página específica de cada curso para valores atualizados.",
+            },
+          ]}
+        />
       </main>
       <Footer />
     </div>

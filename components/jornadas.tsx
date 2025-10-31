@@ -25,12 +25,12 @@ interface JornadasProps {
 
 export function Jornadas({ title, subtitle, jornadas, backgroundColor = "bg-muted/30" }: JornadasProps) {
   return (
-    <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
+    <section className={`w-full py-12 md:py-16 ${backgroundColor} overflow-hidden`}>
       <div className="max-w-screen-xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">{title}</h2>
         {subtitle && <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">{subtitle}</p>}
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {jornadas.map((jornada, index) => {
             return (
               <Card key={index} className="p-6 flex flex-col">

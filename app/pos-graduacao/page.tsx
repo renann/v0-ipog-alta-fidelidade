@@ -13,6 +13,7 @@ import { ROIPos } from "@/components/pos-graduacao/roi-pos"
 import { ResultadosReais } from "@/components/resultados-reais"
 import { Autoridade } from "@/components/autoridade"
 import { AcaoFinal } from "@/components/acao-final"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import {
   GraduationCap,
@@ -331,6 +332,64 @@ export default function PosGraduacaoPage() {
             texto: "Monte sua trilha de Pós",
             onClick: openAssistantForConsultor,
           }}
+        />
+
+        <FAQSection
+          title="Perguntas Frequentes sobre Pós-Graduação"
+          subtitle="Tire suas dúvidas sobre nossas especializações e MBAs"
+          bgColor="bg-muted/30"
+          items={[
+            {
+              pergunta: "Qual a diferença entre Especialização e MBA?",
+              resposta:
+                "A Especialização foca no aprofundamento técnico de uma área específica, ideal para quem quer se tornar especialista. Já o MBA (Master in Business Administration) tem foco em gestão e liderança, voltado para profissionais que buscam cargos executivos. Ambos são cursos de pós-graduação lato sensu reconhecidos pelo MEC.",
+            },
+            {
+              pergunta: "Preciso ter graduação para fazer pós-graduação?",
+              resposta:
+                "Sim, a pós-graduação é destinada a profissionais que já possuem diploma de graduação reconhecido pelo MEC. É necessário apresentar o certificado de conclusão no momento da matrícula. Não há restrição quanto à área de formação para a maioria dos cursos.",
+            },
+            {
+              pergunta: "Quanto tempo dura uma especialização no IPOG?",
+              resposta:
+                "A duração varia de acordo com o curso e a modalidade. Em geral, as especializações têm duração de 12 a 18 meses, com carga horária mínima de 360 horas conforme exigência do MEC. Os MBAs costumam ter duração de 18 a 24 meses.",
+            },
+            {
+              pergunta: "O certificado de pós-graduação é reconhecido pelo MEC?",
+              resposta:
+                "Sim! O IPOG é uma instituição credenciada pelo MEC e todos os nossos cursos de pós-graduação lato sensu (especializações e MBAs) seguem as diretrizes do Ministério da Educação. Seu certificado tem validade nacional e é reconhecido no mercado de trabalho, concursos públicos e processos seletivos.",
+            },
+            {
+              pergunta: "Posso fazer mais de uma pós-graduação ao mesmo tempo?",
+              resposta:
+                "Sim, é possível cursar mais de uma especialização simultaneamente, desde que você consiga conciliar as demandas de ambos os cursos. Muitos alunos optam por fazer especializações complementares para ampliar seu portfólio de competências. Consulte nossos orientadores para montar uma trilha personalizada.",
+            },
+            {
+              pergunta: "Como funciona o programa IPOG+ para alunos de pós?",
+              resposta:
+                "O IPOG+ é nosso programa de benefícios para alunos e ex-alunos. Você tem acesso a descontos em novos cursos, mentorias exclusivas, eventos de networking, conteúdos complementares e uma comunidade ativa de profissionais. É o nosso compromisso com sua evolução contínua na carreira.",
+            },
+            {
+              pergunta: "Qual a carga horária dos cursos de pós-graduação?",
+              resposta:
+                "A carga horária mínima é de 360 horas, conforme determinação do MEC. Nossos cursos variam entre 360h e 600h, dependendo da especialização. Essa carga horária inclui aulas teóricas, práticas, estudos de caso, trabalhos e o TCC (Trabalho de Conclusão de Curso).",
+            },
+            {
+              pergunta: "Posso trancar ou cancelar meu curso de pós-graduação?",
+              resposta:
+                "Sim, você pode solicitar trancamento por até 6 meses ou cancelamento a qualquer momento. O trancamento permite que você retome os estudos posteriormente sem perder o conteúdo já cursado. Para cancelamento, seguimos as normas do Código de Defesa do Consumidor. Consulte nosso regulamento para mais detalhes.",
+            },
+            {
+              pergunta: "Como funciona o TCC (Trabalho de Conclusão de Curso)?",
+              resposta:
+                "O TCC é obrigatório para a conclusão da pós-graduação e pode ser desenvolvido em diferentes formatos: artigo científico, estudo de caso, projeto aplicado ou monografia. Você conta com orientação de professores especialistas e pode escolher um tema alinhado com sua área de atuação profissional, tornando o trabalho útil para sua carreira.",
+            },
+            {
+              pergunta: "Qual o investimento médio em uma pós-graduação?",
+              resposta:
+                "O investimento varia de acordo com o curso, modalidade e duração. Em média, as mensalidades variam de R$ 300 a R$ 800. Oferecemos diversas opções de pagamento, descontos para pagamento antecipado e condições especiais para alunos IPOG+. Consulte nossos consultores para uma proposta personalizada.",
+            },
+          ]}
         />
       </main>
       <Footer />

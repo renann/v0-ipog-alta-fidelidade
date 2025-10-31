@@ -8,6 +8,7 @@ import { Jornadas } from "@/components/jornadas"
 import { ResultadosReais } from "@/components/resultados-reais"
 import { Autoridade } from "@/components/autoridade"
 import { AcaoFinal } from "@/components/acao-final"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { GraduationCap, Briefcase, ArrowRightLeft, TrendingUp, Users, Building2, Award, BookOpen } from "lucide-react"
 import { Dilema } from "@/components/dilema"
@@ -213,6 +214,64 @@ export default function GraduacaoPage() {
             texto: "Falar com consultor",
             onClick: openAssistantForConsultor,
           }}
+        />
+
+        <FAQSection
+          title="Perguntas Frequentes sobre Graduação"
+          subtitle="Tire suas dúvidas sobre nossos cursos de graduação"
+          bgColor="bg-muted/30"
+          items={[
+            {
+              pergunta: "Como funciona o processo de ingresso na graduação IPOG?",
+              resposta:
+                "O processo de ingresso é simples e flexível. Você pode ingressar através do ENEM, vestibular tradicional, transferência externa ou segunda graduação. Cada modalidade tem seus próprios requisitos e prazos. Entre em contato com nossos consultores para entender qual é a melhor opção para o seu caso.",
+            },
+            {
+              pergunta: "Os cursos de graduação do IPOG são reconhecidos pelo MEC?",
+              resposta:
+                "Sim! Todos os nossos cursos de graduação são devidamente credenciados e reconhecidos pelo Ministério da Educação (MEC), garantindo a validade nacional do seu diploma e sua aceitação no mercado de trabalho e em processos seletivos de pós-graduação.",
+            },
+            {
+              pergunta: "Qual a diferença entre as modalidades EAD e Presencial?",
+              resposta:
+                "Na modalidade EAD, você tem flexibilidade para estudar quando e onde quiser, com aulas gravadas disponíveis 24/7 e encontros síncronos opcionais. Já no Presencial, você tem a experiência completa no campus, com aulas ao vivo, laboratórios práticos e networking presencial. Ambas as modalidades têm a mesma qualidade de ensino e o mesmo diploma reconhecido pelo MEC.",
+            },
+            {
+              pergunta: "Posso transferir minha graduação de outra instituição para o IPOG?",
+              resposta:
+                "Sim! Aceitamos transferências externas e você pode aproveitar as disciplinas já cursadas. Nosso processo de análise é rápido e transparente. Use nosso simulador online para verificar quantas disciplinas podem ser aproveitadas e quanto tempo você economiza na sua formação.",
+            },
+            {
+              pergunta: "Como funciona a segunda graduação no IPOG?",
+              resposta:
+                "Se você já tem um diploma de graduação, pode fazer uma segunda graduação aproveitando disciplinas compatíveis do seu curso anterior. Isso reduz significativamente o tempo de formação e o investimento. O processo de análise curricular é gratuito e você recebe um plano de estudos personalizado.",
+            },
+            {
+              pergunta: "Qual a duração dos cursos de graduação?",
+              resposta:
+                "A duração varia de acordo com o curso e a modalidade escolhida. Em geral, os cursos de bacharelado têm duração de 4 a 5 anos. Para quem opta por segunda graduação ou transferência, o tempo pode ser reduzido conforme o aproveitamento de disciplinas.",
+            },
+            {
+              pergunta: "Posso aproveitar disciplinas já cursadas em outras instituições?",
+              resposta:
+                "Sim! Analisamos seu histórico escolar e aproveitamos todas as disciplinas compatíveis com a grade curricular do curso escolhido. Isso vale tanto para transferências quanto para segunda graduação. O processo é transparente e você recebe um relatório detalhado do que pode ser aproveitado.",
+            },
+            {
+              pergunta: "Como funciona o sistema de bolsas e descontos?",
+              resposta:
+                "Oferecemos diversas modalidades de bolsas e descontos: bolsas por desempenho no ENEM, descontos para pagamento antecipado, programas de financiamento estudantil e condições especiais para grupos. Use nosso simulador online para calcular o valor da sua mensalidade com os descontos aplicáveis ao seu perfil.",
+            },
+            {
+              pergunta: "Qual o valor médio da mensalidade?",
+              resposta:
+                "O valor varia de acordo com o curso, modalidade e descontos aplicáveis. Em média, as mensalidades variam de R$ 400 a R$ 1.200. Recomendamos usar nosso simulador online ou falar com um consultor para receber uma proposta personalizada com todos os descontos que você tem direito.",
+            },
+            {
+              pergunta: "Como é o suporte ao aluno durante a graduação?",
+              resposta:
+                "Oferecemos suporte completo durante toda a sua jornada: tutoria acadêmica, orientação de carreira, acesso a biblioteca digital, plataforma de estudos 24/7, suporte técnico e atendimento personalizado. Além disso, você tem acesso a eventos, workshops e uma comunidade ativa de alunos e professores.",
+            },
+          ]}
         />
       </main>
       <Footer />
