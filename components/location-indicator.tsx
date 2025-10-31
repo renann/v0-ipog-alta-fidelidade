@@ -15,7 +15,7 @@ export function LocationIndicator() {
       onClick={openDialog}
     >
       <MapPin className="h-4 w-4" />
-      <span className="hidden sm:inline">{location || "Selecione sua cidade"}</span>
+      <span>{location || "Selecione sua cidade"}</span>
     </Button>
   )
 }
