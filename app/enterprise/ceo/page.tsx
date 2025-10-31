@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -24,9 +25,15 @@ import {
   GraduationCap,
   TrendingUp,
 } from "lucide-react"
-import { openAssistantWithFlow } from "@/lib/assistant-events"
 
 export default function CeoPage() {
+  const [, setShowAssistant] = useState(false)
+
+  const openAssistantWithFlow = (flow: string) => {
+    console.log("[v0] Opening assistant with flow:", flow)
+    setShowAssistant(true)
+  }
+
   return (
     <>
       {/* Header Section */}
