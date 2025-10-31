@@ -218,14 +218,17 @@ export function VirtualAssistant() {
     console.log("[v0] Moving to next step", { currentIndex, nextStep })
 
     if (nextStep === "complete") {
+      const isGraduacao = pathname.startsWith("/graduacao")
+      const ctaLabel = isGraduacao ? "Inscreva-se no processo seletivo" : "Matricule-se"
+
       const completeMessages: Record<FlowType, { text: string; action?: { label: string; href: string } }> = {
         consultor: {
           text: "Obrigado! Recebi suas informações. Um consultor acadêmico entrará em contato em breve para ajudá-lo. 😊",
         },
         preco: {
-          text: "Perfeito! Aqui está o valor do curso:\n\n💰 Investimento mensal: R$ 499,00 em 18x\nTotal: R$ 12.582,00\n\n✅ Sem taxa de matrícula\n✅ Parcelamento facilitado\n\nUm consultor entrará em contato para mais detalhes!",
+          text: "Perfeito! Aqui está o valor do curso:\n\n💰 Investimento mensal: R$ 499,00 em 18x\nTotal: R$ 12.582,00\n\n✅ Sem taxa de inscrição\n✅ Parcelamento facilitado\n\nUm consultor entrará em contato para mais detalhes!",
           action: {
-            label: "Matricule-se",
+            label: ctaLabel,
             href: "/checkout",
           },
         },

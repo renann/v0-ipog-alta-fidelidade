@@ -79,7 +79,7 @@ export default function PsicologiaEadPage() {
         />
         <RetornoInvestimentoPsicologia />
         <Empregabilidade
-          titulo="Matricule-se na Graduação IPOG"
+          titulo="Inscreva-se no processo seletivo"
           subtitulo="Projeção de evolução salarial após o curso, com base em faixas médias de mercado."
           estatisticas={[
             {
@@ -261,11 +261,11 @@ export default function PsicologiaEadPage() {
             </div>
             <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
               <div className="border-t pt-6">
-                <h4 className="text-xl font-semibold mb-4">Taxa de matrícula</h4>
+                <h4 className="text-xl font-semibold mb-4">Taxa de inscrição</h4>
                 <div className="bg-background p-6 rounded-lg mb-4">
                   <p className="text-lg font-semibold mb-2">R$ 100,00</p>
                   <p className="text-muted-foreground">
-                    A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial
+                    A inscrição garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial
                     entrará em contato para apresentar as condições de mensalidade e formas de pagamento.
                   </p>
                 </div>

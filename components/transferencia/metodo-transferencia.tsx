@@ -14,7 +14,7 @@ export function MetodoTransferencia() {
     {
       icon: Zap,
       titulo: "Processo Ágil",
-      descricao: "Matrícula em até 30 dias com documentação simplificada e suporte dedicado",
+      descricao: "Inscrição em até 30 dias com documentação simplificada e suporte dedicado",
     },
     {
       icon: Building2,

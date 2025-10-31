@@ -56,7 +56,7 @@ export default function TransferenciaPage() {
               titulo: "Processo demorado",
               descricao: "Cada semestre parado é prejuízo na sua formação e carreira.",
               solucao:
-                "Seu tempo é valioso. Com um tutor de transição dedicado e um processo otimizado, garantimos sua matrícula em até 30 dias para que sua formação não pare.",
+                "Seu tempo é valioso. Com um tutor de transição dedicado e um processo otimizado, garantimos sua inscrição em até 30 dias para que sua formação não pare.",
             },
             {
               icon: <Building className="h-5 w-5" />,

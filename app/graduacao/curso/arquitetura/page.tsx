@@ -350,7 +350,7 @@ export default function ArquiteturaPage() {
               <div className="border-t pt-6">
                 <h4 className="text-xl font-semibold mb-4">Primeiro Passo para sua Qualificação:</h4>
                 <div className="bg-background p-6 rounded-lg mb-4">
-                  <p className="text-lg font-semibold mb-2">Taxa de Matrícula: R$ 100,00</p>
+                  <p className="text-lg font-semibold mb-2">Taxa de Inscrição: R$ 100,00</p>
                   <p className="text-muted-foreground">
                     O pagamento da taxa garante sua análise de perfil e o início do seu processo de ingresso. Após a
                     aprovação, nossa equipe de consultores apresentará as condições especiais de mensalidade e opções de

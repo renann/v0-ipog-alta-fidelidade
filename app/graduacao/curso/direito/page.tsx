@@ -376,7 +376,7 @@ export default function DireitoPage() {
             </div>
             <div className="max-w-2xl mx-auto bg-muted/30 p-8 rounded-lg">
               <div className="border-t pt-6">
-                <h4 className="text-xl font-semibold mb-4">Taxa de Matrícula</h4>
+                <h4 className="text-xl font-semibold mb-4">Taxa de Inscrição</h4>
                 <div className="bg-background p-6 rounded-lg mb-4">
                   <p className="text-lg font-semibold mb-2">R$ 100,00</p>
                   <p className="text-muted-foreground">
