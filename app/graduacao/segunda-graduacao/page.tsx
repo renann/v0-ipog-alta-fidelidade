@@ -31,14 +31,14 @@ export default function SegundaGraduacaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
-          title="Conquiste um novo diploma no seu ritmo"
-          description="Aproveite sua experiência profissional e acelere sua nova formação com validação de conhecimentos, flexibilidade total e certificação reconhecida"
+          title="Sua Experiência Vale um Novo Diploma. Acelere sua Carreira no IPOG."
+          description="Transforme sua experiência em um diploma reconhecido, com uma trilha de aprendizado mais rápida e um investimento focado no seu próximo salto profissional."
           valueBadges={[
             { text: "Validação de Conhecimentos" },
             { text: "Trilhas Aceleradas" },
             { text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao" }}
+          primaryCTA={{ text: "Valide sua Experiência Agora", href: "/catalogo?categoria=graduacao" }}
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}
         />
         <Dilema
@@ -49,19 +49,22 @@ export default function SegundaGraduacaoPage() {
               icon: <Clock className="h-5 w-5" />,
               titulo: "Tempo é seu maior ativo",
               descricao: "Você não pode pausar sua carreira por 4 anos para uma nova graduação",
-              solucao: "Validamos seus conhecimentos prévios e reduzimos o tempo de formação em até 40%",
+              solucao:
+                "Sua carreira não pode esperar. Por isso, reconhecemos seus conhecimentos e otimizamos sua grade, reduzindo o tempo de formação em até 40%.",
             },
             {
               icon: <DollarSign className="h-5 w-5" />,
               titulo: "Investimento inteligente",
               descricao: "Pagar por disciplinas que você já domina não faz sentido",
-              solucao: "Você só paga pelas disciplinas que realmente precisa cursar",
+              solucao:
+                "Invista apenas no que impulsiona sua carreira. Sua experiência elimina matérias básicas, e seu investimento é focado em conhecimento avançado e aplicável.",
             },
             {
               icon: <Target className="h-5 w-5" />,
               titulo: "Foco no que importa",
               descricao: "Conteúdos básicos não agregam à sua experiência profissional",
-              solucao: "Trilha personalizada focada em conhecimentos avançados e aplicáveis",
+              solucao:
+                "Sua formação deve ser tão experiente quanto você. Desenvolvemos uma trilha de aprendizado avançada, sem conteúdos básicos, para complementar sua trajetória profissional.",
             },
           ]}
         />
@@ -74,7 +77,7 @@ export default function SegundaGraduacaoPage() {
               nome: "Administração",
               duracao: "2,5 anos (acelerado)",
               descricao:
-                "Transforme sua experiência em gestão estratégica. Aproveite seus conhecimentos prévios e acelere sua formação com foco executivo.",
+                "Transforme sua vivência de mercado em liderança estratégica. Ideal para profissionais que buscam formalizar competências em gestão e acelerar a ascensão para cargos executivos.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/administracao",
             },
@@ -82,7 +85,7 @@ export default function SegundaGraduacaoPage() {
               nome: "Psicologia",
               duracao: "3 anos (acelerado)",
               descricao:
-                "Combine sua experiência profissional com conhecimento em comportamento humano. Ideal para líderes que buscam desenvolvimento de equipes.",
+                "Aplique sua vivência em liderança e gestão de pessoas para compreender o comportamento humano em profundidade. Ideal para profissionais que desejam formalizar suas habilidades e liderar equipes com mais estratégia e empatia.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/psicologia-ead",
             },
@@ -90,7 +93,7 @@ export default function SegundaGraduacaoPage() {
               nome: "Direito",
               duracao: "3,5 anos (acelerado)",
               descricao:
-                "Aproveite sua experiência corporativa e adicione conhecimento jurídico à sua carreira. Perfeito para gestores e empreendedores.",
+                "Adicione uma camada de conhecimento jurídico à sua expertise de mercado. Perfeito para gestores, empreendedores e consultores que precisam de segurança para tomar decisões complexas e estratégicas.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/direito",
             },
@@ -105,12 +108,13 @@ export default function SegundaGraduacaoPage() {
             {
               badge: "GRADUAÇÃO",
               titulo: "EAD",
-              descricao: "Para quem precisa de autonomia e flexibilidade total durante a transição",
+              descricao:
+                "Conquiste seu diploma IPOG em menos tempo e com reconhecimento oficial. Aproveite disciplinas já cursadas, valide sua experiência profissional e estude com flexibilidade total, aplicando o conhecimento em até 90 dias para garantir retorno real no seu investimento.",
               beneficios: [
-                "Estude no seu ritmo profissional",
-                "Validação de conhecimentos prévios",
-                "Suporte executivo dedicado",
-                "Certificação igual ao presencial",
+                "Tempo de formação reduzido com aproveitamento de disciplinas",
+                "Flexibilidade total para o profissional ativo",
+                "Reconhecimento oficial que valida sua experiência",
+                "Aplicação do conhecimento em até 90 dias",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
@@ -118,12 +122,13 @@ export default function SegundaGraduacaoPage() {
             {
               badge: "GRADUAÇÃO",
               titulo: "Presencial",
-              descricao: "Para quem valoriza networking executivo e imersão completa",
+              descricao:
+                "Acelere sua transição de carreira com o prestígio IPOG. Conte com orientação especializada, infraestrutura moderna e networking em uma formação presencial de excelência que une teoria, prática e conexões estratégicas para transformar sua trajetória profissional.",
               beneficios: [
-                "Networking com profissionais experientes",
-                "Laboratórios equipados",
-                "Mentoria presencial",
-                "Certificação reconhecida",
+                "Aceleração da transição de carreira com uma rede de contatos forte",
+                "Coordenação acessível que orienta sua mudança profissional",
+                "Networking regional estabelecido e de alto valor",
+                "Estrutura moderna que suporta a aplicação prática do conhecimento",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
@@ -162,14 +167,14 @@ export default function SegundaGraduacaoPage() {
               bio: "Doutora em Administração, executiva de RH e especialista em transformação organizacional",
             },
           ]}
-          tituloProfessores="Conheça alguns de nossos professores"
+          tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
           bgColor="bg-muted/30"
         />
         <AcaoFinal
-          title="Acelere sua nova formação com validação de conhecimentos"
-          descricao="Aproveite sua experiência profissional e conquiste um novo diploma no seu ritmo, com trilhas aceleradas e certificação reconhecida."
+          title="Sua Próxima Conquista Começa Aqui. A Escolha que Conecta Você ao Sucesso."
+          descricao="Valide sua trajetória, otimize seu tempo e seu investimento. Conquiste um novo diploma com a qualidade e o reconhecimento que sua carreira merece."
           botaoPrimario={{
-            texto: "Começar minha jornada",
+            texto: "Iniciar Minha Validação",
             href: "/catalogo?categoria=graduacao",
           }}
           botaoSecundario={{

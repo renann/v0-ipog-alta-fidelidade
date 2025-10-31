@@ -1,5 +1,6 @@
 "use client"
 import { Header } from "@/components/header"
+import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoRecolocacao } from "@/components/recolocacao/metodo-recolocacao"
 import { Cursos } from "@/components/cursos"
@@ -8,7 +9,7 @@ import { ResultadosReais } from "@/components/resultados-reais"
 import { EntregaveisRecolocacao } from "@/components/recolocacao/entregaveis-recolocacao"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { Users, Briefcase, FileQuestion, TrendingDown, TrendingUp, Award, Building } from "lucide-react"
+import { Users, Briefcase, TrendingUp, Award, Building, Target, Zap } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
@@ -30,29 +31,43 @@ export default function RecolocacaoPage() {
           </div>
         </div>
 
-        {/* 2. Dilema da Recolocação */}
+        <Hero
+          badge="EXTENSÃO"
+          title="Faça da recolocação uma realidade"
+          description="Formações práticas de extensão criadas para você conquistar nova vaga ou cargo. Explore os cursos que conectam seu perfil profissional a novas oportunidades de mercado."
+          valueBadges={[
+            { icon: <Target className="h-5 w-5" />, text: "Foco em Recolocação" },
+            { icon: <Zap className="h-5 w-5" />, text: "Aplicação Imediata" },
+            { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG" },
+          ]}
+          primaryCTA={{ text: "Conhecer cursos para Recolocação", href: "#cursos" }}
+          secondaryCTA={{ text: "Agendar conversa", onClick: openAssistantForConsultor }}
+        />
+
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="Voltar ao mercado sem portfólio atualizado é arriscado"
-            subtitulo="Construa credibilidade com projetos reais e networking estratégico"
+            titulo="Por que esta formação garante vantagem?"
+            subtitulo="Entregas do programa"
             dores={[
               {
-                icon: <FileQuestion className="h-5 w-5" />,
-                titulo: "Currículo desatualizado",
-                descricao: "Experiência passada não comprova suas habilidades atuais",
-                solucao: "Projetos práticos que se tornam portfólio comprovado para entrevistas",
+                icon: <Target className="h-5 w-5" />,
+                titulo: "Recolocação exige foco",
+                descricao: "Nós entregamos habilidades que o mercado pede agora.",
+                solucao:
+                  "Nossa metodologia acelera seu resultado: estudar hoje, aplicar amanhã. Formatos que respeitam seu momento profissional, sem pausa na sua rotina.",
               },
               {
-                icon: <Users className="h-5 w-5" />,
-                titulo: "Rede de contatos limitada",
-                descricao: "Recolocação depende de quem você conhece, não apenas do que sabe",
-                solucao: "Networking estruturado com profissionais ativos e mentoria de carreira",
+                icon: <Briefcase className="h-5 w-5" />,
+                titulo: "Módulos intensivos",
+                descricao: "Focados em aplicação imediata.",
+                solucao:
+                  "Formatos compatíveis com seu dia a dia — online, híbrido ou presencial. Coaching ou suporte para rede de contatos, currículo e entrevista.",
               },
               {
-                icon: <TrendingDown className="h-5 w-5" />,
-                titulo: "Confiança abalada",
-                descricao: "Tempo fora do mercado gera insegurança e dúvidas sobre suas capacidades",
-                solucao: "Validação constante através de entregas reais e feedback de especialistas",
+                icon: <Award className="h-5 w-5" />,
+                titulo: "Certificação reconhecida",
+                descricao: "Com chancela IPOG, reconhecida no mercado.",
+                solucao: "Certificação que valida suas novas competências e fortalece seu posicionamento profissional.",
               },
             ]}
           />
@@ -66,8 +81,8 @@ export default function RecolocacaoPage() {
         {/* 4. Cursos em Destaque */}
         <section className="w-full py-12 md:py-16">
           <Cursos
-            titulo="Escolha o curso que abre portas para sua nova carreira."
-            subtitulo="Cursos práticos com projetos reais que se tornam parte do seu portfólio profissional."
+            title="Escolha o curso que abre portas para sua nova carreira"
+            subtitle="Cursos práticos com projetos reais que se tornam parte do seu portfólio profissional"
             badge="EXTENSÃO"
             cursos={[
               {
@@ -103,13 +118,13 @@ export default function RecolocacaoPage() {
         {/* 5. Modalidades Comparativas */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            titulo="Escolha o formato que se adapta à sua rotina."
-            subtitulo="O formato não é barreira, mas ferramenta para sua recolocação."
+            titulo="Escolha o formato que se adapta à sua rotina"
+            subtitulo="O formato não é barreira, mas ferramenta para sua recolocação"
             modalidades={[
               {
                 badge: "EXTENSÃO",
                 titulo: "EAD",
-                descricao: "Flexibilidade e mentorias assíncronas para quem precisa conciliar tempo e requalificação.",
+                descricao: "Flexibilidade e mentorias assíncronas para quem precisa conciliar tempo e requalificação",
                 beneficios: [
                   "Estude no seu ritmo e reveja aulas sempre que quiser",
                   "Conteúdos atualizados e interativos",
@@ -122,7 +137,7 @@ export default function RecolocacaoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "Ao Vivo",
-                descricao: "Interação em tempo real com mentores para quem quer prática com suporte.",
+                descricao: "Interação em tempo real com mentores para quem quer prática com suporte",
                 beneficios: [
                   "Aulas ao vivo com professores e mentores",
                   "Gravações disponíveis após cada encontro",
@@ -135,7 +150,7 @@ export default function RecolocacaoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "Presencial",
-                descricao: "Imersão intensiva e networking local para quem quer viver a experiência IPOG.",
+                descricao: "Imersão intensiva e networking local para quem quer viver a experiência IPOG",
                 beneficios: [
                   "Aulas práticas e discussões presenciais",
                   "Networking direto com profissionais do setor",
@@ -153,8 +168,8 @@ export default function RecolocacaoPage() {
         <section className="w-full py-12 md:py-16">
           <ResultadosReais
             badge="Resultados Comprovados"
-            titulo="Profissionais que se recolocaram com sucesso."
-            subtitulo="Histórias reais de transformação e retorno ao mercado com confiança."
+            titulo="Profissionais que se recolocaram com sucesso"
+            subtitulo="Histórias reais de transformação e retorno ao mercado com confiança"
             estatisticas={[
               {
                 icon: <TrendingUp className="h-6 w-6" />,
@@ -239,14 +254,14 @@ export default function RecolocacaoPage() {
         {/* 10. Ação Final */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Construa seu portfólio e retorne ao mercado com confiança"
-            descricao="Projetos práticos, networking estratégico e mentoria de carreira. Recolocação com portfólio comprovado e validação constante."
+            titulo="Quer ajuda personalizada?"
+            descricao="Nosso time de consultoria está pronto para ajudar você a definir o curso ideal e entender as melhores condições."
             botaoPrimario={{
-              texto: "Começar minha jornada",
+              texto: "Quero ver os cursos",
               href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
-              texto: "Falar com consultor de carreira",
+              texto: "Agendar conversa",
               onClick: openAssistantForConsultor,
             }}
           />

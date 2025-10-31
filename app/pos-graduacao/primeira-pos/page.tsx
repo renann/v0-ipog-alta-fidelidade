@@ -47,12 +47,12 @@ const PrimeiraPosContent = dynamic(
             </div>
             <Hero
               badge="PÓS-GRADUAÇÃO"
-              title="Primeira Pós / Especialização"
-              description="Torne-se especialista com quem forma líderes há mais de 20 anos."
+              title="Especialize-se com Flexibilidade e Impacto Imediato na Carreira"
+              description="Aprenda com os líderes do mercado, construa um networking de alto nível e impulsione sua carreira com a chancela de uma das instituições mais reconhecidas do Brasil."
               valueBadges={[
-                { icon: <GraduationCap className="h-5 w-5" />, text: "Certificação MEC" },
-                { icon: <Users className="h-5 w-5" />, text: "Professores de Mercado" },
-                { icon: <TrendingUp className="h-5 w-5" />, text: "ROI Comprovado" },
+                { icon: <GraduationCap className="h-5 w-5" />, text: "Certificação Reconhecida pelo MEC" },
+                { icon: <Users className="h-5 w-5" />, text: "Docentes que são Referência no Mercado" },
+                { icon: <TrendingUp className="h-5 w-5" />, text: "Retorno de Investimento Comprovado" },
               ]}
               primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
               secondaryCTA={{ text: "Falar com consultor", href: "#contato" }}
@@ -64,21 +64,24 @@ const PrimeiraPosContent = dynamic(
               dores={[
                 {
                   icon: <DollarSign className="h-5 w-5" />,
-                  titulo: "Investimento incerto",
-                  descricao: "Você quer se especializar, mas teme investir tempo e dinheiro sem resultado",
-                  solucao: "ROI comprovado: 30% de aumento médio em 6 meses",
+                  titulo: "O Investimento que Acelera sua Carreira",
+                  descricao:
+                    "Sua especialização é um passo estratégico. No IPOG, ela se traduz em crescimento real e mensurável para sua trajetória profissional.",
+                  solucao: "ROI Comprovado: 89% dos nossos especialistas relatam avanço de cargo em até 6 meses.",
                 },
                 {
                   icon: <BookOpen className="h-5 w-5" />,
-                  titulo: "Excesso de teoria",
-                  descricao: "Preocupação com conteúdo distante da realidade do mercado",
-                  solucao: "Metodologia prática: 85% aplicam em 30 dias",
+                  titulo: "Conhecimento Prático para Resultados Reais",
+                  descricao:
+                    "Nossa metodologia conecta você à prática que o mercado exige. O que você aprende em aula é aplicado diretamente nos seus desafios profissionais.",
+                  solucao: "Aplicação Imediata: 85% dos profissionais aplicam o conteúdo no trabalho em até 30 dias.",
                 },
                 {
                   icon: <Clock className="h-5 w-5" />,
-                  titulo: "Falta de tempo",
-                  descricao: "Rotina profissional intensa dificulta conciliar estudos",
-                  solucao: "Modalidades flexíveis para sua rotina",
+                  titulo: "A Flexibilidade que sua Rotina Exige",
+                  descricao:
+                    "Concilie sua carreira, estudos e vida pessoal. Oferecemos modalidades de ensino desenhadas para se adaptar ao seu ritmo, sem abrir mão da excelência.",
+                  solucao: "Escolha entre os formatos EAD, Ao Vivo e Presencial e estude no seu tempo.",
                 },
               ]}
               ctaText="Tire suas dúvidas com um consultor"
@@ -92,39 +95,39 @@ const PrimeiraPosContent = dynamic(
               modalidades={[
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "EAD",
+                  titulo: "EAD: Estude no seu Ritmo com Conteúdo Aplicado",
                   descricao: "Para quem busca flexibilidade sem abrir mão da qualidade",
                   beneficios: [
-                    "Estude quando e onde quiser;",
-                    "Conteúdo prático e aplicável ao mercado;",
-                    "Mentoria online com especialistas;",
-                    "Certificação reconhecida pelo MEC.",
+                    "Flexibilidade total para conciliar com sua rotina profissional.",
+                    "Conteúdo prático, pensado para aplicação imediata.",
+                    "Acesso a professores especialistas e atuantes no mercado.",
+                    "Certificação com o reconhecimento e a credibilidade do IPOG.",
                   ],
                   link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
                   buttonText: "Encontrar cursos EAD",
                 },
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "Ao Vivo",
+                  titulo: "Ao Vivo: Interação Real sem Sair de Casa",
                   descricao: "Para quem quer interação em tempo real com flexibilidade",
                   beneficios: [
-                    "Aulas online ao vivo com professores do mercado;",
-                    "Interação em tempo real e networking;",
-                    "Gravações disponíveis para revisão;",
-                    "Projetos práticos e cases reais.",
+                    "Aulas online e ao vivo para interação direta com professores.",
+                    "Networking dinâmico com colegas e especialistas em tempo real.",
+                    "Disciplina de encontros semanais com a flexibilidade do online.",
+                    "Aulas gravadas para consultar quando e onde quiser.",
                   ],
                   link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
                   buttonText: "Encontrar cursos Ao Vivo",
                 },
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "Presencial",
+                  titulo: "Presencial: Networking de Alto Valor e Vivência Prática",
                   descricao: "Para quem valoriza imersão e networking presencial",
                   beneficios: [
-                    "Aulas presenciais com vivências práticas;",
-                    "Networking qualificado com profissionais da área;",
-                    "Estrutura moderna e laboratórios equipados;",
-                    "Conexões que impulsionam sua carreira.",
+                    "Conexões reais e networking de alto nível com líderes de mercado.",
+                    "Imersão completa com aulas e vivências práticas.",
+                    "Acesso a laboratórios e infraestrutura de ponta.",
+                    "Mentoria e orientação próxima de professores que impulsionam sua carreira.",
                   ],
                   link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
                   buttonText: "Encontrar cursos Presencial",
@@ -134,8 +137,8 @@ const PrimeiraPosContent = dynamic(
             />
 
             <Cursos
-              title="Especializações ideais para quem está começando"
-              subtitle="Cursos pensados para profissionais em início de especialização"
+              title="Especializações Estratégicas para sua Carreira"
+              subtitle="Descubra os cursos que te darão o protagonismo para assumir desafios mais complexos e se consolidar como referência na sua área."
               badge="PÓS-GRADUAÇÃO"
               cursos={[
                 {
@@ -233,8 +236,8 @@ const PrimeiraPosContent = dynamic(
             />
             <AplicacaoImediataPrimeiraPos />
             <Autoridade
-              titulo="Quem forma especialistas há mais de 20 anos"
-              subtitulo="Credibilidade construída com resultados comprovados e reconhecimento nacional"
+              titulo="Aprenda com os Profissionais que Lideram o Mercado"
+              subtitulo="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
               credenciais={[
                 {
                   icon: <Award className="h-5 w-5" />,
@@ -271,8 +274,8 @@ const PrimeiraPosContent = dynamic(
               ]}
             />
             <ResultadosReais
-              titulo="Resultados reais de quem começou com a primeira pós"
-              subtitulo="Veja o impacto da especialização IPOG na carreira de profissionais como você"
+              titulo="A Prova Real do Impacto IPOG"
+              subtitulo="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
               estatisticas={[
                 {
                   icon: <TrendingUp className="h-8 w-8" />,
@@ -313,8 +316,8 @@ const PrimeiraPosContent = dynamic(
               bgColor="bg-muted/30"
             />
             <AcaoFinal
-              titulo="Torne-se especialista com ROI comprovado"
-              descricao="Primeira pós-graduação com metodologia prática, professores de mercado e certificação MEC. 30% de aumento médio em 6 meses."
+              titulo="A escolha que conecta você ao sucesso."
+              descricao="Invista em uma especialização com metodologia prática, networking de alto nível e a credibilidade de professores que são referência no mercado. Dê o próximo passo para transformar sua carreira."
               botaoPrimario={{
                 texto: "Começar minha jornada",
                 href: "/catalogo?categoria=pos-graduacao",

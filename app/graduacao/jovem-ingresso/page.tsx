@@ -29,34 +29,40 @@ export default function JovemIngressoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
-          title="Comece sua carreira com segurança e propósito"
-          description="Sua primeira graduação com acompanhamento próximo, empregabilidade garantida e flexibilidade para estudar do seu jeito"
+          title="Sua Jornada de Conquistas Começa Aqui"
+          description="Com professores que são referência no mercado e uma formação focada na prática, o IPOG conecta você às melhores oportunidades desde o primeiro semestre."
           valueBadges={[
             { icon: <BadgeCheck className="w-5 h-5" />, text: "Acompanhamento Próximo" },
             { icon: <BadgeCheck className="w-5 h-5" />, text: "Empregabilidade 92%" },
             { icon: <BadgeCheck className="w-5 h-5" />, text: "Flexibilidade Total" },
           ]}
-          primaryCTA={{ text: "Começar minha jornada", href: "/catalogo?categoria=graduacao&persona=jovem-ingresso" }}
+          primaryCTA={{
+            text: "Comece sua jornada para o sucesso",
+            href: "/catalogo?categoria=graduacao&persona=jovem-ingresso",
+          }}
           secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
         />
         <Dilema
-          title="Escolher o caminho certo é um desafio"
-          subtitle="O tempo, o trabalho e os custos muitas vezes parecem barreiras. Mas é possível transformar sua rotina em um plano de crescimento — com orientação, clareza e resultados reais"
+          title="Entendemos os desafios de começar a carreira"
+          subtitle="No IPOG, transformamos suas preocupações em um plano de sucesso claro e alcançável."
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
-              titulo: "Medo de não conseguir emprego",
-              solucao: "Empregabilidade garantida com 94% dos egressos empregados na área",
+              titulo: "Insegurança sobre o primeiro emprego?",
+              solucao:
+                "Aqui, sua carreira começa antes do diploma. Com um índice de 94% de egressos empregados na área, conectamos você ao mercado de trabalho desde os primeiros semestres.",
             },
             {
               icon: <MapPin className="h-5 w-5" />,
-              titulo: "Incerteza sobre a matriz curricular",
-              solucao: "Trilhas personalizadas com aplicação prática desde o primeiro semestre",
+              titulo: "Incerteza sobre o que vai aprender?",
+              solucao:
+                "Nossa matriz curricular é focada na prática e totalmente transparente. Você participa de projetos reais e desenvolve as habilidades que as empresas realmente procuram.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Falta de tempo e recursos",
-              solucao: "Flexibilidade total com modalidades EAD e bolsas de estudo",
+              titulo: "Preocupado com custos e a rotina?",
+              solucao:
+                "Estude do seu jeito. Oferecemos modalidades EAD e Presencial que se adaptam à sua rotina, além de um simulador de bolsas para encontrar a melhor opção para o seu bolso.",
             },
           ]}
         />
@@ -69,7 +75,7 @@ export default function JovemIngressoPage() {
               nome: "Psicologia",
               duracao: "5 anos",
               descricao:
-                "Compreenda o comportamento humano e transforme vidas. Você não está escolhendo apenas um curso, está escolhendo transformar sua escuta em acolhimento.",
+                "Explore a complexidade da mente humana e prepare-se para promover bem-estar e transformação. No IPOG, você desenvolve a escuta empática e as competências para se tornar um profissional de referência na área.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/psicologia-ead",
             },
@@ -77,7 +83,7 @@ export default function JovemIngressoPage() {
               nome: "Direito",
               duracao: "5 anos",
               descricao:
-                "Justiça e transformação social através do direito. Transforme argumentos em justiça, conhecimento em defesa, sua voz em autoridade.",
+                "Transforme argumentos em justiça e conhecimento em defesa. Aqui, você desenvolve a visão crítica e as ferramentas para se tornar um profissional de destaque, pronto para liderar e impactar positivamente a sociedade.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/direito",
             },
@@ -85,7 +91,7 @@ export default function JovemIngressoPage() {
               nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
               descricao:
-                "Projete espaços e transforme ambientes. Transforme ideias em projetos, espaços em experiências, sua criatividade em realidade.",
+                "Dê forma a ideias e construa o futuro das cidades. Nosso curso une criatividade e técnica para que você projete espaços inovadores, funcionais e sustentáveis, deixando sua marca no mundo.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/arquitetura",
             },
@@ -100,7 +106,8 @@ export default function JovemIngressoPage() {
             {
               badge: "GRADUAÇÃO",
               titulo: "EAD",
-              descricao: "Para quem precisa máxima autonomia e quer 'encaixar' módulos na agenda",
+              descricao:
+                "Comece sua graduação com flexibilidade e foco no primeiro emprego. Estude online com conteúdos exclusivos, tenha clareza de custos e conte com suporte ágil para conquistar sua vaga no mercado.",
               beneficios: [
                 "Estude no seu ritmo; reveja aulas quando quiser",
                 "Conteúdos atualizados e interativos",
@@ -108,12 +115,13 @@ export default function JovemIngressoPage() {
                 "Certificação igual ao presencial",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=ead",
-              buttonText: "Encontrar cursos EAD",
+              buttonText: "Ver cursos EAD",
             },
             {
               badge: "GRADUAÇÃO",
               titulo: "Presencial",
-              descricao: "Para quem busca imersão estratégica e networking executivo",
+              descricao:
+                "Viva a experiência universitária completa com o prestígio do IPOG. Aprenda com professores renomados em laboratórios modernos e construa um networking valioso para acelerar sua carreira.",
               beneficios: [
                 "Encontros presenciais",
                 "Projetos práticos",
@@ -121,7 +129,7 @@ export default function JovemIngressoPage() {
                 "Certificação reconhecida",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=presencial",
-              buttonText: "Encontrar cursos Presencial",
+              buttonText: "Ver cursos presenciais",
             },
           ]}
         />
@@ -147,17 +155,18 @@ export default function JovemIngressoPage() {
           ]}
           layoutEstatisticas="carousel"
           depoimento={{
-            texto: "Consegui meu primeiro estágio através do programa de mentoria IPOG.",
-            autor: "Aluno IPOG",
+            texto:
+              "Graças aos projetos práticos e à orientação de professores que realmente estão no mercado, consegui meu primeiro estágio em Psicologia já no terceiro semestre. O IPOG me deu a confiança que eu precisava.",
+            autor: "Camila Rocha, Aluna de Psicologia",
           }}
           bgColor="bg-background"
         />
         <SuporteAcompanhamento />
         <AcaoFinal
-          title="Comece sua graduação com segurança e propósito"
-          descricao="Acompanhamento próximo, empregabilidade garantida e flexibilidade para estudar do seu jeito. Transforme sua primeira graduação em uma jornada de crescimento real."
+          title="A escolha que conecta você ao sucesso."
+          descricao="Tudo o que você precisa para construir uma carreira de impacto está aqui. Dê o primeiro passo na direção do seu futuro."
           botaoPrimario={{
-            texto: "Começar minha jornada",
+            texto: "Garanta sua vaga agora",
             href: "/catalogo?categoria=graduacao&persona=jovem-ingresso",
           }}
           botaoSecundario={{

@@ -32,81 +32,87 @@ export default function TransicaoAreaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Transição de Área"
-          description="Faça uma transição segura com apoio e mentoria de especialistas."
+          title="Pós-Graduação para Transição de Carreira"
+          description="Conquiste sua nova área com a segurança de um método validado e o apoio de quem transforma o mercado. A escolha que conecta você ao sucesso."
           valueBadges={[
-            { icon: <ArrowRightLeft className="h-5 w-5" />, text: "Transição Segura" },
-            { icon: <Users className="h-5 w-5" />, text: "Mentoria Especializada" },
-            { icon: <Target className="h-5 w-5" />, text: "Validação de Competências" },
+            { icon: <ArrowRightLeft className="h-5 w-5" />, text: "Método Comprovado" },
+            { icon: <Users className="h-5 w-5" />, text: "Mentoria Estratégica" },
+            { icon: <Target className="h-5 w-5" />, text: "Networking de Alto Impacto" },
           ]}
-          primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
-          secondaryCTA={{ text: "Falar com mentor", href: "#contato" }}
+          primaryCTA={{ text: "Receba seu plano de transição", href: "#cursos" }}
+          secondaryCTA={{ text: "Fale com um especialista", href: "#contato" }}
         />
 
         <Dilema
-          titulo="Mudar de área é um desafio real"
+          titulo="A segurança que você precisa para dar o próximo passo"
           subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos"
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
-              titulo: "Medo de recomeçar do zero",
-              solucao: "Mentoria individual e plano de transição estruturado passo a passo",
+              titulo: "Insegurança ao começar do zero?",
+              solucao:
+                "Sua jornada começa com uma trilha de nivelamento e mentoria individualizada para construir confiança e resultados a cada etapa.",
             },
             {
               icon: <MapPin className="h-5 w-5" />,
-              titulo: "Insegurança sobre a nova área",
-              solucao: "Networking estratégico com profissionais consolidados na área desejada",
+              titulo: "Não sabe como entrar no novo mercado?",
+              solucao:
+                "Conectamos você a uma rede de profissionais atuantes que abrem portas e aceleram sua inserção na nova carreira.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Falta de base técnica",
-              solucao: "Trilhas com nivelamento e aplicação prática desde o início",
+              titulo: "Receio de não ter a base necessária?",
+              solucao:
+                "Nossas trilhas-ponte garantem o conhecimento técnico essencial, com projetos práticos que validam sua nova competência desde o início.",
             },
           ]}
         />
         <MetodoTransicaoArea />
 
         <Modalidades
-          titulo="Escolha a modalidade ideal para sua transição"
+          titulo="Encontre a modalidade ideal para sua jornada"
           subtitulo="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "EAD",
-              descricao: "Para quem precisa de autonomia e flexibilidade total durante a transição",
+              titulo: "EAD (Gravado)",
+              descricao:
+                "A flexibilidade total para você migrar de carreira sem abrir mão da sua rotina. Estude com autonomia e conte com mentoria individualizada e a certificação que o mercado reconhece.",
               beneficios: [
                 "Estude no seu ritmo e reveja aulas sempre que quiser;",
                 "Conteúdos atualizados e interativos;",
                 "Tutoria online com suporte contínuo;",
                 "Certificação igual ao curso presencial.",
               ],
-              buttonText: "Encontrar cursos EAD",
+              buttonText: "Ver cursos EAD",
               link: "/catalogo?categoria=pos-graduacao&modalidade=ead",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Ao Vivo",
-              descricao: "Para quem busca interação e acompanhamento em tempo real",
+              titulo: "Ao Vivo (Online)",
+              descricao:
+                "A disciplina e a interação que aceleram seu aprendizado. Participe de encontros semanais com especialistas, tire dúvidas em tempo real e construa uma rede de contatos nacional sem sair de casa.",
               beneficios: [
                 "Aulas ao vivo com professores e mentores;",
                 "Gravações disponíveis após cada encontro;",
                 "Troca com colegas de diversas áreas;",
                 "Atividades práticas guiadas.",
               ],
-              buttonText: "Encontrar cursos Ao Vivo",
+              buttonText: "Ver cursos Ao Vivo",
               link: "/catalogo?categoria=pos-graduacao&modalidade=ao-vivo",
             },
             {
               badge: "PÓS-GRADUAÇÃO",
               titulo: "Presencial",
-              descricao: "Para quem valoriza imersão total e networking presencial",
+              descricao:
+                "A imersão que constrói conexões de alto impacto. Participe de práticas intensivas, eventos exclusivos e construa um networking sólido com professores e profissionais que são referência na sua nova área.",
               beneficios: [
                 "Aulas práticas e discussões presenciais;",
                 "Networking direto com profissionais do setor;",
                 "Projetos aplicados em grupo;",
                 "Certificação reconhecida pelo mercado.",
               ],
-              buttonText: "Encontrar cursos Presencial",
+              buttonText: "Ver cursos Presencial",
               link: "/catalogo?categoria=pos-graduacao&modalidade=presencial",
             },
           ]}
@@ -145,33 +151,38 @@ export default function TransicaoAreaPage() {
         />
 
         <Trilha
-          titulo="Sua jornada de transição, passo a passo"
+          titulo="Uma jornada estruturada para sua nova carreira"
           subtitulo="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
           etapas={[
             {
               numero: "1",
-              titulo: "Nivelamento e Fundamentos",
-              descricao: "Construção da base técnica da nova área com conteúdo estruturado.",
+              titulo: "Nivelamento e Base Sólida",
+              descricao:
+                "Construa a base técnica da sua nova carreira com trilhas-ponte, eliminando a insegurança de começar do zero.",
             },
             {
               numero: "2",
               titulo: "Especialização Aplicada",
-              descricao: "Aprofundamento e aplicação prática em projetos reais do mercado.",
+              descricao:
+                "Aprofunde seus conhecimentos com projetos reais e uma metodologia que conecta você à prática que o mercado exige.",
             },
             {
               numero: "3",
               titulo: "Certificação Profissional",
-              descricao: "Reconhecimento oficial do conhecimento adquirido pelo MEC.",
+              descricao:
+                "Conquiste uma certificação com reconhecimento oficial do MEC e validação internacional, um diploma que carrega o peso e a credibilidade de mais de 20 anos do IPOG.",
             },
             {
               numero: "4",
               titulo: "Mentoria de Recolocação",
-              descricao: "Preparação de portfólio, currículo e simulação de entrevistas.",
+              descricao:
+                "Receba apoio estratégico para preparar seu portfólio, currículo e se destacar em processos seletivos na nova área.",
             },
             {
               numero: "5",
-              titulo: "Networking Estratégico",
-              descricao: "Entrada na comunidade IPOG e acesso a vagas exclusivas.",
+              titulo: "Acesso à Rede IPOG",
+              descricao:
+                "Faça parte de uma comunidade exclusiva de profissionais e tenha acesso a oportunidades e conexões que impulsionam sua trajetória.",
             },
           ]}
           botaoCta={{
@@ -182,23 +193,24 @@ export default function TransicaoAreaPage() {
         />
 
         <Empregabilidade
-          titulo="Transição com segurança e resultados"
+          titulo="Resultados que comprovam: sua transição é nosso compromisso."
           subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "78%",
-              descricao: "conseguem transição em até 12 meses",
+              descricao: "dos nossos alunos realizam a transição de carreira em até 12 meses após a conclusão.",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "8-12 meses",
-              descricao: "tempo médio para nova área",
+              descricao:
+                "é o tempo médio que nossos alunos levam para se estabelecer e alcançar crescimento na nova carreira.",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "100%",
-              descricao: "acesso a mentoria especializada",
+              descricao: "dos alunos de transição têm acesso a mentoria especializada e à rede de apoio IPOG.",
             },
           ]}
           layoutEstatisticas="grid"
@@ -212,14 +224,14 @@ export default function TransicaoAreaPage() {
         <CasesRecolocacao />
         <MentoriaNetworking />
         <AcaoFinal
-          titulo="Faça uma transição segura com apoio especializado"
-          descricao="Mentoria individual, networking estratégico e trilhas com nivelamento. Mude de área com segurança e resultados concretos."
+          titulo="Sua nova carreira começa com a escolha certa."
+          descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."
           botaoPrimario={{
-            texto: "Começar minha jornada",
+            texto: "Receba seu plano de transição",
             href: "/catalogo?categoria=pos-graduacao",
           }}
           botaoSecundario={{
-            texto: "Falar com mentor",
+            texto: "Fale com um especialista",
             href: "/falar-com-consultor",
           }}
         />

@@ -29,12 +29,12 @@ export default function TransferenciaPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
-          title="Transfira com segurança e clareza total"
-          description="Continue sua graduação com melhor estrutura, reconhecimento de créditos e processo ágil. Conclua com qualidade e sem perda de tempo"
+          title="Dê o próximo passo para uma formação de excelência."
+          description="Transfira seu curso com a segurança de um processo ágil, o máximo aproveitamento de créditos e a qualidade de uma instituição referência. Faça a escolha que conecta você ao sucesso."
           valueBadges={[
-            { text: "95% Créditos Reconhecidos" },
-            { text: "Processo em 30 Dias" },
-            { text: "Estrutura Superior" },
+            { text: "Até 95% de aproveitamento de créditos" },
+            { text: "Transferência ágil em até 30 dias" },
+            { text: "Corpo docente de mestres e doutores" },
           ]}
           primaryCTA={{ text: "Simule sua transferência", onClick: "openAssistantForConsultor" }}
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?categoria=graduacao" }}
@@ -46,34 +46,37 @@ export default function TransferenciaPage() {
             {
               icon: <AlertCircle className="h-5 w-5" />,
               titulo: "Medo de perder créditos",
-              descricao: "Você investiu tempo e dinheiro. Perder disciplinas é inaceitável",
-              solucao: "Reconhecemos até 95% dos seus créditos com análise transparente e criteriosa",
+              descricao: "Você investiu tempo e dinheiro. Perder disciplinas é inaceitável.",
+              solucao:
+                "Nosso plano de estudos personalizado garante o máximo aproveitamento do seu histórico. Realizamos uma análise transparente e criteriosa que reconhece até 95% das disciplinas já cursadas.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
               titulo: "Processo demorado",
-              descricao: "Cada semestre parado é prejuízo na sua formação e carreira",
-              solucao: "Transferência completa em até 30 dias com suporte dedicado",
+              descricao: "Cada semestre parado é prejuízo na sua formação e carreira.",
+              solucao:
+                "Seu tempo é valioso. Com um tutor de transição dedicado e um processo otimizado, garantimos sua matrícula em até 30 dias para que sua formação não pare.",
             },
             {
               icon: <Building className="h-5 w-5" />,
               titulo: "Estrutura inadequada",
-              descricao: "Você quer melhorar, não apenas mudar de lugar",
-              solucao: "Infraestrutura moderna, professores qualificados e reconhecimento MEC",
+              descricao: "Você quer melhorar, não apenas mudar de lugar.",
+              solucao:
+                "Mude para uma estrutura que impulsiona sua carreira. Conte com laboratórios de ponta, conteúdo autoral exclusivo e o prestígio de uma instituição com nota máxima no MEC.",
             },
           ]}
         />
         <MetodoTransferencia />
         <Cursos
           badge="GRADUAÇÃO"
-          title="Escolha o curso que reconhece seus créditos"
-          subtitle="Cursos com maior facilidade de transferência e reconhecimento de disciplinas"
+          title="Continue sua jornada nos cursos mais procurados do mercado."
+          subtitle="Cursos com maior facilidade de transferência e reconhecimento de disciplinas."
           cursos={[
             {
               nome: "Psicologia",
               duracao: "5 anos",
               descricao:
-                "Transfira com segurança. Reconhecemos até 95% dos seus créditos e você continua sua jornada sem perder tempo ou investimento.",
+                "Continue sua formação com o máximo aproveitamento de créditos e a estrutura de uma instituição referência na área da saúde.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/psicologia-ead",
             },
@@ -81,7 +84,7 @@ export default function TransferenciaPage() {
               nome: "Direito",
               duracao: "5 anos",
               descricao:
-                "Processo transparente de análise. Reconhecemos suas disciplinas cursadas e você avança com estrutura de excelência.",
+                "Faça a transferência com um processo transparente e o suporte de um corpo docente renomado para acelerar sua carreira.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/direito",
             },
@@ -89,7 +92,7 @@ export default function TransferenciaPage() {
               nome: "Administração",
               duracao: "4 anos",
               descricao:
-                "Transferência ágil em até 30 dias. Reconhecemos seu histórico e você retoma seus estudos rapidamente.",
+                "Retome seus estudos de forma ágil e sem burocracia. Aqui, seu histórico acadêmico é valorizado para você não perder tempo.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/administracao",
             },
@@ -104,12 +107,13 @@ export default function TransferenciaPage() {
             {
               badge: "GRADUAÇÃO",
               titulo: "EAD",
-              descricao: "Para quem precisa de autonomia e flexibilidade total durante a transição",
+              descricao:
+                "Estude com a flexibilidade do EAD e a qualidade IPOG. Tenha acesso a conteúdo autoral exclusivo e conclua sua graduação com foco prático e no seu ritmo.",
               beneficios: [
-                "Estude no seu ritmo",
-                "Plataforma moderna",
-                "Suporte acadêmico online",
-                "Certificação igual ao presencial",
+                "Conteúdo autoral e exclusivo",
+                "Flexibilidade para estudar onde e quando quiser",
+                "Suporte rápido e eficiente",
+                "Diploma com reconhecimento nacional",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=ead",
               buttonText: "Encontrar cursos EAD",
@@ -117,12 +121,13 @@ export default function TransferenciaPage() {
             {
               badge: "GRADUAÇÃO",
               titulo: "Presencial",
-              descricao: "Para quem valoriza imersão total e networking presencial",
+              descricao:
+                "Viva uma experiência universitária completa. Transfira seu curso e tenha acesso a uma infraestrutura moderna, mentoria especializada e networking presencial que abre portas.",
               beneficios: [
-                "Laboratórios equipados",
-                "Networking presencial",
-                "Estrutura moderna",
-                "Certificação reconhecida",
+                "Laboratórios modernos e clínicas",
+                "Corpo docente de mestres e doutores",
+                "Networking que abre portas",
+                "Experiência universitária completa",
               ],
               link: "/catalogo?categoria=graduacao&modalidade=presencial",
               buttonText: "Encontrar cursos Presencial",
@@ -130,7 +135,7 @@ export default function TransferenciaPage() {
           ]}
         />
         <Autoridade
-          titulo="Estrutura que justifica sua transferência"
+          titulo="Aprenda com quem o mercado respeita."
           subtitulo="Infraestrutura moderna e reconhecimento que fazem diferença na sua formação"
           credenciais={[
             {
@@ -166,10 +171,10 @@ export default function TransferenciaPage() {
         />
         <ProcessoTransparente />
         <AcaoFinal
-          titulo="Transfira com segurança e clareza total"
-          descricao="Reconhecemos até 95% dos seus créditos com processo transparente em até 30 dias. Continue sua graduação com melhor estrutura e sem perda de tempo."
+          titulo="Faça a escolha que conecta você ao sucesso."
+          descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
           botaoPrimario={{
-            texto: "Simule sua transferência",
+            texto: "Inicie sua transferência agora",
             onClick: "openAssistantForConsultor",
           }}
           botaoSecundario={{

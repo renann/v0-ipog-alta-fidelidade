@@ -45,21 +45,21 @@ export default function PosGraduacaoPage() {
 
         <Hero
           badge="PÓS-GRADUAÇÃO"
-          title="Especialize-se com quem forma líderes há mais de 20 anos"
-          description="Pós-graduação prática e aplicável, com professores de mercado e metodologia validada. Escolha entre EAD, Ao Vivo ou Presencial e acelere sua carreira"
+          title="Especialize-se com flexibilidade e impacto imediato"
+          description="Aprenda com professores que atuam nas maiores empresas do país, construa um networking de alto nível e conte com a chancela de uma das instituições mais reconhecidas do Brasil para acelerar sua carreira."
           valueBadges={[
-            { text: "Aplicação Prática" },
-            { text: "Professores de Mercado" },
-            { text: "Certificação Reconhecida" },
+            { text: "Nossa metodologia conecta você à prática do mercado." },
+            { text: "Nossos docentes transformam o mercado e a sua carreira." },
+            { text: "Nosso networking abre as portas para o seu sucesso." },
           ]}
-          primaryCTA={{ text: "Encontre sua especialização", href: "/catalogo?categoria=pos-graduacao" }}
+          primaryCTA={{ text: "Conheça nossas especializações", href: "/catalogo?categoria=pos-graduacao" }}
           secondaryCTA={{ text: "Monte sua trilha de Pós", onClick: "openAssistantForConsultor" }}
         />
 
         <Dilema
-          title="O mercado muda rápido."
-          subtitle="Mas conciliar rotina, aprendizado e investimento parece cada vez mais difícil."
-          solucao="A Pós IPOG foi feita para profissionais como você — que buscam avançar sem abrir mão da vida real."
+          title="Você sabe que precisa de uma especialização para ascender na carreira, mas a incerteza sobre o retorno do investimento e o medo de um curso puramente teórico paralisam sua decisão."
+          subtitle="Some a isso o desafio de conciliar uma rotina exigente com os estudos, e o próximo passo parece impossível."
+          solucao="O IPOG entende seu momento e desenhou uma pós-graduação com cronograma previsível e aplicação prática imediata, para que seu investimento se transforme em resultados mensuráveis na sua carreira."
         />
         <Jornadas
           title="Qual é o seu momento de carreira?"
@@ -67,27 +67,31 @@ export default function PosGraduacaoPage() {
             {
               icon: <GraduationCap className="w-8 h-8" />,
               titulo: "Primeira Pós / Especialização",
-              dores: "Quer se destacar, mas sente que ainda falta prática e reconhecimento de mercado.",
-              promessa: "Torne-se especialista com quem forma líderes há mais de 20 anos.",
-              ganho: "Certificação reconhecida pelo MEC e networking com profissionais de mercado",
+              dores: "Seu objetivo: Diferenciar-se na área com conhecimento prático e assumir projetos mais complexos.",
+              promessa: "",
+              ganho:
+                "A solução IPOG: Aprenda com docentes praticantes, comprove o ROI do seu investimento e ganhe reconhecimento de mercado.",
               cta: "Descubra sua primeira pós",
               href: "/pos-graduacao/primeira-pos",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8" />,
               titulo: "Transição de Área",
-              dores: "Busca mudar de área, mas ainda não sabe como validar suas competências.",
-              promessa: "Faça uma transição segura com apoio e mentoria de especialistas.",
-              ganho: "Mentoria especializada e validação de competências para nova área",
+              dores:
+                "Seu objetivo: Migrar de carreira com segurança, aplicando novas competências de forma estruturada.",
+              promessa: "",
+              ganho:
+                "A solução IPOG: Conte com trilhas de nivelamento, mentoria de especialistas e projetos aplicados para validar sua transição.",
               cta: "Planeje sua transição",
               href: "/pos-graduacao/transicao-area",
             },
             {
               icon: <TrendingUp className="w-8 h-8" />,
               titulo: "Lifelong / Aluno+",
-              dores: "Quer continuar evoluindo e se manter atualizado.",
-              promessa: "Aprofunde-se com o IPOG+ e mantenha sua curva de aprendizado ativa.",
-              ganho: "Descontos exclusivos e acesso antecipado a novos cursos",
+              dores: "Seu objetivo: Ampliar seu portfólio de especializações e reforçar sua autoridade no mercado.",
+              promessa: "",
+              ganho:
+                "A solução IPOG: Aproveite os benefícios exclusivos do programa IPOG+, com roteiros personalizados e condições especiais para continuar sua jornada.",
               cta: "Conheça o IPOG+",
               href: "/pos-graduacao/lifelong-learning",
             },
@@ -128,31 +132,31 @@ export default function PosGraduacaoPage() {
         />
 
         <Beneficios
-          title="Mais que uma Pós, um programa de evolução contínua"
-          subtitle="O IPOG+ garante benefícios exclusivos para quem continua evoluindo"
+          title="Sua jornada de evolução profissional não para"
+          subtitle="O programa IPOG+ é o nosso compromisso com seu crescimento contínuo. Alunos e ex-alunos têm acesso a trilhas personalizadas, condições especiais e uma rede premium para acelerar sua carreira."
           beneficios={[
             {
               icone: <Gem className="w-8 h-8" />,
-              titulo: "Descontos exclusivos",
-              subtitulo: "em novas formações",
+              titulo: "Especialize-se",
+              subtitulo: "Conquiste sua primeira certificação e construa um portfólio sólido.",
               itens: [],
             },
             {
               icone: <GraduationCap className="w-8 h-8" />,
-              titulo: "Mentor de carreira",
-              subtitulo: "e empregabilidade",
+              titulo: "Aprofunde-se",
+              subtitulo: "Participe de mentorias e práticas avançadas para ganhar reconhecimento.",
               itens: [],
             },
             {
               icone: <Globe className="w-8 h-8" />,
-              titulo: "Comunidade Alumni+",
-              subtitulo: "networking e conexões",
+              titulo: "Lidere",
+              subtitulo: "Desenvolva visão estratégica com trilhas e networking executivo.",
               itens: [],
             },
             {
               icone: <Brain className="w-8 h-8" />,
-              titulo: "Acesso antecipado",
-              subtitulo: "a novos cursos e certificações",
+              titulo: "Evolua Sempre",
+              subtitulo: "Acesse nossa comunidade exclusiva e benefícios para continuar aprendendo.",
               itens: [],
             },
           ]}
@@ -194,8 +198,8 @@ export default function PosGraduacaoPage() {
           textoBotao="Monte sua trilha"
         />
         <Empregabilidade
-          title="Empregabilidade que transforma carreiras"
-          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="O investimento que acelera sua carreira"
+          subtitle="No IPOG, seu crescimento é mensurável. Veja como a especialização impacta diretamente seu salário e posição no mercado, com base em dados de nossos egressos."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -227,8 +231,8 @@ export default function PosGraduacaoPage() {
         />
         <ROIPos />
         <ResultadosReais
-          title="Mais de 20 anos formando profissionais de alto impacto"
-          subtitle="Resultados comprovados que transformam carreiras"
+          title="Resultados que comprovam: a escolha que conecta você ao sucesso."
+          subtitle="Nossos alunos confirmam o impacto de uma formação focada em excelência, networking e aplicabilidade."
           estatisticas={[
             {
               icone: <TrendingUp className="w-12 h-12 text-primary" />,
@@ -273,8 +277,8 @@ export default function PosGraduacaoPage() {
           ]}
         />
         <Autoridade
-          title="Professores de mercado • Metodologia validada • Certificação reconhecida"
-          subtitle="A marca que transforma carreiras há duas décadas"
+          title="Aprenda com quem transforma o mercado"
+          subtitle="Nossos professores são profissionais que transformam o mercado. Mestres e doutores que já chegaram ao topo e agora mostram o caminho para você, conectando teoria, prática e a visão de mercado que acelera sua carreira."
           credenciais={[
             { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
             {
@@ -313,10 +317,10 @@ export default function PosGraduacaoPage() {
         />
 
         <AcaoFinal
-          title="Especialize-se com quem forma líderes há mais de 20 anos"
-          descricao="Escolha entre EAD, Ao Vivo ou Presencial e acelere sua carreira com metodologia validada"
+          title="IPOG: A escolha que conecta você ao sucesso."
+          descricao="Construa uma carreira de impacto com professores de mercado, networking de alto nível e a credibilidade de uma instituição com mais de 20 anos de excelência."
           botaoPrimario={{
-            texto: "Encontrar sua especialização",
+            texto: "Comece sua jornada para o sucesso hoje mesmo.",
             href: "/catalogo?categoria=pos-graduacao",
           }}
           botaoSecundario={{

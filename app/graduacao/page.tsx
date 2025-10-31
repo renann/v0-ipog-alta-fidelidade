@@ -27,25 +27,28 @@ export default function GraduacaoPage() {
 
         <Hero
           badge="GRADUAÇÃO"
-          title="Comece sua carreira com uma graduação que prepara você para o mercado"
-          description="Formação completa, flexível e reconhecida pelo MEC. Escolha entre EAD ou Presencial e construa seu futuro profissional com quem forma especialistas há mais de 20 anos"
+          title="Construa sua carreira com ensino de excelência, valor estratégico e experiência prática"
+          description="Aprenda com professores de mercado, participe de projetos reais e conecte teoria e prática desde o primeiro dia. Uma formação reconhecida pelo MEC que acelera sua empregabilidade e transforma seu potencial em sucesso."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Professores Especialistas" },
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Flexibilidade Total" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Qualidade Reconhecida" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Corpo Docente de Mercado" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Formatos Flexíveis" },
           ]}
           primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?categoria=graduacao" }}
           secondaryCTA={{ text: "Falar com consultor" }}
         />
+
         <Dilema
-          title="O mercado exige profissionais preparados"
-          subtitle="Mas escolher a graduação certa e conciliar estudos com vida pessoal parece cada vez mais desafiador"
-          solucao="A Graduação IPOG conecta você a um aprendizado prático, com suporte acadêmico real e empregabilidade comprovada"
+          title="O futuro profissional exige mais que um diploma"
+          subtitle="Sabemos que a incerteza sobre o investimento, a grade curricular e a empregabilidade futura são barreiras reais."
+          solucao="Por isso, a Graduação IPOG oferece uma jornada de aprendizado estratégica, com foco prático, suporte real e a garantia de uma formação sólida que abre portas no mercado de trabalho."
         />
+
         <MetodoIpog />
+
         <Cursos
           badge="GRADUAÇÃO"
-          title="Escolha o curso que combina com sua trajetória profissional"
+          title="Encontre a formação que vai transformar sua carreira"
           cursos={[
             {
               nome: "Psicologia",
@@ -72,40 +75,46 @@ export default function GraduacaoPage() {
           ]}
           ctaText="Ver curso"
         />
+
         <Jornadas
-          title="Encontre sua jornada acadêmica"
+          title="Qual é o seu próximo passo?"
+          subtitle="O IPOG tem a jornada certa para cada momento da sua carreira. Escolha o caminho que conecta você ao sucesso."
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8 text-primary" />,
-              title: "Jovem Ingresso",
-              promessa: "Diferencie-se no mercado com conteúdo prático e certificação reconhecida",
-              dores: "Excesso de teoria e falta de tempo",
-              ganho: "Empregabilidade e networking desde o primeiro semestre",
+              titulo: "Primeira Graduação",
+              promessa: "Para quem busca: Uma formação sólida para entrar no mercado com confiança.",
+              dores: "",
+              ganho:
+                "Solução IPOG: Conteúdo prático, ferramentas de simulação de bolsas e mensalidades, e projetos reais que garantem empregabilidade desde o início.",
               cta: "Comece sua graduação",
               href: "/graduacao/jovem-ingresso",
             },
             {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
-              title: "Segunda Graduação",
-              promessa: "Acelere sua nova formação com validação de conhecimentos",
-              dores: "Sobrecarga e falta de personalização",
-              ganho: "Eficiência e continuidade na formação",
+              titulo: "Segunda Graduação",
+              promessa: "Para quem busca: Validar sua experiência ou fazer uma transição de carreira segura.",
+              dores: "",
+              ganho:
+                "Solução IPOG: Aproveite disciplinas já cursadas e conquiste um diploma de peso em menos tempo, com um currículo tão prático que você aplica o conhecimento em sua carreira em até 90 dias.",
               cta: "Acelere sua nova formação",
               href: "/graduacao/segunda-graduacao",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8 text-primary" />,
-              title: "Transferência",
-              promessa: "Continue sua jornada com melhor estrutura e suporte",
-              dores: "Falta de suporte e estrutura inadequada",
-              ganho: "Continuidade sem perda de tempo",
+              titulo: "Transferência Externa",
+              promessa: "Para quem busca: Concluir seus estudos em uma instituição com mais qualidade e estrutura.",
+              dores: "",
+              ganho:
+                "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
               cta: "Simule sua transferência",
               href: "/graduacao/transferencia",
             },
           ]}
         />
+
         <ResultadosReais
-          title="Mais de 20 anos formando profissionais de alto impacto"
+          title="A escolha que gera resultados reais na carreira"
           subtitle="Resultados comprovados que transformam carreiras"
           estatisticas={[
             {
@@ -128,22 +137,23 @@ export default function GraduacaoPage() {
             {
               tipo: "simples",
               texto:
-                "A graduação IPOG transformou minha carreira. Em 6 meses já estava em uma nova posição na empresa.",
+                "O IPOG não apenas ensina, ele prepara para o sucesso. A metodologia prática e o foco em empregabilidade foram decisivos para minha promoção em menos de seis meses.",
               nome: "Maria Silva",
-              cargo: "Administração - Turma 2023",
+              cargo: "Egressa de Administração",
             },
             {
               tipo: "simples",
               texto:
-                "Professores atuantes no mercado fazem toda a diferença. Aprendi na prática o que uso no dia a dia.",
+                "Aprender com mestres e doutores que vivem o mercado é um diferencial incomparável. O conhecimento adquirido nas aulas é aplicado diretamente na minha rotina profissional.",
               nome: "João Santos",
-              cargo: "Psicologia - Turma 2022",
+              cargo: "Egresso de Psicologia",
             },
           ]}
         />
+
         <Autoridade
-          title="Professores de mercado"
-          subtitle="Aprenda com quem atua e transforma o mercado"
+          title="Aprenda com quem o mercado respeita"
+          subtitle="Nosso corpo docente é formado por mestres e doutores com vasta experiência prática, prontos para conectar você às exigências reais da sua futura profissão."
           credenciais={[
             { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
             {
@@ -178,9 +188,10 @@ export default function GraduacaoPage() {
           tituloProfessores="Conheça alguns de nossos professores"
           bgColor="bg-muted/30"
         />
+
         <AcaoFinal
-          title="Comece sua graduação com quem forma especialistas"
-          descricao="Escolha entre EAD ou Presencial e construa seu futuro profissional com suporte real"
+          title="Dê o passo decisivo para sua carreira."
+          descricao="A escolha que conecta você ao sucesso. Encontre seu curso e comece a construir um futuro de conquistas com a excelência, a prática e o reconhecimento que só o IPOG oferece."
           botaoPrimario={{
             texto: "Encontre seu curso",
             href: "/catalogo?categoria=graduacao",

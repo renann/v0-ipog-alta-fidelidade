@@ -32,26 +32,27 @@ export default function GapImediatoPage() {
         </div>
         <Hero
           badge="EXTENSÃO"
-          title="Gap Imediato"
-          description="Aprenda hoje, aplique amanhã. Resolva desafios técnicos urgentes com cursos práticos e ROI rápido."
+          title="A Competência que Você Precisa, com Aplicação Imediata"
+          description="Cursos práticos e direcionados para você solucionar um déficit específico, aplicar o conhecimento na semana seguinte e comprovar o retorno do seu investimento."
           valueBadges={[
-            { icon: <Zap className="h-5 w-5" />, text: "ROI Rápido" },
-            { icon: <Target className="h-5 w-5" />, text: "Conteúdo 100% Prático" },
-            { icon: <FileText className="h-5 w-5" />, text: "Templates Prontos" },
+            { icon: <Zap className="h-5 w-5" />, text: "Aplicação Imediata" },
+            { icon: <Target className="h-5 w-5" />, text: "Templates Prontos para Uso" },
+            { icon: <FileText className="h-5 w-5" />, text: "ROI Comprovado" },
           ]}
-          primaryCTA={{ text: "Ver cursos", href: "#cursos" }}
-          secondaryCTA={{ text: "Falar com consultor", href: "#contato" }}
+          primaryCTA={{ text: "Conheça os cursos", href: "#cursos" }}
+          secondaryCTA={{ text: "Comece sua jornada", href: "#contato" }}
         />
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="Você precisa de resultado agora, não daqui a 6 meses"
-            subtitulo="Cursos práticos com aplicação imediata e ROI comprovado"
+            titulo="Pressão por resultados imediatos?"
+            subtitulo="Nossos cursos são desenhados para gerar impacto rápido. Com aprendizado focado, você aplica o conhecimento imediatamente e justifica seu investimento com evidências."
             dores={[
               {
                 icon: <Clock className="h-5 w-5" />,
-                titulo: "Urgência técnica",
-                descricao: "Seu projeto não pode esperar uma pós-graduação de 18 meses",
+                titulo: "Falta de tempo para cursos longos?",
+                descricao:
+                  "Oferecemos soluções de curta duração que cabem na sua rotina. Estude com flexibilidade total, sem precisar pausar sua carreira.",
                 solucao: "Cursos de 3-4 meses focados no gap específico que você precisa resolver",
               },
               {
@@ -76,28 +77,31 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Cursos
-            title="Escolha o curso que resolve seu desafio técnico agora"
-            subtitle="Cursos focados em aplicação imediata com templates prontos e professores atuantes"
+            title="Conquiste as Competências para o Seu Próximo Desafio"
+            subtitle="Nossos cursos são desenhados para entregar resultados concretos. Escolha a solução que vai impulsionar sua performance imediatamente."
             badge="EXTENSÃO"
             cursos={[
               {
                 nome: "Marketing Digital",
                 duracao: "3 meses",
-                descricao: "Estratégias e ferramentas atuais para resultados rápidos em campanhas digitais",
+                descricao:
+                  "Resolva o desafio de gerar resultados rápidos em campanhas digitais. Domine ferramentas e estratégias atuais para otimizar seu investimento e comprovar o impacto das suas ações.",
                 modalidade: "EAD",
                 link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão de Pessoas",
                 duracao: "4 meses",
-                descricao: "Liderança prática para equipes de alta performance e gestão de conflitos",
+                descricao:
+                  "Desenvolva habilidades de liderança prática para engajar equipes, gerenciar conflitos e impulsionar a alta performance. Aplique técnicas imediatas para melhorar o clima e os resultados do seu time.",
                 modalidade: "Ao Vivo",
                 link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Compliance",
                 duracao: "3 meses",
-                descricao: "Conformidade e gestão de riscos aplicáveis imediatamente na sua empresa",
+                descricao:
+                  "Implemente programas de conformidade e gestão de riscos de forma ágil e eficaz. Adquira o conhecimento prático para proteger sua empresa e garantir a integridade dos processos desde o primeiro dia.",
                 modalidade: "Presencial",
                 link: "/extensao/curso/gestao-projetos-ageis",
               },
@@ -115,12 +119,12 @@ export default function GapImediatoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "EAD",
-                descricao: "Flexibilidade total e aplicação imediata",
+                descricao: "Aprenda no seu ritmo, aplique na sua rotina",
                 beneficios: [
-                  "Estude no seu ritmo",
-                  "Acesso 24/7 ao conteúdo",
-                  "Suporte online dedicado",
-                  "Templates prontos para download",
+                  "Soluções que cabem na sua rotina, sem necessidade de deslocamento",
+                  "Flexibilidade total com acesso 24/7 para estudar quando e onde quiser",
+                  "Aprendizado focado no que gera impacto, com templates para uso imediato",
+                  "Certificação universitária reconhecida",
                 ],
                 buttonText: "Encontrar cursos EAD",
                 link: "/catalogo?categoria=extensao&modalidade=ead",
@@ -128,12 +132,12 @@ export default function GapImediatoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "Ao Vivo",
-                descricao: "Tire dúvidas em tempo real com especialistas",
+                descricao: "Valide suas soluções em tempo real com especialistas",
                 beneficios: [
-                  "Aulas ao vivo com professores",
-                  "Gravações disponíveis após cada encontro",
-                  "Troca com colegas de diversas áreas",
-                  "Atividades práticas guiadas",
+                  "Acesso direto a profissionais de mercado para tirar dúvidas na hora",
+                  "Feedback especializado que reduz riscos e elimina incertezas técnicas",
+                  "Networking qualificado com profissionais em situações semelhantes",
+                  "Gravações disponíveis para revisão",
                 ],
                 buttonText: "Encontrar cursos Ao Vivo",
                 link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
@@ -141,11 +145,11 @@ export default function GapImediatoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "Presencial",
-                descricao: "Vivência prática e networking intensivo",
+                descricao: "Domine habilidades em uma experiência imersiva",
                 beneficios: [
-                  "Aulas práticas e discussões presenciais",
-                  "Networking direto com profissionais do setor",
-                  "Projetos aplicados em grupo",
+                  "Vivência hands-on intensiva em laboratórios com infraestrutura de ponta",
+                  "Validação imediata de competências com suporte presencial de especialistas",
+                  "Networking estruturado que acelera a aplicação do conhecimento no trabalho",
                   "Certificação reconhecida pelo mercado",
                 ],
                 buttonText: "Encontrar cursos Presencial",
@@ -163,7 +167,8 @@ export default function GapImediatoPage() {
               {
                 icon: <Zap className="h-8 w-8" />,
                 valor: "92%",
-                descricao: "aplicaram o conteúdo na primeira semana",
+                descricao:
+                  "dos profissionais aplicam o conhecimento já na primeira semana, transformando aprendizado em resultado imediato",
               },
               {
                 icon: <TrendingUp className="h-8 w-8" />,
@@ -189,27 +194,27 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Professores que vivem o mercado"
+            titulo="Aprenda com quem Transforma o Mercado"
             subtitulo="Especialistas atuantes que trazem cases reais e soluções práticas"
             credenciais={[
               {
                 icon: <Users className="h-5 w-5" />,
-                texto: "Professores Atuantes no Mercado",
+                texto: "Metodologia Prática e Interativa",
               },
               {
                 icon: <Award className="h-5 w-5" />,
-                texto: "Cases Reais de Sucesso",
+                texto: "Professores que são Referência no Mercado",
               },
               {
                 icon: <Building className="h-5 w-5" />,
-                texto: "Certificação Reconhecida",
+                texto: "Certificação que Impulsiona sua Carreira",
               },
             ]}
             professores={[
               {
                 nome: "Prof. André Martins",
                 area: "Marketing Digital",
-                bio: "CMO de startup unicórnio. 15 anos liderando estratégias digitais em grandes empresas.",
+                bio: "CMO em Startup Unicórnio. Especialista com mais de 15 anos de experiência liderando estratégias digitais em grandes empresas.",
               },
               {
                 nome: "Profa. Juliana Rocha",
@@ -231,10 +236,10 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Aprenda hoje, aplique amanhã"
-            descricao="Cursos práticos de 3-4 meses com templates prontos e ROI rápido. Resolva desafios técnicos urgentes com aplicação imediata."
+            titulo="Pronto para transformar conhecimento em resultado?"
+            descricao="IPOG: A escolha que conecta você ao sucesso."
             botaoPrimario={{
-              texto: "Explorar catálogo completo",
+              texto: "Comece sua jornada hoje mesmo",
               href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{

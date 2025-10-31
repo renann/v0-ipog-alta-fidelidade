@@ -34,15 +34,15 @@ export default function AtualizacaoPage() {
         </div>
         <Hero
           badge="EXTENSÃO"
-          title="Mantenha-se à frente"
-          description="Acompanhe tecnologias e práticas do mercado com conteúdo autoral exclusivo, biblioteca viva e apoio especializado."
+          title="Domine as tecnologias que definem o futuro"
+          description="Acesse o conhecimento prático que o mercado exige agora. Nossos conteúdos exclusivos, biblioteca em constante evolução e suporte de especialistas do mercado são sua rota direta para a vantagem competitiva."
           valueBadges={[
             { icon: <TrendingUp className="h-5 w-5" />, text: "Conteúdo Autoral" },
             { icon: <BookOpen className="h-5 w-5" />, text: "Biblioteca Viva" },
             { icon: <Users className="h-5 w-5" />, text: "Apoio Especializado" },
           ]}
-          primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
-          secondaryCTA={{ text: "Ver conteúdos exclusivos", href: "#biblioteca" }}
+          primaryCTA={{ text: "Inicie Sua Atualização", href: "#cursos" }}
+          secondaryCTA={{ text: "Explorar Cursos", href: "#biblioteca" }}
         />
 
         <section className="w-full py-12 md:py-16">
@@ -53,20 +53,26 @@ export default function AtualizacaoPage() {
               {
                 icon: <Clock className="h-5 w-5" />,
                 titulo: "Obsolescência técnica",
-                descricao: "Suas habilidades perdem valor enquanto novas tecnologias surgem diariamente",
-                solucao: "Biblioteca viva com atualizações constantes sobre tendências e práticas emergentes",
+                descricao:
+                  "O mercado não espera. Cada dia de inação é um passo em direção à irrelevância profissional.",
+                solucao:
+                  "Nossa biblioteca viva é atualizada por especialistas para entregar apenas o conhecimento que gera impacto real e imediato na sua carreira.",
               },
               {
                 icon: <Target className="h-5 w-5" />,
                 titulo: "Falta de tempo para pesquisa",
-                descricao: "Você não tem tempo para filtrar o que realmente importa no mar de informações",
-                solucao: "Conteúdo curado por especialistas: apenas o essencial, direto ao ponto",
+                descricao:
+                  "A sobrecarga de informações paralisa sua evolução. Perder tempo filtrando conteúdo irrelevante não é uma opção.",
+                solucao:
+                  "Nosso conteúdo é curado por especialistas para que você foque apenas no essencial, de forma prática e direta ao ponto.",
               },
               {
                 icon: <TrendingUp className="h-5 w-5" />,
                 titulo: "Perda de vantagem competitiva",
-                descricao: "Profissionais atualizados estão conquistando as melhores oportunidades",
-                solucao: "Acesso antecipado a frameworks, ferramentas e metodologias de ponta",
+                descricao:
+                  "A oportunidade ideal não espera por você. Profissionais atualizados já estão conquistando os melhores projetos e salários.",
+                solucao:
+                  "Oferecemos acesso a frameworks, ferramentas e metodologias de ponta que colocam você à frente da concorrência.",
               },
             ]}
           />
@@ -86,10 +92,10 @@ export default function AtualizacaoPage() {
                 titulo: "Biblioteca Viva",
                 subtitulo: "Conteúdo autoral exclusivo",
                 itens: [
-                  "Guias práticos atualizados mensalmente",
-                  "Frameworks e templates prontos",
-                  "Acesso vitalício ao conteúdo",
-                  "Curadoria de especialistas do mercado",
+                  "Guias práticos para aplicação imediata.",
+                  "Frameworks e templates para acelerar seu trabalho.",
+                  "Acesso contínuo para consultas futuras.",
+                  "Curadoria de especialistas que filtra o ruído do mercado.",
                 ],
               },
               {
@@ -97,10 +103,10 @@ export default function AtualizacaoPage() {
                 titulo: "Apoio Especializado",
                 subtitulo: "Mentoria e networking contínuo",
                 itens: [
-                  "Sessões de mentoria com especialistas",
-                  "Comunidade exclusiva de profissionais",
-                  "Eventos e webinars mensais",
-                  "Suporte técnico dedicado",
+                  "Sessões de mentoria para validar suas estratégias.",
+                  "Comunidade exclusiva para networking de alto nível.",
+                  "Eventos e webinars com as principais tendências.",
+                  "Suporte dedicado para acompanhar sua evolução.",
                 ],
               },
               {
@@ -108,10 +114,10 @@ export default function AtualizacaoPage() {
                 titulo: "Aplicação Imediata",
                 subtitulo: "Conteúdo prático e acionável",
                 itens: [
-                  "Cases reais do mercado",
-                  "Ferramentas e checklists prontos",
-                  "Projetos práticos guiados",
-                  "ROI comprovado em 30 dias",
+                  "Estudos de caso de empresas líderes.",
+                  "Ferramentas e checklists para usar na segunda-feira.",
+                  "Projetos práticos que constroem seu portfólio.",
+                  "Retorno sobre o investimento percebido em semanas.",
                 ],
               },
             ]}
@@ -131,54 +137,55 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Cursos
-            title="Escolha o curso que mantém você relevante"
-            subtitle="Cursos com atualizações contínuas, conteúdo autoral e biblioteca viva"
+            title="Cursos Práticos para Resultados Imediatos"
+            subtitle="Explore trilhas de conhecimento focadas em competências que o mercado valoriza agora."
             badge="EXTENSÃO"
             cursos={[
               {
                 nome: "Inteligência Artificial Aplicada",
                 duracao: "4 meses",
-                descricao: "Domine IA generativa, automação e ferramentas emergentes para aplicação imediata",
+                descricao:
+                  "Desenvolva projetos com IA generativa e automação. Aplique ferramentas emergentes no seu trabalho na próxima semana.",
                 modalidade: "EAD",
                 link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Transformação Digital",
                 duracao: "3 meses",
-                descricao: "Estratégias e frameworks atuais para liderar mudanças tecnológicas na sua empresa",
+                descricao: "Estratégias e frameworks atuais para liderar mudanças tecnológicas na sua empresa.",
                 modalidade: "Ao Vivo",
                 link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão Ágil Avançada",
                 duracao: "4 meses",
-                descricao: "Metodologias ágeis de ponta e práticas de liderança para equipes de alta performance",
+                descricao: "Metodologias ágeis de ponta e práticas de liderança para equipes de alta performance.",
                 modalidade: "Presencial",
                 link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Data Analytics & BI",
                 duracao: "3 meses",
-                descricao: "Análise de dados, visualização e tomada de decisão baseada em dados",
+                descricao: "Análise de dados, visualização e tomada de decisão baseada em dados.",
                 modalidade: "EAD",
                 link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Cibersegurança Moderna",
                 duracao: "4 meses",
-                descricao: "Proteção de dados, compliance e gestão de riscos digitais atualizados",
+                descricao: "Proteção de dados, compliance e gestão de riscos digitais atualizados.",
                 modalidade: "Ao Vivo",
                 link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Marketing Digital Avançado",
                 duracao: "3 meses",
-                descricao: "Estratégias digitais, growth hacking e ferramentas de automação de marketing",
+                descricao: "Estratégias digitais, growth hacking e ferramentas de automação de marketing.",
                 modalidade: "Presencial",
                 link: "/extensao/curso/marketing-digital",
               },
             ]}
-            ctaText="Ver curso"
+            ctaText="Ver Detalhes do Curso"
             ctaLink="/extensao/curso/inteligencia-artificial-aplicada"
           />
         </section>
@@ -191,40 +198,40 @@ export default function AtualizacaoPage() {
               {
                 badge: "EXTENSÃO",
                 titulo: "EAD Gravado",
-                descricao: "Flexibilidade total e atualização contínua",
+                descricao: "Aprenda no seu ritmo, com acesso contínuo",
                 beneficios: [
-                  "Estude no seu ritmo, sem comprometer o trabalho",
-                  "Acesso ilimitado ao conteúdo e atualizações",
-                  "Biblioteca viva com novos materiais mensais",
-                  "Certificação reconhecida pelo mercado",
+                  "Estude quando e onde quiser, sem comprometer sua agenda profissional.",
+                  "Acesso ilimitado ao conteúdo e a todas as futuras atualizações.",
+                  "Biblioteca de conhecimento com novos materiais práticos todos os meses.",
+                  "Certificação IPOG que o mercado reconhece e valoriza.",
                 ],
-                buttonText: "Encontrar cursos EAD",
+                buttonText: "Ver Cursos EAD",
                 link: "/catalogo?categoria=extensao&modalidade=ead",
               },
               {
                 badge: "EXTENSÃO",
                 titulo: "Ao Vivo Online",
-                descricao: "Interaja com especialistas e receba atualizações em tempo real",
+                descricao: "Interaja com especialistas em tempo real",
                 beneficios: [
-                  "Mentorias ao vivo com líderes do mercado",
-                  "Discussões sobre tendências emergentes",
-                  "Networking remoto com profissionais de ponta",
-                  "Gravações disponíveis após cada sessão",
+                  "Participe de mentorias ao vivo com os líderes que definem as tendências.",
+                  "Valide suas estratégias e tire dúvidas sobre os temas mais emergentes.",
+                  "Construa um networking remoto com profissionais de alto nível.",
+                  "Acesse as gravações para revisar o conteúdo sempre que precisar.",
                 ],
-                buttonText: "Encontrar cursos Ao Vivo",
+                buttonText: "Ver Cursos Ao Vivo",
                 link: "/catalogo?categoria=extensao&modalidade=ao-vivo",
               },
               {
                 badge: "EXTENSÃO",
                 titulo: "Presencial",
-                descricao: "Vivencie práticas e networking presencial com líderes de mercado",
+                descricao: "Experiência imersiva e networking de alto valor",
                 beneficios: [
-                  "Workshops intensivos com cases reais",
-                  "Networking de alto nível presencial",
-                  "Acesso a laboratórios e ferramentas de ponta",
-                  "Certificação IPOG reconhecida nacionalmente",
+                  "Participe de workshops intensivos com estudos de caso reais e aplicados.",
+                  "Construa um networking presencial de alto impacto para sua carreira.",
+                  "Acesse laboratórios e ferramentas de ponta para praticar suas novas habilidades.",
+                  "Receba a certificação IPOG, com reconhecimento nacional.",
                 ],
-                buttonText: "Encontrar cursos Presencial",
+                buttonText: "Ver Cursos Presenciais",
                 link: "/catalogo?categoria=extensao&modalidade=presencial",
               },
             ]}
@@ -239,8 +246,9 @@ export default function AtualizacaoPage() {
             etapas={[
               {
                 numero: 1,
-                titulo: "Fundamentos Atualizados",
-                descricao: "Revise e atualize conceitos essenciais com as práticas mais recentes do mercado",
+                titulo: "Nivele Seu Conhecimento",
+                descricao:
+                  "Atualize suas bases com os conceitos e práticas que o mercado adota hoje para construir uma base sólida para o futuro.",
                 duracao: "Mês 1",
                 topicos: [
                   "Diagnóstico de gaps técnicos",
@@ -251,8 +259,9 @@ export default function AtualizacaoPage() {
               },
               {
                 numero: 2,
-                titulo: "Tendências e Inovações",
-                descricao: "Explore tecnologias emergentes e metodologias de ponta aplicadas ao mercado",
+                titulo: "Domine as Inovações",
+                descricao:
+                  "Explore as tecnologias emergentes e metodologias de ponta que estão definindo o futuro da sua área.",
                 duracao: "Mês 2-3",
                 topicos: [
                   "Tecnologias emergentes e disruptivas",
@@ -263,8 +272,9 @@ export default function AtualizacaoPage() {
               },
               {
                 numero: 3,
-                titulo: "Domínio e Liderança",
-                descricao: "Consolide conhecimentos e torne-se referência na sua área de atuação",
+                titulo: "Torne-se Referência",
+                descricao:
+                  "Consolide seu aprendizado, aplique o conhecimento em projetos de impacto e posicione-se como um líder estratégico no seu setor.",
                 duracao: "Mês 4",
                 topicos: [
                   "Projeto final com aplicação real",
@@ -285,19 +295,19 @@ export default function AtualizacaoPage() {
               {
                 icone: <TrendingUp className="h-8 w-8" />,
                 valor: "94%",
-                descricao: "aplicaram novas práticas no trabalho",
+                descricao: "dos alunos aplicam o conhecimento no trabalho já na semana seguinte.",
                 ganho: "+35% de produtividade",
               },
               {
                 icone: <Trophy className="h-8 w-8" />,
                 valor: "87%",
-                descricao: "conquistaram promoções ou novos projetos",
+                descricao: "relatam impacto direto em promoções e novos projetos.",
                 ganho: "+R$ 3.200/mês em média",
               },
               {
                 icone: <Rocket className="h-8 w-8" />,
                 valor: "91%",
-                descricao: "se tornaram referência em suas áreas",
+                descricao: "passaram a ser vistos como referência técnica em suas equipes.",
                 ganho: "Reconhecimento profissional",
               },
             ]}
@@ -306,7 +316,7 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <DepoimentosDeTexto
-            titulo="Profissionais que se mantiveram à frente"
+            titulo="Resultados Reais na Carreira"
             subtitulo="Histórias reais de quem escolheu a atualização contínua"
             depoimentos={[
               {
@@ -314,7 +324,7 @@ export default function AtualizacaoPage() {
                 cargo: "Tech Lead",
                 area: "Tecnologia",
                 texto:
-                  "A biblioteca viva do IPOG me mantém atualizada sem precisar gastar horas pesquisando. Recebo conteúdo curado, frameworks prontos e acesso a especialistas. Em 6 meses, liderei a transformação digital da minha empresa.",
+                  "O conteúdo é tão prático que consegui aplicar os frameworks no dia seguinte. Essa agilidade foi decisiva para minha promoção a Tech Lead.",
                 ganho: "Promoção para Tech Lead",
               },
               {
@@ -322,7 +332,7 @@ export default function AtualizacaoPage() {
                 cargo: "Gerente de Projetos",
                 area: "Gestão",
                 texto:
-                  "Precisava me manter relevante em um mercado que muda rápido. O curso de Gestão Ágil Avançada me deu frameworks atuais e networking com líderes do setor. Hoje sou referência em metodologias ágeis na minha empresa.",
+                  "As metodologias de gestão que aprendi me permitiram otimizar processos e levar minha equipe a um aumento de 40% em produtividade. O retorno foi imediato.",
                 ganho: "+40% de produtividade da equipe",
               },
               {
@@ -330,7 +340,7 @@ export default function AtualizacaoPage() {
                 cargo: "Head de Marketing",
                 area: "Marketing Digital",
                 texto:
-                  "O conteúdo autoral e as atualizações mensais me deram vantagem competitiva. Aprendi sobre IA aplicada ao marketing antes da concorrência e implementei estratégias que aumentaram nossos resultados em 60%.",
+                  "Com as estratégias de growth hacking do curso, reestruturamos nossas campanhas e alcançamos um aumento de mais de 60% nas conversões em apenas um trimestre.",
                 ganho: "+60% em conversões",
               },
             ]}
@@ -339,7 +349,7 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Autoridade
-            titulo="Especialistas que vivem o futuro"
+            titulo="Aprenda com Quem Lidera o Mercado"
             subtitulo="Professores atuantes que trazem tendências e inovações do mercado"
             credenciais={[
               {
@@ -359,17 +369,17 @@ export default function AtualizacaoPage() {
               {
                 nome: "Dr. Paulo Henrique",
                 area: "Inteligência Artificial",
-                bio: "PhD em IA. CTO de startup de IA generativa. Palestrante internacional sobre tendências tecnológicas.",
+                bio: "PhD em IA e CTO de uma startup de IA generativa, traz para a sala de aula a aplicação real das tecnologias que estão revolucionando os negócios.",
               },
               {
                 nome: "Profa. Ana Beatriz",
                 area: "Transformação Digital",
-                bio: "CDO de multinacional. 20 anos liderando transformações digitais em grandes corporações.",
+                bio: "Com 20 anos de experiência como CDO, compartilha a visão estratégica por trás das maiores transformações digitais do mercado.",
               },
               {
                 nome: "Prof. Carlos Eduardo",
                 area: "Gestão Ágil",
-                bio: "Agile Coach certificado. Implementou metodologias ágeis em +50 empresas. Autor de frameworks proprietários.",
+                bio: "Agile Coach que já implementou metodologias ágeis em mais de 50 empresas, ensina os frameworks que aceleram resultados em equipes de alta performance.",
               },
             ]}
           />
@@ -377,10 +387,10 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Mantenha-se à frente. Evolua com o IPOG."
-            descricao="Cursos com biblioteca viva, conteúdo autoral exclusivo e apoio especializado. Mantenha sua relevância e vantagem competitiva com atualização contínua."
+            titulo="Não espere o futuro chegar"
+            descricao="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
             botaoPrimario={{
-              texto: "Começar minha jornada",
+              texto: "Inicie Sua Atualização Agora",
               href: "/catalogo?categoria=extensao",
             }}
             botaoSecundario={{
