@@ -4,6 +4,10 @@ import { Monitor, Video, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
+interface MetodologiaUnificadaProps {
+  titulo?: string
+}
+
 const modalidades = [
   {
     icon: Monitor,
@@ -25,13 +29,15 @@ const modalidades = [
   },
 ]
 
-export function MetodologiaUnificada() {
+export function MetodologiaUnificada({
+  titulo = "Metodologia IPOG: teoria + prática + mentoria",
+}: MetodologiaUnificadaProps) {
   return (
     <section className="w-full px-4 py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto">
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl md:text-4xl font-bold">Metodologia IPOG: teoria + prática + mentoria</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{titulo}</h2>
             <p className="text-muted-foreground text-lg">A mesma excelência acadêmica em todos os formatos</p>
           </div>
 

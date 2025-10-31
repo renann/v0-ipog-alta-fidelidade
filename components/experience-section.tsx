@@ -1,12 +1,16 @@
 import { Video } from "lucide-react"
 
-export function ExperienceSection() {
+interface ExperienceSectionProps {
+  titulo?: string
+}
+
+export function ExperienceSection({ titulo = "Experiência IPOG" }: ExperienceSectionProps) {
   return (
     <section className="w-full px-4 py-12 md:py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto">
         <div className="space-y-8">
           <div className="text-center space-y-3">
-            <h2 className="text-2xl md:text-3xl font-bold">Experiência IPOG</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">{titulo}</h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
               Confira algumas histórias de sucesso dos nossos alunos IPOG
             </p>

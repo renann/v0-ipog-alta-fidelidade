@@ -6,6 +6,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
+interface QuatroVerticaisProps {
+  titulo?: string
+}
+
 const verticais = [
   {
     icon: GraduationCap,
@@ -50,13 +54,13 @@ const verticais = [
   },
 ]
 
-export function QuatroVerticais() {
+export function QuatroVerticais({ titulo = "Escolha o caminho que combina com sua trajetória" }: QuatroVerticaisProps) {
   return (
     <section className="w-full px-4 py-16">
       <div className="max-w-screen-xl mx-auto">
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl md:text-4xl font-bold">Escolha o caminho que combina com sua trajetória</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{titulo}</h2>
             <p className="text-muted-foreground text-lg">Formação completa para cada momento da sua carreira</p>
           </div>
 

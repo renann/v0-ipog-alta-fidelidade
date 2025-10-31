@@ -3,7 +3,11 @@
 import { TrendingUp, Award, Clock, DollarSign } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
-export function RoiSection() {
+interface RoiSectionProps {
+  titulo?: string
+}
+
+export function RoiSection({ titulo = "Retorno Sobre Investimento" }: RoiSectionProps) {
   const stats = [
     {
       icon: TrendingUp,
@@ -35,7 +39,7 @@ export function RoiSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-black">Retorno Sobre Investimento</h2>
+          <h2 className="text-4xl font-bold mb-4 text-black">{titulo}</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Investir na sua educação com o IPOG é investir no seu futuro. Veja os resultados reais dos nossos alunos.
           </p>

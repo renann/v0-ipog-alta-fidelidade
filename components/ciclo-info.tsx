@@ -1,6 +1,10 @@
 import { Calendar } from "lucide-react"
 
-export function CicloInfo() {
+interface CicloInfoProps {
+  titulo?: string
+}
+
+export function CicloInfo({ titulo = "Ciclos de Matrícula" }: CicloInfoProps) {
   return (
     <section className="w-full py-12 md:py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto px-4">
@@ -8,7 +12,7 @@ export function CicloInfo() {
           <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
             <Calendar className="h-6 w-6 text-primary" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Ciclos de Matrícula</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">{titulo}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Na graduação, a matrícula é vinculada ao curso e período de ingresso, não a turmas específicas
           </p>

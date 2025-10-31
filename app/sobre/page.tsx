@@ -281,7 +281,7 @@ export default function SobrePage() {
       />
 
       {/* Impacto e Presença no Mercado */}
-      <ResultadosComprovados />
+      <ResultadosComprovados titulo="Mais de 20 anos transformando carreiras e empresas" />
 
       {/* O Que Dizem Nossos Alunos */}
       <DepoimentosDeTexto

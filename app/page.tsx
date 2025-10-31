@@ -48,9 +48,9 @@ export default function HomePage() {
         />
 
         <AssistenteTrilha />
-        <QuatroVerticais />
-        <MetodologiaUnificada />
-        <ResultadosComprovados />
+        <QuatroVerticais titulo="Escolha o caminho que combina com sua trajetória" />
+        <MetodologiaUnificada titulo="Metodologia IPOG: teoria + prática + mentoria" />
+        <ResultadosComprovados titulo="Mais de 20 anos transformando carreiras e empresas" />
         <ProfessorsSection />
 
         <DepoimentosDeTexto

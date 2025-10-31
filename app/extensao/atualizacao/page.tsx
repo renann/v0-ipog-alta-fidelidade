@@ -79,7 +79,7 @@ export default function AtualizacaoPage() {
         </section>
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
-          <MetodologiaUnificada />
+          <MetodologiaUnificada titulo="Metodologia IPOG: teoria + prática + mentoria" />
         </section>
 
         <section className="w-full py-12 md:py-16">

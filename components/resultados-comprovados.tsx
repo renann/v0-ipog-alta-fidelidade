@@ -4,6 +4,10 @@ import { Users, TrendingUp, Building, MapPin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
+interface ResultadosComprovadosProps {
+  titulo?: string
+}
+
 const estatisticas = [
   {
     icon: Users,
@@ -27,13 +31,15 @@ const estatisticas = [
   },
 ]
 
-export function ResultadosComprovados() {
+export function ResultadosComprovados({
+  titulo = "Mais de 20 anos transformando carreiras e empresas",
+}: ResultadosComprovadosProps) {
   return (
     <section className="w-full px-4 py-16">
       <div className="max-w-screen-xl mx-auto">
         <div className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl md:text-4xl font-bold">Mais de 20 anos transformando carreiras e empresas</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{titulo}</h2>
             <p className="text-muted-foreground text-lg">Resultados que comprovam nossa excelência</p>
           </div>
 
