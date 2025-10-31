@@ -98,8 +98,8 @@ export default function CeoPage() {
         {/* Método IPOG Enterprise - 6DS */}
         <div id="metodo-6ds">
           <Trilha
-            titulo="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
-            subtitulo="Metodologia proprietária que conecta aprendizado e mensuração com resultados tangíveis"
+            title="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
+            subtitle="Metodologia proprietária que conecta aprendizado e mensuração com resultados tangíveis"
             bgColor="bg-background"
             etapas={[
               {
@@ -143,10 +143,8 @@ export default function CeoPage() {
                 ],
               },
             ]}
-            botaoCta={{
-              texto: "Solicitar diagnóstico estratégico",
-              onClick: () => openAssistantWithFlow("consultor"),
-            }}
+            textoBotao="Solicitar diagnóstico estratégico"
+            onClickBotao={() => openAssistantWithFlow("consultor")}
             observacao="Metodologia validada por mais de 500 empresas que transformaram aprendizado em resultados mensuráveis"
           />
         </div>
