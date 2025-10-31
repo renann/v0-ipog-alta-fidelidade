@@ -136,22 +136,29 @@ export default function ArquiteturaPage() {
             },
           ]}
           layoutEstatisticas="carousel"
-          servicosCarreira={[
-            "Revisão de currículo e Linkedin",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          depoimentos={[
+            {
+              texto:
+                "A graduação em Arquitetura no IPOG me deu as ferramentas práticas que o mercado exige. Antes de me formar já tinha meu primeiro projeto construído e hoje tenho meu próprio escritório.",
+              autor: "Rafael Mendes",
+              cargo: "Arquiteto e Urbanista",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Os laboratórios e a infraestrutura do IPOG são de primeiro mundo. Aprendi com tecnologias que os grandes escritórios usam e isso me deu vantagem competitiva no mercado. Hoje trabalho em projetos internacionais.",
+              autor: "Carolina Ribeiro",
+              cargo: "Arquiteta Sênior",
+            },
+            {
+              texto:
+                "O IPOG me conectou com profissionais renomados do mercado. Fiz estágio em um escritório premiado durante a graduação e hoje sou sócia. A formação prática fez toda diferença.",
+              autor: "Bruno Carvalho",
+              cargo: "Sócio de Escritório de Arquitetura",
+            },
           ]}
-          depoimento={{
-            texto:
-              "O portfólio desenvolvido durante o curso foi essencial para conseguir meu primeiro projeto como arquiteto. A orientação dos professores, que atuam no mercado, fez toda a diferença.",
-            autor: "Carlos M., Aluno de Arquitetura e Urbanismo",
-          }}
-          botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
-            onClick: "openAssistantForConsultor",
-          }}
-          observacao="* Dados baseados em pesquisa de interna. + de 300 mil alunos no Brasil já escolheram o IPOG. 98% de satisfação com nossa metodologia e corpo docente."
-          bgColor="bg-white"
+          bgColor="bg-background"
         />
 
         <Trilha

@@ -162,12 +162,28 @@ export default function SegundaGraduacaoPage() {
             },
           ]}
           layoutEstatisticas="carousel"
-          depoimento={{
-            texto:
-              "Já tinha 10 anos de experiência em RH quando decidi fazer Psicologia. O IPOG validou minha experiência e reduziu minha formação em quase 2 anos. Hoje sou psicóloga organizacional e minha carreira deu um salto.",
-            autor: "Mariana Costa, Psicóloga Organizacional",
-            cargo: "Ex-Gerente de RH",
-          }}
+          depoimentos={[
+            {
+              texto:
+                "Já tinha 10 anos de experiência em RH quando decidi fazer Psicologia. O IPOG validou minha experiência e reduziu minha formação em quase 2 anos. Hoje sou psicóloga organizacional e minha carreira deu um salto.",
+              autor: "Mariana Costa",
+              cargo: "Psicóloga Organizacional",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Trabalhava como engenheiro e decidi fazer Administração para abrir meu próprio negócio. O IPOG aproveitou várias disciplinas e em 2 anos eu tinha meu segundo diploma. Hoje sou CEO da minha empresa.",
+              autor: "Roberto Almeida",
+              cargo: "CEO e Engenheiro",
+            },
+            {
+              texto:
+                "Fiz Direito há 15 anos e agora quis fazer Administração para gerenciar melhor meu escritório. O IPOG validou minha experiência e consegui concluir em tempo recorde. Meu faturamento triplicou.",
+              autor: "Juliana Ferreira",
+              cargo: "Advogada e Administradora",
+            },
+          ]}
           bgColor="bg-background"
         />
         <Autoridade

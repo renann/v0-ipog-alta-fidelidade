@@ -125,28 +125,35 @@ export default function DireitoPage() {
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "Formação",
-              descricao: "que Acelera sua Carreira",
-              label: "IMPACTO*",
+              valor: "20 anos",
+              descricao: "de tradição",
+              label: "EXPERIÊNCIA*",
             },
           ]}
           layoutEstatisticas="carousel"
-          servicosCarreira={[
-            "Revisão de currículo e Linkedin",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          depoimentos={[
+            {
+              texto:
+                "A formação em Direito no IPOG me preparou para os desafios reais do mercado. Passei na OAB de primeira e hoje trabalho em um dos maiores escritórios de advocacia do país.",
+              autor: "Fernanda Costa",
+              cargo: "Advogada Corporativa",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Os professores do IPOG são referências no mercado jurídico. Aprendi com quem realmente atua e isso fez toda diferença na minha aprovação em concurso público. Hoje sou juiz federal.",
+              autor: "Marcelo Santos",
+              cargo: "Juiz Federal",
+            },
+            {
+              texto:
+                "O networking que construí no IPOG foi fundamental. Conheci meus sócios durante a graduação e hoje temos nosso próprio escritório com mais de 50 clientes corporativos.",
+              autor: "Juliana Alves",
+              cargo: "Sócia de Escritório de Advocacia",
+            },
           ]}
-          depoimento={{
-            texto:
-              "A experiência nos laboratórios de prática jurídica e o contato direto com professores que são juízes e advogados renomados foram decisivos para minha carreira. Saí preparado para um mercado altamente competitivo.",
-            autor: "Egresso do curso de Direito",
-          }}
-          botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
-            onClick: "openAssistantForConsultor",
-          }}
-          observacao="* Dados baseados em pesquisa de interna."
-          bgColor="bg-white"
+          bgColor="bg-background"
         />
 
         <Trilha

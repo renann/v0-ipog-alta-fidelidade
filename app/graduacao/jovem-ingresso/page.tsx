@@ -158,11 +158,28 @@ export default function JovemIngressoPage() {
             },
           ]}
           layoutEstatisticas="carousel"
-          depoimento={{
-            texto:
-              "Graças aos projetos práticos e à orientação de professores que realmente estão no mercado, consegui meu primeiro estágio em Psicologia já no terceiro semestre. O IPOG me deu a confiança que eu precisava.",
-            autor: "Camila Rocha, Aluna de Psicologia",
-          }}
+          depoimentos={[
+            {
+              texto:
+                "Graças aos projetos práticos e à orientação de professores que realmente estão no mercado, consegui meu primeiro estágio em Psicologia já no terceiro semestre. O IPOG me deu a confiança que eu precisava.",
+              autor: "Camila Rocha",
+              cargo: "Aluna de Psicologia",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Entrei no IPOG sem experiência nenhuma e hoje, antes mesmo de me formar, já trabalho em um escritório de advocacia renomado. A metodologia prática fez toda a diferença.",
+              autor: "Lucas Mendes",
+              cargo: "Aluno de Direito",
+            },
+            {
+              texto:
+                "O IPOG me ensinou não só a teoria, mas como aplicar na prática desde o primeiro dia. Consegui meu primeiro projeto de arquitetura ainda no segundo ano e hoje tenho meu próprio escritório.",
+              autor: "Beatriz Santos",
+              cargo: "Egressa de Arquitetura",
+            },
+          ]}
           bgColor="bg-background"
         />
         <SuporteAcompanhamento />

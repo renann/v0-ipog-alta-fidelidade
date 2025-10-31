@@ -127,21 +127,39 @@ export default function AdministracaoPage() {
             },
           ]}
           layoutEstatisticas="carousel"
+          depoimentos={[
+            {
+              texto:
+                "A graduação em Administração no IPOG me preparou para o mundo real dos negócios. Aprendi com cases reais e professores que são executivos de grandes empresas. Hoje sou gerente em uma multinacional.",
+              autor: "Pedro Henrique",
+              cargo: "Gerente de Operações",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "O IPOG me deu a base que eu precisava para empreender. Durante a graduação desenvolvi meu plano de negócios e hoje tenho minha própria empresa com 30 funcionários. A metodologia prática foi essencial.",
+              autor: "Larissa Martins",
+              cargo: "CEO e Empreendedora",
+            },
+            {
+              texto:
+                "Entrei no IPOG como assistente administrativo e saí como analista. A formação me deu as competências que o mercado valoriza e em 6 meses após formado fui promovido a coordenador.",
+              autor: "Gustavo Lima",
+              cargo: "Coordenador Administrativo",
+            },
+          ]}
           servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto: "O curso de Administração me preparou para assumir cargos de liderança.",
-            autor: "Aluno IPOG",
-          }}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
           observacao="* Dados baseados em pesquisa interna."
-          bgColor="bg-white"
+          bgColor="bg-background"
         />
 
         <Trilha

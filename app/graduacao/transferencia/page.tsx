@@ -7,7 +7,7 @@ import { Cursos } from "@/components/cursos"
 import { Modalidades } from "@/components/modalidades"
 import { ProcessoTransparente } from "@/components/transferencia/processo-transparente"
 import { AcaoFinal } from "@/components/acao-final"
-import { AlertCircle, Clock, Building, Users, Award, TrendingUp, BadgeCheck } from "lucide-react"
+import { AlertCircle, Clock, Building, Users, Award, TrendingUp, Briefcase } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Empregabilidade } from "@/components/empregabilidade"
@@ -176,32 +176,48 @@ export default function TransferenciaPage() {
         />
         <ProcessoTransparente />
         <Empregabilidade
-          title="Alunos que fizeram a escolha certa ao transferir para o IPOG"
-          subtitle="Veja como a transferência ágil e o aproveitamento de créditos transformaram suas jornadas acadêmicas."
+          title="Alunos que transferiram e aceleraram suas formações"
+          subtitle="Veja como o aproveitamento de créditos e um processo ágil transformaram jornadas acadêmicas."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "95%",
-              descricao: "de aproveitamento médio de créditos",
+              valor: "91%",
+              descricao: "concluíram no prazo estimado",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "30 dias",
-              descricao: "tempo médio para conclusão da transferência",
+              valor: "30%",
+              descricao: "de redução no tempo restante",
             },
             {
-              icon: <BadgeCheck className="h-8 w-8" />,
-              valor: "98%",
-              descricao: "de satisfação com o processo",
+              icon: <Briefcase className="h-8 w-8" />,
+              valor: "95%",
+              descricao: "satisfeitos com a transferência",
             },
           ]}
           layoutEstatisticas="carousel"
-          depoimento={{
-            texto:
-              "Estava travado na minha antiga faculdade com problemas de infraestrutura. A transferência para o IPOG foi rápida, aproveitaram quase todas as minhas disciplinas e hoje tenho acesso a laboratórios modernos e professores que realmente fazem diferença.",
-            autor: "Rafael Mendes, Aluno de Psicologia",
-            cargo: "Transferido no 4º semestre",
-          }}
+          depoimentos={[
+            {
+              texto:
+                "Estava travado na minha antiga faculdade. A transferência para o IPOG foi rápida, aproveitaram todos os meus créditos e ainda consegui reduzir 1 ano da minha formação. Melhor decisão que tomei.",
+              autor: "Felipe Rodrigues",
+              cargo: "Aluno de Administração",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Transferi do interior para o IPOG e foi como renascer academicamente. A qualidade dos professores, a estrutura e o networking que construí aqui não têm comparação. Já estou empregado antes de me formar.",
+              autor: "Gabriela Lima",
+              cargo: "Aluna de Psicologia",
+            },
+            {
+              texto:
+                "Perdi 2 anos na minha antiga faculdade por problemas de grade. No IPOG, aproveitaram tudo e ainda me deram um plano personalizado. Vou me formar no prazo e com uma formação muito superior.",
+              autor: "Thiago Martins",
+              cargo: "Aluno de Direito",
+            },
+          ]}
           bgColor="bg-background"
         />
         <AcaoFinal

@@ -146,11 +146,20 @@ export default function GraduacaoPage() {
               cargo: "Egressa de Administração",
             },
             {
+              tipo: "video",
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Fazer Direito no IPOG foi a melhor decisão da minha carreira. Os professores são referências no mercado e o networking que construí aqui abriu portas que eu nem imaginava.",
+              nome: "Carlos Eduardo Santos",
+              cargo: "Advogado Corporativo",
+            },
+            {
               tipo: "simples",
               texto:
-                "Aprender com mestres e doutores que vivem o mercado é um diferencial incomparável. O conhecimento adquirido nas aulas é aplicado diretamente na minha rotina profissional.",
-              nome: "João Santos",
-              cargo: "Egresso de Psicologia",
+                "A graduação em Psicologia no IPOG me preparou não só tecnicamente, mas emocionalmente para atuar no mercado. Hoje tenho minha própria clínica e atendo grandes empresas.",
+              nome: "Ana Paula Oliveira",
+              cargo: "Psicóloga Clínica e Organizacional",
             },
           ]}
         />

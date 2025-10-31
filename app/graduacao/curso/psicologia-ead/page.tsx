@@ -101,22 +101,29 @@ export default function PsicologiaEadPage() {
             },
           ]}
           layoutEstatisticas="carousel"
-          servicosCarreira={[
-            "Revisão de currículo e Linkedin",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          depoimentos={[
+            {
+              texto:
+                "A flexibilidade do EAD me permitiu conciliar trabalho, família e estudos. Hoje sou psicóloga clínica e atendo em consultório próprio. O IPOG tornou meu sonho possível.",
+              autor: "Patrícia Souza",
+              cargo: "Psicóloga Clínica",
+            },
+            {
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
+              texto:
+                "Moro no interior e o EAD do IPOG me deu acesso a professores de referência nacional. A qualidade é a mesma do presencial e hoje trabalho em uma clínica renomada da minha cidade.",
+              autor: "Ricardo Oliveira",
+              cargo: "Psicólogo Organizacional",
+            },
+            {
+              texto:
+                "Trabalho em turno integral e o EAD foi a única forma de realizar meu sonho de ser psicóloga. A plataforma é excelente e o suporte dos professores é incrível. Já estou estagiando na área.",
+              autor: "Amanda Silva",
+              cargo: "Aluna de Psicologia EAD",
+            },
           ]}
-          depoimento={{
-            texto:
-              "Participei de uma feira de carreira promovida pelo IPOG e saí com meu primeiro estágio garantido. A conexão com o mercado é real.",
-            autor: "Aluno IPOG",
-          }}
-          botaoCta={{
-            texto: "Falar com consultor de carreira",
-            onClick: "openAssistantForConsultor",
-          }}
-          observacao="* Dados baseados em pesquisa de interna."
-          bgColor="bg-white"
+          bgColor="bg-background"
         />
         <Trilha
           titulo="Trilha de Aprendizado"
