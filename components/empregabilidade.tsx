@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, Play, Quote } from "lucide-react"
 import Link from "next/link"
 import type { ReactNode } from "react"
 
@@ -16,6 +16,9 @@ interface Estatistica {
 interface Depoimento {
   texto: string
   autor: string
+  cargo?: string
+  videoUrl?: string
+  videoThumbnail?: string
 }
 
 interface Servico {
@@ -34,7 +37,7 @@ interface EmpregabilidadeProps {
   estatisticas: Estatistica[]
   usarCarrossel?: boolean
   servicos?: Servico[]
-  depoimento?: Depoimento
+  depoimentos?: Depoimento[] // Mudado de depoimento singular para depoimentos array
   botaoCTA?: BotaoCTA
   corFundo?: string
 }
@@ -45,7 +48,7 @@ export function Empregabilidade({
   estatisticas,
   usarCarrossel = true,
   servicos,
-  depoimento,
+  depoimentos = [], // Mudado de depoimento para depoimentos com default array vazio
   botaoCTA,
   corFundo = "bg-background",
 }: EmpregabilidadeProps) {
@@ -121,16 +124,64 @@ export function Empregabilidade({
           </Card>
         )}
 
-        {depoimento && (
-          <Card className="p-6 bg-muted/30 mb-8">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-muted flex-shrink-0" />
-              <div>
-                <p className="text-sm mb-2 italic">{depoimento.texto}</p>
-                <p className="text-sm font-semibold">— {depoimento.autor}</p>
-              </div>
-            </div>
-          </Card>
+        {depoimentos.length > 0 && (
+          <div className="mb-8">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {depoimentos.map((depoimento, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] md:basis-1/2 lg:basis-1/3">
+                    <Card className="p-6 h-[480px] flex flex-col bg-muted/30">
+                      {depoimento.videoUrl ? (
+                        <>
+                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                            {depoimento.videoThumbnail && (
+                              <img
+                                src={depoimento.videoThumbnail || "/placeholder.svg"}
+                                alt={depoimento.autor}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
+                            )}
+                            <video
+                              src={depoimento.videoUrl}
+                              controls
+                              className="absolute inset-0 w-full h-full object-cover"
+                              poster={depoimento.videoThumbnail}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none">
+                              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                                <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mt-auto">
+                            <p className="font-semibold text-sm">{depoimento.autor}</p>
+                            {depoimento.cargo && <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <Quote className="h-8 w-8 text-muted-foreground mb-4" />
+                          <p className="text-sm italic mb-4 flex-1 line-clamp-6">&ldquo;{depoimento.texto}&rdquo;</p>
+                          <div className="mt-auto pt-4 border-t">
+                            <p className="font-semibold text-sm">{depoimento.autor}</p>
+                            {depoimento.cargo && <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>}
+                          </div>
+                        </>
+                      )}
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
         )}
 
         {botaoCTA && (

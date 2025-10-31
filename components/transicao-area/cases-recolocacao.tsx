@@ -2,10 +2,21 @@
 
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Quote } from "lucide-react"
+import { Quote, Play } from "lucide-react"
+
+interface Case {
+  nome: string
+  areaAnterior: string
+  areaAtual: string
+  tempo: string
+  depoimento: string
+  cargo: string
+  videoUrl?: string
+  videoThumbnail?: string
+}
 
 export function CasesRecolocacao() {
-  const cases = [
+  const cases: Case[] = [
     {
       nome: "Ana Paula Silva",
       areaAnterior: "Administração",
@@ -58,19 +69,58 @@ export function CasesRecolocacao() {
             <CarouselContent>
               {cases.map((caso, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 h-full">
-                    <Quote className="h-8 w-8 text-muted-foreground mb-4" />
-                    <p className="text-sm text-muted-foreground mb-4 italic">&ldquo;{caso.depoimento}&rdquo;</p>
-                    <div className="border-t pt-4">
-                      <p className="font-bold">{caso.nome}</p>
-                      <p className="text-sm text-muted-foreground">{caso.cargo}</p>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        <p>
-                          {caso.areaAnterior} → {caso.areaAtual}
+                  <Card className="p-6 h-[480px] flex flex-col">
+                    {caso.videoUrl ? (
+                      <>
+                        <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                          {caso.videoThumbnail && (
+                            <img
+                              src={caso.videoThumbnail || "/placeholder.svg"}
+                              alt={caso.nome}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                          )}
+                          <video
+                            src={caso.videoUrl}
+                            controls
+                            className="absolute inset-0 w-full h-full object-cover"
+                            poster={caso.videoThumbnail}
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none">
+                            <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                              <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="border-t pt-4 mt-auto">
+                          <p className="font-bold">{caso.nome}</p>
+                          <p className="text-sm text-muted-foreground">{caso.cargo}</p>
+                          <div className="mt-2 text-xs text-muted-foreground">
+                            <p>
+                              {caso.areaAnterior} → {caso.areaAtual}
+                            </p>
+                            <p>Tempo de transição: {caso.tempo}</p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <Quote className="h-8 w-8 text-muted-foreground mb-4" />
+                        <p className="text-sm text-muted-foreground mb-4 italic line-clamp-4">
+                          &ldquo;{caso.depoimento}&rdquo;
                         </p>
-                        <p>Tempo de transição: {caso.tempo}</p>
-                      </div>
-                    </div>
+                        <div className="border-t pt-4 mt-auto">
+                          <p className="font-bold">{caso.nome}</p>
+                          <p className="text-sm text-muted-foreground">{caso.cargo}</p>
+                          <div className="mt-2 text-xs text-muted-foreground">
+                            <p>
+                              {caso.areaAnterior} → {caso.areaAtual}
+                            </p>
+                            <p>Tempo de transição: {caso.tempo}</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </Card>
                 </CarouselItem>
               ))}

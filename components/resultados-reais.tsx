@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Play, Quote } from "lucide-react"
 import type { ReactNode } from "react"
 
 interface Estatistica {
@@ -17,6 +18,8 @@ interface DepoimentoSimples {
   nome: string
   cargo: string
   avatar?: string
+  videoUrl?: string
+  videoThumbnail?: string
 }
 
 interface DepoimentoAntesDepois {
@@ -27,6 +30,8 @@ interface DepoimentoAntesDepois {
   depois: string
   impacto: string
   avatar?: string
+  videoUrl?: string
+  videoThumbnail?: string
 }
 
 type Depoimento = DepoimentoSimples | DepoimentoAntesDepois
@@ -75,44 +80,83 @@ export function ResultadosReais({ title, subtitle, estatisticas, depoimentos = [
 
         {/* Depoimentos */}
         {depoimentos.length > 0 && (
-          <div className="grid md:grid-cols-2 gap-6">
-            {depoimentos.map((depoimento, index) => (
-              <Card key={index} className="p-6">
-                {depoimento.tipo === "simples" ? (
-                  <>
-                    <p className="text-sm italic mb-4">{depoimento.texto}</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-muted" />
-                      <div>
-                        <p className="font-semibold text-sm">{depoimento.nome}</p>
-                        <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="mb-4">
-                      <h4 className="font-bold text-lg">{depoimento.nome}</h4>
-                      <p className="text-sm text-muted-foreground">{depoimento.cargo}</p>
-                    </div>
-                    <div className="space-y-3">
-                      <div>
-                        <span className="text-xs font-semibold text-muted-foreground uppercase">Antes</span>
-                        <p className="text-sm">{depoimento.antes}</p>
-                      </div>
-                      <div>
-                        <span className="text-xs font-semibold text-muted-foreground uppercase">Depois</span>
-                        <p className="text-sm">{depoimento.depois}</p>
-                      </div>
-                      <div className="pt-3 border-t">
-                        <span className="text-xs font-semibold text-primary uppercase">Impacto</span>
-                        <p className="text-sm font-semibold">{depoimento.impacto}</p>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </Card>
-            ))}
+          <div className="px-8 md:px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {depoimentos.map((depoimento, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] md:basis-1/2 lg:basis-1/3">
+                    <Card className="p-6 h-[480px] flex flex-col">
+                      {depoimento.videoUrl ? (
+                        <div className="flex flex-col h-full">
+                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                            {depoimento.videoThumbnail && (
+                              <img
+                                src={depoimento.videoThumbnail || "/placeholder.svg"}
+                                alt={depoimento.nome}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
+                            )}
+                            <video
+                              src={depoimento.videoUrl}
+                              controls
+                              className="absolute inset-0 w-full h-full object-cover"
+                              poster={depoimento.videoThumbnail}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none">
+                              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                                <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mt-auto">
+                            <p className="font-semibold text-sm">{depoimento.nome}</p>
+                            <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>
+                          </div>
+                        </div>
+                      ) : depoimento.tipo === "simples" ? (
+                        <>
+                          <Quote className="h-8 w-8 text-muted-foreground mb-4" />
+                          <p className="text-sm italic mb-4 flex-1 line-clamp-6">&ldquo;{depoimento.texto}&rdquo;</p>
+                          <div className="mt-auto pt-4 border-t">
+                            <p className="font-semibold text-sm">{depoimento.nome}</p>
+                            <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="mb-4">
+                            <h4 className="font-bold text-lg">{depoimento.nome}</h4>
+                            <p className="text-sm text-muted-foreground">{depoimento.cargo}</p>
+                          </div>
+                          <div className="space-y-3 flex-1">
+                            <div>
+                              <span className="text-xs font-semibold text-muted-foreground uppercase">Antes</span>
+                              <p className="text-sm line-clamp-2">{depoimento.antes}</p>
+                            </div>
+                            <div>
+                              <span className="text-xs font-semibold text-muted-foreground uppercase">Depois</span>
+                              <p className="text-sm line-clamp-2">{depoimento.depois}</p>
+                            </div>
+                            <div className="pt-3 border-t mt-auto">
+                              <span className="text-xs font-semibold text-primary uppercase">Impacto</span>
+                              <p className="text-sm font-semibold line-clamp-2">{depoimento.impacto}</p>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </div>
         )}
       </div>
