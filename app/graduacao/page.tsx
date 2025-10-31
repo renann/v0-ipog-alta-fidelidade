@@ -74,6 +74,10 @@ export default function GraduacaoPage() {
             },
           ]}
           ctaText="Ver curso"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=graduacao",
+          }}
         />
 
         <Jornadas

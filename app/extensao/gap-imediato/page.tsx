@@ -108,6 +108,10 @@ export default function GapImediatoPage() {
             ]}
             ctaText="Ver curso"
             ctaLink="/extensao/curso/marketing-digital"
+            footerCTA={{
+              text: "Ver todos os cursos disponíveis",
+              link: "/catalogo?tipo=extensao",
+            }}
           />
         </section>
 

@@ -168,6 +168,10 @@ const PrimeiraPosContent = dynamic(
               ]}
               ctaText="Ver curso"
               backgroundColor="bg-muted/30"
+              footerCTA={{
+                text: "Ver todos os cursos disponíveis",
+                link: "/catalogo?tipo=pos-graduacao",
+              }}
             />
 
             <ROIPrimeiraPos />

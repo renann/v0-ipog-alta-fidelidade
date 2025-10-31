@@ -100,6 +100,10 @@ export default function SegundaGraduacaoPage() {
           ]}
           ctaText="Ver curso"
           ctaLink="/catalogo?tipo=graduacao"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=graduacao",
+          }}
         />
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"

@@ -148,6 +148,10 @@ export default function TransicaoAreaPage() {
             },
           ]}
           ctaText="Ver curso"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=pos-graduacao",
+          }}
         />
 
         <Trilha

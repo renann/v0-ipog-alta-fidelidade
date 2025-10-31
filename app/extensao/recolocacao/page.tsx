@@ -112,6 +112,10 @@ export default function RecolocacaoPage() {
             ]}
             ctaText="Ver curso"
             ctaLink="/catalogo?tipo=extensao"
+            footerCTA={{
+              text: "Ver todos os cursos disponíveis",
+              link: "/catalogo?tipo=extensao",
+            }}
           />
         </section>
 

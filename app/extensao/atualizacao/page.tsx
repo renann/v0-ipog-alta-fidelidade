@@ -187,6 +187,10 @@ export default function AtualizacaoPage() {
             ]}
             ctaText="Ver Detalhes do Curso"
             ctaLink="/extensao/curso/inteligencia-artificial-aplicada"
+            footerCTA={{
+              text: "Ver todos os cursos disponíveis",
+              link: "/catalogo?tipo=extensao",
+            }}
           />
         </section>
 

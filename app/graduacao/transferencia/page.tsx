@@ -99,6 +99,10 @@ export default function TransferenciaPage() {
           ]}
           ctaText="Ver curso"
           ctaLink="/catalogo?tipo=graduacao"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=graduacao",
+          }}
         />
         <Modalidades
           titulo="Compare as modalidades e escolha a que mais combina com você"

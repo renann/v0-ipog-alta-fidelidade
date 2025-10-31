@@ -98,6 +98,10 @@ export default function JovemIngressoPage() {
           ]}
           ctaText="Ver curso"
           ctaLink="/catalogo?tipo=graduacao&persona=jovem-ingresso"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=graduacao",
+          }}
         />
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"

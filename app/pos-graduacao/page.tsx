@@ -129,6 +129,10 @@ export default function PosGraduacaoPage() {
             },
           ]}
           ctaText="Ver curso"
+          footerCTA={{
+            text: "Ver todos os cursos disponíveis",
+            link: "/catalogo?tipo=pos-graduacao",
+          }}
         />
 
         <Beneficios
