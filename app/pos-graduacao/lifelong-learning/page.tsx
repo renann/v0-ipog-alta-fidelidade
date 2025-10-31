@@ -242,6 +242,8 @@ export default function LifelongLearningPage() {
               depoimento:
                 "O aproveitamento dos meus estudos anteriores me permitiu focar em áreas estratégicas. Hoje lidero projetos de transformação digital.",
               ganho: "Novo projeto estratégico",
+              videoUrl: "/placeholder.svg?height=854&width=480",
+              videoThumbnail: "/placeholder.svg?height=854&width=480",
             },
             {
               nome: "Mariana Costa",
