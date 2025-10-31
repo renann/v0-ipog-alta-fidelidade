@@ -36,9 +36,12 @@ interface EmpregabilidadeProps {
   subtitle?: string
   estatisticas: Estatistica[]
   usarCarrossel?: boolean
+  layoutEstatisticas?: "carousel" | "grid"
   servicos?: Servico[]
-  depoimentos?: Depoimento[] // Mudado de depoimento singular para depoimentos array
+  depoimento?: Depoimento
+  depoimentos?: Depoimento[]
   botaoCTA?: BotaoCTA
+  bgColor?: string
   corFundo?: string
 }
 
@@ -47,13 +50,20 @@ export function Empregabilidade({
   subtitle,
   estatisticas,
   usarCarrossel = true,
+  layoutEstatisticas = "carousel",
   servicos,
-  depoimentos = [], // Mudado de depoimento para depoimentos com default array vazio
+  depoimento,
+  depoimentos,
   botaoCTA,
-  corFundo = "bg-background",
+  bgColor,
+  corFundo,
 }: EmpregabilidadeProps) {
+  const depoimentosNormalizados = depoimentos || (depoimento ? [depoimento] : [])
+  const backgroundColor = bgColor || corFundo || "bg-background"
+  const useCarousel = layoutEstatisticas === "carousel" || usarCarrossel
+
   const renderEstatisticas = () => {
-    if (usarCarrossel) {
+    if (useCarousel) {
       return (
         <div className="mb-12">
           <Carousel
@@ -101,7 +111,7 @@ export function Empregabilidade({
   }
 
   return (
-    <section className={`w-full py-12 md:py-16 ${corFundo}`}>
+    <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
@@ -124,7 +134,7 @@ export function Empregabilidade({
           </Card>
         )}
 
-        {depoimentos.length > 0 && (
+        {depoimentosNormalizados.length > 0 && (
           <div className="mb-8">
             <Carousel
               opts={{
@@ -134,24 +144,24 @@ export function Empregabilidade({
               className="w-full"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
-                {depoimentos.map((depoimento, index) => (
+                {depoimentosNormalizados.map((dep, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] md:basis-1/2 lg:basis-1/3">
                     <Card className="p-6 h-[480px] flex flex-col bg-muted/30">
-                      {depoimento.videoUrl ? (
+                      {dep.videoUrl ? (
                         <>
                           <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
-                            {depoimento.videoThumbnail && (
+                            {dep.videoThumbnail && (
                               <img
-                                src={depoimento.videoThumbnail || "/placeholder.svg"}
-                                alt={depoimento.autor}
+                                src={dep.videoThumbnail || "/placeholder.svg"}
+                                alt={dep.autor}
                                 className="absolute inset-0 w-full h-full object-cover"
                               />
                             )}
                             <video
-                              src={depoimento.videoUrl}
+                              src={dep.videoUrl}
                               controls
                               className="absolute inset-0 w-full h-full object-cover"
-                              poster={depoimento.videoThumbnail}
+                              poster={dep.videoThumbnail}
                             />
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none">
                               <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
@@ -160,17 +170,17 @@ export function Empregabilidade({
                             </div>
                           </div>
                           <div className="mt-auto">
-                            <p className="font-semibold text-sm">{depoimento.autor}</p>
-                            {depoimento.cargo && <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>}
+                            <p className="font-semibold text-sm">{dep.autor}</p>
+                            {dep.cargo && <p className="text-xs text-muted-foreground">{dep.cargo}</p>}
                           </div>
                         </>
                       ) : (
                         <>
                           <Quote className="h-8 w-8 text-muted-foreground mb-4" />
-                          <p className="text-sm italic mb-4 flex-1 line-clamp-6">&ldquo;{depoimento.texto}&rdquo;</p>
+                          <p className="text-sm italic mb-4 flex-1 line-clamp-6">&ldquo;{dep.texto}&rdquo;</p>
                           <div className="mt-auto pt-4 border-t">
-                            <p className="font-semibold text-sm">{depoimento.autor}</p>
-                            {depoimento.cargo && <p className="text-xs text-muted-foreground">{depoimento.cargo}</p>}
+                            <p className="font-semibold text-sm">{dep.autor}</p>
+                            {dep.cargo && <p className="text-xs text-muted-foreground">{dep.cargo}</p>}
                           </div>
                         </>
                       )}
