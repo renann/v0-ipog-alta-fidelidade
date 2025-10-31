@@ -9,6 +9,7 @@ import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function CompliancePage() {
   return (
@@ -185,6 +186,48 @@ export default function CompliancePage() {
         </section>
 
         <FormasIngresso />
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Compliance</h2>
+              <p className="text-lg text-muted-foreground">
+                Tire suas dúvidas sobre o curso, legislação e aplicação prática.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Preciso ser advogado para fazer o curso?</AccordionTrigger>
+                <AccordionContent>
+                  Não. O curso é aberto para profissionais de diversas áreas como administração, contabilidade,
+                  auditoria, gestão e áreas correlatas que desejam atuar com compliance e governança corporativa.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Quais legislações são abordadas no curso?</AccordionTrigger>
+                <AccordionContent>
+                  O curso aborda Lei Anticorrupção, LGPD, Lei de Lavagem de Dinheiro, Código de Defesa do Consumidor,
+                  normas ISO e principais frameworks de compliance e governança corporativa.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>O curso oferece cases práticos?</AccordionTrigger>
+                <AccordionContent>
+                  Sim, o curso é baseado em metodologia prática com análise de cases reais, simulações de programas de
+                  compliance e desenvolvimento de políticas e procedimentos aplicáveis ao dia a dia corporativo.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>Qual a duração do curso?</AccordionTrigger>
+                <AccordionContent>
+                  O curso tem carga horária de 40 horas, com aulas concentradas que permitem conciliar com sua rotina
+                  profissional e aplicação imediata dos conhecimentos.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
         <CtaFinal monthlyFee="R$ 349,00" duration="6 meses" totalCost="R$ 2.094,00" />
       </main>
       <Footer />

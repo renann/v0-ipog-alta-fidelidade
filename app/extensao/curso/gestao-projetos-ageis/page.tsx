@@ -8,6 +8,7 @@ import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function GestaoProjetosAgeisPage() {
   return (
@@ -203,6 +204,48 @@ export default function GestaoProjetosAgeisPage() {
               </div>
               <MetodosPagamento />
             </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Gestão de Projetos Ágeis</h2>
+              <p className="text-lg text-muted-foreground">
+                Tire suas dúvidas sobre o curso, metodologias ágeis e certificações.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Quais metodologias ágeis são ensinadas?</AccordionTrigger>
+                <AccordionContent>
+                  O curso aborda as principais metodologias ágeis como Scrum, Kanban, Lean, XP (Extreme Programming) e
+                  frameworks híbridos, com foco em aplicação prática e adaptação ao contexto organizacional.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>O curso prepara para certificações?</AccordionTrigger>
+                <AccordionContent>
+                  Sim, o conteúdo do curso está alinhado com as principais certificações do mercado como PSM
+                  (Professional Scrum Master), PSPO (Professional Scrum Product Owner) e prepara você para os exames de
+                  certificação.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Preciso ter experiência em gestão de projetos?</AccordionTrigger>
+                <AccordionContent>
+                  Não é obrigatório, mas é recomendável ter conhecimentos básicos em gestão. O curso é estruturado para
+                  atender desde iniciantes até profissionais que desejam migrar de metodologias tradicionais para ágeis.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>Como são as aulas práticas?</AccordionTrigger>
+                <AccordionContent>
+                  As aulas incluem simulações de sprints, dinâmicas de equipe, uso de ferramentas ágeis (Jira, Trello,
+                  Azure DevOps) e desenvolvimento de projetos reais aplicando os frameworks aprendidos.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
 

@@ -9,6 +9,7 @@ import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function AdministracaoPage() {
   return (
@@ -208,6 +209,56 @@ export default function AdministracaoPage() {
         </section>
 
         <FormasIngresso />
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre o curso de Administração</h2>
+              <p className="text-lg text-muted-foreground">
+                Tire suas dúvidas sobre o curso, modalidades e atuação profissional.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>O curso de Administração é reconhecido pelo MEC?</AccordionTrigger>
+                <AccordionContent>
+                  Sim, o curso de Administração do IPOG é reconhecido pelo MEC e segue todas as diretrizes curriculares
+                  nacionais para a formação de administradores.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Qual a diferença entre as modalidades EAD e Presencial?</AccordionTrigger>
+                <AccordionContent>
+                  A modalidade EAD oferece flexibilidade total para estudar no seu ritmo, com conteúdos online e
+                  tutoria. A modalidade Presencial proporciona interação direta com professores e colegas, networking e
+                  acesso a laboratórios. Ambas têm a mesma certificação e qualidade.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Quais são as principais áreas de atuação?</AccordionTrigger>
+                <AccordionContent>
+                  O administrador pode atuar em diversas áreas como gestão de pessoas, finanças, marketing, operações,
+                  logística, consultoria empresarial, empreendedorismo, gestão pública e terceiro setor.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>Preciso ter experiência prévia para fazer o curso?</AccordionTrigger>
+                <AccordionContent>
+                  Não é necessário ter experiência prévia. O curso foi desenvolvido para formar profissionais desde o
+                  início, com uma base sólida de conhecimentos teóricos e práticos em gestão.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5">
+                <AccordionTrigger>O IPOG oferece suporte para colocação no mercado?</AccordionTrigger>
+                <AccordionContent>
+                  Sim, oferecemos serviços de carreira incluindo revisão de currículo, mentorias com especialistas,
+                  indicações para vagas parceiras e orientação profissional durante e após a graduação.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
         <CtaFinal
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 549,00+"

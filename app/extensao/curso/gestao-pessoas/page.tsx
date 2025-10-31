@@ -9,6 +9,7 @@ import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { FormasIngresso } from "@/components/formas-ingresso"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function GestaoPessoasPage() {
   return (
@@ -178,6 +179,48 @@ export default function GestaoPessoasPage() {
         </section>
 
         <FormasIngresso />
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre Gestão de Pessoas</h2>
+              <p className="text-lg text-muted-foreground">
+                Tire suas dúvidas sobre o curso, metodologia e aplicação prática.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Para quem é indicado este curso?</AccordionTrigger>
+                <AccordionContent>
+                  O curso é ideal para profissionais de RH, gestores, líderes de equipe e empreendedores que desejam
+                  desenvolver competências em gestão de pessoas e liderança estratégica.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Qual a carga horária do curso?</AccordionTrigger>
+                <AccordionContent>
+                  O curso tem carga horária de 40 horas, distribuídas em módulos práticos e teóricos com foco em
+                  aplicação imediata no ambiente corporativo.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Recebo certificado ao final?</AccordionTrigger>
+                <AccordionContent>
+                  Sim, ao concluir o curso você recebe certificado de extensão universitária reconhecido pelo MEC, que
+                  pode ser utilizado para progressão de carreira e horas complementares.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>O curso é online ou presencial?</AccordionTrigger>
+                <AccordionContent>
+                  O curso está disponível nas modalidades online ao vivo e presencial. Ambas oferecem a mesma qualidade
+                  de conteúdo e certificação, permitindo que você escolha o formato que melhor se adapta à sua rotina.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
         <CtaFinal monthlyFee="R$ 299,00" duration="6 meses" totalCost="R$ 1.794,00" />
       </main>
       <Footer />
