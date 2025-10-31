@@ -26,8 +26,6 @@ import {
 } from "lucide-react"
 import { openAssistantWithFlow } from "@/lib/assistant-events"
 
-export const dynamic = "force-dynamic"
-
 export default function CeoPage() {
   return (
     <>
