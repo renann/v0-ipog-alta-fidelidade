@@ -28,9 +28,6 @@ export default function IntervencaoAbaPage() {
             />
           </div>
         </div>
-        <div className="max-w-screen-xl mx-auto px-4 pb-4">
-          <CursoRestritoBadge requiredDegree="Psicologia" />
-        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Pós-graduação em Intervenção ABA: Lidere a transformação no TEA e Desenvolvimento Intelectual"
@@ -43,6 +40,9 @@ export default function IntervencaoAbaPage() {
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
+        <div className="max-w-screen-xl mx-auto px-4 pb-8">
+          <CursoRestritoBadge requiredDegree="Psicologia" />
+        </div>
         <Modalidades
           title="A excelência do IPOG no formato ideal para sua carreira"
           subtitle="Nossa metodologia conecta você à prática que o mercado exige, com a flexibilidade que sua rotina precisa. Escolha a modalidade e comece a transformar seu futuro."

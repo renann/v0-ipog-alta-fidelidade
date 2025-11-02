@@ -30,9 +30,6 @@ export default function AvaliacaoPsicologicaPage() {
             />
           </div>
         </div>
-        <div className="max-w-screen-xl mx-auto px-4 pb-4">
-          <CursoRestritoBadge requiredDegree="Psicologia" />
-        </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
           title="Pós-Graduação em Avaliação Psicológica"
@@ -45,6 +42,9 @@ export default function AvaliacaoPsicologicaPage() {
           primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
+        <div className="max-w-screen-xl mx-auto px-4 pb-8">
+          <CursoRestritoBadge requiredDegree="Psicologia" />
+        </div>
         <Modalidades
           title="A mesma excelência, em formatos que se adaptam à sua carreira"
           subtitle="Escolha o formato que melhor se encaixa na sua rotina e objetivos profissionais."
