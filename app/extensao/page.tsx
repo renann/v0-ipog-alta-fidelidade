@@ -175,8 +175,9 @@ export default function ExtensaoPage() {
                 titulo: "Para Resolver um Gap Imediato",
                 promessa:
                   "Cursos curtíssimos e práticos, com templates e checklists, para você aplicar a solução na semana seguinte e gerar retorno rápido.",
-                dores: "",
-                ganho: "",
+                dores:
+                  "Você precisa resolver um problema específico agora, mas não tem tempo para cursos longos ou teoria excessiva.",
+                ganho: "Ferramentas prontas, aplicação imediata e resultados mensuráveis em dias, não meses.",
                 cta: "Resolver meu gap agora",
                 href: "/catalogo?tipo=extensao",
               },
@@ -185,8 +186,10 @@ export default function ExtensaoPage() {
                 titulo: "Para Acelerar sua Recolocação",
                 promessa:
                   "Desenvolva projetos guiados, monte um portfólio tangível e conquiste uma certificação que impressiona recrutadores e abre portas no mercado.",
-                dores: "",
-                ganho: "",
+                dores:
+                  "Você está em transição de carreira ou recolocação e precisa provar suas competências de forma tangível.",
+                ganho:
+                  "Portfólio prático, projetos reais e certificação IPOG que validam suas habilidades para o mercado.",
                 cta: "Construir meu portfólio",
                 href: "/catalogo?tipo=extensao",
               },
@@ -195,8 +198,10 @@ export default function ExtensaoPage() {
                 titulo: "Para se Manter Relevante no Mercado",
                 promessa:
                   "Domine as ferramentas e habilidades emergentes da sua área. Workshops práticos e conteúdo sempre atualizado para você não ficar para trás.",
-                dores: "",
-                ganho: "",
+                dores:
+                  "Você sente que está ficando para trás com as mudanças rápidas do mercado e precisa se atualizar constantemente.",
+                ganho:
+                  "Acesso a conteúdo atualizado, ferramentas emergentes e networking com profissionais da sua área.",
                 cta: "Ver cursos de atualização",
                 href: "/catalogo?tipo=extensao",
               },

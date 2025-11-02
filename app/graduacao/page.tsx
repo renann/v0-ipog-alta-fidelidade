@@ -89,7 +89,8 @@ export default function GraduacaoPage() {
               icon: <GraduationCap className="w-8 h-8 text-primary" />,
               titulo: "Primeira Graduação",
               promessa: "Para quem busca: Uma formação sólida para entrar no mercado com confiança.",
-              dores: "",
+              dores:
+                "Insegurança sobre empregabilidade, falta de experiência prática e dúvidas sobre o retorno do investimento.",
               ganho:
                 "Solução IPOG: Conteúdo prático, ferramentas de simulação de bolsas e mensalidades, e projetos reais que garantem empregabilidade desde o início.",
               cta: "Comece sua graduação",
@@ -99,7 +100,8 @@ export default function GraduacaoPage() {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
               titulo: "Segunda Graduação",
               promessa: "Para quem busca: Validar sua experiência ou fazer uma transição de carreira segura.",
-              dores: "",
+              dores:
+                "Perda de tempo e dinheiro refazendo disciplinas já cursadas, e incerteza sobre a nova área de atuação.",
               ganho:
                 "Solução IPOG: Aproveite disciplinas já cursadas e conquiste um diploma de peso em menos tempo, com um currículo tão prático que você aplica o conhecimento em sua carreira em até 90 dias.",
               cta: "Acelere sua nova formação",
@@ -109,7 +111,8 @@ export default function GraduacaoPage() {
               icon: <ArrowRightLeft className="w-8 h-8 text-primary" />,
               titulo: "Transferência Externa",
               promessa: "Para quem busca: Concluir seus estudos em uma instituição com mais qualidade e estrutura.",
-              dores: "",
+              dores:
+                "Frustração com a qualidade do ensino atual, burocracia na transferência e medo de perder créditos já conquistados.",
               ganho:
                 "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
               cta: "Simule sua transferência",
