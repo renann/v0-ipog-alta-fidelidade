@@ -77,10 +77,11 @@ export default function EditaisPage() {
             <BreadcrumbWithItems
               items={[{ label: "Início", href: "/" }, { label: "Institucional", href: "/sobre" }, { label: "Editais" }]}
             />
-            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4 text-balance">Editais IPOG</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4 text-balance">Editais e Documentos Oficiais</h1>
             <p className="text-lg text-muted-foreground max-w-3xl text-pretty">
-              Acesse todos os editais do IPOG organizados por categoria. Clique para fazer o download imediato dos
-              documentos.
+              Acesse os documentos essenciais para formalizar sua jornada de sucesso no IPOG. Encontre aqui, de forma
+              clara e organizada, todas as informações que você precisa para dar o próximo passo rumo às suas
+              conquistas.
             </p>
           </div>
         </section>
@@ -110,7 +111,7 @@ export default function EditaisPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
             <Button size="lg" className="w-full md:w-auto" asChild>
               <a href="/central-atendimento">
-                Em caso de dúvidas fale conosco
+                Precisa de ajuda com algum documento? Fale com nossos especialistas.
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

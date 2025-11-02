@@ -38,8 +38,8 @@ export default function GestoraRHPage() {
         />
         <Hero
           badge="SOLUÇÕES PARA RH"
-          title="Programas corporativos ágeis, práticos e mensuráveis"
-          description="Soluções empresariais com suporte contínuo, painéis de métricas e certificação digital. Implantação fácil e comprovada"
+          title="DESENVOLVA LÍDERES E EQUIPES PARA OS DESAFIOS ESTRATÉGICOS DO SEU NEGÓCIO"
+          description="Soluções de educação corporativa customizadas, com metodologia comprovada e governança de ponta a ponta. A escolha que conecta sua empresa a resultados de alta performance."
           valueBadges={[
             { icon: <BarChart3 className="w-5 h-5" />, text: "Painéis de Métricas" },
             { icon: <Users className="w-5 h-5" />, text: "85% de Adesão" },
@@ -56,47 +56,47 @@ export default function GestoraRHPage() {
           minHeight="600px"
         />
 
-        {/* Dilema da Gestora de RH */}
         <Dilema
-          titulo="O desafio do RH: implantação e comprovação de impacto"
-          subtitulo="Você precisa implantar programas ágeis e práticos, mas enfrenta falta de tempo, estrutura e dificuldade de provar ROI"
+          titulo="Desafios que impedem a performance da sua equipe"
+          subtitulo=""
           dores={[
             {
               icon: <Target className="w-8 h-8" />,
-              titulo: "Falta de tempo e estrutura",
+              titulo: "Gestão de T&D com recursos limitados",
               descricao:
-                "Dificuldade em coordenar programas de desenvolvimento sem equipe dedicada e ferramentas adequadas",
-              solucao: "Suporte contínuo com templates prontos, comunicação integrada e acompanhamento especializado",
+                "O desafio de escalar o desenvolvimento de talentos e gerenciar programas de capacitação com uma equipe enxuta e sem as ferramentas adequadas.",
+              solucao:
+                "Atuamos como uma extensão do seu RH, com uma plataforma completa de gestão, comunicação e suporte especializado para garantir a execução e o sucesso dos programas.",
             },
             {
               icon: <BarChart3 className="w-8 h-8" />,
-              titulo: "Dificuldade de provar ROI",
+              titulo: "Pressão por resultados mensuráveis",
               descricao:
-                "Desafio em mensurar e demonstrar o impacto real dos programas de capacitação para a liderança",
+                "A crescente necessidade de apresentar dados concretos que justifiquem os investimentos em T&D e conectem o aprendizado aos resultados de negócio.",
               solucao:
-                "Painéis de métricas com indicadores de engajamento, performance e aplicação prática em tempo real",
+                "Nossos painéis de métricas traduzem o desenvolvimento em performance, fornecendo dashboards executivos com indicadores de engajamento, aplicação e impacto para facilitar a governança e a tomada de decisão.",
             },
             {
               icon: <Users className="w-8 h-8" />,
-              titulo: "Baixa adesão dos colaboradores",
+              titulo: "Baixo engajamento e impacto nos objetivos",
               descricao:
-                "Programas com baixo engajamento e dificuldade em manter colaboradores motivados até a conclusão",
-              solucao: "Comunicação integrada, certificação digital e gamificação que aumentam adesão em até 85%",
+                "Programas genéricos que não se conectam com a realidade da equipe, resultando em baixo engajamento, altas taxas de abandono e desperdício de investimento.",
+              solucao:
+                "Nossa metodologia combina comunicação integrada, gamificação e certificação digital para criar uma jornada de aprendizado relevante e motivadora, alcançando taxas de adesão de até 85%.",
             },
           ]}
           imagemUrl="/placeholder.svg?height=500&width=800"
         />
 
-        {/* Método IPOG Enterprise para RH */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Suporte contínuo + Métricas comprovadas = Implantação eficaz
+                A Parceria Estratégica que Garante a Performance do seu Negócio
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Metodologia que facilita implantação com painéis de métricas, certificação digital e comunicação
-                integrada
+                Soluções customizadas que integram metodologia, tecnologia e suporte para entregar resultados auditáveis
+                e alinhados aos objetivos estratégicos do seu negócio.
               </p>
             </div>
 
@@ -109,10 +109,10 @@ export default function GestoraRHPage() {
                   titulo: "Painéis de Métricas",
                   subtitulo: "Acompanhamento visual de engajamento e performance",
                   itens: [
-                    "Dashboard em tempo real",
-                    "Indicadores de engajamento",
-                    "Relatórios executivos automatizados",
-                    "Métricas de aplicação prática",
+                    "Monitoramento em tempo real do progresso e engajamento.",
+                    "Análise de participação para otimizar a jornada de aprendizado.",
+                    "Relatórios executivos para decisões estratégicas baseadas em dados.",
+                    "Indicadores que conectam o aprendizado à aplicação prática no trabalho.",
                   ],
                 },
                 {
@@ -120,10 +120,10 @@ export default function GestoraRHPage() {
                   titulo: "Certificação Digital",
                   subtitulo: "Validação automática e reconhecimento profissional",
                   itens: [
-                    "Certificados com blockchain",
-                    "Badges digitais compartilháveis",
-                    "Validação automática de conclusão",
-                    "Integração com LinkedIn",
+                    "Certificação com tecnologia blockchain para máxima segurança e validação.",
+                    "Badges digitais para reconhecimento e valorização do colaborador.",
+                    "Validação de competências com rastreabilidade de conclusão.",
+                    "Integração com perfis profissionais para ampliar a visibilidade das competências.",
                   ],
                 },
                 {
@@ -131,10 +131,10 @@ export default function GestoraRHPage() {
                   titulo: "Comunicação Integrada",
                   subtitulo: "Templates prontos e suporte contínuo",
                   itens: [
-                    "Templates de e-mail prontos",
-                    "Materiais de divulgação",
-                    "Suporte dedicado para RH",
-                    "Comunicação automatizada",
+                    "Kit de comunicação completo para reduzir a carga operacional do RH.",
+                    "Peças de engajamento para garantir a máxima adesão aos programas.",
+                    "Suporte consultivo dedicado, com um especialista para guiar a implantação e garantir a performance do programa.",
+                    "Régua de comunicação automatizada para manter os participantes engajados.",
                   ],
                 },
                 {
@@ -153,13 +153,14 @@ export default function GestoraRHPage() {
 
             <div className="mt-12">
               <Trilha
-                titulo="Jornada de Implantação e Engajamento"
+                titulo="Nossa Jornada para o Impacto Estratégico"
                 subtitulo=""
                 etapas={[
                   {
                     numero: "1",
-                    titulo: "Diagnóstico e Planejamento",
-                    descricao: "Mapeamento de necessidades, definição de KPIs e cronograma de implantação",
+                    titulo: "Diagnóstico Consultivo e Desenho da Solução:",
+                    descricao:
+                      "Mapeamos seus desafios e metas de negócio para desenhar um programa de desenvolvimento 100% customizado, com KPIs alinhados à sua estratégia.",
                   },
                   {
                     numero: "2",
@@ -168,8 +169,9 @@ export default function GestoraRHPage() {
                   },
                   {
                     numero: "3",
-                    titulo: "Lançamento e Acompanhamento",
-                    descricao: "Kick-off do programa com suporte contínuo e monitoramento de métricas",
+                    titulo: "Lançamento e Governança:",
+                    descricao:
+                      "Coordenamos o lançamento do programa e oferecemos suporte contínuo ao RH, com monitoramento em tempo real da performance para garantir o sucesso da iniciativa.",
                   },
                   {
                     numero: "4",
@@ -178,8 +180,9 @@ export default function GestoraRHPage() {
                   },
                   {
                     numero: "5",
-                    titulo: "Mensuração e Otimização",
-                    descricao: "Análise de resultados, relatórios executivos e ajustes para próximos ciclos",
+                    titulo: "Análise de Impacto e Melhoria Contínua:",
+                    descricao:
+                      "Apresentamos relatórios executivos com a análise completa dos resultados e geramos insights para otimizar os próximos ciclos de desenvolvimento.",
                   },
                 ]}
               />
@@ -187,12 +190,11 @@ export default function GestoraRHPage() {
           </div>
         </section>
 
-        {/* Soluções Corporativas para RH */}
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Escolha a solução que facilita implantação e comprova engajamento
+                Soluções customizadas para os desafios da sua empresa
               </h2>
             </div>
 
@@ -202,21 +204,22 @@ export default function GestoraRHPage() {
               modalidades={[
                 {
                   badge: "RH",
-                  titulo: "Trilhas para RH",
+                  titulo: "Trilhas de Desenvolvimento para o RH Estratégico",
                   descricao:
-                    "Desenvolvimento específico para profissionais de recursos humanos com foco em gestão de pessoas",
+                    "Capacite sua equipe de RH com competências de ponta, desde a análise de dados de pessoas (People Analytics) até o desenho de estratégias de desenvolvimento e sucessão, transformando o setor em um pilar de resultados para o negócio.",
                   beneficios: [
                     "Gestão estratégica de pessoas",
                     "Métricas e analytics de RH",
                     "Desenvolvimento organizacional",
                   ],
                   link: "/enterprise#solucoes",
-                  buttonText: "Conhecer trilhas para RH",
+                  buttonText: "Explore as trilhas para RH",
                 },
                 {
                   badge: "Liderança",
-                  titulo: "Programas de Liderança",
-                  descricao: "Desenvolvimento de líderes com métricas de engajamento e aplicação prática",
+                  titulo: "Programas para Desenvolvimento de Lideranças",
+                  descricao:
+                    "Desenvolva líderes preparados para cenários de alta complexidade, com programas que fortalecem a tomada de decisão estratégica e a gestão de equipes de alta performance.",
                   beneficios: [
                     "Liderança estratégica",
                     "Gestão de equipes de alta performance",
@@ -280,38 +283,37 @@ export default function GestoraRHPage() {
           ]}
         />
 
-        {/* Resultados de Engajamento Comprovados */}
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Programas que comprovam engajamento e performance
+                Resultados que Comprovam Nossa Excelência
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Estatísticas reais de implantação e resultados mensuráveis
+                Dados reais que demonstram o impacto das nossas soluções em centenas de empresas parceiras.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">85%</div>
-                <p className="text-lg font-semibold mb-2">de adesão dos colaboradores</p>
+                <p className="text-lg font-semibold mb-2">de adesão média</p>
                 <p className="text-sm text-muted-foreground">
-                  Taxa de engajamento superior à média do mercado corporativo
+                  Supere os benchmarks de mercado e garanta o ROI do seu investimento em T&D.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">78%</div>
-                <p className="text-lg font-semibold mb-2">de melhoria em métricas</p>
+                <p className="text-lg font-semibold mb-2">de melhoria em performance</p>
                 <p className="text-sm text-muted-foreground">
-                  Aumento comprovado em indicadores de performance e aplicação prática
+                  Comprove o impacto do aprendizado na produtividade e nos resultados do negócio.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">92%</div>
                 <p className="text-lg font-semibold mb-2">de satisfação com suporte</p>
                 <p className="text-sm text-muted-foreground">
-                  Gestores de RH avaliam positivamente o acompanhamento e templates fornecidos
+                  Conte com uma parceria estratégica que reduz a carga operacional do seu RH.
                 </p>
               </div>
             </div>
@@ -321,12 +323,12 @@ export default function GestoraRHPage() {
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Empregabilidade
             titulo="Cases de implantação eficaz"
-            subtitulo="Empresas que transformaram seus programas de desenvolvimento com IPOG"
+            subtitulo="Mais de 500 empresas parceiras e 15.000 colaboradores capacitados anualmente, uma prova da nossa capacidade de execução em escala nacional e da confiança do mercado."
             estatisticas={[
               {
                 icon: <Users className="w-8 h-8" />,
                 valor: "500+",
-                descricao: "empresas já implantaram com sucesso",
+                descricao: "empresas parceiras",
               },
               {
                 icon: <TrendingUp className="w-8 h-8" />,
@@ -359,8 +361,7 @@ export default function GestoraRHPage() {
                 nome: "Juliana Costa",
                 cargo: "Coordenadora de T&D",
                 area: "Indústria Farmacêutica",
-                depoimento:
-                  "Os painéis de métricas nos permitiram demonstrar ROI para a diretoria de forma clara e objetiva. Finalmente conseguimos provar o impacto dos programas de desenvolvimento.",
+                depoimento: "Os painéis nos permitiram demonstrar o ROI para a diretoria de forma clara e objetiva.",
                 ganho: "ROI comprovado para diretoria",
               },
               {
@@ -377,8 +378,8 @@ export default function GestoraRHPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Suporte contínuo com o selo IPOG"
-            subtitulo="Professores especialistas em RH, cases de implantação e presença nacional. Mais de 500 empresas já implantaram com sucesso"
+            titulo="Aprenda com Especialistas que Transformam o Mercado"
+            subtitulo="Chancelas de Qualidade e Credibilidade - Estas certificações validam a excelência acadêmica e a gestão de qualidade do IPOG, reforçando nossa credibilidade como um parceiro estratégico para o desenvolvimento da sua empresa."
             credenciais={[
               {
                 icone: <Award className="w-6 h-6" />,
@@ -417,10 +418,9 @@ export default function GestoraRHPage() {
           />
         </section>
 
-        {/* Ação Final */}
         <AcaoFinal
           titulo="Implante programas ágeis e comprove engajamento"
-          descricao="Agende uma demonstração e descubra como facilitar implantação com suporte contínuo e métricas comprovadas"
+          descricao="Solicite um diagnóstico e entenda como as soluções IPOG podem transformar o desenvolvimento da sua equipe."
           botaoPrimario={{
             texto: "Agendar demonstração corporativa",
             onClick: () => openAssistantWithFlow("demonstracao-corporativa"),

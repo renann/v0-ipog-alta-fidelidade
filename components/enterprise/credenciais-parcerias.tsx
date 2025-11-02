@@ -50,9 +50,10 @@ export function CredenciaisParcerias() {
     <section className="w-full py-12 md:py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Credibilidade corporativa comprovada</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">A credibilidade que seu investimento exige</h2>
           <p className="text-muted-foreground">
-            Mais de 500 empresas já transformaram sua cultura com o IPOG Enterprise
+            Mais de 500 organizações confiam no IPOG Enterprise para desenvolver seus times e líderes, respaldados por:
+            +20 Anos de Experiência, Certificação MEC, 95% de Satisfação
           </p>
         </div>
 

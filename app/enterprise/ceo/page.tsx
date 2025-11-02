@@ -46,12 +46,12 @@ export default function CeoPage() {
         />
         <Hero
           badge="SOLUÇÕES ENTERPRISE"
-          title="Educação corporativa estratégica que transforma aprendizado em performance"
-          description="Soluções empresariais customizadas que fortalecem cultura, desenvolvem lideranças e comprovam resultados mensuráveis"
+          title="Educação Executiva que Garante Alta Performance."
+          description="Desenvolva lideranças, fortaleça sua cultura e comprove o impacto no negócio com soluções corporativas desenhadas para os seus desafios estratégicos."
           valueBadges={[
-            { icon: <Target className="w-5 h-5" />, text: "ROI Comprovado" },
-            { icon: <Users className="w-5 h-5" />, text: "Cultura Organizacional" },
-            { icon: <TrendingUp className="w-5 h-5" />, text: "Performance Executiva" },
+            { icon: <Target className="w-5 h-5" />, text: "ROI Mensurável" },
+            { icon: <Users className="w-5 h-5" />, text: "Cultura de Alta Performance" },
+            { icon: <TrendingUp className="w-5 h-5" />, text: "Liderança Estratégica" },
           ]}
           primaryCTA={{
             text: "Solicitar diagnóstico corporativo",
@@ -71,21 +71,24 @@ export default function CeoPage() {
           dores={[
             {
               icon: <TrendingDown className="w-6 h-6" />,
-              titulo: "Programas genéricos e desconectados",
-              descricao: "Investimentos em treinamentos que não se conectam com os desafios reais do negócio",
-              solucao: "Customização estratégica alinhada aos objetivos corporativos e cultura organizacional",
+              titulo: "O Desafio: Programas de prateleira, sem conexão com o negócio.",
+              descricao:
+                "**A Solução IPOG:** Diagnóstico preciso e programas 100% customizados, alinhados à sua estratégia para garantir resultados reais.",
+              solucao: "",
             },
             {
               icon: <BarChart3 className="w-6 h-6" />,
-              titulo: "Baixo engajamento de líderes",
-              descricao: "Dificuldade em manter lideranças engajadas em programas de desenvolvimento contínuo",
-              solucao: "Metodologia 6DS com acompanhamento executivo e aplicação prática imediata",
+              titulo: "O Desafio: Baixo engajamento das lideranças em programas de desenvolvimento.",
+              descricao:
+                "**A Solução IPOG:** Metodologia executiva com aplicação prática imediata e acompanhamento contínuo que garante a adesão e a performance do seu time.",
+              solucao: "",
             },
             {
               icon: <Target className="w-6 h-6" />,
-              titulo: "Falta de indicadores de performance",
-              descricao: "Impossibilidade de mensurar o impacto real dos investimentos em educação corporativa",
-              solucao: "Mensuração contínua com relatórios executivos e KPIs de performance organizacional",
+              titulo: "O Desafio: Dificuldade em mensurar o impacto do investimento em capacitação.",
+              descricao:
+                "**A Solução IPOG:** Implementamos uma governança rigorosa com KPIs de negócio e relatórios executivos que comprovam o ROI e o alinhamento do programa à sua estratégia mestra.",
+              solucao: "",
             },
           ]}
           imagemUrl="/placeholder.svg?height=500&width=800"
@@ -96,40 +99,41 @@ export default function CeoPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Curadoria 6DS + Chancela IPOG = Impacto comprovado
+                Metodologia 6DS e a Chancela IPOG: A Arquitetura do Impacto no seu Negócio
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Metodologia proprietária que conecta aprendizado e mensuração com resultados tangíveis
+                Unimos uma metodologia de impacto validada pelo mercado à chancela de uma das instituições mais
+                reconhecidas do Brasil.
               </p>
             </div>
 
             <Trilha
-              titulo="Jornada de Transformação Estratégica"
+              titulo="Nossa Jornada para o Impacto Estratégico"
               subtitulo=""
               etapas={[
                 {
                   numero: "1",
-                  titulo: "Diagnóstico Personalizado",
+                  titulo: "Diagnóstico Estratégico:",
                   descricao:
-                    "Análise profunda das competências organizacionais, gaps de liderança e alinhamento com objetivos estratégicos",
+                    "Análise aprofundada dos seus desafios de negócio, competências e gaps de liderança para garantir alinhamento total com os objetivos da companhia.",
                 },
                 {
                   numero: "2",
-                  titulo: "Desenho Sob Medida",
+                  titulo: "Desenho da Solução:",
                   descricao:
-                    "Programas customizados (MBA Executivo, PDL, Pós Executiva) desenhados especificamente para os desafios da sua organização",
+                    "Criação de programas corporativos sob medida, desenhados para endereçar os desafios específicos da sua organização e acelerar a performance.",
                 },
                 {
                   numero: "3",
-                  titulo: "Desenvolvimento Estratégico",
+                  titulo: "Desenvolvimento e Execução:",
                   descricao:
-                    "Corpo docente de mercado com experiência executiva, cases reais e aplicação prática imediata",
+                    "Implementação com um corpo docente formado por executivos de mercado, que conectam teoria, cases reais e aplicação imediata no seu negócio.",
                 },
                 {
                   numero: "4",
-                  titulo: "Mensuração Contínua",
+                  titulo: "Mensuração de Impacto:",
                   descricao:
-                    "Relatórios executivos com KPIs de performance, ROI comprovado e acompanhamento de aplicação prática",
+                    "Acompanhamento contínuo com relatórios executivos, KPIs de performance e a comprovação do ROI para seus stakeholders.",
                 },
               ]}
               textoBotao="Solicitar diagnóstico estratégico"
@@ -143,7 +147,7 @@ export default function CeoPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Escolha a solução que alinha desenvolvimento à estratégia da empresa
+                Nossas Soluções para os Desafios Estratégicos do seu Negócio
               </h2>
             </div>
 
@@ -153,35 +157,39 @@ export default function CeoPage() {
               modalidades={[
                 {
                   badge: "MBA EXECUTIVO",
-                  titulo: "Desenvolvimento Estratégico de Lideranças Seniores",
-                  descricao: "Formação executiva completa para tomadores de decisão e lideranças C-Level",
+                  titulo: "Desenvolvimento aprofundado para C-Level e tomadores de decisão.",
+                  descricao: "",
                   beneficios: [
-                    "Visão estratégica de negócios",
-                    "Networking executivo qualificado",
-                    "Cases corporativos reais",
+                    "Visão estratégica para tomada de decisão complexa",
+                    "Networking C-Level de alto impacto",
+                    "Aplicação em cases estratégicos",
                   ],
                   link: "/enterprise#solucoes",
-                  buttonText: "Solicitar diagnóstico",
+                  buttonText: "Solicitar Diagnóstico",
                 },
                 {
                   badge: "PDL CORPORATIVO",
-                  titulo: "Programa de Desenvolvimento de Lideranças Customizado",
-                  descricao: "Desenvolvimento de competências críticas alinhadas à cultura e estratégia organizacional",
+                  titulo: "Desenvolvimento de competências de liderança alinhadas à sua cultura.",
+                  descricao: "",
                   beneficios: [
-                    "100% customizado para sua empresa",
+                    "Programa 100% customizado",
                     "Foco em competências críticas",
-                    "Acompanhamento de performance",
+                    "Governança de Resultados e Acompanhamento Executivo",
                   ],
                   link: "/enterprise#solucoes",
-                  buttonText: "Conhecer PDL",
+                  buttonText: "Conhecer o Programa",
                 },
                 {
-                  badge: "PÓS EXECUTIVA",
-                  titulo: "Especialização Estratégica para Tomadores de Decisão",
-                  descricao: "Aprofundamento em áreas estratégicas com foco em resultados e performance organizacional",
-                  beneficios: ["Especialização estratégica", "Professores de mercado", "Metodologia aplicada"],
+                  badge: "PÓS-GRADUAÇÃO EXECUTIVA",
+                  titulo: "Especialização técnica para líderes que buscam performance.",
+                  descricao: "",
+                  beneficios: [
+                    "Aprofundamento estratégico",
+                    "Corpo docente executivo",
+                    "Metodologia orientada a resultados",
+                  ],
                   link: "/enterprise#solucoes",
-                  buttonText: "Ver especializações",
+                  buttonText: "Ver Especializações",
                 },
               ]}
             />
@@ -196,8 +204,8 @@ export default function CeoPage() {
           beneficios={[
             {
               icone: <Building2 className="w-8 h-8" />,
-              titulo: "Presencial Executivo",
-              subtitulo: "Vivência estratégica e networking C-Level",
+              titulo: "Formato Presencial",
+              subtitulo: "Imersão executiva para networking C-Level.",
               itens: [
                 "Imersão executiva presencial",
                 "Networking qualificado C-Level",
@@ -207,8 +215,8 @@ export default function CeoPage() {
             },
             {
               icone: <Lightbulb className="w-8 h-8" />,
-              titulo: "Híbrido Corporativo",
-              subtitulo: "Flexibilidade com impacto presencial",
+              titulo: "Formato Híbrido",
+              subtitulo: "Flexibilidade para lideranças, com encontros presenciais estratégicos.",
               itens: [
                 "Encontros presenciais estratégicos",
                 "Conteúdo online sob demanda",
@@ -218,8 +226,8 @@ export default function CeoPage() {
             },
             {
               icone: <GraduationCap className="w-8 h-8" />,
-              titulo: "EAD Estratégico",
-              subtitulo: "Escalabilidade com acompanhamento executivo",
+              titulo: "Formato Online",
+              subtitulo: "Escalabilidade nacional com governança executiva e otimização de custos.",
               itens: [
                 "Escalabilidade nacional",
                 "Custo-benefício otimizado",
@@ -235,31 +243,32 @@ export default function CeoPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Empresas que escolheram o IPOG Enterprise reportaram ganhos reais de performance
+                Performance Comprovada: O Impacto do IPOG Enterprise no seu Negócio
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Resultados mensuráveis que comprovam o impacto estratégico da educação corporativa
+                Nossos parceiros reportam ganhos mensuráveis que validam o investimento em educação corporativa de
+                excelência.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">+70%</div>
-                <p className="text-lg font-semibold mb-2">Retenção de talentos pós-programa</p>
+                <p className="text-lg font-semibold mb-2">em retenção de lideranças estratégicas formadas pelo IPOG.</p>
                 <p className="text-sm text-muted-foreground">
                   Aumento significativo na retenção de lideranças após programas executivos
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">+60%</div>
-                <p className="text-lg font-semibold mb-2">Aumento em performance de liderança</p>
+                <p className="text-lg font-semibold mb-2">de avanço em indicadores de performance executiva.</p>
                 <p className="text-sm text-muted-foreground">
                   Melhoria comprovada em indicadores de performance executiva
                 </p>
               </div>
               <div className="flex flex-col items-center text-center p-8 rounded-lg border bg-card">
                 <div className="text-5xl font-bold mb-2">100%</div>
-                <p className="text-lg font-semibold mb-2">CEOs avaliaram positivamente o impacto</p>
+                <p className="text-lg font-semibold mb-2">de satisfação C-Level com o impacto gerado nos negócios.</p>
                 <p className="text-sm text-muted-foreground">
                   Satisfação total com resultados estratégicos mensuráveis
                 </p>
@@ -302,7 +311,7 @@ export default function CeoPage() {
                 cargo: "CEO",
                 area: "Tecnologia",
                 depoimento:
-                  "O programa do IPOG transformou nossa cultura de liderança. Conseguimos mensurar o ROI através de indicadores claros de performance e retenção de talentos.",
+                  "O IPOG não é um fornecedor, é um parceiro estratégico. Eles transformaram nossa cultura de liderança e, mais importante, comprovaram o ROI com KPIs claros de performance e retenção, o que foi decisivo para o board.",
                 ganho: "Aumento de 65% na retenção de lideranças",
               },
               {
@@ -310,7 +319,7 @@ export default function CeoPage() {
                 cargo: "Diretora Executiva",
                 area: "Varejo",
                 depoimento:
-                  "A customização do programa foi fundamental. O IPOG entendeu nossos desafios estratégicos e desenhou uma solução que gerou impacto real no negócio.",
+                  "A customização do IPOG foi o diferencial. Eles realizaram um diagnóstico profundo dos nossos desafios de negócio e desenharam uma solução que gerou impacto mensurável, muito além dos programas de prateleira que víamos no mercado.",
                 ganho: "ROI de 3.2x em 18 meses",
               },
               {
@@ -318,7 +327,7 @@ export default function CeoPage() {
                 cargo: "CEO",
                 area: "Indústria",
                 depoimento:
-                  "Finalmente encontramos um parceiro que entende que educação corporativa precisa gerar resultados mensuráveis. Os relatórios executivos são excepcionais.",
+                  "Finalmente encontramos um parceiro que entende que educação executiva precisa de governança. Os relatórios de performance e a mensuração contínua de resultados são de um nível que não havíamos encontrado em nenhum outro lugar.",
                 ganho: "Aumento de 58% em performance de liderança",
               },
             ]}
@@ -327,7 +336,7 @@ export default function CeoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Curadoria executiva com o selo IPOG"
+            titulo="Seu Time Aprenderá com Executivos que Já Enfrentaram os seus Desafios"
             subtitulo="Professores de mercado, cases corporativos e presença nacional. Mais de 500 empresas já transformaram sua cultura"
             credenciais={[
               { icone: <Award className="w-6 h-6" />, texto: "MEC - Ministério da Educação" },
@@ -339,17 +348,17 @@ export default function CeoPage() {
               {
                 nome: "Dr. Ricardo Almeida",
                 area: "Estratégia Corporativa",
-                bio: "Ex-CEO de multinacional, especialista em transformação organizacional e performance executiva",
+                bio: "Ex-CEO de multinacional, com experiência comprovada em transformação organizacional e performance executiva.",
               },
               {
                 nome: "Dra. Juliana Costa",
                 area: "Liderança e Cultura",
-                bio: "Consultora de cultura organizacional para Fortune 500, especialista em desenvolvimento de lideranças",
+                bio: "Consultora de cultura para empresas Fortune 500 e especialista no desenvolvimento de lideranças de alta performance.",
               },
               {
                 nome: "Dr. Fernando Santos",
                 area: "Gestão de Performance",
-                bio: "Especialista em mensuração de ROI em educação corporativa e indicadores de performance",
+                bio: "Especialista em mensuração de ROI e implementação de KPIs de performance para educação corporativa.",
               },
             ]}
           />
@@ -357,7 +366,7 @@ export default function CeoPage() {
 
         {/* Ação Final */}
         <AcaoFinal
-          titulo="Transforme o aprendizado em resultado"
+          titulo="Agende uma Sessão Estratégica e Desenhe o Futuro da sua Liderança."
           descricao="Solicite um diagnóstico gratuito e descubra como a educação corporativa pode acelerar a performance da sua empresa"
           botaoPrimario={{
             texto: "Solicitar diagnóstico corporativo",

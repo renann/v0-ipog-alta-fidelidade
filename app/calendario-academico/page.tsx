@@ -25,8 +25,8 @@ export default function CalendarioAcademicoPage() {
             />
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mt-6 mb-4">Calendário Acadêmico</h1>
             <p className="text-muted-foreground text-base md:text-lg max-w-3xl">
-              Acompanhe as principais datas e prazos acadêmicos do IPOG. Selecione sua modalidade de ensino e consulte o
-              calendário completo de cada semestre.
+              Planeje seu semestre com precisão. Encontre aqui todas as datas e prazos essenciais da sua jornada
+              acadêmica no IPOG. Selecione sua modalidade e organize-se para um período de grandes conquistas.
             </p>
           </div>
         </section>

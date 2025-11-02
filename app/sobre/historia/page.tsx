@@ -24,7 +24,9 @@ export default function HistoriaPage() {
             items={[{ label: "Início", href: "/" }, { label: "Sobre o IPOG", href: "/sobre" }, { label: "História" }]}
             className="mb-6"
           />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">IPOG Inspirando vidas</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4">
+            CONECTAMOS CONHECIMENTO AO SUCESSO.
+          </h1>
         </div>
       </section>
 
@@ -33,9 +35,10 @@ export default function HistoriaPage() {
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Desde 2001, o IPOG tem como propósito transformar vidas por meio da educação de excelência. Nossa história
-              é construída com base em valores sólidos, compromisso com a inovação e dedicação ao desenvolvimento de
-              profissionais que fazem a diferença no mercado e na sociedade.
+              No IPOG, acreditamos que a educação tem o poder de transformar trajetórias. Guiamos cada aluno com
+              conhecimento sólido, reflexão crítica e visão estratégica, preparando-os para ir além do esperado.
+              Oferecemos mais que aprendizado: fornecemos as ferramentas para que você se torne protagonista da sua
+              jornada e alcance novos horizontes.
             </p>
           </div>
         </div>
@@ -67,15 +70,15 @@ export default function HistoriaPage() {
         credenciais={[
           {
             icone: <Award className="w-5 h-5 text-primary" />,
-            texto: "Mais de 20 anos de experiência",
+            texto: "+ de 20 anos de solidez",
           },
           {
             icone: <Users className="w-5 h-5 text-primary" />,
-            texto: "Equipe multidisciplinar",
+            texto: "+ de 300 mil alunos em todo o Brasil",
           },
           {
             icone: <Building2 className="w-5 h-5 text-primary" />,
-            texto: "Presença nacional",
+            texto: "98% de satisfação dos alunos",
           },
         ]}
         professores={[
@@ -111,35 +114,27 @@ export default function HistoriaPage() {
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,
-            titulo: "Propósito",
-            subtitulo: "Nossa razão de existir",
-            itens: [
-              "Transformar vidas por meio da educação",
-              "Formar profissionais de excelência",
-              "Contribuir para o desenvolvimento da sociedade",
-              "Inspirar mudanças positivas no mercado",
-            ],
+            titulo: "Nosso Propósito",
+            subtitulo: "DESENVOLVER PESSOAS PARA IMPACTAR POSITIVAMENTE A SOCIEDADE.",
+            itens: [],
           },
           {
             icone: <Eye className="w-8 h-8 text-primary" />,
-            titulo: "Visão",
-            subtitulo: "Onde queremos chegar",
-            itens: [
-              "Ser referência nacional em pós-graduação",
-              "Liderar a inovação educacional",
-              "Expandir o acesso à educação de qualidade",
-              "Construir uma comunidade de aprendizado contínuo",
-            ],
+            titulo: "Nossa Visão",
+            subtitulo: "OFERECER UMA EXPERIÊNCIA EDUCACIONAL DE EXCELÊNCIA PARA 1 MILHÃO DE ALUNOS ATÉ 2034.",
+            itens: [],
           },
           {
             icone: <Heart className="w-8 h-8 text-primary" />,
-            titulo: "Valores",
-            subtitulo: "O que nos move",
+            titulo: "Nossos Valores",
+            subtitulo: "",
             itens: [
-              "Excelência acadêmica e pedagógica",
-              "Ética e transparência em todas as relações",
-              "Inovação constante e adaptação ao mercado",
-              "Compromisso com o sucesso dos alunos",
+              "VALORIZAMOS AS RELAÇÕES HUMANAS.",
+              "COLABORAMOS E COMEMORAMOS.",
+              "SOMOS APAIXONADOS PELO ALUNO.",
+              "SOMOS COMPROMETIDOS COM O RESULTADO DO NEGÓCIO.",
+              "DESAFIAMOS CONSTANTEMENTE O STATUS QUO.",
+              "FAZEMOS O QUE É CERTO.",
             ],
           },
         ]}
@@ -150,10 +145,11 @@ export default function HistoriaPage() {
       <section className="w-full py-12 md:py-16 bg-background">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nossa trajetória</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Uma trajetória de solidez e compromisso</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Mais de duas décadas construindo uma história de excelência, inovação e transformação na educação
-              executiva brasileira.
+              Nossa história começou em 2001 com o objetivo de levar ensino superior de qualidade aos profissionais do
+              mercado. Hoje, somos referência nacional, com presença em todo o país e mais de 300 mil alunos que
+              confiaram em nossa metodologia para construir grandes conquistas.
             </p>
           </div>
 
@@ -167,7 +163,7 @@ export default function HistoriaPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Fundação</h3>
+                    <h3 className="font-semibold text-lg mb-2">O Início de um Propósito</h3>
                     <p className="text-sm text-muted-foreground">
                       Início das atividades do IPOG em Goiânia, com foco em formação executiva e pós-graduação.
                     </p>
@@ -185,7 +181,7 @@ export default function HistoriaPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Expansão Nacional</h3>
+                    <h3 className="font-semibold text-lg mb-2">Conquistando o Brasil</h3>
                     <p className="text-sm text-muted-foreground">
                       Abertura de novas unidades em diferentes estados, consolidando presença nacional.
                     </p>
@@ -203,7 +199,7 @@ export default function HistoriaPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Inovação Digital</h3>
+                    <h3 className="font-semibold text-lg mb-2">A Revolução Digital</h3>
                     <p className="text-sm text-muted-foreground">
                       Lançamento de plataforma EAD e metodologias híbridas de ensino.
                     </p>
@@ -221,9 +217,10 @@ export default function HistoriaPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">100 Mil Alunos</h3>
+                    <h3 className="font-semibold text-lg mb-2">Marco de 100 mil Vidas Transformadas</h3>
                     <p className="text-sm text-muted-foreground">
-                      Marca histórica de 100 mil alunos formados em todo o Brasil.
+                      Alcançamos a marca histórica de 100 mil alunos, consolidando nosso impacto positivo na carreira de
+                      profissionais em todo o Brasil.
                     </p>
                   </div>
                 </div>
@@ -257,9 +254,10 @@ export default function HistoriaPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Líder em Pós-Graduação</h3>
+                    <h3 className="font-semibold text-lg mb-2">Referência Nacional em Educação</h3>
                     <p className="text-sm text-muted-foreground">
-                      Reconhecido como uma das maiores instituições de pós-graduação do país.
+                      Consolidados como uma das maiores e mais respeitadas instituições de ensino do Brasil, sinônimo de
+                      excelência e resultados reais na carreira.
                     </p>
                   </div>
                 </div>

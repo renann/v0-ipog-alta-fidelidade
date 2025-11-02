@@ -11,9 +11,9 @@ const solucoes = [
   {
     icon: Building2,
     badge: "PROGRAMAS CORPORATIVOS",
-    titulo: "Soluções Customizadas",
+    titulo: "Estratégicos Customizados",
     descricao:
-      "Programas desenhados sob medida para os desafios específicos da sua organização, combinando diagnóstico estratégico, desenvolvimento executivo e mensuração de impacto.",
+      "Desenvolvimento de programas sob medida, do diagnóstico de competências à entrega de relatórios de ROI, com curadoria de conteúdo e acompanhamento executivo para garantir a performance do seu time.",
     beneficios: [
       "Diagnóstico organizacional completo",
       "Curadoria de conteúdo personalizada",
@@ -26,9 +26,9 @@ const solucoes = [
   {
     icon: Users,
     badge: "DESENVOLVIMENTO DE LIDERANÇAS",
-    titulo: "Programas Executivos",
+    titulo: "Desenvolvimento de Líderes e Executivos",
     descricao:
-      "Desenvolvimento de lideranças C-Level e alta gestão com foco em competências estratégicas, tomada de decisão e gestão de mudanças organizacionais.",
+      "Capacitação para C-Level e alta gestão com foco em competências estratégicas, tomada de decisão e gestão de mudanças, incluindo networking executivo de alto nível e mentorias individuais.",
     beneficios: [
       "Foco em lideranças estratégicas",
       "Networking executivo de alto nível",
@@ -41,9 +41,9 @@ const solucoes = [
   {
     icon: Target,
     badge: "CONSULTORIA EMPRESARIAL",
-    titulo: "Diagnóstico e Implementação",
+    titulo: "Consultoria e Diagnóstico Empresarial",
     descricao:
-      "Consultoria estratégica para diagnóstico de competências, desenho de trilhas de aprendizagem e implementação de programas de educação corporativa com mensuração contínua.",
+      "Consultoria para mapear gaps de competências, desenhar trilhas de aprendizagem customizadas e implementar programas de desenvolvimento com gestão e acompanhamento de indicadores em tempo real.",
     beneficios: [
       "Mapeamento de gaps de competências",
       "Desenho de trilhas de aprendizagem",
@@ -61,10 +61,11 @@ export function SolucoesCorporativas() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Escolha a solução que acelera a performance da sua empresa
+            Soluções de alta performance para cada desafio estratégico
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Programas corporativos estruturados com metodologia 6DS e foco em resultados mensuráveis
+            Conheça nossos programas corporativos, desenhados com metodologia comprovada e foco em resultados que seu
+            negócio pode medir.
           </p>
         </div>
 

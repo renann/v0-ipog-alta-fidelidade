@@ -25,10 +25,13 @@ export default function CorpoDocentePage() {
         <section className="w-full py-12 md:py-16">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Conheça nosso Corpo Docente</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                Aprenda com quem transforma o mercado
+              </h1>
               <p className="text-lg text-muted-foreground text-pretty">
-                O IPOG reúne um corpo docente composto por mestres, doutores e profissionais de destaque no mercado, que
-                unem teoria e prática para impulsionar o aprendizado.
+                Mais do que acadêmicos, nosso corpo docente é formado por líderes e especialistas que vivem o que
+                ensinam. São mestres e doutores com ampla experiência de mercado, prontos para conectar o conhecimento
+                teórico aos desafios reais da sua carreira e impulsionar suas conquistas.
               </p>
             </div>
           </div>

@@ -21,32 +21,35 @@ export default function GovernancaPage() {
     {
       icon: <Users className="w-12 h-12 text-primary" />,
       titulo: "Conselho Diretor",
-      descricao: "Responsável pelas decisões estratégicas e direcionamento institucional do IPOG",
+      descricao:
+        "Define a visão de futuro e as diretrizes estratégicas que garantem a solidez e o crescimento do IPOG em todo o país.",
     },
     {
       icon: <Users className="w-12 h-12 text-primary" />,
       titulo: "Conselho Acadêmico",
-      descricao: "Garante a excelência pedagógica e a qualidade dos programas educacionais",
+      descricao:
+        "Zela pela excelência do nosso ensino, garantindo que nossa matriz curricular seja um reflexo direto das práticas mais atuais e exigidas pelo mercado, conectando cada aluno ao sucesso profissional.",
     },
   ]
 
   const valores = [
-    "Transparência em todas as decisões e processos institucionais",
-    "Ética como fundamento de todas as relações e práticas",
-    "Responsabilidade social e compromisso com a educação de qualidade",
-    "Excelência na gestão e governança corporativa",
+    "Transparência e Ética: Fazemos o que é certo. Nossos processos e decisões são claros e abertos, construindo relações de confiança com alunos, colaboradores e parceiros.",
+    "Compromisso com Resultados: Somos apaixonados pelo sucesso dos nossos alunos e comprometidos com o resultado do negócio, garantindo uma gestão eficiente que gera valor para toda a sociedade.",
+    "Excelência e Inovação: Desafiamos constantemente o status quo para oferecer uma experiência educacional de vanguarda, unindo qualidade reconhecida e metodologias que transformam carreiras.",
   ]
 
   const politicas = [
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
       titulo: "Política de Privacidade e LGPD",
-      descricao: "Compromisso com a proteção de dados pessoais e conformidade com a legislação vigente",
+      descricao:
+        "Garantimos a proteção e o uso responsável dos dados pessoais, em total conformidade com a legislação vigente.",
     },
     {
       icon: <FileText className="w-12 h-12 text-primary" />,
       titulo: "Código de Conduta e Ética",
-      descricao: "Diretrizes que orientam o comportamento e as relações em toda a instituição",
+      descricao:
+        "Estabelece as diretrizes que orientam nossas relações, reforçando uma cultura de respeito, integridade e colaboração.",
     },
   ]
 
@@ -60,11 +63,13 @@ export default function GovernancaPage() {
           <BreadcrumbWithItems items={breadcrumbItems} />
           <div className="mt-8 max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Governança com propósito e transparência
+              Governança Estratégica: O Alicerce para um Futuro de Impacto
             </h1>
             <p className="text-lg text-muted-foreground">
-              A governança do IPOG reflete nosso compromisso com a ética, a responsabilidade e a excelência em todas as
-              dimensões da gestão educacional.
+              Nossa governança é a garantia de que cada decisão, do planejamento acadêmico à gestão corporativa, é
+              guiada por um propósito claro: <strong>desenvolver líderes que impactam positivamente a sociedade</strong>
+              . Atuamos com integridade e visão de futuro, construindo uma instituição sólida que transforma
+              conhecimento em conquistas reais.
             </p>
           </div>
         </div>
@@ -97,12 +102,17 @@ export default function GovernancaPage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Organização sólida para decisões sustentáveis
+              Estrutura e Responsabilidade: Decisões que Constroem o Futuro
             </h2>
             <p className="text-lg text-muted-foreground">
-              Nossa estrutura de governança é composta por órgãos colegiados que asseguram decisões estratégicas
-              alinhadas aos nossos valores e objetivos institucionais, promovendo transparência e responsabilidade em
-              todas as ações.
+              Para garantir uma jornada educacional de excelência e o crescimento sustentável do IPOG, nossa estrutura é
+              composta por conselhos que unem visão estratégica e rigor acadêmico,{" "}
+              <strong>
+                formados por líderes de mercado e pelos mesmos docentes de excelência que guiam nossos alunos em sala de
+                aula.
+              </strong>{" "}
+              Essa organização assegura que nossos valores sejam a base de cada ação, promovendo um ambiente de
+              confiança e resultados.
             </p>
           </div>
 
@@ -128,7 +138,7 @@ export default function GovernancaPage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">
-              Gestão guiada por valores que inspiram confiança
+              Gestão Guiada por Valores que Inspiram Conquistas
             </h2>
             <div className="space-y-4">
               {valores.map((valor, index) => (
@@ -146,11 +156,11 @@ export default function GovernancaPage() {
       <section className="w-full py-12 md:py-16 bg-background">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Compliance e Transparência</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Políticas e Integridade</h2>
             <p className="text-lg text-muted-foreground">
-              Mantemos políticas claras e acessíveis que orientam nossas práticas institucionais, garantindo
-              conformidade legal, proteção de dados e conduta ética em todas as relações com alunos, colaboradores e
-              parceiros.
+              Nosso compromisso com a integridade se reflete em políticas institucionais robustas e acessíveis. Elas
+              garantem a conformidade legal, a segurança dos dados e um ambiente ético e respeitoso para toda a nossa
+              comunidade acadêmica.
             </p>
           </div>
 

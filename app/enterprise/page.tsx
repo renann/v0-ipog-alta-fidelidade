@@ -32,15 +32,15 @@ export default function EnterprisePage() {
         {/* Hero Section */}
         <Hero
           badge="SOLUÇÕES CORPORATIVAS"
-          title="Educação corporativa estratégica que transforma aprendizado em performance"
-          description="Soluções empresariais customizadas que fortalecem cultura, desenvolvem lideranças e comprovam resultados"
+          title="Desenvolva líderes e equipes para os desafios estratégicos do seu negócio"
+          description="Aplique soluções personalizadas com metodologia prática, impacto mensurável e a chancela de uma das maiores instituições do Brasil."
           valueBadges={[
-            { icon: <Target className="w-5 h-5" />, text: "ROI Mensurável" },
+            { icon: <Target className="w-5 h-5" />, text: "ROI Comprovado" },
             { icon: <Award className="w-5 h-5" />, text: "Metodologia 6DS" },
-            { icon: <Building2 className="w-5 h-5" />, text: "+500 Empresas Atendidas" },
+            { icon: <Building2 className="w-5 h-5" />, text: "+500 Empresas Parceiras" },
           ]}
           primaryCTA={{
-            text: "Ver soluções Enterprise",
+            text: "Conheça as soluções corporativas",
             href: "#solucoes",
           }}
           secondaryCTA={{
@@ -52,60 +52,60 @@ export default function EnterprisePage() {
 
         {/* Dilema Corporativo */}
         <Dilema
-          title="A velocidade do mercado exige líderes preparados e equipes alinhadas"
-          subtitle="Mas o ROI da educação corporativa ainda é difícil de comprovar"
+          title="Sua empresa precisa de performance. Sua equipe, do parceiro certo."
+          subtitle="Nós transformamos o investimento em educação em resultados que o seu negócio pode medir."
           backgroundColor="bg-muted/30"
           dores={[
             {
               icon: <TrendingUp className="w-6 h-6 text-primary" />,
-              titulo: "Diagnóstico Personalizado",
-              solucao: "Mapeamento estratégico das competências organizacionais com foco em gaps críticos",
+              titulo: "Diagnóstico Estratégico",
+              solucao: "Mapeamento de competências para focar no que gera mais impacto.",
             },
             {
               icon: <Users className="w-6 h-6 text-primary" />,
-              titulo: "Desenvolvimento Executivo",
-              solucao: "Programas sob medida com corpo docente de mercado e metodologia aplicada",
+              titulo: "Desenvolvimento Sob Medida",
+              solucao: "Programas desenhados para os desafios reais da sua empresa.",
             },
             {
               icon: <Target className="w-6 h-6 text-primary" />,
-              titulo: "Mensuração Contínua",
-              solucao: "Relatórios executivos com indicadores de performance e ROI comprovado",
+              titulo: "Resultados Mensuráveis",
+              solucao: "Dashboards e relatórios que comprovam o ROI do seu investimento.",
             },
           ]}
         />
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          titulo="Curadoria 6DS + Chancela IPOG = Impacto comprovado"
-          subtitulo="Jornada corporativa estruturada com diagnóstico, desenvolvimento e mensuração contínua"
+          titulo="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
+          subtitulo="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
           bgColor="bg-background"
           etapas={[
             {
               numero: "1",
-              titulo: "Diagnóstico Estratégico",
+              titulo: "Diagnóstico e Alinhamento Estratégico",
               descricao:
-                "Mapeamento completo das necessidades organizacionais, identificação de gaps de competências e definição de objetivos mensuráveis alinhados à estratégia corporativa.",
+                "Análise aprofundada para identificar gaps de competências e definir KPIs alinhados aos objetivos estratégicos do seu negócio.",
               badges: ["Análise de competências", "Mapeamento de gaps", "Definição de KPIs"],
             },
             {
               numero: "2",
-              titulo: "Desenho Personalizado",
+              titulo: "Desenho de Soluções Sob Medida",
               descricao:
-                "Curadoria de programas sob medida combinando MBA Executivo, Programas de Desenvolvimento de Liderança e Pós-Graduação Corporativa com foco nos desafios específicos da organização.",
+                "Criação de programas e trilhas de aprendizagem customizadas, utilizando conteúdo aplicado para resolver os desafios específicos da sua organização.",
               badges: ["Programas customizados", "Trilhas de aprendizagem", "Conteúdo aplicado"],
             },
             {
               numero: "3",
-              titulo: "Desenvolvimento Executivo",
+              titulo: "Implementação e Desenvolvimento",
               descricao:
-                "Implementação com corpo docente executivo, cases corporativos reais e metodologias ativas que garantem aplicação imediata no contexto organizacional.",
+                "Execução com um corpo docente de mercado e metodologias ativas que garantem a aplicação prática e imediata do conhecimento no ambiente de trabalho.",
               badges: ["Professores de mercado", "Cases reais", "Aplicação prática"],
             },
             {
               numero: "4",
-              titulo: "Mensuração de Impacto",
+              titulo: "Mensuração de Impacto e ROI",
               descricao:
-                "Acompanhamento contínuo com relatórios executivos, dashboards de performance e comprovação de ROI através de indicadores tangíveis de mudança comportamental e resultados de negócio.",
+                "Acompanhamento com dashboards de performance e relatórios executivos que demonstram o ROI através de indicadores de negócio e evolução comportamental.",
               badges: ["Relatórios executivos", "Dashboard de ROI", "Indicadores de performance"],
             },
           ]}
@@ -116,27 +116,27 @@ export default function EnterprisePage() {
 
         {/* Duas Perspectivas - CEO vs RH */}
         <Jornadas
-          title="Soluções para cada tomador de decisão"
+          title="Respostas diretas para as dores de cada líder"
           backgroundColor="bg-muted/30"
           jornadas={[
             {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
-              titulo: "CEO / Diretor Executivo",
-              promessa: "Mensure impacto e garanta ROI real em educação corporativa",
-              dores: "Falta de indicadores claros e baixa visibilidade de resultados em programas de desenvolvimento",
+              titulo: "Para o C-Level e Diretor Executivo",
+              promessa: "Justifique o investimento em T&D com visibilidade clara dos resultados no negócio",
+              dores: "Justificar o investimento em T&D sem visibilidade clara dos resultados no negócio.",
               ganho:
-                "Relatórios de mensuração executiva, fortalecimento da cultura organizacional e retenção de talentos estratégicos",
+                "Programas com ROI comprovado, relatórios executivos e alinhamento direto com as metas estratégicas da companhia.",
               cta: "Solicitar diagnóstico estratégico",
               onClick: () => router.push("/enterprise/ceo"),
             },
             {
               icon: <Users className="w-8 h-8 text-primary" />,
-              titulo: "Gestora de RH",
-              promessa: "Implemente programas ágeis, práticos e mensuráveis com suporte contínuo",
+              titulo: "Para a Gestora de RH e T&D",
+              promessa: "Implemente programas de alto impacto com orçamento limitado e prove seu valor",
               dores:
-                "Sobrecarga operacional na gestão de programas e dificuldade em comprovar impacto para a liderança",
+                "Implementar programas de alto impacto com orçamento limitado e provar seu valor para a liderança.",
               ganho:
-                "Trilhas estruturadas de curta duração, métricas de engajamento em tempo real e certificação digital automatizada",
+                "Soluções customizadas, com implantação ágil, suporte contínuo e métricas de engajamento que facilitam a gestão e a comprovação de resultados.",
               cta: "Agendar demonstração corporativa",
               onClick: () => router.push("/enterprise/rh"),
             },
@@ -145,8 +145,8 @@ export default function EnterprisePage() {
 
         {/* Resultados e Prova de Impacto */}
         <ResultadosReais
-          title="Empresas que escolheram o IPOG Enterprise reportaram ganhos reais de performance e engajamento"
-          subtitle="Resultados mensuráveis que comprovam o impacto da educação corporativa estratégica"
+          title="O impacto do IPOG Enterprise em números"
+          subtitle="Dados que comprovam o retorno sobre o investimento em desenvolvimento estratégico: +70% de Retenção de Talentos: Aumento na retenção de colaboradores-chave após os programas. +60% em Performance de Liderança: Melhoria comprovada nos indicadores de gestão e competências. 100% de Aprovação C-Level: Avaliação máxima do impacto estratégico pelos executivos."
           estatisticas={[
             {
               icone: <TrendingUp className="w-10 h-10 text-primary" />,
@@ -201,8 +201,8 @@ export default function EnterprisePage() {
 
         {/* Autoridade e Credibilidade */}
         <Autoridade
-          title="Curadoria executiva com o selo IPOG"
-          subtitle="Professores de mercado, cases corporativos e presença nacional"
+          title="Curadoria executiva com a chancela IPOG"
+          subtitle="Conhecimento aplicado por quem vive o mercado, com cases reais e atuação em todo o Brasil."
           backgroundColor="bg-background"
           credenciais={[
             {
@@ -252,8 +252,8 @@ export default function EnterprisePage() {
 
         {/* Ação Final */}
         <AcaoFinal
-          title="Transforme o aprendizado em resultado"
-          descricao="Solicite um diagnóstico gratuito e descubra como a educação corporativa pode acelerar a performance da sua empresa"
+          title="Vamos transformar aprendizado em performance?"
+          descricao="Solicite um diagnóstico estratégico e descubra como a educação corporativa pode acelerar os resultados da sua empresa."
           corFundo="bg-muted/30"
           botaoPrimario={{
             texto: "Solicitar diagnóstico corporativo",

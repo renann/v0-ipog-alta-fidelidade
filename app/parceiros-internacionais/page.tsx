@@ -14,38 +14,44 @@ export default function ParceirosInternacionaisPage() {
     {
       pais: "Estados Unidos",
       instituicao: "Harvard University",
-      descricao: "Programa executivo de liderança e gestão estratégica com foco em inovação e transformação digital.",
+      descricao:
+        "Lidere em cenários de alta complexidade com o programa de gestão e inovação da universidade mais prestigiada do mundo.",
       beneficios: [
-        "Conteúdos atualizados e interativos",
-        "Tutoria online e suporte contínuo",
-        "Certificação reconhecida internacionalmente",
-        "Networking global com executivos",
+        "Metodologia de ponta aplicada a desafios reais de negócio.",
+        "Networking de alto nível com líderes globais.",
+        "Certificação com o peso e o reconhecimento de Harvard.",
+        "Visão estratégica para impulsionar a transformação em sua empresa.",
       ],
-      idealPara: "Executivos e gestores que buscam aprimorar competências de liderança estratégica",
+      idealPara:
+        "Líderes e executivos C-level que desejam transformar o futuro de seus negócios com uma visão global e inovadora.",
     },
     {
       pais: "Itália",
       instituicao: "Politécnico di Milano",
-      descricao: "Programa de design thinking e inovação aplicada com metodologias europeias de excelência.",
+      descricao:
+        "Domine o Design Thinking e a inovação aplicada em uma das escolas de design mais influentes da Europa, aprendendo a criar soluções que geram valor real.",
       beneficios: [
-        "Metodologias práticas e aplicáveis",
-        "Professores internacionais renomados",
-        "Certificado europeu reconhecido",
-        "Projetos hands-on com empresas",
+        "Imersão em metodologias europeias de excelência.",
+        "Aprendizado prático com professores que são referência no mercado.",
+        "Certificação com reconhecimento no mercado europeu.",
+        "Desenvolvimento de projetos reais com mentoria especializada.",
       ],
-      idealPara: "Profissionais de inovação, design e gestão de produtos que desejam experiência internacional",
+      idealPara:
+        "Gestores de produto, designers e líderes de inovação focados em criar experiências de alto valor e impacto no mercado.",
     },
     {
       pais: "Portugal",
       instituicao: "Universidade de Coimbra",
-      descricao: "MBA executivo com foco em gestão internacional e desenvolvimento de negócios globais.",
+      descricao:
+        "Prepare-se para liderar negócios no cenário global com um MBA executivo que une a tradição acadêmica de Coimbra à visão prática do mercado europeu.",
       beneficios: [
-        "Formato híbrido flexível",
-        "Dupla certificação Brasil-Portugal",
-        "Acesso a mercado europeu",
-        "Módulos presenciais em Coimbra",
+        "Flexibilidade do formato híbrido, ideal para a rotina executiva.",
+        "Dupla certificação que valida sua competência no Brasil e na Europa.",
+        "Acesso estratégico ao networking e às oportunidades do mercado europeu.",
+        "Experiência imersiva com módulos presenciais em Portugal.",
       ],
-      idealPara: "Gestores e empreendedores que buscam expandir atuação para mercados internacionais",
+      idealPara:
+        "Executivos e empreendedores com visão de expansão, que buscam as ferramentas certas para internacionalizar seus negócios com segurança.",
     },
   ]
 
@@ -57,7 +63,9 @@ export default function ParceirosInternacionaisPage() {
         <section className="w-full border-b bg-muted/30 py-8">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <BreadcrumbWithItems items={breadcrumbItems} />
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mt-6">Parcerias Internacionais</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mt-6">
+              Conexões Globais para uma Carreira de Destaque
+            </h1>
           </div>
         </section>
 
@@ -66,8 +74,9 @@ export default function ParceirosInternacionaisPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                As parcerias internacionais do IPOG conectam alunos e ex-alunos a experiências acadêmicas globais,
-                ampliando horizontes e fortalecendo competências com o selo das melhores instituições do mundo.
+                Nossas parcerias com as mais renomadas instituições do mundo são a ponte para o seu sucesso global.
+                Tenha acesso a programas executivos que transformam sua visão de mercado, fortalecem suas competências e
+                abrem portas para uma carreira sem fronteiras.
               </p>
             </div>
           </div>
@@ -79,9 +88,11 @@ export default function ParceirosInternacionaisPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                  Inspirando Vidas — Agora no Exterior
+                  Sua Trajetória de Sucesso, Agora em Escala Global
                 </h2>
-                <p className="text-lg text-muted-foreground">Expandindo a jornada IPOG para o contexto internacional</p>
+                <p className="text-lg text-muted-foreground">
+                  A excelência que transforma carreiras no Brasil, potencializada pelas melhores universidades do mundo.
+                </p>
               </div>
 
               <Accordion type="single" collapsible className="w-full">
@@ -132,11 +143,11 @@ export default function ParceirosInternacionaisPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                Programas executivos internacionais
+                Programas Executivos de Alto Impacto
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                O IPOG oferece, por meio de seus parceiros, a oportunidade de participação em programas de formação
-                executiva e bolsas de estudo no exterior.
+                Desenvolva uma visão estratégica e pratique a inovação em programas exclusivos, desenhados para líderes
+                que buscam impacto mensurável e reconhecimento internacional.
               </p>
             </div>
 
@@ -189,9 +200,12 @@ export default function ParceirosInternacionaisPage() {
         <section className="w-full py-16 md:py-20 bg-muted/30">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Veja apresentação dos programas</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                A Experiência que Transforma, Contada por Quem Viveu
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Conheça mais sobre as universidades parceiras e depoimentos de participantes
+                Assista aos vídeos e descubra como nossos programas internacionais impulsionam carreiras e geram
+                resultados concretos.
               </p>
             </div>
 
@@ -205,7 +219,9 @@ export default function ParceirosInternacionaisPage() {
                   <div className="aspect-video bg-muted flex items-center justify-center">
                     <div className="text-center">
                       <Award className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Vídeo de apresentação</p>
+                      <p className="text-sm text-muted-foreground">
+                        Assista ao depoimento e descubra o impacto do programa.
+                      </p>
                     </div>
                   </div>
                   <CardHeader>

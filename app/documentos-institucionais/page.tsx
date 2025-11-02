@@ -81,10 +81,14 @@ export default function DocumentosInstitucionaisPage() {
                 { label: "Documentos Institucionais" },
               ]}
             />
-            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4 text-balance">Documentos institucionais</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4 text-balance">
+              Transparência e Credibilidade: Nossos Documentos Institucionais
+            </h1>
             <p className="text-lg text-muted-foreground max-w-3xl text-pretty">
-              Acesse os atos regulatórios e demais documentos institucionais do IPOG. Todos os arquivos estão
-              disponíveis para download imediato.
+              No IPOG, acreditamos que a confiança é a base para grandes conquistas. Por isso, oferecemos acesso
+              completo e transparente aos nossos atos regulatórios e documentos institucionais. Consulte os arquivos
+              para confirmar nosso compromisso com a excelência e a solidez que fazem do IPOG a escolha certa para o seu
+              futuro.
             </p>
           </div>
         </section>
@@ -114,7 +118,7 @@ export default function DocumentosInstitucionaisPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
             <Button size="lg" className="w-full md:w-auto" asChild>
               <a href="/central-atendimento">
-                Em caso de dúvidas fale conosco
+                Não encontrou o que buscava? Nossa equipe está à disposição para ajudar.
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

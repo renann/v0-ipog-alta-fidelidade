@@ -95,59 +95,72 @@ function SearchResultsContent() {
         {/* Results Section */}
         <section className="w-full py-12">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
-            {/* Results Counter */}
             <div className="mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold">
-                {resultCount} {resultCount === 1 ? "docente encontrado" : "docentes encontrados"}
-              </h1>
+              <h1 className="text-2xl md:text-3xl font-bold mb-4">Conheça os mestres que conectam você ao sucesso.</h1>
+              <p className="text-muted-foreground text-base md:text-lg max-w-4xl">
+                Mais de 98% de satisfação dos nossos alunos começa aqui. Nosso corpo docente é formado por líderes de
+                mercado com experiência prática e um compromisso:{" "}
+                <strong>transformar seu potencial em resultados reais</strong>. Use a busca para encontrar o
+                especialista que vai impulsionar sua carreira.
+              </p>
               {searchTerm && (
-                <p className="text-muted-foreground mt-2">
-                  Resultados para: <span className="font-medium text-foreground">{searchTerm}</span>
+                <p className="text-muted-foreground mt-4">
+                  Resultados para: <span className="font-medium text-foreground">{searchTerm}</span> ({resultCount}{" "}
+                  {resultCount === 1 ? "docente encontrado" : "docentes encontrados"})
                 </p>
               )}
             </div>
 
             {/* Faculty Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mockDocentes.map((docente) => (
-                <Card key={docente.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      {/* Badge */}
-                      <Badge variant="secondary" className="mb-2">
-                        {docente.modalidade}
-                      </Badge>
+            {resultCount > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {mockDocentes.map((docente) => (
+                  <Card key={docente.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        {/* Badge */}
+                        <Badge variant="secondary" className="mb-2">
+                          {docente.modalidade}
+                        </Badge>
 
-                      {/* Photo */}
-                      <div className="flex justify-center">
-                        <img
-                          src={docente.foto || "/placeholder.svg"}
-                          alt={docente.nome}
-                          className="w-24 h-24 rounded-full object-cover"
-                        />
+                        {/* Photo */}
+                        <div className="flex justify-center">
+                          <img
+                            src={docente.foto || "/placeholder.svg"}
+                            alt={docente.nome}
+                            className="w-24 h-24 rounded-full object-cover"
+                          />
+                        </div>
+
+                        {/* Name */}
+                        <h3 className="font-semibold text-lg text-center line-clamp-2">{docente.nome}</h3>
+
+                        {/* Area */}
+                        <p className="text-sm text-primary text-center font-medium">{docente.area}</p>
+
+                        {/* Mini Bio */}
+                        <p className="text-sm text-muted-foreground line-clamp-3">{docente.miniBio}</p>
+
+                        <div className="flex justify-end pt-2">
+                          <Button variant="ghost" size="sm" onClick={() => handleOpenBio(docente)} className="gap-2">
+                            Conheça o mestre
+                            <ArrowRight className="h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
-
-                      {/* Name */}
-                      <h3 className="font-semibold text-lg text-center line-clamp-2">{docente.nome}</h3>
-
-                      {/* Area */}
-                      <p className="text-sm text-primary text-center font-medium">{docente.area}</p>
-
-                      {/* Mini Bio */}
-                      <p className="text-sm text-muted-foreground line-clamp-3">{docente.miniBio}</p>
-
-                      {/* CTA */}
-                      <div className="flex justify-end pt-2">
-                        <Button variant="ghost" size="sm" onClick={() => handleOpenBio(docente)} className="gap-2">
-                          Ver Bio
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground text-lg">
+                  Nenhum especialista encontrado com os filtros selecionados.{" "}
+                  <strong>Tente ampliar sua busca ou fale com um de nossos consultores</strong> para encontrar o
+                  professor ideal para sua jornada.
+                </p>
+              </div>
+            )}
           </div>
         </section>
       </main>

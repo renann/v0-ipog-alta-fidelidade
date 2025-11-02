@@ -97,17 +97,27 @@ export default function UnidadesPage() {
         <section className="w-full py-8 border-b">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Unidades IPOG" }]} />
-            {/* </CHANGE> */}
-            <h1 className="text-4xl md:text-5xl font-bold mt-6 text-balance">Presença nacional</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mt-6 text-balance">
+              Conecte-se ao sucesso em todo o Brasil: encontre sua unidade IPOG
+            </h1>
+            <p className="text-lg text-muted-foreground mt-4 text-balance">
+              Conecte-se a uma rede de conhecimento e oportunidades que transforma carreiras em todo o Brasil.
+            </p>
           </div>
         </section>
 
         {/* Introduction Section */}
         <section className="w-full py-12">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
-            <p className="text-lg text-center text-muted-foreground max-w-[700px] mx-auto text-balance">
-              Com unidades espalhadas por todo o país, o IPOG conecta conhecimento e experiência prática em diferentes
-              regiões, garantindo a mesma qualidade em todos os polos.
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-balance">
+              Conectamos conhecimento ao sucesso. Em todo o Brasil.
+            </h2>
+            <p className="text-lg text-center text-muted-foreground max-w-[900px] mx-auto text-balance">
+              Com mais de 20 anos de história, construímos uma presença sólida que nos tornou referência nacional, com
+              um índice de satisfação de 98% entre nossos alunos. Cada uma de nossas unidades é um centro de excelência,
+              onde você tem acesso à nossa metodologia inovadora, a um corpo docente formado por referências de mercado
+              e a uma rede de contatos que impulsiona sua trajetória. Oferecemos a mesma qualidade e o compromisso com
+              resultados que fazem do IPOG a melhor escolha para o seu futuro, onde quer que você esteja.
             </p>
           </div>
         </section>
@@ -135,7 +145,7 @@ export default function UnidadesPage() {
                             <Badge variant="secondary" className="text-xs font-semibold">
                               {unit.category}
                             </Badge>
-                            <CardTitle className="text-2xl">{unit.name}</CardTitle>
+                            <CardTitle className="text-2xl">IPOG {unit.name.replace("Unidade ", "")}</CardTitle>
                           </div>
                         </div>
                       </CardHeader>

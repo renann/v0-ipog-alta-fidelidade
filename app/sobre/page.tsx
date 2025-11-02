@@ -21,7 +21,7 @@ export default function SobrePage() {
       <section className="w-full py-8 md:py-12">
         <div className="max-w-screen-xl mx-auto px-4">
           <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Sobre nós" }]} className="mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold">Sobre nós</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">A escolha que conecta você ao sucesso</h1>
         </div>
       </section>
 
@@ -30,12 +30,14 @@ export default function SobrePage() {
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <p className="text-xl md:text-2xl font-medium text-balance leading-relaxed">
-              Há mais de 20 anos, o IPOG transforma carreiras e impulsiona o desenvolvimento profissional de milhares de
-              pessoas em todo o Brasil.
+              Nossa história começou em 2001 com um propósito claro: desenvolver pessoas para impactar positivamente a
+              sociedade. Hoje, somos a escolha que conecta mais de 300 mil alunos ao seu sucesso, guiando cada jornada
+              com conhecimento sólido e visão estratégica.
             </p>
             <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-              Nossa missão é democratizar o acesso à educação de qualidade, conectando conhecimento acadêmico à prática
-              de mercado, formando profissionais preparados para os desafios do mundo contemporâneo.
+              Acreditamos que a educação transforma trajetórias. Por isso, conectamos você a professores que são
+              referência no mercado e a uma metodologia prática, entregando as ferramentas para que você se torne
+              protagonista da sua carreira e alcance novos horizontes.
             </p>
           </div>
         </div>
@@ -60,7 +62,7 @@ export default function SobrePage() {
                 <div className="text-center space-y-4">
                   <h2 className="text-3xl md:text-4xl font-bold">Nossa trajetória</h2>
                   <p className="text-lg text-muted-foreground">
-                    Uma história de crescimento, inovação e compromisso com a excelência educacional
+                    Uma história de solidez, compromisso e qualidade, construída passo a passo.
                   </p>
                 </div>
 
@@ -68,13 +70,13 @@ export default function SobrePage() {
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-xl font-bold text-primary">2005</span>
+                        <span className="text-xl font-bold text-primary">2001</span>
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-2">Fundação do IPOG</h3>
+                        <h3 className="font-bold text-lg mb-2">O Início de um Propósito</h3>
                         <p className="text-sm text-muted-foreground">
-                          Início das atividades com foco em pós-graduação e especialização profissional, estabelecendo
-                          as bases de nossa metodologia de ensino.
+                          Em Goiânia, nasce o IPOG com o objetivo de levar ensino superior de alta qualidade a
+                          profissionais de todo o mercado, firmando nosso compromisso com a excelência.
                         </p>
                       </div>
                     </div>
@@ -86,10 +88,10 @@ export default function SobrePage() {
                         <span className="text-xl font-bold text-primary">2010</span>
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-2">Expansão Nacional</h3>
+                        <h3 className="font-bold text-lg mb-2">Conquistando o Brasil</h3>
                         <p className="text-sm text-muted-foreground">
-                          Alcançamos presença em mais de 15 estados brasileiros, consolidando nossa posição como
-                          referência em educação continuada.
+                          Expandimos nossa presença para todo o país, tornando-nos referência nacional e levando nossa
+                          metodologia prática e efetiva para novas fronteiras.
                         </p>
                       </div>
                     </div>
@@ -101,10 +103,10 @@ export default function SobrePage() {
                         <span className="text-xl font-bold text-primary">2015</span>
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-2">Inovação Digital</h3>
+                        <h3 className="font-bold text-lg mb-2">A Revolução Digital</h3>
                         <p className="text-sm text-muted-foreground">
-                          Lançamento de plataforma EAD de última geração, democratizando o acesso à educação de
-                          qualidade em todo o país.
+                          Lançamos nossa plataforma EAD, conectando milhares de alunos ao conhecimento e reforçando
+                          nosso pioneirismo em inovação educacional.
                         </p>
                       </div>
                     </div>
@@ -113,13 +115,13 @@ export default function SobrePage() {
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-xl font-bold text-primary">2025</span>
+                        <span className="text-sm font-bold text-primary text-center leading-tight">Visão</span>
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg mb-2">Liderança Consolidada</h3>
+                        <h3 className="font-bold text-lg mb-2">Nossa Visão</h3>
                         <p className="text-sm text-muted-foreground">
-                          Mais de 720 mil formandos, presença em 20+ estados e reconhecimento como uma das principais
-                          instituições de ensino do Brasil.
+                          Consolidados como uma das maiores instituições do Brasil, seguimos com a visão de oferecer uma
+                          experiência educacional de excelência para 1 milhão de alunos até 2034.
                         </p>
                       </div>
                     </div>
@@ -245,35 +247,33 @@ export default function SobrePage() {
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,
-            titulo: "Metodologia Aplicada",
-            subtitulo: "Aprendizado focado na prática profissional",
+            titulo: "Metodologia para Diferenciar",
+            subtitulo: "Conhecimento que se aplica hoje e transforma o amanhã.",
             itens: [
-              "Casos reais de mercado",
-              "Projetos práticos em cada disciplina",
-              "Conexão direta com o mundo corporativo",
-              "Aplicação imediata do conhecimento",
+              "Teoria e Prática: Unimos teorias e ferramentas em uma metodologia simples e efetiva.",
+              "Foco Prático: O que você aprende em aula é pensado para virar ação imediata na sua carreira.",
+              "Conteúdo Autoral: Nossas aulas são criadas por quem ensina, alinhadas com as exigências do mercado.",
+              "Matriz Curricular Estratégica: Nossos currículos são desenhados para os desafios atuais do mercado, garantindo um aprendizado relevante e com profundidade.",
             ],
           },
           {
             icone: <Users className="w-8 h-8 text-primary" />,
-            titulo: "Professores Executivos",
-            subtitulo: "Aprenda com quem atua no mercado",
+            titulo: "Professores que Transformam",
+            subtitulo: "Aprenda com quem já chegou lá e agora mostra o caminho.",
             itens: [
-              "Mestres e doutores qualificados",
-              "Experiência prática comprovada",
-              "Profissionais atuantes em suas áreas",
-              "Network com líderes de mercado",
+              "Docentes de Mercado: Aprenda com mestres e doutores que são líderes e executivos em suas áreas, trazendo a realidade do mercado para dentro da sala de aula.",
+              "Networking de Alto Nível: Conecte-se a profissionais que são referência e construa uma rede que abre portas.",
+              "Suporte Eficiente: Receba o apoio de professores, tutores e coordenadores que acompanham sua jornada de perto.",
             ],
           },
           {
             icone: <Lightbulb className="w-8 h-8 text-primary" />,
-            titulo: "Inovação Constante",
-            subtitulo: "Tecnologia a serviço da educação",
+            titulo: "Inovação que Facilita",
+            subtitulo: "Tecnologia que torna o aprendizado mais acessível e eficiente.",
             itens: [
-              "Plataforma digital de última geração",
-              "Conteúdo sempre atualizado",
-              "Metodologias ativas de aprendizagem",
-              "Recursos interativos e gamificação",
+              "Plataforma Intuitiva: Acesse suas aulas, materiais e atividades de forma simples e rápida, de qualquer lugar.",
+              "Conteúdo Sempre Atualizado: Nossos cursos acompanham as mudanças do mercado, garantindo que você aprenda o que é relevante agora.",
+              "Flexibilidade Total: Estude no seu ritmo, com formatos que se adaptam à sua rotina e aos seus objetivos.",
             ],
           },
         ]}
@@ -281,35 +281,35 @@ export default function SobrePage() {
       />
 
       {/* Impacto e Presença no Mercado */}
-      <ResultadosComprovados titulo="Mais de 20 anos transformando carreiras e empresas" />
+      <ResultadosComprovados titulo="Conhecimento que gera resultados reais" />
 
       {/* O Que Dizem Nossos Alunos */}
       <DepoimentosDeTexto
-        titulo="O que dizem nossos alunos"
+        titulo="O que dizem nossos protagonistas"
         depoimentos={[
           {
-            nome: "Ana Paula Santos",
-            cargo: "Gerente de Projetos",
-            area: "Tecnologia",
+            nome: "Ana Paula S.",
+            cargo: "MBA em Gestão de Projetos",
+            area: "",
             depoimento:
-              "O IPOG transformou minha carreira. A metodologia prática e os professores experientes fizeram toda a diferença no meu desenvolvimento profissional.",
-            ganho: "Promoção em 6 meses + 40% de aumento salarial",
+              "A decisão foi fácil: eu queria aprender com o professor que é referência na minha área. O networking e a aplicação imediata do conteúdo me garantiram uma promoção em menos de um ano.",
+            ganho: "Resultado: Promoção para Gerente Sênior e +40% de aumento salarial.",
           },
           {
-            nome: "Carlos Eduardo Lima",
-            cargo: "Diretor Financeiro",
-            area: "Finanças",
+            nome: "Carlos Eduardo L.",
+            cargo: "Curso de Extensão em Power BI",
+            area: "",
             depoimento:
-              "A qualidade do ensino e o networking com outros profissionais foram fundamentais para minha transição de carreira. Recomendo fortemente.",
-            ganho: "Mudança de área + Nova posição executiva",
+              "Como profissional pragmática, eu precisava de algo que eu possa usar amanhã no meu trabalho. O curso de extensão foi direto ao ponto e o retorno sobre o investimento foi imediato.",
+            ganho: "Resultado: Otimização de processos e reconhecimento pela liderança.",
           },
           {
-            nome: "Mariana Costa",
-            cargo: "Coordenadora de RH",
-            area: "Recursos Humanos",
+            nome: "Mariana C.",
+            cargo: "Pós-Graduação em Neuropsicologia",
+            area: "",
             depoimento:
-              "Além do conhecimento técnico, o IPOG me proporcionou uma visão estratégica que aplico diariamente na minha empresa. Investimento que valeu cada centavo.",
-            ganho: "Promoção para cargo de liderança",
+              "Fazer a transição de carreira era um grande desafio. O IPOG me deu a segurança que eu precisava, com uma trilha clara, mentoria e o peso de uma certificação reconhecida pelo mercado.",
+            ganho: "Resultado: Transição de carreira bem-sucedida para a área clínica.",
           },
         ]}
         corFundo="bg-muted/30"

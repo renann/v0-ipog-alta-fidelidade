@@ -24,11 +24,12 @@ export default function IpogPlusPage() {
             />
             <div className="mt-6 space-y-4">
               <h1 className="text-4xl md:text-5xl font-bold text-balance">
-                Continue sua jornada de sucesso com o IPOG+
+                Sua evolução profissional não para. Acelere com o IPOG+.
               </h1>
               <p className="text-lg text-muted-foreground max-w-[700px]">
-                O IPOG+ reconhece e recompensa quem acredita no aprendizado contínuo. Se você já é ou foi aluno IPOG,
-                aproveite descontos progressivos e benefícios exclusivos para continuar evoluindo na sua carreira.
+                Um programa exclusivo para quem já faz parte da nossa história. Transforme seu conhecimento em
+                autoridade e sua fidelidade em vantagens reais para ampliar sua especialização e se manter à frente no
+                mercado.
               </p>
             </div>
           </div>
@@ -63,12 +64,13 @@ export default function IpogPlusPage() {
                   </div>
                   <div className="space-y-4">
                     <p className="text-lg italic text-muted-foreground">
-                      "Lorem ipsum dolor sit amet vacuum der volcom claim ipsum. O IPOG+ me permitiu continuar estudando
-                      com benefícios reais que fazem diferença no meu orçamento."
+                      "Cada nova especialização no IPOG foi um degrau na minha carreira. Com o IPOG+, sinto que a
+                      instituição não só reconhece minha trajetória, mas investe junto comigo no meu crescimento
+                      contínuo."
                     </p>
                     <div>
                       <p className="font-semibold">Márcio Dias</p>
-                      <p className="text-sm text-muted-foreground">Aluno IPOG+ desde 2021</p>
+                      <p className="text-sm text-muted-foreground">Aluno IPOG+</p>
                     </div>
                   </div>
                 </div>
@@ -82,12 +84,13 @@ export default function IpogPlusPage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-balance">
-                Quanto mais você estuda, mais vantagens conquista
+                A escolha que continua conectando você ao sucesso.
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                O plano IPOG+ foi criado para valorizar o seu compromisso com o aprendizado. A cada nova matrícula, você
-                acumula benefícios e aumenta o desconto nos próximos cursos. Estude com quem acompanha você em todas as
-                fases da sua trajetória — do primeiro curso à especialização dos seus sonhos.
+                Sabemos que profissionais de destaque nunca param de evoluir. O IPOG+ é nosso compromisso com a sua
+                jornada de lifelong learning. Um programa estratégico que transforma seu histórico acadêmico em
+                benefícios progressivos, permitindo que você amplie seu portfólio de especializações com roteiros
+                personalizados e a máxima eficiência, aproveitando formações anteriores para acelerar sua jornada.
               </p>
             </div>
 
@@ -127,7 +130,7 @@ export default function IpogPlusPage() {
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="text-center space-y-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-balance">
-                  Veja como o IPOG+ multiplica suas conquistas
+                  Benefícios pensados para impulsionar sua trajetória
                 </h2>
                 <p className="text-lg text-muted-foreground">
                   Um programa pensado para quem acredita no poder transformador da educação continuada.
@@ -140,9 +143,10 @@ export default function IpogPlusPage() {
                     <li className="flex gap-3">
                       <Check className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-lg font-semibold">Benefícios progressivos a cada matrícula</p>
+                        <p className="text-lg font-semibold">Reconhecimento que cresce com você</p>
                         <p className="text-muted-foreground">
-                          Cada novo curso aumenta seu nível de benefícios no programa
+                          Sua dedicação se transforma em vantagens reais. A cada nova formação, seus benefícios e
+                          descontos aumentam progressivamente.
                         </p>
                       </div>
                     </li>
@@ -158,18 +162,20 @@ export default function IpogPlusPage() {
                     <li className="flex gap-3">
                       <Check className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-lg font-semibold">Acesso prioritário a novos cursos</p>
+                        <p className="text-lg font-semibold">Acesso antecipado a novas formações</p>
                         <p className="text-muted-foreground">
-                          Seja o primeiro a saber sobre lançamentos e tenha prioridade nas matrículas
+                          Esteja sempre um passo à frente. Tenha prioridade em matrículas e acesso a lançamentos,
+                          módulos ao vivo e eventos exclusivos antes do mercado.
                         </p>
                       </div>
                     </li>
                     <li className="flex gap-3">
                       <Check className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-lg font-semibold">Comunidade de ex-alunos IPOG</p>
+                        <p className="text-lg font-semibold">Networking de elite</p>
                         <p className="text-muted-foreground">
-                          Networking exclusivo com profissionais que compartilham sua jornada de aprendizado
+                          Conecte-se a uma rede exclusiva de profissionais de alto nível que, como você, escolheram o
+                          IPOG para construir uma carreira de sucesso.
                         </p>
                       </div>
                     </li>
@@ -184,11 +190,10 @@ export default function IpogPlusPage() {
         <section className="w-full bg-background py-16">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">
-                O aprendizado não termina na formatura
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Pronto para o próximo nível?</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Continue evoluindo com benefícios exclusivos para quem escolhe o IPOG como parceiro de carreira
+                Se você já é aluno ou ex-aluno IPOG, fale com um de nossos consultores e descubra todos os benefícios
+                que o IPOG+ reserva para sua carreira.
               </p>
             </div>
 
@@ -243,9 +248,14 @@ export default function IpogPlusPage() {
 
               <Card>
                 <CardContent className="pt-8 text-center space-y-4">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold">Desconto máximo</p>
-                  <p className="text-5xl md:text-6xl font-bold text-primary">70%</p>
-                  <p className="text-lg text-muted-foreground">de desconto em cursos de especialização</p>
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold">
+                    Até 75% de desconto
+                  </p>
+                  <p className="text-5xl md:text-6xl font-bold text-primary">75%</p>
+                  <p className="text-lg text-muted-foreground">
+                    Seu investimento em educação contínua com um retorno ainda maior, a partir da sua quarta
+                    pós-graduação.
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -267,8 +277,9 @@ export default function IpogPlusPage() {
                   </div>
                   <div className="space-y-4 flex-1">
                     <p className="text-lg italic text-muted-foreground">
-                      "Lorem ipsum dolor sit amet vacuum der volcom claim ipsum. O IPOG+ transformou minha forma de
-                      pensar sobre educação continuada."
+                      "O IPOG+ é a prova de que a instituição é uma verdadeira parceira de carreira. Os benefícios me
+                      incentivaram a buscar a terceira especialização, o que foi decisivo para assumir uma nova
+                      liderança."
                     </p>
                     <div>
                       <p className="font-semibold">Márcio Dias</p>
@@ -279,7 +290,7 @@ export default function IpogPlusPage() {
 
                 <div className="text-center pt-4">
                   <Button size="lg" className="text-lg px-8">
-                    Escolha seu próximo curso, seja IPOG+
+                    Falar com um consultor
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>

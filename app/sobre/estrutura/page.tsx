@@ -83,23 +83,27 @@ export default function EstruturaPage() {
   const eadBenefits = [
     {
       icon: <Headphones className="h-6 w-6" />,
-      title: "Auditórios Interativos",
-      description: "Salas virtuais com transmissão ao vivo e interação em tempo real com professores e colegas.",
+      title: "Aulas Ao Vivo com Conteúdo Autoral",
+      description:
+        "Conecte-se, debata e aprenda em tempo real com professores de mercado e colegas de todo o país. Uma experiência imersiva que fortalece o aprendizado e o networking, como se estivesse na primeira fila da sala de aula.",
     },
     {
       icon: <FlaskConical className="h-6 w-6" />,
-      title: "Laboratórios Virtuais",
-      description: "Simulações práticas e ambientes de experimentação para aplicação de conhecimentos.",
+      title: "Laboratórios Virtuais e Simulações Práticas",
+      description:
+        "Aplique o conhecimento hoje mesmo. Nossos ambientes virtuais permitem que você desenvolva habilidades práticas e resolva desafios reais da sua área, transformando teoria em competência.",
     },
     {
       icon: <Library className="h-6 w-6" />,
-      title: "Biblioteca Online",
-      description: "Acervo digital com milhares de títulos, artigos científicos e materiais complementares.",
+      title: "Biblioteca Digital Completa",
+      description:
+        "Acesse um vasto acervo com os melhores títulos, artigos e materiais de apoio para aprofundar seu aprendizado a qualquer hora, de qualquer lugar, inspirando novas ideias.",
     },
     {
       icon: <School className="h-6 w-6" />,
-      title: "Salas de Aula Híbridas",
-      description: "Flexibilidade para participar presencialmente ou online, conforme sua necessidade.",
+      title: "Flexibilidade para Aprender Como e Onde Quiser",
+      description:
+        "Participe das aulas presencialmente em nosso campus ou conecte-se ao vivo de qualquer lugar. Nossa tecnologia híbrida garante que você nunca perca o ritmo, adaptando a experiência de aprendizado à sua necessidade.",
     },
   ]
 
@@ -130,7 +134,9 @@ export default function EstruturaPage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <BreadcrumbWithItems items={breadcrumbItems} />
           <div className="mt-8">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Nossa Estrutura</h1>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Uma Estrutura Pensada para o Seu Sucesso
+            </h1>
             <div className="mt-2 h-1 w-20 bg-primary" />
           </div>
         </div>
@@ -140,8 +146,9 @@ export default function EstruturaPage() {
       <section className="w-full py-12 md:py-16 bg-muted/30">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <p className="mx-auto max-w-[700px] text-center text-lg text-muted-foreground">
-            O IPOG se estrutura com excelência acadêmica, presença nacional e infraestrutura moderna para garantir
-            experiências de aprendizado de alto impacto.
+            Conheça os pilares que conectam você a uma jornada de aprendizado transformadora. Nossa excelência
+            acadêmica, validada por <strong>mais de 20 anos de história</strong>, presença nacional e infraestrutura de
+            ponta são os alicerces para o seu protagonismo profissional.
           </p>
         </div>
       </section>
@@ -150,10 +157,12 @@ export default function EstruturaPage() {
       <section className="w-full py-12 md:py-16 bg-background">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Como estamos organizados</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Organização a Serviço da Sua Jornada</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Nossa estrutura organizacional é desenhada para garantir excelência em todas as dimensões da experiência
-              educacional.
+              Nossa organização acadêmica e administrativa é construída para um único objetivo: potencializar sua
+              experiência. Desde a curadoria do conteúdo com <strong>professores que são referência no mercado</strong>{" "}
+              até o suporte contínuo, cada detalhe é pensado para garantir uma formação sólida e alinhada às suas
+              ambições.
             </p>
             <Accordion type="single" collapsible defaultValue="item-0">
               {organizationalStructure.map((item, index) => (
@@ -178,9 +187,11 @@ export default function EstruturaPage() {
       <section className="w-full py-12 md:py-16 bg-muted/30">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Presença nacional</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Uma Rede Nacional de Oportunidades</h2>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-              Estamos presentes nas principais capitais do Brasil, levando educação de qualidade para todo o país.
+              Mais do que unidades, construímos pontes para o seu futuro em todo o Brasil. Nossa presença nacional
+              significa acesso a um <strong>networking valioso</strong> e a um ensino de excelência reconhecido de ponta
+              a ponta no país, abrindo portas onde quer que sua carreira o leve.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -210,16 +221,18 @@ export default function EstruturaPage() {
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Campus Goiânia – GO</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Campus Sede: Onde a Inovação Acontece
+              </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Nosso campus sede em Goiânia é o coração administrativo e acadêmico do IPOG. Com infraestrutura moderna,
-                auditórios equipados, biblioteca física e digital, e espaços de convivência projetados para estimular a
-                colaboração e o networking.
+                Nosso campus sede em Goiânia é o epicentro da nossa excelência. Mais do que uma estrutura moderna, é
+                aqui que nossos <strong>núcleos de pesquisa e coordenações acadêmicas</strong> atuam como verdadeiros
+                motores de inovação.
               </p>
               <p className="text-lg text-muted-foreground">
-                O campus também abriga nossos núcleos de pesquisa, coordenações acadêmicas e serve como centro de
-                inovação educacional, desenvolvendo metodologias e tecnologias que são replicadas em todas as nossas
-                unidades.
+                São eles que desenvolvem as metodologias de ponta e o conteúdo autoral que diferenciam sua formação,
+                garantindo uma experiência de aprendizado que integra teoria e prática e prepara você para os desafios
+                reais do mercado.
               </p>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
@@ -237,10 +250,14 @@ export default function EstruturaPage() {
       <section className="w-full py-12 md:py-16 bg-muted/30">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Benefícios do EAD IPOG</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Nossa Estrutura Digital: Flexibilidade e Excelência Onde Você Estiver
+            </h2>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-              Nossa infraestrutura digital oferece recursos avançados para uma experiência de aprendizado completa e
-              flexível.
+              O ensino IPOG rompe barreiras físicas para <strong>transformar</strong> sua jornada. Nossa plataforma EAD
+              foi desenhada para oferecer uma experiência de aprendizado imersiva e flexível, com{" "}
+              <strong>conteúdo autoral e exclusivo</strong> e o <strong>suporte rápido e eficiente</strong> que garantem
+              a mesma excelência da nossa formação presencial.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -261,11 +278,10 @@ export default function EstruturaPage() {
       <section className="w-full py-12 md:py-16 bg-background">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Veja alguns tours guiados pelos alunos IPOG
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Viva a Experiência IPOG</h2>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-              Conheça nossa infraestrutura através dos olhos de quem vive o dia a dia do IPOG.
+              Nada melhor do que ver de perto. Explore nossos espaços e sinta a atmosfera de excelência e inovação
+              através da perspectiva dos nossos próprios alunos.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

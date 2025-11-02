@@ -21,11 +21,12 @@ export default function AlunoDiamantePage() {
             />
             <div className="mt-6 space-y-4">
               <h1 className="text-4xl md:text-5xl font-bold text-balance">
-                Transforme sua rede em benefícios exclusivos
+                Conecte sua rede ao sucesso e ganhe reconhecimento de líder
               </h1>
               <p className="text-lg text-muted-foreground max-w-[700px]">
-                O programa Aluno Diamante premia quem indica novos alunos para o IPOG. Quanto mais você indica, mais
-                benefícios exclusivos você ganha.
+                O Aluno Diamante é o ecossistema de reconhecimento para os profissionais que, como você, fazem do
+                aprendizado contínuo sua maior estratégia. Transforme sua influência em uma jornada de conquistas e
+                acelere sua trajetória de sucesso dentro do IPOG.
               </p>
             </div>
           </div>
@@ -60,8 +61,9 @@ export default function AlunoDiamantePage() {
                   </div>
                   <div className="flex-1 space-y-4">
                     <p className="text-lg leading-relaxed">
-                      "Indiquei 3 amigos para o IPOG e ganhei desconto na minha próxima especialização. É incrível ver
-                      como minha rede de contatos se transformou em benefícios reais!"
+                      "Ao indicar 3 colegas para o IPOG, não só ganhei um desconto em minha especialização, mas elevei o
+                      nível da minha própria rede. Estar cercada por profissionais que compartilham da mesma visão de
+                      excelência do IPOG é o que realmente impulsiona o sucesso de todos."
                     </p>
                     <div>
                       <p className="font-semibold">Maria Silva</p>
@@ -78,11 +80,10 @@ export default function AlunoDiamantePage() {
         <section className="w-full py-16">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Sua rede de influência pode gerar benefícios reais
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Sua influência constrói uma jornada de conquistas</h2>
               <p className="text-lg text-muted-foreground max-w-[700px] mx-auto">
-                Compartilhe sua experiência no IPOG e seja recompensado por cada indicação bem-sucedida
+                Compartilhe a excelência do IPOG e seja reconhecido por conectar futuros líderes à melhor escolha para
+                suas carreiras.
               </p>
             </div>
 
@@ -92,9 +93,10 @@ export default function AlunoDiamantePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Gift className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle>Descontos progressivos</CardTitle>
+                  <CardTitle>Descontos que aceleram sua jornada</CardTitle>
                   <CardDescription>
-                    Ganhe descontos crescentes em novos cursos conforme aumenta o número de indicações
+                    Sua jornada de aprendizado contínuo ganha um aliado poderoso. Quanto mais você indica, maiores os
+                    descontos para sua próxima formação.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -104,9 +106,10 @@ export default function AlunoDiamantePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Award className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle>Reconhecimento exclusivo</CardTitle>
+                  <CardTitle>Reconhecimento que destaca sua liderança</CardTitle>
                   <CardDescription>
-                    Receba certificados e badges especiais que destacam sua contribuição para a comunidade IPOG
+                    Receba certificados e badges digitais que validam sua influência e o posicionam como um membro de
+                    destaque na comunidade de líderes do IPOG.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -116,9 +119,10 @@ export default function AlunoDiamantePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Users className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle>Networking ampliado</CardTitle>
+                  <CardTitle>Networking que gera novas oportunidades</CardTitle>
                   <CardDescription>
-                    Expanda sua rede profissional conectando pessoas que compartilham seus valores educacionais
+                    Fortaleça sua rede profissional ao trazer pessoas de alto potencial para o ecossistema IPOG, criando
+                    conexões que abrem portas para o futuro.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -131,7 +135,7 @@ export default function AlunoDiamantePage() {
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Sistema simples: mais indicações = mais benefícios
+                Uma jornada de reconhecimento em 4 passos
               </h2>
 
               <div className="space-y-4">
@@ -140,9 +144,10 @@ export default function AlunoDiamantePage() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Indique amigos e colegas</h3>
+                    <h3 className="font-semibold mb-1">1. Indique os futuros líderes</h3>
                     <p className="text-muted-foreground">
-                      Compartilhe sua experiência no IPOG com pessoas que valorizam educação de qualidade
+                      Seja a ponte que conecta sua rede ao sucesso. Compartilhe a experiência IPOG e convide
+                      profissionais de destaque para construírem um legado ao seu lado.
                     </p>
                   </div>
                 </div>
@@ -152,9 +157,10 @@ export default function AlunoDiamantePage() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Acompanhe suas indicações</h3>
+                    <h3 className="font-semibold mb-1">2. Acompanhe o início de novas conquistas</h3>
                     <p className="text-muted-foreground">
-                      Receba notificações quando suas indicações se matricularem e começarem a estudar
+                      Seja notificado quando sua indicação der o primeiro passo rumo a uma carreira de sucesso e comece
+                      a acumular seus reconhecimentos.
                     </p>
                   </div>
                 </div>
@@ -164,9 +170,10 @@ export default function AlunoDiamantePage() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Acumule benefícios</h3>
+                    <h3 className="font-semibold mb-1">3. Acumule suas conquistas</h3>
                     <p className="text-muted-foreground">
-                      Cada indicação confirmada gera pontos que podem ser trocados por descontos e vantagens
+                      Cada matrícula confirmada se transforma em pontos que desbloqueiam descontos e vantagens
+                      exclusivas para sua carreira.
                     </p>
                   </div>
                 </div>
@@ -176,9 +183,10 @@ export default function AlunoDiamantePage() {
                     <Check className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Resgate suas recompensas</h3>
+                    <h3 className="font-semibold mb-1">4. Impulsione sua carreira</h3>
                     <p className="text-muted-foreground">
-                      Use seus benefícios em novos cursos, especializações ou até mesmo em produtos parceiros
+                      Invista seus pontos em novas especializações, cursos de extensão e acelere ainda mais sua
+                      trajetória de sucesso com o IPOG.
                     </p>
                   </div>
                 </div>
@@ -191,9 +199,12 @@ export default function AlunoDiamantePage() {
         <section className="w-full py-16">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Escolha seu nível de benefício</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Sua jornada no IPOG define seu nível de reconhecimento
+              </h2>
               <p className="text-lg text-muted-foreground max-w-[700px] mx-auto">
-                Quanto mais você indica, maiores são as vantagens que você conquista
+                Quanto maior seu impacto na comunidade, mais exclusivas são as vantagens para acelerar sua próxima
+                formação.
               </p>
             </div>
 
@@ -269,7 +280,7 @@ export default function AlunoDiamantePage() {
         <section className="w-full py-16 bg-muted/30">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dados sobre o programa</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Uma comunidade de sucesso, em números</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -313,8 +324,9 @@ export default function AlunoDiamantePage() {
                   </div>
                   <div className="flex-1 space-y-4">
                     <p className="text-lg leading-relaxed">
-                      "O programa Aluno Diamante mudou minha forma de ver networking. Hoje, compartilhar conhecimento e
-                      oportunidades se tornou parte da minha rotina, e os benefícios são apenas a cereja do bolo!"
+                      "Com o Aluno Diamante, entendi que o verdadeiro networking é sobre construir pontes para o sucesso
+                      coletivo. Compartilhar a experiência IPOG se tornou uma forma de fortalecer minha rede e liderar
+                      pelo exemplo. As recompensas são o reconhecimento natural desse impacto."
                     </p>
                     <div>
                       <p className="font-semibold">João Santos</p>
@@ -324,9 +336,9 @@ export default function AlunoDiamantePage() {
                 </div>
 
                 <div className="text-center pt-6 border-t">
-                  <h3 className="text-2xl font-bold mb-4">Pronto para começar a indicar?</h3>
+                  <h3 className="text-2xl font-bold mb-4">Conecte-se ao sucesso. Comece a indicar agora.</h3>
                   <p className="text-muted-foreground mb-6 max-w-[600px] mx-auto">
-                    Faça login na sua área do aluno e comece a compartilhar sua experiência IPOG hoje mesmo
+                    Acesse sua área do aluno, gere seu link exclusivo e comece a transformar sua rede profissional.
                   </p>
                   <Button size="lg">Acessar área do aluno</Button>
                 </div>
