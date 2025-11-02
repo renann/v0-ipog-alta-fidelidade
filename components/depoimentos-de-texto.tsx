@@ -4,57 +4,55 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Quote, Play } from "lucide-react"
 
-interface DepoimentoBase {
-  nome: string
-  cargo: string
+interface TestimonialBase {
+  name: string
+  role: string
   area?: string
-  ganho?: string
-  resultado?: string
+  gain?: string
+  result?: string
 }
 
-interface DepoimentoTexto extends DepoimentoBase {
-  tipo?: "texto"
-  depoimento?: string
-  texto?: string
+interface TextTestimonial extends TestimonialBase {
+  type?: "text"
+  testimonial?: string
+  text?: string
   videoUrl?: never
   thumbnail?: never
   videoThumbnail?: never
 }
 
-interface DepoimentoVideo extends DepoimentoBase {
-  tipo?: "video"
+interface VideoTestimonial extends TestimonialBase {
+  type?: "video"
   videoUrl: string
   thumbnail?: string
   videoThumbnail?: string
-  depoimento?: never
-  texto?: never
+  testimonial?: never
+  text?: never
 }
 
-type Depoimento = DepoimentoTexto | DepoimentoVideo
+type Testimonial = TextTestimonial | VideoTestimonial
 
 interface DepoimentosDeTextoProps {
   title?: string
-  titulo?: string
-  subtitulo?: string
-  depoimentos: Depoimento[]
-  corFundo?: string
+  subtitle?: string
+  depoimentos: Testimonial[]
+  backgroundColor?: string
 }
 
 export function DepoimentosDeTexto({
   title,
-  titulo,
-  subtitulo,
+  subtitle,
   depoimentos,
-  corFundo = "bg-background",
+  backgroundColor = "bg-background",
 }: DepoimentosDeTextoProps) {
-  const tituloFinal = titulo || title || "Depoimentos"
+  const finalTitle = title || "Depoimentos"
 
   return (
-    <section className={`w-full ${corFundo} py-16 md:py-24`}>
+    <section className={`w-full ${backgroundColor} py-16 md:py-24`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{tituloFinal}</h2>
-          {subtitulo && <p className="mt-4 text-lg text-muted-foreground">{subtitulo}</p>}
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{finalTitle}</h2>
+          {subtitle && <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>}
         </div>
 
         <div className="mx-auto mt-12 max-w-5xl">
@@ -68,8 +66,8 @@ export function DepoimentosDeTexto({
             <CarouselContent>
               {depoimentos.map((item, index) => {
                 const isVideo = "videoUrl" in item && item.videoUrl
-                const textoDepoimento = !isVideo ? item.depoimento || item.texto || "" : ""
-                const ganhoFinal = item.ganho || item.resultado || ""
+                const testimonialText = !isVideo ? item.testimonial || item.text || "" : ""
+                const finalGain = item.gain || item.result || ""
 
                 return (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -94,12 +92,12 @@ export function DepoimentosDeTexto({
                               </div>
                             </div>
                             <div className="mt-auto">
-                              <p className="font-semibold text-foreground">{item.nome}</p>
+                              <p className="font-semibold text-foreground">{item.name}</p>
                               <p className="text-sm text-muted-foreground">
-                                {item.cargo}
+                                {item.role}
                                 {item.area ? ` • ${item.area}` : ""}
                               </p>
-                              {ganhoFinal && <p className="mt-2 text-sm font-medium text-primary">{ganhoFinal}</p>}
+                              {finalGain && <p className="mt-2 text-sm font-medium text-primary">{finalGain}</p>}
                             </div>
                           </>
                         ) : (
@@ -107,15 +105,15 @@ export function DepoimentosDeTexto({
                             <div className="min-h-[400px] flex flex-col">
                               <Quote className="mb-4 h-8 w-8 text-muted-foreground" />
                               <p className="mb-6 flex-1 text-sm text-foreground line-clamp-[8]">
-                                {textoDepoimento ? `"${textoDepoimento}"` : ""}
+                                {testimonialText ? `"${testimonialText}"` : ""}
                               </p>
                               <div className="mt-auto">
-                                <p className="font-semibold text-foreground">{item.nome}</p>
+                                <p className="font-semibold text-foreground">{item.name}</p>
                                 <p className="text-sm text-muted-foreground">
-                                  {item.cargo}
+                                  {item.role}
                                   {item.area ? ` • ${item.area}` : ""}
                                 </p>
-                                {ganhoFinal && <p className="mt-2 text-sm font-medium text-primary">{ganhoFinal}</p>}
+                                {finalGain && <p className="mt-2 text-sm font-medium text-primary">{finalGain}</p>}
                               </div>
                             </div>
                           </>
