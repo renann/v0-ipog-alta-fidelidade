@@ -149,7 +149,7 @@ export function Empregabilidade({
                     <Card className="p-6 h-[480px] flex flex-col bg-muted/30">
                       {dep.videoUrl ? (
                         <>
-                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4 aspect-[9/16]">
                             {dep.videoThumbnail && (
                               <img
                                 src={dep.videoThumbnail || "/placeholder.svg"}

@@ -77,7 +77,7 @@ export function DepoimentosDeTexto({
                       <CardContent className="flex h-full flex-col p-6">
                         {isVideo ? (
                           <>
-                            <div className="relative mb-4 flex-1 overflow-hidden rounded-lg bg-muted">
+                            <div className="relative mb-4 flex-1 overflow-hidden rounded-lg bg-muted aspect-[9/16]">
                               <video
                                 className="h-full w-full object-cover"
                                 controls

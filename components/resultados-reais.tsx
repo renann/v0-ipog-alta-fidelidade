@@ -94,7 +94,7 @@ export function ResultadosReais({ title, subtitle, estatisticas, depoimentos = [
                     <Card className="p-6 h-[480px] flex flex-col">
                       {depoimento.videoUrl ? (
                         <div className="flex flex-col h-full">
-                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                          <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4 aspect-[9/16]">
                             {depoimento.videoThumbnail && (
                               <img
                                 src={depoimento.videoThumbnail || "/placeholder.svg"}

@@ -72,7 +72,7 @@ export function CasesRecolocacao() {
                   <Card className="p-6 h-[480px] flex flex-col">
                     {caso.videoUrl ? (
                       <>
-                        <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4">
+                        <div className="relative w-full flex-1 bg-muted rounded-lg overflow-hidden group mb-4 aspect-[9/16]">
                           {caso.videoThumbnail && (
                             <img
                               src={caso.videoThumbnail || "/placeholder.svg"}
