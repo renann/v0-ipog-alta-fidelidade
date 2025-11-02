@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { ChevronDown } from "lucide-react"
 
 interface Etapa {
   numero: string
@@ -31,6 +33,18 @@ export function Trilha({
   observacao,
   bgColor = "bg-white",
 }: TrilhaProps) {
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set())
+
+  const toggleCard = (index: number) => {
+    const newExpanded = new Set(expandedCards)
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index)
+    } else {
+      newExpanded.add(index)
+    }
+    setExpandedCards(newExpanded)
+  }
+
   return (
     <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
@@ -39,54 +53,57 @@ export function Trilha({
           <p className="text-lg text-gray-600">{subtitle}</p>
         </div>
 
-        <div className="max-w-3xl mx-auto relative">
-          <div className="absolute left-[29px] top-12 bottom-12 w-0.5 bg-gray-300 hidden md:block" />
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-4">
+            {etapas.map((etapa, index) => {
+              const isExpanded = expandedCards.has(index)
 
-          <div className="space-y-8">
-            {etapas.map((etapa, index) => (
-              <div key={index} className="relative flex gap-6">
-                <div className="hidden md:flex items-start pt-4 flex-shrink-0">
-                  <div className="w-[60px] h-[60px] bg-black rounded-full flex items-center justify-center relative z-10">
-                    <span className="text-white text-xl font-bold">{etapa.numero}</span>
-                  </div>
-                </div>
-
-                <Card className="flex-grow p-6 md:p-8 bg-gray-50 border-2">
-                  <div className="md:hidden mb-4">
-                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                      <span className="text-white text-lg font-bold">{etapa.numero}</span>
+              return (
+                <Card key={index} className="overflow-hidden border-2 hover:border-gray-400 transition-colors">
+                  <button
+                    onClick={() => toggleCard(index)}
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="flex-grow">
+                      <h3 className="text-xl md:text-2xl font-bold">{etapa.titulo}</h3>
                     </div>
-                  </div>
+                    <ChevronDown
+                      className={`w-6 h-6 flex-shrink-0 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                    />
+                  </button>
 
-                  <h3 className="text-xl md:text-2xl font-bold mb-3">{etapa.titulo}</h3>
-                  <p className="text-gray-700 mb-4">{etapa.descricao}</p>
+                  {isExpanded && (
+                    <div className="px-6 pb-6 pt-0">
+                      <p className="text-gray-700 mb-4">{etapa.descricao}</p>
 
-                  {etapa.beneficios && etapa.beneficios.length > 0 && (
-                    <ul className="space-y-2 mb-4">
-                      {etapa.beneficios.map((beneficio, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm">
-                          <span>•</span>
-                          <span>{beneficio}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                      {etapa.beneficios && etapa.beneficios.length > 0 && (
+                        <ul className="space-y-2 mb-4">
+                          {etapa.beneficios.map((beneficio, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm">
+                              <span>•</span>
+                              <span>{beneficio}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                  {etapa.badges && etapa.badges.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {etapa.badges.map((badge, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm font-medium"
-                        >
-                          {badge}
-                        </span>
-                      ))}
+                      {etapa.badges && etapa.badges.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {etapa.badges.map((badge, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm font-medium"
+                            >
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </Card>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 
