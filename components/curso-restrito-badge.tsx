@@ -1,8 +1,7 @@
 "use client"
 
-import { Badge } from "@/components/ui/badge"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Lock } from "lucide-react"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { AlertCircle } from "lucide-react"
 
 interface CursoRestritoBadgeProps {
   requiredDegree: string
@@ -10,23 +9,15 @@ interface CursoRestritoBadgeProps {
 
 export function CursoRestritoBadge({ requiredDegree }: CursoRestritoBadgeProps) {
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Badge
-            variant="secondary"
-            className="gap-1 border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          >
-            <Lock className="h-3 w-3" />
-            Curso Restrito
-          </Badge>
-        </TooltipTrigger>
-        <TooltipContent className="max-w-xs">
-          <p className="text-sm">
-            Destinado exclusivamente a profissionais graduados em <strong>{requiredDegree}</strong>
-          </p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Alert className="border-amber-500 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">
+      <AlertCircle className="h-5 w-5 text-amber-600 dark:text-amber-500" />
+      <AlertTitle className="text-amber-900 dark:text-amber-100 font-semibold">
+        Curso com Requisito Obrigatório
+      </AlertTitle>
+      <AlertDescription className="text-amber-800 dark:text-amber-200">
+        Este curso é destinado exclusivamente a profissionais <strong>graduados em {requiredDegree}</strong> com
+        registro ativo no conselho profissional.
+      </AlertDescription>
+    </Alert>
   )
 }
