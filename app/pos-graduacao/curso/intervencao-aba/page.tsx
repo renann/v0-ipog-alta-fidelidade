@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Users } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -173,7 +172,7 @@ export default function IntervencaoAbaPage() {
         <section className="w-full py-16 px-4 bg-background">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Aprenda com especialistas certificados em ABA</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Aprenda com especialistas certificados em ABA</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Nosso corpo docente é formado por psicólogos com certificação internacional em ABA, experiência clínica
                 comprovada e atuação em casos de referência.
@@ -201,22 +200,6 @@ export default function IntervencaoAbaPage() {
                   profissional.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto px-4 pb-4">
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-16 bg-background">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-3xl mx-auto px-4 pb-4">
-              <MetodosPagamento />
             </div>
           </div>
         </section>
