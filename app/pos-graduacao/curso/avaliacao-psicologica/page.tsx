@@ -7,6 +7,7 @@ import { Trilha } from "@/components/trilha"
 import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
+import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
 import { Clock, Award, TrendingUp, Briefcase, Brain, Users, BookOpen } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -247,6 +248,34 @@ export default function AvaliacaoPsicologicaPage() {
               area: "Neuropsicologia",
               bio: "Neuropsicóloga com atuação em hospitais. Especialista em avaliação de TDAH e TEA.",
               avatar: "PF",
+            },
+          ]}
+        />
+
+        <TrilhaAprendizado
+          etapas={[
+            {
+              titulo: "Pós-Graduação em Avaliação Psicológica - Fundamentos",
+              descricao:
+                "Construa base sólida em técnicas de avaliação, instrumentos psicométricos e laudos com certificação reconhecida pelo CFP.",
+              tags: ["Instrumentos", "Laudos", "Ética"],
+            },
+            {
+              titulo: "Especialização em Neuropsicologia",
+              descricao:
+                "Aprofunde em avaliação neuropsicológica, reabilitação cognitiva e intervenções baseadas em evidências.",
+              tags: ["Neurociência", "Reabilitação", "Pesquisa"],
+            },
+            {
+              titulo: "Posicionamento no Mercado — Psicólogo Especialista",
+              descricao:
+                "Atue como especialista em avaliação psicológica com foco em nichos de alta demanda e remuneração competitiva.",
+              beneficios: [
+                "Credibilidade com certificações CFP",
+                "Portfólio de casos + publicações",
+                "Rede de encaminhamentos e parcerias",
+              ],
+              tags: ["Consultoria", "Perícia", "Clínica"],
             },
           ]}
         />
