@@ -6,20 +6,20 @@ export function EngajamentoContinuo() {
   const recursos = [
     {
       icon: Video,
-      titulo: "Mini webinars gratuitos",
-      descricao: "Participe de sessões ao vivo com professores especialistas",
+      title: "Mini webinars gratuitos",
+      description: "Participe de sessões ao vivo com professores especialistas",
       cta: "Agendar webinar",
     },
     {
       icon: Calculator,
-      titulo: "Simulador de ROI profissional",
-      descricao: "Calcule o retorno do seu investimento em educação",
+      title: "Simulador de ROI profissional",
+      description: "Calcule o retorno do seu investimento em educação",
       cta: "Simular ROI",
     },
     {
       icon: Mail,
-      titulo: "Newsletter A Pragmática em Ação",
-      descricao: "Receba tendências semanais e dicas práticas",
+      title: "Newsletter A Pragmática em Ação",
+      description: "Receba tendências semanais e dicas práticas",
       cta: "Assinar newsletter",
     },
   ]
@@ -44,8 +44,8 @@ export function EngajamentoContinuo() {
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-center">{recurso.titulo}</h3>
-                <p className="text-sm text-muted-foreground mb-6 text-center flex-1">{recurso.descricao}</p>
+                <h3 className="text-xl font-bold mb-2 text-center">{recurso.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6 text-center flex-1">{recurso.description}</p>
                 <Button variant="outline" className="w-full bg-transparent">
                   {recurso.cta}
                 </Button>

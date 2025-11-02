@@ -5,38 +5,38 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Monitor, Video, Building2, Star } from "lucide-react"
 
 export function CarrosselModalidadesPrimeiraPos() {
-  const modalidades = [
+  const modalities = [
     {
       icon: Monitor,
-      nome: "EAD (Gravado)",
-      descricao: "Autonomia total para estudar quando quiser",
-      indicadores: {
-        flexibilidade: 5,
+      name: "EAD (Gravado)",
+      description: "Autonomia total para estudar quando quiser",
+      indicators: {
+        flexibility: 5,
         networking: 2,
-        aprendizadoGuiado: 3,
-        custoBeneficio: 5,
+        guidedLearning: 3,
+        costBenefit: 5,
       },
     },
     {
       icon: Video,
-      nome: "Ao Vivo (Online)",
-      descricao: "Interação em tempo real com professores",
-      indicadores: {
-        flexibilidade: 4,
+      name: "Ao Vivo (Online)",
+      description: "Interação em tempo real com professores",
+      indicators: {
+        flexibility: 4,
         networking: 4,
-        aprendizadoGuiado: 5,
-        custoBeneficio: 4,
+        guidedLearning: 5,
+        costBenefit: 4,
       },
     },
     {
       icon: Building2,
-      nome: "Presencial",
-      descricao: "Imersão prática e networking ao vivo",
-      indicadores: {
-        flexibilidade: 2,
+      name: "Presencial",
+      description: "Imersão prática e networking ao vivo",
+      indicators: {
+        flexibility: 2,
         networking: 5,
-        aprendizadoGuiado: 5,
-        custoBeneficio: 3,
+        guidedLearning: 5,
+        costBenefit: 3,
       },
     },
   ]
@@ -67,8 +67,8 @@ export function CarrosselModalidadesPrimeiraPos() {
           }}
         >
           <CarouselContent className="-ml-2 md:-ml-4 items-stretch">
-            {modalidades.map((modalidade, index) => {
-              const Icon = modalidade.icon
+            {modalities.map((modality, index) => {
+              const Icon = modality.icon
               return (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] md:basis-1/3 flex">
                   <Card className="h-full w-full">
@@ -78,25 +78,25 @@ export function CarrosselModalidadesPrimeiraPos() {
                           <Icon className="w-8 h-8 text-primary" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-2 text-center">{modalidade.nome}</h3>
-                      <p className="text-sm text-muted-foreground mb-6 text-center">{modalidade.descricao}</p>
+                      <h3 className="text-xl font-bold mb-2 text-center">{modality.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-6 text-center">{modality.description}</p>
 
                       <div className="space-y-3 flex-grow">
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-muted-foreground">Flexibilidade</span>
-                          {renderStars(modalidade.indicadores.flexibilidade)}
+                          {renderStars(modality.indicators.flexibility)}
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-muted-foreground">Networking</span>
-                          {renderStars(modalidade.indicadores.networking)}
+                          {renderStars(modality.indicators.networking)}
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-muted-foreground">Aprendizado guiado</span>
-                          {renderStars(modalidade.indicadores.aprendizadoGuiado)}
+                          {renderStars(modality.indicators.guidedLearning)}
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-muted-foreground">Custo-benefício</span>
-                          {renderStars(modalidade.indicadores.custoBeneficio)}
+                          {renderStars(modality.indicators.costBenefit)}
                         </div>
                       </div>
                     </CardContent>

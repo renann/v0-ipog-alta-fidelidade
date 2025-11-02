@@ -7,8 +7,8 @@ import { ChevronDown } from "lucide-react"
 
 interface Etapa {
   numero: string
-  titulo: string
-  descricao: string
+  title: string
+  description: string
   beneficios?: string[]
   badges?: string[]
   destaque?: boolean
@@ -65,7 +65,7 @@ export function Trilha({
                     className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold">{etapa.titulo}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold">{etapa.title}</h3>
                     </div>
                     <ChevronDown
                       className={`w-6 h-6 flex-shrink-0 transition-transform ${isExpanded ? "rotate-180" : ""}`}
@@ -74,7 +74,7 @@ export function Trilha({
 
                   {isExpanded && (
                     <div className="px-6 pb-6 pt-0">
-                      <p className="text-gray-700 mb-4">{etapa.descricao}</p>
+                      <p className="text-gray-700 mb-4">{etapa.description}</p>
 
                       {etapa.beneficios && etapa.beneficios.length > 0 && (
                         <ul className="space-y-2 mb-4">

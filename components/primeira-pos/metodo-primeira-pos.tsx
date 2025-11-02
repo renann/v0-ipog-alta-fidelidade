@@ -10,18 +10,18 @@ export function MetodoPrimeiraPos() {
   const diferenciais = [
     {
       icon: Target,
-      titulo: "Aprenda aplicando",
-      descricao: "O conteúdo já impacta seu dia a dia desde o primeiro módulo",
+      title: "Aprenda aplicando",
+      description: "O conteúdo já impacta seu dia a dia desde o primeiro módulo",
     },
     {
       icon: Users,
-      titulo: "Apoio docente real",
-      descricao: "Mentoria ativa em cada módulo com professores de mercado",
+      title: "Apoio docente real",
+      description: "Mentoria ativa em cada módulo com professores de mercado",
     },
     {
       icon: Award,
-      titulo: "Certificação reconhecida",
-      descricao: "Chancela IPOG há 20+ anos validada pelo mercado",
+      title: "Certificação reconhecida",
+      description: "Chancela IPOG há 20+ anos validada pelo mercado",
     },
   ]
 
@@ -56,8 +56,8 @@ export function MetodoPrimeiraPos() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{diferencial.titulo}</h3>
-                      <p className="text-sm text-muted-foreground">{diferencial.descricao}</p>
+                      <h3 className="text-xl font-bold mb-3">{diferencial.title}</h3>
+                      <p className="text-sm text-muted-foreground">{diferencial.description}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

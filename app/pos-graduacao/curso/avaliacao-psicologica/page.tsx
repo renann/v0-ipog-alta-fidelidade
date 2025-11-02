@@ -48,12 +48,12 @@ export default function AvaliacaoPsicologicaPage() {
         <Modalidades
           title="A mesma excelência, em formatos que se adaptam à sua carreira"
           subtitle="Escolha o formato que melhor se encaixa na sua rotina e objetivos profissionais."
-          modalidades={[
+          modalities={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao: "Para quem aprende melhor com a prática e valoriza o networking presencial.",
-              beneficios: [
+              title: "Presencial",
+              description: "Para quem aprende melhor com a prática e valoriza o networking presencial.",
+              benefits: [
                 "Laboratórios com protocolos originais e simulações de entrevistas.",
                 "Estações rotativas de prática supervisionada.",
                 "Interação direta e construção de uma rede profissional sólida.",
@@ -64,9 +64,9 @@ export default function AvaliacaoPsicologicaPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "On-line e Ao vivo",
-              descricao: "Para quem busca ampliar seu repertório técnico com a conveniência do ambiente digital.",
-              beneficios: [
+              title: "On-line e Ao vivo",
+              description: "Para quem busca ampliar seu repertório técnico com a conveniência do ambiente digital.",
+              benefits: [
                 "Interação em tempo real com docentes e colegas via videoconferência.",
                 "Laboratórios síncronos de casos complexos (TDAH/TEA, NRs).",
                 "Demonstrações práticas do uso de IA e scoring automatizado.",
@@ -77,9 +77,9 @@ export default function AvaliacaoPsicologicaPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "EAD",
-              descricao: "Para quem busca total autonomia para conciliar carreira e especialização.",
-              beneficios: [
+              title: "EAD",
+              description: "Para quem busca total autonomia para conciliar carreira e especialização.",
+              benefits: [
                 "Estude no seu ritmo, de onde estiver.",
                 "Acesse nosso conteúdo autoral exclusivo, criado por especialistas.",
                 "Metodologia comprovada com certificação reconhecida pelo MEC.",
@@ -93,11 +93,11 @@ export default function AvaliacaoPsicologicaPage() {
         <Trilha
           title="Uma Matriz Curricular Robusta para uma Atuação de Destaque"
           subtitle="Desenvolva competências práticas e estratégicas em uma jornada de aprendizado projetada por especialistas de mercado."
-          etapas={[
+          stages={[
             {
-              titulo: "Módulo 1: Fundamentos da Avaliação e Ética",
-              descricao: "Base sólida em conceitos, técnicas e questões éticas da avaliação psicológica",
-              beneficios: [
+              title: "Módulo 1: Fundamentos da Avaliação e Ética",
+              description: "Base sólida em conceitos, técnicas e questões éticas da avaliação psicológica",
+              benefits: [
                 "01. Introdução à Avaliação Psicológica e Questões Éticas no uso da IA",
                 "02. Técnicas de Entrevistas e Elaboração de Documentos Psicológicos com uso de IA",
                 "03. Avaliação em Psicopatologia e Saúde Mental",
@@ -107,9 +107,9 @@ export default function AvaliacaoPsicologicaPage() {
               badges: ["Fundamentos"],
             },
             {
-              titulo: "Módulo 2: Domínio de Técnicas e Contextos Específicos",
-              descricao: "Aprofundamento em técnicas avançadas e aplicação em contextos especializados",
-              beneficios: [
+              title: "Módulo 2: Domínio de Técnicas e Contextos Específicos",
+              description: "Aprofundamento em técnicas avançadas e aplicação em contextos especializados",
+              benefits: [
                 "06. Avaliação Psicológica de Crianças e Adolescentes",
                 "07. Avaliação Psicológica Pré-Cirúrgica: Imersão Prática",
                 "08. Avaliação Psicológica no Contexto Jurídico",
@@ -119,55 +119,54 @@ export default function AvaliacaoPsicologicaPage() {
                 "12. Laboratórios Práticos Integrados e Supervisão de Casos",
               ],
               badges: ["Práticas Avançadas"],
-              destaque: true,
+              highlight: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
+          ctaButton={{
+            text: "Baixar grade curricular completa",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            note: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="O Investimento que Transforma sua Trajetória Profissional"
-          subtitulo="Nossos alunos relatam impacto direto na carreira em menos de um ano após a formação."
-          estatisticas={[
+          title="O Investimento que Transforma sua Trajetória Profissional"
+          subtitle="Nossos alunos relatam impacto direto na carreira em menos de um ano após a formação."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "87%",
-              descricao: "promovidos ou recolocados",
+              value: "87%",
+              description: "promovidos ou recolocados",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "6-9 m",
-              descricao: "para promoção",
+              value: "6-9 m",
+              description: "para promoção",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "+35%",
-              descricao: "em média após formação",
+              value: "+35%",
+              description: "em média após formação",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          layoutEstatisticas="carousel"
-          servicosCarreira={[
+          statisticsLayout="carousel"
+          careerServices={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O diferencial do IPOG são os professores. Aprender com quem é referência na área e autor de testes que usamos no dia a dia não tem preço. Foi a escolha que me deu segurança para assumir casos mais complexos e ser reconhecida no mercado.",
-            autor: "Psicóloga, ex-aluna IPOG",
+          testimonial={{
+            text: "O diferencial do IPOG são os professores. Aprender com quem é referência na área e autor de testes que usamos no dia a dia não tem preço. Foi a escolha que me deu segurança para assumir casos mais complexos e ser reconhecida no mercado.",
+            author: "Psicóloga, ex-aluna IPOG",
           }}
-          botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
+          ctaButton={{
+            text: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          observacao="* Dados baseados em pesquisa interna."
+          note="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
         <section className="w-full py-16 px-4 bg-muted/30">
@@ -214,9 +213,9 @@ export default function AvaliacaoPsicologicaPage() {
           </div>
         </section>
         <Autoridade
-          titulo="Aprenda com Especialistas Reconhecidos em Avaliação Psicológica"
-          subtitulo="Nosso corpo docente é formado por autores de testes, peritos judiciais e profissionais com ampla experiência clínica e acadêmica."
-          credenciais={[
+          title="Aprenda com Especialistas Reconhecidos em Avaliação Psicológica"
+          subtitle="Nosso corpo docente é formado por autores de testes, peritos judiciais e profissionais com ampla experiência clínica e acadêmica."
+          credentials={[
             {
               icon: <Award className="h-5 w-5" />,
               texto: "Autores de Testes Psicológicos",
@@ -230,21 +229,21 @@ export default function AvaliacaoPsicologicaPage() {
               texto: "Publicações Científicas",
             },
           ]}
-          professores={[
+          professors={[
             {
-              nome: "Dra. Mariana Costa Silva",
+              name: "Dra. Mariana Costa Silva",
               area: "Avaliação Psicológica",
               bio: "Doutora em Psicologia pela USP. Autora de testes psicológicos e perita judicial há 15 anos.",
               avatar: "MC",
             },
             {
-              nome: "Dr. Ricardo Almeida",
+              name: "Dr. Ricardo Almeida",
               area: "Rorschach e Técnicas Projetivas",
               bio: "Especialista certificado em R-PAS. Supervisor clínico e docente há 12 anos.",
               avatar: "RA",
             },
             {
-              nome: "Dra. Paula Fernandes",
+              name: "Dra. Paula Fernandes",
               area: "Neuropsicologia",
               bio: "Neuropsicóloga com atuação em hospitais. Especialista em avaliação de TDAH e TEA.",
               avatar: "PF",
@@ -253,24 +252,24 @@ export default function AvaliacaoPsicologicaPage() {
         />
 
         <TrilhaAprendizado
-          etapas={[
+          stages={[
             {
-              titulo: "Pós-Graduação em Avaliação Psicológica - Fundamentos",
-              descricao:
+              title: "Pós-Graduação em Avaliação Psicológica - Fundamentos",
+              description:
                 "Construa base sólida em técnicas de avaliação, instrumentos psicométricos e laudos com certificação reconhecida pelo CFP.",
               tags: ["Instrumentos", "Laudos", "Ética"],
             },
             {
-              titulo: "Especialização em Neuropsicologia",
-              descricao:
+              title: "Especialização em Neuropsicologia",
+              description:
                 "Aprofunde em avaliação neuropsicológica, reabilitação cognitiva e intervenções baseadas em evidências.",
               tags: ["Neurociência", "Reabilitação", "Pesquisa"],
             },
             {
-              titulo: "Posicionamento no Mercado — Psicólogo Especialista",
-              descricao:
+              title: "Posicionamento no Mercado — Psicólogo Especialista",
+              description:
                 "Atue como especialista em avaliação psicológica com foco em nichos de alta demanda e remuneração competitiva.",
-              beneficios: [
+              benefits: [
                 "Credibilidade com certificações CFP",
                 "Portfólio de casos + publicações",
                 "Rede de encaminhamentos e parcerias",

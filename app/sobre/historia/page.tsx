@@ -65,70 +65,70 @@ export default function HistoriaPage() {
 
       {/* Nossos Líderes */}
       <Autoridade
-        titulo="Nossos líderes"
-        subtitulo="Conheça as pessoas que lideram a transformação educacional no IPOG"
-        credenciais={[
+        title="Nossos líderes"
+        subtitle="Conheça as pessoas que lideram a transformação educacional no IPOG"
+        credentials={[
           {
-            icone: <Award className="w-5 h-5 text-primary" />,
-            texto: "+ de 20 anos de solidez",
+            icon: <Award className="w-5 h-5 text-primary" />,
+            text: "+ de 20 anos de solidez",
           },
           {
-            icone: <Users className="w-5 h-5 text-primary" />,
-            texto: "+ de 300 mil alunos em todo o Brasil",
+            icon: <Users className="w-5 h-5 text-primary" />,
+            text: "+ de 300 mil alunos em todo o Brasil",
           },
           {
-            icone: <Building2 className="w-5 h-5 text-primary" />,
-            texto: "98% de satisfação dos alunos",
+            icon: <Building2 className="w-5 h-5 text-primary" />,
+            text: "98% de satisfação dos alunos",
           },
         ]}
-        professores={[
+        professors={[
           {
-            nome: "Leonardo José de Oliveira",
+            name: "Leonardo José de Oliveira",
             area: "Reitor do IPOG",
             bio: "Líder visionário com mais de 20 anos de experiência em educação executiva e gestão institucional.",
           },
           {
-            nome: "Maria Silva Santos",
+            name: "Maria Silva Santos",
             area: "Diretora Acadêmica",
             bio: "Especialista em metodologias ativas e inovação pedagógica, com foco em transformação digital.",
           },
           {
-            nome: "Carlos Eduardo Mendes",
+            name: "Carlos Eduardo Mendes",
             area: "Diretor de Operações",
             bio: "Gestor estratégico com expertise em expansão institucional e excelência operacional.",
           },
           {
-            nome: "Ana Paula Rodrigues",
+            name: "Ana Paula Rodrigues",
             area: "Diretora de Relacionamento",
             bio: "Profissional dedicada à experiência do aluno e construção de relacionamentos duradouros.",
           },
         ]}
-        tituloProfessores="Liderança executiva"
+        professorsTitle="Liderança executiva"
         backgroundColor="bg-background"
       />
 
       {/* Os 3 Pilares do IPOG */}
       <Beneficios
-        titulo="Os 3 Pilares do IPOG"
-        subtitulo="Nossos valores fundamentais que guiam cada decisão e ação institucional"
-        beneficios={[
+        title="Os 3 Pilares do IPOG"
+        subtitle="Nossos valores fundamentais que guiam cada decisão e ação institucional"
+        benefits={[
           {
-            icone: <Target className="w-8 h-8 text-primary" />,
-            titulo: "Nosso Propósito",
-            subtitulo: "DESENVOLVER PESSOAS PARA IMPACTAR POSITIVAMENTE A SOCIEDADE.",
-            itens: [],
+            icon: <Target className="w-8 h-8 text-primary" />,
+            title: "Nosso Propósito",
+            subtitle: "DESENVOLVER PESSOAS PARA IMPACTAR POSITIVAMENTE A SOCIEDADE.",
+            items: [],
           },
           {
-            icone: <Eye className="w-8 h-8 text-primary" />,
-            titulo: "Nossa Visão",
-            subtitulo: "OFERECER UMA EXPERIÊNCIA EDUCACIONAL DE EXCELÊNCIA PARA 1 MILHÃO DE ALUNOS ATÉ 2034.",
-            itens: [],
+            icon: <Eye className="w-8 h-8 text-primary" />,
+            title: "Nossa Visão",
+            subtitle: "OFERECER UMA EXPERIÊNCIA EDUCACIONAL DE EXCELÊNCIA PARA 1 MILHÃO DE ALUNOS ATÉ 2034.",
+            items: [],
           },
           {
-            icone: <Heart className="w-8 h-8 text-primary" />,
-            titulo: "Nossos Valores",
-            subtitulo: "",
-            itens: [
+            icon: <Heart className="w-8 h-8 text-primary" />,
+            title: "Nossos Valores",
+            subtitle: "",
+            items: [
               "VALORIZAMOS AS RELAÇÕES HUMANAS.",
               "COLABORAMOS E COMEMORAMOS.",
               "SOMOS APAIXONADOS PELO ALUNO.",
@@ -138,7 +138,7 @@ export default function HistoriaPage() {
             ],
           },
         ]}
-        corFundo="bg-muted/30"
+        backgroundColor="bg-muted/30"
       />
 
       {/* Nossa Trajetória */}

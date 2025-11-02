@@ -4,16 +4,16 @@ import { CheckCircle2, TrendingUp, Play } from "lucide-react"
 import Link from "next/link"
 
 export function AplicacaoImediataRecolocacao() {
-  const estatisticas = [
+  const statistics = [
     {
       icon: CheckCircle2,
-      valor: "83%",
-      descricao: "construíram portfólio em até 30 dias",
+      value: "83%",
+      description: "construíram portfólio em até 30 dias",
     },
     {
       icon: TrendingUp,
-      valor: "87%",
-      descricao: "conseguiram recolocação em até 4 meses",
+      value: "87%",
+      description: "conseguiram recolocação em até 4 meses",
     },
   ]
 
@@ -28,15 +28,15 @@ export function AplicacaoImediataRecolocacao() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {estatisticas.map((stat, index) => {
+          {statistics.map((stat, index) => {
             const Icon = stat.icon
             return (
               <Card key={index} className="p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
                   <Icon className="w-8 h-8 text-foreground" />
                 </div>
-                <div className="text-4xl font-bold mb-2">{stat.valor}</div>
-                <p className="text-muted-foreground">{stat.descricao}</p>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                <p className="text-muted-foreground">{stat.description}</p>
               </Card>
             )
           })}

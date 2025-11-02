@@ -7,8 +7,8 @@ import Link from "next/link"
 
 interface Modalidade {
   badge: string
-  titulo: string
-  descricao: string
+  title: string
+  description: string
   beneficios: string[]
   link: string
   buttonText: string
@@ -46,8 +46,8 @@ export function Modalidades({ title, subtitle, modalidades, backgroundColor = "b
                       {modalidade.badge}
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-2">{modalidade.titulo}</h3>
-                    <p className="text-gray-600 mb-6">{modalidade.descricao}</p>
+                    <h3 className="text-2xl font-bold mb-2">{modalidade.title}</h3>
+                    <p className="text-gray-600 mb-6">{modalidade.description}</p>
 
                     <ul className="space-y-2 mb-6 flex-grow">
                       {modalidade.beneficios.map((beneficio, idx) => (

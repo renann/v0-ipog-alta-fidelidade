@@ -43,39 +43,39 @@ export default function JovemIngressoPage() {
           secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
         />
         <Dilema
-          title="Entendemos os desafios de começar a carreira"
-          subtitle="No IPOG, transformamos suas preocupações em um plano de sucesso claro e alcançável."
-          dores={[
+          title="We understand the challenges of starting a career"
+          subtitle="At IPOG, we transform your concerns into a clear and achievable path to success."
+          problems={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
-              titulo: "Insegurança sobre o primeiro emprego?",
-              solucao:
-                "Aqui, sua carreira começa antes do diploma. Com um índice de 94% de egressos empregados na área, conectamos você ao mercado de trabalho desde os primeiros semestres.",
+              title: "Insecurity about your first job?",
+              solution:
+                "Here, your career begins before your diploma. With a 94% employment rate in the area, we connect you to the job market from your first semesters.",
             },
             {
               icon: <MapPin className="h-5 w-5" />,
-              titulo: "Incerteza sobre o que vai aprender?",
-              solucao:
-                "Nossa matriz curricular é focada na prática e totalmente transparente. Você participa de projetos reais e desenvolve as habilidades que as empresas realmente procuram.",
+              title: "Uncertainty about what you will learn?",
+              solution:
+                "Our curriculum is focused on practice and is entirely transparent. You participate in real projects and develop the skills that companies really seek.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Preocupado com custos e a rotina?",
-              solucao:
-                "Estude do seu jeito. Oferecemos modalidades EAD e Presencial que se adaptam à sua rotina, além de um simulador de bolsas para encontrar a melhor opção para o seu bolso.",
+              title: "Concerned about costs and routine?",
+              solution:
+                "Study at your own pace. We offer EAD and Presential modalities that adapt to your routine, as well as a scholarship simulator to find the best option for your pocket.",
             },
           ]}
         />
         <MetodoJovemIngresso />
         <Cursos
           badge="GRADUAÇÃO"
-          title="Escolha o curso que abre portas para seu futuro profissional"
+          title="Choose the course that opens doors to your professional future"
           cursos={[
             {
               nome: "Psicologia",
               duracao: "5 anos",
               descricao:
-                "Explore a complexidade da mente humana e prepare-se para promover bem-estar e transformação. No IPOG, você desenvolve a escuta empática e as competências para se tornar um profissional de referência na área.",
+                "Explore the complexity of the human mind and prepare yourself to promote well-being and transformation. At IPOG, you develop empathetic listening and the skills to become a reference professional in the area.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/psicologia-ead",
             },
@@ -83,7 +83,7 @@ export default function JovemIngressoPage() {
               nome: "Direito",
               duracao: "5 anos",
               descricao:
-                "Transforme argumentos em justiça e conhecimento em defesa. Aqui, você desenvolve a visão crítica e as ferramentas para se tornar um profissional de destaque, pronto para liderar e impactar positivamente a sociedade.",
+                "Transform arguments into justice and knowledge into defense. Here, you develop critical thinking and tools to become a standout professional, ready to lead and positively impact society.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/direito",
             },
@@ -91,7 +91,7 @@ export default function JovemIngressoPage() {
               nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
               descricao:
-                "Dê forma a ideias e construa o futuro das cidades. Nosso curso une criatividade e técnica para que você projete espaços inovadores, funcionais e sustentáveis, deixando sua marca no mundo.",
+                "Give shape to ideas and build the future of cities. Our course unites creativity and technique so that you can design innovative, functional, and sustainable spaces, leaving your mark on the world.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/arquitetura",
             },
@@ -104,94 +104,91 @@ export default function JovemIngressoPage() {
           }}
         />
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
-          modalidades={[
+          title="Compare the modalities and choose the one that best suits you"
+          subtitle="The same excellence graduation, with different formats — choose by your rhythm, routine, and professional goals."
+          modalities={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "EAD",
-              descricao:
-                "Comece sua graduação com flexibilidade e foco no primeiro emprego. Estude online com conteúdos exclusivos, tenha clareza de custos e conte com suporte ágil para conquistar sua vaga no mercado.",
-              beneficios: [
-                "Estude no seu ritmo; reveja aulas quando quiser",
-                "Conteúdos atualizados e interativos",
-                "Tutoria online e suporte contínuo",
-                "Certificação igual ao presencial",
+              title: "EAD",
+              description:
+                "Start your graduation with flexibility and focus on your first job. Study online with exclusive contents, have clear costs, and count on agile support to conquer your place in the market.",
+              benefits: [
+                "Study at your own pace; review classes whenever you want",
+                "Updated and interactive contents",
+                "Online tutoring and continuous support",
+                "Certification equal to presential",
               ],
               link: "/catalogo?tipo=graduacao&modalidade=ead",
-              buttonText: "Ver cursos EAD",
+              buttonText: "See EAD courses",
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao:
-                "Viva a experiência universitária completa com o prestígio do IPOG. Aprenda com professores renomados em laboratórios modernos e construa um networking valioso para acelerar sua carreira.",
-              beneficios: [
-                "Encontros presenciais",
-                "Projetos práticos",
-                "Conexões C-level",
-                "Certificação reconhecida",
+              title: "Presencial",
+              description:
+                "Experience the complete university experience with the prestige of IPOG. Learn from renowned teachers in modern laboratories and build a valuable networking to accelerate your career.",
+              benefits: [
+                "Presential meetings",
+                "Practical projects",
+                "C-level connections",
+                "Recognized certification",
               ],
               link: "/catalogo?tipo=graduacao&modalidade=presencial",
-              buttonText: "Ver cursos presenciais",
+              buttonText: "See presential courses",
             },
           ]}
         />
         <Empregabilidade
-          title="Milhares de jovens já transformaram suas carreiras"
-          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
-          estatisticas={[
+          title="Thousands of young people have already transformed their careers"
+          subtitle="Employment indicators and career services to increase your employability."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "94%",
-              descricao: "dos egressos empregados na área",
+              value: "94%",
+              description: "of graduates employed in the area",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "6 meses",
-              descricao: "tempo médio para primeiro emprego",
+              value: "6 months",
+              description: "average time to first job",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "100%",
-              descricao: "acesso a serviços de carreira",
+              value: "100%",
+              description: "access to career services",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          statisticsLayout="carousel"
+          testimonials={[
             {
-              texto:
-                "Graças aos projetos práticos e à orientação de professores que realmente estão no mercado, consegui meu primeiro estágio em Psicologia já no terceiro semestre. O IPOG me deu a confiança que eu precisava.",
-              autor: "Camila Rocha",
-              cargo: "Aluna de Psicologia",
+              text: "Thanks to practical projects and teachers' guidance who are really in the market, I got my first internship in Psychology already in the third semester. IPOG gave me the confidence I needed.",
+              author: "Camila Rocha",
+              role: "Psychology Student",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Entrei no IPOG sem experiência nenhuma e hoje, antes mesmo de me formar, já trabalho em um escritório de advocacia renomado. A metodologia prática fez toda a diferença.",
-              autor: "Lucas Mendes",
-              cargo: "Aluno de Direito",
+              text: "I entered IPOG with no experience and today, before even graduating, I already work in a renowned law office. The practical methodology made all the difference.",
+              author: "Lucas Mendes",
+              role: "Law Student",
             },
             {
-              texto:
-                "O IPOG me ensinou não só a teoria, mas como aplicar na prática desde o primeiro dia. Consegui meu primeiro projeto de arquitetura ainda no segundo ano e hoje tenho meu próprio escritório.",
-              autor: "Beatriz Santos",
-              cargo: "Egressa de Arquitetura",
+              text: "IPOG taught me not only theory but also how to apply in practice from day one. I got my first architecture project even in the second year and today I have my own office.",
+              author: "Beatriz Santos",
+              role: "Graduate in Architecture",
             },
           ]}
           bgColor="bg-background"
         />
         <SuporteAcompanhamento />
         <AcaoFinal
-          title="A escolha que conecta você ao sucesso."
-          descricao="Tudo o que você precisa para construir uma carreira de impacto está aqui. Dê o primeiro passo na direção do seu futuro."
-          botaoPrimario={{
-            texto: "Garanta sua vaga agora",
+          title="The choice that connects you to success."
+          description="Everything you need to build an impactful career is here. Take the first step towards your future."
+          primaryButton={{
+            text: "Secure your spot now",
             href: "/catalogo?tipo=graduacao&persona=jovem-ingresso",
           }}
-          botaoSecundario={{
-            texto: "Falar com consultor",
+          secondaryButton={{
+            text: "Talk to a consultant",
             onClick: "openAssistantForConsultor",
           }}
         />

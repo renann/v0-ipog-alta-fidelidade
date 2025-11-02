@@ -83,9 +83,9 @@ export default function DireitoPage() {
           modalidades={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "Encontros Presenciais (Segunda a Quinta)",
-              descricao: "Aproveite a interação direta com professores e colegas",
-              beneficios: [
+              title: "Encontros Presenciais (Segunda a Quinta)",
+              description: "Aproveite a interação direta com professores e colegas",
+              benefits: [
                 "Aproveite a interação direta com professores e colegas em salas de aula modernas",
                 "Construa um networking valioso",
                 "Vivencie a prática em nossa infraestrutura de ponta",
@@ -95,9 +95,9 @@ export default function DireitoPage() {
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Aulas Digitais (Sexta-feira)",
-              descricao: "Flexibilidade para assistir no seu horário",
-              beneficios: [
+              title: "Aulas Digitais (Sexta-feira)",
+              description: "Flexibilidade para assistir no seu horário",
+              benefits: [
                 "Tenha a liberdade de assistir às aulas de sexta-feira em nossa moderna plataforma digital",
                 "Ao vivo ou gravadas",
                 "No horário que for mais produtivo para você",
@@ -109,173 +109,164 @@ export default function DireitoPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Comprovam"
-          subtitulo="Nossos egressos se destacam nos melhores escritórios e concursos públicos do país, comprovando que a formação IPOG acelera a sua carreira."
-          estatisticas={[
+          title="Resultados que Comprovam"
+          subtitle="Nossos egressos se destacam nos melhores escritórios e concursos públicos do país, comprovando que a formação IPOG acelera a sua carreira."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "98%",
-              descricao: "de satisfação",
+              value: "98%",
+              description: "de satisfação",
               label: "SATISFAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "+300 mil",
-              descricao: "alunos no Brasil",
+              value: "+300 mil",
+              description: "alunos no Brasil",
               label: "ALUNOS*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "20 anos",
-              descricao: "de tradição",
+              value: "20 anos",
+              description: "de tradição",
               label: "EXPERIÊNCIA*",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          statisticsLayout="carousel"
+          testimonials={[
             {
-              texto:
-                "A formação em Direito no IPOG me preparou para os desafios reais do mercado. Passei na OAB de primeira e hoje trabalho em um dos maiores escritórios de advocacia do país.",
-              autor: "Fernanda Costa",
-              cargo: "Advogada Corporativa",
+              text: "A formação em Direito no IPOG me preparou para os desafios reais do mercado. Passei na OAB de primeira e hoje trabalho em um dos maiores escritórios de advocacia do país.",
+              author: "Fernanda Costa",
+              role: "Advogada Corporativa",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Os professores do IPOG são referências no mercado jurídico. Aprendi com quem realmente atua e isso fez toda diferença na minha aprovação em concurso público. Hoje sou juiz federal.",
-              autor: "Marcelo Santos",
-              cargo: "Juiz Federal",
+              text: "Os professores do IPOG são referências no mercado jurídico. Aprendi com quem realmente atua e isso fez toda diferença na minha aprovação em concurso público. Hoje sou juiz federal.",
+              author: "Marcelo Santos",
+              role: "Juiz Federal",
             },
             {
-              texto:
-                "O networking que construí no IPOG foi fundamental. Conheci meus sócios durante a graduação e hoje temos nosso próprio escritório com mais de 50 clientes corporativos.",
-              autor: "Juliana Alves",
-              cargo: "Sócia de Escritório de Advocacia",
+              text: "O networking que construí no IPOG foi fundamental. Conheci meus sócios durante a graduação e hoje temos nosso próprio escritório com mais de 50 clientes corporativos.",
+              author: "Juliana Alves",
+              role: "Sócia de Escritório de Advocacia",
             },
           ]}
           bgColor="bg-background"
         />
 
         <Trilha
-          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
-          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
-          etapas={[
+          title="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
+          subtitle="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
+          stages={[
             {
-              titulo: "Eixo de Formação Fundamental (1º ao 2º Período)",
-              descricao:
+              title: "Eixo de Formação Fundamental (1º ao 2º Período)",
+              description:
                 "Construa uma base sólida com disciplinas como Teoria da Constituição, Introdução ao Estudo do Direito e Ciência Política, desenvolvendo uma visão crítica e humanística do sistema jurídico.",
-              beneficios: [
+              benefits: [
                 "Compreensão dos principais conceitos jurídicos",
                 "Visão crítica sobre o sistema legal brasileiro",
               ],
               badges: ["1º e 2º semestre"],
             },
             {
-              titulo: "Eixo de Formação Profissional (3º ao 6º Período)",
-              descricao:
+              title: "Eixo de Formação Profissional (3º ao 6º Período)",
+              description:
                 "Aprofunde-se nas grandes áreas do Direito, como Civil, Penal, Empresarial e do Trabalho, aprendendo a analisar doutrinas e jurisprudências de forma harmoniosa e coerente para solucionar casos complexos.",
-              beneficios: ["Domínio das principais áreas do direito", "Análise de jurisprudência"],
+              benefits: ["Domínio das principais áreas do direito", "Análise de jurisprudência"],
               badges: ["3º ao 6º semestre"],
             },
             {
-              titulo: "Eixo de Formação Prático-Profissional (7º ao 10º Período)",
-              descricao:
+              title: "Eixo de Formação Prático-Profissional (7º ao 10º Período)",
+              description:
                 "Domine as técnicas forenses com disciplinas de Prática Forense, Conciliação, Mediação e Arbitragem. Desenvolva habilidades práticas para o exercício da profissão em um cenário globalizado e tecnológico.",
-              beneficios: ["Experiência em peticionamento", "Simulações de audiências"],
+              benefits: ["Experiência em peticionamento", "Simulações de audiências"],
               badges: ["7º ao 10º semestre"],
             },
             {
-              titulo: "Estágio Supervisionado e TCC (a partir do 6º Período)",
-              descricao:
+              title: "Estágio Supervisionado e TCC (a partir do 6º Período)",
+              description:
                 "Aplique seu conhecimento em situações reais por meio do Estágio Supervisionado e consolide sua jornada acadêmica com o Trabalho de Conclusão de Curso, saindo pronto para os desafios do mercado.",
-              beneficios: ["300h de estágio supervisionado", "Curso preparatório OAB incluso"],
+              benefits: ["300h de estágio supervisionado", "Curso preparatório OAB incluso"],
               badges: ["6º ao 10º semestre"],
-              destaque: true,
+              highlight: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
+          ctaButton={{
+            text: "Baixar grade curricular completa",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            note: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
         />
 
         <Autoridade
-          titulo="Corpo Docente do Curso"
-          subtitulo="Aprenda com magistrados, advogados e professores de referência"
-          credenciais={[
+          title="Corpo Docente do Curso"
+          subtitle="Aprenda com magistrados, advogados e professores de referência"
+          credentials={[
             "Magistrados e desembargadores em atividade",
             "Advogados de escritórios renomados",
             "Mestres e Doutores em Direito",
             "Experiência em grandes casos e tribunais superiores",
           ]}
-          professores={[
+          professors={[
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Eduardo Carvalho Neto",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Eduardo Carvalho Neto",
               area: "Direito Constitucional",
-              descricao:
+              description:
                 "Desembargador do TJ-SP, Doutor em Direito Constitucional pela USP, com mais de 25 anos de magistratura e autor de obras de referência na área.",
-              especialidades: ["Direito Constitucional", "Controle de Constitucionalidade", "Direitos Fundamentais"],
-              biografia:
-                "Desembargador do Tribunal de Justiça de São Paulo desde 2015, com mais de 25 anos de carreira na magistratura. Doutor em Direito Constitucional pela Universidade de São Paulo (USP) e Mestre pela PUC-SP. Autor de três livros sobre controle de constitucionalidade e direitos fundamentais, amplamente utilizados em cursos de graduação e pós-graduação. Professor convidado em diversos programas de mestrado e preparatórios para magistratura.",
+              specialties: ["Direito Constitucional", "Controle de Constitucionalidade", "Direitos Fundamentais"],
+              bio: "Desembargador do Tribunal de Justiça de São Paulo desde 2015, com mais de 25 anos de carreira na magistratura. Doutor em Direito Constitucional pela Universidade de São Paulo (USP) e Mestre pela PUC-SP. Autor de três livros sobre controle de constitucionalidade e direitos fundamentais, amplamente utilizados em cursos de graduação e pós-graduação. Professor convidado em diversos programas de mestrado e preparatórios para magistratura.",
               linkedin: "https://linkedin.com/in/eduardo-carvalho-neto",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dra. Mariana Rodrigues Lima",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dra. Mariana Rodrigues Lima",
               area: "Direito Penal",
-              descricao:
+              description:
                 "Juíza Federal, Mestre em Direito Penal, especialista em crimes econômicos e lavagem de dinheiro, com atuação em casos de grande repercussão nacional.",
-              especialidades: ["Direito Penal", "Crimes Econômicos", "Lavagem de Dinheiro"],
-              biografia:
-                "Juíza Federal desde 2012, com atuação em varas criminais especializadas em crimes contra o sistema financeiro e lavagem de dinheiro. Mestre em Direito Penal pela UERJ, com pesquisas sobre criminalidade econômica. Participou de casos de grande repercussão nacional envolvendo corrupção e organizações criminosas. Ministra cursos de formação para magistrados e membros do Ministério Público.",
+              specialties: ["Direito Penal", "Crimes Econômicos", "Lavagem de Dinheiro"],
+              bio: "Juíza Federal desde 2012, com atuação em varas criminais especializadas em crimes contra o sistema financeiro e lavagem de dinheiro. Mestre em Direito Penal pela UERJ, com pesquisas sobre criminalidade econômica. Participou de casos de grande repercussão nacional envolvendo corrupção e organizações criminosas. Ministra cursos de formação para magistrados e membros do Ministério Público.",
               linkedin: "https://linkedin.com/in/mariana-rodrigues-lima",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Ricardo Almeida Santos",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Ricardo Almeida Santos",
               area: "Direito Civil e Processo Civil",
-              descricao:
+              description:
                 "Sócio de escritório de advocacia empresarial, Doutor em Direito Civil, especialista em contratos complexos e litígios empresariais de alto valor.",
-              especialidades: ["Direito Civil", "Contratos", "Processo Civil"],
-              biografia:
-                "Sócio do escritório Santos & Associados, um dos maiores escritórios de advocacia empresarial do país. Doutor em Direito Civil pela USP, com tese sobre contratos empresariais complexos. Atua há 18 anos em litígios de alto valor e assessoria jurídica a grandes corporações. Árbitro da Câmara de Arbitragem da B3 e professor de Direito Civil e Processo Civil em cursos de pós-graduação.",
+              specialties: ["Direito Civil", "Contratos", "Processo Civil"],
+              bio: "Sócio do escritório Santos & Associados, um dos maiores escritórios de advocacia empresarial do país. Doutor em Direito Civil pela USP, com tese sobre contratos empresariais complexos. Atua há 18 anos em litígios de alto valor e assessoria jurídica a grandes corporações. Árbitro da Câmara de Arbitragem da B3 e professor de Direito Civil e Processo Civil em cursos de pós-graduação.",
               linkedin: "https://linkedin.com/in/ricardo-almeida-santos",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Fernando Henrique Costa",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Fernando Henrique Costa",
               area: "Direito Trabalhista",
-              descricao:
+              description:
                 "Juiz do Trabalho, Mestre em Direito do Trabalho, especialista em relações sindicais e reforma trabalhista, com vasta experiência em dissídios coletivos.",
-              especialidades: ["Direito do Trabalho", "Relações Sindicais", "Reforma Trabalhista"],
-              biografia:
-                "Juiz do Trabalho desde 2010, atualmente atuando no Tribunal Regional do Trabalho da 2ª Região (SP). Mestre em Direito do Trabalho pela PUC-SP, com pesquisas sobre a reforma trabalhista e seus impactos. Especialista em dissídios coletivos e negociações sindicais. Autor de artigos sobre direito sindical e professor em cursos preparatórios para magistratura do trabalho.",
+              specialties: ["Direito do Trabalho", "Relações Sindicais", "Reforma Trabalhista"],
+              bio: "Juiz do Trabalho desde 2010, atualmente atuando no Tribunal Regional do Trabalho da 2ª Região (SP). Mestre em Direito do Trabalho pela PUC-SP, com pesquisas sobre a reforma trabalhista e seus impactos. Especialista em dissídios coletivos e negociações sindicais. Autor de artigos sobre direito sindical e professor em cursos preparatórios para magistratura do trabalho.",
               linkedin: "https://linkedin.com/in/fernando-henrique-costa",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dra. Patrícia Mendes Oliveira",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dra. Patrícia Mendes Oliveira",
               area: "Direito Tributário",
-              descricao:
+              description:
                 "Advogada tributarista, Mestre em Direito Tributário, sócia de escritório especializado, com atuação em planejamento tributário e contencioso fiscal.",
-              especialidades: ["Direito Tributário", "Planejamento Tributário", "Contencioso Fiscal"],
-              biografia:
-                "Sócia do escritório Oliveira Advogados Tributários, especializado em consultoria e contencioso fiscal. Mestre em Direito Tributário pela FGV-SP, com pesquisas sobre reforma tributária. Atua há 15 anos assessorando grandes empresas em planejamento tributário e defesas em processos administrativos e judiciais. Palestrante em congressos nacionais de direito tributário.",
+              specialties: ["Direito Tributário", "Planejamento Tributário", "Contencioso Fiscal"],
+              bio: "Sócia do escritório Oliveira Advogados Tributários, especializado em consultoria e contencioso fiscal. Mestre em Direito Tributário pela FGV-SP, com pesquisas sobre reforma tributária. Atua há 15 anos assessorando grandes empresas em planejamento tributário e defesas em processos administrativos e judiciais. Palestrante em congressos nacionais de direito tributário.",
               linkedin: "https://linkedin.com/in/patricia-mendes-oliveira",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Carlos Alberto Ferreira",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Carlos Alberto Ferreira",
               area: "Direito Empresarial",
-              descricao:
+              description:
                 "Advogado empresarial, Doutor em Direito Comercial, especialista em fusões e aquisições, recuperação judicial e direito societário.",
-              especialidades: ["Direito Empresarial", "M&A", "Recuperação Judicial"],
-              biografia:
-                "Sócio-fundador do escritório Ferreira & Associados, com mais de 20 anos de experiência em direito empresarial. Doutor em Direito Comercial pela USP, especialista em operações de fusões e aquisições (M&A) e processos de recuperação judicial. Assessorou mais de 50 operações de M&A e conduziu recuperações judiciais de empresas de médio e grande porte. Professor de Direito Empresarial em programas de MBA.",
+              specialties: ["Direito Empresarial", "M&A", "Recuperação Judicial"],
+              bio: "Sócio-fundador do escritório Ferreira & Associados, com mais de 20 anos de experiência em direito empresarial. Doutor em Direito Comercial pela USP, especialista em operações de fusões e aquisições (M&A) e processos de recuperação judicial. Assessorou mais de 50 operações de M&A e conduziu recuperações judiciais de empresas de médio e grande porte. Professor de Direito Empresarial em programas de MBA.",
               linkedin: "https://linkedin.com/in/carlos-alberto-ferreira",
             },
           ]}

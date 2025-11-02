@@ -5,18 +5,18 @@ export function ProcessoTransparente() {
   const estatisticas = [
     {
       icon: Award,
-      valor: "95%",
-      descricao: "dos créditos reconhecidos em média",
+      value: "95%",
+      description: "dos créditos reconhecidos em média",
     },
     {
       icon: Clock,
-      valor: "30 dias",
-      descricao: "para conclusão do processo completo",
+      value: "30 dias",
+      description: "para conclusão do processo completo",
     },
     {
       icon: TrendingUp,
-      valor: "18 meses",
-      descricao: "de economia média de estudo",
+      value: "18 meses",
+      description: "de economia média de estudo",
     },
   ]
 
@@ -37,8 +37,8 @@ export function ProcessoTransparente() {
                     <Icon className="w-8 h-8 text-foreground" />
                   </div>
                 </div>
-                <div className="text-4xl font-bold mb-2">{stat.valor}</div>
-                <p className="text-sm text-muted-foreground">{stat.descricao}</p>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                <p className="text-sm text-muted-foreground">{stat.description}</p>
               </Card>
             )
           })}

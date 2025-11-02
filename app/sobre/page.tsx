@@ -133,40 +133,40 @@ export default function SobrePage() {
             {/* Tab: Governança */}
             <TabsContent value="governanca">
               <Autoridade
-                titulo="Nossa Governança"
-                subtitulo="Liderança comprometida com excelência e inovação educacional"
-                credenciais={[
+                title="Nossa Governança"
+                subtitle="Liderança comprometida com excelência e inovação educacional"
+                credentials={[
                   {
-                    icone: <Shield className="w-5 h-5 text-primary" />,
-                    texto: "Certificação MEC",
+                    icon: <Shield className="w-5 h-5 text-primary" />,
+                    text: "Certificação MEC",
                   },
                   {
-                    icone: <Award className="w-5 h-5 text-primary" />,
-                    texto: "ISO 9001:2015",
+                    icon: <Award className="w-5 h-5 text-primary" />,
+                    text: "ISO 9001:2015",
                   },
                   {
-                    icone: <BookOpen className="w-5 h-5 text-primary" />,
-                    texto: "20+ anos de experiência",
+                    icon: <BookOpen className="w-5 h-5 text-primary" />,
+                    text: "20+ anos de experiência",
                   },
                 ]}
-                professores={[
+                professors={[
                   {
-                    nome: "Dr. Carlos Eduardo Silva",
+                    name: "Dr. Carlos Eduardo Silva",
                     bio: "CEO e fundador do IPOG. Doutor em Educação pela USP com mais de 25 anos de experiência em gestão educacional.",
                     area: "CEO",
                   },
                   {
-                    nome: "Dra. Maria Fernanda Costa",
+                    name: "Dra. Maria Fernanda Costa",
                     bio: "Diretora Acadêmica. Doutora em Pedagogia com especialização em metodologias ativas de aprendizagem.",
                     area: "Diretora Acadêmica",
                   },
                   {
-                    nome: "Prof. João Pedro Almeida",
+                    name: "Prof. João Pedro Almeida",
                     bio: "Diretor de Inovação. Mestre em Tecnologia Educacional e especialista em transformação digital.",
                     area: "Diretor de Inovação",
                   },
                 ]}
-                tituloProfessores="Conheça nossa liderança executiva"
+                professorsTitle="Conheça nossa liderança executiva"
                 backgroundColor="bg-background"
               />
             </TabsContent>
@@ -242,14 +242,14 @@ export default function SobrePage() {
 
       {/* Nosso Método e Diferenciais */}
       <Beneficios
-        titulo="Nosso método e diferenciais"
-        subtitulo="O que nos torna referência em educação de qualidade"
-        beneficios={[
+        title="Nosso método e diferenciais"
+        subtitle="O que nos torna referência em educação de qualidade"
+        benefits={[
           {
-            icone: <Target className="w-8 h-8 text-primary" />,
-            titulo: "Metodologia para Diferenciar",
-            subtitulo: "Conhecimento que se aplica hoje e transforma o amanhã.",
-            itens: [
+            icon: <Target className="w-8 h-8 text-primary" />,
+            title: "Metodologia para Diferenciar",
+            subtitle: "Conhecimento que se aplica hoje e transforma o amanhã.",
+            items: [
               "Teoria e Prática: Unimos teorias e ferramentas em uma metodologia simples e efetiva.",
               "Foco Prático: O que você aprende em aula é pensado para virar ação imediata na sua carreira.",
               "Conteúdo Autoral: Nossas aulas são criadas por quem ensina, alinhadas com as exigências do mercado.",
@@ -257,62 +257,62 @@ export default function SobrePage() {
             ],
           },
           {
-            icone: <Users className="w-8 h-8 text-primary" />,
-            titulo: "Professores que Transformam",
-            subtitulo: "Aprenda com quem já chegou lá e agora mostra o caminho.",
-            itens: [
+            icon: <Users className="w-8 h-8 text-primary" />,
+            title: "Professores que Transformam",
+            subtitle: "Aprenda com quem já chegou lá e agora mostra o caminho.",
+            items: [
               "Docentes de Mercado: Aprenda com mestres e doutores que são líderes e executivos em suas áreas, trazendo a realidade do mercado para dentro da sala de aula.",
               "Networking de Alto Nível: Conecte-se a profissionais que são referência e construa uma rede que abre portas.",
               "Suporte Eficiente: Receba o apoio de professores, tutores e coordenadores que acompanham sua jornada de perto.",
             ],
           },
           {
-            icone: <Lightbulb className="w-8 h-8 text-primary" />,
-            titulo: "Inovação que Facilita",
-            subtitulo: "Tecnologia que torna o aprendizado mais acessível e eficiente.",
-            itens: [
+            icon: <Lightbulb className="w-8 h-8 text-primary" />,
+            title: "Inovação que Facilita",
+            subtitle: "Tecnologia que torna o aprendizado mais acessível e eficiente.",
+            items: [
               "Plataforma Intuitiva: Acesse suas aulas, materiais e atividades de forma simples e rápida, de qualquer lugar.",
               "Conteúdo Sempre Atualizado: Nossos cursos acompanham as mudanças do mercado, garantindo que você aprenda o que é relevante agora.",
               "Flexibilidade Total: Estude no seu ritmo, com formatos que se adaptam à sua rotina e aos seus objetivos.",
             ],
           },
         ]}
-        corFundo="bg-background"
+        backgroundColor="bg-background"
       />
 
       {/* Impacto e Presença no Mercado */}
-      <ResultadosComprovados titulo="Conhecimento que gera resultados reais" />
+      <ResultadosComprovados title="Conhecimento que gera resultados reais" />
 
       {/* O Que Dizem Nossos Alunos */}
       <DepoimentosDeTexto
-        titulo="O que dizem nossos protagonistas"
-        depoimentos={[
+        title="O que dizem nossos protagonistas"
+        testimonials={[
           {
-            nome: "Ana Paula S.",
-            cargo: "MBA em Gestão de Projetos",
+            name: "Ana Paula S.",
+            role: "MBA em Gestão de Projetos",
             area: "",
-            depoimento:
+            testimonial:
               "A decisão foi fácil: eu queria aprender com o professor que é referência na minha área. O networking e a aplicação imediata do conteúdo me garantiram uma promoção em menos de um ano.",
-            ganho: "Resultado: Promoção para Gerente Sênior e +40% de aumento salarial.",
+            gain: "Resultado: Promoção para Gerente Sênior e +40% de aumento salarial.",
           },
           {
-            nome: "Carlos Eduardo L.",
-            cargo: "Curso de Extensão em Power BI",
+            name: "Carlos Eduardo L.",
+            role: "Curso de Extensão em Power BI",
             area: "",
-            depoimento:
+            testimonial:
               "Como profissional pragmática, eu precisava de algo que eu possa usar amanhã no meu trabalho. O curso de extensão foi direto ao ponto e o retorno sobre o investimento foi imediato.",
-            ganho: "Resultado: Otimização de processos e reconhecimento pela liderança.",
+            gain: "Resultado: Otimização de processos e reconhecimento pela liderança.",
           },
           {
-            nome: "Mariana C.",
-            cargo: "Pós-Graduação em Neuropsicologia",
+            name: "Mariana C.",
+            role: "Pós-Graduação em Neuropsicologia",
             area: "",
-            depoimento:
+            testimonial:
               "Fazer a transição de carreira era um grande desafio. O IPOG me deu a segurança que eu precisava, com uma trilha clara, mentoria e o peso de uma certificação reconhecida pelo mercado.",
-            ganho: "Resultado: Transição de carreira bem-sucedida para a área clínica.",
+            gain: "Resultado: Transição de carreira bem-sucedida para a área clínica.",
           },
         ]}
-        corFundo="bg-muted/30"
+        backgroundColor="bg-muted/30"
       />
 
       <Footer />

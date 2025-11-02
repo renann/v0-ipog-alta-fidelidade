@@ -67,32 +67,30 @@ export default function PosGraduacaoPage() {
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8" />,
-              titulo: "Primeira Pós / Especialização",
-              dores: "Seu objetivo: Diferenciar-se na área com conhecimento prático e assumir projetos mais complexos.",
-              promessa: "",
-              ganho:
-                "A solução IPOG: Aprenda com docentes praticantes, comprove o ROI do seu investimento e ganhe reconhecimento de mercado.",
+              title: "Primeira Pós / Especialização",
+              problems:
+                "Seu objetivo: Diferenciar-se na área com conhecimento prático e assumir projetos mais complexos.",
+              promise: "",
+              gain: "A solução IPOG: Aprenda com docentes praticantes, comprove o ROI do seu investimento e ganhe reconhecimento de mercado.",
               cta: "Descubra sua primeira pós",
               href: "/pos-graduacao/primeira-pos",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8" />,
-              titulo: "Transição de Área",
-              dores:
+              title: "Transição de Área",
+              problems:
                 "Seu objetivo: Migrar de carreira com segurança, aplicando novas competências de forma estruturada.",
-              promessa: "",
-              ganho:
-                "A solução IPOG: Conte com trilhas de nivelamento, mentoria de especialistas e projetos aplicados para validar sua transição.",
+              promise: "",
+              gain: "A solução IPOG: Conte com trilhas de nivelamento, mentoria de especialistas e projetos aplicados para validar sua transição.",
               cta: "Planeje sua transição",
               href: "/pos-graduacao/transicao-area",
             },
             {
               icon: <TrendingUp className="w-8 h-8" />,
-              titulo: "Lifelong / Aluno+",
-              dores: "Seu objetivo: Ampliar seu portfólio de especializações e reforçar sua autoridade no mercado.",
-              promessa: "",
-              ganho:
-                "A solução IPOG: Aproveite os benefícios exclusivos do programa IPOG+, com roteiros personalizados e condições especiais para continuar sua jornada.",
+              title: "Lifelong / Aluno+",
+              problems: "Seu objetivo: Ampliar seu portfólio de especializações e reforçar sua autoridade no mercado.",
+              promise: "",
+              gain: "A solução IPOG: Aproveite os benefícios exclusivos do programa IPOG+, com roteiros personalizados e condições especiais para continuar sua jornada.",
               cta: "Conheça o IPOG+",
               href: "/pos-graduacao/lifelong-learning",
             },
@@ -108,7 +106,7 @@ export default function PosGraduacaoPage() {
             {
               nome: "Avaliação Psicológica",
               duracao: "18 meses",
-              descricao:
+              description:
                 "Garanta uma competência fundamental para a psicologia e abra excelentes portas no mercado de trabalho.",
               modalidade: "Ao Vivo",
               link: "/pos-graduacao/curso/avaliacao-psicologica",
@@ -116,7 +114,7 @@ export default function PosGraduacaoPage() {
             {
               nome: "Intervenção ABA Aplicada ao Transtorno do Espectro Autista",
               duracao: "12 meses",
-              descricao:
+              description:
                 "Aprenda como orientar crianças e adultos diagnosticados com TEA através da análise do comportamento aplicada.",
               modalidade: "Ao Vivo",
               link: "/pos-graduacao/curso/intervencao-aba",
@@ -124,7 +122,7 @@ export default function PosGraduacaoPage() {
             {
               nome: "Engenharia Estrutural e Fundações",
               duracao: "12 meses",
-              descricao: "Transforme conhecimento técnico em protagonismo no canteiro de obras.",
+              description: "Transforme conhecimento técnico em protagonismo no canteiro de obras.",
               modalidade: "Presencial",
               link: "/pos-graduacao/curso/engenharia-estrutural",
             },
@@ -139,97 +137,97 @@ export default function PosGraduacaoPage() {
         <Beneficios
           title="Sua jornada de evolução profissional não para"
           subtitle="O programa IPOG+ é o nosso compromisso com seu crescimento contínuo. Alunos e ex-alunos têm acesso a trilhas personalizadas, condições especiais e uma rede premium para acelerar sua carreira."
-          beneficios={[
+          benefits={[
             {
-              icone: <Gem className="w-8 h-8" />,
-              titulo: "Especialize-se",
-              subtitulo: "Conquiste sua primeira certificação e construa um portfólio sólido.",
-              itens: [],
+              icon: <Gem className="w-8 h-8" />,
+              title: "Especialize-se",
+              subtitle: "Conquiste sua primeira certificação e construa um portfólio sólido.",
+              items: [],
             },
             {
-              icone: <GraduationCap className="w-8 h-8" />,
-              titulo: "Aprofunde-se",
-              subtitulo: "Participe de mentorias e práticas avançadas para ganhar reconhecimento.",
-              itens: [],
+              icon: <GraduationCap className="w-8 h-8" />,
+              title: "Aprofunde-se",
+              subtitle: "Participe de mentorias e práticas avançadas para ganhar reconhecimento.",
+              items: [],
             },
             {
-              icone: <Globe className="w-8 h-8" />,
-              titulo: "Lidere",
-              subtitulo: "Desenvolva visão estratégica com trilhas e networking executivo.",
-              itens: [],
+              icon: <Globe className="w-8 h-8" />,
+              title: "Lidere",
+              subtitle: "Desenvolva visão estratégica com trilhas e networking executivo.",
+              items: [],
             },
             {
-              icone: <Brain className="w-8 h-8" />,
-              titulo: "Evolua Sempre",
-              subtitulo: "Acesse nossa comunidade exclusiva e benefícios para continuar aprendendo.",
-              itens: [],
+              icon: <Brain className="w-8 h-8" />,
+              title: "Evolua Sempre",
+              subtitle: "Acesse nossa comunidade exclusiva e benefícios para continuar aprendendo.",
+              items: [],
             },
           ]}
-          textoBotao="Conheça os benefícios IPOG+"
-          onClickBotao={openAssistantForConsultor}
-          corFundo="bg-muted/30"
+          buttonText="Conheça os benefícios IPOG+"
+          onClickButton={openAssistantForConsultor}
+          backgroundColor="bg-muted/30"
         />
         <Trilha
           title="Construa sua jornada de especialização e liderança"
           subtitle="Veja como sua evolução acontece dentro do ecossistema IPOG"
-          etapas={[
+          stages={[
             {
-              numero: "1",
-              titulo: "Graduação",
-              descricao: "Base e certificação",
-              beneficios: ["Portfólio", "Networking"],
+              number: "1",
+              title: "Graduação",
+              description: "Base e certificação",
+              benefits: ["Portfólio", "Networking"],
             },
             {
-              numero: "2",
-              titulo: "Pós-Graduação",
-              descricao: "Prática e reconhecimento",
-              beneficios: ["Mentoria", "Certificação"],
-              destaque: true,
+              number: "2",
+              title: "Pós-Graduação",
+              description: "Prática e reconhecimento",
+              benefits: ["Mentoria", "Certificação"],
+              highlight: true,
             },
             {
-              numero: "3",
-              titulo: "MBA ou Mestrado",
-              descricao: "Estratégia e posicionamento",
-              beneficios: ["Networking", "Liderança"],
+              number: "3",
+              title: "MBA ou Mestrado",
+              description: "Estratégia e posicionamento",
+              benefits: ["Networking", "Liderança"],
             },
             {
-              numero: "4",
-              titulo: "Lifelong / IPOG+",
-              descricao: "Mentoria contínua",
-              beneficios: ["Mentoria", "Comunidade"],
+              number: "4",
+              title: "Lifelong / IPOG+",
+              description: "Mentoria contínua",
+              benefits: ["Mentoria", "Comunidade"],
             },
           ]}
-          onClickBotao={openAssistantForConsultor}
-          textoBotao="Monte sua trilha"
+          onClickButton={openAssistantForConsultor}
+          buttonText="Monte sua trilha"
         />
         <Empregabilidade
           title="O investimento que acelera sua carreira"
           subtitle="No IPOG, seu crescimento é mensurável. Veja como a especialização impacta diretamente seu salário e posição no mercado, com base em dados de nossos egressos."
-          estatisticas={[
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "87%",
-              descricao: "promovidos ou recolocados em 12 meses",
+              value: "87%",
+              description: "promovidos ou recolocados em 12 meses",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "6-9 meses",
-              descricao: "tempo médio para promoção",
+              value: "6-9 meses",
+              description: "tempo médio para promoção",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "+35%",
-              descricao: "aumento salarial médio",
+              value: "+35%",
+              description: "aumento salarial médio",
             },
           ]}
-          layoutEstatisticas="carousel"
-          servicosCarreira={[
+          statisticsLayout="carousel"
+          careerServices={[
             "Revisão de currículo e LinkedIn",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          botaoCta={{
-            texto: "Falar com consultor de carreira",
+          ctaButton={{
+            text: "Falar com consultor de carreira",
             onClick: openAssistantForConsultor,
           }}
           bgColor="bg-background"
@@ -238,98 +236,96 @@ export default function PosGraduacaoPage() {
         <ResultadosReais
           title="Resultados que comprovam: a escolha que conecta você ao sucesso."
           subtitle="Nossos alunos confirmam o impacto de uma formação focada em excelência, networking e aplicabilidade."
-          estatisticas={[
+          statistics={[
             {
-              icone: <TrendingUp className="w-12 h-12 text-primary" />,
-              valor: "89%",
+              icon: <TrendingUp className="w-12 h-12 text-primary" />,
+              value: "89%",
               label: "Avanço na carreira",
-              descricao: "Em menos de 6 meses após conclusão",
+              description: "Em menos de 6 meses após conclusão",
             },
             {
-              icone: <Users className="w-12 h-12 text-primary" />,
-              valor: "95%",
+              icon: <Users className="w-12 h-12 text-primary" />,
+              value: "95%",
               label: "Empregados na área",
-              descricao: "Egressos atuando na área de formação",
+              description: "Egressos atuando na área de formação",
             },
             {
-              icone: <Building2 className="w-12 h-12 text-primary" />,
-              valor: "+2.000",
+              icon: <Building2 className="w-12 h-12 text-primary" />,
+              value: "+2.000",
               label: "Empresas parceiras",
-              descricao: "Rede de egressos IPOG",
+              description: "Rede de egressos IPOG",
             },
             {
-              icone: <Award className="w-12 h-12 text-primary" />,
-              valor: "20+",
+              icon: <Award className="w-12 h-12 text-primary" />,
+              value: "20+",
               label: "Anos de experiência",
-              descricao: "Formando especialistas reconhecidos",
+              description: "Formando especialistas reconhecidos",
             },
           ]}
-          depoimentos={[
+          testimonials={[
             {
-              tipo: "simples",
-              texto:
-                "O MBA IPOG foi decisivo para minha promoção. Professores atuantes no mercado fazem toda a diferença na aplicação prática do conhecimento.",
-              nome: "Carlos Mendes",
-              cargo: "MBA em Gestão - Turma 2023",
+              type: "simples",
+              text: "O MBA IPOG foi decisivo para minha promoção. Professores atuantes no mercado fazem toda a diferença na aplicação prática do conhecimento.",
+              name: "Carlos Mendes",
+              role: "MBA em Gestão - Turma 2023",
             },
             {
-              tipo: "simples",
-              texto:
-                "A especialização em Psicologia Clínica me deu as ferramentas necessárias para atuar com segurança e competência. Networking de alto valor.",
-              nome: "Ana Paula Costa",
-              cargo: "Psicologia Clínica - Turma 2022",
+              type: "simples",
+              text: "A especialização em Psicologia Clínica me deu as ferramentas necessárias para atuar com segurança e competência. Networking de alto valor.",
+              name: "Ana Paula Costa",
+              role: "Psicologia Clínica - Turma 2022",
             },
           ]}
         />
         <Autoridade
           title="Aprenda com quem transforma o mercado"
           subtitle="Nossos professores são profissionais que transformam o mercado. Mestres e doutores que já chegaram ao topo e agora mostram o caminho para você, conectando teoria, prática e a visão de mercado que acelera sua carreira."
-          credenciais={[
-            { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
+          credentials={[
+            { icon: <Award className="w-5 h-5 text-muted-foreground" />, text: "MEC Credenciado" },
             {
-              icone: <Users className="w-5 h-5 text-muted-foreground" />,
-              texto: "+100 Professores Mestres e Doutores",
+              icon: <Users className="w-5 h-5 text-muted-foreground" />,
+              text: "+100 Professores Mestres e Doutores",
             },
-            { icone: <BookOpen className="w-5 h-5 text-muted-foreground" />, texto: "20+ Anos de Experiência" },
-            { icone: <GraduationCap className="w-5 h-5 text-muted-foreground" />, texto: "Metodologia Validada" },
-            { icone: <Building2 className="w-5 h-5 text-muted-foreground" />, texto: "Parcerias Estratégicas" },
-            { icone: <Trophy className="w-5 h-5 text-muted-foreground" />, texto: "Reconhecimento Nacional" },
+            { icon: <BookOpen className="w-5 h-5 text-muted-foreground" />, text: "20+ Anos de Experiência" },
+            { icon: <GraduationCap className="w-5 h-5 text-muted-foreground" />, text: "Metodologia Validada" },
+            { icon: <Building2 className="w-5 h-5 text-muted-foreground" />, text: "Parcerias Estratégicas" },
+            { icon: <Trophy className="w-5 h-5 text-muted-foreground" />, text: "Reconhecimento Nacional" },
           ]}
-          professores={[
+          professors={[
             {
-              nome: "Dr. Roberto Almeida",
+              name: "Dr. Roberto Almeida",
               bio: "PhD em Gestão Estratégica, 20 anos de experiência em consultoria empresarial",
               area: "MBA em Gestão",
             },
             {
-              nome: "Dra. Patricia Lima",
+              name: "Dra. Patricia Lima",
               bio: "Doutora em Psicologia Clínica, especialista em terapia cognitivo-comportamental",
               area: "Psicologia Clínica",
             },
             {
-              nome: "Prof. Fernando Santos",
+              name: "Prof. Fernando Santos",
               bio: "Mestre em Direito Tributário, advogado atuante há 15 anos",
               area: "Direito Tributário",
             },
             {
-              nome: "Dra. Juliana Ferreira",
+              name: "Dra. Juliana Ferreira",
               bio: "PhD em Neurociências, pesquisadora e clínica há 12 anos",
               area: "Neuropsicologia",
             },
           ]}
-          titleProfessores="Conheça alguns de nossos professores executivos"
+          professorsTitle="Conheça alguns de nossos professores executivos"
           bgColor="bg-muted/30"
         />
 
         <AcaoFinal
           title="IPOG: A escolha que conecta você ao sucesso."
-          descricao="Construa uma carreira de impacto com professores de mercado, networking de alto nível e a credibilidade de uma instituição com mais de 20 anos de excelência."
-          botaoPrimario={{
-            texto: "Comece sua jornada para o sucesso hoje mesmo.",
+          description="Construa uma carreira de impacto com professores de mercado, networking de alto nível e a credibilidade de uma instituição com mais de 20 anos de excelência."
+          primaryButton={{
+            text: "Comece sua jornada para o sucesso hoje mesmo.",
             href: "/catalogo?tipo=pos-graduacao",
           }}
-          botaoSecundario={{
-            texto: "Monte sua trilha de Pós",
+          secondaryButton={{
+            text: "Monte sua trilha de Pós",
             onClick: openAssistantForConsultor,
           }}
         />

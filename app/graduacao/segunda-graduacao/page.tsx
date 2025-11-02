@@ -45,26 +45,26 @@ export default function SegundaGraduacaoPage() {
         <Dilema
           title="Você já tem experiência. Por que começar do zero?"
           subtitle="Reconhecemos sua trajetória profissional e aceleramos sua nova formação"
-          dores={[
+          problems={[
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Tempo é seu maior ativo",
-              descricao: "Você não pode pausar sua carreira por 4 anos para uma nova graduação",
-              solucao:
+              title: "Tempo é seu maior ativo",
+              description: "Você não pode pausar sua carreira por 4 anos para uma nova graduação",
+              solution:
                 "Sua carreira não pode esperar. Por isso, reconhecemos seus conhecimentos e otimizamos sua grade, reduzindo o tempo de formação em até 40%.",
             },
             {
               icon: <DollarSign className="h-5 w-5" />,
-              titulo: "Investimento inteligente",
-              descricao: "Pagar por disciplinas que você já domina não faz sentido",
-              solucao:
+              title: "Investimento inteligente",
+              description: "Pagar por disciplinas que você já domina não faz sentido",
+              solution:
                 "Invista apenas no que impulsiona sua carreira. Sua experiência elimina matérias básicas, e seu investimento é focado em conhecimento avançado e aplicável.",
             },
             {
               icon: <Target className="h-5 w-5" />,
-              titulo: "Foco no que importa",
-              descricao: "Conteúdos básicos não agregam à sua experiência profissional",
-              solucao:
+              title: "Foco no que importa",
+              description: "Conteúdos básicos não agregam à sua experiência profissional",
+              solution:
                 "Sua formação deve ser tão experiente quanto você. Desenvolvemos uma trilha de aprendizado avançada, sem conteúdos básicos, para complementar sua trajetória profissional.",
             },
           ]}
@@ -107,128 +107,125 @@ export default function SegundaGraduacaoPage() {
           }}
         />
         <Modalidades
-          title="Compare as modalidades e escolha a que mais combina com você"
-          subtitle="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
-          modalidades={[
+          title="Compare the modalities and choose the one that best suits you"
+          subtitle="The same excellence graduation, with different formats — choose by your rhythm, routine and professional goals."
+          modalities={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "EAD",
-              descricao:
-                "Conquiste seu diploma IPOG em menos tempo e com reconhecimento oficial. Aproveite disciplinas já cursadas, valide sua experiência profissional e estude com flexibilidade total, aplicando o conhecimento em até 90 dias para garantir retorno real no seu investimento.",
-              beneficios: [
-                "Tempo de formação reduzido com aproveitamento de disciplinas",
-                "Flexibilidade total para o profissional ativo",
-                "Reconhecimento oficial que valida sua experiência",
-                "Aplicação do conhecimento em até 90 dias",
+              title: "EAD",
+              description:
+                "Achieve your IPOG diploma in less time and with official recognition. Take advantage of already taken courses, validate your professional experience and study with total flexibility, applying knowledge in up to 90 days to ensure real return on your investment.",
+              benefits: [
+                "Reduced formation time with course approval",
+                "Total flexibility for the active professional",
+                "Official recognition that validates your experience",
+                "Application of knowledge in up to 90 days",
               ],
               link: "/catalogo?tipo=graduacao&modalidade=ead",
-              buttonText: "Encontrar cursos EAD",
+              buttonText: "Find EAD courses",
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao:
-                "Acelere sua transição de carreira com o prestígio IPOG. Conte com orientação especializada, infraestrutura moderna e networking em uma formação presencial de excelência que une teoria, prática e conexões estratégicas para transformar sua trajetória profissional.",
-              beneficios: [
-                "Aceleração da transição de carreira com uma rede de contatos forte",
-                "Coordenação acessível que orienta sua mudança profissional",
-                "Networking regional estabelecido e de alto valor",
-                "Estrutura moderna que suporta a aplicação prática do conhecimento",
+              title: "Presencial",
+              description:
+                "Accelerate your career transition with the prestige of IPOG. Count on specialized guidance, modern infrastructure and networking in an excellent formation that combines theory, practice and strategic connections to transform your professional trajectory.",
+              benefits: [
+                "Accelerate career transition with a strong network of contacts",
+                "Accessible coordination that guides your professional change",
+                "Established regional networking of high value",
+                "Modern infrastructure that supports practical application of knowledge",
               ],
               link: "/catalogo?tipo=graduacao&modalidade=presencial",
-              buttonText: "Encontrar cursos Presencial",
+              buttonText: "Find presencial courses",
             },
           ]}
         />
         <RetornoProfissional />
         <Empregabilidade
-          title="Profissionais que aceleraram suas carreiras com uma segunda graduação"
-          subtitle="Veja como a validação de conhecimentos e uma formação focada transformaram trajetórias profissionais."
-          estatisticas={[
+          title="Professionals who accelerated their careers with a second graduation"
+          subtitle="See how the validation of knowledge and a focused formation transformed professional trajectories."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "87%",
-              descricao: "conseguiram promoção após a segunda graduação",
+              value: "87%",
+              description: "gained promotion after the second graduation",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "40%",
-              descricao: "de redução no tempo de formação",
+              value: "40%",
+              description: "reduction in formation time",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "92%",
-              descricao: "aplicaram conhecimentos em até 6 meses",
+              value: "92%",
+              description: "applied knowledge in up to 6 months",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          statisticsLayout="carousel"
+          testimonials={[
             {
-              texto:
-                "Já tinha 10 anos de experiência em RH quando decidi fazer Psicologia. O IPOG validou minha experiência e reduziu minha formação em quase 2 anos. Hoje sou psicóloga organizacional e minha carreira deu um salto.",
-              autor: "Mariana Costa",
-              cargo: "Psicóloga Organizacional",
+              text: "Already had 10 years of experience in HR when I decided to do Psychology. IPOG validated my experience and reduced my formation by almost 2 years. Today I am an organizational psychologist and my career took a leap.",
+              author: "Mariana Costa",
+              role: "Psicóloga Organizacional",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Trabalhava como engenheiro e decidi fazer Administração para abrir meu próprio negócio. O IPOG aproveitou várias disciplinas e em 2 anos eu tinha meu segundo diploma. Hoje sou CEO da minha empresa.",
-              autor: "Roberto Almeida",
-              cargo: "CEO e Engenheiro",
+              text: "I was working as an engineer and decided to do Administration to open my own business. IPOG took advantage of several courses and in 2 years I had my second diploma. Today I am CEO of my company.",
+              author: "Roberto Almeida",
+              role: "CEO and Engineer",
             },
             {
-              texto:
-                "Fiz Direito há 15 anos e agora quis fazer Administração para gerenciar melhor meu escritório. O IPOG validou minha experiência e consegui concluir em tempo recorde. Meu faturamento triplicou.",
-              autor: "Juliana Ferreira",
-              cargo: "Advogada e Administradora",
+              text: "Did Law 15 years ago and now I wanted to do Administration to manage my office better. IPOG validated my experience and I concluded on time record. My revenue tripled.",
+              author: "Juliana Ferreira",
+              role: "Advogada and Administradora",
             },
           ]}
           bgColor="bg-background"
         />
         <Autoridade
-          title="Professores de mercado • Certificação reconhecida • Networking executivo"
-          subtitle="Uma formação que valoriza sua experiência e acelera sua carreira"
-          credenciais={[
-            { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
-            { icone: <Users className="w-5 h-5 text-muted-foreground" />, texto: "Professores de Mercado" },
-            { icone: <BookOpen className="w-5 h-5 text-muted-foreground" />, texto: "Networking Executivo" },
-            { icone: <GraduationCap className="w-5 h-5 text-muted-foreground" />, texto: "Certificação Reconhecida" },
+          title="Market professionals • Recognized certification • Executive networking"
+          subtitle="A formation that values your experience and accelerates your career"
+          credentials={[
+            { icon: <Award className="w-5 h-5 text-muted-foreground" />, text: "MEC Credenciado" },
+            { icon: <Users className="w-5 h-5 text-muted-foreground" />, text: "Professores de Mercado" },
+            { icon: <BookOpen className="w-5 h-5 text-muted-foreground" />, text: "Networking Executivo" },
+            { icon: <GraduationCap className="w-5 h-5 text-muted-foreground" />, text: "Certificação Reconhecida" },
           ]}
-          professores={[
+          professors={[
             {
-              nome: "Dr. Roberto Almeida",
+              name: "Dr. Roberto Almeida",
               area: "Administração Estratégica",
               bio: "Doutor em Administração, CEO de consultoria empresarial e especialista em gestão executiva",
             },
             {
-              nome: "Dra. Fernanda Rocha",
+              name: "Dra. Fernanda Rocha",
               area: "Psicologia Organizacional",
               bio: "Mestre em Psicologia, consultora de RH e especialista em desenvolvimento de liderança",
             },
             {
-              nome: "Dr. Marcelo Dias",
+              name: "Dr. Marcelo Dias",
               area: "Direito Empresarial",
               bio: "PhD em Direito, advogado corporativo e consultor jurídico de grandes empresas",
             },
             {
-              nome: "Dra. Juliana Martins",
+              name: "Dra. Juliana Martins",
               area: "Gestão de Pessoas",
               bio: "Doutora em Administração, executiva de RH e especialista em transformação organizacional",
             },
           ]}
-          tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
+          professorsTitle="Learn from the Professionals who Led the Market"
           bgColor="bg-muted/30"
         />
         <AcaoFinal
-          title="Sua Próxima Conquista Começa Aqui. A Escolha que Conecta Você ao Sucesso."
-          descricao="Valide sua trajetória, otimize seu tempo e seu investimento. Conquiste um novo diploma com a qualidade e o reconhecimento que sua carreira merece."
-          botaoPrimario={{
-            texto: "Iniciar Minha Validação",
+          title="Your Next Achievement Starts Here. The Choice that Connects You to Success."
+          description="Validate your journey, optimize your time and investment. Achieve a new diploma with the quality and recognition your career deserves."
+          primaryButton={{
+            text: "Start My Validation",
             href: "/catalogo?tipo=graduacao",
           }}
-          botaoSecundario={{
-            texto: "Valide seus conhecimentos",
+          secondaryButton={{
+            text: "Validate my knowledge",
             onClick: () => window.openAssistantForConsultor(),
           }}
         />

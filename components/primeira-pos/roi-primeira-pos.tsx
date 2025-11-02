@@ -6,24 +6,24 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Link from "next/link"
 
 export function ROIPrimeiraPos() {
-  const indicadores = [
+  const indicators = [
     {
       label: "APÓS O CURSO",
-      valor: "R$ 4.500",
-      descricao: "Júnior/Analista",
-      nota: "Baseado em dados de mercado*.",
+      value: "R$ 4.500",
+      description: "Júnior/Analista",
+      note: "Baseado em dados de mercado*.",
     },
     {
       label: "1 - 2 ANOS",
-      valor: "R$ 6.500",
-      descricao: "Pleno",
-      nota: "Trajetória de crescimento*.",
+      value: "R$ 6.500",
+      description: "Pleno",
+      note: "Trajetória de crescimento*.",
     },
     {
       label: "3 - 5 ANOS",
-      valor: "R$ 9.500",
-      descricao: "Sênior/Especialista",
-      nota: "Experiência consolidada*.",
+      value: "R$ 9.500",
+      description: "Sênior/Especialista",
+      note: "Experiência consolidada*.",
     },
   ]
 
@@ -46,13 +46,13 @@ export function ROIPrimeiraPos() {
             className="w-full"
           >
             <CarouselContent>
-              {indicadores?.map((indicador, index) => (
+              {indicators?.map((indicator, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-8 bg-white h-full">
-                    <p className="text-sm font-medium text-gray-600 mb-2">{indicador.label}</p>
-                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicador.valor}</p>
-                    <p className="text-lg mb-4">{indicador.descricao}</p>
-                    <p className="text-sm text-gray-600">{indicador.nota}</p>
+                    <p className="text-sm font-medium text-gray-600 mb-2">{indicator.label}</p>
+                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicator.value}</p>
+                    <p className="text-lg mb-4">{indicator.description}</p>
+                    <p className="text-sm text-gray-600">{indicator.note}</p>
                   </Card>
                 </CarouselItem>
               ))}

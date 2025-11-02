@@ -57,35 +57,35 @@ export default function GestoraRHPage() {
         />
 
         <Dilema
-          titulo="Desafios que impedem a performance da sua equipe"
-          subtitulo=""
-          dores={[
+          title="Desafios que impedem a performance da sua equipe"
+          subtitle=""
+          problems={[
             {
               icon: <Target className="w-8 h-8" />,
-              titulo: "Gestão de T&D com recursos limitados",
-              descricao:
+              title: "Gestão de T&D com recursos limitados",
+              description:
                 "O desafio de escalar o desenvolvimento de talentos e gerenciar programas de capacitação com uma equipe enxuta e sem as ferramentas adequadas.",
-              solucao:
+              solution:
                 "Atuamos como uma extensão do seu RH, com uma plataforma completa de gestão, comunicação e suporte especializado para garantir a execução e o sucesso dos programas.",
             },
             {
               icon: <BarChart3 className="w-8 h-8" />,
-              titulo: "Pressão por resultados mensuráveis",
-              descricao:
+              title: "Pressão por resultados mensuráveis",
+              description:
                 "A crescente necessidade de apresentar dados concretos que justifiquem os investimentos em T&D e conectem o aprendizado aos resultados de negócio.",
-              solucao:
+              solution:
                 "Nossos painéis de métricas traduzem o desenvolvimento em performance, fornecendo dashboards executivos com indicadores de engajamento, aplicação e impacto para facilitar a governança e a tomada de decisão.",
             },
             {
               icon: <Users className="w-8 h-8" />,
-              titulo: "Baixo engajamento e impacto nos objetivos",
-              descricao:
+              title: "Baixo engajamento e impacto nos objetivos",
+              description:
                 "Programas genéricos que não se conectam com a realidade da equipe, resultando em baixo engajamento, altas taxas de abandono e desperdício de investimento.",
-              solucao:
+              solution:
                 "Nossa metodologia combina comunicação integrada, gamificação e certificação digital para criar uma jornada de aprendizado relevante e motivadora, alcançando taxas de adesão de até 85%.",
             },
           ]}
-          imagemUrl="/placeholder.svg?height=500&width=800"
+          imageUrl="/placeholder.svg?height=500&width=800"
         />
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
@@ -101,14 +101,14 @@ export default function GestoraRHPage() {
             </div>
 
             <Beneficios
-              titulo="Recursos que facilitam implantação"
-              subtitulo="Ferramentas e suporte para gestores de RH"
-              beneficios={[
+              title="Recursos que facilitam implantação"
+              subtitle="Ferramentas e suporte para gestores de RH"
+              benefits={[
                 {
-                  icone: <BarChart3 className="w-8 h-8" />,
-                  titulo: "Painéis de Métricas",
-                  subtitulo: "Acompanhamento visual de engajamento e performance",
-                  itens: [
+                  icon: <BarChart3 className="w-8 h-8" />,
+                  title: "Painéis de Métricas",
+                  subtitle: "Acompanhamento visual de engajamento e performance",
+                  items: [
                     "Monitoramento em tempo real do progresso e engajamento.",
                     "Análise de participação para otimizar a jornada de aprendizado.",
                     "Relatórios executivos para decisões estratégicas baseadas em dados.",
@@ -116,10 +116,10 @@ export default function GestoraRHPage() {
                   ],
                 },
                 {
-                  icone: <Target className="w-8 h-8" />,
-                  titulo: "Certificação Digital",
-                  subtitulo: "Validação automática e reconhecimento profissional",
-                  itens: [
+                  icon: <Target className="w-8 h-8" />,
+                  title: "Certificação Digital",
+                  subtitle: "Validação automática e reconhecimento profissional",
+                  items: [
                     "Certificação com tecnologia blockchain para máxima segurança e validação.",
                     "Badges digitais para reconhecimento e valorização do colaborador.",
                     "Validação de competências com rastreabilidade de conclusão.",
@@ -127,10 +127,10 @@ export default function GestoraRHPage() {
                   ],
                 },
                 {
-                  icone: <Users className="w-8 h-8" />,
-                  titulo: "Comunicação Integrada",
-                  subtitulo: "Templates prontos e suporte contínuo",
-                  itens: [
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Comunicação Integrada",
+                  subtitle: "Templates prontos e suporte contínuo",
+                  items: [
                     "Kit de comunicação completo para reduzir a carga operacional do RH.",
                     "Peças de engajamento para garantir a máxima adesão aos programas.",
                     "Suporte consultivo dedicado, com um especialista para guiar a implantação e garantir a performance do programa.",
@@ -138,10 +138,10 @@ export default function GestoraRHPage() {
                   ],
                 },
                 {
-                  icone: <TrendingUp className="w-8 h-8" />,
-                  titulo: "Escala Sob Demanda",
-                  subtitulo: "Flexibilidade para crescer conforme necessidade",
-                  itens: [
+                  icon: <TrendingUp className="w-8 h-8" />,
+                  title: "Escala Sob Demanda",
+                  subtitle: "Flexibilidade para crescer conforme necessidade",
+                  items: [
                     "Expansão sem complexidade",
                     "Previsibilidade operacional",
                     "Custos escaláveis",
@@ -153,35 +153,35 @@ export default function GestoraRHPage() {
 
             <div className="mt-12">
               <Trilha
-                titulo="Nossa Jornada para o Impacto Estratégico"
-                subtitulo=""
-                etapas={[
+                title="Nossa Jornada para o Impacto Estratégico"
+                subtitle=""
+                stages={[
                   {
-                    numero: "1",
-                    titulo: "Diagnóstico Consultivo e Desenho da Solução:",
-                    descricao:
+                    number: "1",
+                    title: "Diagnóstico Consultivo e Desenho da Solução:",
+                    description:
                       "Mapeamos seus desafios e metas de negócio para desenhar um programa de desenvolvimento 100% customizado, com KPIs alinhados à sua estratégia.",
                   },
                   {
-                    numero: "2",
-                    titulo: "Configuração e Comunicação",
-                    descricao: "Setup de painéis, templates de comunicação e materiais de engajamento",
+                    number: "2",
+                    title: "Configuração e Comunicação",
+                    description: "Setup de painéis, templates de comunicação e materiais de engajamento",
                   },
                   {
-                    numero: "3",
-                    titulo: "Lançamento e Governança:",
-                    descricao:
+                    number: "3",
+                    title: "Lançamento e Governança:",
+                    description:
                       "Coordenamos o lançamento do programa e oferecemos suporte contínuo ao RH, com monitoramento em tempo real da performance para garantir o sucesso da iniciativa.",
                   },
                   {
-                    numero: "4",
-                    titulo: "Engajamento e Certificação",
-                    descricao: "Acompanhamento de adesão, gamificação e emissão de certificados digitais",
+                    number: "4",
+                    title: "Engajamento e Certificação",
+                    description: "Acompanhamento de adesão, gamificação e emissão de certificados digitais",
                   },
                   {
-                    numero: "5",
-                    titulo: "Análise de Impacto e Melhoria Contínua:",
-                    descricao:
+                    number: "5",
+                    title: "Análise de Impacto e Melhoria Contínua:",
+                    description:
                       "Apresentamos relatórios executivos com a análise completa dos resultados e geramos insights para otimizar os próximos ciclos de desenvolvimento.",
                   },
                 ]}
@@ -199,15 +199,15 @@ export default function GestoraRHPage() {
             </div>
 
             <Modalidades
-              titulo="Soluções corporativas com suporte contínuo"
-              subtitulo="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
-              modalidades={[
+              title="Soluções corporativas com suporte contínuo"
+              subtitle="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
+              modalities={[
                 {
                   badge: "RH",
-                  titulo: "Trilhas de Desenvolvimento para o RH Estratégico",
-                  descricao:
+                  title: "Trilhas de Desenvolvimento para o RH Estratégico",
+                  description:
                     "Capacite sua equipe de RH com competências de ponta, desde a análise de dados de pessoas (People Analytics) até o desenho de estratégias de desenvolvimento e sucessão, transformando o setor em um pilar de resultados para o negócio.",
-                  beneficios: [
+                  benefits: [
                     "Gestão estratégica de pessoas",
                     "Métricas e analytics de RH",
                     "Desenvolvimento organizacional",
@@ -217,10 +217,10 @@ export default function GestoraRHPage() {
                 },
                 {
                   badge: "Liderança",
-                  titulo: "Programas para Desenvolvimento de Lideranças",
-                  descricao:
+                  title: "Programas para Desenvolvimento de Lideranças",
+                  description:
                     "Desenvolva líderes preparados para cenários de alta complexidade, com programas que fortalecem a tomada de decisão estratégica e a gestão de equipes de alta performance.",
-                  beneficios: [
+                  benefits: [
                     "Liderança estratégica",
                     "Gestão de equipes de alta performance",
                     "Métricas de engajamento",
@@ -230,9 +230,9 @@ export default function GestoraRHPage() {
                 },
                 {
                   badge: "Corporativo",
-                  titulo: "Capacitação Corporativa",
-                  descricao: "Programas customizados com baixo custo operacional e suporte contínuo",
-                  beneficios: ["Programas sob medida", "Implantação ágil", "Suporte contínuo"],
+                  title: "Capacitação Corporativa",
+                  description: "Programas customizados com baixo custo operacional e suporte contínuo",
+                  benefits: ["Programas sob medida", "Implantação ágil", "Suporte contínuo"],
                   link: "/enterprise#solucoes",
                   buttonText: "Conhecer capacitação corporativa",
                 },
@@ -243,15 +243,15 @@ export default function GestoraRHPage() {
 
         {/* Modalidades com Suporte Contínuo */}
         <Beneficios
-          titulo="Formatos com suporte contínuo e métricas comprovadas"
-          subtitulo="Escolha o formato ideal para sua empresa. Todas as modalidades incluem suporte contínuo e painéis de métricas"
-          corFundo="bg-muted/30"
-          beneficios={[
+          title="Formatos com suporte contínuo e métricas comprovadas"
+          subtitle="Escolha o formato ideal para sua empresa. Todas as modalidades incluem suporte contínuo e painéis de métricas"
+          backgroundColor="bg-muted/30"
+          benefits={[
             {
-              icone: <Users className="w-8 h-8" />,
-              titulo: "Híbrido Corporativo",
-              subtitulo: "Flexibilidade com suporte presencial e digital",
-              itens: [
+              icon: <Users className="w-8 h-8" />,
+              title: "Híbrido Corporativo",
+              subtitle: "Flexibilidade com suporte presencial e digital",
+              items: [
                 "Encontros presenciais estratégicos",
                 "Acompanhamento digital contínuo",
                 "Networking entre colaboradores",
@@ -259,10 +259,10 @@ export default function GestoraRHPage() {
               ],
             },
             {
-              icone: <Target className="w-8 h-8" />,
-              titulo: "EAD Corporativo",
-              subtitulo: "Escalabilidade com acompanhamento digital",
-              itens: [
+              icon: <Target className="w-8 h-8" />,
+              title: "EAD Corporativo",
+              subtitle: "Escalabilidade com acompanhamento digital",
+              items: [
                 "Acesso 24/7 para colaboradores",
                 "Painéis de métricas automatizados",
                 "Certificação digital automática",
@@ -270,10 +270,10 @@ export default function GestoraRHPage() {
               ],
             },
             {
-              icone: <TrendingUp className="w-8 h-8" />,
-              titulo: "Presencial Corporativo",
-              subtitulo: "Vivência prática com facilitação especializada",
-              itens: [
+              icon: <TrendingUp className="w-8 h-8" />,
+              title: "Presencial Corporativo",
+              subtitle: "Vivência prática com facilitação especializada",
+              items: [
                 "Facilitadores especializados",
                 "Aplicação prática imediata",
                 "Networking presencial",
@@ -322,32 +322,32 @@ export default function GestoraRHPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Empregabilidade
-            titulo="Cases de implantação eficaz"
-            subtitulo="Mais de 500 empresas parceiras e 15.000 colaboradores capacitados anualmente, uma prova da nossa capacidade de execução em escala nacional e da confiança do mercado."
-            estatisticas={[
+            title="Cases de implantação eficaz"
+            subtitle="Mais de 500 empresas parceiras e 15.000 colaboradores capacitados anualmente, uma prova da nossa capacidade de execução em escala nacional e da confiança do mercado."
+            statistics={[
               {
                 icon: <Users className="w-8 h-8" />,
-                valor: "500+",
-                descricao: "empresas parceiras",
+                value: "500+",
+                description: "empresas parceiras",
               },
               {
                 icon: <TrendingUp className="w-8 h-8" />,
-                valor: "15mil+",
-                descricao: "colaboradores capacitados anualmente",
+                value: "15mil+",
+                description: "colaboradores capacitados anualmente",
               },
               {
                 icon: <Award className="w-8 h-8" />,
-                valor: "4.8/5",
-                descricao: "avaliação média dos programas",
+                value: "4.8/5",
+                description: "avaliação média dos programas",
               },
             ]}
-            usarCarrossel={false}
+            useCarousel={false}
           />
         </section>
 
         <section className="w-full py-12 md:py-16 bg-background">
           <DepoimentosDeTexto
-            titulo="O que gestoras de RH dizem sobre a implantação"
+            title="O que gestoras de RH dizem sobre a implantação"
             depoimentos={[
               {
                 nome: "Mariana Silva",
@@ -378,39 +378,39 @@ export default function GestoraRHPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Aprenda com Especialistas que Transformam o Mercado"
-            subtitulo="Chancelas de Qualidade e Credibilidade - Estas certificações validam a excelência acadêmica e a gestão de qualidade do IPOG, reforçando nossa credibilidade como um parceiro estratégico para o desenvolvimento da sua empresa."
-            credenciais={[
+            title="Aprenda com Especialistas que Transformam o Mercado"
+            subtitle="Chancelas de Qualidade e Credibilidade - Estas certificações validam a excelência acadêmica e a gestão de qualidade do IPOG, reforçando nossa credibilidade como um parceiro estratégico para o desenvolvimento da sua empresa."
+            credentials={[
               {
-                icone: <Award className="w-6 h-6" />,
-                texto: "MEC - Ministério da Educação",
+                icon: <Award className="w-6 h-6" />,
+                text: "MEC - Ministério da Educação",
               },
               {
-                icone: <Shield className="w-6 h-6" />,
-                texto: "ABED - Associação Brasileira de Educação a Distância",
+                icon: <Shield className="w-6 h-6" />,
+                text: "ABED - Associação Brasileira de Educação a Distância",
               },
               {
-                icone: <CheckCircle2 className="w-6 h-6" />,
-                texto: "ISO 9001 - Gestão da Qualidade",
+                icon: <CheckCircle2 className="w-6 h-6" />,
+                text: "ISO 9001 - Gestão da Qualidade",
               },
               {
-                icone: <Award className="w-6 h-6" />,
-                texto: "Great Place to Work",
+                icon: <Award className="w-6 h-6" />,
+                text: "Great Place to Work",
               },
             ]}
-            professores={[
+            professors={[
               {
-                nome: "Dr. Carlos Mendes",
+                name: "Dr. Carlos Mendes",
                 area: "Gestão de Pessoas",
                 bio: "PhD em Psicologia Organizacional, 20 anos de experiência em RH estratégico",
               },
               {
-                nome: "Dra. Ana Paula Santos",
+                name: "Dra. Ana Paula Santos",
                 area: "Desenvolvimento Organizacional",
                 bio: "Especialista em transformação cultural e engajamento de equipes",
               },
               {
-                nome: "Prof. Roberto Lima",
+                name: "Prof. Roberto Lima",
                 area: "Analytics de RH",
                 bio: "Consultor em People Analytics e métricas de performance",
               },
@@ -419,14 +419,14 @@ export default function GestoraRHPage() {
         </section>
 
         <AcaoFinal
-          titulo="Implante programas ágeis e comprove engajamento"
-          descricao="Solicite um diagnóstico e entenda como as soluções IPOG podem transformar o desenvolvimento da sua equipe."
-          botaoPrimario={{
-            texto: "Agendar demonstração corporativa",
+          title="Implante programas ágeis e comprove engajamento"
+          description="Solicite um diagnóstico e entenda como as soluções IPOG podem transformar o desenvolvimento da sua equipe."
+          primaryButton={{
+            text: "Agendar demonstração corporativa",
             onClick: () => openAssistantWithFlow("demonstracao-corporativa"),
           }}
-          botaoSecundario={{
-            texto: "Conhecer trilhas para RH",
+          secondaryButton={{
+            text: "Conhecer trilhas para RH",
             onClick: () => router.push("/enterprise#solucoes"),
           }}
         />

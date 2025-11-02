@@ -6,23 +6,23 @@ export function EntregaveisRecolocacao() {
   const entregaveis = [
     {
       icon: FileText,
-      titulo: "Template Profissional de Portfólio",
-      descricao: "Modelo estruturado para apresentar seus projetos e cases",
+      title: "Template Profissional de Portfólio",
+      description: "Modelo estruturado para apresentar seus projetos e cases",
     },
     {
       icon: BarChart3,
-      titulo: "Modelo de Relatório Executivo",
-      descricao: "Estrutura para apresentar resultados e impacto gerado",
+      title: "Modelo de Relatório Executivo",
+      description: "Estrutura para apresentar resultados e impacto gerado",
     },
     {
       icon: Lightbulb,
-      titulo: "Guia de Aplicação Rápida",
-      descricao: "Passo a passo para aplicar o aprendizado imediatamente",
+      title: "Guia de Aplicação Rápida",
+      description: "Passo a passo para aplicar o aprendizado imediatamente",
     },
     {
       icon: Layout,
-      titulo: "Canvas de Carreira",
-      descricao: "Ferramenta visual para organizar metas e oportunidades",
+      title: "Canvas de Carreira",
+      description: "Ferramenta visual para organizar metas e oportunidades",
     },
   ]
 
@@ -47,8 +47,8 @@ export function EntregaveisRecolocacao() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-bold mb-2">{item.titulo}</h3>
-                  <p className="text-sm text-muted-foreground">{item.descricao}</p>
+                  <h3 className="font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </CardContent>
               </Card>
             )

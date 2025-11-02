@@ -8,18 +8,18 @@ export function MetodoTransferencia() {
   const suportes = [
     {
       icon: CheckCircle2,
-      titulo: "Reconhecimento de Créditos",
-      descricao: "Aproveitamento de até 95% dos créditos com análise transparente em até 15 dias",
+      title: "Reconhecimento de Créditos",
+      description: "Aproveitamento de até 95% dos créditos com análise transparente em até 15 dias",
     },
     {
       icon: Zap,
-      titulo: "Processo Ágil",
-      descricao: "Inscrição em até 30 dias com documentação simplificada e suporte dedicado",
+      title: "Processo Ágil",
+      description: "Inscrição em até 30 dias com documentação simplificada e suporte dedicado",
     },
     {
       icon: Building2,
-      titulo: "Estrutura Superior",
-      descricao: "Laboratórios equipados, professores mestres e doutores, plataforma digital avançada",
+      title: "Estrutura Superior",
+      description: "Laboratórios equipados, professores mestres e doutores, plataforma digital avançada",
     },
   ]
 
@@ -53,8 +53,8 @@ export function MetodoTransferencia() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{suporte.titulo}</h3>
-                      <p className="text-sm text-muted-foreground">{suporte.descricao}</p>
+                      <h3 className="text-xl font-bold mb-3">{suporte.title}</h3>
+                      <p className="text-sm text-muted-foreground">{suporte.description}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

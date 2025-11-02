@@ -5,23 +5,23 @@ export function EstruturaRecursosPsicologia() {
   const recursos = [
     {
       icon: Compass,
-      titulo: "Tutoria individualizada",
-      descricao: "Acompanhamento próximo e feedback constante.",
+      title: "Tutoria individualizada",
+      description: "Acompanhamento próximo e feedback constante.",
     },
     {
       icon: MessageCircle,
-      titulo: "Comunidade de alunos",
-      descricao: "Fóruns e grupos de estudo colaborativos.",
+      title: "Comunidade de alunos",
+      description: "Fóruns e grupos de estudo colaborativos.",
     },
     {
       icon: Heart,
-      titulo: "Mentorias de autoconhecimento",
-      descricao: "Encontros online que fortalecem a sua jornada pessoal.",
+      title: "Mentorias de autoconhecimento",
+      description: "Encontros online que fortalecem a sua jornada pessoal.",
     },
     {
       icon: Monitor,
-      titulo: "Ambiente EAD IPOG",
-      descricao: "Plataforma com design leve e experiência fluida em qualquer dispositivo.",
+      title: "Ambiente EAD IPOG",
+      description: "Plataforma com design leve e experiência fluida em qualquer dispositivo.",
     },
   ]
 
@@ -45,8 +45,8 @@ export function EstruturaRecursosPsicologia() {
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{recurso.titulo}</h3>
-                  <p className="text-sm text-muted-foreground">{recurso.descricao}</p>
+                  <h3 className="text-lg font-bold mb-2">{recurso.title}</h3>
+                  <p className="text-sm text-muted-foreground">{recurso.description}</p>
                 </CardContent>
               </Card>
             )

@@ -6,9 +6,9 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import type { ReactNode } from "react"
 
 interface Beneficio {
-  icone: ReactNode
-  titulo: string
-  subtitulo: string
+  icon: ReactNode
+  title: string
+  subtitle: string
   itens: string[]
 }
 
@@ -51,10 +51,10 @@ export function Beneficios({
                   <Card className="h-full border-border bg-background">
                     <CardContent className="flex flex-col p-6 h-full">
                       <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-                        {beneficio.icone}
+                        {beneficio.icon}
                       </div>
-                      <h3 className="mb-2 text-xl font-bold text-foreground">{beneficio.titulo}</h3>
-                      <p className="mb-4 text-sm font-medium text-muted-foreground">{beneficio.subtitulo}</p>
+                      <h3 className="mb-2 text-xl font-bold text-foreground">{beneficio.title}</h3>
+                      <p className="mb-4 text-sm font-medium text-muted-foreground">{beneficio.subtitle}</p>
                       <ul className="space-y-2 flex-1">
                         {beneficio.itens.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-foreground">

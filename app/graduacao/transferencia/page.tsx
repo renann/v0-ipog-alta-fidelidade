@@ -41,28 +41,28 @@ export default function TransferenciaPage() {
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
         />
         <Dilema
-          titulo="Transferir não deveria ser um risco"
-          subtitulo="Processo transparente, reconhecimento justo e estrutura superior"
-          dores={[
+          title="Transferir não deveria ser um risco"
+          subtitle="Processo transparente, reconhecimento justo e estrutura superior"
+          problems={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
-              titulo: "Medo de perder créditos",
-              descricao: "Você investiu tempo e dinheiro. Perder disciplinas é inaceitável.",
-              solucao:
+              title: "Medo de perder créditos",
+              description: "Você investiu tempo e dinheiro. Perder disciplinas é inaceitável.",
+              solution:
                 "Nosso plano de estudos personalizado garante o máximo aproveitamento do seu histórico. Realizamos uma análise transparente e criteriosa que reconhece até 95% das disciplinas já cursadas.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Processo demorado",
-              descricao: "Cada semestre parado é prejuízo na sua formação e carreira.",
-              solucao:
+              title: "Processo demorado",
+              description: "Cada semestre parado é prejuízo na sua formação e carreira.",
+              solution:
                 "Seu tempo é valioso. Com um tutor de transição dedicado e um processo otimizado, garantimos sua inscrição em até 30 dias para que sua formação não pare.",
             },
             {
               icon: <Building className="h-5 w-5" />,
-              titulo: "Estrutura inadequada",
-              descricao: "Você quer melhorar, não apenas mudar de lugar.",
-              solucao:
+              title: "Estrutura inadequada",
+              description: "Você quer melhorar, não apenas mudar de lugar.",
+              solution:
                 "Mude para uma estrutura que impulsiona sua carreira. Conte com laboratórios de ponta, conteúdo autoral exclusivo e o prestígio de uma instituição com nota máxima no MEC.",
             },
           ]}
@@ -106,15 +106,15 @@ export default function TransferenciaPage() {
           }}
         />
         <Modalidades
-          titulo="Compare as modalidades e escolha a que mais combina com você"
-          subtitulo="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
-          modalidades={[
+          title="Compare as modalidades e escolha a que mais combina com você"
+          subtitle="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+          modalities={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "EAD",
-              descricao:
+              title: "EAD",
+              description:
                 "Estude com a flexibilidade do EAD e a qualidade IPOG. Tenha acesso a conteúdo autoral exclusivo e conclua sua graduação com foco prático e no seu ritmo.",
-              beneficios: [
+              benefits: [
                 "Conteúdo autoral e exclusivo",
                 "Flexibilidade para estudar onde e quando quiser",
                 "Suporte rápido e eficiente",
@@ -125,10 +125,10 @@ export default function TransferenciaPage() {
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao:
+              title: "Presencial",
+              description:
                 "Viva uma experiência universitária completa. Transfira seu curso e tenha acesso a uma infraestrutura moderna, mentoria especializada e networking presencial que abre portas.",
-              beneficios: [
+              benefits: [
                 "Laboratórios modernos e clínicas",
                 "Corpo docente de mestres e doutores",
                 "Networking que abre portas",
@@ -140,35 +140,35 @@ export default function TransferenciaPage() {
           ]}
         />
         <Autoridade
-          titulo="Aprenda com quem o mercado respeita."
-          subtitulo="Infraestrutura moderna e reconhecimento que fazem diferença na sua formação"
-          credenciais={[
+          title="Aprenda com quem o mercado respeita."
+          subtitle="Infraestrutura moderna e reconhecimento que fazem diferença na sua formação"
+          credentials={[
             {
               icon: <Building className="h-5 w-5" />,
-              texto: "Reconhecimento MEC",
+              text: "Reconhecimento MEC",
             },
             {
               icon: <Users className="h-5 w-5" />,
-              texto: "Professores Mestres e Doutores",
+              text: "Professores Mestres e Doutores",
             },
             {
               icon: <Award className="h-5 w-5" />,
-              texto: "Infraestrutura Moderna",
+              text: "Infraestrutura Moderna",
             },
           ]}
-          professores={[
+          professors={[
             {
-              nome: "Dr. Carlos Silva",
+              name: "Dr. Carlos Silva",
               area: "Psicologia Clínica",
               bio: "20 anos de experiência em clínica e docência. Mestre e Doutor pela USP.",
             },
             {
-              nome: "Dra. Ana Santos",
+              name: "Dra. Ana Santos",
               area: "Direito Empresarial",
               bio: "Advogada atuante e professora há 15 anos. Especialista em contratos.",
             },
             {
-              nome: "Prof. João Oliveira",
+              name: "Prof. João Oliveira",
               area: "Administração",
               bio: "Consultor empresarial e docente. MBA pela FGV e experiência internacional.",
             },
@@ -178,57 +178,54 @@ export default function TransferenciaPage() {
         <Empregabilidade
           title="Alunos que transferiram e aceleraram suas formações"
           subtitle="Veja como o aproveitamento de créditos e um processo ágil transformaram jornadas acadêmicas."
-          estatisticas={[
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "91%",
-              descricao: "concluíram no prazo estimado",
+              value: "91%",
+              description: "concluíram no prazo estimado",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "30%",
-              descricao: "de redução no tempo restante",
+              value: "30%",
+              description: "de redução no tempo restante",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "95%",
-              descricao: "satisfeitos com a transferência",
+              value: "95%",
+              description: "satisfeitos com a transferência",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          statisticsLayout="carousel"
+          testimonials={[
             {
-              texto:
-                "Estava travado na minha antiga faculdade. A transferência para o IPOG foi rápida, aproveitaram todos os meus créditos e ainda consegui reduzir 1 ano da minha formação. Melhor decisão que tomei.",
-              autor: "Felipe Rodrigues",
-              cargo: "Aluno de Administração",
+              text: "Estava travado na minha antiga faculdade. A transferência para o IPOG foi rápida, aproveitaram todos os meus créditos e ainda consegui reduzir 1 ano da minha formação. Melhor decisão que tomei.",
+              author: "Felipe Rodrigues",
+              role: "Aluno de Administração",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Transferi do interior para o IPOG e foi como renascer academicamente. A qualidade dos professores, a estrutura e o networking que construí aqui não têm comparação. Já estou empregado antes de me formar.",
-              autor: "Gabriela Lima",
-              cargo: "Aluna de Psicologia",
+              text: "Transferi do interior para o IPOG e foi como renascer academicamente. A qualidade dos professores, a estrutura e o networking que construí aqui não têm comparação. Já estou empregado antes de me formar.",
+              author: "Gabriela Lima",
+              role: "Aluna de Psicologia",
             },
             {
-              texto:
-                "Perdi 2 anos na minha antiga faculdade por problemas de grade. No IPOG, aproveitaram tudo e ainda me deram um plano personalizado. Vou me formar no prazo e com uma formação muito superior.",
-              autor: "Thiago Martins",
-              cargo: "Aluno de Direito",
+              text: "Perdi 2 anos na minha antiga faculdade por problemas de grade. No IPOG, aproveitaram tudo e ainda me deram um plano personalizado. Vou me formar no prazo e com uma formação muito superior.",
+              author: "Thiago Martins",
+              role: "Aluno de Direito",
             },
           ]}
           bgColor="bg-background"
         />
         <AcaoFinal
-          titulo="Faça a escolha que conecta você ao sucesso."
-          descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
-          botaoPrimario={{
-            texto: "Inicie sua transferência agora",
+          title="Faça a escolha que conecta você ao sucesso."
+          description="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
+          primaryButton={{
+            text: "Inicie sua transferência agora",
             onClick: "openAssistantForConsultor",
           }}
-          botaoSecundario={{
-            texto: "Ver cursos de Graduação",
+          secondaryButton={{
+            text: "Ver cursos de Graduação",
             href: "/catalogo?tipo=graduacao",
           }}
         />

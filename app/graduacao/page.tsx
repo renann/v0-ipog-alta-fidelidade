@@ -54,7 +54,7 @@ export default function GraduacaoPage() {
             {
               nome: "Psicologia",
               duracao: "5 anos",
-              descricao:
+              description:
                 "Ciências humanas e comportamento para transformar vidas através da compreensão do ser humano.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/psicologia-ead",
@@ -62,14 +62,14 @@ export default function GraduacaoPage() {
             {
               nome: "Direito",
               duracao: "5 anos",
-              descricao: "Ciências jurídicas e advocacia com foco em justiça e transformação social.",
+              description: "Ciências jurídicas e advocacia com foco em justiça e transformação social.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/direito",
             },
             {
               nome: "Arquitetura e Urbanismo",
               duracao: "5 anos",
-              descricao: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
+              description: "Projete espaços que transformam vidas e cidades com criatividade e técnica.",
               modalidade: "EAD • Presencial",
               link: "/graduacao/curso/arquitetura",
             },
@@ -87,34 +87,31 @@ export default function GraduacaoPage() {
           jornadas={[
             {
               icon: <GraduationCap className="w-8 h-8 text-primary" />,
-              titulo: "Primeira Graduação",
-              promessa: "Para quem busca: Uma formação sólida para entrar no mercado com confiança.",
-              dores:
+              title: "Primeira Graduação",
+              promise: "Para quem busca: Uma formação sólida para entrar no mercado com confiança.",
+              problems:
                 "Insegurança sobre empregabilidade, falta de experiência prática e dúvidas sobre o retorno do investimento.",
-              ganho:
-                "Solução IPOG: Conteúdo prático, ferramentas de simulação de bolsas e mensalidades, e projetos reais que garantem empregabilidade desde o início.",
+              gain: "Solução IPOG: Conteúdo prático, ferramentas de simulação de bolsas e mensalidades, e projetos reais que garantem empregabilidade desde o início.",
               cta: "Comece sua graduação",
               href: "/graduacao/jovem-ingresso",
             },
             {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
-              titulo: "Segunda Graduação",
-              promessa: "Para quem busca: Validar sua experiência ou fazer uma transição de carreira segura.",
-              dores:
+              title: "Segunda Graduação",
+              promise: "Para quem busca: Validar sua experiência ou fazer uma transição de carreira segura.",
+              problems:
                 "Perda de tempo e dinheiro refazendo disciplinas já cursadas, e incerteza sobre a nova área de atuação.",
-              ganho:
-                "Solução IPOG: Aproveite disciplinas já cursadas e conquiste um diploma de peso em menos tempo, com um currículo tão prático que você aplica o conhecimento em sua carreira em até 90 dias.",
+              gain: "Solução IPOG: Aproveite disciplinas já cursadas e conquiste um diploma de peso em menos tempo, com um currículo tão prático que você aplica o conhecimento em sua carreira em até 90 dias.",
               cta: "Acelere sua nova formação",
               href: "/graduacao/segunda-graduacao",
             },
             {
               icon: <ArrowRightLeft className="w-8 h-8 text-primary" />,
-              titulo: "Transferência Externa",
-              promessa: "Para quem busca: Concluir seus estudos em uma instituição com mais qualidade e estrutura.",
-              dores:
+              title: "Transferência Externa",
+              promise: "Para quem busca: Concluir seus estudos em uma instituição com mais qualidade e estrutura.",
+              problems:
                 "Frustração com a qualidade do ensino atual, burocracia na transferência e medo de perder créditos já conquistados.",
-              ganho:
-                "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
+              gain: "Solução IPOG: Aproveite seus créditos com nosso simulador de disciplinas e tempo restante, em um processo ágil e com um plano de estudos personalizado.",
               cta: "Simule sua transferência",
               href: "/graduacao/transferencia",
             },
@@ -124,46 +121,43 @@ export default function GraduacaoPage() {
         <ResultadosReais
           title="A escolha que gera resultados reais na carreira"
           subtitle="Resultados comprovados que transformam carreiras"
-          estatisticas={[
+          statistics={[
             {
-              icone: <TrendingUp className="w-12 h-12 text-primary" />,
-              valor: "89%",
+              icon: <TrendingUp className="w-12 h-12 text-primary" />,
+              value: "89%",
               label: "Avanço na carreira em menos de 6 meses",
             },
             {
-              icone: <Users className="w-12 h-12 text-primary" />,
-              valor: "95%",
+              icon: <Users className="w-12 h-12 text-primary" />,
+              value: "95%",
               label: "Egressos empregados na área de formação",
             },
             {
-              icone: <Building2 className="w-12 h-12 text-primary" />,
-              valor: "+2.000",
+              icon: <Building2 className="w-12 h-12 text-primary" />,
+              value: "+2.000",
               label: "Empresas com egressos IPOG",
             },
           ]}
-          depoimentos={[
+          testimonials={[
             {
-              tipo: "simples",
-              texto:
-                "O IPOG não apenas ensina, ele prepara para o sucesso. A metodologia prática e o foco em empregabilidade foram decisivos para minha promoção em menos de seis meses.",
-              nome: "Maria Silva",
-              cargo: "Egressa de Administração",
+              type: "simples",
+              text: "O IPOG não apenas ensina, ele prepara para o sucesso. A metodologia prática e o foco em empregabilidade foram decisivos para minha promoção em menos de seis meses.",
+              name: "Maria Silva",
+              role: "Egressa de Administração",
             },
             {
-              tipo: "video",
+              type: "video",
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Fazer Direito no IPOG foi a melhor decisão da minha carreira. Os professores são referências no mercado e o networking que construí aqui abriu portas que eu nem imaginava.",
-              nome: "Carlos Eduardo Santos",
-              cargo: "Advogado Corporativo",
+              text: "Fazer Direito no IPOG foi a melhor decisão da minha carreira. Os professores são referências no mercado e o networking que construí aqui abriu portas que eu nem imaginava.",
+              name: "Carlos Eduardo Santos",
+              role: "Advogado Corporativo",
             },
             {
-              tipo: "simples",
-              texto:
-                "A graduação em Psicologia no IPOG me preparou não só tecnicamente, mas emocionalmente para atuar no mercado. Hoje tenho minha própria clínica e atendo grandes empresas.",
-              nome: "Ana Paula Oliveira",
-              cargo: "Psicóloga Clínica e Organizacional",
+              type: "simples",
+              text: "A graduação em Psicologia no IPOG me preparou não só tecnicamente, mas emocionalmente para atuar no mercado. Hoje tenho minha própria clínica e atendo grandes empresas.",
+              name: "Ana Paula Oliveira",
+              role: "Psicóloga Clínica e Organizacional",
             },
           ]}
         />
@@ -171,50 +165,50 @@ export default function GraduacaoPage() {
         <Autoridade
           title="Aprenda com quem o mercado respeita"
           subtitle="Nosso corpo docente é formado por mestres e doutores com vasta experiência prática, prontos para conectar você às exigências reais da sua futura profissão."
-          credenciais={[
-            { icone: <Award className="w-5 h-5 text-muted-foreground" />, texto: "MEC Credenciado" },
+          credentials={[
+            { icon: <Award className="w-5 h-5 text-muted-foreground" />, text: "MEC Credenciado" },
             {
-              icone: <Users className="w-5 h-5 text-muted-foreground" />,
-              texto: "+100 Professores Mestres e Doutores",
+              icon: <Users className="w-5 h-5 text-muted-foreground" />,
+              text: "+100 Professores Mestres e Doutores",
             },
-            { icone: <BookOpen className="w-5 h-5 text-muted-foreground" />, texto: "20+ Anos de Experiência" },
-            { icone: <GraduationCap className="w-5 h-5 text-muted-foreground" />, texto: "Metodologia Validada" },
+            { icon: <BookOpen className="w-5 h-5 text-muted-foreground" />, text: "20+ Anos de Experiência" },
+            { icon: <GraduationCap className="w-5 h-5 text-muted-foreground" />, text: "Metodologia Validada" },
           ]}
-          professores={[
+          professors={[
             {
-              nome: "Dr. João Silva",
+              name: "Dr. João Silva",
               bio: "Doutor em Psicologia Clínica, 15 anos de experiência em avaliação psicológica",
               area: "Psicologia Clínica",
             },
             {
-              nome: "Dra. Maria Santos",
+              name: "Dra. Maria Santos",
               bio: "Mestre em Neuropsicologia, especialista em testes projetivos",
               area: "Neuropsicologia",
             },
             {
-              nome: "Prof. Carlos Oliveira",
+              name: "Prof. Carlos Oliveira",
               bio: "PhD em Psicometria, autor de 3 livros sobre avaliação",
               area: "Psicometria",
             },
             {
-              nome: "Dra. Ana Costa",
+              name: "Dra. Ana Costa",
               bio: "Doutora em Psicologia Organizacional, consultora de RH",
               area: "Psicologia Organizacional",
             },
           ]}
-          tituloProfessores="Conheça alguns de nossos professores"
+          professorsTitle="Conheça alguns de nossos professores"
           bgColor="bg-muted/30"
         />
 
         <AcaoFinal
           title="Dê o passo decisivo para sua carreira."
-          descricao="A escolha que conecta você ao sucesso. Encontre seu curso e comece a construir um futuro de conquistas com a excelência, a prática e o reconhecimento que só o IPOG oferece."
-          botaoPrimario={{
-            texto: "Encontre seu curso",
+          description="A escolha que conecta você ao sucesso. Encontre seu curso e comece a construir um futuro de conquistas com a excelência, a prática e o reconhecimento que só o IPOG oferece."
+          primaryButton={{
+            text: "Encontre seu curso",
             href: "/catalogo?tipo=graduacao",
           }}
-          botaoSecundario={{
-            texto: "Falar com consultor",
+          secondaryButton={{
+            text: "Falar com consultor",
             onClick: openAssistantForConsultor,
           }}
         />
@@ -252,7 +246,7 @@ export default function GraduacaoPage() {
             {
               pergunta: "Qual a duração dos cursos de graduação?",
               resposta:
-                "A duração varia de acordo com o curso e a modalidade escolhida. Em geral, os cursos de bacharelado têm duração de 4 a 5 anos. Para quem opta por segunda graduação ou transferência, o tempo pode ser reduzido conforme o aproveitamento de disciplinas.",
+                "A duração varia de acordo com o curso, modalidade e descontos aplicáveis. Em geral, os cursos de bacharelado têm duração de 4 a 5 anos. Para quem opta por segunda graduação ou transferência, o tempo pode ser reduzido conforme o aproveitamento de disciplinas.",
             },
             {
               pergunta: "Posso aproveitar disciplinas já cursadas em outras instituições?",

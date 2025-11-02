@@ -7,20 +7,20 @@ import { CheckCircle2, TrendingUp, Award } from "lucide-react"
 import Link from "next/link"
 
 export function EmpregabilidadeRecolocacao() {
-  const estatisticas = [
+  const statistics = [
     {
       icon: TrendingUp,
-      valor: "87%",
-      descricao: "conseguem recolocação em até 4 meses",
+      value: "87%",
+      description: "conseguem recolocação em até 4 meses",
     },
     {
       icon: Award,
-      valor: "91%",
-      descricao: "relatam aumento de confiança profissional",
+      value: "91%",
+      description: "relatam aumento de confiança profissional",
     },
   ]
 
-  const servicos = [
+  const services = [
     "Revisão de portfólio e posicionamento profissional",
     "Sessões de mentoria para recolocação",
     "Rede de vagas e conexões estratégicas IPOG",
@@ -45,7 +45,7 @@ export function EmpregabilidadeRecolocacao() {
             className="w-full"
           >
             <CarouselContent>
-              {estatisticas.map((stat, index) => {
+              {statistics.map((stat, index) => {
                 const Icon = stat.icon
                 return (
                   <CarouselItem key={index} className="md:basis-1/2">
@@ -53,8 +53,8 @@ export function EmpregabilidadeRecolocacao() {
                       <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                         <Icon className="w-8 h-8 text-primary" />
                       </div>
-                      <div className="text-4xl font-bold mb-2">{stat.valor}</div>
-                      <p className="text-muted-foreground">{stat.descricao}</p>
+                      <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                      <p className="text-muted-foreground">{stat.description}</p>
                     </Card>
                   </CarouselItem>
                 )
@@ -68,10 +68,10 @@ export function EmpregabilidadeRecolocacao() {
         <Card className="p-8 mb-8">
           <h3 className="text-xl font-bold mb-6 text-center">Serviços de Carreira</h3>
           <ul className="space-y-3 max-w-2xl mx-auto">
-            {servicos.map((servico, index) => (
+            {services.map((service, index) => (
               <li key={index} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>{servico}</span>
+                <span>{service}</span>
               </li>
             ))}
           </ul>

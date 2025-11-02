@@ -6,7 +6,7 @@ import { Play, Quote } from "lucide-react"
 import type { ReactNode } from "react"
 
 interface Estatistica {
-  icone: ReactNode
+  icon: ReactNode
   valor: string
   label?: string
   descricao?: string
@@ -65,7 +65,7 @@ export function ResultadosReais({ title, subtitle, estatisticas, depoimentos = [
               {estatisticas.map((stat, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] md:basis-1/2 lg:basis-1/4">
                   <Card className="p-6 text-center h-full">
-                    <div className="flex justify-center mb-4">{stat.icone}</div>
+                    <div className="flex justify-center mb-4">{stat.icon}</div>
                     <div className="text-3xl md:text-4xl font-bold mb-2">{stat.valor}</div>
                     {stat.label && <p className="text-sm font-semibold mb-1">{stat.label}</p>}
                     {stat.descricao && <p className="text-xs text-muted-foreground">{stat.descricao}</p>}

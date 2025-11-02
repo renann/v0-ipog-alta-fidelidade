@@ -8,18 +8,18 @@ export function MetodoGapImediato() {
   const diferenciais = [
     {
       icon: Zap,
-      titulo: "ROI Rápido",
-      descricao: "Resultados em semanas, não meses. Aplicação imediata no seu trabalho",
+      title: "ROI Rápido",
+      description: "Resultados em semanas, não meses. Aplicação imediata no seu trabalho",
     },
     {
       icon: FileText,
-      titulo: "Conteúdos Práticos",
-      descricao: "Templates prontos para uso e ferramentas aplicáveis desde o primeiro dia",
+      title: "Conteúdos Práticos",
+      description: "Templates prontos para uso e ferramentas aplicáveis desde o primeiro dia",
     },
     {
       icon: Users,
-      titulo: "Professores Atuantes",
-      descricao: "Especialistas que trabalham no mercado e ensinam o que realmente funciona",
+      title: "Professores Atuantes",
+      description: "Especialistas que trabalham no mercado e ensinam o que realmente funciona",
     },
   ]
 
@@ -52,8 +52,8 @@ export function MetodoGapImediato() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{diferencial.titulo}</h3>
-                      <p className="text-sm text-muted-foreground">{diferencial.descricao}</p>
+                      <h3 className="text-xl font-bold mb-3">{diferencial.title}</h3>
+                      <p className="text-sm text-muted-foreground">{diferencial.description}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

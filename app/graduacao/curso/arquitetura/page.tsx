@@ -121,9 +121,9 @@ export default function ArquiteturaPage() {
           modalidades={[
             {
               badge: "GRADUAÇÃO",
-              titulo: "Graduação EAD",
-              descricao: "Para quem busca autonomia e foco prático.",
-              beneficios: [
+              title: "Graduação EAD",
+              description: "Para quem busca autonomia e foco prático.",
+              benefits: [
                 "Conteúdo Autoral e Exclusivo: Aulas criadas pelos próprios professores, alinhadas com o que o mercado exige.",
                 "Suporte Rápido e Eficiente: Professores, tutores e coordenadores à sua disposição para uma jornada com cuidado e atenção.",
                 "Flexibilidade Total: Estude no seu ritmo, de onde estiver, e concilie sua formação com a rotina profissional.",
@@ -134,9 +134,9 @@ export default function ArquiteturaPage() {
             },
             {
               badge: "GRADUAÇÃO",
-              titulo: "Graduação Presencial",
-              descricao: "Para quem valoriza a experiência universitária completa.",
-              beneficios: [
+              title: "Graduação Presencial",
+              description: "Para quem valoriza a experiência universitária completa.",
+              benefits: [
                 "Vivência Prática Intensiva: Aulas em laboratórios modernos e clínicas, com acesso a equipamentos de ponta.",
                 "Networking de Alto Valor: Interação direta com professores de mercado e colegas para construir uma rede de contatos sólida.",
                 "Infraestrutura Moderna: Um campus planejado para o aprendizado real, que inspira a criatividade e a inovação.",
@@ -149,100 +149,97 @@ export default function ArquiteturaPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Comprovam: O Impacto do IPOG na Sua Carreira"
-          subtitulo="Mais do que um diploma, entregamos transformação. Nossos alunos conquistam posições de destaque porque nossa metodologia é focada em resultados reais e empregabilidade."
-          estatisticas={[
+          title="Resultados que Comprovam: O Impacto do IPOG na Sua Carreira"
+          subtitle="Mais do que um diploma, entregamos transformação. Nossos alunos conquistam posições de destaque porque nossa metodologia é focada em resultados reais e empregabilidade."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "88%",
-              descricao: "dos nossos alunos são empregados ou promovidos após a formação.",
+              value: "88%",
+              description: "dos nossos alunos são empregados ou promovidos após a formação.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "4-7 m",
-              descricao: "Conquista de uma nova posição no mercado",
+              value: "4-7 m",
+              description: "Conquista de uma nova posição no mercado",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "+55%",
-              descricao: "Aumento salarial médio",
+              value: "+55%",
+              description: "Aumento salarial médio",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          statisticsLayout="carousel"
+          testimonials={[
             {
-              texto:
-                "A graduação em Arquitetura no IPOG me deu as ferramentas práticas que o mercado exige. Antes de me formar já tinha meu primeiro projeto construído e hoje tenho meu próprio escritório.",
-              autor: "Rafael Mendes",
-              cargo: "Arquiteto e Urbanista",
+              text: "A graduação em Arquitetura no IPOG me deu as ferramentas práticas que o mercado exige. Antes de me formar já tinha meu primeiro projeto construído e hoje tenho meu próprio escritório.",
+              author: "Rafael Mendes",
+              role: "Arquiteto e Urbanista",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Os laboratórios e a infraestrutura do IPOG são de primeiro mundo. Aprendi com tecnologias que os grandes escritórios usam e isso me deu vantagem competitiva no mercado. Hoje trabalho em projetos internacionais.",
-              autor: "Carolina Ribeiro",
-              cargo: "Arquiteta Sênior",
+              text: "Os laboratórios e a infraestrutura do IPOG são de primeiro mundo. Aprendi com tecnologias que os grandes escritórios usam e isso me deu vantagem competitiva no mercado. Hoje trabalho em projetos internacionais.",
+              author: "Carolina Ribeiro",
+              role: "Arquiteta Sênior",
             },
             {
-              texto:
-                "O IPOG me conectou com profissionais renomados do mercado. Fiz estágio em um escritório premiado durante a graduação e hoje sou sócia. A formação prática fez toda diferença.",
-              autor: "Bruno Carvalho",
-              cargo: "Sócio de Escritório de Arquitetura",
+              text: "O IPOG me conectou com profissionais renomados do mercado. Fiz estágio em um escritório premiado durante a graduação e hoje sou sócia. A formação prática fez toda diferença.",
+              author: "Bruno Carvalho",
+              role: "Sócio de Escritório de Arquitetura",
             },
           ]}
           bgColor="bg-background"
         />
 
         <Trilha
-          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
-          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
-          etapas={[
+          title="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
+          subtitle="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
+          stages={[
             {
-              titulo: "Eixo 1: Fundamentos da Criação (1º e 2º semestres)",
-              descricao:
+              title: "Eixo 1: Fundamentos da Criação (1º e 2º semestres)",
+              description:
                 "Desenvolva sua base teórica e de representação gráfica. Domine o desenho técnico, a plástica e a composição visual, e compreenda a evolução da arquitetura e do urbanismo para criar projetos com propósito e repertório cultural.",
-              beneficios: [
+              benefits: [
                 "Disciplinas-chave: História da Arte e da Arquitetura, Desenho de Observação, Plástica e Composição Visual, Geometria Descritiva, Desenho Técnico Arquitetônico I, Introdução ao Urbanismo.",
               ],
               badges: ["1º e 2º semestre"],
             },
             {
-              titulo: "Eixo 2: Projeto e Tecnologia Construtiva (3º e 4º semestres)",
-              descricao:
+              title: "Eixo 2: Projeto e Tecnologia Construtiva (3º e 4º semestres)",
+              description:
                 "Aplique os fundamentos no desenvolvimento de projetos arquitetônicos, com foco em materiais, técnicas construtivas e conforto ambiental. Domine softwares BIM e prepare-se para os desafios técnicos da profissão, integrando forma, função e estrutura.",
-              beneficios: [
+              benefits: [
                 "Disciplinas-chave: Projeto Arquitetônico I e II, Materiais e Técnicas Construtivas, Topografia, Conforto Ambiental (Térmico, Lumínico e Acústico), Sistemas Estruturais I, Computação Gráfica Aplicada (BIM).",
               ],
               badges: ["3º e 4º semestre"],
             },
             {
-              titulo: "Eixo 3: Urbanismo, Paisagismo e Sustentabilidade (5º e 6º semestres)",
-              descricao:
+              title: "Eixo 3: Urbanismo, Paisagismo e Sustentabilidade (5º e 6º semestres)",
+              description:
                 "Amplie sua visão para a escala da cidade e da paisagem. Aprofunde-se em planejamento urbano, projetos de paisagismo e arquitetura sustentável, compreendendo o impacto social e ambiental de suas intervenções.",
-              beneficios: [
+              benefits: [
                 "Disciplinas-chave: Planejamento Urbano e Regional, Projeto de Paisagismo, Arquitetura Sustentável, Instalações Prediais (Hidráulica e Elétrica), Sistemas Estruturais II.",
               ],
               badges: ["5º e 6º semestre"],
             },
             {
-              titulo: "Eixo 4: Prática Profissional e TFG (7º ao 10º semestres)",
-              descricao:
+              title: "Eixo 4: Prática Profissional e TFG (7º ao 10º semestres)",
+              description:
                 "Consolide sua formação com o Trabalho Final de Graduação (TFG), estágios supervisionados e disciplinas de gestão de projetos e legislação. Saia preparado para atuar com autonomia e responsabilidade técnica no mercado.",
-              beneficios: [
+              benefits: [
                 "Disciplinas-chave: TFG I e II, Estágio Supervisionado, Legislação e Ética Profissional, Gerenciamento de Projetos, Patrimônio Histórico e Restauro.",
               ],
               badges: ["7º ao 10º semestre"],
-              destaque: true,
+              highlight: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
+          ctaButton={{
+            text: "Baixar grade curricular completa",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            note: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
         />

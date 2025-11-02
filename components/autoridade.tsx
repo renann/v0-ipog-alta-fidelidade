@@ -8,7 +8,7 @@ import { DocenteModal } from "@/components/docente-modal"
 import type { ReactNode } from "react"
 
 interface Credencial {
-  icone: ReactNode
+  icon: ReactNode
   texto: string
 }
 
@@ -56,7 +56,7 @@ export function Autoridade({
             {credenciais.map((credencial, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                  {credencial.icone}
+                  {credencial.icon}
                 </div>
                 <span className="font-medium">{credencial.texto}</span>
               </div>

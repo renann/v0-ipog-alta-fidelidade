@@ -5,21 +5,21 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { TrendingUp, Target, BarChart3 } from "lucide-react"
 
 export function ROILifelongLearning() {
-  const indicadores = [
+  const indicators = [
     {
       icon: TrendingUp,
-      valor: "+22-35%",
-      descricao: "Evolução média no pacote total em 12-18 meses",
+      value: "+22-35%",
+      description: "Evolução média no pacote total em 12-18 meses",
     },
     {
       icon: Target,
-      valor: "3×",
-      descricao: "ROI sobre o investimento no primeiro ciclo",
+      value: "3×",
+      description: "ROI sobre o investimento no primeiro ciclo",
     },
     {
       icon: BarChart3,
-      valor: "Pleno → Sênior",
-      descricao: "Evolução típica: Especialista → Gestor",
+      value: "Pleno → Sênior",
+      description: "Evolução típica: Especialista → Gestor",
     },
   ]
 
@@ -44,7 +44,7 @@ export function ROILifelongLearning() {
             }}
           >
             <CarouselContent className="-ml-2 md:-ml-4 items-stretch">
-              {indicadores.map((item, index) => {
+              {indicators.map((item, index) => {
                 const Icon = item.icon
                 return (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] md:basis-1/3 flex">
@@ -53,8 +53,8 @@ export function ROILifelongLearning() {
                         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
                           <Icon className="h-8 w-8 text-foreground" />
                         </div>
-                        <div className="mb-2 text-3xl font-bold text-foreground">{item.valor}</div>
-                        <p className="text-sm text-muted-foreground">{item.descricao}</p>
+                        <div className="mb-2 text-3xl font-bold text-foreground">{item.value}</div>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
                       </CardContent>
                     </Card>
                   </CarouselItem>

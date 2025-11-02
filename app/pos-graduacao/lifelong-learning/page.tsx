@@ -58,26 +58,26 @@ export default function LifelongLearningPage() {
         />
 
         <Dilema
-          titulo="Pouco tempo, muitas responsabilidades — mas a evolução não pode parar"
-          subtitulo="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-benefício de tempo."
-          dores={[
+          title="Pouco tempo, muitas responsabilidades — mas a evolução não pode parar"
+          subtitle="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-benefício de tempo."
+          problems={[
             {
               icon: <Clock className="h-5 w-5" />,
-              titulo: "Sobrecarga de agenda",
-              descricao: "Pouco tempo para estudar com altas responsabilidades profissionais",
-              solucao: "Roteiros eficientes e modulares com aproveitamento de estudos anteriores",
+              title: "Sobrecarga de agenda",
+              description: "Pouco tempo para estudar com altas responsabilidades profissionais",
+              solution: "Roteiros eficientes e modulares com aproveitamento de estudos anteriores",
             },
             {
               icon: <RefreshCw className="h-5 w-5" />,
-              titulo: "Repetição de conteúdo",
-              descricao: "Risco de estudar temas que você já domina",
-              solucao: "Evolução escalável sem retrabalho — IPOG+ governa sua trilha",
+              title: "Repetição de conteúdo",
+              description: "Risco de estudar temas que você já domina",
+              solution: "Evolução escalável sem retrabalho — IPOG+ governa sua trilha",
             },
             {
               icon: <TrendingDown className="h-5 w-5" />,
-              titulo: "Baixo retorno",
-              descricao: "Investimento sem impacto real na carreira",
-              solucao: "Benefícios e mentorias que aceleram impacto e networking",
+              title: "Baixo retorno",
+              description: "Investimento sem impacto real na carreira",
+              solution: "Benefícios e mentorias que aceleram impacto e networking",
             },
           ]}
           backgroundColor="bg-muted/30"
@@ -85,13 +85,13 @@ export default function LifelongLearningPage() {
         <MetodoLifelongLearning />
 
         <Modalidades
-          titulo="Escolha a modalidade que se encaixa na sua rotina"
-          modalidades={[
+          title="Escolha a modalidade que se encaixa na sua rotina"
+          modalities={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "EAD",
-              descricao: "Para quem precisa de autonomia e flexibilidade total durante a transição",
-              beneficios: [
+              title: "EAD",
+              description: "Para quem precisa de autonomia e flexibilidade total durante a transição",
+              benefits: [
                 "Estude no seu ritmo e reveja aulas sempre que quiser;",
                 "Conteúdos atualizados e interativos;",
                 "Tutoria online com suporte contínuo;",
@@ -102,9 +102,9 @@ export default function LifelongLearningPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Ao Vivo",
-              descricao: "Para quem busca interação e acompanhamento em tempo real",
-              beneficios: [
+              title: "Ao Vivo",
+              description: "Para quem busca interação e acompanhamento em tempo real",
+              benefits: [
                 "Aulas ao vivo com professores e mentores;",
                 "Gravações disponíveis após cada encontro;",
                 "Troca com colegas de diversas áreas;",
@@ -115,14 +115,9 @@ export default function LifelongLearningPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              titulo: "Presencial",
-              descricao: "Para quem valoriza imersão estratégica e networking executivo",
-              beneficios: [
-                "Encontros presenciais",
-                "Projetos práticos",
-                "Conexões C-level",
-                "Certificação reconhecida",
-              ],
+              title: "Presencial",
+              description: "Para quem valoriza imersão estratégica e networking executivo",
+              benefits: ["Encontros presenciais", "Projetos práticos", "Conexões C-level", "Certificação reconhecida"],
               buttonText: "Encontrar cursos Presencial",
               link: "/catalogo?tipo=pos-graduacao&modalidade=presencial",
             },
@@ -167,65 +162,65 @@ export default function LifelongLearningPage() {
         />
 
         <Trilha
-          titulo="Sua trilha contínua, sem retrabalho"
-          etapas={[
+          title="Sua trilha contínua, sem retrabalho"
+          stages={[
             {
-              titulo: "Diagnóstico IPOG+",
-              descricao: "Mapa do que você já tem e identificação de gaps estratégicos",
+              title: "Diagnóstico IPOG+",
+              description: "Mapa do que você já tem e identificação de gaps estratégicos",
             },
             {
-              titulo: "Módulos Complementares",
-              descricao: "Evita repetição, foca no ganho marginal e na evolução real",
+              title: "Módulos Complementares",
+              description: "Evita repetição, foca no ganho marginal e na evolução real",
             },
             {
-              titulo: "Mentorias Executivas",
-              descricao: "Ajuste fino de estratégia, gestão de times e carreira",
+              title: "Mentorias Executivas",
+              description: "Ajuste fino de estratégia, gestão de times e carreira",
             },
             {
-              titulo: "Certificações & Portfólio",
-              descricao: "Evidências concretas de impacto e competências desenvolvidas",
+              title: "Certificações & Portfólio",
+              description: "Evidências concretas de impacto e competências desenvolvidas",
             },
             {
-              titulo: "Networking & Parcerias",
-              descricao: "Oportunidades de co-criação e conexões estratégicas",
+              title: "Networking & Parcerias",
+              description: "Oportunidades de co-criação e conexões estratégicas",
             },
           ]}
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Evolução que aparece no cargo e na remuneração"
-          estatisticas={[
+          title="Evolução que aparece no cargo e na remuneração"
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "82-90%",
-              descricao: "Relatam promoção ou expansão de escopo em 6-12 meses",
+              value: "82-90%",
+              description: "Relatam promoção ou expansão de escopo em 6-12 meses",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "4-6 meses",
-              descricao: "Para transição de função ou nível hierárquico",
+              value: "4-6 meses",
+              description: "Para transição de função ou nível hierárquico",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "100%",
-              descricao: "Acesso a serviços de carreira IPOG+ continuados",
+              value: "100%",
+              description: "Acesso a serviços de carreira IPOG+ continuados",
             },
           ]}
-          layoutEstatisticas="carousel"
-          servicosCarreira={[
+          statisticsLayout="carousel"
+          careerServices={[
             "Revisão de LinkedIn/currículo focada em impacto",
             "Mentorias com executivos convidados",
             "Indicações para vagas parceiras e projetos",
           ]}
-          botaoCta={{
-            texto: "Consultoria de Carreira IPOG+",
+          ctaButton={{
+            text: "Consultoria de Carreira IPOG+",
             onClick: "openAssistantForConsultor",
           }}
           bgColor="bg-background"
         />
         <ROILifelongLearning />
         <DepoimentosDeTexto
-          titulo="Quem ficou perto do IPOG, ficou na frente"
+          title="Quem ficou perto do IPOG, ficou na frente"
           depoimentos={[
             {
               nome: "Ana Paula Silva",
@@ -256,14 +251,14 @@ export default function LifelongLearningPage() {
           ]}
         />
         <Beneficios
-          titulo="Vantagens que só quem é IPOG+ tem"
+          title="Vantagens que só quem é IPOG+ tem"
           subtitle=""
-          beneficios={[
+          benefits={[
             {
-              icone: <Award className="w-8 h-8" />,
-              titulo: "Desconto progressivo & bolsas",
-              subtitulo: "Bolsas de fidelidade que valorizam sua jornada contínua com o IPOG",
-              itens: [
+              icon: <Award className="w-8 h-8" />,
+              title: "Desconto progressivo & bolsas",
+              subtitle: "Bolsas de fidelidade que valorizam sua jornada contínua com o IPOG",
+              items: [
                 "Descontos crescentes a cada nova formação",
                 "Bolsas exclusivas para alunos IPOG+",
                 "Condições especiais de pagamento",
@@ -271,10 +266,10 @@ export default function LifelongLearningPage() {
               ],
             },
             {
-              icone: <Users className="w-8 h-8" />,
-              titulo: "Mentorias masterclass",
-              subtitulo: "Agenda trimestral com especialistas e executivos do mercado",
-              itens: [
+              icon: <Users className="w-8 h-8" />,
+              title: "Mentorias masterclass",
+              subtitle: "Agenda trimestral com especialistas e executivos do mercado",
+              items: [
                 "Sessões exclusivas com líderes de mercado",
                 "Mentorias em grupo e individuais",
                 "Acesso a eventos executivos",
@@ -282,10 +277,10 @@ export default function LifelongLearningPage() {
               ],
             },
             {
-              icone: <Calendar className="w-8 h-8" />,
-              titulo: "Eventos executivos",
-              subtitulo: "Comunidades temáticas e networking estratégico contínuo",
-              itens: [
+              icon: <Calendar className="w-8 h-8" />,
+              title: "Eventos executivos",
+              subtitle: "Comunidades temáticas e networking estratégico contínuo",
+              items: [
                 "Encontros presenciais exclusivos",
                 "Comunidades por área de atuação",
                 "Webinars com especialistas",
@@ -293,10 +288,10 @@ export default function LifelongLearningPage() {
               ],
             },
             {
-              icone: <Gift className="w-8 h-8" />,
-              titulo: "Clube de vantagens",
-              subtitulo: "Parceiros exclusivos: idiomas, tech, livros e conferências",
-              itens: [
+              icon: <Gift className="w-8 h-8" />,
+              title: "Clube de vantagens",
+              subtitle: "Parceiros exclusivos: idiomas, tech, livros e conferências",
+              items: [
                 "Descontos em cursos de idiomas",
                 "Acesso a plataformas de tecnologia",
                 "Biblioteca digital exclusiva",
@@ -304,10 +299,10 @@ export default function LifelongLearningPage() {
               ],
             },
             {
-              icone: <Target className="w-8 h-8" />,
-              titulo: "Governança de conteúdo",
-              subtitulo: "Planejamento anual da sua trilha com curadoria especializada",
-              itens: [
+              icon: <Target className="w-8 h-8" />,
+              title: "Governança de conteúdo",
+              subtitle: "Planejamento anual da sua trilha com curadoria especializada",
+              items: [
                 "Plano de desenvolvimento personalizado",
                 "Curadoria de conteúdo especializada",
                 "Acompanhamento de evolução",
@@ -315,8 +310,8 @@ export default function LifelongLearningPage() {
               ],
             },
           ]}
-          textoBotao="Quero aderir ao IPOG+"
-          onClickBotao={() => {
+          buttonText="Quero aderir ao IPOG+"
+          onClickButton={() => {
             if (typeof window !== "undefined") {
               window.dispatchEvent(
                 new CustomEvent("openAssistant", {
@@ -325,17 +320,17 @@ export default function LifelongLearningPage() {
               )
             }
           }}
-          corFundo="bg-muted/30"
+          backgroundColor="bg-muted/30"
         />
         <AcaoFinal
-          titulo="Mantenha sua curva de aprendizado ativa com o IPOG+"
-          descricao="Aprofunde-se com roteiros eficientes, evolução escalável e benefícios exclusivos. Aprendizado contínuo sem repetição de conteúdo."
-          botaoPrimario={{
-            texto: "Começar minha jornada",
+          title="Mantenha sua curva de aprendizado ativa com o IPOG+"
+          description="Aprofunde-se com roteiros eficientes, evolução escalável e benefícios exclusivos. Aprendizado contínuo sem repetição de conteúdo."
+          primaryButton={{
+            text: "Começar minha jornada",
             href: "/catalogo?tipo=pos-graduacao",
           }}
-          botaoSecundario={{
-            texto: "Ver benefícios",
+          secondaryButton={{
+            text: "Ver benefícios",
             href: "#beneficios",
           }}
         />

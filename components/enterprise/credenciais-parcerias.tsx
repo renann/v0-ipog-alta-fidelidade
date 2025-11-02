@@ -4,33 +4,33 @@ import { Building2, Award, Users, Target, TrendingUp, Shield } from "lucide-reac
 const credenciais = [
   {
     icon: Building2,
-    titulo: "500+ Empresas",
-    descricao: "Organizações transformadas",
+    title: "500+ Empresas",
+    description: "Organizações transformadas",
   },
   {
     icon: Award,
-    titulo: "Certificação MEC",
-    descricao: "Reconhecimento oficial",
+    title: "Certificação MEC",
+    description: "Reconhecimento oficial",
   },
   {
     icon: Users,
-    titulo: "20+ Anos",
-    descricao: "De experiência corporativa",
+    title: "20+ Anos",
+    description: "De experiência corporativa",
   },
   {
     icon: Target,
-    titulo: "ROI Comprovado",
-    descricao: "Resultados mensuráveis",
+    title: "ROI Comprovado",
+    description: "Resultados mensuráveis",
   },
   {
     icon: TrendingUp,
-    titulo: "95% Satisfação",
-    descricao: "Avaliação dos clientes",
+    title: "95% Satisfação",
+    description: "Avaliação dos clientes",
   },
   {
     icon: Shield,
-    titulo: "Presença Nacional",
-    descricao: "Todo território brasileiro",
+    title: "Presença Nacional",
+    description: "Todo território brasileiro",
   },
 ]
 
@@ -67,8 +67,8 @@ export function CredenciaisParcerias() {
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>
-                <p className="font-bold text-sm mb-1">{credencial.titulo}</p>
-                <p className="text-xs text-muted-foreground">{credencial.descricao}</p>
+                <p className="font-bold text-sm mb-1">{credencial.title}</p>
+                <p className="text-xs text-muted-foreground">{credencial.description}</p>
               </Card>
             )
           })}

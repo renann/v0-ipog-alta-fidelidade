@@ -9,20 +9,20 @@ export function RetornoInvestimentoPsicologia() {
   const indicadores = [
     {
       label: "APÓS O CURSO",
-      valor: "R$ 3.844",
-      descricao: "Júnior",
+      value: "R$ 3.844",
+      description: "Júnior",
       nota: "Baseado em dados de mercado*.",
     },
     {
       label: "1 - 2 ANOS",
-      valor: "R$ 5.200",
-      descricao: "Pleno",
+      value: "R$ 5.200",
+      description: "Pleno",
       nota: "Trajetória de crescimento*.",
     },
     {
       label: "3 - 6 ANOS",
-      valor: "R$ 8.500",
-      descricao: "Sênior",
+      value: "R$ 8.500",
+      description: "Sênior",
       nota: "Experiência consolidada*.",
     },
   ]
@@ -50,8 +50,8 @@ export function RetornoInvestimentoPsicologia() {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-8 bg-white h-full">
                     <p className="text-sm font-medium text-gray-600 mb-2">{indicador.label}</p>
-                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicador.valor}</p>
-                    <p className="text-lg mb-4">{indicador.descricao}</p>
+                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicador.value}</p>
+                    <p className="text-lg mb-4">{indicador.description}</p>
                     <p className="text-sm text-gray-600">{indicador.nota}</p>
                   </Card>
                 </CarouselItem>

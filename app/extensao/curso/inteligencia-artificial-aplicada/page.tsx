@@ -116,12 +116,12 @@ export default function InteligenciaArtificialAplicadaPage() {
         <Modalidades
           title="Escolha sua modalidade"
           subtitle="Curso disponível em formato EAD para máxima flexibilidade"
-          modalidades={[
+          modalities={[
             {
               badge: "EXTENSÃO",
-              titulo: "EAD",
-              descricao: "Aprenda no seu ritmo com conteúdo atualizado constantemente",
-              beneficios: [
+              title: "EAD",
+              description: "Aprenda no seu ritmo com conteúdo atualizado constantemente",
+              benefits: [
                 "Acesso 24/7 ao conteúdo e atualizações",
                 "Projetos práticos com IA generativa",
                 "Suporte de especialistas em IA",
@@ -134,55 +134,54 @@ export default function InteligenciaArtificialAplicadaPage() {
         />
 
         <Empregabilidade
-          titulo="Profissionais com IA conquistam mais"
-          subtitulo="Dados reais de quem domina ferramentas de IA"
-          estatisticas={[
+          title="Profissionais com IA conquistam mais"
+          subtitle="Dados reais de quem domina ferramentas de IA"
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "92%",
-              descricao: "dos nossos alunos aumentaram sua produtividade",
+              value: "92%",
+              description: "dos nossos alunos aumentaram sua produtividade",
               label: "GANHO DE EFICIÊNCIA*",
             },
             {
               icon: <Award className="h-8 w-8" />,
-              valor: "85%",
-              descricao: "afirmam ter conquistado novas oportunidades",
+              value: "85%",
+              description: "afirmam ter conquistado novas oportunidades",
               label: "CRESCIMENTO PROFISSIONAL*",
             },
             {
               icon: <Rocket className="h-8 w-8" />,
-              valor: "88%",
-              descricao: "se sentem mais preparados para o futuro do trabalho",
+              value: "88%",
+              description: "se sentem mais preparados para o futuro do trabalho",
               label: "RECONHECIMENTO*",
             },
           ]}
-          layoutEstatisticas="carousel"
-          servicosCarreira={[
+          statisticsLayout="carousel"
+          careerServices={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
-            autor: "Marina S., Aluna de Extensão IPOG",
+          testimonial={{
+            text: "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
+            author: "Marina S., Aluna de Extensão IPOG",
           }}
-          botaoCta={{
-            texto: "Fale com um Consultor de Carreira",
+          ctaButton={{
+            text: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          observacao="* Dados baseados em pesquisa interna."
+          note="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
 
         <Trilha
-          titulo="Sua jornada em IA Aplicada"
-          subtitulo="6 módulos de aprendizado prático com ferramentas de ponta"
-          etapas={[
+          title="Sua jornada em IA Aplicada"
+          subtitle="6 módulos de aprendizado prático com ferramentas de ponta"
+          steps={[
             {
-              titulo: "Fundamentos de IA",
-              descricao: "Entenda os conceitos essenciais e ferramentas de IA generativa",
-              beneficios: [
+              title: "Fundamentos de IA",
+              description: "Entenda os conceitos essenciais e ferramentas de IA generativa",
+              benefits: [
                 "Introdução à IA e Machine Learning",
                 "ChatGPT e ferramentas de texto",
                 "Midjourney e geração de imagens",
@@ -191,10 +190,10 @@ export default function InteligenciaArtificialAplicadaPage() {
               badges: ["Módulo 1"],
             },
             {
-              titulo: "Ferramentas e Tecnologias para Automação",
-              descricao:
+              title: "Ferramentas e Tecnologias para Automação",
+              description:
                 "Domine softwares de automação contábil, ferramentas de análise preditiva e integre tecnologias como RPA (Robotic Process Automation) para otimizar suas rotinas.",
-              beneficios: [
+              benefits: [
                 "Softwares de automação contábil",
                 "Ferramentas de análise preditiva",
                 "RPA (Robotic Process Automation)",
@@ -203,9 +202,9 @@ export default function InteligenciaArtificialAplicadaPage() {
               badges: ["Módulo 2"],
             },
             {
-              titulo: "Automação com IA",
-              descricao: "Automatize processos e aumente produtividade",
-              beneficios: [
+              title: "Automação com IA",
+              description: "Automatize processos e aumente produtividade",
+              benefits: [
                 "Automação de workflows",
                 "Integração de APIs de IA",
                 "Análise de dados com IA",
@@ -214,9 +213,9 @@ export default function InteligenciaArtificialAplicadaPage() {
               badges: ["Módulo 3"],
             },
             {
-              titulo: "Aplicação Estratégica",
-              descricao: "Implemente IA no seu contexto profissional",
-              beneficios: [
+              title: "Aplicação Estratégica",
+              description: "Implemente IA no seu contexto profissional",
+              benefits: [
                 "Projeto final aplicado",
                 "Ética e governança em IA",
                 "Apresentação de resultados",
@@ -225,10 +224,10 @@ export default function InteligenciaArtificialAplicadaPage() {
               badges: ["Módulo 4"],
             },
             {
-              titulo: "Ética e Segurança na Gestão de Dados",
-              descricao:
+              title: "Ética e Segurança na Gestão de Dados",
+              description:
                 "Garanta a privacidade e a segurança cibernética em sistemas de IA, dominando as boas práticas na manipulação de dados sensíveis e as questões éticas do setor.",
-              beneficios: [
+              benefits: [
                 "Privacidade e segurança cibernética",
                 "Boas práticas em dados sensíveis",
                 "Questões éticas em IA",
@@ -237,23 +236,23 @@ export default function InteligenciaArtificialAplicadaPage() {
               badges: ["Módulo 5"],
             },
             {
-              titulo: "Tendências e Estudos de Caso",
-              descricao:
+              title: "Tendências e Estudos de Caso",
+              description:
                 "Analise cases reais de implementação de IA em empresas contábeis e fiscais e planeje a adoção dessas tecnologias para se manter na vanguarda do mercado.",
-              beneficios: [
+              benefits: [
                 "Cases reais de implementação",
                 "Análise de empresas contábeis e fiscais",
                 "Planejamento de adoção de IA",
                 "Tendências do mercado",
               ],
               badges: ["Módulo 6"],
-              destaque: true,
+              highlight: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
+          ctaButton={{
+            text: "Baixar grade curricular completa",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            note: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
         />

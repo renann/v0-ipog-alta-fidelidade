@@ -59,29 +59,29 @@ const PrimeiraPosContent = dynamic(
             />
 
             <Dilema
-              titulo="Medo de investir e não ver retorno na carreira?"
-              subtitulo="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
-              dores={[
+              title="Medo de investir e não ver retorno na carreira?"
+              subtitle="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
+              problems={[
                 {
                   icon: <DollarSign className="h-5 w-5" />,
-                  titulo: "O Investimento que Acelera sua Carreira",
-                  descricao:
+                  title: "O Investimento que Acelera sua Carreira",
+                  description:
                     "Sua especialização é um passo estratégico. No IPOG, ela se traduz em crescimento real e mensurável para sua trajetória profissional.",
-                  solucao: "ROI Comprovado: 89% dos nossos especialistas relatam avanço de cargo em até 6 meses.",
+                  solution: "ROI Comprovado: 89% dos nossos especialistas relatam avanço de cargo em até 6 meses.",
                 },
                 {
                   icon: <BookOpen className="h-5 w-5" />,
-                  titulo: "Conhecimento Prático para Resultados Reais",
-                  descricao:
+                  title: "Conhecimento Prático para Resultados Reais",
+                  description:
                     "Nossa metodologia conecta você à prática que o mercado exige. O que você aprende em aula é aplicado diretamente nos seus desafios profissionais.",
-                  solucao: "Aplicação Imediata: 85% dos profissionais aplicam o conteúdo no trabalho em até 30 dias.",
+                  solution: "Aplicação Imediata: 85% dos profissionais aplicam o conteúdo no trabalho em até 30 dias.",
                 },
                 {
                   icon: <Clock className="h-5 w-5" />,
-                  titulo: "A Flexibilidade que sua Rotina Exige",
-                  descricao:
+                  title: "A Flexibilidade que sua Rotina Exige",
+                  description:
                     "Concilie sua carreira, estudos e vida pessoal. Oferecemos modalidades de ensino desenhadas para se adaptar ao seu ritmo, sem abrir mão da excelência.",
-                  solucao: "Escolha entre os formatos EAD, Ao Vivo e Presencial e estude no seu tempo.",
+                  solution: "Escolha entre os formatos EAD, Ao Vivo e Presencial e estude no seu tempo.",
                 },
               ]}
               ctaText="Tire suas dúvidas com um consultor"
@@ -90,14 +90,14 @@ const PrimeiraPosContent = dynamic(
             <MetodoPrimeiraPos />
 
             <Modalidades
-              titulo="Compare as modalidades e escolha a que mais combina com você"
-              subtitulo="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
-              modalidades={[
+              title="Compare as modalidades e escolha a que mais combina com você"
+              subtitle="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+              modalities={[
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "EAD: Estude no seu Ritmo com Conteúdo Aplicado",
-                  descricao: "Para quem busca flexibilidade sem abrir mão da qualidade",
-                  beneficios: [
+                  title: "EAD: Estude no seu Ritmo com Conteúdo Aplicado",
+                  description: "Para quem busca flexibilidade sem abrir mão da qualidade",
+                  benefits: [
                     "Flexibilidade total para conciliar com sua rotina profissional.",
                     "Conteúdo prático, pensado para aplicação imediata.",
                     "Acesso a professores especialistas e atuantes no mercado.",
@@ -108,9 +108,9 @@ const PrimeiraPosContent = dynamic(
                 },
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "Ao Vivo: Interação Real sem Sair de Casa",
-                  descricao: "Para quem quer interação em tempo real com flexibilidade",
-                  beneficios: [
+                  title: "Ao Vivo: Interação Real sem Sair de Casa",
+                  description: "Para quem quer interação em tempo real com flexibilidade",
+                  benefits: [
                     "Aulas online e ao vivo para interação direta com professores.",
                     "Networking dinâmico com colegas e especialistas em tempo real.",
                     "Disciplina de encontros semanais com a flexibilidade do online.",
@@ -121,9 +121,9 @@ const PrimeiraPosContent = dynamic(
                 },
                 {
                   badge: "PÓS-GRADUAÇÃO",
-                  titulo: "Presencial: Networking de Alto Valor e Vivência Prática",
-                  descricao: "Para quem valoriza imersão e networking presencial",
-                  beneficios: [
+                  title: "Presencial: Networking de Alto Valor e Vivência Prática",
+                  description: "Para quem valoriza imersão e networking presencial",
+                  benefits: [
                     "Conexões reais e networking de alto nível com líderes de mercado.",
                     "Imersão completa com aulas e vivências práticas.",
                     "Acesso a laboratórios e infraestrutura de ponta.",
@@ -176,101 +176,101 @@ const PrimeiraPosContent = dynamic(
 
             <ROIPrimeiraPos />
             <Empregabilidade
-              titulo="Empregabilidade que transforma carreiras"
-              subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
-              estatisticas={[
+              title="Empregabilidade que transforma carreiras"
+              subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+              statistics={[
                 {
                   icon: <TrendingUp className="h-8 w-8" />,
-                  valor: "87%",
-                  descricao: "promovidos ou recolocados em 12 meses",
+                  value: "87%",
+                  description: "promovidos ou recolocados em 12 meses",
                 },
                 {
                   icon: <Clock className="h-8 w-8" />,
-                  valor: "6-9 meses",
-                  descricao: "tempo médio para promoção",
+                  value: "6-9 meses",
+                  description: "tempo médio para promoção",
                 },
                 {
                   icon: <Briefcase className="h-8 w-8" />,
-                  valor: "+35%",
-                  descricao: "aumento salarial médio",
+                  value: "+35%",
+                  description: "aumento salarial médio",
                 },
               ]}
-              layoutEstatisticas="carousel"
-              servicosCarreira={[
+              statisticsLayout="carousel"
+              careerServices={[
                 "Revisão de currículo e LinkedIn",
                 "Mentorias com especialistas de mercado",
                 "Indicações para vagas parceiras",
               ]}
-              botaoCta={{
-                texto: "Fale com um Consultor de Carreira",
+              ctaButton={{
+                text: "Fale com um Consultor de Carreira",
                 onClick: handleConsultorClick,
               }}
               bgColor="bg-background"
             />
             <Trilha
-              titulo="Sua trilha começa aqui"
-              subtitulo="Veja onde sua primeira pós pode te levar"
-              etapas={[
+              title="Sua trilha começa aqui"
+              subtitle="Veja onde sua primeira pós pode te levar"
+              stages={[
                 {
-                  numero: "1",
-                  titulo: "Graduação",
-                  descricao: "Base sólida e descoberta profissional",
+                  number: "1",
+                  title: "Graduação",
+                  description: "Base sólida e descoberta profissional",
                 },
                 {
-                  numero: "2",
-                  titulo: "Primeira Pós",
-                  descricao: "Foco em especialização aplicada",
-                  destaque: true,
+                  number: "2",
+                  title: "Primeira Pós",
+                  description: "Foco em especialização aplicada",
+                  highlight: true,
                 },
                 {
-                  numero: "3",
-                  titulo: "MBA / Liderança",
-                  descricao: "Consolidação estratégica",
+                  number: "3",
+                  title: "MBA / Liderança",
+                  description: "Consolidação estratégica",
                 },
                 {
-                  numero: "4",
-                  titulo: "IPOG+ (Lifelong)",
-                  descricao: "Evolução contínua e comunidade Alumni+",
+                  number: "4",
+                  title: "IPOG+ (Lifelong)",
+                  description: "Evolução contínua e comunidade Alumni+",
                 },
               ]}
-              botaoCta={{
-                texto: "Monte sua trilha personalizada",
+              ctaButton={{
+                text: "Monte sua trilha personalizada",
                 onClick: handleConsultorClick,
               }}
             />
             <AplicacaoImediataPrimeiraPos />
             <Autoridade
-              titulo="Aprenda com os Profissionais que Lideram o Mercado"
-              subtitulo="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
-              credenciais={[
+              title="Aprenda com os Profissionais que Lideram o Mercado"
+              subtitle="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
+              credentials={[
                 {
                   icon: <Award className="h-5 w-5" />,
-                  texto: "20+ anos formando especialistas",
+                  text: "20+ anos formando especialistas",
                 },
                 {
                   icon: <Users className="h-5 w-5" />,
-                  texto: "Professores de Mercado",
+                  text: "Professores de Mercado",
                 },
                 {
                   icon: <Building className="h-5 w-5" />,
-                  texto: "Reconhecimento MEC",
+                  text: "Reconhecimento MEC",
                 },
               ]}
-              professores={[
+              professors={[
                 {
-                  nome: "Dr. Ricardo Almeida",
+                  name: "Dr. Ricardo Almeida",
                   area: "Avaliação Psicológica",
                   bio: "Psicólogo clínico há 18 anos. Doutor pela UFMG e supervisor de estágios.",
                   avatar: "RA",
                 },
                 {
-                  nome: "Eng. Marcos Ferreira",
+                  name: "Eng. Marcos Ferreira",
                   area: "Engenharia Estrutural",
                   bio: "Engenheiro civil com projetos em 5 países. Mestre pela Poli-USP.",
                   avatar: "MF",
                 },
                 {
-                  nome: "Dra. Paula Costa",
+                  name: "Dra. Paula Costa",
                   area: "Intervenção ABA",
                   bio: "Especialista em TEA com 12 anos de atuação. Doutora pela UFRJ.",
                   avatar: "PC",
@@ -278,56 +278,54 @@ const PrimeiraPosContent = dynamic(
               ]}
             />
             <ResultadosReais
-              titulo="A Prova Real do Impacto IPOG"
-              subtitulo="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
-              estatisticas={[
+              title="A Prova Real do Impacto IPOG"
+              subtitle="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
+              statistics={[
                 {
                   icon: <TrendingUp className="h-8 w-8" />,
-                  valor: "87%",
-                  descricao: "promovidos ou recolocados em 12 meses",
+                  value: "87%",
+                  description: "promovidos ou recolocados em 12 meses",
                 },
                 {
                   icon: <Clock className="h-8 w-8" />,
-                  valor: "6-9 meses",
-                  descricao: "tempo médio para promoção",
+                  value: "6-9 meses",
+                  description: "tempo médio para promoção",
                 },
                 {
                   icon: <Briefcase className="h-8 w-8" />,
-                  valor: "+35%",
-                  descricao: "aumento salarial médio",
+                  value: "+35%",
+                  description: "aumento salarial médio",
                 },
                 {
                   icon: <Award className="h-8 w-8" />,
-                  valor: "92%",
-                  descricao: "recomendam a especialização",
+                  value: "92%",
+                  description: "recomendam a especialização",
                 },
               ]}
-              depoimentos={[
+              testimonials={[
                 {
-                  nome: "Ana Paula Silva",
-                  cargo: "Coordenadora de Projetos",
-                  texto:
-                    "A pós-graduação IPOG foi decisiva para minha primeira promoção. Em 3 meses já estava aplicando o conteúdo no meu trabalho.",
+                  name: "Ana Paula Silva",
+                  role: "Coordenadora de Projetos",
+                  text: "A pós-graduação IPOG foi decisiva para minha primeira promoção. Em 3 meses já estava aplicando o conteúdo no meu trabalho.",
                 },
                 {
-                  nome: "Carlos Eduardo",
-                  cargo: "Analista Sênior",
-                  texto:
-                    "O networking e a qualidade dos professores fizeram toda a diferença. Consegui minha promoção em 6 meses.",
+                  name: "Carlos Eduardo",
+                  role: "Analista Sênior",
+                  text: "O networking e a qualidade dos professores fizeram toda a diferença. Consegui minha promoção em 6 meses.",
                 },
               ]}
-              tipoDepoimento="simples"
+              type="simples"
               bgColor="bg-muted/30"
             />
             <AcaoFinal
-              titulo="A escolha que conecta você ao sucesso."
-              descricao="Invista em uma especialização com metodologia prática, networking de alto nível e a credibilidade de professores que são referência no mercado. Dê o próximo passo para transformar sua carreira."
-              botaoPrimario={{
-                texto: "Começar minha jornada",
+              title="A escolha que conecta você ao sucesso."
+              description="Invista em uma especialização com metodologia prática, networking de alto nível e a credibilidade de professores que são referência no mercado. Dê o próximo passo para transformar sua carreira."
+              primaryButton={{
+                text: "Começar minha jornada",
                 href: "/catalogo?tipo=pos-graduacao",
               }}
-              botaoSecundario={{
-                texto: "Falar com consultor",
+              secondaryButton={{
+                text: "Falar com consultor",
                 onClick: handleConsultorClick,
               }}
             />

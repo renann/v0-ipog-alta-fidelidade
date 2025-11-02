@@ -8,18 +8,18 @@ export function MetodoTransicaoArea() {
   const suportes = [
     {
       icon: Users,
-      titulo: "Mentoria Individual",
-      descricao: "Acompanhamento prático e psicológico durante toda a sua transição de carreira",
+      title: "Mentoria Individual",
+      description: "Acompanhamento prático e psicológico durante toda a sua transição de carreira",
     },
     {
       icon: Route,
-      titulo: "Trilhas Estruturadas",
-      descricao: "Base técnica sólida com plano de evolução personalizado para sua nova área",
+      title: "Trilhas Estruturadas",
+      description: "Base técnica sólida com plano de evolução personalizado para sua nova área",
     },
     {
       icon: HeartHandshake,
-      titulo: "Networking Estratégico",
-      descricao: "Conexões que aceleram a entrada na nova área e abrem portas no mercado",
+      title: "Networking Estratégico",
+      description: "Conexões que aceleram a entrada na nova área e abrem portas no mercado",
     },
   ]
 
@@ -53,8 +53,8 @@ export function MetodoTransicaoArea() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{suporte.titulo}</h3>
-                      <p className="text-sm text-muted-foreground">{suporte.descricao}</p>
+                      <h3 className="text-xl font-bold mb-3">{suporte.title}</h3>
+                      <p className="text-sm text-muted-foreground">{suporte.description}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

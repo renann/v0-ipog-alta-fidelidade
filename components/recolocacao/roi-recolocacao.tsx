@@ -6,24 +6,24 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Link from "next/link"
 
 export function ROIRecolocacao() {
-  const indicadores = [
+  const indicators = [
     {
       label: "RECOLOCAÇÃO IMEDIATA",
-      valor: "R$ 5.500",
-      descricao: "Posição inicial",
-      nota: "Baseado em dados de mercado*.",
+      value: "R$ 5.500",
+      description: "Posição inicial",
+      note: "Baseado em dados de mercado*.",
     },
     {
       label: "6 - 12 MESES",
-      valor: "R$ 7.500",
-      descricao: "Consolidação",
-      nota: "Com portfólio comprovado*.",
+      value: "R$ 7.500",
+      description: "Consolidação",
+      note: "Com portfólio comprovado*.",
     },
     {
       label: "1 - 2 ANOS",
-      valor: "R$ 10.500",
-      descricao: "Posição estratégica",
-      nota: "Networking ativo*.",
+      value: "R$ 10.500",
+      description: "Posição estratégica",
+      note: "Networking ativo*.",
     },
   ]
 
@@ -46,13 +46,13 @@ export function ROIRecolocacao() {
             className="w-full"
           >
             <CarouselContent>
-              {indicadores?.map((indicador, index) => (
+              {indicators?.map((indicator, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-8 bg-white h-full">
-                    <p className="text-sm font-medium text-gray-600 mb-2">{indicador.label}</p>
-                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicador.valor}</p>
-                    <p className="text-lg mb-4">{indicador.descricao}</p>
-                    <p className="text-sm text-gray-600">{indicador.nota}</p>
+                    <p className="text-sm font-medium text-gray-600 mb-2">{indicator.label}</p>
+                    <p className="text-4xl md:text-5xl font-bold mb-2">{indicator.value}</p>
+                    <p className="text-lg mb-4">{indicator.description}</p>
+                    <p className="text-sm text-gray-600">{indicator.note}</p>
                   </Card>
                 </CarouselItem>
               ))}
