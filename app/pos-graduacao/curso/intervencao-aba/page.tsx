@@ -5,6 +5,7 @@ import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
+import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Users } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
@@ -200,6 +201,14 @@ export default function IntervencaoAbaPage() {
                   profissional.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-3xl mx-auto px-4 pb-4">
+              <MetodosPagamento />
             </div>
           </div>
         </section>
