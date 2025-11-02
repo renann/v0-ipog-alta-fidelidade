@@ -73,11 +73,11 @@ export function DepoimentosDeTexto({
 
                 return (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="h-[480px] border-border bg-card">
-                      <CardContent className="flex h-full flex-col p-6">
+                    <Card className="border-border bg-card">
+                      <CardContent className="flex flex-col p-6">
                         {isVideo ? (
                           <>
-                            <div className="relative mb-4 flex-1 overflow-hidden rounded-lg bg-muted aspect-[9/16]">
+                            <div className="relative mb-4 overflow-hidden rounded-lg bg-muted aspect-[9/16] w-full max-w-[300px] mx-auto">
                               <video
                                 className="h-full w-full object-cover"
                                 controls
@@ -104,17 +104,19 @@ export function DepoimentosDeTexto({
                           </>
                         ) : (
                           <>
-                            <Quote className="mb-4 h-8 w-8 text-muted-foreground" />
-                            <p className="mb-6 flex-1 text-sm text-foreground line-clamp-[8]">
-                              {textoDepoimento ? `"${textoDepoimento}"` : ""}
-                            </p>
-                            <div className="mt-auto">
-                              <p className="font-semibold text-foreground">{item.nome}</p>
-                              <p className="text-sm text-muted-foreground">
-                                {item.cargo}
-                                {item.area ? ` • ${item.area}` : ""}
+                            <div className="min-h-[400px] flex flex-col">
+                              <Quote className="mb-4 h-8 w-8 text-muted-foreground" />
+                              <p className="mb-6 flex-1 text-sm text-foreground line-clamp-[8]">
+                                {textoDepoimento ? `"${textoDepoimento}"` : ""}
                               </p>
-                              {ganhoFinal && <p className="mt-2 text-sm font-medium text-primary">{ganhoFinal}</p>}
+                              <div className="mt-auto">
+                                <p className="font-semibold text-foreground">{item.nome}</p>
+                                <p className="text-sm text-muted-foreground">
+                                  {item.cargo}
+                                  {item.area ? ` • ${item.area}` : ""}
+                                </p>
+                                {ganhoFinal && <p className="mt-2 text-sm font-medium text-primary">{ganhoFinal}</p>}
+                              </div>
                             </div>
                           </>
                         )}
