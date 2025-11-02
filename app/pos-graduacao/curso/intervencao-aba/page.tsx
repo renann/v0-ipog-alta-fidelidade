@@ -67,6 +67,7 @@ export default function IntervencaoAbaPage() {
           subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
+              numero: "1",
               titulo: "1º ao 3º Mês: Domínio dos Fundamentos",
               descricao:
                 "Construa uma base sólida com os princípios da Análise do Comportamento Aplicada (ABA) e as especificidades do TEA, preparando-se para as etapas práticas.",
@@ -74,6 +75,7 @@ export default function IntervencaoAbaPage() {
               badges: ["1º ao 3º mês"],
             },
             {
+              numero: "2",
               titulo: "4º ao 8º Mês: Desenvolvimento de Técnicas Avançadas",
               descricao:
                 "Aprofunde-se em protocolos de avaliação e intervenção, aprendendo a elaborar Planos de Ensino Individualizados (PEI) e a gerenciar comportamentos de forma eficaz.",
@@ -81,6 +83,7 @@ export default function IntervencaoAbaPage() {
               badges: ["4º ao 8º mês"],
             },
             {
+              numero: "3",
               titulo: "9º ao 12º Mês: Domínio Clínico Supervisionado",
               descricao:
                 "Valide sua expertise através da discussão de casos clínicos reais em vídeo e da construção de planos terapêuticos individualizados, com supervisão direta de especialistas para desenvolver a confiança e a competência técnica que o mercado exige.",
@@ -89,52 +92,44 @@ export default function IntervencaoAbaPage() {
               destaque: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
-            href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
-          }}
-          backgroundColor="bg-muted/30"
+          textoBotao="Baixar grade curricular completa"
+          observacao="PDF com detalhamento de todas as disciplinas"
+          bgColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Resultados que impulsionam sua carreira:"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Resultados que impulsionam sua carreira:"
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "85%",
               descricao: "dos nossos alunos são promovidos ou se recolocam no mercado.",
-              label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "4-7 m",
               descricao: "para promoção",
-              label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+38%",
               descricao: "de aumento salarial em média após a formação.",
-              label: "AUMENTO SALARIAL*",
             },
           ]}
           layoutEstatisticas="carousel"
-          servicosCarreira={[
-            "Revisão de currículo e Linkedin",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          servicos={[
+            { texto: "Revisão de currículo e Linkedin" },
+            { texto: "Mentorias com especialistas de mercado" },
+            { texto: "Indicações para vagas parceiras" },
           ]}
           depoimento={{
             texto:
               "A especialização em ABA transformou minha prática clínica e abriu novas oportunidades profissionais.",
             autor: "Aluna IPOG, Pós-graduação.",
           }}
-          botaoCta={{
+          botaoCTA={{
             texto: "Fale com um Consultor de Carreira",
-            onClick: "openAssistantForConsultor",
           }}
-          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
         <section className="w-full py-16 px-4 bg-muted/30">
