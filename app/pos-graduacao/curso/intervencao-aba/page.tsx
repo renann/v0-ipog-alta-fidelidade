@@ -49,9 +49,9 @@ export default function IntervencaoAbaPage() {
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              title: "Ao Vivo",
-              description: "Para quem busca interação em tempo real com flexibilidade",
-              benefits: [
+              titulo: "Ao Vivo",
+              descricao: "Para quem busca interação em tempo real com flexibilidade",
+              beneficios: [
                 "Aulas online ao vivo",
                 "Interação direta com professores",
                 "Gravações disponíveis",
@@ -67,24 +67,24 @@ export default function IntervencaoAbaPage() {
           subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
-              title: "1º ao 3º Mês: Domínio dos Fundamentos",
-              description:
+              titulo: "1º ao 3º Mês: Domínio dos Fundamentos",
+              descricao:
                 "Construa uma base sólida com os princípios da Análise do Comportamento Aplicada (ABA) e as especificidades do TEA, preparando-se para as etapas práticas.",
-              benefits: ["Princípios da Análise do Comportamento", "Características do TEA"],
+              beneficios: ["Princípios da Análise do Comportamento", "Características do TEA"],
               badges: ["1º ao 3º mês"],
             },
             {
-              title: "4º ao 8º Mês: Desenvolvimento de Técnicas Avançadas",
-              description:
+              titulo: "4º ao 8º Mês: Desenvolvimento de Técnicas Avançadas",
+              descricao:
                 "Aprofunde-se em protocolos de avaliação e intervenção, aprendendo a elaborar Planos de Ensino Individualizados (PEI) e a gerenciar comportamentos de forma eficaz.",
-              benefits: ["Programas de ensino individualizado", "Manejo comportamental"],
+              beneficios: ["Programas de ensino individualizado", "Manejo comportamental"],
               badges: ["4º ao 8º mês"],
             },
             {
-              title: "9º ao 12º Mês: Domínio Clínico Supervisionado",
-              description:
+              titulo: "9º ao 12º Mês: Domínio Clínico Supervisionado",
+              descricao:
                 "Valide sua expertise através da discussão de casos clínicos reais em vídeo e da construção de planos terapêuticos individualizados, com supervisão direta de especialistas para desenvolver a confiança e a competência técnica que o mercado exige.",
-              benefits: ["Supervisão de casos reais", "Elaboração de planos de intervenção"],
+              beneficios: ["Supervisão de casos reais", "Elaboração de planos de intervenção"],
               badges: ["9º ao 12º mês"],
               destaque: true,
             },
@@ -97,43 +97,44 @@ export default function IntervencaoAbaPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          title="Resultados que impulsionam sua carreira:"
-          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
-          statistics={[
+          titulo="Resultados que impulsionam sua carreira:"
+          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "85%",
-              description: "dos nossos alunos são promovidos ou se recolocam no mercado.",
+              valor: "85%",
+              descricao: "dos nossos alunos são promovidos ou se recolocam no mercado.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "4-7 m",
-              description: "para promoção",
+              valor: "4-7 m",
+              descricao: "para promoção",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "+38%",
-              description: "de aumento salarial em média após a formação.",
+              valor: "+38%",
+              descricao: "de aumento salarial em média após a formação.",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          testimonial={{
-            text: "A especialização em ABA transformou minha prática clínica e abriu novas oportunidades profissionais.",
-            author: "Aluna IPOG, Pós-graduação.",
+          depoimento={{
+            texto:
+              "A especialização em ABA transformou minha prática clínica e abriu novas oportunidades profissionais.",
+            autor: "Aluna IPOG, Pós-graduação.",
           }}
-          ctaButton={{
-            text: "Fale com um Consultor de Carreira",
+          botaoCta={{
+            texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
         <section className="w-full py-16 px-4 bg-muted/30">

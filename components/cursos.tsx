@@ -10,7 +10,7 @@ import Link from "next/link"
 export interface Curso {
   nome: string
   duracao: string
-  description: string
+  descricao: string
   modalidade: string
   link?: string
 }
@@ -68,7 +68,7 @@ export function Cursos({
                         <Clock className="h-4 w-4" />
                         <span>Duração: {curso.duracao}</span>
                       </div>
-                      <p className="mb-6 flex-1 text-sm text-muted-foreground">{curso.description}</p>
+                      <p className="mb-6 flex-1 text-sm text-muted-foreground">{curso.descricao}</p>
                       <div className="mt-auto space-y-4">
                         <div className="flex flex-wrap gap-2">
                           <Badge variant="outline" className="gap-1">

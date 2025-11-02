@@ -105,9 +105,9 @@ export default function GestaoPessoasPage() {
           modalidades={[
             {
               badge: "EXTENSÃO",
-              title: "Online",
-              description: "Aprenda no seu ritmo com conteúdo de alta qualidade",
-              benefits: [
+              titulo: "Online",
+              descricao: "Aprenda no seu ritmo com conteúdo de alta qualidade",
+              beneficios: [
                 "Aulas gravadas disponíveis 24/7",
                 "Material didático completo",
                 "Suporte de tutores especializados",
@@ -120,80 +120,80 @@ export default function GestaoPessoasPage() {
         />
 
         <Empregabilidade
-          title="Impacto na carreira"
-          subtitle="Profissionais de RH são cada vez mais estratégicos nas organizações."
-          statistics={[
+          titulo="Impacto na carreira"
+          subtitulo="Profissionais de RH são cada vez mais estratégicos nas organizações."
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "78%",
-              description: "promovidos após o curso",
+              valor: "78%",
+              descricao: "promovidos após o curso",
               label: "TAXA DE PROMOÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "6-8 m",
-              description: "para nova posição",
+              valor: "6-8 m",
+              descricao: "para nova posição",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "+35%",
-              description: "em média após o curso",
+              valor: "+35%",
+              descricao: "em média após o curso",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de RH",
             "Indicações para vagas parceiras",
           ]}
-          testimonial={{
-            text: "O curso me deu ferramentas práticas para transformar o RH da minha empresa.",
-            author: "Aluno IPOG",
+          depoimento={{
+            texto: "O curso me deu ferramentas práticas para transformar o RH da minha empresa.",
+            autor: "Aluno IPOG",
           }}
-          ctaButton={{
-            text: "Fale com um Consultor de Carreira",
+          botaoCta={{
+            texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
 
         <Trilha
-          title="Conteúdo Programático"
-          subtitle="Módulos práticos e aplicáveis ao dia a dia do RH"
+          titulo="Conteúdo Programático"
+          subtitulo="Módulos práticos e aplicáveis ao dia a dia do RH"
           etapas={[
             {
-              title: "Fundamentos de RH Estratégico",
-              description: "Visão estratégica do RH e seu papel nas organizações modernas",
-              benefits: ["RH como parceiro de negócios", "Indicadores e métricas de RH"],
+              titulo: "Fundamentos de RH Estratégico",
+              descricao: "Visão estratégica do RH e seu papel nas organizações modernas",
+              beneficios: ["RH como parceiro de negócios", "Indicadores e métricas de RH"],
               badges: ["Módulo 1"],
             },
             {
-              title: "Atração e Seleção",
-              description: "Técnicas modernas de recrutamento e seleção de talentos",
-              benefits: ["Employer branding", "Entrevistas por competências"],
+              titulo: "Atração e Seleção",
+              descricao: "Técnicas modernas de recrutamento e seleção de talentos",
+              beneficios: ["Employer branding", "Entrevistas por competências"],
               badges: ["Módulo 2"],
             },
             {
-              title: "Desenvolvimento e Retenção",
-              description: "Programas de treinamento, desenvolvimento e planos de carreira",
-              benefits: ["Trilhas de desenvolvimento", "Gestão de sucessão"],
+              titulo: "Desenvolvimento e Retenção",
+              descricao: "Programas de treinamento, desenvolvimento e planos de carreira",
+              beneficios: ["Trilhas de desenvolvimento", "Gestão de sucessão"],
               badges: ["Módulo 3"],
             },
             {
-              title: "Cultura e Engajamento",
-              description: "Construção de cultura organizacional e estratégias de engajamento",
-              benefits: ["Pesquisas de clima", "Programas de reconhecimento"],
+              titulo: "Cultura e Engajamento",
+              descricao: "Construção de cultura organizacional e estratégias de engajamento",
+              beneficios: ["Pesquisas de clima", "Programas de reconhecimento"],
               badges: ["Módulo 4"],
-              highlight: true,
+              destaque: true,
             },
           ]}
-          ctaButton={{
-            text: "Baixar conteúdo programático completo",
+          botaoCta={{
+            texto: "Baixar conteúdo programático completo",
             href: "#grade",
-            note: "PDF com detalhamento de todos os módulos",
+            observacao: "PDF com detalhamento de todos os módulos",
           }}
           backgroundColor="bg-muted/30"
         />

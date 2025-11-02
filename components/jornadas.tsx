@@ -7,10 +7,10 @@ import Link from "next/link"
 
 interface Jornada {
   icon: ReactNode
-  title: string
+  titulo: string
   promessa: string
-  problems: string
-  gain: string
+  dores: string
+  ganho: string
   cta: string
   href?: string
   onClick?: () => void
@@ -39,13 +39,13 @@ export function Jornadas({ title, subtitle, jornadas, backgroundColor = "bg-mute
                     {jornada.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">{jornada.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">{jornada.titulo}</h3>
                 <p className="text-sm font-medium mb-3">{jornada.promessa}</p>
                 <div className="text-xs text-muted-foreground mb-2">
-                  <strong>Resolve:</strong> {jornada.problems}
+                  <strong>Resolve:</strong> {jornada.dores}
                 </div>
                 <div className="text-xs text-muted-foreground mb-4 flex-grow">
-                  <strong>Ganho:</strong> {jornada.gain}
+                  <strong>Ganho:</strong> {jornada.ganho}
                 </div>
 
                 {jornada.href ? (

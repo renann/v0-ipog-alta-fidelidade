@@ -55,56 +55,56 @@ export default function EnterprisePage() {
           title="Sua empresa precisa de performance. Sua equipe, do parceiro certo."
           subtitle="Nós transformamos o investimento em educação em resultados que o seu negócio pode medir."
           backgroundColor="bg-muted/30"
-          problems={[
+          dores={[
             {
               icon: <TrendingUp className="w-6 h-6 text-primary" />,
-              title: "Diagnóstico Estratégico",
-              solution: "Mapeamento de competências para focar no que gera mais impacto.",
+              titulo: "Diagnóstico Estratégico",
+              solucao: "Mapeamento de competências para focar no que gera mais impacto.",
             },
             {
               icon: <Users className="w-6 h-6 text-primary" />,
-              title: "Desenvolvimento Sob Medida",
-              solution: "Programas desenhados para os desafios reais da sua empresa.",
+              titulo: "Desenvolvimento Sob Medida",
+              solucao: "Programas desenhados para os desafios reais da sua empresa.",
             },
             {
               icon: <Target className="w-6 h-6 text-primary" />,
-              title: "Resultados Mensuráveis",
-              solution: "Dashboards e relatórios que comprovam o ROI do seu investimento.",
+              titulo: "Resultados Mensuráveis",
+              solucao: "Dashboards e relatórios que comprovam o ROI do seu investimento.",
             },
           ]}
         />
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          title="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
-          subtitle="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
+          titulo="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
+          subtitulo="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
           bgColor="bg-background"
-          stages={[
+          etapas={[
             {
-              number: "1",
-              title: "Diagnóstico e Alinhamento Estratégico",
-              description:
+              numero: "1",
+              titulo: "Diagnóstico e Alinhamento Estratégico",
+              descricao:
                 "Análise aprofundada para identificar gaps de competências e definir KPIs alinhados aos objetivos estratégicos do seu negócio.",
               badges: ["Análise de competências", "Mapeamento de gaps", "Definição de KPIs"],
             },
             {
-              number: "2",
-              title: "Desenho de Soluções Sob Medida",
-              description:
+              numero: "2",
+              titulo: "Desenho de Soluções Sob Medida",
+              descricao:
                 "Criação de programas e trilhas de aprendizagem customizadas, utilizando conteúdo aplicado para resolver os desafios específicos da sua organização.",
               badges: ["Programas customizados", "Trilhas de aprendizagem", "Conteúdo aplicado"],
             },
             {
-              number: "3",
-              title: "Implementação e Desenvolvimento",
-              description:
+              numero: "3",
+              titulo: "Implementação e Desenvolvimento",
+              descricao:
                 "Execução com um corpo docente de mercado e metodologias ativas que garantem a aplicação prática e imediata do conhecimento no ambiente de trabalho.",
               badges: ["Professores de mercado", "Cases reais", "Aplicação prática"],
             },
             {
-              number: "4",
-              title: "Mensuração de Impacto e ROI",
-              description:
+              numero: "4",
+              titulo: "Mensuração de Impacto e ROI",
+              descricao:
                 "Acompanhamento com dashboards de performance e relatórios executivos que demonstram o ROI através de indicadores de negócio e evolução comportamental.",
               badges: ["Relatórios executivos", "Dashboard de ROI", "Indicadores de performance"],
             },
@@ -118,23 +118,25 @@ export default function EnterprisePage() {
         <Jornadas
           title="Respostas diretas para as dores de cada líder"
           backgroundColor="bg-muted/30"
-          journeys={[
+          jornadas={[
             {
               icon: <Briefcase className="w-8 h-8 text-primary" />,
-              title: "Para o C-Level e Diretor Executivo",
-              promise: "Justifique o investimento em T&D com visibilidade clara dos resultados no negócio",
-              problems: "Justificar o investimento em T&D sem visibilidade clara dos resultados no negócio.",
-              gain: "Programas com ROI comprovado, relatórios executivos e alinhamento direto com as metas estratégicas da companhia.",
+              titulo: "Para o C-Level e Diretor Executivo",
+              promessa: "Justifique o investimento em T&D com visibilidade clara dos resultados no negócio",
+              dores: "Justificar o investimento em T&D sem visibilidade clara dos resultados no negócio.",
+              ganho:
+                "Programas com ROI comprovado, relatórios executivos e alinhamento direto com as metas estratégicas da companhia.",
               cta: "Solicitar diagnóstico estratégico",
               onClick: () => router.push("/enterprise/ceo"),
             },
             {
               icon: <Users className="w-8 h-8 text-primary" />,
-              title: "Para a Gestora de RH e T&D",
-              promise: "Implemente programas de alto impacto com orçamento limitado e prove seu valor",
-              problems:
+              titulo: "Para a Gestora de RH e T&D",
+              promessa: "Implemente programas de alto impacto com orçamento limitado e prove seu valor",
+              dores:
                 "Implementar programas de alto impacto com orçamento limitado e provar seu valor para a liderança.",
-              gain: "Soluções customizadas, com implantação ágil, suporte contínuo e métricas de engajamento que facilitam a gestão e a comprovação de resultados.",
+              ganho:
+                "Soluções customizadas, com implantação ágil, suporte contínuo e métricas de engajamento que facilitam a gestão e a comprovação de resultados.",
               cta: "Agendar demonstração corporativa",
               onClick: () => router.push("/enterprise/rh"),
             },
@@ -145,52 +147,51 @@ export default function EnterprisePage() {
         <ResultadosReais
           title="O impacto do IPOG Enterprise em números"
           subtitle="Dados que comprovam o retorno sobre o investimento em desenvolvimento estratégico: +70% de Retenção de Talentos: Aumento na retenção de colaboradores-chave após os programas. +60% em Performance de Liderança: Melhoria comprovada nos indicadores de gestão e competências. 100% de Aprovação C-Level: Avaliação máxima do impacto estratégico pelos executivos."
-          statistics={[
+          estatisticas={[
             {
-              icon: <TrendingUp className="w-10 h-10 text-primary" />,
-              value: "+70%",
+              icone: <TrendingUp className="w-10 h-10 text-primary" />,
+              valor: "+70%",
               label: "Retenção de Talentos",
-              description: "Aumento na retenção pós-programa",
+              descricao: "Aumento na retenção pós-programa",
             },
             {
-              icon: <Users className="w-10 h-10 text-primary" />,
-              value: "+60%",
+              icone: <Users className="w-10 h-10 text-primary" />,
+              valor: "+60%",
               label: "Performance de Liderança",
-              description: "Melhoria em indicadores de liderança",
+              descricao: "Melhoria em indicadores de liderança",
             },
             {
-              icon: <Target className="w-10 h-10 text-primary" />,
-              value: "100%",
+              icone: <Target className="w-10 h-10 text-primary" />,
+              valor: "100%",
               label: "Aprovação CEO",
-              description: "Avaliação positiva do impacto estratégico",
+              descricao: "Avaliação positiva do impacto estratégico",
             },
             {
-              icon: <Building2 className="w-10 h-10 text-primary" />,
-              value: "500+",
+              icone: <Building2 className="w-10 h-10 text-primary" />,
+              valor: "500+",
               label: "Empresas Atendidas",
-              description: "Organizações transformadas",
+              descricao: "Organizações transformadas",
             },
           ]}
-          testimonials={[
+          depoimentos={[
             {
-              type: "before-after",
-              name: "Maria Silva",
-              role: "Diretora de RH - Empresa de Tecnologia",
-              before:
-                "Dificuldade em comprovar ROI dos programas de desenvolvimento e baixo engajamento das lideranças",
-              after:
+              tipo: "antes-depois",
+              nome: "Maria Silva",
+              cargo: "Diretora de RH - Empresa de Tecnologia",
+              antes: "Dificuldade em comprovar ROI dos programas de desenvolvimento e baixo engajamento das lideranças",
+              depois:
                 "Aumento de 65% no engajamento e relatórios executivos que comprovam impacto direto nos resultados de negócio",
-              impact: "+65% de engajamento e ROI comprovado em 8 meses",
+              impacto: "+65% de engajamento e ROI comprovado em 8 meses",
             },
             {
-              type: "before-after",
-              name: "Carlos Mendes",
-              role: "CEO - Indústria Farmacêutica",
-              before:
+              tipo: "antes-depois",
+              nome: "Carlos Mendes",
+              cargo: "CEO - Indústria Farmacêutica",
+              antes:
                 "Investimento alto em educação corporativa sem visibilidade clara de resultados e impacto na cultura",
-              after:
+              depois:
                 "Fortalecimento da cultura de inovação, retenção de 85% dos talentos-chave e aumento de 40% na produtividade",
-              impact: "85% de retenção de talentos e +40% de produtividade",
+              impacto: "85% de retenção de talentos e +40% de produtividade",
             },
           ]}
         />
@@ -203,66 +204,66 @@ export default function EnterprisePage() {
           title="Curadoria executiva com a chancela IPOG"
           subtitle="Conhecimento aplicado por quem vive o mercado, com cases reais e atuação em todo o Brasil."
           backgroundColor="bg-background"
-          credentials={[
+          credenciais={[
             {
-              icon: <Building2 className="w-6 h-6 text-primary" />,
-              text: "Mais de 500 empresas transformadas",
+              icone: <Building2 className="w-6 h-6 text-primary" />,
+              texto: "Mais de 500 empresas transformadas",
             },
             {
-              icon: <Award className="w-6 h-6 text-primary" />,
-              text: "Certificação reconhecida pelo MEC",
+              icone: <Award className="w-6 h-6 text-primary" />,
+              texto: "Certificação reconhecida pelo MEC",
             },
             {
-              icon: <Users className="w-6 h-6 text-primary" />,
-              text: "Corpo docente executivo atuante",
+              icone: <Users className="w-6 h-6 text-primary" />,
+              texto: "Corpo docente executivo atuante",
             },
             {
-              icon: <Target className="w-6 h-6 text-primary" />,
-              text: "Metodologia 6DS validada",
+              icone: <Target className="w-6 h-6 text-primary" />,
+              texto: "Metodologia 6DS validada",
             },
             {
-              icon: <TrendingUp className="w-6 h-6 text-primary" />,
-              text: "ROI médio de 8 meses",
+              icone: <TrendingUp className="w-6 h-6 text-primary" />,
+              texto: "ROI médio de 8 meses",
             },
             {
-              icon: <Briefcase className="w-6 h-6 text-primary" />,
-              text: "Presença em todo território nacional",
+              icone: <Briefcase className="w-6 h-6 text-primary" />,
+              texto: "Presença em todo território nacional",
             },
           ]}
-          professors={[
+          professores={[
             {
-              name: "Dr. Roberto Andrade",
+              nome: "Dr. Roberto Andrade",
               area: "Estratégia Corporativa",
               bio: "Ex-VP de Estratégia em multinacional, especialista em transformação organizacional e desenvolvimento de lideranças executivas.",
             },
             {
-              name: "Dra. Juliana Costa",
+              nome: "Dra. Juliana Costa",
               area: "Gestão de Pessoas",
               bio: "20 anos de experiência em RH estratégico, consultora de cultura organizacional e engajamento de equipes de alta performance.",
             },
             {
-              name: "Prof. Marcelo Santos",
+              nome: "Prof. Marcelo Santos",
               area: "Inovação e Mudança",
               bio: "Consultor de inovação corporativa, mentor de programas de transformação digital e desenvolvimento de mindset ágil.",
             },
           ]}
-          professorsTitle="Conheça alguns de nossos professores executivos"
+          tituloProfessores="Conheça alguns de nossos professores executivos"
         />
 
         {/* Ação Final */}
         <AcaoFinal
           title="Vamos transformar aprendizado em performance?"
-          description="Solicite um diagnóstico estratégico e descubra como a educação corporativa pode acelerar os resultados da sua empresa."
-          backgroundColor="bg-muted/30"
-          primaryButton={{
-            text: "Solicitar diagnóstico corporativo",
+          descricao="Solicite um diagnóstico estratégico e descubra como a educação corporativa pode acelerar os resultados da sua empresa."
+          corFundo="bg-muted/30"
+          botaoPrimario={{
+            texto: "Solicitar diagnóstico corporativo",
             onClick: () => openAssistantWithFlow("consultor"),
-            icon: <MessageCircle className="w-5 h-5" />,
+            icone: <MessageCircle className="w-5 h-5" />,
           }}
-          secondaryButton={{
-            text: "Falar com especialista",
+          botaoSecundario={{
+            texto: "Falar com especialista",
             onClick: () => openAssistantWithFlow("consultor"),
-            icon: <ArrowRight className="w-5 h-5" />,
+            icone: <ArrowRight className="w-5 h-5" />,
           }}
         />
 

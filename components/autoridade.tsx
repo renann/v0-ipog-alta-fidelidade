@@ -7,38 +7,38 @@ import { Badge } from "@/components/ui/badge"
 import { DocenteModal } from "@/components/docente-modal"
 import type { ReactNode } from "react"
 
-interface Credential {
-  icon: ReactNode
-  text: string
+interface Credencial {
+  icone: ReactNode
+  texto: string
 }
 
 interface Professor {
-  name: string
+  nome: string
   bio: string
   area: string
   avatar?: ReactNode
   tags?: string[]
-  photo?: string
+  foto?: string
   miniBio?: string
-  fullBio?: string
+  bioCompleta?: string
   linkedin?: string
 }
 
 interface AutoridadeProps {
   title: string
   subtitle: string
-  credentials: Credential[]
-  professors: Professor[]
-  professorsTitle?: string
+  credenciais: Credencial[]
+  professores: Professor[]
+  tituloProfessores?: string
   backgroundColor?: string
 }
 
 export function Autoridade({
   title,
   subtitle,
-  credentials,
-  professors,
-  professorsTitle = "Conheça alguns de nossos professores executivos",
+  credenciais,
+  professores,
+  tituloProfessores = "Conheça alguns de nossos professores executivos",
   backgroundColor = "bg-muted/30",
 }: AutoridadeProps) {
   const [selectedProfessor, setSelectedProfessor] = useState<Professor | null>(null)
@@ -53,19 +53,19 @@ export function Autoridade({
 
         <div className="mb-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {credentials.map((credential, index) => (
+            {credenciais.map((credencial, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                  {credential.icon}
+                  {credencial.icone}
                 </div>
-                <span className="font-medium">{credential.text}</span>
+                <span className="font-medium">{credencial.texto}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold mb-6 text-center">{professorsTitle}</h3>
+          <h3 className="text-xl font-semibold mb-6 text-center">{tituloProfessores}</h3>
           <Carousel
             opts={{
               align: "start",
@@ -74,7 +74,7 @@ export function Autoridade({
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {professors.map((professor, index) => (
+              {professores.map((professor, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
                   <Card
                     className="p-6 h-full hover:shadow-lg transition-shadow cursor-pointer"
@@ -86,7 +86,7 @@ export function Autoridade({
                           <div className="w-10 h-10 text-muted-foreground" />
                         </div>
                       )}
-                      <h4 className="font-semibold text-lg">{professor.name}</h4>
+                      <h4 className="font-semibold text-lg">{professor.nome}</h4>
                       <p className="text-sm font-medium text-muted-foreground">{professor.area}</p>
                       <p className="text-sm text-muted-foreground line-clamp-3">{professor.bio}</p>
                       {professor.tags && professor.tags.length > 0 && (
@@ -113,15 +113,15 @@ export function Autoridade({
       {selectedProfessor && (
         <DocenteModal
           docente={{
-            nome: selectedProfessor.name,
+            nome: selectedProfessor.nome,
             area: selectedProfessor.area,
             miniBio: selectedProfessor.miniBio || selectedProfessor.bio,
             bioCompleta:
-              selectedProfessor.fullBio ||
+              selectedProfessor.bioCompleta ||
               selectedProfessor.bio +
                 " Com vasta experiência acadêmica e profissional, contribui significativamente para a formação de novos profissionais no IPOG.",
             linkedin: selectedProfessor.linkedin,
-            foto: selectedProfessor.photo || "/placeholder.svg?height=200&width=200",
+            foto: selectedProfessor.foto || "/placeholder.svg?height=200&width=200",
           }}
           open={!!selectedProfessor}
           onOpenChange={(open) => !open && setSelectedProfessor(null)}

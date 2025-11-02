@@ -5,21 +5,21 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { TrendingUp } from "lucide-react"
 
 export function ROITransicaoArea() {
-  const salaryEvolution = [
+  const evolucaoSalarial = [
     {
-      level: "Júnior (Nova Área)",
-      salary: "R$ 4.500",
-      description: "Entrada na nova área com especialização",
+      nivel: "Júnior (Nova Área)",
+      salario: "R$ 4.500",
+      descricao: "Entrada na nova área com especialização",
     },
     {
-      level: "Pleno (1-2 anos)",
-      salary: "R$ 7.000",
-      description: "Consolidação na nova área",
+      nivel: "Pleno (1-2 anos)",
+      salario: "R$ 7.000",
+      descricao: "Consolidação na nova área",
     },
     {
-      level: "Sênior (3-4 anos)",
-      salary: "R$ 10.500",
-      description: "Especialista reconhecido",
+      nivel: "Sênior (3-4 anos)",
+      salario: "R$ 10.500",
+      descricao: "Especialista reconhecido",
     },
   ]
 
@@ -42,12 +42,12 @@ export function ROITransicaoArea() {
             className="w-full"
           >
             <CarouselContent>
-              {salaryEvolution.map((item, index) => (
+              {evolucaoSalarial.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-8 text-center h-full">
-                    <div className="text-sm text-muted-foreground mb-2">{item.level}</div>
-                    <div className="text-4xl font-bold mb-4">{item.salary}</div>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <div className="text-sm text-muted-foreground mb-2">{item.nivel}</div>
+                    <div className="text-4xl font-bold mb-4">{item.salario}</div>
+                    <p className="text-sm text-muted-foreground">{item.descricao}</p>
                   </Card>
                 </CarouselItem>
               ))}

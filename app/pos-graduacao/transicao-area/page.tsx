@@ -44,25 +44,25 @@ export default function TransicaoAreaPage() {
         />
 
         <Dilema
-          title="A segurança que você precisa para dar o próximo passo"
-          subtitle="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
-          problems={[
+          titulo="A segurança que você precisa para dar o próximo passo"
+          subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
+          dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
-              title: "Insegurança ao começar do zero?",
-              solution:
+              titulo: "Insegurança ao começar do zero?",
+              solucao:
                 "Sua jornada começa com uma trilha de nivelamento e mentoria individualizada para construir confiança e resultados a cada etapa.",
             },
             {
               icon: <MapPin className="h-5 w-5" />,
-              title: "Não sabe como entrar no novo mercado?",
-              solution:
+              titulo: "Não sabe como entrar no novo mercado?",
+              solucao:
                 "Conectamos você a uma rede de profissionais atuantes que abrem portas e aceleram sua inserção na nova carreira.",
             },
             {
               icon: <Clock className="h-5 w-5" />,
-              title: "Receio de não ter a base necessária?",
-              solution:
+              titulo: "Receio de não ter a base necessária?",
+              solucao:
                 "Nossas trilhas-ponte garantem o conhecimento técnico essencial, com projetos práticos que validam sua nova competência desde o início.",
             },
           ]}
@@ -70,15 +70,15 @@ export default function TransicaoAreaPage() {
         <MetodoTransicaoArea />
 
         <Modalidades
-          title="Encontre a modalidade ideal para sua jornada"
-          subtitle="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
-          modalities={[
+          titulo="Encontre a modalidade ideal para sua jornada"
+          subtitulo="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
+          modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              title: "EAD (Gravado)",
-              description:
+              titulo: "EAD (Gravado)",
+              descricao:
                 "A flexibilidade total para você migrar de carreira sem abrir mão da sua rotina. Estude com autonomia e conte com mentoria individualizada e a certificação que o mercado reconhece.",
-              benefits: [
+              beneficios: [
                 "Estude no seu ritmo e reveja aulas sempre que quiser;",
                 "Conteúdos atualizados e interativos;",
                 "Tutoria online com suporte contínuo;",
@@ -89,10 +89,10 @@ export default function TransicaoAreaPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              title: "Ao Vivo (Online)",
-              description:
+              titulo: "Ao Vivo (Online)",
+              descricao:
                 "A disciplina e a interação que aceleram seu aprendizado. Participe de encontros semanais com especialistas, tire dúvidas em tempo real e construa uma rede de contatos nacional sem sair de casa.",
-              benefits: [
+              beneficios: [
                 "Aulas ao vivo com professores e mentores;",
                 "Gravações disponíveis após cada encontro;",
                 "Troca com colegas de diversas áreas;",
@@ -103,10 +103,10 @@ export default function TransicaoAreaPage() {
             },
             {
               badge: "PÓS-GRADUAÇÃO",
-              title: "Presencial",
-              description:
+              titulo: "Presencial",
+              descricao:
                 "A imersão que constrói conexões de alto impacto. Participe de práticas intensivas, eventos exclusivos e construa um networking sólido com professores e profissionais que são referência na sua nova área.",
-              benefits: [
+              beneficios: [
                 "Aulas práticas e discussões presenciais;",
                 "Networking direto com profissionais do setor;",
                 "Projetos aplicados em grupo;",
@@ -155,72 +155,72 @@ export default function TransicaoAreaPage() {
         />
 
         <Trilha
-          title="Uma jornada estruturada para sua nova carreira"
-          subtitle="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
-          stages={[
+          titulo="Uma jornada estruturada para sua nova carreira"
+          subtitulo="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
+          etapas={[
             {
-              number: "1",
-              title: "Nivelamento e Base Sólida",
-              description:
+              numero: "1",
+              titulo: "Nivelamento e Base Sólida",
+              descricao:
                 "Construa a base técnica da sua nova carreira com trilhas-ponte, eliminando a insegurança de começar do zero.",
             },
             {
-              number: "2",
-              title: "Especialização Aplicada",
-              description:
+              numero: "2",
+              titulo: "Especialização Aplicada",
+              descricao:
                 "Aprofunde seus conhecimentos com projetos reais e uma metodologia que conecta você à prática que o mercado exige.",
             },
             {
-              number: "3",
-              title: "Certificação Profissional",
-              description:
+              numero: "3",
+              titulo: "Certificação Profissional",
+              descricao:
                 "Conquiste uma certificação com reconhecimento oficial do MEC e validação internacional, um diploma que carrega o peso e a credibilidade de mais de 20 anos do IPOG.",
             },
             {
-              number: "4",
-              title: "Mentoria de Recolocação",
-              description:
+              numero: "4",
+              titulo: "Mentoria de Recolocação",
+              descricao:
                 "Receba apoio estratégico para preparar seu portfólio, currículo e se destacar em processos seletivos na nova área.",
             },
             {
-              number: "5",
-              title: "Acesso à Rede IPOG",
-              description:
+              numero: "5",
+              titulo: "Acesso à Rede IPOG",
+              descricao:
                 "Faça parte de uma comunidade exclusiva de profissionais e tenha acesso a oportunidades e conexões que impulsionam sua trajetória.",
             },
           ]}
-          ctaButton={{
-            text: "Montar minha trilha de transição",
+          botaoCta={{
+            texto: "Montar minha trilha de transição",
             href: "/falar-com-consultor",
           }}
           bgColor="bg-background"
         />
 
         <Empregabilidade
-          title="Resultados que comprovam: sua transição é nosso compromisso."
-          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
-          statistics={[
+          titulo="Resultados que comprovam: sua transição é nosso compromisso."
+          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "78%",
-              description: "dos nossos alunos realizam a transição de carreira em até 12 meses após a conclusão.",
+              valor: "78%",
+              descricao: "dos nossos alunos realizam a transição de carreira em até 12 meses após a conclusão.",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "8-12 meses",
-              description:
+              valor: "8-12 meses",
+              descricao:
                 "é o tempo médio que nossos alunos levam para se estabelecer e alcançar crescimento na nova carreira.",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "100%",
-              description: "dos alunos de transição têm acesso a mentoria especializada e à rede de apoio IPOG.",
+              valor: "100%",
+              descricao: "dos alunos de transição têm acesso a mentoria especializada e à rede de apoio IPOG.",
             },
           ]}
-          statisticsLayout="grid"
-          testimonial={{
-            text: "Consegui fazer a transição de engenharia para gestão de projetos com o apoio da mentoria IPOG.",
-            author: "Aluno IPOG",
+          layoutEstatisticas="grid"
+          depoimento={{
+            texto: "Consegui fazer a transição de engenharia para gestão de projetos com o apoio da mentoria IPOG.",
+            autor: "Aluno IPOG",
           }}
           bgColor="bg-background"
         />
@@ -228,14 +228,14 @@ export default function TransicaoAreaPage() {
         <CasesRecolocacao />
         <MentoriaNetworking />
         <AcaoFinal
-          title="Sua nova carreira começa com a escolha certa."
-          description="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."
-          primaryButton={{
-            text: "Receba seu plano de transição",
+          titulo="Sua nova carreira começa com a escolha certa."
+          descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."
+          botaoPrimario={{
+            texto: "Receba seu plano de transição",
             href: "/catalogo?tipo=pos-graduacao",
           }}
-          secondaryButton={{
-            text: "Fale com um especialista",
+          botaoSecundario={{
+            texto: "Fale com um especialista",
             href: "/falar-com-consultor",
           }}
         />

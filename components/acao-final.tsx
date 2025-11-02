@@ -7,65 +7,65 @@ import type { ReactNode } from "react"
 
 interface AcaoFinalProps {
   title: string
-  description: string
-  primaryButton: {
-    text: string
+  descricao: string
+  botaoPrimario: {
+    texto: string
     href?: string
     onClick?: () => void
-    icon?: ReactNode
+    icone?: ReactNode
   }
-  secondaryButton: {
-    text: string
+  botaoSecundario: {
+    texto: string
     href?: string
     onClick?: () => void
-    icon?: ReactNode
+    icone?: ReactNode
   }
-  backgroundColor?: string
+  corFundo?: string
 }
 
 export function AcaoFinal({
   title,
-  description,
-  primaryButton,
-  secondaryButton,
-  backgroundColor = "bg-background",
+  descricao,
+  botaoPrimario,
+  botaoSecundario,
+  corFundo = "bg-background",
 }: AcaoFinalProps) {
   return (
-    <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
+    <section className={`w-full py-12 md:py-16 ${corFundo}`}>
       <div className="max-w-screen-xl mx-auto px-4">
         <Card className="p-8 md:p-12 bg-muted">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{title}</h2>
-            <p className="text-lg text-muted-foreground mb-8 text-pretty">{description}</p>
+            <p className="text-lg text-muted-foreground mb-8 text-pretty">{descricao}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-              {primaryButton.href ? (
+              {botaoPrimario.href ? (
                 <Button size="lg" className="text-base w-full sm:w-auto whitespace-normal sm:whitespace-nowrap" asChild>
-                  <Link href={primaryButton.href}>
-                    {primaryButton.text}
-                    {primaryButton.icon && <span className="ml-2">{primaryButton.icon}</span>}
+                  <Link href={botaoPrimario.href}>
+                    {botaoPrimario.texto}
+                    {botaoPrimario.icone && <span className="ml-2">{botaoPrimario.icone}</span>}
                   </Link>
                 </Button>
               ) : (
                 <Button
                   size="lg"
                   className="text-base w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
-                  onClick={primaryButton.onClick}
+                  onClick={botaoPrimario.onClick}
                 >
-                  {primaryButton.icon && <span className="mr-2">{primaryButton.icon}</span>}
-                  {primaryButton.text}
+                  {botaoPrimario.icone && <span className="mr-2">{botaoPrimario.icone}</span>}
+                  {botaoPrimario.texto}
                 </Button>
               )}
 
-              {secondaryButton.href ? (
+              {botaoSecundario.href ? (
                 <Button
                   size="lg"
                   variant="ghost"
                   className="text-base w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
                   asChild
                 >
-                  <Link href={secondaryButton.href}>
-                    {secondaryButton.icon && <span className="mr-2">{secondaryButton.icon}</span>}
-                    {secondaryButton.text}
+                  <Link href={botaoSecundario.href}>
+                    {botaoSecundario.icone && <span className="mr-2">{botaoSecundario.icone}</span>}
+                    {botaoSecundario.texto}
                   </Link>
                 </Button>
               ) : (
@@ -73,10 +73,10 @@ export function AcaoFinal({
                   size="lg"
                   variant="ghost"
                   className="text-base w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
-                  onClick={secondaryButton.onClick}
+                  onClick={botaoSecundario.onClick}
                 >
-                  {secondaryButton.icon && <span className="mr-2">{secondaryButton.icon}</span>}
-                  {secondaryButton.text}
+                  {botaoSecundario.icone && <span className="mr-2">{botaoSecundario.icone}</span>}
+                  {botaoSecundario.texto}
                 </Button>
               )}
             </div>

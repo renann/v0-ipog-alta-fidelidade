@@ -12,45 +12,45 @@ export default function ParceirosInternacionaisPage() {
 
   const programas = [
     {
-      country: "Estados Unidos",
-      institution: "Harvard University",
-      description:
+      pais: "Estados Unidos",
+      instituicao: "Harvard University",
+      descricao:
         "Lidere em cenários de alta complexidade com o programa de gestão e inovação da universidade mais prestigiada do mundo.",
-      benefits: [
+      beneficios: [
         "Metodologia de ponta aplicada a desafios reais de negócio.",
         "Networking de alto nível com líderes globais.",
         "Certificação com o peso e o reconhecimento de Harvard.",
         "Visão estratégica para impulsionar a transformação em sua empresa.",
       ],
-      idealFor:
+      idealPara:
         "Líderes e executivos C-level que desejam transformar o futuro de seus negócios com uma visão global e inovadora.",
     },
     {
-      country: "Itália",
-      institution: "Politécnico di Milano",
-      description:
+      pais: "Itália",
+      instituicao: "Politécnico di Milano",
+      descricao:
         "Domine o Design Thinking e a inovação aplicada em uma das escolas de design mais influentes da Europa, aprendendo a criar soluções que geram valor real.",
-      benefits: [
+      beneficios: [
         "Imersão em metodologias europeias de excelência.",
         "Aprendizado prático com professores que são referência no mercado.",
         "Certificação com reconhecimento no mercado europeu.",
         "Desenvolvimento de projetos reais com mentoria especializada.",
       ],
-      idealFor:
+      idealPara:
         "Gestores de produto, designers e líderes de inovação focados em criar experiências de alto valor e impacto no mercado.",
     },
     {
-      country: "Portugal",
-      institution: "Universidade de Coimbra",
-      description:
+      pais: "Portugal",
+      instituicao: "Universidade de Coimbra",
+      descricao:
         "Prepare-se para liderar negócios no cenário global com um MBA executivo que une a tradição acadêmica de Coimbra à visão prática do mercado europeu.",
-      benefits: [
+      beneficios: [
         "Flexibilidade do formato híbrido, ideal para a rotina executiva.",
         "Dupla certificação que valida sua competência no Brasil e na Europa.",
         "Acesso estratégico ao networking e às oportunidades do mercado europeu.",
         "Experiência imersiva com módulos presenciais em Portugal.",
       ],
-      idealFor:
+      idealPara:
         "Executivos e empreendedores com visão de expansão, que buscam as ferramentas certas para internacionalizar seus negócios com segurança.",
     },
   ]
@@ -158,11 +158,11 @@ export default function ParceirosInternacionaisPage() {
                     <div className="flex items-center gap-2 mb-3">
                       <Badge variant="secondary" className="flex items-center gap-1">
                         <Globe className="h-3 w-3" />
-                        {programa.country}
+                        {programa.pais}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl mb-2">{programa.institution}</CardTitle>
-                    <CardDescription className="text-base">{programa.description}</CardDescription>
+                    <CardTitle className="text-xl mb-2">{programa.instituicao}</CardTitle>
+                    <CardDescription className="text-base">{programa.descricao}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-1 flex flex-col gap-6">
                     <div>
@@ -171,7 +171,7 @@ export default function ParceirosInternacionaisPage() {
                         Benefícios
                       </h4>
                       <ul className="space-y-2">
-                        {programa.benefits.map((beneficio, idx) => (
+                        {programa.beneficios.map((beneficio, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                             <span>{beneficio}</span>
@@ -185,7 +185,7 @@ export default function ParceirosInternacionaisPage() {
                         <Users className="h-4 w-4" />
                         Ideal para
                       </h4>
-                      <p className="text-sm text-muted-foreground">{programa.idealFor}</p>
+                      <p className="text-sm text-muted-foreground">{programa.idealPara}</p>
                     </div>
 
                     <Button className="w-full mt-auto">Quero saber mais →</Button>
@@ -211,9 +211,9 @@ export default function ParceirosInternacionaisPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Harvard University", country: "Estados Unidos" },
-                { title: "Politécnico di Milano", country: "Itália" },
-                { title: "Universidade de Coimbra", country: "Portugal" },
+                { titulo: "Harvard University", pais: "Estados Unidos" },
+                { titulo: "Politécnico di Milano", pais: "Itália" },
+                { titulo: "Universidade de Coimbra", pais: "Portugal" },
               ].map((video, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
                   <div className="aspect-video bg-muted flex items-center justify-center">
@@ -225,10 +225,10 @@ export default function ParceirosInternacionaisPage() {
                     </div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-lg">{video.title}</CardTitle>
+                    <CardTitle className="text-lg">{video.titulo}</CardTitle>
                     <CardDescription className="flex items-center gap-1">
                       <Globe className="h-3 w-3" />
-                      {video.country}
+                      {video.pais}
                     </CardDescription>
                   </CardHeader>
                 </Card>

@@ -8,18 +8,18 @@ export function MetodoJovemIngresso() {
   const suportes = [
     {
       icon: Users,
-      title: "Professores de Mercado",
-      description: "Conectam teoria à prática real com experiência profissional ativa",
+      titulo: "Professores de Mercado",
+      descricao: "Conectam teoria à prática real com experiência profissional ativa",
     },
     {
       icon: Route,
-      title: "Trilhas Personalizadas",
-      description: "Aprendizado aplicado desde o primeiro semestre com foco em resultados",
+      titulo: "Trilhas Personalizadas",
+      descricao: "Aprendizado aplicado desde o primeiro semestre com foco em resultados",
     },
     {
       icon: HeartHandshake,
-      title: "Suporte Ativo",
-      description: "Acompanhamento real e flexibilidade total para sua rotina",
+      titulo: "Suporte Ativo",
+      descricao: "Acompanhamento real e flexibilidade total para sua rotina",
     },
   ]
 
@@ -53,8 +53,8 @@ export function MetodoJovemIngresso() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{suporte.title}</h3>
-                      <p className="text-sm text-muted-foreground">{suporte.description}</p>
+                      <h3 className="text-xl font-bold mb-3">{suporte.titulo}</h3>
+                      <p className="text-sm text-muted-foreground">{suporte.descricao}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

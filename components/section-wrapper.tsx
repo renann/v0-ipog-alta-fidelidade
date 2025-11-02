@@ -5,7 +5,7 @@ interface SectionWrapperProps {
   /**
    * Título obrigatório da seção - garante que nenhuma seção fique sem título
    */
-  title: string
+  titulo: string
   /**
    * Conteúdo da seção
    */
@@ -26,23 +26,23 @@ interface SectionWrapperProps {
    * Nível do título (h2, h3, etc)
    * @default "h2"
    */
-  titleLevel?: "h2" | "h3" | "h4"
+  nivelTitulo?: "h2" | "h3" | "h4"
 }
 
 export function SectionWrapper({
-  title,
+  titulo,
   children,
   id,
   className,
   bgColor = "bg-background",
-  titleLevel = "h2",
+  nivelTitulo = "h2",
 }: SectionWrapperProps) {
-  const TitleTag = titleLevel
+  const TituloTag = nivelTitulo
 
   return (
     <section id={id} className={cn("w-full py-12 md:py-16", bgColor, className)}>
       <div className="max-w-screen-xl mx-auto px-4">
-        <TitleTag className="text-3xl font-bold text-center mb-12">{title}</TitleTag>
+        <TituloTag className="text-3xl font-bold text-center mb-12">{titulo}</TituloTag>
         {children}
       </div>
     </section>

@@ -114,9 +114,9 @@ export default function CompliancePage() {
           modalidades={[
             {
               badge: "EXTENSÃO",
-              title: "Online",
-              description: "Aprenda no seu ritmo com conteúdo de alta qualidade",
-              benefits: [
+              titulo: "Online",
+              descricao: "Aprenda no seu ritmo com conteúdo de alta qualidade",
+              beneficios: [
                 "Aulas gravadas disponíveis 24/7",
                 "Material didático completo",
                 "Suporte de tutores especializados",
@@ -129,43 +129,43 @@ export default function CompliancePage() {
         />
 
         <Empregabilidade
-          title="Impacto na carreira"
-          subtitle="Profissionais de compliance são essenciais em todas as organizações modernas."
-          statistics={[
+          titulo="Impacto na carreira"
+          subtitulo="Profissionais de compliance são essenciais em todas as organizações modernas."
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "80%",
-              description: "promovidos após o curso",
+              valor: "80%",
+              descricao: "promovidos após o curso",
               label: "TAXA DE PROMOÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "5-7 m",
-              description: "para nova posição",
+              valor: "5-7 m",
+              descricao: "para nova posição",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "+40%",
-              description: "em média após o curso",
+              valor: "+40%",
+              descricao: "em média após o curso",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas em compliance",
             "Indicações para vagas parceiras",
           ]}
-          testimonial={{
-            text: "O curso me capacitou para estruturar o programa de compliance da empresa.",
-            author: "Aluno IPOG",
+          depoimento={{
+            texto: "O curso me capacitou para estruturar o programa de compliance da empresa.",
+            autor: "Aluno IPOG",
           }}
-          ctaButton={{
-            text: "Fale com um Consultor de Carreira",
+          botaoCta={{
+            texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
 
@@ -174,35 +174,35 @@ export default function CompliancePage() {
           subtitle="Módulos práticos e aplicáveis ao dia a dia do compliance"
           etapas={[
             {
-              title: "Fundamentos de Compliance",
-              description: "Conceitos essenciais, legislação e estrutura de programas de compliance",
-              benefits: ["Lei Anticorrupção e LGPD", "Estrutura de programas de compliance"],
+              titulo: "Fundamentos de Compliance",
+              descricao: "Conceitos essenciais, legislação e estrutura de programas de compliance",
+              beneficios: ["Lei Anticorrupção e LGPD", "Estrutura de programas de compliance"],
               badges: ["Módulo 1"],
             },
             {
-              title: "Gestão de Riscos",
-              description: "Metodologias de identificação, avaliação e mitigação de riscos",
-              benefits: ["Matriz de riscos", "Controles internos"],
+              titulo: "Gestão de Riscos",
+              descricao: "Metodologias de identificação, avaliação e mitigação de riscos",
+              beneficios: ["Matriz de riscos", "Controles internos"],
               badges: ["Módulo 2"],
             },
             {
-              title: "Due Diligence e Investigações",
-              description: "Técnicas de due diligence de terceiros e investigações internas",
-              benefits: ["Due diligence de fornecedores", "Investigações corporativas"],
+              titulo: "Due Diligence e Investigações",
+              descricao: "Técnicas de due diligence de terceiros e investigações internas",
+              beneficios: ["Due diligence de fornecedores", "Investigações corporativas"],
               badges: ["Módulo 3"],
             },
             {
-              title: "Cultura de Compliance",
-              description: "Implementação de cultura ética e programas de treinamento",
-              benefits: ["Código de conduta", "Canais de denúncia"],
+              titulo: "Cultura de Compliance",
+              descricao: "Implementação de cultura ética e programas de treinamento",
+              beneficios: ["Código de conduta", "Canais de denúncia"],
               badges: ["Módulo 4"],
-              highlight: true,
+              destaque: true,
             },
           ]}
-          ctaButton={{
-            text: "Baixar conteúdo programático completo",
+          botaoCta={{
+            texto: "Baixar conteúdo programático completo",
             href: "#grade",
-            note: "PDF com detalhamento de todos os módulos",
+            observacao: "PDF com detalhamento de todos os módulos",
           }}
           backgroundColor="bg-muted/30"
         />

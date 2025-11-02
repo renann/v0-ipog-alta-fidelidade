@@ -45,27 +45,27 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            title="Pressão por resultados imediatos?"
-            subtitle="Nossos cursos são desenhados para gerar impacto rápido. Com aprendizado focado, você aplica o conhecimento imediatamente e justifica seu investimento com evidências."
-            problems={[
+            titulo="Pressão por resultados imediatos?"
+            subtitulo="Nossos cursos são desenhados para gerar impacto rápido. Com aprendizado focado, você aplica o conhecimento imediatamente e justifica seu investimento com evidências."
+            dores={[
               {
                 icon: <Clock className="h-5 w-5" />,
-                title: "Falta de tempo para cursos longos?",
-                description:
+                titulo: "Falta de tempo para cursos longos?",
+                descricao:
                   "Oferecemos soluções de curta duração que cabem na sua rotina. Estude com flexibilidade total, sem precisar pausar sua carreira.",
-                solution: "Cursos de 3-4 meses focados no gap específico que você precisa resolver",
+                solucao: "Cursos de 3-4 meses focados no gap específico que você precisa resolver",
               },
               {
                 icon: <Target className="h-5 w-5" />,
-                title: "Teoria demais, prática de menos",
-                description: "Você precisa aplicar, não apenas entender conceitos",
-                solution: "100% hands-on com templates prontos e casos reais do mercado",
+                titulo: "Teoria demais, prática de menos",
+                descricao: "Você precisa aplicar, não apenas entender conceitos",
+                solucao: "100% hands-on com templates prontos e casos reais do mercado",
               },
               {
                 icon: <TrendingUp className="h-5 w-5" />,
-                title: "ROI precisa ser rápido",
-                description: "Investimento em educação precisa gerar retorno imediato",
-                solution: "Aplique na primeira semana e comprove resultados em até 30 dias",
+                titulo: "ROI precisa ser rápido",
+                descricao: "Investimento em educação precisa gerar retorno imediato",
+                solucao: "Aplique na primeira semana e comprove resultados em até 30 dias",
               },
             ]}
           />
@@ -117,14 +117,14 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            title="Formatos que entregam resultado rápido"
-            subtitle="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
-            modalities={[
+            titulo="Formatos que entregam resultado rápido"
+            subtitulo="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
+            modalidades={[
               {
                 badge: "EXTENSÃO",
-                title: "EAD",
-                description: "Aprenda no seu ritmo, aplique na sua rotina",
-                benefits: [
+                titulo: "EAD",
+                descricao: "Aprenda no seu ritmo, aplique na sua rotina",
+                beneficios: [
                   "Soluções que cabem na sua rotina, sem necessidade de deslocamento",
                   "Flexibilidade total com acesso 24/7 para estudar quando e onde quiser",
                   "Aprendizado focado no que gera impacto, com templates para uso imediato",
@@ -135,9 +135,9 @@ export default function GapImediatoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Ao Vivo",
-                description: "Valide suas soluções em tempo real com especialistas",
-                benefits: [
+                titulo: "Ao Vivo",
+                descricao: "Valide suas soluções em tempo real com especialistas",
+                beneficios: [
                   "Acesso direto a profissionais de mercado para tirar dúvidas na hora",
                   "Feedback especializado que reduz riscos e elimina incertezas técnicas",
                   "Networking qualificado com profissionais em situações semelhantes",
@@ -148,9 +148,9 @@ export default function GapImediatoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Presencial",
-                description: "Domine habilidades em uma experiência imersiva",
-                benefits: [
+                titulo: "Presencial",
+                descricao: "Domine habilidades em uma experiência imersiva",
+                beneficios: [
                   "Vivência hands-on intensiva em laboratórios com infraestrutura de ponta",
                   "Validação imediata de competências com suporte presencial de especialistas",
                   "Networking estruturado que acelera a aplicação do conhecimento no trabalho",
@@ -166,30 +166,31 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <ResultadosReais
-            title="Profissionais que resolveram desafios técnicos com rapidez"
-            statistics={[
+            titulo="Profissionais que resolveram desafios técnicos com rapidez"
+            estatisticas={[
               {
                 icon: <Zap className="h-8 w-8" />,
-                value: "92%",
-                description:
+                valor: "92%",
+                descricao:
                   "dos profissionais aplicam o conhecimento já na primeira semana, transformando aprendizado em resultado imediato",
               },
               {
                 icon: <TrendingUp className="h-8 w-8" />,
-                value: "80%",
-                description: "relataram aumento de desempenho no trabalho",
+                valor: "80%",
+                descricao: "relataram aumento de desempenho no trabalho",
               },
               {
                 icon: <Target className="h-8 w-8" />,
-                value: "87%",
-                description: "resolveram desafio técnico em até 30 dias",
+                valor: "87%",
+                descricao: "resolveram desafio técnico em até 30 dias",
               },
             ]}
-            testimonials={[
+            depoimentos={[
               {
-                text: "Precisava implementar uma estratégia de marketing digital urgente. O curso me deu templates prontos e ferramentas práticas. Em 2 semanas já estava aplicando e vendo resultados reais na empresa.",
-                author: "Carlos Mendes",
-                role: "Gerente de Marketing",
+                texto:
+                  "Precisava implementar uma estratégia de marketing digital urgente. O curso me deu templates prontos e ferramentas práticas. Em 2 semanas já estava aplicando e vendo resultados reais na empresa.",
+                autor: "Carlos Mendes",
+                cargo: "Gerente de Marketing",
               },
             ]}
           />
@@ -197,35 +198,35 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            title="Aprenda com quem Transforma o Mercado"
-            subtitle="Especialistas atuantes que trazem cases reais e soluções práticas"
-            credentials={[
+            titulo="Aprenda com quem Transforma o Mercado"
+            subtitulo="Especialistas atuantes que trazem cases reais e soluções práticas"
+            credenciais={[
               {
                 icon: <Users className="h-5 w-5" />,
-                text: "Metodologia Prática e Interativa",
+                texto: "Metodologia Prática e Interativa",
               },
               {
                 icon: <Award className="h-5 w-5" />,
-                text: "Professores que são Referência no Mercado",
+                texto: "Professores que são Referência no Mercado",
               },
               {
                 icon: <Building className="h-5 w-5" />,
-                text: "Certificação que Impulsiona sua Carreira",
+                texto: "Certificação que Impulsiona sua Carreira",
               },
             ]}
-            professors={[
+            professores={[
               {
-                name: "Prof. André Martins",
+                nome: "Prof. André Martins",
                 area: "Marketing Digital",
                 bio: "CMO em Startup Unicórnio. Especialista com mais de 15 anos de experiência liderando estratégias digitais em grandes empresas.",
               },
               {
-                name: "Profa. Juliana Rocha",
+                nome: "Profa. Juliana Rocha",
                 area: "Gestão de Pessoas",
                 bio: "Head de RH em multinacional. Especialista em cultura organizacional e liderança.",
               },
               {
-                name: "Dr. Fernando Lima",
+                nome: "Dr. Fernando Lima",
                 area: "Compliance",
                 bio: "Advogado e consultor em governança. 20 anos implementando programas de compliance.",
               },
@@ -239,14 +240,14 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            title="Pronto para transformar conhecimento em resultado?"
-            description="IPOG: A escolha que conecta você ao sucesso."
-            primaryButton={{
-              text: "Comece sua jornada hoje mesmo",
+            titulo="Pronto para transformar conhecimento em resultado?"
+            descricao="IPOG: A escolha que conecta você ao sucesso."
+            botaoPrimario={{
+              texto: "Comece sua jornada hoje mesmo",
               href: "/catalogo?tipo=extensao",
             }}
-            secondaryButton={{
-              text: "Falar com consultor",
+            botaoSecundario={{
+              texto: "Falar com consultor",
               onClick: openAssistantForConsultor,
             }}
           />

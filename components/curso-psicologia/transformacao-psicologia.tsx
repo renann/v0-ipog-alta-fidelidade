@@ -6,18 +6,18 @@ export function TransformacaoPsicologia() {
   const areas = [
     {
       icon: Stethoscope,
-      title: "Clínica e Saúde Mental",
-      description: "Acompanhamento psicológico e terapias individuais e coletivas.",
+      titulo: "Clínica e Saúde Mental",
+      descricao: "Acompanhamento psicológico e terapias individuais e coletivas.",
     },
     {
       icon: Puzzle,
-      title: "Gestão de Pessoas e RH",
-      description: "Desenvolvimento humano e clima organizacional.",
+      titulo: "Gestão de Pessoas e RH",
+      descricao: "Desenvolvimento humano e clima organizacional.",
     },
     {
       icon: School,
-      title: "Educação e Inclusão",
-      description: "Orientação escolar e mediação socioemocional.",
+      titulo: "Educação e Inclusão",
+      descricao: "Orientação escolar e mediação socioemocional.",
     },
   ]
 
@@ -43,8 +43,8 @@ export function TransformacaoPsicologia() {
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{area.title}</h3>
-                  <p className="text-muted-foreground">{area.description}</p>
+                  <h3 className="text-xl font-bold mb-3">{area.titulo}</h3>
+                  <p className="text-muted-foreground">{area.descricao}</p>
                 </CardContent>
               </Card>
             )

@@ -8,44 +8,44 @@ export function MetodoRecolocacao() {
   const diferenciais = [
     {
       icon: Users,
-      title: "Mentoria Estruturada",
-      description: "Acompanhamento com especialistas de mercado que entendem o processo de recolocação.",
+      titulo: "Mentoria Estruturada",
+      descricao: "Acompanhamento com especialistas de mercado que entendem o processo de recolocação.",
     },
     {
       icon: Briefcase,
-      title: "Portfólio Comprovado",
-      description: "Projetos reais e aplicáveis que você pode apresentar em processos seletivos.",
+      titulo: "Portfólio Comprovado",
+      descricao: "Projetos reais e aplicáveis que você pode apresentar em processos seletivos.",
     },
     {
       icon: Network,
-      title: "Networking Estratégico",
-      description: "Conexões diretas com profissionais e empresas que podem abrir portas.",
+      titulo: "Networking Estratégico",
+      descricao: "Conexões diretas com profissionais e empresas que podem abrir portas.",
     },
   ]
 
   const trilha = [
     {
       numero: 1,
-      title: "Diagnóstico de carreira",
-      description: "Identifique suas forças e oportunidades de reposicionamento.",
+      titulo: "Diagnóstico de carreira",
+      descricao: "Identifique suas forças e oportunidades de reposicionamento.",
       status: "current" as const,
     },
     {
       numero: 2,
-      title: "Escolha do curso de impacto",
-      description: "Selecione a formação que mais agrega ao seu perfil.",
+      titulo: "Escolha do curso de impacto",
+      descricao: "Selecione a formação que mais agrega ao seu perfil.",
       status: "future" as const,
     },
     {
       numero: 3,
-      title: "Construção de portfólio prático",
-      description: "Desenvolva projetos reais durante o curso.",
+      titulo: "Construção de portfólio prático",
+      descricao: "Desenvolva projetos reais durante o curso.",
       status: "future" as const,
     },
     {
       numero: 4,
-      title: "Networking e recolocação",
-      description: "Conecte-se com o mercado e conquiste novas oportunidades.",
+      titulo: "Networking e recolocação",
+      descricao: "Conecte-se com o mercado e conquiste novas oportunidades.",
       status: "future" as const,
     },
   ]
@@ -71,8 +71,8 @@ export function MetodoRecolocacao() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <h3 className="text-lg font-bold mb-2">{item.titulo}</h3>
+                  <p className="text-sm text-muted-foreground">{item.descricao}</p>
                 </CardContent>
               </Card>
             )
@@ -108,8 +108,8 @@ export function MetodoRecolocacao() {
                           <span className="text-sm font-bold text-primary">{etapa.numero}</span>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold mb-2">{etapa.title}</h4>
-                          <p className="text-sm text-muted-foreground">{etapa.description}</p>
+                          <h4 className="font-bold mb-2">{etapa.titulo}</h4>
+                          <p className="text-sm text-muted-foreground">{etapa.descricao}</p>
                         </div>
                       </div>
                     </CardContent>

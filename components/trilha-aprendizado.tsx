@@ -2,28 +2,28 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
 interface EtapaAprendizado {
-  title: string
-  description: string
+  titulo: string
+  descricao: string
   tags: string[]
   beneficios?: string[]
 }
 
 interface TrilhaAprendizadoProps {
-  title?: string
-  subtitle?: string
+  titulo?: string
+  subtitulo?: string
   etapas: EtapaAprendizado[]
-  ctaText?: string
+  ctaTexto?: string
   ctaLink?: string
-  footerText?: string
+  textoRodape?: string
 }
 
 export function TrilhaAprendizado({
-  title = "Trilha de aprendizado",
-  subtitle = "Veja como evoluir do seu curso atual para os próximos passos e posicionar-se melhor no mercado.",
+  titulo = "Trilha de aprendizado",
+  subtitulo = "Veja como evoluir do seu curso atual para os próximos passos e posicionar-se melhor no mercado.",
   etapas,
-  ctaText = "Conheça os benefícios IPOG +",
+  ctaTexto = "Conheça os benefícios IPOG +",
   ctaLink = "/programas-beneficios/ipog-plus",
-  footerText = "Aluno+ é o programa de benefícios de lifelong learning do IPOG.",
+  textoRodape = "Aluno+ é o programa de benefícios de lifelong learning do IPOG.",
 }: TrilhaAprendizadoProps) {
   return (
     <section className="w-full py-16 md:py-24 bg-background">
@@ -31,8 +31,8 @@ export function TrilhaAprendizado({
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{title}</h2>
-            <p className="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">{subtitle}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{titulo}</h2>
+            <p className="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">{subtitulo}</p>
           </div>
 
           {/* Timeline */}
@@ -52,9 +52,9 @@ export function TrilhaAprendizado({
 
                   {/* Card */}
                   <div className="bg-card border rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="text-xl md:text-2xl font-bold mb-3">{etapa.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold mb-3">{etapa.titulo}</h3>
 
-                    <p className="text-muted-foreground mb-4 leading-relaxed">{etapa.description}</p>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">{etapa.descricao}</p>
 
                     {/* Benefícios (se houver) */}
                     {etapa.beneficios && etapa.beneficios.length > 0 && (
@@ -86,12 +86,12 @@ export function TrilhaAprendizado({
           <div className="mt-12 md:mt-16 text-center space-y-4">
             <Button size="lg" className="gap-2" asChild>
               <a href={ctaLink}>
-                {ctaText}
+                {ctaTexto}
                 <ArrowRight className="w-4 h-4" />
               </a>
             </Button>
 
-            <p className="text-sm text-muted-foreground">{footerText}</p>
+            <p className="text-sm text-muted-foreground">{textoRodape}</p>
           </div>
         </div>
       </div>

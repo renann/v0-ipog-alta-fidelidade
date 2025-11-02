@@ -7,28 +7,28 @@ export function JornadaAcademicaPsicologia() {
   const etapas = [
     {
       numero: "1",
-      title: "Fundamentos da Psicologia",
-      description: "Descubra as raízes teóricas e éticas da profissão.",
+      titulo: "Fundamentos da Psicologia",
+      descricao: "Descubra as raízes teóricas e éticas da profissão.",
     },
     {
       numero: "2",
-      title: "Psicologia do Desenvolvimento",
-      description: "Compreenda como crescemos e nos transformamos ao longo da vida.",
+      titulo: "Psicologia do Desenvolvimento",
+      descricao: "Compreenda como crescemos e nos transformamos ao longo da vida.",
     },
     {
       numero: "3",
-      title: "Psicologia Social e Organizacional",
-      description: "Explore o impacto das relações humanas nas instituições.",
+      titulo: "Psicologia Social e Organizacional",
+      descricao: "Explore o impacto das relações humanas nas instituições.",
     },
     {
       numero: "4",
-      title: "Psicologia Clínica",
-      description: "Aprenda técnicas de escuta e intervenção, mesmo no formato digital.",
+      titulo: "Psicologia Clínica",
+      descricao: "Aprenda técnicas de escuta e intervenção, mesmo no formato digital.",
     },
     {
       numero: "5",
-      title: "Psicologia Contemporânea",
-      description: "Mergulhe em novas abordagens e temas atuais como ansiedade, redes sociais e propósito.",
+      titulo: "Psicologia Contemporânea",
+      descricao: "Mergulhe em novas abordagens e temas atuais como ansiedade, redes sociais e propósito.",
     },
   ]
 
@@ -51,8 +51,8 @@ export function JornadaAcademicaPsicologia() {
                 {etapa.numero}
               </div>
               <div className="flex-1 pt-2">
-                <h3 className="text-xl font-bold mb-2">{etapa.title}</h3>
-                <p className="text-muted-foreground">{etapa.description}</p>
+                <h3 className="text-xl font-bold mb-2">{etapa.titulo}</h3>
+                <p className="text-muted-foreground">{etapa.descricao}</p>
               </div>
             </div>
           ))}

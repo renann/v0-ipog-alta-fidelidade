@@ -6,33 +6,33 @@ export function EntregaveisGapImediato() {
   const entregaveis = [
     {
       icon: FileText,
-      title: "Templates Profissionais",
-      description: "Planilhas, frameworks e checklists prontos para personalizar e aplicar.",
+      titulo: "Templates Profissionais",
+      descricao: "Planilhas, frameworks e checklists prontos para personalizar e aplicar.",
     },
     {
       icon: BarChart3,
-      title: "Modelos de Relatório",
-      description: "Estruturas para apresentar resultados de forma clara e profissional.",
+      titulo: "Modelos de Relatório",
+      descricao: "Estruturas para apresentar resultados de forma clara e profissional.",
     },
     {
       icon: Lightbulb,
-      title: "Guias de Aplicação",
-      description: "Passo a passo para aplicar o aprendizado de forma prática e imediata.",
+      titulo: "Guias de Aplicação",
+      descricao: "Passo a passo para aplicar o aprendizado de forma prática e imediata.",
     },
     {
       icon: CheckSquare,
-      title: "Checklists de Diagnóstico",
-      description: "Instrumentos de autoavaliação técnica e validação de processos.",
+      titulo: "Checklists de Diagnóstico",
+      descricao: "Instrumentos de autoavaliação técnica e validação de processos.",
     },
     {
       icon: Wrench,
-      title: "Kits de Ferramentas",
-      description: "Acesso a recursos, links e ferramentas digitais utilizadas no curso.",
+      titulo: "Kits de Ferramentas",
+      descricao: "Acesso a recursos, links e ferramentas digitais utilizadas no curso.",
     },
     {
       icon: Map,
-      title: "Canvas Estratégicos",
-      description: "Modelos visuais para estruturar ações e comunicar decisões.",
+      titulo: "Canvas Estratégicos",
+      descricao: "Modelos visuais para estruturar ações e comunicar decisões.",
     },
   ]
 
@@ -62,8 +62,8 @@ export function EntregaveisGapImediato() {
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                      <h3 className="font-semibold mb-2">{item.titulo}</h3>
+                      <p className="text-sm text-muted-foreground">{item.descricao}</p>
                     </div>
                   </div>
                 </CardContent>

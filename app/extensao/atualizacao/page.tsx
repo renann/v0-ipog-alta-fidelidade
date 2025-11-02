@@ -47,31 +47,31 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            title="O mercado não espera. Você está acompanhando?"
-            subtitle="Mantenha sua relevância e vantagem competitiva com atualização contínua"
-            problems={[
+            titulo="O mercado não espera. Você está acompanhando?"
+            subtitulo="Mantenha sua relevância e vantagem competitiva com atualização contínua"
+            dores={[
               {
                 icon: <Clock className="h-5 w-5" />,
-                title: "Obsolescência técnica",
-                description:
+                titulo: "Obsolescência técnica",
+                descricao:
                   "O mercado não espera. Cada dia de inação é um passo em direção à irrelevância profissional.",
-                solution:
+                solucao:
                   "Nossa biblioteca viva é atualizada por especialistas para entregar apenas o conhecimento que gera impacto real e imediato na sua carreira.",
               },
               {
                 icon: <Target className="h-5 w-5" />,
-                title: "Falta de tempo para pesquisa",
-                description:
+                titulo: "Falta de tempo para pesquisa",
+                descricao:
                   "A sobrecarga de informações paralisa sua evolução. Perder tempo filtrando conteúdo irrelevante não é uma opção.",
-                solution:
+                solucao:
                   "Nosso conteúdo é curado por especialistas para que você foque apenas no essencial, de forma prática e direta ao ponto.",
               },
               {
                 icon: <TrendingUp className="h-5 w-5" />,
-                title: "Perda de vantagem competitiva",
-                description:
+                titulo: "Perda de vantagem competitiva",
+                descricao:
                   "A oportunidade ideal não espera por você. Profissionais atualizados já estão conquistando os melhores projetos e salários.",
-                solution:
+                solucao:
                   "Oferecemos acesso a frameworks, ferramentas e metodologias de ponta que colocam você à frente da concorrência.",
               },
             ]}
@@ -79,19 +79,19 @@ export default function AtualizacaoPage() {
         </section>
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
-          <MetodologiaUnificada title="Metodologia IPOG: teoria + prática + mentoria" />
+          <MetodologiaUnificada titulo="Metodologia IPOG: teoria + prática + mentoria" />
         </section>
 
         <section className="w-full py-12 md:py-16">
           <Beneficios
             title="Por que escolher a Atualização IPOG?"
             subtitle="Vantagens exclusivas para profissionais que buscam evolução contínua"
-            benefits={[
+            beneficios={[
               {
-                icon: <BookOpen className="h-8 w-8" />,
-                title: "Biblioteca Viva",
-                subtitle: "Conteúdo autoral exclusivo",
-                items: [
+                icone: <BookOpen className="h-8 w-8" />,
+                titulo: "Biblioteca Viva",
+                subtitulo: "Conteúdo autoral exclusivo",
+                itens: [
                   "Guias práticos para aplicação imediata.",
                   "Frameworks e templates para acelerar seu trabalho.",
                   "Acesso contínuo para consultas futuras.",
@@ -99,10 +99,10 @@ export default function AtualizacaoPage() {
                 ],
               },
               {
-                icon: <Users className="h-8 w-8" />,
-                title: "Apoio Especializado",
-                subtitle: "Mentoria e networking contínuo",
-                items: [
+                icone: <Users className="h-8 w-8" />,
+                titulo: "Apoio Especializado",
+                subtitulo: "Mentoria e networking contínuo",
+                itens: [
                   "Sessões de mentoria para validar suas estratégias.",
                   "Comunidade exclusiva para networking de alto nível.",
                   "Eventos e webinars com as principais tendências.",
@@ -110,10 +110,10 @@ export default function AtualizacaoPage() {
                 ],
               },
               {
-                icon: <Rocket className="h-8 w-8" />,
-                title: "Aplicação Imediata",
-                subtitle: "Conteúdo prático e acionável",
-                items: [
+                icone: <Rocket className="h-8 w-8" />,
+                titulo: "Aplicação Imediata",
+                subtitulo: "Conteúdo prático e acionável",
+                itens: [
                   "Estudos de caso de empresas líderes.",
                   "Ferramentas e checklists para usar na segunda-feira.",
                   "Projetos práticos que constroem seu portfólio.",
@@ -121,8 +121,8 @@ export default function AtualizacaoPage() {
                 ],
               },
             ]}
-            buttonText="Começar atualização"
-            onClickButton={() => {
+            textoBotao="Começar atualização"
+            onClickBotao={() => {
               if (typeof window !== "undefined") {
                 window.dispatchEvent(
                   new CustomEvent("openAssistant", {
@@ -131,7 +131,7 @@ export default function AtualizacaoPage() {
                 )
               }
             }}
-            backgroundColor="bg-muted/30"
+            corFundo="bg-muted/30"
           />
         </section>
 
@@ -196,14 +196,14 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            title="Formatos que se adaptam à sua rotina"
-            subtitle="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
-            modalities={[
+            titulo="Formatos que se adaptam à sua rotina"
+            subtitulo="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
+            modalidades={[
               {
                 badge: "EXTENSÃO",
-                title: "EAD Gravado",
-                description: "Aprenda no seu ritmo, com acesso contínuo",
-                benefits: [
+                titulo: "EAD Gravado",
+                descricao: "Aprenda no seu ritmo, com acesso contínuo",
+                beneficios: [
                   "Estude quando e onde quiser, sem comprometer sua agenda profissional.",
                   "Acesso ilimitado ao conteúdo e a todas as futuras atualizações.",
                   "Biblioteca de conhecimento com novos materiais práticos todos os meses.",
@@ -214,9 +214,9 @@ export default function AtualizacaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Ao Vivo Online",
-                description: "Interaja com especialistas em tempo real",
-                benefits: [
+                titulo: "Ao Vivo Online",
+                descricao: "Interaja com especialistas em tempo real",
+                beneficios: [
                   "Participe de mentorias ao vivo com os líderes que definem as tendências.",
                   "Valide suas estratégias e tire dúvidas sobre os temas mais emergentes.",
                   "Construa um networking remoto com profissionais de alto nível.",
@@ -227,9 +227,9 @@ export default function AtualizacaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Presencial",
-                description: "Experiência imersiva e networking de alto valor",
-                benefits: [
+                titulo: "Presencial",
+                descricao: "Experiência imersiva e networking de alto valor",
+                beneficios: [
                   "Participe de workshops intensivos com estudos de caso reais e aplicados.",
                   "Construa um networking presencial de alto impacto para sua carreira.",
                   "Acesse laboratórios e ferramentas de ponta para praticar suas novas habilidades.",
@@ -245,16 +245,16 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Trilha
-            title="Sua jornada de atualização contínua"
-            subtitle="Evolua de forma estruturada e mantenha-se sempre à frente"
-            stages={[
+            titulo="Sua jornada de atualização contínua"
+            subtitulo="Evolua de forma estruturada e mantenha-se sempre à frente"
+            etapas={[
               {
-                number: 1,
-                title: "Nivele Seu Conhecimento",
-                description:
+                numero: 1,
+                titulo: "Nivele Seu Conhecimento",
+                descricao:
                   "Atualize suas bases com os conceitos e práticas que o mercado adota hoje para construir uma base sólida para o futuro.",
-                duration: "Mês 1",
-                topics: [
+                duracao: "Mês 1",
+                topicos: [
                   "Diagnóstico de gaps técnicos",
                   "Fundamentos revisitados com novas práticas",
                   "Ferramentas e frameworks atuais",
@@ -262,12 +262,12 @@ export default function AtualizacaoPage() {
                 ],
               },
               {
-                number: 2,
-                title: "Domine as Inovações",
-                description:
+                numero: 2,
+                titulo: "Domine as Inovações",
+                descricao:
                   "Explore as tecnologias emergentes e metodologias de ponta que estão definindo o futuro da sua área.",
-                duration: "Mês 2-3",
-                topics: [
+                duracao: "Mês 2-3",
+                topicos: [
                   "Tecnologias emergentes e disruptivas",
                   "Cases de sucesso e aplicações práticas",
                   "Workshops com especialistas do mercado",
@@ -275,12 +275,12 @@ export default function AtualizacaoPage() {
                 ],
               },
               {
-                number: 3,
-                title: "Torne-se Referência",
-                description:
+                numero: 3,
+                titulo: "Torne-se Referência",
+                descricao:
                   "Consolide seu aprendizado, aplique o conhecimento em projetos de impacto e posicione-se como um líder estratégico no seu setor.",
-                duration: "Mês 4",
-                topics: [
+                duracao: "Mês 4",
+                topicos: [
                   "Projeto final com aplicação real",
                   "Apresentação para banca de especialistas",
                   "Networking com líderes do setor",
@@ -293,26 +293,26 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Empregabilidade
-            title="Profissionais atualizados conquistam mais"
-            subtitle="Dados reais de quem mantém a vantagem competitiva com o IPOG"
-            statistics={[
+            titulo="Profissionais atualizados conquistam mais"
+            subtitulo="Dados reais de quem mantém a vantagem competitiva com o IPOG"
+            estatisticas={[
               {
-                icon: <TrendingUp className="h-8 w-8" />,
-                value: "94%",
-                description: "dos alunos aplicam o conhecimento no trabalho já na semana seguinte.",
-                gain: "+35% de produtividade",
+                icone: <TrendingUp className="h-8 w-8" />,
+                valor: "94%",
+                descricao: "dos alunos aplicam o conhecimento no trabalho já na semana seguinte.",
+                ganho: "+35% de produtividade",
               },
               {
-                icon: <Trophy className="h-8 w-8" />,
-                value: "87%",
-                description: "relatam impacto direto em promoções e novos projetos.",
-                gain: "+R$ 3.200/mês em média",
+                icone: <Trophy className="h-8 w-8" />,
+                valor: "87%",
+                descricao: "relatam impacto direto em promoções e novos projetos.",
+                ganho: "+R$ 3.200/mês em média",
               },
               {
-                icon: <Rocket className="h-8 w-8" />,
-                value: "91%",
-                description: "passaram a ser vistos como referência técnica em suas equipes.",
-                gain: "Reconhecimento profissional",
+                icone: <Rocket className="h-8 w-8" />,
+                valor: "91%",
+                descricao: "passaram a ser vistos como referência técnica em suas equipes.",
+                ganho: "Reconhecimento profissional",
               },
             ]}
           />
@@ -320,32 +320,32 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <DepoimentosDeTexto
-            title="Resultados Reais na Carreira"
-            subtitle="Histórias reais de quem escolheu a atualização contínua"
-            testimonials={[
+            titulo="Resultados Reais na Carreira"
+            subtitulo="Histórias reais de quem escolheu a atualização contínua"
+            depoimentos={[
               {
-                name: "Mariana Costa",
-                role: "Tech Lead",
+                nome: "Mariana Costa",
+                cargo: "Tech Lead",
                 area: "Tecnologia",
-                testimonial:
+                texto:
                   "O conteúdo é tão prático que consegui aplicar os frameworks no dia seguinte. Essa agilidade foi decisiva para minha promoção a Tech Lead.",
-                gain: "Promoção para Tech Lead",
+                ganho: "Promoção para Tech Lead",
               },
               {
-                name: "Roberto Almeida",
-                role: "Gerente de Projetos",
+                nome: "Roberto Almeida",
+                cargo: "Gerente de Projetos",
                 area: "Gestão",
-                testimonial:
+                texto:
                   "As metodologias de gestão que aprendi me permitiram otimizar processos e levar minha equipe a um aumento de 40% em produtividade. O retorno foi imediato.",
-                gain: "+40% de produtividade da equipe",
+                ganho: "+40% de produtividade da equipe",
               },
               {
-                name: "Juliana Santos",
-                role: "Head de Marketing",
+                nome: "Juliana Santos",
+                cargo: "Head de Marketing",
                 area: "Marketing Digital",
-                testimonial:
+                texto:
                   "Com as estratégias de growth hacking do curso, reestruturamos nossas campanhas e alcançamos um aumento de mais de 60% nas conversões em apenas um trimestre.",
-                gain: "+60% em conversões",
+                ganho: "+60% em conversões",
               },
             ]}
           />
@@ -353,35 +353,35 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Autoridade
-            title="Aprenda com Quem Lidera o Mercado"
-            subtitle="Professores atuantes que trazem tendências e inovações do mercado"
-            credentials={[
+            titulo="Aprenda com Quem Lidera o Mercado"
+            subtitulo="Professores atuantes que trazem tendências e inovações do mercado"
+            credenciais={[
               {
                 icon: <Lightbulb className="h-5 w-5" />,
-                text: "Especialistas em Tendências e Inovação",
+                texto: "Especialistas em Tendências e Inovação",
               },
               {
                 icon: <Award className="h-5 w-5" />,
-                text: "Conteúdo Autoral Exclusivo",
+                texto: "Conteúdo Autoral Exclusivo",
               },
               {
                 icon: <Building className="h-5 w-5" />,
-                text: "Líderes em Empresas de Tecnologia",
+                texto: "Líderes em Empresas de Tecnologia",
               },
             ]}
-            professors={[
+            professores={[
               {
-                name: "Dr. Paulo Henrique",
+                nome: "Dr. Paulo Henrique",
                 area: "Inteligência Artificial",
                 bio: "PhD em IA e CTO de uma startup de IA generativa, traz para a sala de aula a aplicação real das tecnologias que estão revolucionando os negócios.",
               },
               {
-                name: "Profa. Ana Beatriz",
+                nome: "Profa. Ana Beatriz",
                 area: "Transformação Digital",
                 bio: "Com 20 anos de experiência como CDO, compartilha a visão estratégica por trás das maiores transformações digitais do mercado.",
               },
               {
-                name: "Prof. Carlos Eduardo",
+                nome: "Prof. Carlos Eduardo",
                 area: "Gestão Ágil",
                 bio: "Agile Coach que já implementou metodologias ágeis em mais de 50 empresas, ensina os frameworks que aceleram resultados em equipes de alta performance.",
               },
@@ -391,14 +391,14 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            title="Não espere o futuro chegar"
-            description="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
-            primaryButton={{
-              text: "Inicie Sua Atualização Agora",
+            titulo="Não espere o futuro chegar"
+            descricao="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
+            botaoPrimario={{
+              texto: "Inicie Sua Atualização Agora",
               href: "/catalogo?tipo=extensao",
             }}
-            secondaryButton={{
-              text: "Falar com consultor",
+            botaoSecundario={{
+              texto: "Falar com consultor",
               onClick: openAssistantForConsultor,
             }}
           />

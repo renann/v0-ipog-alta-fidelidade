@@ -47,9 +47,9 @@ export default function EngenhariaEstruturalPage() {
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
-              title: "Modalidade Presencial",
-              description: "Acelere sua carreira com networking presencial e aprendizado prático.",
-              benefits: [
+              titulo: "Modalidade Presencial",
+              descricao: "Acelere sua carreira com networking presencial e aprendizado prático.",
+              beneficios: [
                 "Aulas com aplicação prática em laboratórios modernos.",
                 "Interação direta para tirar dúvidas com professores atuantes no mercado.",
                 "Conexões reais que abrem portas para novas oportunidades.",
@@ -65,24 +65,24 @@ export default function EngenhariaEstruturalPage() {
           subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
-              title: "1º ao 3º Mês: Fundamentos Estruturais Sólidos",
-              description:
+              titulo: "1º ao 3º Mês: Fundamentos Estruturais Sólidos",
+              descricao:
                 "Domine as bases teóricas e normativas essenciais para projetar com segurança e eficiência, alinhado às melhores práticas do mercado.",
-              benefits: ["Análise de estruturas de concreto e aço", "Normas técnicas e legislação"],
+              beneficios: ["Análise de estruturas de concreto e aço", "Normas técnicas e legislação"],
               badges: ["1º ao 3º mês"],
             },
             {
-              title: "4º ao 8º Mês: Domínio de Projetos Avançados",
-              description:
+              titulo: "4º ao 8º Mês: Domínio de Projetos Avançados",
+              descricao:
                 "Desenvolva projetos estruturais complexos, utilizando modelagem computacional e as tecnologias mais atuais para solucionar desafios reais da engenharia.",
-              benefits: ["Modelagem computacional", "Projetos de fundações especiais"],
+              beneficios: ["Modelagem computacional", "Projetos de fundações especiais"],
               badges: ["4º ao 8º mês"],
             },
             {
-              title: "9º ao 12º Mês: Aplicação Prática e Liderança Técnica",
-              description:
+              titulo: "9º ao 12º Mês: Aplicação Prática e Liderança Técnica",
+              descricao:
                 "Aplique seu conhecimento em estudos de caso reais, preparando-se para supervisionar obras e liderar projetos com a confiança que o mercado exige.",
-              benefits: ["Supervisão de projetos", "Análise de patologias estruturais"],
+              beneficios: ["Supervisão de projetos", "Análise de patologias estruturais"],
               badges: ["9º ao 12º mês"],
               destaque: true,
             },
@@ -95,43 +95,44 @@ export default function EngenhariaEstruturalPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          title="O impacto da sua escolha na sua carreira:"
-          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
-          statistics={[
+          titulo="O impacto da sua escolha na sua carreira:"
+          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "9 de cada 10",
-              description: "alunos são promovidos ou recolocados após a formação.",
+              valor: "9 de cada 10",
+              descricao: "alunos são promovidos ou recolocados após a formação.",
               label: "TAXA DE COLOCAÇÃO*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "Até 8 meses",
-              description: "é o tempo médio para a promoção.",
+              valor: "Até 8 meses",
+              descricao: "é o tempo médio para a promoção.",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "+40%",
-              description: "de aumento salarial em média após a conclusão.",
+              valor: "+40%",
+              descricao: "de aumento salarial em média após a conclusão.",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          testimonial={{
-            text: "O IPOG me deu a confiança e o conhecimento técnico para assumir a liderança em projetos estruturais de grande porte. A conexão com professores de mercado foi o grande diferencial.",
-            author: "Nome do Aluno, Cargo e Empresa",
+          depoimento={{
+            texto:
+              "O IPOG me deu a confiança e o conhecimento técnico para assumir a liderança em projetos estruturais de grande porte. A conexão com professores de mercado foi o grande diferencial.",
+            autor: "Nome do Aluno, Cargo e Empresa",
           }}
-          ctaButton={{
-            text: "Fale com um Consultor de Carreira",
+          botaoCta={{
+            texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
         <section className="w-full py-16 px-4 bg-muted/30">
@@ -231,7 +232,7 @@ export default function EngenhariaEstruturalPage() {
 
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-3xl mx-auto mb-12">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre a especialização</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Tire suas dúvidas sobre o curso, softwares e atuação profissional.

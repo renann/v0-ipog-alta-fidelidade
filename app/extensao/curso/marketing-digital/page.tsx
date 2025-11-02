@@ -79,12 +79,12 @@ export default function MarketingDigitalPage() {
         <Modalidades
           title="Formato Presencial: Aprendizado Imersivo e Networking de Alto Nível"
           subtitle="Uma jornada prática com encontros presenciais que fortalecem a troca de experiências e aceleram seu desenvolvimento."
-          modalities={[
+          modalidades={[
             {
               badge: "EXTENSÃO",
-              title: "PRESENCIAL",
-              description: "Imersão, prática e conexões reais.",
-              benefits: [
+              titulo: "PRESENCIAL",
+              descricao: "Imersão, prática e conexões reais.",
+              beneficios: [
                 "100 horas de formação",
                 "5 módulos práticos",
                 "1 final de semana por mês",
@@ -98,54 +98,55 @@ export default function MarketingDigitalPage() {
         />
 
         <Empregabilidade
-          title="Resultados que comprovam a excelência IPOG"
-          subtitle="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
-          statistics={[
+          titulo="Resultados que comprovam a excelência IPOG"
+          subtitulo="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
+          estatisticas={[
             {
               icon: <Award className="h-8 w-8" />,
-              value: "98%",
-              description: "de satisfação média entre os alunos",
+              valor: "98%",
+              descricao: "de satisfação média entre os alunos",
               label: "EXCELÊNCIA COMPROVADA*",
             },
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "+300 mil",
-              description: "profissionais especializados em todo o Brasil",
+              valor: "+300 mil",
+              descricao: "profissionais especializados em todo o Brasil",
               label: "IMPACTO NACIONAL*",
             },
             {
               icon: <Rocket className="h-8 w-8" />,
-              value: "Nota máxima",
-              description: "de credenciamento no MEC",
+              valor: "Nota máxima",
+              descricao: "de credenciamento no MEC",
               label: "QUALIDADE RECONHECIDA*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Revisão de currículo e Linkedin",
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          testimonial={{
-            text: "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
-            author: "Profissional de Marketing, Aluno IPOG",
+          depoimento={{
+            texto:
+              "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
+            autor: "Profissional de Marketing, Aluno IPOG",
           }}
-          ctaButton={{
-            text: "Fale com um Consultor de Carreira",
+          botaoCta={{
+            texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
 
         <Trilha
-          title="DISCIPLINAS"
-          subtitle="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
-          steps={[
+          titulo="DISCIPLINAS"
+          subtitulo="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
+          etapas={[
             {
-              title: "Máquina de Vendas 5.0",
-              description: "Funis, Jornada e Psicologia da Conversão",
-              benefits: [
+              titulo: "Máquina de Vendas 5.0",
+              descricao: "Funis, Jornada e Psicologia da Conversão",
+              beneficios: [
                 "Comportamento do consumidor digital",
                 "Funis de atração, conversão e retenção",
                 "Gatilhos mentais e storytelling",
@@ -156,9 +157,9 @@ export default function MarketingDigitalPage() {
               badges: ["Módulo 01"],
             },
             {
-              title: "Tráfego Pago I",
-              description: "Meta Ads e TikTok Ads para Conversão",
-              benefits: [
+              titulo: "Tráfego Pago I",
+              descricao: "Meta Ads e TikTok Ads para Conversão",
+              beneficios: [
                 "Estrutura das plataformas: Meta Business e TikTok Ads Manager",
                 "Segmentação, públicos personalizados e remarketing",
                 "Criativos de alta performance",
@@ -168,9 +169,9 @@ export default function MarketingDigitalPage() {
               badges: ["Módulo 02"],
             },
             {
-              title: "Tráfego Pago II",
-              description: "Google Ads, YouTube e Rede de Pesquisa",
-              benefits: [
+              titulo: "Tráfego Pago II",
+              descricao: "Google Ads, YouTube e Rede de Pesquisa",
+              beneficios: [
                 "Tipos de campanha: pesquisa, display, vídeo e Performance Max",
                 "Palavras-chave, correspondências e intenção de busca",
                 "SEO x SEM: estratégias integradas",
@@ -181,9 +182,9 @@ export default function MarketingDigitalPage() {
               badges: ["Módulo 03"],
             },
             {
-              title: "Conteúdo e Criatividade com IA",
-              description: "Prompt Engineering, Planejamento e Execução",
-              benefits: [
+              titulo: "Conteúdo e Criatividade com IA",
+              descricao: "Prompt Engineering, Planejamento e Execução",
+              beneficios: [
                 "Ferramentas de IA para criação de conteúdo (ChatGPT, Midjourney, Canva AI)",
                 "Prompt engineering aplicado ao marketing",
                 "Planejamento de conteúdo estratégico",
@@ -194,9 +195,9 @@ export default function MarketingDigitalPage() {
               badges: ["Módulo 04"],
             },
             {
-              title: "Dados, Métricas e Otimização",
-              description: "Analytics, BI e Tomada de Decisão Baseada em Dados",
-              benefits: [
+              titulo: "Dados, Métricas e Otimização",
+              descricao: "Analytics, BI e Tomada de Decisão Baseada em Dados",
+              beneficios: [
                 "Google Analytics 4 e Tag Manager",
                 "Dashboards e relatórios automatizados",
                 "KPIs e métricas de performance",
@@ -207,9 +208,9 @@ export default function MarketingDigitalPage() {
               badges: ["Módulo 05"],
             },
             {
-              title: "Projeto Final Integrado",
-              description: "Aplicação Prática e Apresentação de Resultados",
-              benefits: [
+              titulo: "Projeto Final Integrado",
+              descricao: "Aplicação Prática e Apresentação de Resultados",
+              beneficios: [
                 "Desenvolvimento de estratégia completa de marketing digital",
                 "Criação de campanhas reais com orçamento simulado",
                 "Apresentação de resultados e aprendizados",
@@ -217,13 +218,13 @@ export default function MarketingDigitalPage() {
                 "Construção de portfólio profissional",
               ],
               badges: ["Módulo 06"],
-              highlight: true,
+              destaque: true,
             },
           ]}
-          ctaButton={{
-            text: "Baixar grade curricular completa",
+          botaoCta={{
+            texto: "Baixar grade curricular completa",
             href: "#grade",
-            note: "PDF com detalhamento de todas as disciplinas",
+            observacao: "PDF com detalhamento de todas as disciplinas",
           }}
           backgroundColor="bg-muted/30"
         />
@@ -304,37 +305,37 @@ export default function MarketingDigitalPage() {
         </section>
 
         <Autoridade
-          title="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
-          subtitle="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
-          credentials={[
+          titulo="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
+          subtitulo="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
+          credenciais={[
             {
               icon: <Award className="h-5 w-5" />,
-              text: "Certificações Google e Meta",
+              texto: "Certificações Google e Meta",
             },
             {
               icon: <Users className="h-5 w-5" />,
-              text: "Gestores de Tráfego Sênior",
+              texto: "Gestores de Tráfego Sênior",
             },
             {
               icon: <TrendingUp className="h-5 w-5" />,
-              text: "Especialistas em Growth",
+              texto: "Especialistas em Growth",
             },
           ]}
-          professors={[
+          professores={[
             {
-              name: "Dr. Thiago Martins",
+              nome: "Dr. Thiago Martins",
               area: "Tráfego Pago",
               bio: "Gestor de tráfego com R$ 10M+ investidos. Certificado Google e Meta.",
               avatar: "TM",
             },
             {
-              name: "Dra. Camila Rodrigues",
+              nome: "Dra. Camila Rodrigues",
               area: "Growth Marketing",
               bio: "Head de Growth em startups unicórnio. Especialista em funis de conversão.",
               avatar: "CR",
             },
             {
-              name: "Dr. André Silva",
+              nome: "Dr. André Silva",
               area: "Marketing de Conteúdo",
               bio: "Estrategista de conteúdo. Criador de campanhas virais para grandes marcas.",
               avatar: "AS",

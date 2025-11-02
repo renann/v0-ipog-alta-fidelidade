@@ -5,19 +5,19 @@ export function PropostaValorPsicologia() {
   const beneficios = [
     {
       icon: Brain,
-      title: "Metodologia que conecta mente e emoção",
-      description:
+      titulo: "Metodologia que conecta mente e emoção",
+      descricao:
         "Videoaulas, encontros ao vivo e experiências imersivas que fazem você se enxergar no papel do psicólogo desde o primeiro módulo.",
     },
     {
       icon: Users,
-      title: "Mentores que inspiram e acompanham",
-      description: "Professores e tutores com experiência real de consultório, clínica e empresas.",
+      titulo: "Mentores que inspiram e acompanham",
+      descricao: "Professores e tutores com experiência real de consultório, clínica e empresas.",
     },
     {
       icon: Monitor,
-      title: "Ambiente digital interativo",
-      description: "Plataforma intuitiva, materiais multimídia e acompanhamento contínuo do seu progresso.",
+      titulo: "Ambiente digital interativo",
+      descricao: "Plataforma intuitiva, materiais multimídia e acompanhamento contínuo do seu progresso.",
     },
   ]
 
@@ -42,8 +42,8 @@ export function PropostaValorPsicologia() {
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{beneficio.title}</h3>
-                  <p className="text-muted-foreground">{beneficio.description}</p>
+                  <h3 className="text-xl font-bold mb-3">{beneficio.titulo}</h3>
+                  <p className="text-muted-foreground">{beneficio.descricao}</p>
                 </CardContent>
               </Card>
             )

@@ -8,18 +8,18 @@ export function MetodoSegundaGraduacao() {
   const diferenciais = [
     {
       icon: CheckCircle2,
-      title: "Validação de Conhecimentos",
-      description: "Reconhece sua experiência profissional e evita repetição desnecessária",
+      titulo: "Validação de Conhecimentos",
+      descricao: "Reconhece sua experiência profissional e evita repetição desnecessária",
     },
     {
       icon: Zap,
-      title: "Trilhas Aceleradas",
-      description: "Otimiza seu tempo de estudo com foco no que realmente importa para sua carreira",
+      titulo: "Trilhas Aceleradas",
+      descricao: "Otimiza seu tempo de estudo com foco no que realmente importa para sua carreira",
     },
     {
       icon: Clock,
-      title: "Flexibilidade Total",
-      description: "Estude no seu ritmo profissional, sem comprometer sua rotina de trabalho",
+      titulo: "Flexibilidade Total",
+      descricao: "Estude no seu ritmo profissional, sem comprometer sua rotina de trabalho",
     },
   ]
 
@@ -52,8 +52,8 @@ export function MetodoSegundaGraduacao() {
                           <Icon className="w-8 h-8 text-foreground" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold mb-3">{diferencial.title}</h3>
-                      <p className="text-sm text-muted-foreground">{diferencial.description}</p>
+                      <h3 className="text-xl font-bold mb-3">{diferencial.titulo}</h3>
+                      <p className="text-sm text-muted-foreground">{diferencial.descricao}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>

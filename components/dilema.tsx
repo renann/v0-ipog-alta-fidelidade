@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button"
 import { ImageIcon } from "lucide-react"
 import type { ReactNode } from "react"
 
-interface ProblemSolution {
+interface DoreSolucao {
   icon: ReactNode
-  title: string
-  description?: string
-  problem?: string
-  solution: string
+  titulo: string
+  descricao?: string
+  dor?: string
+  solucao: string
 }
 
 interface DilemaProps {
   title: string
   subtitle: string
-  solution?: string
-  imageUrl?: string
+  solucao?: string
+  imagemUrl?: string
   backgroundColor?: string
-  problems?: ProblemSolution[]
+  dores?: DoreSolucao[]
   ctaText?: string
   ctaAction?: () => void
   showBorder?: boolean
@@ -28,15 +28,15 @@ interface DilemaProps {
 export function Dilema({
   title,
   subtitle,
-  solution,
-  imageUrl,
+  solucao,
+  imagemUrl,
   backgroundColor = "bg-background",
-  problems = [],
+  dores = [],
   ctaText,
   ctaAction,
   showBorder = false,
 }: DilemaProps) {
-  if (problems.length > 0) {
+  if (dores.length > 0) {
     return (
       <section className={`w-full py-12 md:py-16 ${backgroundColor}`}>
         <div className="max-w-screen-xl mx-auto px-4">
@@ -46,26 +46,24 @@ export function Dilema({
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {problems.map((item, index) => (
+            {dores.map((dor, index) => (
               <Card key={index} className={showBorder ? "border-2" : ""}>
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">{item.icon}</div>
+                    <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">{dor.icon}</div>
                   </div>
-                  <h3 className="text-lg font-bold mb-3 text-center">{item.title}</h3>
-                  {item.description && (
-                    <p className="text-sm text-muted-foreground mb-4 text-center">{item.description}</p>
-                  )}
-                  {item.problem && (
+                  <h3 className="text-lg font-bold mb-3 text-center">{dor.titulo}</h3>
+                  {dor.descricao && <p className="text-sm text-muted-foreground mb-4 text-center">{dor.descricao}</p>}
+                  {dor.dor && (
                     <div className="mb-4">
                       <p className="text-sm font-medium text-muted-foreground mb-1">A dor:</p>
-                      <p className="text-sm">{item.problem}</p>
+                      <p className="text-sm">{dor.dor}</p>
                     </div>
                   )}
-                  <div className={item.description || item.problem ? "pt-4 border-t" : ""}>
-                    {item.problem && <p className="text-sm font-medium text-primary mb-1">A solução:</p>}
-                    <p className={`text-sm ${item.problem ? "font-medium" : "text-muted-foreground"} text-center`}>
-                      {item.solution}
+                  <div className={dor.descricao || dor.dor ? "pt-4 border-t" : ""}>
+                    {dor.dor && <p className="text-sm font-medium text-primary mb-1">A solução:</p>}
+                    <p className={`text-sm ${dor.dor ? "font-medium" : "text-muted-foreground"} text-center`}>
+                      {dor.solucao}
                     </p>
                   </div>
                 </CardContent>
@@ -93,12 +91,12 @@ export function Dilema({
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
               <p className="text-muted-foreground mb-4">{subtitle}</p>
-              {solution && <p className="text-foreground font-medium">{solution}</p>}
+              {solucao && <p className="text-foreground font-medium">{solucao}</p>}
             </div>
             <div className="bg-muted rounded-lg aspect-square flex items-center justify-center">
-              {imageUrl ? (
+              {imagemUrl ? (
                 <img
-                  src={imageUrl || "/placeholder.svg"}
+                  src={imagemUrl || "/placeholder.svg"}
                   alt={title}
                   className="w-full h-full object-cover rounded-lg"
                 />

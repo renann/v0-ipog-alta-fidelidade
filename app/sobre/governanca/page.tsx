@@ -20,14 +20,14 @@ export default function GovernancaPage() {
   const orgaosGovernanca = [
     {
       icon: <Users className="w-12 h-12 text-primary" />,
-      title: "Conselho Diretor",
-      description:
+      titulo: "Conselho Diretor",
+      descricao:
         "Define a visão de futuro e as diretrizes estratégicas que garantem a solidez e o crescimento do IPOG em todo o país.",
     },
     {
       icon: <Users className="w-12 h-12 text-primary" />,
-      title: "Conselho Acadêmico",
-      description:
+      titulo: "Conselho Acadêmico",
+      descricao:
         "Zela pela excelência do nosso ensino, garantindo que nossa matriz curricular seja um reflexo direto das práticas mais atuais e exigidas pelo mercado, conectando cada aluno ao sucesso profissional.",
     },
   ]
@@ -41,14 +41,14 @@ export default function GovernancaPage() {
   const politicas = [
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
-      title: "Política de Privacidade e LGPD",
-      description:
+      titulo: "Política de Privacidade e LGPD",
+      descricao:
         "Garantimos a proteção e o uso responsável dos dados pessoais, em total conformidade com a legislação vigente.",
     },
     {
       icon: <FileText className="w-12 h-12 text-primary" />,
-      title: "Código de Conduta e Ética",
-      description:
+      titulo: "Código de Conduta e Ética",
+      descricao:
         "Estabelece as diretrizes que orientam nossas relações, reforçando uma cultura de respeito, integridade e colaboração.",
     },
   ]
@@ -124,8 +124,8 @@ export default function GovernancaPage() {
                   <div className="flex justify-center mb-4">
                     <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center">{orgao.icon}</div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{orgao.title}</h3>
-                  <p className="text-muted-foreground">{orgao.description}</p>
+                  <h3 className="text-xl font-bold mb-3">{orgao.titulo}</h3>
+                  <p className="text-muted-foreground">{orgao.descricao}</p>
                 </CardContent>
               </Card>
             ))}
@@ -174,8 +174,8 @@ export default function GovernancaPage() {
                       {politica.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{politica.title}</h3>
-                  <p className="text-muted-foreground">{politica.description}</p>
+                  <h3 className="text-xl font-bold mb-3">{politica.titulo}</h3>
+                  <p className="text-muted-foreground">{politica.descricao}</p>
                 </CardContent>
               </Card>
             ))}

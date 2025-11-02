@@ -5,18 +5,18 @@ export function RetornoProfissional() {
   const estatisticas = [
     {
       icon: TrendingUp,
-      value: "92%",
-      description: "dos alunos relataram avanço na carreira em menos de 12 meses",
+      valor: "92%",
+      descricao: "dos alunos relataram avanço na carreira em menos de 12 meses",
     },
     {
       icon: Award,
-      value: "87%",
-      description: "conseguiram promoção ou mudança de área após a formação",
+      valor: "87%",
+      descricao: "conseguiram promoção ou mudança de área após a formação",
     },
     {
       icon: Clock,
-      value: "2,5 anos",
-      description: "tempo médio de conclusão vs 4 anos tradicionais",
+      valor: "2,5 anos",
+      descricao: "tempo médio de conclusão vs 4 anos tradicionais",
     },
   ]
 
@@ -39,8 +39,8 @@ export function RetornoProfissional() {
                     <Icon className="w-8 h-8 text-foreground" />
                   </div>
                 </div>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <p className="text-sm text-muted-foreground">{stat.description}</p>
+                <div className="text-4xl font-bold mb-2">{stat.valor}</div>
+                <p className="text-sm text-muted-foreground">{stat.descricao}</p>
               </Card>
             )
           })}

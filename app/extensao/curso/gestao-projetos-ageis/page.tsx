@@ -117,9 +117,9 @@ export default function GestaoProjetosAgeisPage() {
           modalidades={[
             {
               badge: "EXTENSÃO",
-              title: "EAD (Gravado)",
-              description: "Para quem dita o próprio ritmo.",
-              benefits: [
+              titulo: "EAD (Gravado)",
+              descricao: "Para quem dita o próprio ritmo.",
+              beneficios: [
                 "Aulas gravadas disponíveis 24/7;",
                 "Estude no seu ritmo;",
                 "Suporte online com tutores;",
@@ -130,9 +130,9 @@ export default function GestaoProjetosAgeisPage() {
             },
             {
               badge: "EXTENSÃO",
-              title: "Ao Vivo (Online)",
-              description: "Para quem busca trocas e networking em tempo real.",
-              benefits: [
+              titulo: "Ao Vivo (Online)",
+              descricao: "Para quem busca trocas e networking em tempo real.",
+              beneficios: [
                 "Aulas online ao vivo;",
                 "Interação direta com professor;",
                 "Discussão de casos práticos;",
@@ -145,84 +145,84 @@ export default function GestaoProjetosAgeisPage() {
         />
 
         <Empregabilidade
-          title="Resultados que Falam por Si"
-          subtitle="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
-          statistics={[
+          titulo="Resultados que Falam por Si"
+          subtitulo="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
+          estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              value: "92%",
-              description: "dos alunos aplicam o conhecimento no trabalho",
+              valor: "92%",
+              descricao: "dos alunos aplicam o conhecimento no trabalho",
               label: "APLICAÇÃO PRÁTICA*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              value: "1 sem",
-              description: "Resultados práticos na primeira semana",
+              valor: "1 sem",
+              descricao: "Resultados práticos na primeira semana",
               label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              value: "+35%",
-              description: "de impacto profissional médio após a certificação",
+              valor: "+35%",
+              descricao: "de impacto profissional médio após a certificação",
               label: "AUMENTO SALARIAL*",
             },
           ]}
-          statisticsLayout="carousel"
-          careerServices={[
+          layoutEstatisticas="carousel"
+          servicosCarreira={[
             "Templates de Scrum e Kanban prontos",
             "Acesso a comunidade de gestores ágeis",
             "Mentoria com especialistas certificados",
           ]}
-          testimonial={{
-            text: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
-            author: "Aluno IPOG - Gestão de Projetos",
+          depoimento={{
+            texto: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
+            autor: "Aluno IPOG - Gestão de Projetos",
           }}
-          ctaButton={{
-            text: "Falar com um Consultor",
+          botaoCta={{
+            texto: "Falar com um Consultor",
             onClick: "openAssistantForConsultor",
           }}
-          note="* Dados baseados em pesquisa interna."
+          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
         />
 
         <Trilha
-          title="Conteúdo Programático"
-          subtitle="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
+          titulo="Conteúdo Programático"
+          subtitulo="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
           etapas={[
             {
-              title: "Fundamentos da Gestão Ágil",
-              description:
+              titulo: "Fundamentos da Gestão Ágil",
+              descricao:
                 "Construa a base para uma mentalidade que entrega valor contínuo e saiba quando aplicar a abordagem ágil ou tradicional.",
-              benefits: ["Mindset ágil vs tradicional", "Quando usar cada abordagem"],
+              beneficios: ["Mindset ágil vs tradicional", "Quando usar cada abordagem"],
               badges: ["Módulo 1"],
             },
             {
-              title: "Scrum na Prática",
-              description:
+              titulo: "Scrum na Prática",
+              descricao:
                 "Execute projetos complexos com o framework mais popular do mercado, dominando papéis, eventos e artefatos para garantir entregas no prazo.",
-              benefits: ["Sprint Planning, Daily, Review e Retrospectiva", "Product Backlog e Sprint Backlog"],
+              beneficios: ["Sprint Planning, Daily, Review e Retrospectiva", "Product Backlog e Sprint Backlog"],
               badges: ["Módulo 2"],
             },
             {
-              title: "Kanban e Fluxo Contínuo",
-              description:
+              titulo: "Kanban e Fluxo Contínuo",
+              descricao:
                 "Otimize processos e aumente a eficiência da sua equipe com o Kanban, aprendendo a gerenciar o fluxo de trabalho de forma visual e contínua.",
-              benefits: ["Quadros Kanban e WIP limits", "Métricas de fluxo e lead time"],
+              beneficios: ["Quadros Kanban e WIP limits", "Métricas de fluxo e lead time"],
               badges: ["Módulo 3"],
             },
             {
-              title: "Projeto Prático Supervisionado",
-              description:
+              titulo: "Projeto Prático Supervisionado",
+              descricao:
                 "Aplique Scrum ou Kanban em um desafio real do seu trabalho, com suporte de especialistas, e construa um case de sucesso para seu portfólio.",
-              benefits: ["Mentoria individualizada", "Apresentação de resultados"],
+              beneficios: ["Mentoria individualizada", "Apresentação de resultados"],
               badges: ["Módulo 4"],
-              highlight: true,
+              destaque: true,
             },
           ]}
-          ctaButton={{
-            text: "Baixar conteúdo programático completo",
+          botaoCta={{
+            texto: "Baixar conteúdo programático completo",
             href: "#grade",
-            note: "PDF com detalhamento de todos os módulos",
+            observacao: "PDF com detalhamento de todos os módulos",
           }}
           backgroundColor="bg-muted/30"
         />

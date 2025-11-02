@@ -6,16 +6,16 @@ import { TrendingUp, DollarSign } from "lucide-react"
 import { GeoLink } from "@/components/geo-link"
 
 export function ROIPos() {
-  const projections = [
+  const projecoes = [
     {
-      period: "Após o curso",
-      value: "R$ 6.685/mês",
-      description: "Júnior → Sênior",
+      periodo: "Após o curso",
+      valor: "R$ 6.685/mês",
+      descricao: "Júnior → Sênior",
     },
     {
-      period: "1-2 anos após",
-      value: "+32%",
-      description: "crescimento salarial médio",
+      periodo: "1-2 anos após",
+      valor: "+32%",
+      descricao: "crescimento salarial médio",
     },
   ]
 
@@ -30,7 +30,7 @@ export function ROIPos() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
-          {projections.map((projection, index) => (
+          {projecoes.map((projecao, index) => (
             <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 {index === 0 ? (
@@ -39,9 +39,9 @@ export function ROIPos() {
                   <TrendingUp className="w-8 h-8 text-primary" />
                 )}
               </div>
-              <p className="text-sm text-muted-foreground mb-2">{projection.period}</p>
-              <div className="text-4xl font-bold mb-2">{projection.value}</div>
-              <p className="text-muted-foreground">{projection.description}</p>
+              <p className="text-sm text-muted-foreground mb-2">{projecao.periodo}</p>
+              <div className="text-4xl font-bold mb-2">{projecao.valor}</div>
+              <p className="text-muted-foreground">{projecao.descricao}</p>
             </Card>
           ))}
         </div>

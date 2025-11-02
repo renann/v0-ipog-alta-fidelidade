@@ -8,26 +8,26 @@ export function MetodoExtensao() {
   const etapas = [
     {
       icon: Search,
-      title: "Diagnóstico rápido",
-      description: "Identifique seu gap técnico ou de mercado em minutos",
+      titulo: "Diagnóstico rápido",
+      descricao: "Identifique seu gap técnico ou de mercado em minutos",
       status: "current",
     },
     {
       icon: BookOpen,
-      title: "Curso de impacto",
-      description: "Formato rápido e modular: aprenda apenas o essencial",
+      titulo: "Curso de impacto",
+      descricao: "Formato rápido e modular: aprenda apenas o essencial",
       status: "future",
     },
     {
       icon: Rocket,
-      title: "Aplicação imediata",
-      description: "Atividade prática para aplicar no dia seguinte",
+      titulo: "Aplicação imediata",
+      descricao: "Atividade prática para aplicar no dia seguinte",
       status: "future",
     },
     {
       icon: Award,
-      title: "Certificação",
-      description: "Validação reconhecida e destaque no currículo",
+      titulo: "Certificação",
+      descricao: "Validação reconhecida e destaque no currículo",
       status: "future",
     },
   ]
@@ -53,6 +53,7 @@ export function MetodoExtensao() {
 
                 return (
                   <div key={index} className="relative flex items-center gap-4 md:gap-8">
+                    {/* Icon */}
                     <div
                       className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 ${
                         isCurrent
@@ -63,9 +64,10 @@ export function MetodoExtensao() {
                       <Icon className="w-8 h-8" />
                     </div>
 
+                    {/* Content */}
                     <div className="flex-1 bg-background border rounded-lg p-6">
-                      <h3 className="text-xl font-bold mb-2">{etapa.title}</h3>
-                      <p className="text-muted-foreground">{etapa.description}</p>
+                      <h3 className="text-xl font-bold mb-2">{etapa.titulo}</h3>
+                      <p className="text-muted-foreground">{etapa.descricao}</p>
                       {isCurrent && (
                         <div className="mt-3">
                           <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary">

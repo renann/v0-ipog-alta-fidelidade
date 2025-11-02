@@ -46,29 +46,28 @@ export default function RecolocacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            title="Por que esta formação garante vantagem?"
-            subtitle="Entregas do programa"
-            problems={[
+            titulo="Por que esta formação garante vantagem?"
+            subtitulo="Entregas do programa"
+            dores={[
               {
                 icon: <Target className="h-5 w-5" />,
-                title: "Recolocação exige foco",
-                description: "Nós entregamos habilidades que o mercado pede agora.",
-                solution:
+                titulo: "Recolocação exige foco",
+                descricao: "Nós entregamos habilidades que o mercado pede agora.",
+                solucao:
                   "Nossa metodologia acelera seu resultado: estudar hoje, aplicar amanhã. Formatos que respeitam seu momento profissional, sem pausa na sua rotina.",
               },
               {
                 icon: <Briefcase className="h-5 w-5" />,
-                title: "Módulos intensivos",
-                description: "Focados em aplicação imediata.",
-                solution:
+                titulo: "Módulos intensivos",
+                descricao: "Focados em aplicação imediata.",
+                solucao:
                   "Formatos compatíveis com seu dia a dia — online, híbrido ou presencial. Coaching ou suporte para rede de contatos, currículo e entrevista.",
               },
               {
                 icon: <Award className="h-5 w-5" />,
-                title: "Certificação reconhecida",
-                description: "Com chancela IPOG, reconhecida no mercado.",
-                solution:
-                  "Certificação que valida suas novas competências e fortalece seu posicionamento profissional.",
+                titulo: "Certificação reconhecida",
+                descricao: "Com chancela IPOG, reconhecida no mercado.",
+                solucao: "Certificação que valida suas novas competências e fortalece seu posicionamento profissional.",
               },
             ]}
           />
@@ -123,14 +122,14 @@ export default function RecolocacaoPage() {
         {/* 5. Modalidades Comparativas */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            title="Escolha o formato que se adapta à sua rotina"
-            subtitle="O formato não é barreira, mas ferramenta para sua recolocação"
-            modalities={[
+            titulo="Escolha o formato que se adapta à sua rotina"
+            subtitulo="O formato não é barreira, mas ferramenta para sua recolocação"
+            modalidades={[
               {
                 badge: "EXTENSÃO",
-                title: "EAD",
-                description: "Flexibilidade e mentorias assíncronas para quem precisa conciliar tempo e requalificação",
-                benefits: [
+                titulo: "EAD",
+                descricao: "Flexibilidade e mentorias assíncronas para quem precisa conciliar tempo e requalificação",
+                beneficios: [
                   "Estude no seu ritmo e reveja aulas sempre que quiser",
                   "Conteúdos atualizados e interativos",
                   "Tutoria online com suporte contínuo",
@@ -141,9 +140,9 @@ export default function RecolocacaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Ao Vivo",
-                description: "Interação em tempo real com mentores para quem quer prática com suporte",
-                benefits: [
+                titulo: "Ao Vivo",
+                descricao: "Interação em tempo real com mentores para quem quer prática com suporte",
+                beneficios: [
                   "Aulas ao vivo com professores e mentores",
                   "Gravações disponíveis após cada encontro",
                   "Troca com colegas de diversas áreas",
@@ -154,9 +153,9 @@ export default function RecolocacaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                title: "Presencial",
-                description: "Imersão intensiva e networking local para quem quer viver a experiência IPOG",
-                benefits: [
+                titulo: "Presencial",
+                descricao: "Imersão intensiva e networking local para quem quer viver a experiência IPOG",
+                beneficios: [
                   "Aulas práticas e discussões presenciais",
                   "Networking direto com profissionais do setor",
                   "Projetos aplicados em grupo",
@@ -173,35 +172,35 @@ export default function RecolocacaoPage() {
         <section className="w-full py-12 md:py-16">
           <ResultadosReais
             badge="Resultados Comprovados"
-            title="Profissionais que se recolocaram com sucesso"
-            subtitle="Histórias reais de transformação e retorno ao mercado com confiança"
-            statistics={[
+            titulo="Profissionais que se recolocaram com sucesso"
+            subtitulo="Histórias reais de transformação e retorno ao mercado com confiança"
+            estatisticas={[
               {
                 icon: <TrendingUp className="h-6 w-6" />,
-                value: "89%",
-                description: "alcançaram recolocação em até 6 meses",
+                valor: "89%",
+                descricao: "alcançaram recolocação em até 6 meses",
               },
               {
                 icon: <Briefcase className="h-6 w-6" />,
-                value: "92%",
-                description: "construíram portfólio validado durante o curso",
+                valor: "92%",
+                descricao: "construíram portfólio validado durante o curso",
               },
               {
                 icon: <Users className="h-6 w-6" />,
-                value: "85%",
-                description: "obtiveram novas oportunidades via networking",
+                valor: "85%",
+                descricao: "obtiveram novas oportunidades via networking",
               },
             ]}
-            testimonials={[
+            depoimentos={[
               {
-                type: "antes-depois",
-                author: "Mariana Costa",
-                role: "Gestão de Pessoas • Recolocada em 4 meses",
+                tipo: "antes-depois",
+                autor: "Mariana Costa",
+                cargo: "Gestão de Pessoas • Recolocada em 4 meses",
                 avatar: "MC",
                 rating: 5,
-                before:
+                antes:
                   "Estava há 8 meses fora do mercado, sem portfólio atualizado e com dificuldade para mostrar minhas competências.",
-                after:
+                depois:
                   "Construí um portfólio sólido durante o curso, fiz conexões valiosas e consegui uma posição de liderança em uma empresa que valoriza desenvolvimento humano. O IPOG foi essencial para minha recolocação.",
               },
             ]}
@@ -217,37 +216,37 @@ export default function RecolocacaoPage() {
         {/* 9. Autoridade */}
         <section className="w-full py-12 md:py-16">
           <Autoridade
-            title="Mentores que entendem sua jornada"
-            subtitle="Profissionais experientes que já passaram por recolocação e sabem como te guiar"
-            credentials={[
+            titulo="Mentores que entendem sua jornada"
+            subtitulo="Profissionais experientes que já passaram por recolocação e sabem como te guiar"
+            credenciais={[
               {
                 icon: <Users className="h-5 w-5" />,
-                text: "Mentores com Vivência em Recolocação",
+                texto: "Mentores com Vivência em Recolocação",
               },
               {
                 icon: <Award className="h-5 w-5" />,
-                text: "Consultores de Carreira Certificados",
+                texto: "Consultores de Carreira Certificados",
               },
               {
                 icon: <Building className="h-5 w-5" />,
-                text: "Rede de Empresas Parceiras",
+                texto: "Rede de Empresas Parceiras",
               },
             ]}
-            professors={[
+            professores={[
               {
-                name: "Profa. Beatriz Alves",
+                nome: "Profa. Beatriz Alves",
                 area: "Marketing Digital",
                 bio: "Passou por recolocação aos 45 anos. Hoje lidera equipe de marketing em multinacional.",
                 avatar: "BA",
               },
               {
-                name: "Prof. Roberto Santos",
+                nome: "Prof. Roberto Santos",
                 area: "Gestão de Pessoas",
                 bio: "Consultor de carreira há 12 anos. Ajudou mais de 300 profissionais na recolocação.",
                 avatar: "RS",
               },
               {
-                name: "Dra. Camila Souza",
+                nome: "Dra. Camila Souza",
                 area: "Compliance",
                 bio: "Advogada e mentora de carreira. Especialista em transição profissional para área jurídica.",
                 avatar: "CS",
@@ -259,14 +258,14 @@ export default function RecolocacaoPage() {
         {/* 10. Ação Final */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            title="Quer ajuda personalizada?"
-            description="Nosso time de consultoria está pronto para ajudar você a definir o curso ideal e entender as melhores condições."
-            primaryButton={{
-              text: "Quero ver os cursos",
+            titulo="Quer ajuda personalizada?"
+            descricao="Nosso time de consultoria está pronto para ajudar você a definir o curso ideal e entender as melhores condições."
+            botaoPrimario={{
+              texto: "Quero ver os cursos",
               href: "/catalogo?tipo=extensao",
             }}
-            secondaryButton={{
-              text: "Agendar conversa",
+            botaoSecundario={{
+              texto: "Agendar conversa",
               onClick: openAssistantForConsultor,
             }}
           />

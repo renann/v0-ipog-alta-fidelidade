@@ -11,8 +11,8 @@ const solucoes = [
   {
     icon: Building2,
     badge: "PROGRAMAS CORPORATIVOS",
-    title: "Estratégicos Customizados",
-    description:
+    titulo: "Estratégicos Customizados",
+    descricao:
       "Desenvolvimento de programas sob medida, do diagnóstico de competências à entrega de relatórios de ROI, com curadoria de conteúdo e acompanhamento executivo para garantir a performance do seu time.",
     beneficios: [
       "Diagnóstico organizacional completo",
@@ -26,8 +26,8 @@ const solucoes = [
   {
     icon: Users,
     badge: "DESENVOLVIMENTO DE LIDERANÇAS",
-    title: "Desenvolvimento de Líderes e Executivos",
-    description:
+    titulo: "Desenvolvimento de Líderes e Executivos",
+    descricao:
       "Capacitação para C-Level e alta gestão com foco em competências estratégicas, tomada de decisão e gestão de mudanças, incluindo networking executivo de alto nível e mentorias individuais.",
     beneficios: [
       "Foco em lideranças estratégicas",
@@ -41,8 +41,8 @@ const solucoes = [
   {
     icon: Target,
     badge: "CONSULTORIA EMPRESARIAL",
-    title: "Consultoria e Diagnóstico Empresarial",
-    description:
+    titulo: "Consultoria e Diagnóstico Empresarial",
+    descricao:
       "Consultoria para mapear gaps de competências, desenhar trilhas de aprendizagem customizadas e implementar programas de desenvolvimento com gestão e acompanhamento de indicadores em tempo real.",
     beneficios: [
       "Mapeamento de gaps de competências",
@@ -90,8 +90,8 @@ export function SolucoesCorporativas() {
                         <Badge variant="outline" className="mb-4 w-fit text-xs">
                           {solucao.badge}
                         </Badge>
-                        <h3 className="mb-3 text-xl font-bold text-foreground">{solucao.title}</h3>
-                        <p className="mb-6 text-sm text-muted-foreground">{solucao.description}</p>
+                        <h3 className="mb-3 text-xl font-bold text-foreground">{solucao.titulo}</h3>
+                        <p className="mb-6 text-sm text-muted-foreground">{solucao.descricao}</p>
 
                         <div className="mb-6 flex-1">
                           <p className="mb-3 text-xs font-semibold uppercase text-muted-foreground">Benefícios:</p>
