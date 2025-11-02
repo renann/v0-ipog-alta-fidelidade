@@ -78,7 +78,7 @@
 - **Principal:** 1 URL
 - **Busca/Catálogo:** 2 URLs
 - **Checkout:** 2 URLs
-- **Extensão:** 9 URLs (7 páginas + 5 cursos)
+- **Extensão:** 9 URLs (4 páginas + 5 cursos)
 - **Graduação:** 8 URLs (4 páginas + 4 cursos)
 - **Pós-Graduação:** 7 URLs (4 páginas + 3 cursos)
 - **Enterprise:** 3 URLs
@@ -91,3 +91,41 @@
 - **Extensão:** 5 cursos (Gestão de Projetos Ágeis, IA Aplicada, Marketing Digital, Gestão de Pessoas, Compliance)
 - **Graduação:** 4 cursos (Psicologia EAD, Direito, Arquitetura, Administração)
 - **Pós-Graduação:** 3 cursos (Avaliação Psicológica, Engenharia Estrutural, Intervenção ABA)
+
+---
+
+## Estrutura Padronizada de Páginas de Cursos
+
+Todas as páginas de cursos seguem uma estrutura consistente com as seguintes seções obrigatórias:
+
+### Seções Obrigatórias (em ordem):
+1. **Hero** - Título do curso, subtítulo, CTA principal
+2. **Diferenciais** - Cards com diferenciais do curso (com título H2)
+3. **Métodos de Pagamento** - Formas de pagamento aceitas (com título H2)
+4. **FAQ** - Perguntas frequentes (com título H2)
+5. **CTA Final** - Ação final com informações de investimento
+
+### Componentes Padronizados:
+- Todos os componentes reutilizáveis aceitam prop `titulo` obrigatória
+- Páginas controlam todos os títulos de seções
+- Hierarquia de títulos: H1 (Hero) > H2 (Seções) > H3 (Subsections)
+
+### Sistema de Prevenção:
+- **SectionWrapper** - Componente que força títulos obrigatórios
+- **GUIDELINES-SECOES.md** - Documentação de regras e boas práticas
+- **validate-titles.js** - Script de validação automática
+- **Comando:** `npm run validate:titles` - Executa validação
+
+### Componentes Refatorados (aceitam prop titulo):
+- RoiSection
+- MetodologiaUnificada
+- ResultadosComprovados
+- ExperienceSection
+- CicloInfo
+- QuatroVerticais
+- MetodosPagamento
+
+### Última Atualização:
+- Data: 2025-01-31
+- Ação: Padronização completa de títulos e estrutura de seções
+- Status: Todas as 12 páginas de cursos validadas e padronizadas
