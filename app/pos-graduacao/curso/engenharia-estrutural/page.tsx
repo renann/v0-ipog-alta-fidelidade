@@ -61,8 +61,8 @@ export default function EngenhariaEstruturalPage() {
           ]}
         />
         <Trilha
-          titulo="Uma jornada de aprendizado pensada para sua evolução"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
+          title="Uma jornada de aprendizado pensada para sua evolução"
+          subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
               titulo: "1º ao 3º Mês: Fundamentos Estruturais Sólidos",
@@ -175,6 +175,41 @@ export default function EngenhariaEstruturalPage() {
                 <p className="text-muted-foreground">
                   Aqui, você se conecta com as pessoas certas: um corpo docente que transforma o mercado e colegas que
                   se tornarão parceiros estratégicos para sua carreira.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Aprenda com quem transforma o mercado</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por engenheiros estruturais renomados, com vasta experiência em grandes
+                projetos e reconhecimento nacional.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Mestres e Doutores Atuantes</h3>
+                <p className="text-muted-foreground">
+                  Professores com titulação acadêmica de excelência e experiência prática em projetos estruturais de
+                  grande porte.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Referências em Grandes Obras</h3>
+                <p className="text-muted-foreground">
+                  Profissionais que assinam projetos de edifícios, pontes, viadutos e estruturas especiais em todo o
+                  Brasil.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Mentoria Personalizada</h3>
+                <p className="text-muted-foreground">
+                  Acompanhamento próximo para orientar seu desenvolvimento técnico e profissional ao longo de toda a
+                  especialização.
                 </p>
               </div>
             </div>

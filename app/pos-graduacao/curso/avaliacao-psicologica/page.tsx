@@ -11,6 +11,7 @@ import { Clock, Award, TrendingUp, Briefcase, Brain, Users, BookOpen } from "luc
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { Autoridade } from "@/components/autoridade"
 
 export default function AvaliacaoPsicologicaPage() {
   return (
@@ -89,8 +90,8 @@ export default function AvaliacaoPsicologicaPage() {
           ]}
         />
         <Trilha
-          titulo="Uma Matriz Curricular Robusta para uma Atuação de Destaque"
-          subtitulo="Desenvolva competências práticas e estratégicas em uma jornada de aprendizado projetada por especialistas de mercado."
+          title="Uma Matriz Curricular Robusta para uma Atuação de Destaque"
+          subtitle="Desenvolva competências práticas e estratégicas em uma jornada de aprendizado projetada por especialistas de mercado."
           etapas={[
             {
               titulo: "Módulo 1: Fundamentos da Avaliação e Ética",
@@ -211,6 +212,45 @@ export default function AvaliacaoPsicologicaPage() {
             </div>
           </div>
         </section>
+        <Autoridade
+          titulo="Aprenda com Especialistas Reconhecidos em Avaliação Psicológica"
+          subtitulo="Nosso corpo docente é formado por autores de testes, peritos judiciais e profissionais com ampla experiência clínica e acadêmica."
+          credenciais={[
+            {
+              icon: <Award className="h-5 w-5" />,
+              texto: "Autores de Testes Psicológicos",
+            },
+            {
+              icon: <Users className="h-5 w-5" />,
+              texto: "Peritos Judiciais Atuantes",
+            },
+            {
+              icon: <BookOpen className="h-5 w-5" />,
+              texto: "Publicações Científicas",
+            },
+          ]}
+          professores={[
+            {
+              nome: "Dra. Mariana Costa Silva",
+              area: "Avaliação Psicológica",
+              bio: "Doutora em Psicologia pela USP. Autora de testes psicológicos e perita judicial há 15 anos.",
+              avatar: "MC",
+            },
+            {
+              nome: "Dr. Ricardo Almeida",
+              area: "Rorschach e Técnicas Projetivas",
+              bio: "Especialista certificado em R-PAS. Supervisor clínico e docente há 12 anos.",
+              avatar: "RA",
+            },
+            {
+              nome: "Dra. Paula Fernandes",
+              area: "Neuropsicologia",
+              bio: "Neuropsicóloga com atuação em hospitais. Especialista em avaliação de TDAH e TEA.",
+              avatar: "PF",
+            },
+          ]}
+        />
+
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto px-4 pb-4">
             <div className="max-w-3xl mx-auto">

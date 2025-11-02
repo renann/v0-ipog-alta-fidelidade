@@ -71,6 +71,43 @@ export default function AdministracaoPage() {
           </div>
         </section>
 
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                Aprenda com executivos, empreendedores e consultores de mercado
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por gestores, executivos e empreendedores com experiência em empresas de
+                diversos setores e portes.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Executivos de Mercado</h3>
+                <p className="text-muted-foreground">
+                  Professores que ocupam ou ocuparam cargos de liderança em empresas nacionais e multinacionais.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Empreendedores de Sucesso</h3>
+                <p className="text-muted-foreground">
+                  Profissionais que fundaram e gerenciam seus próprios negócios, compartilhando experiências reais do
+                  mercado.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Consultores Especializados</h3>
+                <p className="text-muted-foreground">
+                  Especialistas em gestão estratégica, finanças, marketing e operações com experiência em consultoria
+                  empresarial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Fim da seção de professores */}
+
         <Modalidades
           title="Compare as modalidades e escolha a que mais combina com você"
           subtitle="O mesmo curso, com diferentes formatos de aprendizado — escolha pelo seu ritmo, rotina e objetivos."

@@ -77,6 +77,40 @@ export default function GestaoProjetosAgeisPage() {
           </div>
         </section>
 
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Aprenda com Agile Coaches e Scrum Masters certificados</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por profissionais certificados em Scrum, Kanban e metodologias ágeis, com
+                experiência em transformações ágeis de grandes empresas.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Certificações Internacionais</h3>
+                <p className="text-muted-foreground">
+                  Professores com certificações CSM, CSPO, PSM, SAFe e outras credenciais reconhecidas mundialmente.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Transformações Ágeis</h3>
+                <p className="text-muted-foreground">
+                  Profissionais que lideraram implementações de metodologias ágeis em empresas de diversos setores e
+                  portes.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Prática de Mercado</h3>
+                <p className="text-muted-foreground">
+                  Aprenda com quem aplica Scrum e Kanban diariamente em projetos reais e desafiadores.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Fim da seção de professores */}
+
         <Modalidades
           title="O mesmo conteúdo, diferentes formatos para sua rotina"
           subtitle="O mesmo conteúdo, diferentes formatos de aprendizado"

@@ -63,8 +63,8 @@ export default function IntervencaoAbaPage() {
           ]}
         />
         <Trilha
-          titulo="Sua jornada para se tornar um especialista em ABA"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
+          title="Sua jornada para se tornar um especialista em ABA"
+          subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da especialização"
           etapas={[
             {
               titulo: "1º ao 3º Mês: Domínio dos Fundamentos",
@@ -175,14 +175,43 @@ export default function IntervencaoAbaPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 px-4">
+        <section className="w-full py-16 px-4 bg-background">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
+              <h2 className="text-3xl font-bold mb-4">Aprenda com especialistas certificados em ABA</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
+                Nosso corpo docente é formado por psicólogos com certificação internacional em ABA, experiência clínica
+                comprovada e atuação em casos de referência.
               </p>
             </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Certificação Internacional</h3>
+                <p className="text-muted-foreground">
+                  Professores com certificação BCBA (Board Certified Behavior Analyst) e formação em instituições de
+                  referência mundial.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Experiência Clínica Comprovada</h3>
+                <p className="text-muted-foreground">
+                  Profissionais com anos de prática em intervenção ABA, atendendo casos complexos de TEA e
+                  desenvolvimento intelectual.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Supervisão Individualizada</h3>
+                <p className="text-muted-foreground">
+                  Acompanhamento próximo em casos reais para desenvolver sua competência técnica e segurança
+                  profissional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto px-4 pb-4">
               <MetodosPagamento />
             </div>

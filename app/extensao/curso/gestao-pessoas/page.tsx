@@ -30,7 +30,7 @@ export default function GestaoPessoasPage() {
         <Hero
           badge="EXTENSÃO"
           title="Gestão de Pessoas"
-          description="Desenvolva competências estratégicas em gestão de talentos, cultura organizacional e liderança de equipes."
+          description="Desenvolva competências estratégicas para liderar equipes, construir culturas de alta performance e impulsionar resultados por meio de pessoas."
           valueBadges={[
             { icon: <GraduationCap className="h-5 w-5" />, text: "Certificado Reconhecido" },
             { icon: <Clock className="h-5 w-5" />, text: "6 meses" },
@@ -64,6 +64,40 @@ export default function GestaoPessoasPage() {
             </div>
           </div>
         </section>
+
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Aprenda com líderes de RH</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por diretores de RH, consultores e especialistas com experiência em
+                grandes corporações.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Executivos de RH</h3>
+                <p className="text-muted-foreground">
+                  Professores que ocupam ou ocuparam posições de liderança em RH de empresas nacionais e multinacionais.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Consultores Especializados</h3>
+                <p className="text-muted-foreground">
+                  Profissionais com experiência em consultoria de RH, implementando transformações em diversas
+                  organizações.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Metodologias Atuais</h3>
+                <p className="text-muted-foreground">
+                  Aprenda as práticas mais modernas de gestão de pessoas, cultura organizacional e people analytics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Fim da seção de professores */}
 
         <Modalidades
           title="Modalidade do curso"
@@ -168,8 +202,8 @@ export default function GestaoPessoasPage() {
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
+                <p className="text-lg text-muted-foreground">
                   Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
                 </p>
               </div>

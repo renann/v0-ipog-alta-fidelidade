@@ -80,6 +80,41 @@ export default function ArquiteturaPage() {
           </div>
         </section>
 
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Aprenda com arquitetos premiados e urbanistas de referência</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por arquitetos e urbanistas com projetos premiados, experiência em grandes
+                obras e reconhecimento nacional e internacional.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Projetos Premiados</h3>
+                <p className="text-muted-foreground">
+                  Professores com projetos reconhecidos em concursos nacionais e internacionais de arquitetura e
+                  urbanismo.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Grandes Obras</h3>
+                <p className="text-muted-foreground">
+                  Profissionais que assinam projetos de edifícios icônicos, espaços públicos e intervenções urbanas de
+                  impacto.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Formação Acadêmica de Excelência</h3>
+                <p className="text-muted-foreground">
+                  Mestres e doutores com formação nas melhores universidades do Brasil e do exterior.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Fim da seção de professores */}
+
         <Modalidades
           title="Sua Formação, Seu Ritmo"
           subtitle="O mesmo diploma de excelência, em formatos que se adaptam à sua jornada. Escolha a modalidade que impulsiona seus objetivos."

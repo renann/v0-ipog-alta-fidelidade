@@ -158,8 +158,8 @@ export default function DireitoPage() {
         />
 
         <Trilha
-          titulo="Estrutura Curricular"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
+          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
+          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
           etapas={[
             {
               titulo: "Eixo de Formação Fundamental (1º ao 2º Período)",

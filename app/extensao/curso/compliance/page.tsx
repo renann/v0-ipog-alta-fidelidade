@@ -72,6 +72,42 @@ export default function CompliancePage() {
           </div>
         </section>
 
+        <section className="w-full py-16 px-4 bg-background">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Aprenda com especialistas em Compliance</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Nosso corpo docente é formado por profissionais com vasta experiência em programas de compliance,
+                auditoria e governança corporativa.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Experiência Corporativa</h3>
+                <p className="text-muted-foreground">
+                  Professores que atuam ou atuaram como compliance officers em grandes empresas nacionais e
+                  multinacionais.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Certificações Internacionais</h3>
+                <p className="text-muted-foreground">
+                  Profissionais com certificações reconhecidas como CCEP, GRCP e especializações em governança e gestão
+                  de riscos.
+                </p>
+              </div>
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Cases Reais</h3>
+                <p className="text-muted-foreground">
+                  Aprenda com quem implementou programas de compliance em diversos setores e enfrentou desafios reais do
+                  mercado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Fim da seção de professores */}
+
         <Modalidades
           title="Modalidade do curso"
           subtitle="Curso 100% online com flexibilidade total para estudar quando e onde quiser."
@@ -134,8 +170,8 @@ export default function CompliancePage() {
         />
 
         <Trilha
-          titulo="Conteúdo Programático"
-          subtitulo="Módulos práticos e aplicáveis ao dia a dia do compliance"
+          title="Conteúdo Programático"
+          subtitle="Módulos práticos e aplicáveis ao dia a dia do compliance"
           etapas={[
             {
               titulo: "Fundamentos de Compliance",
@@ -175,8 +211,8 @@ export default function CompliancePage() {
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
+                <p className="text-lg text-muted-foreground">
                   Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
                 </p>
               </div>

@@ -7,9 +7,10 @@ import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
-import { TrendingUp, Target, Award, Rocket, Briefcase, Sparkles } from "lucide-react"
+import { TrendingUp, Target, Award, Rocket, Briefcase, Sparkles, Users } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { Autoridade } from "@/components/autoridade"
 
 export default function MarketingDigitalPage() {
   return (
@@ -300,6 +301,57 @@ export default function MarketingDigitalPage() {
                 <a href="#contato">Falar com consultor acadêmico</a>
               </Button>
             </div>
+          </div>
+        </section>
+
+        <Autoridade
+          titulo="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
+          subtitulo="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
+          credenciais={[
+            {
+              icon: <Award className="h-5 w-5" />,
+              texto: "Certificações Google e Meta",
+            },
+            {
+              icon: <Users className="h-5 w-5" />,
+              texto: "Gestores de Tráfego Sênior",
+            },
+            {
+              icon: <TrendingUp className="h-5 w-5" />,
+              texto: "Especialistas em Growth",
+            },
+          ]}
+          professores={[
+            {
+              nome: "Dr. Thiago Martins",
+              area: "Tráfego Pago",
+              bio: "Gestor de tráfego com R$ 10M+ investidos. Certificado Google e Meta.",
+              avatar: "TM",
+            },
+            {
+              nome: "Dra. Camila Rodrigues",
+              area: "Growth Marketing",
+              bio: "Head de Growth em startups unicórnio. Especialista em funis de conversão.",
+              avatar: "CR",
+            },
+            {
+              nome: "Dr. André Silva",
+              area: "Marketing de Conteúdo",
+              bio: "Estrategista de conteúdo. Criador de campanhas virais para grandes marcas.",
+              avatar: "AS",
+            },
+          ]}
+        />
+
+        <section className="w-full py-16 px-4">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
+              <p className="text-muted-foreground">
+                Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
+              </p>
+            </div>
+            <MetodosPagamento />
           </div>
         </section>
 
