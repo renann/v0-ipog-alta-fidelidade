@@ -5,11 +5,11 @@ import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Link from "next/link"
 
-interface Modality {
+interface Modalidade {
   badge: string
   title: string
   description: string
-  benefits: string[]
+  beneficios: string[]
   link: string
   buttonText: string
 }
@@ -17,11 +17,11 @@ interface Modality {
 interface ModalidadesProps {
   title: string
   subtitle?: string
-  modalities: Modality[]
+  modalidades: Modalidade[]
   backgroundColor?: string
 }
 
-export function Modalidades({ title, subtitle, modalities, backgroundColor = "bg-white" }: ModalidadesProps) {
+export function Modalidades({ title, subtitle, modalidades, backgroundColor = "bg-white" }: ModalidadesProps) {
   return (
     <section className={`py-16 md:py-24 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
@@ -39,26 +39,26 @@ export function Modalidades({ title, subtitle, modalities, backgroundColor = "bg
             className="w-full"
           >
             <CarouselContent>
-              {modalities.map((modality, index) => (
+              {modalidades.map((modalidade, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-6 flex flex-col h-full min-h-[480px]">
                     <div className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm font-medium mb-4 self-start">
-                      {modality.badge}
+                      {modalidade.badge}
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-2">{modality.title}</h3>
-                    <p className="text-gray-600 mb-6">{modality.description}</p>
+                    <h3 className="text-2xl font-bold mb-2">{modalidade.title}</h3>
+                    <p className="text-gray-600 mb-6">{modalidade.description}</p>
 
                     <ul className="space-y-2 mb-6 flex-grow">
-                      {modality.benefits.map((benefit, idx) => (
+                      {modalidade.beneficios.map((beneficio, idx) => (
                         <li key={idx} className="text-sm">
-                          • {benefit}
+                          • {beneficio}
                         </li>
                       ))}
                     </ul>
 
                     <Button asChild className="w-full bg-black hover:bg-gray-800 text-white mt-auto">
-                      <Link href={modality.link}>{modality.buttonText}</Link>
+                      <Link href={modalidade.link}>{modalidade.buttonText}</Link>
                     </Button>
                   </Card>
                 </CarouselItem>

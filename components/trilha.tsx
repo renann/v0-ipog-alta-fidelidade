@@ -5,32 +5,32 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ChevronDown } from "lucide-react"
 
-interface Stage {
-  number: string
+interface Etapa {
+  numero: string
   title: string
   description: string
-  benefits?: string[]
+  beneficios?: string[]
   badges?: string[]
-  highlight?: boolean
+  destaque?: boolean
 }
 
 interface TrilhaProps {
   title: string
   subtitle: string
-  stages: Stage[]
-  onClickButton?: () => void
-  buttonText?: string
-  note?: string
+  etapas: Etapa[]
+  onClickBotao?: () => void
+  textoBotao?: string
+  observacao?: string
   bgColor?: string
 }
 
 export function Trilha({
   title,
   subtitle,
-  stages,
-  onClickButton,
-  buttonText,
-  note,
+  etapas,
+  onClickBotao,
+  textoBotao,
+  observacao,
   bgColor = "bg-white",
 }: TrilhaProps) {
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set())
@@ -55,7 +55,7 @@ export function Trilha({
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
-            {stages.map((stage, index) => {
+            {etapas.map((etapa, index) => {
               const isExpanded = expandedCards.has(index)
 
               return (
@@ -65,7 +65,7 @@ export function Trilha({
                     className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold">{stage.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold">{etapa.title}</h3>
                     </div>
                     <ChevronDown
                       className={`w-6 h-6 flex-shrink-0 transition-transform ${isExpanded ? "rotate-180" : ""}`}
@@ -74,22 +74,22 @@ export function Trilha({
 
                   {isExpanded && (
                     <div className="px-6 pb-6 pt-0">
-                      <p className="text-gray-700 mb-4">{stage.description}</p>
+                      <p className="text-gray-700 mb-4">{etapa.description}</p>
 
-                      {stage.benefits && stage.benefits.length > 0 && (
+                      {etapa.beneficios && etapa.beneficios.length > 0 && (
                         <ul className="space-y-2 mb-4">
-                          {stage.benefits.map((benefit, idx) => (
+                          {etapa.beneficios.map((beneficio, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm">
                               <span>•</span>
-                              <span>{benefit}</span>
+                              <span>{beneficio}</span>
                             </li>
                           ))}
                         </ul>
                       )}
 
-                      {stage.badges && stage.badges.length > 0 && (
+                      {etapa.badges && etapa.badges.length > 0 && (
                         <div className="flex flex-wrap gap-2">
-                          {stage.badges.map((badge, idx) => (
+                          {etapa.badges.map((badge, idx) => (
                             <span
                               key={idx}
                               className="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm font-medium"
@@ -107,12 +107,12 @@ export function Trilha({
           </div>
         </div>
 
-        {buttonText && onClickButton && (
+        {textoBotao && onClickBotao && (
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-black hover:bg-gray-800 text-white mb-6" onClick={onClickButton}>
-              {buttonText}
+            <Button size="lg" className="bg-black hover:bg-gray-800 text-white mb-6" onClick={onClickBotao}>
+              {textoBotao}
             </Button>
-            {note && <p className="text-sm text-gray-600 max-w-2xl mx-auto">{note}</p>}
+            {observacao && <p className="text-sm text-gray-600 max-w-2xl mx-auto">{observacao}</p>}
           </div>
         )}
       </div>
