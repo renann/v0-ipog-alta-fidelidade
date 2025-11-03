@@ -510,6 +510,7 @@ function CheckoutContent() {
                           <SelectValue placeholder="Selecione o método de ingresso" />
                         </SelectTrigger>
                         <SelectContent>
+                          <SelectItem value="vestibular">Vestibular</SelectItem>
                           <SelectItem value="enem">ENEM</SelectItem>
                           <SelectItem value="portador-diploma">Portador de Diploma</SelectItem>
                           <SelectItem value="transferencia">Transferência</SelectItem>
