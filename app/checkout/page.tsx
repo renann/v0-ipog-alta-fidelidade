@@ -441,7 +441,12 @@ function CheckoutContent() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
     setIsSubmitting(false)
 
-    window.location.href = `/pos-venda?course=${courseId}`
+    const params = new URLSearchParams({ course: courseId })
+    if (isGraduacao && metodoIngresso) {
+      params.append("metodo", metodoIngresso)
+    }
+    window.location.href = `/pos-venda?${params.toString()}`
+    // </CHANGE>
   }
 
   return (
