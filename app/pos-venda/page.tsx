@@ -342,61 +342,42 @@ function PosVendaContent() {
 
           {/* Step 3: Vestibular Scheduling (Graduação) or Confirmation (Pós) */}
           {needsVestibularScheduling ? (
-            <Card
-              className={cn(
-                "mb-6 md:mb-8",
-                !step2Complete && "opacity-60",
-                step3Complete && "border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900",
-              )}
-            >
-              <CardContent className="p-4 md:p-6">
-                <div className="mb-4 flex items-start gap-3 md:gap-4">
-                  <div
-                    className={cn(
-                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
-                      step3Complete
-                        ? "bg-gray-900 dark:bg-gray-100"
-                        : step2Complete
-                          ? "bg-gray-700 dark:bg-gray-300"
-                          : "bg-gray-300 dark:bg-gray-700",
-                    )}
-                  >
-                    {step3Complete ? (
-                      <CheckCircle2 className="h-5 w-5 text-white dark:text-gray-900" />
-                    ) : (
-                      <Calendar
-                        className={cn(
-                          "h-5 w-5",
-                          step2Complete ? "text-white dark:text-gray-900" : "text-gray-500 dark:text-gray-500",
-                        )}
-                      />
-                    )}
+            step2Complete && (
+              <Card
+                className={cn(
+                  "mb-6 md:mb-8",
+                  step3Complete && "border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900",
+                )}
+              >
+                <CardContent className="p-4 md:p-6">
+                  <div className="mb-4 flex items-start gap-3 md:gap-4">
+                    <div
+                      className={cn(
+                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
+                        step3Complete ? "bg-gray-900 dark:bg-gray-100" : "bg-gray-700 dark:bg-gray-300",
+                      )}
+                    >
+                      {step3Complete ? (
+                        <CheckCircle2 className="h-5 w-5 text-white dark:text-gray-900" />
+                      ) : (
+                        <Calendar className="h-5 w-5 text-white dark:text-gray-900" />
+                      )}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="mb-2 font-semibold">Agendamento do Vestibular</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Escolha a melhor data e horário para realizar sua prova
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="mb-2 font-semibold">Agendamento do Vestibular</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Escolha a melhor data e horário para realizar sua prova
-                    </p>
-                  </div>
-                </div>
 
-                {step2Complete && (
                   <VestibularScheduling
                     onSchedulingComplete={setVestibularAgendado}
                     selectedOption={vestibularAgendado}
                   />
-                )}
-
-                {!step2Complete && (
-                  <div className="flex items-start gap-2 rounded-lg border border-gray-200 bg-gray-50 p-3 dark:border-gray-800 dark:bg-gray-900">
-                    <AlertCircle className="h-5 w-5 shrink-0 text-gray-500" />
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Complete o envio de documentos para desbloquear esta etapa
-                    </p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            )
           ) : (
             <Card className="mb-6 border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900 md:mb-8">
               <CardContent className="p-4 md:p-6">
