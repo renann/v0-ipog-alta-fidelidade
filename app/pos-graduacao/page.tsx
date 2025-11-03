@@ -223,12 +223,12 @@ export default function PosGraduacaoPage() {
             },
           ]}
           layoutEstatisticas="carousel"
-          servicosCarreira={[
-            "Revisão de currículo e LinkedIn",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          servicos={[
+            { texto: "Revisão de currículo e LinkedIn" },
+            { texto: "Mentorias com especialistas de mercado" },
+            { texto: "Indicações para vagas parceiras" },
           ]}
-          botaoCta={{
+          botaoCTA={{
             texto: "Falar com consultor de carreira",
             onClick: openAssistantForConsultor,
           }}
