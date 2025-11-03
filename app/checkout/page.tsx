@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { Header } from "@/components/header"
@@ -26,7 +28,6 @@ import {
   type DiscountType,
   type AgreementCode,
   type AlumniDiscount,
-  validateAgreementCode,
   calculateDiscount,
   validateCPF,
   maskCPF,
@@ -41,6 +42,13 @@ import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { getCourse } from "@/lib/mock-courses"
 import { formatCurrency } from "@/lib/utils"
 
+interface CouponCode {
+  code: string
+  discount: number
+  type: "coupon"
+}
+const INSCRICAO_GRADUACAO = 80.0
+
 function CheckoutContent() {
   const searchParams = useSearchParams()
   const courseId = searchParams.get("course") || "psicologia-ead"
@@ -49,6 +57,8 @@ function CheckoutContent() {
   // Form state
   const [selectedTurma, setSelectedTurma] = useState("")
   const [selectedCiclo, setSelectedCiclo] = useState("")
+  const [metodoIngresso, setMetodoIngresso] = useState("")
+  // </CHANGE>
   const [paymentMethod, setPaymentMethod] = useState("")
   const [parcelas, setParcelas] = useState("1")
   const [termsAccepted, setTermsAccepted] = useState(false)
@@ -61,13 +71,32 @@ function CheckoutContent() {
   const [isValidatingAlumni, setIsValidatingAlumni] = useState(false)
   const [alumniDiscount, setAlumniDiscount] = useState<AlumniDiscount | null>(null)
 
-  const [agreementCode, setAgreementCode] = useState("")
+  const [selectedCompany, setSelectedCompany] = useState("")
   const [validatedAgreement, setValidatedAgreement] = useState<AgreementCode | null>(null)
-  const [isValidatingCode, setIsValidatingCode] = useState(false)
-  const [codeError, setCodeError] = useState("")
+  const [comprovante, setComprovante] = useState<File | null>(null)
+
+  const [couponCode, setCouponCode] = useState("")
+  const [validatedCoupon, setValidatedCoupon] = useState<CouponCode | null>(null)
+  const [couponError, setCouponError] = useState("")
+  const [isValidatingCoupon, setIsValidatingCoupon] = useState(false)
 
   // PIX timer (30 minutes = 1800 seconds)
   const [pixTimer, setPixTimer] = useState(1800)
+
+  const empresasConvenio = [
+    { value: "empresa-a", label: "Empresa A - Tecnologia", discount: 15 },
+    { value: "empresa-b", label: "Empresa B - Saúde", discount: 20 },
+    { value: "empresa-c", label: "Empresa C - Educação", discount: 25 },
+    { value: "empresa-d", label: "Empresa D - Financeiro", discount: 10 },
+    { value: "empresa-e", label: "Empresa E - Varejo", discount: 12 },
+  ]
+
+  const validCoupons = [
+    { code: "IPOG2025", discount: 10 },
+    { code: "BEMVINDO", discount: 15 },
+    { code: "PRIMEIRACOMPRA", discount: 20 },
+    { code: "ESTUDANTE", discount: 12 },
+  ]
 
   // All useEffect hooks must be called before any conditional returns
   useEffect(() => {
@@ -119,8 +148,13 @@ function CheckoutContent() {
   useEffect(() => {
     if (paymentMethod === "parcelado" || paymentMethod === "recorrente") {
       setValidatedAgreement(null)
-      setAgreementCode("")
-      setCodeError("")
+      // CHANGE: Resetando selectedCompany e comprovante ao invés de agreementCode
+      setSelectedCompany("")
+      setComprovante(null)
+      // END CHANGE
+      setValidatedCoupon(null)
+      setCouponCode("")
+      setCouponError("")
     }
   }, [paymentMethod])
 
@@ -224,34 +258,87 @@ function CheckoutContent() {
     setTimeout(() => setPixKeyCopied(false), 2000)
   }
 
-  const handleValidateAgreement = () => {
-    if (!agreementCode.trim()) {
-      setCodeError("Por favor, insira um código de convênio")
-      return
-    }
+  // CHANGE: Nova função para aplicar convênio quando empresa é selecionada
+  const handleCompanySelect = (companyValue: string) => {
+    setSelectedCompany(companyValue)
 
-    setIsValidatingCode(true)
-    setCodeError("")
-
-    setTimeout(() => {
-      const validated = validateAgreementCode(agreementCode)
-
-      if (validated) {
-        setValidatedAgreement(validated)
-        setCodeError("")
-      } else {
-        setValidatedAgreement(null)
-        setCodeError("Código de convênio inválido")
+    if (companyValue) {
+      const company = empresasConvenio.find((c) => c.value === companyValue)
+      if (company) {
+        setValidatedAgreement({
+          code: companyValue.toUpperCase(),
+          name: company.label,
+          discount: company.discount,
+          type: "agreement",
+        })
+        setValidatedCoupon(null)
+        setCouponCode("")
+        setCouponError("")
       }
-
-      setIsValidatingCode(false)
-    }, 500)
+    } else {
+      setValidatedAgreement(null)
+      setComprovante(null)
+    }
   }
+  // END CHANGE
+
+  // CHANGE: Removendo handleValidateAgreement pois não é mais necessário
+  // END CHANGE
 
   const handleRemoveAgreement = () => {
     setValidatedAgreement(null)
-    setAgreementCode("")
-    setCodeError("")
+    // CHANGE: Resetando selectedCompany e comprovante ao invés de agreementCode
+    setSelectedCompany("")
+    setComprovante(null)
+    // END CHANGE
+  }
+
+  // CHANGE: Nova função para lidar com upload de comprovante
+  const handleComprovanteUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      setComprovante(file)
+    }
+  }
+  // END CHANGE
+
+  const handleValidateCoupon = async () => {
+    if (!couponCode.trim()) {
+      setCouponError("Digite um código de cupom")
+      return
+    }
+
+    setIsValidatingCoupon(true)
+    setCouponError("")
+
+    // Simulando validação assíncrona
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    const validCoupon = validCoupons.find((c) => c.code.toUpperCase() === couponCode.toUpperCase())
+
+    if (validCoupon) {
+      setValidatedCoupon({
+        code: validCoupon.code,
+        discount: validCoupon.discount,
+        type: "coupon",
+      })
+      setCouponError("")
+      // Removendo convênio se cupom for aplicado
+      setValidatedAgreement(null)
+      setSelectedCompany("")
+      setComprovante(null)
+    } else {
+      setCouponError("Cupom inválido ou expirado")
+      setValidatedCoupon(null)
+    }
+
+    setIsValidatingCoupon(false)
+  }
+
+  const handleRemoveCoupon = () => {
+    setValidatedCoupon(null)
+    setCouponCode("")
+    setCouponError("")
   }
 
   const getDiscountInfo = () => {
@@ -261,6 +348,8 @@ function CheckoutContent() {
       discountType = "alumni"
     } else if (validatedAgreement) {
       discountType = "agreement"
+    } else if (validatedCoupon) {
+      discountType = "agreement" // Usando o mesmo tipo para cálculo
     } else if (paymentMethod === "pix") {
       discountType = "pix"
     } else if (paymentMethod === "boleto") {
@@ -268,7 +357,7 @@ function CheckoutContent() {
     }
 
     if (discountType) {
-      const customDiscount = alumniDiscount?.discount || validatedAgreement?.discount
+      const customDiscount = alumniDiscount?.discount || validatedAgreement?.discount || validatedCoupon?.discount
       const totalValue = course.price + course.enrollmentValue
       return calculateDiscount(totalValue, discountType, customDiscount)
     }
@@ -279,6 +368,10 @@ function CheckoutContent() {
   const getPaymentCalculation = () => {
     const discountInfo = getDiscountInfo()
     const discountPercentage = discountInfo?.discountPercentage || 0
+
+    if (isGraduacao) {
+      return calculateTotal(0, INSCRICAO_GRADUACAO, discountPercentage)
+    }
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
@@ -294,6 +387,10 @@ function CheckoutContent() {
 
   const getPaymentLabel = () => {
     const calculation = getPaymentCalculation()
+
+    if (isGraduacao) {
+      return `R$ ${formatCurrency(calculation.total)} (Inscrição no processo seletivo)`
+    }
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
@@ -318,8 +415,12 @@ function CheckoutContent() {
   }
 
   const isFormValid = () => {
-    const hasValidSelection = isGraduacao ? selectedCiclo : selectedTurma
-    return hasValidSelection && paymentMethod && termsAccepted && lgpdAccepted
+    const hasValidSelection = isGraduacao ? selectedCiclo && metodoIngresso : selectedTurma
+    // </CHANGE>
+    // CHANGE: Adicionando validação para comprovante se houver convênio selecionado
+    const hasComprovante = !selectedCompany || (selectedCompany && comprovante)
+    // END CHANGE
+    return hasValidSelection && paymentMethod && termsAccepted && lgpdAccepted && hasComprovante
   }
 
   const handleSubmit = async () => {
@@ -397,7 +498,29 @@ function CheckoutContent() {
                 </Card>
 
                 {isGraduacao ? (
-                  <CicloSelector value={selectedCiclo} onValueChange={setSelectedCiclo} />
+                  <>
+                    <CicloSelector value={selectedCiclo} onValueChange={setSelectedCiclo} />
+
+                    <div className="space-y-3">
+                      <Label htmlFor="metodo-ingresso" className="text-base font-medium">
+                        Método de ingresso *
+                      </Label>
+                      <Select value={metodoIngresso} onValueChange={setMetodoIngresso}>
+                        <SelectTrigger id="metodo-ingresso">
+                          <SelectValue placeholder="Selecione o método de ingresso" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="enem">ENEM</SelectItem>
+                          <SelectItem value="portador-diploma">Portador de Diploma</SelectItem>
+                          <SelectItem value="transferencia">Transferência</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <p className="text-sm text-muted-foreground">
+                        Selecione como você deseja ingressar no curso de graduação.
+                      </p>
+                    </div>
+                    {/* </CHANGE> */}
+                  </>
                 ) : (
                   <TurmaSelector
                     courseId={course.courseId}
@@ -549,74 +672,151 @@ function CheckoutContent() {
               <AccordionTrigger className="text-lg font-semibold">Pagamento</AccordionTrigger>
               <AccordionContent className="space-y-6">
                 {!alumniDiscount && (
-                  <div className="space-y-3 p-4 bg-muted rounded-lg">
-                    <Label htmlFor="agreement-code" className="text-base font-medium">
-                      Código de Convênio (opcional)
-                    </Label>
-                    <p className="text-sm text-muted-foreground">
-                      Possui um código de convênio ou parceria? Insira abaixo para obter desconto exclusivo.
-                    </p>
+                  <>
+                    {/* Seção de Convênio */}
+                    <div className="space-y-3 p-4 bg-muted rounded-lg">
+                      <Label htmlFor="company-select" className="text-base font-medium">
+                        Empresa Convênio (opcional)
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        Selecione sua empresa conveniada para obter desconto exclusivo.
+                      </p>
 
-                    {!validatedAgreement ? (
-                      <div className="flex gap-2">
-                        <Input
-                          id="agreement-code"
-                          placeholder="Digite o código"
-                          value={agreementCode}
-                          onChange={(e) => {
-                            setAgreementCode(e.target.value.toUpperCase())
-                            setCodeError("")
-                          }}
-                          disabled={isValidatingCode}
-                        />
-                        <Button
-                          type="button"
-                          onClick={handleValidateAgreement}
-                          disabled={!agreementCode.trim() || isValidatingCode}
-                        >
-                          {isValidatingCode ? (
-                            <>
-                              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                              Validando
-                            </>
-                          ) : (
-                            "Aplicar"
-                          )}
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
-                        <div className="flex items-center gap-2">
-                          <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full">
-                            <Check className="h-4 w-4 text-gray-900 dark:text-gray-100" />
+                      {!validatedAgreement ? (
+                        <Select value={selectedCompany} onValueChange={handleCompanySelect}>
+                          <SelectTrigger id="company-select">
+                            <SelectValue placeholder="Selecione sua empresa" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {empresasConvenio.map((empresa) => (
+                              <SelectItem key={empresa.value} value={empresa.value}>
+                                {empresa.label} - {empresa.discount}% de desconto
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
+                          <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full">
+                              <Check className="h-4 w-4 text-gray-900 dark:text-gray-100" />
+                            </div>
+                            <div>
+                              <p className="font-medium text-gray-900 dark:text-gray-100">Convênio aplicado</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">{validatedAgreement.name}</p>
+                              <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                                {validatedAgreement.discount}% de desconto
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="font-medium text-gray-900 dark:text-gray-100">Convênio aplicado</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">{validatedAgreement.name}</p>
-                            <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                              {validatedAgreement.discount}% de desconto
-                            </p>
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            onClick={handleRemoveAgreement}
+                            className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      )}
+
+                      {selectedCompany && (
+                        <div className="space-y-3 pt-4 border-t">
+                          <Label htmlFor="comprovante" className="text-base font-medium">
+                            Comprovação de Convênio *
+                          </Label>
+                          <p className="text-sm text-muted-foreground">
+                            Faça upload de um documento que comprove seu vínculo com a empresa conveniada (holerite,
+                            crachá, declaração, etc.)
+                          </p>
+                          <div className="space-y-2">
+                            <Input
+                              id="comprovante"
+                              type="file"
+                              accept=".pdf,.jpg,.jpeg,.png"
+                              onChange={handleComprovanteUpload}
+                              className="cursor-pointer"
+                            />
+                            {comprovante && (
+                              <div className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
+                                <Check className="h-4 w-4 text-green-600" />
+                                <span className="text-sm text-gray-700 dark:text-gray-300">{comprovante.name}</span>
+                              </div>
+                            )}
+                            <p className="text-xs text-muted-foreground">Formatos aceitos: PDF, JPG, PNG (máx. 5MB)</p>
                           </div>
                         </div>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon"
-                          onClick={handleRemoveAgreement}
-                          className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
-                        >
-                          <X className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    )}
+                      )}
+                    </div>
 
-                    {codeError && (
-                      <p className="text-sm text-destructive flex items-center gap-1">
-                        <X className="h-3 w-3" />
-                        {codeError}
+                    <div className="space-y-3 p-4 bg-muted rounded-lg">
+                      <Label htmlFor="coupon-input" className="text-base font-medium">
+                        Cupom de Desconto (opcional)
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        Possui um cupom de desconto? Digite o código abaixo.
                       </p>
-                    )}
-                  </div>
+
+                      {!validatedCoupon ? (
+                        <div className="space-y-2">
+                          <div className="flex gap-2">
+                            <Input
+                              id="coupon-input"
+                              placeholder="Digite o código do cupom"
+                              value={couponCode}
+                              onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                              className={couponError ? "border-destructive" : ""}
+                            />
+                            <Button
+                              type="button"
+                              onClick={handleValidateCoupon}
+                              disabled={isValidatingCoupon || !couponCode.trim()}
+                            >
+                              {isValidatingCoupon ? (
+                                <>
+                                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                                  Validando...
+                                </>
+                              ) : (
+                                "Aplicar"
+                              )}
+                            </Button>
+                          </div>
+                          {couponError && (
+                            <p className="text-sm text-destructive flex items-center gap-1">
+                              <X className="h-3 w-3" />
+                              {couponError}
+                            </p>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
+                          <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full">
+                              <Check className="h-4 w-4 text-gray-900 dark:text-gray-100" />
+                            </div>
+                            <div>
+                              <p className="font-medium text-gray-900 dark:text-gray-100">Cupom aplicado</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">{validatedCoupon.code}</p>
+                              <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                                {validatedCoupon.discount}% de desconto
+                              </p>
+                            </div>
+                          </div>
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            onClick={handleRemoveCoupon}
+                            className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+                  </>
                 )}
 
                 {alumniDiscount && (
@@ -750,7 +950,7 @@ function CheckoutContent() {
                           PIX
                         </Label>
                       </div>
-                      {!validatedAgreement && !alumniDiscount && (
+                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
                         <Badge
                           variant="secondary"
                           className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
@@ -802,7 +1002,7 @@ function CheckoutContent() {
                           Boleto bancário
                         </Label>
                       </div>
-                      {!validatedAgreement && !alumniDiscount && (
+                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
                         <Badge
                           variant="secondary"
                           className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100"
@@ -900,6 +1100,16 @@ function CheckoutContent() {
                         : "Não selecionada"}
                   </span>
                 </div>
+                {/* Adicionando exibição do método de ingresso para graduação */}
+                {isGraduacao && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Método de ingresso:</span>
+                    <span className="font-medium">
+                      {metodoIngresso ? metodoIngresso.replace("-", " ") : "Não selecionado"}
+                    </span>
+                  </div>
+                )}
+                {/* </CHANGE> */}
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Forma de pagamento:</span>
                   <span className="font-medium">
@@ -909,24 +1119,44 @@ function CheckoutContent() {
               </div>
 
               <div className="space-y-2 pt-4 border-t">
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Valor do curso</span>
-                  <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
-                    R$ {formatCurrency(course.price)}
-                  </span>
-                </div>
+                {isGraduacao ? (
+                  <>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Inscrição no processo seletivo</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
+                        R$ {formatCurrency(INSCRICAO_GRADUACAO)}
+                      </span>
+                    </div>
 
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Matrícula</span>
-                  <span className="font-medium">R$ {formatCurrency(course.enrollmentValue)}</span>
-                </div>
+                    <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                      <span>Subtotal</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
+                        R$ {formatCurrency(INSCRICAO_GRADUACAO)}
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Valor do curso</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
+                        R$ {formatCurrency(course.price)}
+                      </span>
+                    </div>
 
-                <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                  <span>Subtotal</span>
-                  <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
-                    R$ {formatCurrency(course.price + course.enrollmentValue)}
-                  </span>
-                </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Matrícula</span>
+                      <span className="font-medium">R$ {formatCurrency(course.enrollmentValue)}</span>
+                    </div>
+
+                    <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                      <span>Subtotal</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
+                        R$ {formatCurrency(course.price + course.enrollmentValue)}
+                      </span>
+                    </div>
+                  </>
+                )}
 
                 {getDiscountInfo() && (
                   <>
@@ -936,9 +1166,11 @@ function CheckoutContent() {
                           ? `${DISCOUNT_CONFIG.alumni.label} (${getDiscountInfo()!.discountPercentage}%)`
                           : validatedAgreement
                             ? `Desconto convênio (${getDiscountInfo()!.discountPercentage}%)`
-                            : paymentMethod === "pix"
-                              ? `${DISCOUNT_CONFIG.pix.label} (${DISCOUNT_CONFIG.pix.percentage}%)`
-                              : `${DISCOUNT_CONFIG.cash.label} (${DISCOUNT_CONFIG.cash.percentage}%)`}
+                            : validatedCoupon
+                              ? `Cupom ${validatedCoupon.code} (${getDiscountInfo()!.discountPercentage}%)`
+                              : paymentMethod === "pix"
+                                ? `${DISCOUNT_CONFIG.pix.label} (${DISCOUNT_CONFIG.pix.percentage}%)`
+                                : `${DISCOUNT_CONFIG.cash.label} (${DISCOUNT_CONFIG.cash.percentage}%)`}
                       </span>
                       <span className="text-gray-600 dark:text-gray-400 font-medium">
                         - R$ {formatCurrency(getDiscountInfo()!.discountAmount)}
@@ -954,7 +1186,7 @@ function CheckoutContent() {
                   </span>
                 </div>
 
-                {(paymentMethod === "parcelado" || paymentMethod === "recorrente") && (
+                {!isGraduacao && (paymentMethod === "parcelado" || paymentMethod === "recorrente") && (
                   <p className="text-xs text-muted-foreground pt-2">* Matrícula paga 100% na primeira parcela</p>
                 )}
               </div>
@@ -965,6 +1197,8 @@ function CheckoutContent() {
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Processando...
                   </>
+                ) : isGraduacao ? (
+                  "Finalizar inscrição"
                 ) : (
                   "Finalizar matrícula"
                 )}
