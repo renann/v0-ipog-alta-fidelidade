@@ -80,7 +80,7 @@ export default function TransferenciaPage() {
               descricao:
                 "Continue sua formação com o máximo aproveitamento de créditos e a estrutura de uma instituição referência na área da saúde.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia-ead",
+              link: "/graduacao/curso/psicologia-ead/transferencia",
             },
             {
               nome: "Direito",
