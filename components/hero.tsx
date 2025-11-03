@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { BadgeCheck, ChevronRight } from "lucide-react"
 import Link from "next/link"
-import { openAssistantForConsultor } from "@/lib/assistant-events"
+import { openAssistantForConsultor, openAssistantForPrice } from "@/lib/assistant-events"
 import type { ReactNode } from "react"
 
 interface ValueBadge {
@@ -40,6 +40,14 @@ export function Hero({
   secondaryCTA,
   minHeight = "auto",
 }: HeroProps) {
+  const resolveOnClick = (onClick?: (() => void) | string) => {
+    if (typeof onClick === "string") {
+      if (onClick === "openAssistantForConsultor") return openAssistantForConsultor
+      if (onClick === "openAssistantForPrice") return openAssistantForPrice
+    }
+    return onClick
+  }
+
   return (
     <section className="w-full relative" style={{ minHeight }}>
       {/* Background Image */}
@@ -85,11 +93,7 @@ export function Hero({
             className="text-base"
             variant={primaryCTA.variant || "default"}
             asChild={!!primaryCTA.href}
-            onClick={
-              typeof primaryCTA.onClick === "string" && primaryCTA.onClick === "openAssistantForConsultor"
-                ? openAssistantForConsultor
-                : primaryCTA.onClick
-            }
+            onClick={resolveOnClick(primaryCTA.onClick)}
           >
             {primaryCTA.href ? (
               <Link href={primaryCTA.href}>
@@ -110,11 +114,7 @@ export function Hero({
               variant={secondaryCTA.variant || "outline"}
               className="text-base bg-transparent"
               asChild={!!secondaryCTA.href}
-              onClick={
-                typeof secondaryCTA.onClick === "string" && secondaryCTA.onClick === "openAssistantForConsultor"
-                  ? openAssistantForConsultor
-                  : secondaryCTA.onClick || openAssistantForConsultor
-              }
+              onClick={resolveOnClick(secondaryCTA.onClick) || openAssistantForConsultor}
             >
               {secondaryCTA.href ? (
                 <Link href={secondaryCTA.href}>
