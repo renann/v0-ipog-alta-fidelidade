@@ -80,186 +80,183 @@ export default function PsicologiaEadPage() {
         />
         <RetornoInvestimentoPsicologia />
         <Empregabilidade
-          titulo="Inscreva-se no processo seletivo"
-          subtitulo="Projeção de evolução salarial após o curso, com base em faixas médias de mercado."
+          title="Apply for the selection process"
+          subtitle="Projection of salary evolution after the course, based on average market ranges."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "82%",
-              descricao: "empregados ou promovidos",
-              label: "TAXA DE COLOCAÇÃO*",
+              descricao: "employed or promoted",
+              label: "EMPLOYMENT RATE*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "4-6 m",
-              descricao: "para nova posição",
-              label: "TEMPO MÉDIO*",
+              descricao: "to new position",
+              label: "AVERAGE TIME*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+45%",
-              descricao: "em média após formação",
-              label: "AUMENTO SALARIAL*",
+              descricao: "on average after graduation",
+              label: "SALARY INCREASE*",
             },
           ]}
           layoutEstatisticas="carousel"
           depoimentos={[
             {
               texto:
-                "A flexibilidade do EAD me permitiu conciliar trabalho, família e estudos. Hoje sou psicóloga clínica e atendo em consultório próprio. O IPOG tornou meu sonho possível.",
+                "The flexibility of EAD allowed me to balance work, family, and studies. Today I am a clinical psychologist and run my own clinic. IPOG made my dream possible.",
               autor: "Patrícia Souza",
-              cargo: "Psicóloga Clínica",
+              cargo: "Clinical Psychologist",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
               texto:
-                "Moro no interior e o EAD do IPOG me deu acesso a professores de referência nacional. A qualidade é a mesma do presencial e hoje trabalho em uma clínica renomada da minha cidade.",
+                "I live in the interior and IPOG's EAD gave me access to national reference teachers. The quality is the same as the face-to-face course and today I work in a renowned clinic in my city.",
               autor: "Ricardo Oliveira",
-              cargo: "Psicólogo Organizacional",
+              cargo: "Organizational Psychologist",
             },
             {
               texto:
-                "Trabalho em turno integral e o EAD foi a única forma de realizar meu sonho de ser psicóloga. A plataforma é excelente e o suporte dos professores é incrível. Já estou estagiando na área.",
+                "I work on a full-time schedule and EAD was the only way to fulfill my dream of becoming a psychologist. The platform is excellent and the teachers' support is incredible. I am already interning in the field.",
               autor: "Amanda Silva",
-              cargo: "Aluna de Psicologia EAD",
+              cargo: "EAD Psychology Student",
             },
           ]}
           bgColor="bg-background"
         />
         <Trilha
-          titulo="Trilha de Aprendizado"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
+          titulo="Learning Path"
+          subtitulo="Get to know the course structure and how you will evolve throughout your graduation"
           etapas={[
             {
-              titulo: "Fundamentos da Psicologia (1º e 2º semestre)",
+              titulo: "Fundamentals of Psychology (1st and 2nd semester)",
               descricao:
-                "Construa uma base sólida com o estudo das principais correntes teóricas, da Psicanálise à Análise do Comportamento, e compreenda as bases biológicas em Neuroanatomofisiologia.",
-              beneficios: [
-                "Compreensão dos principais conceitos e teorias",
-                "Visão crítica sobre diferentes abordagens",
-              ],
-              badges: ["1º e 2º semestre"],
+                "Build a solid foundation with the study of the main theoretical currents, from Psychoanalysis to Behavior Analysis, and understand the biological bases in Neuroanatomofisiology.",
+              beneficios: ["Understanding of the main concepts and theories", "Critical view of different approaches"],
+              badges: ["1st and 2nd semester"],
             },
             {
-              titulo: "Processos e Avaliação (3º e 4º semestre)",
+              titulo: "Processes and Evaluation (3rd and 4th semester)",
               descricao:
-                "Aprofunde-se em Psicologia Social, Escolar e da Saúde Mental, dominando as primeiras Técnicas de Avaliação Psicológica para diagnósticos precisos.",
-              beneficios: ["Domínio de instrumentos de avaliação", "Análise de casos práticos"],
-              badges: ["3º e 4º semestre"],
+                "Deepen your knowledge in Social Psychology, Educational Psychology, and Mental Health Psychology, mastering the first Psychological Evaluation Techniques for precise diagnoses.",
+              beneficios: ["Mastering evaluation instruments", "Case study analysis"],
+              badges: ["3rd and 4th semester"],
             },
             {
-              titulo: "Intervenções e Práticas (5º e 6º semestre)",
+              titulo: "Interventions and Practices (5th and 6th semester)",
               descricao:
-                "Desenvolva competências de atuação em Psicologia Organizacional e Institucional, aprendendo Técnicas de Grupo e iniciando os estágios básicos supervisionados.",
-              beneficios: ["Experiência em supervisão clínica", "Projetos de intervenção comunitária"],
-              badges: ["5º e 6º semestre"],
+                "Develop intervention skills in Organizational and Institutional Psychology, learning Group Techniques and starting supervised basic internships.",
+              beneficios: ["Supervised clinical internship experience", "Community intervention projects"],
+              badges: ["5th and 6th semester"],
             },
             {
-              titulo: "Estágios e TCC (7º ao 10º semestre)",
+              titulo: "Internships and TCC (7th to 10th semester)",
               descricao:
-                "Aplique seu conhecimento em contextos reais com 800h de estágio supervisionado em áreas como Saúde Mental e Práticas Clínicas, enquanto desenvolve seu TCC com orientação individualizada.",
-              beneficios: ["800h de estágio supervisionado", "Orientação individualizada para TCC"],
-              badges: ["7º ao 10º semestre"],
+                "Apply your knowledge in real contexts with 800h of supervised internship in areas such as Mental Health and Clinical Practices, while developing your TCC with individualized orientation.",
+              beneficios: ["800h of supervised internship", "Individualized orientation for TCC"],
+              badges: ["7th to 10th semester"],
               destaque: true,
             },
           ]}
           botaoCta={{
-            texto: "Baixar grade curricular completa",
+            texto: "Download complete curriculum",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            observacao: "PDF with details of all disciplines",
           }}
           backgroundColor="bg-muted/30"
         />
 
         <Autoridade
-          titulo="Corpo Docente do Curso"
-          subtitulo="Aprenda com especialistas reconhecidos em Psicologia"
+          titulo="Course Teaching Staff"
+          subtitulo="Learn from recognized experts in Psychology"
           credenciais={[
-            "Mestres e Doutores em Psicologia",
-            "Experiência clínica e organizacional",
-            "Publicações em revistas científicas",
-            "Atuação em hospitais e clínicas renomadas",
+            "Masters and Doctors in Psychology",
+            "Clinical and organizational experience",
+            "Publications in scientific journals",
+            "Action in renowned hospitals and clinics",
           ]}
           professores={[
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Dra. Ana Carolina Ferreira",
-              area: "Psicologia Clínica",
+              area: "Clinical Psychology",
               descricao:
-                "Doutora em Psicologia Clínica pela USP, especialista em Terapia Cognitivo-Comportamental com mais de 15 anos de experiência em atendimento clínico e supervisão.",
-              especialidades: ["TCC", "Ansiedade", "Depressão"],
+                "Doctor in Clinical Psychology from USP, specialist in Cognitive-Behavioral Therapy with over 15 years of clinical attendance and supervision experience.",
+              especialidades: ["TCC", "Anxiety", "Depression"],
               biografia:
-                "Doutora em Psicologia Clínica pela Universidade de São Paulo (USP), com especialização em Terapia Cognitivo-Comportamental pelo Beck Institute. Atua há mais de 15 anos em consultório particular e como supervisora clínica. Autora de diversos artigos científicos sobre transtornos de ansiedade e depressão. Coordena o Núcleo de Estudos em TCC do IPOG e ministra cursos de formação para psicólogos.",
+                "Doctor in Clinical Psychology from the University of São Paulo (USP), with specialization in Cognitive-Behavioral Therapy from the Beck Institute. Acts for more than 15 years in private practice and as clinical supervisor. Author of various scientific articles about anxiety and depression disorders. Coordinates the TCC Study Nucleus of IPOG and teaches courses for psychologist training.",
               linkedin: "https://linkedin.com/in/ana-carolina-ferreira",
             },
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Dr. Roberto Almeida Santos",
-              area: "Psicologia Organizacional",
+              area: "Organizational Psychology",
               descricao:
-                "Mestre em Psicologia Organizacional, consultor de RH em grandes empresas e especialista em avaliação psicológica e desenvolvimento de lideranças.",
-              especialidades: ["RH", "Liderança", "Avaliação Psicológica"],
+                "Master in Organizational Psychology, HR consultant in large companies and specialist in psychological assessment and leadership development.",
+              especialidades: ["HR", "Leadership", "Psychological Assessment"],
               biografia:
-                "Mestre em Psicologia Organizacional pela PUC-SP, com MBA em Gestão de Pessoas. Atua como consultor organizacional há 12 anos, tendo trabalhado com empresas como Ambev, Natura e Magazine Luiza. Especialista em processos de avaliação psicológica, desenvolvimento de lideranças e programas de bem-estar corporativo. Professor convidado em programas de MBA e pós-graduação.",
+                "Master in Organizational Psychology from PUC-SP, with MBA in Human Resources. Acts as an organizational consultant for 12 years, having worked with companies such as Ambev, Natura and Magazine Luiza. Specialist in assessment processes, leadership development and corporate well-being programs. Invited professor in MBA and postgraduate programs.",
               linkedin: "https://linkedin.com/in/roberto-almeida-santos",
             },
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Dra. Juliana Martins Costa",
-              area: "Neuropsicologia",
+              area: "Neuropsychology",
               descricao:
-                "Doutora em Neuropsicologia, especialista em avaliação neuropsicológica e reabilitação cognitiva, com atuação em hospitais e clínicas especializadas.",
-              especialidades: ["Neuropsicologia", "Reabilitação Cognitiva", "Avaliação"],
+                "Doctor in Neuropsychology, specialist in neuropsychological assessment and cognitive rehabilitation, with action in specialized hospitals and clinics.",
+              especialidades: ["Neuropsychology", "Cognitive Rehabilitation", "Assessment"],
               biografia:
-                "Doutora em Neuropsicologia pela UNIFESP, com pós-doutorado em Neurociências. Atua no Hospital das Clínicas de São Paulo e em consultório particular. Especialista em avaliação neuropsicológica de crianças, adultos e idosos, com foco em transtornos do neurodesenvolvimento e doenças neurodegenerativas. Coordena o Laboratório de Neuropsicologia do IPOG.",
+                "Doctor in Neuropsychology from UNIFESP, with postdoctorate in Neuroscience. Acts in São Paulo Hospital and private practice. Specialist in neuropsychological assessment of children, adults and the elderly, focusing on neurodevelopmental disorders and degenerative diseases. Coordinates Neuropsychology Laboratory of IPOG.",
               linkedin: "https://linkedin.com/in/juliana-martins-costa",
             },
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Prof. Dr. Marcelo Henrique Silva",
-              area: "Psicanálise",
+              area: "Psychoanalysis",
               descricao:
-                "Doutor em Psicanálise, membro da Sociedade Brasileira de Psicanálise, com vasta experiência em clínica psicanalítica e formação de analistas.",
-              especialidades: ["Psicanálise", "Clínica", "Formação de Analistas"],
+                "Doctor in Psychoanalysis, member of the Brazilian Society of Psychoanalysis, with vast experience in clinical psychoanalysis and analyst training.",
+              especialidades: ["Psychoanalysis", "Clinical", "Analyst Training"],
               biografia:
-                "Doutor em Psicanálise pela UFRJ, membro efetivo da Sociedade Brasileira de Psicanálise de São Paulo. Atua há 20 anos em consultório particular e como analista didata, formando novos psicanalistas. Autor de três livros sobre teoria psicanalítica contemporânea e articulista regular em revistas especializadas. Coordena grupos de estudos sobre Freud e Lacan.",
+                "Doctor in Psychoanalysis from UFRJ, effective member of the Brazilian Psychoanalysis Society of São Paulo. Acts for 20 years in private practice and as analyst trainer, training new psychoanalysts. Author of three books about contemporary psychoanalytic theory and regular contributor to specialized journals. Coordinates study groups on Freud and Lacan.",
               linkedin: "https://linkedin.com/in/marcelo-henrique-silva",
             },
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Dra. Fernanda Oliveira Ramos",
-              area: "Psicologia Social",
+              area: "Social Psychology",
               descricao:
-                "Doutora em Psicologia Social, pesquisadora em políticas públicas e saúde mental comunitária, com projetos em comunidades vulneráveis.",
-              especialidades: ["Psicologia Social", "Políticas Públicas", "Saúde Mental Comunitária"],
+                "Doctor in Social Psychology, researcher in public policies and community mental health, with projects in vulnerable communities.",
+              especialidades: ["Social Psychology", "Public Policies", "Community Mental Health"],
               biografia:
-                "Doutora em Psicologia Social pela USP, com pesquisas focadas em políticas públicas de saúde mental e intervenções comunitárias. Coordena projetos sociais em comunidades vulneráveis há 10 anos, desenvolvendo programas de prevenção e promoção de saúde mental. Consultora do Ministério da Saúde e autora de publicações sobre psicologia comunitária.",
+                "Doctor in Social Psychology from USP, with research focused on public policies for mental health and community interventions. Coordinates social projects in vulnerable communities for 10 years, developing programs for mental health prevention and promotion. Consultant to the Ministry of Health and author of publications on community psychology.",
               linkedin: "https://linkedin.com/in/fernanda-oliveira-ramos",
             },
             {
               foto: "/placeholder.svg?height=400&width=400",
               nome: "Dr. Paulo Ricardo Mendes",
-              area: "Psicologia do Desenvolvimento",
+              area: "Developmental Psychology",
               descricao:
-                "Mestre em Psicologia do Desenvolvimento, especialista em infância e adolescência, com atuação em escolas e clínicas de atendimento infantil.",
-              especialidades: ["Desenvolvimento Infantil", "Psicologia Escolar", "Adolescência"],
+                "Master in Developmental Psychology, specialist in childhood and adolescence, with action in schools and child care clinics.",
+              especialidades: ["Child Development", "School Psychology", "Adolescence"],
               biografia:
-                "Mestre em Psicologia do Desenvolvimento pela UFRGS, especialista em atendimento clínico de crianças e adolescentes. Atua há 14 anos em consultório particular e como psicólogo escolar. Desenvolve programas de orientação a pais e professores sobre desenvolvimento infantil e dificuldades de aprendizagem. Autor de artigos sobre transtornos do neurodesenvolvimento.",
+                "Master in Developmental Psychology from UFRGS, specialist in child and adolescent clinical care. Acts for 14 years in private practice and as school psychologist. Develops programs for parents and teachers about child development and learning difficulties. Author of articles about neurodevelopmental disorders.",
               linkedin: "https://linkedin.com/in/paulo-ricardo-mendes",
             },
           ]}
         />
 
         <CtaFinal
-          title="Invista na sua carreira com a instituição que é referência nacional."
-          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 499,00+"
+          title="Invest in your career with the national reference institution."
+          description="Enrollment Fee: R$ 100,00 | Monthly Installments: starting from R$ 499,00+"
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 499,00"
-          duration="5 anos"
+          duration="5 years"
           totalCost="R$ 29.940,00"
-          nextClassDate="Novembro"
-          promotionDeadline="30 de Outubro"
+          nextClassDate="November"
+          promotionDeadline="October 30"
         />
 
         <FaqPsicologia />

@@ -109,173 +109,167 @@ export default function DireitoPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Comprovam"
-          subtitulo="Nossos egressos se destacam nos melhores escritórios e concursos públicos do país, comprovando que a formação IPOG acelera a sua carreira."
-          estatisticas={[
+          title="Results that Prove"
+          subtitle="Our graduates shine in the best law firms and public contests in the country, proving that IPOG's formation accelerates your career."
+          statistics={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
-              valor: "98%",
-              descricao: "de satisfação",
-              label: "SATISFAÇÃO*",
+              value: "98%",
+              description: "satisfaction rate",
+              label: "SATISFACTION*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
-              valor: "+300 mil",
-              descricao: "alunos no Brasil",
-              label: "ALUNOS*",
+              value: "+300 thousand",
+              description: "students in Brazil",
+              label: "STUDENTS*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
-              valor: "20 anos",
-              descricao: "de tradição",
-              label: "EXPERIÊNCIA*",
+              value: "20 years",
+              description: "of tradition",
+              label: "EXPERIENCE*",
             },
           ]}
-          layoutEstatisticas="carousel"
-          depoimentos={[
+          layoutStatistics="carousel"
+          testimonials={[
             {
-              texto:
-                "A formação em Direito no IPOG me preparou para os desafios reais do mercado. Passei na OAB de primeira e hoje trabalho em um dos maiores escritórios de advocacia do país.",
-              autor: "Fernanda Costa",
-              cargo: "Advogada Corporativa",
+              text: "The formation in Law at IPOG prepared me for the real challenges of the market. I passed the OAB on my first attempt and today I work in one of the largest law firms in the country.",
+              author: "Fernanda Costa",
+              position: "Corporate Lawyer",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
-              texto:
-                "Os professores do IPOG são referências no mercado jurídico. Aprendi com quem realmente atua e isso fez toda diferença na minha aprovação em concurso público. Hoje sou juiz federal.",
-              autor: "Marcelo Santos",
-              cargo: "Juiz Federal",
+              text: "The teachers at IPOG are references in the legal market. I learned from those who really act and this made all the difference in my public contest approval. Today I am a federal judge.",
+              author: "Marcelo Santos",
+              position: "Federal Judge",
             },
             {
-              texto:
-                "O networking que construí no IPOG foi fundamental. Conheci meus sócios durante a graduação e hoje temos nosso próprio escritório com mais de 50 clientes corporativos.",
-              autor: "Juliana Alves",
-              cargo: "Sócia de Escritório de Advocacia",
+              text: "The networking I built at IPOG was fundamental. I met my partners during my graduation and today we have our own law firm with over 50 corporate clients.",
+              author: "Juliana Alves",
+              position: "Partner of Law Firm",
             },
           ]}
           bgColor="bg-background"
         />
 
         <Trilha
-          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
-          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
-          etapas={[
+          title="Curricular Matrix: Your Learning Journey, Semester by Semester"
+          subtitle="Build a solid knowledge base with an updated curricular matrix, balancing theoretical foundations, technology mastery, and practical experience. See the pillars of your formation:"
+          stages={[
             {
-              titulo: "Eixo de Formação Fundamental (1º ao 2º Período)",
-              descricao:
-                "Construa uma base sólida com disciplinas como Teoria da Constituição, Introdução ao Estudo do Direito e Ciência Política, desenvolvendo uma visão crítica e humanística do sistema jurídico.",
-              beneficios: [
-                "Compreensão dos principais conceitos jurídicos",
-                "Visão crítica sobre o sistema legal brasileiro",
-              ],
-              badges: ["1º e 2º semestre"],
+              title: "Fundamental Formation Axis (1st to 2nd Period)",
+              description:
+                "Build a solid base with disciplines like Constitutional Theory, Introduction to Law Studies, and Political Science, developing a critical and humanistic vision of the legal system.",
+              benefits: ["Understanding of the main legal concepts", "Critical view of the Brazilian legal system"],
+              badges: ["1st and 2nd semester"],
             },
             {
-              titulo: "Eixo de Formação Profissional (3º ao 6º Período)",
-              descricao:
-                "Aprofunde-se nas grandes áreas do Direito, como Civil, Penal, Empresarial e do Trabalho, aprendendo a analisar doutrinas e jurisprudências de forma harmoniosa e coerente para solucionar casos complexos.",
-              beneficios: ["Domínio das principais áreas do direito", "Análise de jurisprudência"],
-              badges: ["3º ao 6º semestre"],
+              title: "Professional Formation Axis (3rd to 6th Period)",
+              description:
+                "Deepen into the major areas of Law, such as Civil, Penal, Corporate, and Labor Law, learning to analyze doctrines and jurisprudences harmoniously and coherently to solve complex cases.",
+              benefits: ["Mastery of the main areas of law", "Analysis of jurisprudence"],
+              badges: ["3rd to 6th semester"],
             },
             {
-              titulo: "Eixo de Formação Prático-Profissional (7º ao 10º Período)",
-              descricao:
-                "Domine as técnicas forenses com disciplinas de Prática Forense, Conciliação, Mediação e Arbitragem. Desenvolva habilidades práticas para o exercício da profissão em um cenário globalizado e tecnológico.",
-              beneficios: ["Experiência em peticionamento", "Simulações de audiências"],
-              badges: ["7º ao 10º semestre"],
+              title: "Practical-Professional Formation Axis (7th to 10th Period)",
+              description:
+                "Master forensic techniques with disciplines of Forensic Practice, Mediation, Arbitration. Develop practical skills for the exercise of the profession in a globalized and technological scenario.",
+              benefits: ["Experience in petitioning", "Simulations of hearings"],
+              badges: ["7th to 10th semester"],
             },
             {
-              titulo: "Estágio Supervisionado e TCC (a partir do 6º Período)",
-              descricao:
-                "Aplique seu conhecimento em situações reais por meio do Estágio Supervisionado e consolide sua jornada acadêmica com o Trabalho de Conclusão de Curso, saindo pronto para os desafios do mercado.",
-              beneficios: ["300h de estágio supervisionado", "Curso preparatório OAB incluso"],
-              badges: ["6º ao 10º semestre"],
-              destaque: true,
+              title: "Supervised Internship and Final Course Project (from the 6th Period)",
+              description:
+                "Apply your knowledge in real situations through the Supervised Internship and consolidate your academic journey with the Final Course Project, ready to face the market challenges.",
+              benefits: ["300h of supervised internship", "OAB preparation course included"],
+              badges: ["6th to 10th semester"],
+              highlight: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
+          callToAction={{
+            text: "Download complete curriculum",
             href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
+            note: "PDF with detailed description of all disciplines",
           }}
           backgroundColor="bg-muted/30"
         />
 
         <Autoridade
-          titulo="Corpo Docente do Curso"
-          subtitulo="Aprenda com magistrados, advogados e professores de referência"
-          credenciais={[
-            "Magistrados e desembargadores em atividade",
-            "Advogados de escritórios renomados",
-            "Mestres e Doutores em Direito",
-            "Experiência em grandes casos e tribunais superiores",
+          title="Course Faculty"
+          subtitle="Learn from magistrates, lawyers, and reference teachers"
+          credentials={[
+            "Active magistrates and justices",
+            "Lawyers from renowned firms",
+            "Masters and Doctors in Law",
+            "Experience in major cases and superior courts",
           ]}
-          professores={[
+          professors={[
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Eduardo Carvalho Neto",
-              area: "Direito Constitucional",
-              descricao:
-                "Desembargador do TJ-SP, Doutor em Direito Constitucional pela USP, com mais de 25 anos de magistratura e autor de obras de referência na área.",
-              especialidades: ["Direito Constitucional", "Controle de Constitucionalidade", "Direitos Fundamentais"],
-              biografia:
-                "Desembargador do Tribunal de Justiça de São Paulo desde 2015, com mais de 25 anos de carreira na magistratura. Doutor em Direito Constitucional pela Universidade de São Paulo (USP) e Mestre pela PUC-SP. Autor de três livros sobre controle de constitucionalidade e direitos fundamentais, amplamente utilizados em cursos de graduação e pós-graduação. Professor convidado em diversos programas de mestrado e preparatórios para magistratura.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Eduardo Carvalho Neto",
+              area: "Constitutional Law",
+              description:
+                "Justice of the SP TJ, Doctor in Constitutional Law from USP, with more than 25 years of magistrature and author of reference works in the area.",
+              specialties: ["Constitutional Law", "Constitutional Control", "Fundamental Rights"],
+              biography:
+                "Justice of the Tribunal of Justice of São Paulo since 2015, with more than 25 years of career in magistrature. Doctor in Constitutional Law from the University of São Paulo (USP) and Master from PUC-SP. Author of three books on constitutional control and fundamental rights, widely used in undergraduate and postgraduate courses. Invited professor in various master's programs and preparation courses for magistrature.",
               linkedin: "https://linkedin.com/in/eduardo-carvalho-neto",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dra. Mariana Rodrigues Lima",
-              area: "Direito Penal",
-              descricao:
-                "Juíza Federal, Mestre em Direito Penal, especialista em crimes econômicos e lavagem de dinheiro, com atuação em casos de grande repercussão nacional.",
-              especialidades: ["Direito Penal", "Crimes Econômicos", "Lavagem de Dinheiro"],
-              biografia:
-                "Juíza Federal desde 2012, com atuação em varas criminais especializadas em crimes contra o sistema financeiro e lavagem de dinheiro. Mestre em Direito Penal pela UERJ, com pesquisas sobre criminalidade econômica. Participou de casos de grande repercussão nacional envolvendo corrupção e organizações criminosas. Ministra cursos de formação para magistrados e membros do Ministério Público.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dra. Mariana Rodrigues Lima",
+              area: "Penal Law",
+              description:
+                "Federal Judge, Master in Penal Law, specialist in economic crimes and money laundering, with action in cases of national great repercussion.",
+              specialties: ["Penal Law", "Economic Crimes", "Money Laundering"],
+              biography:
+                "Federal Judge since 2012, with action in specialized criminal courts in financial system crimes and money laundering. Master in Penal Law from UERJ, with research on economic criminality. Participated in cases of great national repercussion involving corruption and criminal organizations. Minister of training courses for magistrates and Public Prosecutors.",
               linkedin: "https://linkedin.com/in/mariana-rodrigues-lima",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Ricardo Almeida Santos",
-              area: "Direito Civil e Processo Civil",
-              descricao:
-                "Sócio de escritório de advocacia empresarial, Doutor em Direito Civil, especialista em contratos complexos e litígios empresariais de alto valor.",
-              especialidades: ["Direito Civil", "Contratos", "Processo Civil"],
-              biografia:
-                "Sócio do escritório Santos & Associados, um dos maiores escritórios de advocacia empresarial do país. Doutor em Direito Civil pela USP, com tese sobre contratos empresariais complexos. Atua há 18 anos em litígios de alto valor e assessoria jurídica a grandes corporações. Árbitro da Câmara de Arbitragem da B3 e professor de Direito Civil e Processo Civil em cursos de pós-graduação.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Ricardo Almeida Santos",
+              area: "Civil and Labor Law",
+              description:
+                "Partner of corporate law firm, Doctor in Civil Law, specialist in complex contracts and high-value corporate litigation.",
+              specialties: ["Civil Law", "Contracts", "Labor Law"],
+              biography:
+                "Partner of the Santos & Associados law firm, one of the largest corporate law firms in the country. Doctor in Civil Law from USP, with thesis on complex corporate contracts. Acts for 18 years in high-value corporate litigation and legal advice to major corporations. Arbitrator of the B3 Chamber of Arbitration and professor of Civil and Labor Law in postgraduate courses.",
               linkedin: "https://linkedin.com/in/ricardo-almeida-santos",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Fernando Henrique Costa",
-              area: "Direito Trabalhista",
-              descricao:
-                "Juiz do Trabalho, Mestre em Direito do Trabalho, especialista em relações sindicais e reforma trabalhista, com vasta experiência em dissídios coletivos.",
-              especialidades: ["Direito do Trabalho", "Relações Sindicais", "Reforma Trabalhista"],
-              biografia:
-                "Juiz do Trabalho desde 2010, atualmente atuando no Tribunal Regional do Trabalho da 2ª Região (SP). Mestre em Direito do Trabalho pela PUC-SP, com pesquisas sobre a reforma trabalhista e seus impactos. Especialista em dissídios coletivos e negociações sindicais. Autor de artigos sobre direito sindical e professor em cursos preparatórios para magistratura do trabalho.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Fernando Henrique Costa",
+              area: "Labor Law",
+              description:
+                "Labor Court Judge, Master in Labor Law, specialist in labor relations and labor reform, with vast experience in collective disputes.",
+              specialties: ["Labor Law", "Labor Relations", "Labor Reform"],
+              biography:
+                "Labor Court Judge since 2010, currently acting in the 2nd Regional Labor Court (SP). Master in Labor Law from PUC-SP, with research on labor reform and its impacts. Specialist in collective disputes and labor negotiations. Author of articles on labor law and professor in preparation courses for labor judges.",
               linkedin: "https://linkedin.com/in/fernando-henrique-costa",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dra. Patrícia Mendes Oliveira",
-              area: "Direito Tributário",
-              descricao:
-                "Advogada tributarista, Mestre em Direito Tributário, sócia de escritório especializado, com atuação em planejamento tributário e contencioso fiscal.",
-              especialidades: ["Direito Tributário", "Planejamento Tributário", "Contencioso Fiscal"],
-              biografia:
-                "Sócia do escritório Oliveira Advogados Tributários, especializado em consultoria e contencioso fiscal. Mestre em Direito Tributário pela FGV-SP, com pesquisas sobre reforma tributária. Atua há 15 anos assessorando grandes empresas em planejamento tributário e defesas em processos administrativos e judiciais. Palestrante em congressos nacionais de direito tributário.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dra. Patrícia Mendes Oliveira",
+              area: "Tax Law",
+              description:
+                "Tax lawyer, Master in Tax Law, partner of specialized law firm, with action in tax planning and fiscal contentious.",
+              specialties: ["Tax Law", "Tax Planning", "Fiscal Contentious"],
+              biography:
+                "Partner of the Oliveira Advogados Tributários law firm, specialized in tax consulting and fiscal contentious. Master in Tax Law from FGV-SP, with research on tax reform. Acts for 15 years advising major corporations in tax planning and defenses in administrative and judicial processes. Speaker at national tax law congresses.",
               linkedin: "https://linkedin.com/in/patricia-mendes-oliveira",
             },
             {
-              foto: "/placeholder.svg?height=400&width=400",
-              nome: "Dr. Carlos Alberto Ferreira",
-              area: "Direito Empresarial",
-              descricao:
-                "Advogado empresarial, Doutor em Direito Comercial, especialista em fusões e aquisições, recuperação judicial e direito societário.",
-              especialidades: ["Direito Empresarial", "M&A", "Recuperação Judicial"],
-              biografia:
-                "Sócio-fundador do escritório Ferreira & Associados, com mais de 20 anos de experiência em direito empresarial. Doutor em Direito Comercial pela USP, especialista em operações de fusões e aquisições (M&A) e processos de recuperação judicial. Assessorou mais de 50 operações de M&A e conduziu recuperações judiciais de empresas de médio e grande porte. Professor de Direito Empresarial em programas de MBA.",
+              photo: "/placeholder.svg?height=400&width=400",
+              name: "Dr. Carlos Alberto Ferreira",
+              area: "Corporate Law",
+              description:
+                "Corporate lawyer, Doctor in Commercial Law, specialist in mergers and acquisitions, judicial recovery, and corporate law.",
+              specialties: ["Corporate Law", "M&A", "Judicial Recovery"],
+              biography:
+                "Partner-founder of the Ferreira & Associados law firm, with more than 20 years of experience in corporate law. Doctor in Commercial Law from USP, specialist in merger and acquisition operations (M&A) and judicial recovery processes. Advised more than 50 M&A operations and conducted judicial recoveries of medium and large companies. Professor of Corporate Law in MBA programs.",
               linkedin: "https://linkedin.com/in/carlos-alberto-ferreira",
             },
           ]}
@@ -284,40 +278,39 @@ export default function DireitoPage() {
         <section className="w-full py-16 px-4">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre o curso de Direito</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions about the Law Course</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Tire suas dúvidas sobre o curso, modalidades e preparação para OAB.
+                Clear your doubts about the course, modalities, and preparation for OAB.
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto mb-8">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-0">
-                  <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">What is the course duration?</AccordionTrigger>
                   <AccordionContent>
-                    O curso de Direito tem duração de 5 anos (10 semestres), com carga horária total reconhecida pelo
-                    MEC.
+                    The Law course lasts 5 years (10 semesters) with total hours recognized by MEC.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-left">O curso prepara para o Exame da OAB?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">Does the course prepare for the OAB Exam?</AccordionTrigger>
                   <AccordionContent>
-                    Sim. Nossa metodologia inclui preparação específica para o Exame da Ordem com simulados e
-                    acompanhamento especializado ao longo do curso.
+                    Yes. Our methodology includes specific preparation for the OAB Exam with simulations and specialized
+                    follow-up throughout the course.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger className="text-left">Como funcionam os estágios?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">How do internships work?</AccordionTrigger>
                   <AccordionContent>
-                    São 300 horas de estágio supervisionado em escritórios, órgãos públicos e no escritório modelo da
-                    instituição, com acompanhamento de professores experientes.
+                    There are 300 hours of supervised internship in law firms, public bodies, and the institution's
+                    model office, with experienced teachers' accompaniment.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger className="text-left">O diploma EAD tem o mesmo valor?</AccordionTrigger>
+                  <AccordionTrigger className="text-left">Does the EAD diploma have the same value?</AccordionTrigger>
                   <AccordionContent>
-                    Sim. O diploma EAD tem o mesmo valor e reconhecimento do presencial, permitindo registro na OAB e
-                    atuação profissional.
+                    Yes. The EAD diploma has the same value and recognition as the on-site one, allowing registration in
+                    OAB and professional practice.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -325,7 +318,7 @@ export default function DireitoPage() {
 
             <div className="text-center">
               <Button size="lg" variant="outline" asChild>
-                <a href="#contato">Conversar com um Consultor Acadêmico</a>
+                <a href="#contact">Talk to an Academic Consultant</a>
               </Button>
             </div>
           </div>
@@ -334,32 +327,31 @@ export default function DireitoPage() {
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Escolha como Começar sua Jornada no IPOG</h2>
+              <h2 className="text-3xl font-bold mb-4">Choose How to Start Your Journey at IPOG</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Oferecemos diferentes caminhos para você iniciar sua graduação em Direito. Veja qual se encaixa melhor
-                no seu perfil.
+                We offer different paths for you to start your Law graduation. See which one best suits your profile.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Vestibular Digital</h3>
+                <h3 className="text-xl font-semibold mb-2">Digital Vestibular</h3>
                 <p className="text-muted-foreground">
-                  Ideal para quem concluiu o ensino médio. Realize nossa prova online de forma rápida e segura para
-                  garantir sua vaga.
+                  Ideal for those who completed high school. Take our online test quickly and safely to secure your
+                  spot.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Nota do ENEM</h3>
+                <h3 className="text-xl font-semibold mb-2">ENEM Score</h3>
                 <p className="text-muted-foreground">
-                  Aproveite seu desempenho no ENEM. Apresente sua nota e ingresse no IPOG sem a necessidade de um novo
-                  processo seletivo.
+                  Take advantage of your ENEM performance. Present your score and enroll at IPOG without the need for a
+                  new selection process.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Portador de Diploma ou Transferência</h3>
+                <h3 className="text-xl font-semibold mb-2">Diploma Holder or Transfer</h3>
                 <p className="text-muted-foreground">
-                  Se você já possui um diploma ou deseja transferir seu curso, aproveite um processo de ingresso
-                  simplificado e valide suas disciplinas já cursadas.
+                  If you already have a diploma or wish to transfer your course, take advantage of a simplified
+                  enrollment process and validate your already completed disciplines.
                 </p>
               </div>
             </div>
@@ -367,14 +359,14 @@ export default function DireitoPage() {
         </section>
 
         <CtaFinal
-          title="Invista na sua carreira com a instituição que é referência nacional."
-          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 599,00+"
+          title="Invest in your career with the institution that is a national reference."
+          description="Enrollment Fee: R$ 100,00 | Monthly Fees: from R$ 599,00+"
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 599,00"
-          duration="5 anos"
+          duration="5 years"
           totalCost="R$ 35.940,00"
-          nextClassDate="Novembro"
-          promotionDeadline="30 de Outubro"
+          nextClassDate="November"
+          promotionDeadline="October 30th"
         />
       </main>
       <Footer />

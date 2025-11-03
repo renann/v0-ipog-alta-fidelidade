@@ -149,49 +149,49 @@ export default function ArquiteturaPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Comprovam: O Impacto do IPOG na Sua Carreira"
-          subtitulo="Mais do que um diploma, entregamos transformação. Nossos alunos conquistam posições de destaque porque nossa metodologia é focada em resultados reais e empregabilidade."
+          title="Results that Prove: IPOG's Impact on Your Career"
+          subtitle="More than just a diploma, we deliver transformation. Our students achieve prominent positions because our methodology focuses on real results and employability."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "88%",
-              descricao: "dos nossos alunos são empregados ou promovidos após a formação.",
-              label: "TAXA DE COLOCAÇÃO*",
+              descricao: "of our students are employed or promoted after graduation.",
+              label: "EMPLOYMENT RATE*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "4-7 m",
-              descricao: "Conquista de uma nova posição no mercado",
-              label: "TEMPO MÉDIO*",
+              descricao: "Time to secure a new position in the market",
+              label: "AVERAGE TIME*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+55%",
-              descricao: "Aumento salarial médio",
-              label: "AUMENTO SALARIAL*",
+              descricao: "Average salary increase",
+              label: "SALARY INCREASE*",
             },
           ]}
           layoutEstatisticas="carousel"
           depoimentos={[
             {
               texto:
-                "A graduação em Arquitetura no IPOG me deu as ferramentas práticas que o mercado exige. Antes de me formar já tinha meu primeiro projeto construído e hoje tenho meu próprio escritório.",
+                "The Architecture graduation at IPOG gave me the practical tools that the market demands. Before graduating, I already had my first project built, and today I have my own office.",
               autor: "Rafael Mendes",
-              cargo: "Arquiteto e Urbanista",
+              cargo: "Architect and Urbanist",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
               texto:
-                "Os laboratórios e a infraestrutura do IPOG são de primeiro mundo. Aprendi com tecnologias que os grandes escritórios usam e isso me deu vantagem competitiva no mercado. Hoje trabalho em projetos internacionais.",
+                "The laboratories and infrastructure at IPOG are world-class. I learned with technologies used by major offices, giving me a competitive edge in the market. Today, I work on international projects.",
               autor: "Carolina Ribeiro",
-              cargo: "Arquiteta Sênior",
+              cargo: "Senior Architect",
             },
             {
               texto:
-                "O IPOG me conectou com profissionais renomados do mercado. Fiz estágio em um escritório premiado durante a graduação e hoje sou sócia. A formação prática fez toda diferença.",
+                "IPOG connected me with renowned professionals in the market. I did an internship at a prestigious office during my graduation and today I am a partner. Practical formation made all the difference.",
               autor: "Bruno Carvalho",
-              cargo: "Sócio de Escritório de Arquitetura",
+              cargo: "Partner of Architecture Office",
             },
           ]}
           bgColor="bg-background"
@@ -344,14 +344,14 @@ export default function ArquiteturaPage() {
         </section>
 
         <CtaFinal
-          title="Invista na sua carreira com a instituição que é referência nacional."
-          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 649,00+"
+          title="Invest in Your Career with the Nationally Renowned Institution."
+          description="Enrollment Fee: R$ 100,00 | Monthly Fees: starting from R$ 649,00+"
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 649,00"
-          duration="5 anos"
+          duration="5 years"
           totalCost="R$ 38.940,00"
-          nextClassDate="Novembro"
-          promotionDeadline="30 de Outubro"
+          nextClassDate="November"
+          promotionDeadline="October 30th"
         />
       </main>
       <Footer />

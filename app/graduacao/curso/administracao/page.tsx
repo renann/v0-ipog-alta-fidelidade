@@ -142,8 +142,8 @@ export default function AdministracaoPage() {
         />
 
         <Empregabilidade
-          titulo="Empregabilidade após a graduação"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Empregabilidade após a graduação"
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -187,16 +187,15 @@ export default function AdministracaoPage() {
               cargo: "Coordenador Administrativo",
             },
           ]}
-          servicosCarreira={[
-            "Revisão de currículo e Linkedin",
-            "Mentorias com especialistas de mercado",
-            "Indicações para vagas parceiras",
+          servicos={[
+            { texto: "Revisão de currículo e Linkedin" },
+            { texto: "Mentorias com especialistas de mercado" },
+            { texto: "Indicações para vagas parceiras" },
           ]}
-          botaoCta={{
+          botaoCTA={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
           }}
-          observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-background"
         />
 
