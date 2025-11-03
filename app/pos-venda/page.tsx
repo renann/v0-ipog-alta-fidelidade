@@ -35,7 +35,6 @@ interface SchedulingOption {
 function PosVendaContent() {
   const searchParams = useSearchParams()
   const courseId = searchParams.get("course") || "psicologia-ead"
-  const metodoIngresso = searchParams.get("metodo") || ""
   const [course, setCourse] = useState<Course | null>(null)
 
   useEffect(() => {
@@ -43,6 +42,7 @@ function PosVendaContent() {
     setCourse(loadedCourse)
   }, [courseId])
 
+  // Mock data
   const inscricao = {
     nome: "João Silva",
     email: "joao.silva@email.com",
@@ -51,7 +51,6 @@ function PosVendaContent() {
 
   const [emailValidado] = useState(true)
   const [documentoPessoal, setDocumentoPessoal] = useState<UploadedFile | null>(null)
-  const [certificadoEnsinoMedio, setCertificadoEnsinoMedio] = useState<UploadedFile | null>(null)
   const [documentoSecundario, setDocumentoSecundario] = useState<UploadedFile | null>(null)
   const [vestibularAgendado, setVestibularAgendado] = useState<SchedulingOption | null>(null)
 
@@ -65,15 +64,15 @@ function PosVendaContent() {
 
   const isGraduacao = course.type === "Graduação"
   const isPosGraduacao = course.type === "Pós-Graduação"
-  const isVestibular = metodoIngresso === "vestibular"
 
+  // Calculate step completion
   const step1Complete = emailValidado
-  const step2Complete =
-    isGraduacao && isVestibular
-      ? !!documentoPessoal && !!certificadoEnsinoMedio && !!documentoSecundario
-      : !!documentoPessoal && !!documentoSecundario
+  const step2Complete = !!documentoPessoal && !!documentoSecundario
   const step3Complete = isGraduacao ? !!vestibularAgendado : true // Pós doesn't need vestibular
   const allStepsComplete = step1Complete && step2Complete && step3Complete
+
+  // Determine active step
+  const activeStep = !step1Complete ? 1 : !step2Complete ? 2 : !step3Complete ? 3 : 3
 
   const steps = [
     {
@@ -81,21 +80,21 @@ function PosVendaContent() {
       title: "Validação de E-mail",
       description: "Confirme seu e-mail",
       completed: step1Complete,
-      active: step1Complete ? false : true,
+      active: activeStep === 1,
     },
     {
       id: 2,
       title: "Documentação",
       description: "Envie seus documentos",
       completed: step2Complete,
-      active: step2Complete ? false : step1Complete,
+      active: activeStep === 2,
     },
     {
       id: 3,
       title: isGraduacao ? "Agendamento" : "Confirmação",
       description: isGraduacao ? "Agende seu vestibular" : "Matrícula confirmada",
       completed: step3Complete,
-      active: step3Complete ? false : step2Complete,
+      active: activeStep === 3,
     },
   ]
 
@@ -261,25 +260,16 @@ function PosVendaContent() {
               {step1Complete && !step2Complete && (
                 <div className="space-y-6">
                   <DocumentUpload
-                    label="Documento com Foto"
+                    label="Documento Pessoal"
                     description="RG, CPF ou CNH (frente e verso)"
                     onUploadComplete={setDocumentoPessoal}
                     uploadedFile={documentoPessoal}
                   />
 
-                  {isGraduacao && isVestibular && (
-                    <DocumentUpload
-                      label="Certificado do Ensino Médio"
-                      description="Certificado de conclusão do Ensino Médio (frente e verso)"
-                      onUploadComplete={setCertificadoEnsinoMedio}
-                      uploadedFile={certificadoEnsinoMedio}
-                    />
-                  )}
-
                   {isGraduacao ? (
                     <DocumentUpload
-                      label="Histórico do Ensino Médio"
-                      description="Histórico escolar completo do Ensino Médio (frente e verso)"
+                      label="Histórico Escolar"
+                      description="Histórico do Ensino Médio completo"
                       onUploadComplete={setDocumentoSecundario}
                       uploadedFile={documentoSecundario}
                     />
