@@ -1056,44 +1056,48 @@ function CheckoutContent() {
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 pt-4 border-t">
-                  {/* </CHANGE> */}
-                  <div className="flex items-start space-x-2">
+                  <div className="flex items-start space-x-3">
                     <Checkbox
                       id="terms"
                       checked={termsAccepted}
                       onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
+                      className="mt-0.5"
                     />
-                    <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
+                    <Label htmlFor="terms" className="text-sm leading-normal cursor-pointer text-left flex-1">
                       Li e aceito os{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline whitespace-nowrap">
                         Termos de Uso
                       </a>{" "}
                       e a{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline whitespace-nowrap">
                         Política de Privacidade
                       </a>{" "}
                       *
                     </Label>
                   </div>
-                  <div className="flex items-start space-x-2">
+
+                  <div className="flex items-start space-x-3">
                     <Checkbox
                       id="lgpd"
                       checked={lgpdAccepted}
                       onCheckedChange={(checked) => setLgpdAccepted(checked as boolean)}
+                      className="mt-0.5"
                     />
-                    <Label htmlFor="lgpd" className="text-sm leading-relaxed cursor-pointer">
+                    <Label htmlFor="lgpd" className="text-sm leading-normal cursor-pointer text-left flex-1">
                       Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD) *
                     </Label>
                   </div>
-                  <div className="flex items-start space-x-2">
+
+                  <div className="flex items-start space-x-3">
                     <Checkbox
                       id="contract"
                       checked={contractAccepted}
                       onCheckedChange={(checked) => setContractAccepted(checked as boolean)}
+                      className="mt-0.5"
                     />
-                    <Label htmlFor="contract" className="text-sm leading-relaxed cursor-pointer">
+                    <Label htmlFor="contract" className="text-sm leading-normal cursor-pointer text-left flex-1">
                       Li e aceito o{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline whitespace-nowrap">
                         Contrato de Prestação de Serviços Educacionais
                       </a>{" "}
                       *

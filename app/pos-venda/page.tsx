@@ -11,7 +11,7 @@ import { StepProgress } from "@/components/step-progress"
 import { DocumentUpload } from "@/components/document-upload"
 import { VestibularScheduling } from "@/components/vestibular-scheduling"
 import { DocumentoGraduacaoUpload } from "@/components/pos-graduacao/documento-graduacao-upload"
-import { CheckCircle2, Mail, ExternalLink, FileText, Calendar, AlertCircle, Info } from "lucide-react"
+import { CheckCircle2, Mail, FileText, Calendar, AlertCircle, Info } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { getCourse, type Course } from "@/lib/mock-courses"
@@ -67,37 +67,63 @@ function PosVendaContent() {
   const isPosGraduacao = course.type === "Pós-Graduação"
   const isVestibular = metodoIngresso === "vestibular"
 
+  const needsVestibularScheduling = isGraduacao && isVestibular
+
   const step1Complete = emailValidado
   const step2Complete =
     isGraduacao && isVestibular
       ? !!documentoPessoal && !!certificadoEnsinoMedio && !!documentoSecundario
       : !!documentoPessoal && !!documentoSecundario
-  const step3Complete = isGraduacao ? !!vestibularAgendado : true // Pós doesn't need vestibular
+  const step3Complete = needsVestibularScheduling ? !!vestibularAgendado : true
   const allStepsComplete = step1Complete && step2Complete && step3Complete
 
-  const steps = [
-    {
-      id: 1,
-      title: "Validação de E-mail",
-      description: "Confirme seu e-mail",
-      completed: step1Complete,
-      active: step1Complete ? false : true,
-    },
-    {
-      id: 2,
-      title: "Documentação",
-      description: "Envie seus documentos",
-      completed: step2Complete,
-      active: step2Complete ? false : step1Complete,
-    },
-    {
-      id: 3,
-      title: isGraduacao ? "Agendamento" : "Confirmação",
-      description: isGraduacao ? "Agende seu vestibular" : "Matrícula confirmada",
-      completed: step3Complete,
-      active: step3Complete ? false : step2Complete,
-    },
-  ]
+  const steps = needsVestibularScheduling
+    ? [
+        {
+          id: 1,
+          title: "Validação de E-mail",
+          description: "Confirme seu e-mail",
+          completed: step1Complete,
+          active: step1Complete ? false : true,
+        },
+        {
+          id: 2,
+          title: "Documentação",
+          description: "Envie seus documentos",
+          completed: step2Complete,
+          active: step2Complete ? false : step1Complete,
+        },
+        {
+          id: 3,
+          title: "Agendamento",
+          description: "Agende seu vestibular",
+          completed: step3Complete,
+          active: step3Complete ? false : step2Complete,
+        },
+      ]
+    : [
+        {
+          id: 1,
+          title: "Validação de E-mail",
+          description: "Confirme seu e-mail",
+          completed: step1Complete,
+          active: step1Complete ? false : true,
+        },
+        {
+          id: 2,
+          title: "Documentação",
+          description: "Envie seus documentos",
+          completed: step2Complete,
+          active: step2Complete ? false : step1Complete,
+        },
+        {
+          id: 3,
+          title: "Confirmação",
+          description: isPosGraduacao ? "Matrícula confirmada" : "Inscrição confirmada",
+          completed: step3Complete,
+          active: step3Complete ? false : step2Complete,
+        },
+      ]
 
   const completedSteps = steps.filter((s) => s.completed).length
 
@@ -164,7 +190,7 @@ function PosVendaContent() {
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold md:text-xl">Seu Progresso</h2>
                 <Badge variant="secondary" className="text-sm">
-                  {completedSteps}/3 etapas
+                  {completedSteps}/{steps.length} etapas
                 </Badge>
               </div>
               <StepProgress steps={steps} />
@@ -315,7 +341,7 @@ function PosVendaContent() {
           </Card>
 
           {/* Step 3: Vestibular Scheduling (Graduação) or Confirmation (Pós) */}
-          {isGraduacao ? (
+          {needsVestibularScheduling ? (
             <Card
               className={cn(
                 "mb-6 md:mb-8",
@@ -379,10 +405,13 @@ function PosVendaContent() {
                     <CheckCircle2 className="h-5 w-5 text-white dark:text-gray-900" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 font-semibold">Matrícula Confirmada</h3>
+                    <h3 className="mb-2 font-semibold">
+                      {isPosGraduacao ? "Matrícula Confirmada" : "Inscrição Confirmada"}
+                    </h3>
                     <p className="text-sm text-muted-foreground">
-                      Sua matrícula foi confirmada com sucesso. Você receberá mais informações sobre o início das aulas
-                      em breve.
+                      {isPosGraduacao
+                        ? "Sua matrícula foi confirmada com sucesso. Você receberá mais informações sobre o início das aulas em breve."
+                        : "Sua inscrição foi confirmada com sucesso. Você receberá mais informações sobre os próximos passos em breve."}
                     </p>
                   </div>
                 </div>
@@ -396,27 +425,15 @@ function PosVendaContent() {
               <CardContent className="p-4 md:p-6">
                 <div className="text-center">
                   <h3 className="mb-2 text-lg font-semibold">
-                    {isGraduacao ? "Acesso à Prova" : "Acesso à Plataforma"}
+                    {isPosGraduacao ? "Acesso à Plataforma" : "Próximos Passos"}
                   </h3>
                   <p className="mb-4 text-sm text-muted-foreground">
                     {allStepsComplete
-                      ? isGraduacao
-                        ? "Todas as etapas foram concluídas! Você já pode acessar o link da prova."
-                        : "Todas as etapas foram concluídas! Você receberá o acesso à plataforma em breve."
-                      : `Complete todas as etapas (${completedSteps}/3) para ${isGraduacao ? "acessar o link da prova" : "finalizar sua matrícula"}.`}
+                      ? isPosGraduacao
+                        ? "Todas as etapas foram concluídas! Você receberá o acesso à plataforma em breve."
+                        : "Todas as etapas foram concluídas! Você receberá informações sobre os próximos passos em breve."
+                      : `Complete todas as etapas (${completedSteps}/${steps.length}) para finalizar sua ${isGraduacao ? "inscrição" : "matrícula"}.`}
                   </p>
-                  {isGraduacao && (
-                    <Button asChild={allStepsComplete} size="lg" className="w-full" disabled={!allStepsComplete}>
-                      {allStepsComplete ? (
-                        <Link href="/prova/vestibular" target="_blank">
-                          Acessar link da prova
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </Link>
-                      ) : (
-                        <>Acessar link da prova</>
-                      )}
-                    </Button>
-                  )}
                 </div>
               </CardContent>
             </Card>
