@@ -546,67 +546,71 @@ export function CatalogPageContent() {
           </DialogContent>
         </Dialog>
 
+        <div className="mb-6">
+          <p className="text-sm text-muted-foreground">
+            {cursosFiltrados.length === 0 ? (
+              "Nenhum curso encontrado"
+            ) : cursosFiltrados.length === 1 ? (
+              "1 curso encontrado"
+            ) : (
+              <span>
+                <span className="font-semibold text-foreground">{cursosFiltrados.length}</span> cursos encontrados
+              </span>
+            )}
+          </p>
+        </div>
+
         <div className="space-y-6">
-          {cursosFiltrados.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">Nenhum curso encontrado com os filtros selecionados.</p>
-            </div>
-          ) : (
-            cursosFiltrados.map((curso, index) => (
-              <Card key={index} className="w-full">
-                <CardContent className="p-6 md:p-8">
-                  <Badge variant="outline" className="w-fit mb-6 text-xs font-bold px-4 py-1.5 rounded-full">
-                    {curso.tipo}
-                  </Badge>
+          {cursosFiltrados.map((curso, index) => (
+            <Card key={index} className="w-full">
+              <CardContent className="p-6 md:p-8">
+                <Badge variant="outline" className="w-fit mb-6 text-xs font-bold px-4 py-1.5 rounded-full">
+                  {curso.tipo}
+                </Badge>
 
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{curso.nome}</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-6 text-balance">{curso.nome}</h3>
 
-                  <div className="mb-4 space-y-2">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">Duração:</span> {curso.duracao}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">Ideal para quem:</span> {curso.idealPara}
-                    </p>
-                  </div>
+                <div className="mb-4 space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Duração:</span> {curso.duracao}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Ideal para quem:</span> {curso.idealPara}
+                  </p>
+                </div>
 
-                  <p className="text-base mb-8">{curso.textoValor}</p>
+                <p className="text-base mb-8">{curso.textoValor}</p>
 
-                  <div className="space-y-4 border-t pt-6">
-                    {curso.modalidades.map((modalidade, idx) => {
-                      const content = (
-                        <div className="flex items-center justify-between gap-4">
-                          <span className="text-lg font-bold">{modalidade.tipo}</span>
-                          <div className="flex items-center gap-2">
-                            {modalidade.opcoes.map((opcao, opIdx) => (
-                              <Badge
-                                key={opIdx}
-                                variant="outline"
-                                className="text-xs font-medium px-3 py-1 rounded-full"
-                              >
-                                {opcao}
-                              </Badge>
-                            ))}
-                            <ArrowRight className="w-5 h-5 ml-2" />
-                          </div>
+                <div className="space-y-4 border-t pt-6">
+                  {curso.modalidades.map((modalidade, idx) => {
+                    const content = (
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="text-lg font-bold">{modalidade.tipo}</span>
+                        <div className="flex items-center gap-2">
+                          {modalidade.opcoes.map((opcao, opIdx) => (
+                            <Badge key={opIdx} variant="outline" className="text-xs font-medium px-3 py-1 rounded-full">
+                              {opcao}
+                            </Badge>
+                          ))}
+                          <ArrowRight className="w-5 h-5 ml-2" />
                         </div>
+                      </div>
+                    )
+
+                    if (modalidade.link) {
+                      return (
+                        <Link key={idx} href={modalidade.link} className="block hover:opacity-80 transition-opacity">
+                          {content}
+                        </Link>
                       )
+                    }
 
-                      if (modalidade.link) {
-                        return (
-                          <Link key={idx} href={modalidade.link} className="block hover:opacity-80 transition-opacity">
-                            {content}
-                          </Link>
-                        )
-                      }
-
-                      return <div key={idx}>{content}</div>
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            ))
-          )}
+                    return <div key={idx}>{content}</div>
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </main>
