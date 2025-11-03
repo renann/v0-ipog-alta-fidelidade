@@ -35,6 +35,7 @@ interface SchedulingOption {
 function PosVendaContent() {
   const searchParams = useSearchParams()
   const courseId = searchParams.get("course") || "psicologia-ead"
+  const metodoIngresso = searchParams.get("metodo") || ""
   const [course, setCourse] = useState<Course | null>(null)
 
   useEffect(() => {
@@ -42,7 +43,6 @@ function PosVendaContent() {
     setCourse(loadedCourse)
   }, [courseId])
 
-  // Mock data
   const inscricao = {
     nome: "João Silva",
     email: "joao.silva@email.com",
@@ -51,6 +51,7 @@ function PosVendaContent() {
 
   const [emailValidado] = useState(true)
   const [documentoPessoal, setDocumentoPessoal] = useState<UploadedFile | null>(null)
+  const [certificadoEnsinoMedio, setCertificadoEnsinoMedio] = useState<UploadedFile | null>(null)
   const [documentoSecundario, setDocumentoSecundario] = useState<UploadedFile | null>(null)
   const [vestibularAgendado, setVestibularAgendado] = useState<SchedulingOption | null>(null)
 
@@ -64,15 +65,15 @@ function PosVendaContent() {
 
   const isGraduacao = course.type === "Graduação"
   const isPosGraduacao = course.type === "Pós-Graduação"
+  const isVestibular = metodoIngresso === "vestibular"
 
-  // Calculate step completion
   const step1Complete = emailValidado
-  const step2Complete = !!documentoPessoal && !!documentoSecundario
+  const step2Complete =
+    isGraduacao && isVestibular
+      ? !!documentoPessoal && !!certificadoEnsinoMedio && !!documentoSecundario
+      : !!documentoPessoal && !!documentoSecundario
   const step3Complete = isGraduacao ? !!vestibularAgendado : true // Pós doesn't need vestibular
   const allStepsComplete = step1Complete && step2Complete && step3Complete
-
-  // Determine active step
-  const activeStep = !step1Complete ? 1 : !step2Complete ? 2 : !step3Complete ? 3 : 3
 
   const steps = [
     {
@@ -80,21 +81,21 @@ function PosVendaContent() {
       title: "Validação de E-mail",
       description: "Confirme seu e-mail",
       completed: step1Complete,
-      active: activeStep === 1,
+      active: step1Complete ? false : true,
     },
     {
       id: 2,
       title: "Documentação",
       description: "Envie seus documentos",
       completed: step2Complete,
-      active: activeStep === 2,
+      active: step2Complete ? false : step1Complete,
     },
     {
       id: 3,
       title: isGraduacao ? "Agendamento" : "Confirmação",
       description: isGraduacao ? "Agende seu vestibular" : "Matrícula confirmada",
       completed: step3Complete,
-      active: activeStep === 3,
+      active: step3Complete ? false : step2Complete,
     },
   ]
 
@@ -260,16 +261,25 @@ function PosVendaContent() {
               {step1Complete && !step2Complete && (
                 <div className="space-y-6">
                   <DocumentUpload
-                    label="Documento Pessoal"
+                    label="Documento com Foto"
                     description="RG, CPF ou CNH (frente e verso)"
                     onUploadComplete={setDocumentoPessoal}
                     uploadedFile={documentoPessoal}
                   />
 
+                  {isGraduacao && isVestibular && (
+                    <DocumentUpload
+                      label="Certificado do Ensino Médio"
+                      description="Certificado de conclusão do Ensino Médio (frente e verso)"
+                      onUploadComplete={setCertificadoEnsinoMedio}
+                      uploadedFile={certificadoEnsinoMedio}
+                    />
+                  )}
+
                   {isGraduacao ? (
                     <DocumentUpload
-                      label="Histórico Escolar"
-                      description="Histórico do Ensino Médio completo"
+                      label="Histórico do Ensino Médio"
+                      description="Histórico escolar completo do Ensino Médio (frente e verso)"
                       onUploadComplete={setDocumentoSecundario}
                       uploadedFile={documentoSecundario}
                     />
@@ -381,32 +391,36 @@ function PosVendaContent() {
           )}
 
           {/* Final CTA */}
-          <Card className="mb-6 md:mb-8">
-            <CardContent className="p-4 md:p-6">
-              <div className="text-center">
-                <h3 className="mb-2 text-lg font-semibold">{isGraduacao ? "Acesso à Prova" : "Acesso à Plataforma"}</h3>
-                <p className="mb-4 text-sm text-muted-foreground">
-                  {allStepsComplete
-                    ? isGraduacao
-                      ? "Todas as etapas foram concluídas! Você já pode acessar o link da prova."
-                      : "Todas as etapas foram concluídas! Você receberá o acesso à plataforma em breve."
-                    : `Complete todas as etapas (${completedSteps}/3) para ${isGraduacao ? "acessar o link da prova" : "finalizar sua matrícula"}.`}
-                </p>
-                {isGraduacao && (
-                  <Button asChild={allStepsComplete} size="lg" className="w-full" disabled={!allStepsComplete}>
-                    {allStepsComplete ? (
-                      <Link href="/prova/vestibular" target="_blank">
-                        Acessar link da prova
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </Link>
-                    ) : (
-                      <>Acessar link da prova</>
-                    )}
-                  </Button>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+          {!(isGraduacao && isVestibular) && (
+            <Card className="mb-6 md:mb-8">
+              <CardContent className="p-4 md:p-6">
+                <div className="text-center">
+                  <h3 className="mb-2 text-lg font-semibold">
+                    {isGraduacao ? "Acesso à Prova" : "Acesso à Plataforma"}
+                  </h3>
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    {allStepsComplete
+                      ? isGraduacao
+                        ? "Todas as etapas foram concluídas! Você já pode acessar o link da prova."
+                        : "Todas as etapas foram concluídas! Você receberá o acesso à plataforma em breve."
+                      : `Complete todas as etapas (${completedSteps}/3) para ${isGraduacao ? "acessar o link da prova" : "finalizar sua matrícula"}.`}
+                  </p>
+                  {isGraduacao && (
+                    <Button asChild={allStepsComplete} size="lg" className="w-full" disabled={!allStepsComplete}>
+                      {allStepsComplete ? (
+                        <Link href="/prova/vestibular" target="_blank">
+                          Acessar link da prova
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
+                      ) : (
+                        <>Acessar link da prova</>
+                      )}
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
           {/* Course Summary */}
           <Card className="mb-6 md:mb-8">

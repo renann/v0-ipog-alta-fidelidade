@@ -58,11 +58,14 @@ function CheckoutContent() {
   const [selectedTurma, setSelectedTurma] = useState("")
   const [selectedCiclo, setSelectedCiclo] = useState("")
   const [metodoIngresso, setMetodoIngresso] = useState("")
+  const [documentoIngressoAceito, setDocumentoIngressoAceito] = useState(false)
   // </CHANGE>
   const [paymentMethod, setPaymentMethod] = useState("")
   const [parcelas, setParcelas] = useState("1")
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [lgpdAccepted, setLgpdAccepted] = useState(false)
+  const [contractAccepted, setContractAccepted] = useState(false)
+  // </CHANGE>
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [pixKeyCopied, setPixKeyCopied] = useState(false)
 
@@ -416,11 +419,20 @@ function CheckoutContent() {
 
   const isFormValid = () => {
     const hasValidSelection = isGraduacao ? selectedCiclo && metodoIngresso : selectedTurma
+    const requiresDocumentCheck = isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso)
+    const hasDocumentAcceptance = !requiresDocumentCheck || documentoIngressoAceito
     // </CHANGE>
-    // CHANGE: Adicionando validação para comprovante se houver convênio selecionado
     const hasComprovante = !selectedCompany || (selectedCompany && comprovante)
-    // END CHANGE
-    return hasValidSelection && paymentMethod && termsAccepted && lgpdAccepted && hasComprovante
+    return (
+      hasValidSelection &&
+      paymentMethod &&
+      termsAccepted &&
+      lgpdAccepted &&
+      contractAccepted &&
+      hasComprovante &&
+      hasDocumentAcceptance
+    )
+    // </CHANGE>
   }
 
   const handleSubmit = async () => {
@@ -1027,6 +1039,23 @@ function CheckoutContent() {
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 pt-4 border-t">
+                  {isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
+                    <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
+                      <Checkbox
+                        id="documento-ingresso"
+                        checked={documentoIngressoAceito}
+                        onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
+                      />
+                      <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
+                        Estou ciente de que é necessário apresentar um documento válido (
+                        {metodoIngresso === "enem" && "boletim do ENEM"}
+                        {metodoIngresso === "portador-diploma" && "diploma de graduação"}
+                        {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}) e que
+                        o mesmo passará por aprovação da secretaria acadêmica *
+                      </Label>
+                    </div>
+                  )}
+                  {/* </CHANGE> */}
                   <div className="flex items-start space-x-2">
                     <Checkbox
                       id="terms"
@@ -1055,6 +1084,21 @@ function CheckoutContent() {
                       Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD) *
                     </Label>
                   </div>
+                  <div className="flex items-start space-x-2">
+                    <Checkbox
+                      id="contract"
+                      checked={contractAccepted}
+                      onCheckedChange={(checked) => setContractAccepted(checked as boolean)}
+                    />
+                    <Label htmlFor="contract" className="text-sm leading-relaxed cursor-pointer">
+                      Li e aceito o{" "}
+                      <a href="#" className="underline">
+                        Contrato de Prestação de Serviços Educacionais
+                      </a>{" "}
+                      *
+                    </Label>
+                  </div>
+                  {/* </CHANGE> */}
                 </div>
               </AccordionContent>
             </AccordionItem>
