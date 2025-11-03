@@ -54,7 +54,7 @@ export default function HomePage() {
         <ProfessorsSection />
 
         <DepoimentosDeTexto
-          titulo="Quem ficou perto do IPOG, ficou na frente"
+          titulo="Quem escolheu IPOG, ficou na frente"
           depoimentos={[
             {
               texto:
