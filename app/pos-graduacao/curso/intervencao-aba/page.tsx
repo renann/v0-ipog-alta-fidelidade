@@ -11,6 +11,7 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
 
 export default function IntervencaoAbaPage() {
   return (
@@ -212,6 +213,34 @@ export default function IntervencaoAbaPage() {
             </div>
           </div>
         </section>
+
+        <TrilhaAprendizado
+          etapas={[
+            {
+              titulo: "Pós-Graduação em Intervenção ABA — Fundamentos",
+              descricao:
+                "Construa base sólida em Análise do Comportamento Aplicada, protocolos de avaliação e intervenção com certificação reconhecida pelo CFP.",
+              tags: ["ABA", "TEA", "Avaliação"],
+            },
+            {
+              titulo: "Especialização em Análise do Comportamento Aplicada",
+              descricao:
+                "Aprofunde em técnicas avançadas de intervenção, manejo comportamental e elaboração de planos terapêuticos individualizados.",
+              tags: ["Intervenção", "PEI", "Supervisão"],
+            },
+            {
+              titulo: "Posicionamento no Mercado — Psicólogo Especialista em ABA",
+              descricao:
+                "Atue como especialista em intervenção ABA com foco em casos complexos de TEA e remuneração competitiva.",
+              beneficios: [
+                "Credibilidade com certificações CFP e BCBA",
+                "Portfólio de casos + publicações",
+                "Rede de encaminhamentos e parcerias",
+              ],
+              tags: ["Consultoria", "Clínica", "Supervisão"],
+            },
+          ]}
+        />
 
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">

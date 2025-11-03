@@ -10,6 +10,7 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
 
 export default function EngenhariaEstruturalPage() {
   return (
@@ -229,6 +230,34 @@ export default function EngenhariaEstruturalPage() {
             </div>
           </div>
         </section>
+
+        <TrilhaAprendizado
+          etapas={[
+            {
+              titulo: "Pós-Graduação em Engenharia Estrutural — Fundamentos",
+              descricao:
+                "Construa base sólida em análise estrutural, dimensionamento e normas técnicas com certificação reconhecida pelo MEC.",
+              tags: ["Estruturas", "Fundações", "Normas"],
+            },
+            {
+              titulo: "Especialização em Projetos Estruturais Avançados",
+              descricao:
+                "Aprofunde em modelagem computacional, projetos especiais e análise de patologias estruturais.",
+              tags: ["Modelagem", "Projetos Especiais", "Patologias"],
+            },
+            {
+              titulo: "Posicionamento no Mercado — Engenheiro Especialista",
+              descricao:
+                "Atue como especialista em projetos estruturais com foco em grandes obras e remuneração competitiva.",
+              beneficios: [
+                "Credibilidade com certificações CREA",
+                "Portfólio de projetos + publicações",
+                "Rede de parcerias e indicações",
+              ],
+              tags: ["Consultoria", "Grandes Obras", "Liderança"],
+            },
+          ]}
+        />
 
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
