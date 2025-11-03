@@ -78,7 +78,7 @@ export default function JovemIngressoPage() {
               descricao:
                 "Explore a complexidade da mente humana e prepare-se para promover bem-estar e transformação. No IPOG, você desenvolve a escuta empática e as competências para se tornar um profissional de referência na área.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia-ead",
+              link: "/graduacao/curso/psicologia-ead/jovem-ingresso",
             },
             {
               nome: "Direito",
