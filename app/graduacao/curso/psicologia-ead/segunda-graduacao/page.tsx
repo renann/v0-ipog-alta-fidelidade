@@ -35,12 +35,12 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
-          title="Psicologia EAD"
-          description="Forme-se em Psicologia com flexibilidade, qualidade e reconhecimento MEC."
+          title="Graduação em Psicologia EAD para sua Segunda Carreira"
+          description="Valide sua experiência, conquiste um diploma de peso e acelere sua transição de carreira com a flexibilidade do EAD e o reconhecimento oficial do MEC."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Diploma Reconhecido pelo MEC" },
+            { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade para quem já atua" },
+            { icon: <Award className="h-5 w-5" />, text: "Professores com Experiência de Mercado" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
@@ -79,10 +79,10 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
             },
           ]}
         />
-        <RetornoInvestimentoPsicologia />
+        <RetornoInvestimentoPsicologia title="O impacto da sua segunda graduação na sua carreira" />
         <Empregabilidade
           title="Inscreva-se no processo seletivo"
-          subtitle="Projeção de evolução salarial após o curso, baseada em faixas médias de mercado."
+          subtitle="Veja o potencial de crescimento ao adicionar o diploma de Psicologia à sua trajetória profissional."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -107,17 +107,17 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
           depoimentos={[
             {
               texto:
-                "A flexibilidade do EAD me permitiu conciliar trabalho, família e estudos. Hoje sou psicóloga clínica e tenho meu próprio consultório. O IPOG tornou meu sonho possível.",
-              autor: "Patrícia Souza",
-              cargo: "Psicóloga Clínica",
+                "Eu já atuava em RH, mas sentia falta de uma base teórica sólida. A graduação EAD do IPOG me permitiu conquistar o diploma em Psicologia sem parar de trabalhar. Hoje, aplico o conhecimento diretamente na minha função e abri portas para uma promoção.",
+              autor: "Ricardo Oliveira",
+              cargo: "Coordenador de DHO",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
               texto:
-                "Moro no interior e o EAD do IPOG me deu acesso a professores de referência nacional. A qualidade é a mesma do curso presencial e hoje trabalho em uma clínica renomada da minha cidade.",
-              autor: "Ricardo Oliveira",
-              cargo: "Psicólogo Organizacional",
+                "Após 10 anos em Engenharia, decidi fazer uma transição de carreira para a Psicologia. O modelo EAD do IPOG foi essencial para conciliar os estudos com minha consultoria. O aproveitamento de disciplinas acelerou minha formação e hoje já atendo meus primeiros clientes.",
+              autor: "Julia Martins",
+              cargo: "Psicóloga e ex-Engenheira",
             },
             {
               texto:
@@ -171,7 +171,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
 
         <Autoridade
           title="Corpo Docente do Curso"
-          subtitle="Aprenda com especialistas reconhecidos em Psicologia"
+          subtitle="Aprenda com quem une a prática do mercado à excelência acadêmica"
           credenciais={[
             {
               icone: <Award className="h-5 w-5" />,
@@ -255,7 +255,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         />
 
         <CtaFinal
-          title="Invista em sua carreira com a instituição de referência nacional."
+          title="Invista na sua transição de carreira com um diploma de peso."
           description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 499,00"

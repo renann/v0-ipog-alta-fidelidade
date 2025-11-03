@@ -35,12 +35,13 @@ export default function PsicologiaEadJovemIngressoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
-          title="Psicologia EAD"
-          description="Forme-se em Psicologia com flexibilidade, qualidade e reconhecimento MEC."
+          title="Psicologia EAD: Sua carreira começa aqui"
+          description="Construa seu futuro com uma formação flexível, focada na prática, e acelere sua entrada no mercado de trabalho aprendendo com professores que vivem o dia a dia da profissão."
           valueBadges={[
-            { icon: <GraduationCap className="h-5 w-5" />, text: "Reconhecido pelo MEC" },
-            { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
-            { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
+            { icon: <GraduationCap className="h-5 w-5" />, text: "Diploma Reconhecido pelo MEC" },
+            { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade para Estudar e Trabalhar" },
+            { icon: <Award className="h-5 w-5" />, text: "Professores Atuantes no Mercado" },
+            { icon: <Briefcase className="h-5 w-5" />, text: "Foco na sua Empregabilidade" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
@@ -79,9 +80,9 @@ export default function PsicologiaEadJovemIngressoPage() {
             },
           ]}
         />
-        <RetornoInvestimentoPsicologia />
+        <RetornoInvestimentoPsicologia title="Sua Formação no IPOG Acelera sua Carreira" />
         <Empregabilidade
-          title="Matricule-se na Graduação IPOG"
+          title="Resultados Reais: Veja como o IPOG Transforma Carreiras"
           subtitle="Projeção de evolução salarial após o curso, baseada em faixas médias de mercado."
           estatisticas={[
             {
@@ -255,8 +256,8 @@ export default function PsicologiaEadJovemIngressoPage() {
         />
 
         <CtaFinal
-          title="Invista em sua carreira com a instituição de referência nacional."
-          description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
+          title="Um Investimento Acessível no seu Futuro Profissional"
+          description="O IPOG oferece condições facilitadas para viabilizar seu futuro profissional. A taxa de inscrição é o primeiro passo para garantir sua vaga e ter acesso às nossas opções de bolsas e parcelamento, tornando seu investimento mais acessível."
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 499,00"
           duration="5 anos"

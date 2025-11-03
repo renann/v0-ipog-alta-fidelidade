@@ -212,6 +212,7 @@ export function CatalogPageContent() {
       nome: "Psicologia",
       duracao: "5 anos",
       idealPara: "Jovens que desejam compreender o comportamento humano e transformar vidas",
+      diferenciais: "Reconhecimento MEC, corpo docente especializado, metodologia prática com supervisão clínica",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar sua escuta em acolhimento, sua percepção em compreensão, sua vocação em profissão.",
       modalidades: [
@@ -227,6 +228,8 @@ export function CatalogPageContent() {
       nome: "Direito",
       duracao: "5 anos",
       idealPara: "Profissionais que buscam atuar na defesa da justiça e dos direitos",
+      diferenciais:
+        "Aprovação OAB acima da média nacional, prática jurídica desde o 1º semestre, networking com escritórios parceiros",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar argumentos em justiça, conhecimento em defesa, sua vocação em advocacia.",
       modalidades: [
@@ -247,6 +250,7 @@ export function CatalogPageContent() {
       nome: "Arquitetura e Urbanismo",
       duracao: "5 anos",
       idealPara: "Criativos que desejam projetar espaços que transformam a vida das pessoas",
+      diferenciais: "Ateliês equipados, projetos reais desde o início, parcerias com escritórios renomados",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar ideias em projetos, espaços em experiências, sua criatividade em construção.",
       modalidades: [
@@ -267,6 +271,8 @@ export function CatalogPageContent() {
       nome: "Avaliação Psicológica",
       duracao: "12 meses",
       idealPara: "Psicólogos que buscam especialização em técnicas de avaliação",
+      diferenciais:
+        "Certificação reconhecida pelo CFP, prática com instrumentos atualizados, supervisão de casos reais",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar testes em diagnósticos, dados em compreensão, sua prática em excelência.",
       modalidades: [
@@ -287,6 +293,8 @@ export function CatalogPageContent() {
       nome: "Engenharia Estrutural",
       duracao: "18 meses",
       idealPara: "Engenheiros que desejam especialização em projetos estruturais",
+      diferenciais:
+        "Softwares profissionais inclusos, projetos estruturais complexos, professores com atuação em grandes obras",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar cálculos em segurança, projetos em solidez, sua engenharia em confiança.",
       modalidades: [
@@ -307,6 +315,7 @@ export function CatalogPageContent() {
       nome: "Intervenção ABA",
       duracao: "12 meses",
       idealPara: "Profissionais que buscam especialização em análise do comportamento aplicada",
+      diferenciais: "Certificação internacional BACB, estágios supervisionados, metodologia baseada em evidências",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar comportamentos em desenvolvimento, intervenções em resultados, sua prática em transformação.",
       modalidades: [
@@ -327,6 +336,8 @@ export function CatalogPageContent() {
       nome: "Inteligência Artificial Aplicada",
       duracao: "3 meses",
       idealPara: "Profissionais que desejam dominar IA e aplicar em seus projetos",
+      diferenciais:
+        "Projetos práticos com IA generativa, acesso a ferramentas premium, certificado reconhecido pelo mercado",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar dados em insights, algoritmos em soluções, sua carreira em inovação.",
       modalidades: [
@@ -346,7 +357,8 @@ export function CatalogPageContent() {
       tipo: "EXTENSÃO",
       nome: "Marketing Digital",
       duracao: "2 meses",
-      idealPara: "Profissionais que buscam dominar estratégias digitais e aumentar resultados",
+      idealPara: "Profissionais que desejam dominar estratégias digitais e aumentar resultados",
+      diferenciais: "Cases reais de mercado, ferramentas de análise incluídas, mentoria com especialistas",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar cliques em conversões, audiência em comunidade, sua marca em referência.",
       modalidades: [
@@ -367,6 +379,7 @@ export function CatalogPageContent() {
       nome: "Gestão de Projetos Ágeis",
       duracao: "2 meses",
       idealPara: "Profissionais que desejam implementar metodologias ágeis em suas equipes",
+      diferenciais: "Certificação Scrum incluída, simulações práticas de sprints, networking com agilistas",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar processos em agilidade, equipes em alta performance, sua gestão em resultados.",
       modalidades: [
@@ -576,6 +589,9 @@ export function CatalogPageContent() {
                   </p>
                   <p className="text-sm text-muted-foreground">
                     <span className="font-medium text-foreground">Ideal para quem:</span> {curso.idealPara}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Diferenciais:</span> {curso.diferenciais}
                   </p>
                 </div>
 
