@@ -89,7 +89,7 @@ export default function SegundaGraduacaoPage() {
               descricao:
                 "Aplique sua vivência em liderança e gestão de pessoas para compreender o comportamento humano em profundidade. Ideal para profissionais que desejam formalizar suas habilidades e liderar equipes com mais estratégia e empatia.",
               modalidade: "EAD • Presencial",
-              link: "/graduacao/curso/psicologia-ead",
+              link: "/graduacao/curso/psicologia-ead/segunda-graduacao",
             },
             {
               nome: "Direito",
