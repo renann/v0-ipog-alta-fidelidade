@@ -195,9 +195,6 @@ export default function DireitoPage() {
               destaque: true,
             },
           ]}
-          textoBotao="Baixar grade curricular completa"
-          onClickBotao={() => console.log("Download grade")}
-          observacao="PDF com detalhamento das disciplinas"
           bgColor="bg-muted/30"
         />
 
