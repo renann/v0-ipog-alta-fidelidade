@@ -166,9 +166,6 @@ export default function PsicologiaEadPage() {
               destaque: true,
             },
           ]}
-          textoBotao="Baixar grade curricular completa"
-          onClickBotao={() => (window.location.href = "#grade")}
-          observacao="PDF com detalhamento de todas as disciplinas"
           bgColor="bg-muted/30"
         />
 
