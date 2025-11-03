@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { MessageSquare } from "lucide-react"
+import { MessageSquare, Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { GeoLink } from "@/components/geo-link"
@@ -24,6 +24,45 @@ export function Footer() {
           Fale com um consultor
           <MessageSquare className="ml-2 h-4 w-4" />
         </Button>
+
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <a
+            href="https://facebook.com/ipog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="Facebook"
+          >
+            <Facebook className="h-6 w-6" />
+          </a>
+          <a
+            href="https://instagram.com/ipog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-6 w-6" />
+          </a>
+          <a
+            href="https://linkedin.com/company/ipog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="h-6 w-6" />
+          </a>
+          <a
+            href="https://youtube.com/ipog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="YouTube"
+          >
+            <Youtube className="h-6 w-6" />
+          </a>
+        </div>
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 pb-8">
