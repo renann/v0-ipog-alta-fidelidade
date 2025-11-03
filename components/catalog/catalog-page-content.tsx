@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useMemo } from "react"
-import { Search, X, SlidersHorizontal } from "lucide-react"
+import { Search, X, SlidersHorizontal, ArrowUpDown, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -9,12 +9,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+
+type SortOption = "relevancia" | "duracao-asc" | "duracao-desc" | "alfabetica-az" | "alfabetica-za"
 
 export function CatalogPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeFilters, setActiveFilters] = useState<{ type: string; value: string }[]>([])
+  const [sortBy, setSortBy] = useState<SortOption>("relevancia")
+  const [sortDialogOpen, setSortDialogOpen] = useState(false)
 
   const modalidadesParam = searchParams.get("modalidades") || searchParams.get("modalidade")
   const formacoesParam = searchParams.get("formacoes") || searchParams.get("formacao") || searchParams.get("tipo")
@@ -380,7 +385,7 @@ export function CatalogPageContent() {
   ]
 
   const cursosFiltrados = useMemo(() => {
-    return cursos.filter((curso) => {
+    const filtered = cursos.filter((curso) => {
       // Filtrar por formação
       const formacaoFilters = activeFilters.filter((f) => f.type === "formacao")
       if (formacaoFilters.length > 0) {
@@ -416,15 +421,52 @@ export function CatalogPageContent() {
 
       return true
     })
-  }, [cursos, activeFilters, searchQuery])
+
+    const sorted = [...filtered]
+
+    switch (sortBy) {
+      case "duracao-asc":
+        sorted.sort((a, b) => {
+          const duracaoA = Number.parseInt(a.duracao.match(/\d+/)?.[0] || "0")
+          const duracaoB = Number.parseInt(b.duracao.match(/\d+/)?.[0] || "0")
+          return duracaoA - duracaoB
+        })
+        break
+      case "duracao-desc":
+        sorted.sort((a, b) => {
+          const duracaoA = Number.parseInt(a.duracao.match(/\d+/)?.[0] || "0")
+          const duracaoB = Number.parseInt(b.duracao.match(/\d+/)?.[0] || "0")
+          return duracaoB - duracaoA
+        })
+        break
+      case "alfabetica-az":
+        sorted.sort((a, b) => a.nome.localeCompare(b.nome))
+        break
+      case "alfabetica-za":
+        sorted.sort((a, b) => b.nome.localeCompare(a.nome))
+        break
+      case "relevancia":
+      default:
+        // Manter ordem original (relevância)
+        break
+    }
+
+    return sorted
+  }, [cursos, activeFilters, searchQuery, sortBy])
+
+  const sortOptions = [
+    { value: "relevancia" as SortOption, label: "Relevância" },
+    { value: "duracao-asc" as SortOption, label: "Duração (menor para maior)" },
+    { value: "duracao-desc" as SortOption, label: "Duração (maior para menor)" },
+    { value: "alfabetica-az" as SortOption, label: "Alfabética (A-Z)" },
+    { value: "alfabetica-za" as SortOption, label: "Alfabética (Z-A)" },
+  ]
 
   return (
     <main className="flex-1 bg-gray-50 min-h-screen">
       <div className="max-w-screen-xl mx-auto px-4 py-6">
-        {/* Título */}
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">Encontre seu curso</h1>
 
-        {/* Barra de busca e filtros */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="flex gap-2 mb-4">
             <div className="relative flex-1">
@@ -464,10 +506,46 @@ export function CatalogPageContent() {
             >
               <SlidersHorizontal className="h-4 w-4" />
             </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-9 w-9 p-0 hover:bg-gray-100"
+              onClick={() => setSortDialogOpen(true)}
+              title="Ordenar cursos"
+            >
+              <ArrowUpDown className="h-4 w-4" />
+            </Button>
           </div>
         </div>
 
-        {/* Lista de cursos */}
+        <Dialog open={sortDialogOpen} onOpenChange={setSortDialogOpen}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Ordenar cursos</DialogTitle>
+              <DialogDescription>Escolha como deseja ordenar os cursos exibidos</DialogDescription>
+            </DialogHeader>
+            <div className="space-y-2 py-4">
+              {sortOptions.map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => {
+                    setSortBy(option.value)
+                    setSortDialogOpen(false)
+                  }}
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-colors ${
+                    sortBy === option.value
+                      ? "bg-black text-white"
+                      : "bg-white hover:bg-gray-100 border border-gray-200"
+                  }`}
+                >
+                  <span className="font-medium">{option.label}</span>
+                  {sortBy === option.value && <Check className="h-4 w-4" />}
+                </button>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+
         <div className="space-y-6">
           {cursosFiltrados.length === 0 ? (
             <div className="text-center py-12">
