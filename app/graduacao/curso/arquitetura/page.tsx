@@ -149,59 +149,60 @@ export default function ArquiteturaPage() {
         />
 
         <Empregabilidade
-          title="Results that Prove: IPOG's Impact on Your Career"
-          subtitle="More than just a diploma, we deliver transformation. Our students achieve prominent positions because our methodology focuses on real results and employability."
+          title="Resultados que Comprovam: O Impacto do IPOG na Sua Carreira"
+          subtitle="Mais do que um diploma, entregamos transformação. Nossos alunos conquistam posições de destaque porque nossa metodologia foca em resultados reais e empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
               valor: "88%",
-              descricao: "of our students are employed or promoted after graduation.",
-              label: "EMPLOYMENT RATE*",
+              descricao: "dos nossos alunos estão empregados ou foram promovidos após a formação.",
+              label: "TAXA DE EMPREGABILIDADE*",
             },
             {
               icon: <Clock className="h-8 w-8" />,
               valor: "4-7 m",
-              descricao: "Time to secure a new position in the market",
-              label: "AVERAGE TIME*",
+              descricao: "Tempo para conseguir nova posição no mercado",
+              label: "TEMPO MÉDIO*",
             },
             {
               icon: <Briefcase className="h-8 w-8" />,
               valor: "+55%",
-              descricao: "Average salary increase",
-              label: "SALARY INCREASE*",
+              descricao: "Aumento salarial médio",
+              label: "AUMENTO SALARIAL*",
             },
           ]}
           layoutEstatisticas="carousel"
           depoimentos={[
             {
               texto:
-                "The Architecture graduation at IPOG gave me the practical tools that the market demands. Before graduating, I already had my first project built, and today I have my own office.",
+                "A graduação em Arquitetura no IPOG me deu as ferramentas práticas que o mercado exige. Antes de me formar, já tinha meu primeiro projeto construído, e hoje tenho meu próprio escritório.",
               autor: "Rafael Mendes",
-              cargo: "Architect and Urbanist",
+              cargo: "Arquiteto e Urbanista",
             },
             {
               videoUrl: "/placeholder.svg?height=854&width=480",
               videoThumbnail: "/placeholder.svg?height=854&width=480",
               texto:
-                "The laboratories and infrastructure at IPOG are world-class. I learned with technologies used by major offices, giving me a competitive edge in the market. Today, I work on international projects.",
+                "Os laboratórios e a infraestrutura do IPOG são de nível mundial. Aprendi com tecnologias usadas por grandes escritórios, o que me deu vantagem competitiva no mercado. Hoje trabalho em projetos internacionais.",
               autor: "Carolina Ribeiro",
-              cargo: "Senior Architect",
+              cargo: "Arquiteta Sênior",
             },
             {
               texto:
-                "IPOG connected me with renowned professionals in the market. I did an internship at a prestigious office during my graduation and today I am a partner. Practical formation made all the difference.",
+                "O IPOG me conectou com profissionais renomados do mercado. Fiz estágio em um escritório de prestígio durante a graduação e hoje sou sócio. A formação prática fez toda a diferença.",
               autor: "Bruno Carvalho",
-              cargo: "Partner of Architecture Office",
+              cargo: "Sócio de Escritório de Arquitetura",
             },
           ]}
           bgColor="bg-background"
         />
 
         <Trilha
-          titulo="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
-          subtitulo="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
+          title="Matriz Curricular: Sua Jornada de Aprendizado, Semestre a Semestre"
+          subtitle="Construa uma base sólida de conhecimento com uma matriz curricular atualizada, que equilibra fundamentos teóricos, domínio de tecnologias e experiência prática. Veja os pilares da sua formação:"
           etapas={[
             {
+              numero: "1",
               titulo: "Eixo 1: Fundamentos da Criação (1º e 2º semestres)",
               descricao:
                 "Desenvolva sua base teórica e de representação gráfica. Domine o desenho técnico, a plástica e a composição visual, e compreenda a evolução da arquitetura e do urbanismo para criar projetos com propósito e repertório cultural.",
@@ -211,6 +212,7 @@ export default function ArquiteturaPage() {
               badges: ["1º e 2º semestre"],
             },
             {
+              numero: "2",
               titulo: "Eixo 2: Projeto e Tecnologia Construtiva (3º e 4º semestres)",
               descricao:
                 "Aplique os fundamentos no desenvolvimento de projetos arquitetônicos, com foco em materiais, técnicas construtivas e conforto ambiental. Domine softwares BIM e prepare-se para os desafios técnicos da profissão, integrando forma, função e estrutura.",
@@ -220,6 +222,7 @@ export default function ArquiteturaPage() {
               badges: ["3º e 4º semestre"],
             },
             {
+              numero: "3",
               titulo: "Eixo 3: Urbanismo, Paisagismo e Sustentabilidade (5º e 6º semestres)",
               descricao:
                 "Amplie sua visão para a escala da cidade e da paisagem. Aprofunde-se em planejamento urbano, projetos de paisagismo e arquitetura sustentável, compreendendo o impacto social e ambiental de suas intervenções.",
@@ -229,6 +232,7 @@ export default function ArquiteturaPage() {
               badges: ["5º e 6º semestre"],
             },
             {
+              numero: "4",
               titulo: "Eixo 4: Prática Profissional e TFG (7º ao 10º semestres)",
               descricao:
                 "Consolide sua formação com o Trabalho Final de Graduação (TFG), estágios supervisionados e disciplinas de gestão de projetos e legislação. Saia preparado para atuar com autonomia e responsabilidade técnica no mercado.",
@@ -239,12 +243,10 @@ export default function ArquiteturaPage() {
               destaque: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
-            href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
-          }}
-          backgroundColor="bg-muted/30"
+          textoBotao="Baixar grade curricular completa"
+          onClickBotao={() => (window.location.href = "#grade")}
+          observacao="PDF com detalhamento de todas as disciplinas"
+          bgColor="bg-muted/30"
         />
 
         <section className="w-full py-16 px-4">
@@ -344,14 +346,14 @@ export default function ArquiteturaPage() {
         </section>
 
         <CtaFinal
-          title="Invest in Your Career with the Nationally Renowned Institution."
-          description="Enrollment Fee: R$ 100,00 | Monthly Fees: starting from R$ 649,00+"
+          title="Invista na sua carreira com a instituição que é referência nacional."
+          description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 649,00+"
           enrollmentFee="R$ 100,00"
           monthlyFee="R$ 649,00"
-          duration="5 years"
+          duration="5 anos"
           totalCost="R$ 38.940,00"
-          nextClassDate="November"
-          promotionDeadline="October 30th"
+          nextClassDate="Novembro"
+          promotionDeadline="30 de Outubro"
         />
       </main>
       <Footer />

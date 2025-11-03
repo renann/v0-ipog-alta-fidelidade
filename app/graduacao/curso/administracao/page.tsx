@@ -200,22 +200,25 @@ export default function AdministracaoPage() {
         />
 
         <Trilha
-          titulo="Trilha de Aprendizado"
-          subtitulo="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
+          title="Trilha de Aprendizado"
+          subtitle="Conheça a estrutura do curso e como você vai evoluir ao longo da graduação"
           etapas={[
             {
+              numero: "1",
               titulo: "Fundamentos da Administração",
               descricao: "Base teórica em gestão, economia, contabilidade e fundamentos organizacionais",
               beneficios: ["Compreensão dos principais conceitos de gestão", "Visão sistêmica das organizações"],
               badges: ["1º e 2º semestre"],
             },
             {
+              numero: "2",
               titulo: "Gestão de Processos e Pessoas",
               descricao: "Aprofundamento em gestão de recursos humanos, operações e processos organizacionais",
               beneficios: ["Técnicas de gestão de equipes", "Otimização de processos"],
               badges: ["3º e 4º semestre"],
             },
             {
+              numero: "3",
               titulo: "Estratégia e Finanças",
               descricao:
                 "Desenvolvimento de competências em planejamento estratégico, finanças corporativas e análise de investimentos",
@@ -223,6 +226,7 @@ export default function AdministracaoPage() {
               badges: ["5º e 6º semestre"],
             },
             {
+              numero: "4",
               titulo: "Empreendedorismo e TCC",
               descricao: "Desenvolvimento de projetos empreendedores e Trabalho de Conclusão de Curso",
               beneficios: ["Plano de negócios completo", "Orientação individualizada para TCC"],
@@ -230,12 +234,10 @@ export default function AdministracaoPage() {
               destaque: true,
             },
           ]}
-          botaoCta={{
-            texto: "Baixar grade curricular completa",
-            href: "#grade",
-            observacao: "PDF com detalhamento de todas as disciplinas",
-          }}
-          backgroundColor="bg-muted/30"
+          textoBotao="Baixar grade curricular completa"
+          onClickBotao={() => (window.location.href = "#grade")}
+          observacao="PDF com detalhamento de todas as disciplinas"
+          bgColor="bg-muted/30"
         />
 
         <section className="w-full py-16 px-4">
