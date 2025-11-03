@@ -47,8 +47,7 @@ export function CtaFinal({
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-balance">{title}</h2>
-
-            <p className="text-lg text-gray-600">{description}</p>
+            {/* Description removed as per updates */}
           </div>
 
           <Card className="relative bg-white rounded-2xl p-8 md:p-10 shadow-sm space-y-6">
