@@ -5,6 +5,7 @@ import { MessageSquare, Facebook, Instagram, Linkedin, Youtube } from "lucide-re
 import { Logo } from "@/components/logo"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { GeoLink } from "@/components/geo-link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -61,6 +62,24 @@ export function Footer() {
             aria-label="YouTube"
           >
             <Youtube className="h-6 w-6" />
+          </a>
+        </div>
+
+        <div className="mt-8">
+          <a
+            href="https://emec.mec.gov.br/emec/consulta-cadastro/detalhamento/d96957f455f6405d14c6542552b0f6eb/MTI5MTY="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-80 transition-opacity"
+            aria-label="Acesse o cadastro do IPOG no e-MEC"
+          >
+            <Image
+              src="/selo-mec.png"
+              alt="Selo e-MEC - Acesse o cadastro do IPOG"
+              width={120}
+              height={180}
+              className="mx-auto"
+            />
           </a>
         </div>
       </div>

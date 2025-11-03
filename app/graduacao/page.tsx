@@ -7,6 +7,7 @@ import { Cursos } from "@/components/cursos"
 import { Jornadas } from "@/components/jornadas"
 import { ResultadosReais } from "@/components/resultados-reais"
 import { Autoridade } from "@/components/autoridade"
+import { FormasIngresso } from "@/components/formas-ingresso"
 import { AcaoFinal } from "@/components/acao-final"
 import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
@@ -205,6 +206,8 @@ export default function GraduacaoPage() {
           tituloProfessores="Conheça alguns de nossos professores"
           bgColor="bg-muted/30"
         />
+
+        <FormasIngresso />
 
         <AcaoFinal
           title="Dê o passo decisivo para sua carreira."

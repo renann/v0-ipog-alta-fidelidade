@@ -6,6 +6,7 @@ import { MetodoTransferencia } from "@/components/transferencia/metodo-transfere
 import { Cursos } from "@/components/cursos"
 import { Modalidades } from "@/components/modalidades"
 import { ProcessoTransparente } from "@/components/transferencia/processo-transparente"
+import { FormasIngresso } from "@/components/formas-ingresso"
 import { AcaoFinal } from "@/components/acao-final"
 import { AlertCircle, Clock, Building, Users, Award, TrendingUp, Briefcase } from "lucide-react"
 import { Autoridade } from "@/components/autoridade"
@@ -220,6 +221,7 @@ export default function TransferenciaPage() {
           ]}
           bgColor="bg-background"
         />
+        <FormasIngresso />
         <AcaoFinal
           titulo="Faça a escolha que conecta você ao sucesso."
           descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."

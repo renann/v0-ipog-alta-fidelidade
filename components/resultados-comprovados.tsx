@@ -1,6 +1,6 @@
 "use client"
 
-import { Users, TrendingUp, Building, MapPin } from "lucide-react"
+import { Users, TrendingUp, Building, MapPin, Award } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
@@ -28,6 +28,11 @@ const estatisticas = [
     icon: MapPin,
     valor: "20+",
     label: "Estados brasileiros",
+  },
+  {
+    icon: Award,
+    valor: "89",
+    label: "NPS de satisfação",
   },
 ]
 
@@ -76,7 +81,7 @@ export function ResultadosComprovados({
             </Carousel>
           </div>
 
-          <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-6">
             {estatisticas.map((stat) => {
               const Icon = stat.icon
               return (

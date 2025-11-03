@@ -8,6 +8,7 @@ import { Cursos } from "@/components/cursos"
 import { Modalidades } from "@/components/modalidades"
 import { RetornoProfissional } from "@/components/segunda-graduacao/retorno-profissional"
 import { Autoridade } from "@/components/autoridade"
+import { FormasIngresso } from "@/components/formas-ingresso"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { Clock, DollarSign, Target, Award, Users, BookOpen, GraduationCap, TrendingUp, Briefcase } from "lucide-react"
@@ -220,6 +221,7 @@ export default function SegundaGraduacaoPage() {
           tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
           bgColor="bg-muted/30"
         />
+        <FormasIngresso />
         <AcaoFinal
           title="Sua Próxima Conquista Começa Aqui. A Escolha que Conecta Você ao Sucesso."
           descricao="Valide sua trajetória, otimize seu tempo e seu investimento. Conquiste um novo diploma com a qualidade e o reconhecimento que sua carreira merece."

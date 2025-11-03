@@ -6,6 +6,7 @@ import { Cursos } from "@/components/cursos"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { SuporteAcompanhamento } from "@/components/jovem-ingresso/suporte-acompanhamento"
+import { FormasIngresso } from "@/components/formas-ingresso"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { AlertCircle, MapPin, Clock, TrendingUp, Briefcase, BadgeCheck } from "lucide-react"
@@ -183,6 +184,7 @@ export default function JovemIngressoPage() {
           bgColor="bg-background"
         />
         <SuporteAcompanhamento />
+        <FormasIngresso />
         <AcaoFinal
           title="A escolha que conecta você ao sucesso."
           descricao="Tudo o que você precisa para construir uma carreira de impacto está aqui. Dê o primeiro passo na direção do seu futuro."
