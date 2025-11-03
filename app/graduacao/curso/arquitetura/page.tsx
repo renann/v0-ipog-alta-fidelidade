@@ -36,7 +36,7 @@ export default function ArquiteturaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Metodologia Flexível" },
             { icon: <Award className="h-5 w-5" />, text: "Docentes com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", href: "#preco" }}
+          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 

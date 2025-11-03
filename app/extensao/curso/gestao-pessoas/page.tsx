@@ -36,7 +36,7 @@ export default function GestaoPessoasPage() {
             { icon: <Clock className="h-5 w-5" />, text: "6 meses" },
             { icon: <Award className="h-5 w-5" />, text: "100% Online" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
+          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar conteúdo programático", href: "#grade" }}
         />
 

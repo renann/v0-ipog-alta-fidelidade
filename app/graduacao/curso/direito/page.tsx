@@ -32,7 +32,7 @@ export default function DireitoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Metodologia Flexível" },
             { icon: <Award className="h-5 w-5" />, text: "Docentes com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", href: "#preco" }}
+          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <section className="w-full py-16 px-4 bg-muted/30">

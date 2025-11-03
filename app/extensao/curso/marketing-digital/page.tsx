@@ -38,7 +38,7 @@ export default function MarketingDigitalPage() {
             { icon: <Sparkles className="h-5 w-5" />, text: "Crie conteúdo com IA" },
             { icon: <TrendingUp className="h-5 w-5" />, text: "Funis de Vendas 5.0" },
           ]}
-          primaryCTA={{ text: "FALAR COM UM CONSULTOR", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "FALAR COM UM CONSULTOR", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 
@@ -246,7 +246,7 @@ export default function MarketingDigitalPage() {
           <div className="max-w-screen-xl mx-auto">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
                 <p className="text-muted-foreground">
                   Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
                 </p>

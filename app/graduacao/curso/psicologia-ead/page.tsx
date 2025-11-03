@@ -42,7 +42,7 @@ export default function PsicologiaEadPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
+          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />
