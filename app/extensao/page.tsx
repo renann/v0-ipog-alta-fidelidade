@@ -83,7 +83,7 @@ export default function ExtensaoPage() {
             modalidades={[
               {
                 badge: "EXTENSÃO",
-                titulo: "EAD (Gravado): Autonomia e Flexibilidade Total",
+                titulo: "EAD",
                 descricao:
                   "Aprenda no seu ritmo, quando e onde quiser, com acesso 24/7 a aulas e materiais práticos. Ideal para quem tem uma agenda imprevisível.",
                 beneficios: [
@@ -97,7 +97,7 @@ export default function ExtensaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                titulo: "Ao Vivo (Online): Interação e Suporte de Especialistas",
+                titulo: "Ao Vivo",
                 descricao:
                   "Participe de aulas síncronas, tire dúvidas em tempo real com professores de mercado e construa networking sem sair de casa.",
                 beneficios: [
@@ -111,7 +111,7 @@ export default function ExtensaoPage() {
               },
               {
                 badge: "EXTENSÃO",
-                titulo: "Presencial: Imersão e Experiência Hands-On",
+                titulo: "Presencial",
                 descricao:
                   "Vivencie uma experiência intensiva em laboratórios modernos, valide soluções na prática e fortaleça sua rede de contatos presencialmente.",
                 beneficios: [
