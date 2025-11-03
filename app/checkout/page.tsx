@@ -532,6 +532,23 @@ function CheckoutContent() {
                         Selecione como você deseja ingressar no curso de graduação.
                       </p>
                     </div>
+
+                    {["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
+                      <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
+                        <Checkbox
+                          id="documento-ingresso"
+                          checked={documentoIngressoAceito}
+                          onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
+                        />
+                        <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
+                          Estou ciente de que é necessário apresentar um documento válido (
+                          {metodoIngresso === "enem" && "boletim do ENEM"}
+                          {metodoIngresso === "portador-diploma" && "diploma de graduação"}
+                          {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}) e
+                          que o mesmo passará por aprovação da secretaria acadêmica *
+                        </Label>
+                      </div>
+                    )}
                     {/* </CHANGE> */}
                   </>
                 ) : (
@@ -1039,22 +1056,6 @@ function CheckoutContent() {
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 pt-4 border-t">
-                  {isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
-                    <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
-                      <Checkbox
-                        id="documento-ingresso"
-                        checked={documentoIngressoAceito}
-                        onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
-                      />
-                      <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
-                        Estou ciente de que é necessário apresentar um documento válido (
-                        {metodoIngresso === "enem" && "boletim do ENEM"}
-                        {metodoIngresso === "portador-diploma" && "diploma de graduação"}
-                        {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}) e que
-                        o mesmo passará por aprovação da secretaria acadêmica *
-                      </Label>
-                    </div>
-                  )}
                   {/* </CHANGE> */}
                   <div className="flex items-start space-x-2">
                     <Checkbox
