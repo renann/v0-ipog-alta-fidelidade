@@ -32,10 +32,10 @@ export default function HomePage() {
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-                IPOG: A Escolha Inteligente para Sua Carreira
+                IPOG: A escolha inteligente para sua carreira
               </h2>
               <p className="text-base md:text-lg text-muted-foreground">
-                A melhor escolha para quem busca ensino de excelência, com valor acessível e resultados reais na
+                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
                 carreira
               </p>
             </div>

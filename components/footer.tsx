@@ -15,7 +15,7 @@ export function Footer() {
           <Logo variant="light" className="h-8 w-auto mx-auto mb-6" />
         </GeoLink>
         <p className="text-zinc-300 text-base mb-8 max-w-2xl mx-auto">
-          Nullam pellentesque, massa ac volutpat porta, quam leo pretium tortor.
+          A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na carreira
         </p>
         <Button
           size="default"
