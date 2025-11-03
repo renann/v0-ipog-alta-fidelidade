@@ -37,11 +37,26 @@ function PosVendaContent() {
   const courseId = searchParams.get("course") || "psicologia-ead"
   const metodoIngresso = searchParams.get("metodo") || ""
   const [course, setCourse] = useState<Course | null>(null)
+  const [isGraduacao, setIsGraduacao] = useState(false)
+  const [isPosGraduacao, setIsPosGraduacao] = useState(false)
+  const [isVestibular, setIsVestibular] = useState(false)
+  const [needsVestibularScheduling, setNeedsVestibularScheduling] = useState(false)
+  const [emailValidado] = useState(true)
+  const [documentoPessoal, setDocumentoPessoal] = useState<UploadedFile | null>(null)
+  const [certificadoEnsinoMedio, setCertificadoEnsinoMedio] = useState<UploadedFile | null>(null)
+  const [documentoSecundario, setDocumentoSecundario] = useState<UploadedFile | null>(null)
+  const [vestibularAgendado, setVestibularAgendado] = useState<SchedulingOption | null>(null)
 
   useEffect(() => {
     const loadedCourse = getCourse(courseId)
     setCourse(loadedCourse)
-  }, [courseId])
+    setIsGraduacao(loadedCourse?.type === "Graduação" || false)
+    setIsPosGraduacao(loadedCourse?.type === "Pós-Graduação" || false)
+    setIsVestibular(metodoIngresso === "vestibular" || false)
+    setNeedsVestibularScheduling(
+      (loadedCourse?.type === "Graduação" || false) && (metodoIngresso === "vestibular" || false),
+    )
+  }, [courseId, metodoIngresso])
 
   const inscricao = {
     nome: "João Silva",
@@ -49,31 +64,10 @@ function PosVendaContent() {
     protocolo: course?.type === "Graduação" ? "GRAD-2024-001234" : "POS-2024-005678",
   }
 
-  const [emailValidado] = useState(true)
-  const [documentoPessoal, setDocumentoPessoal] = useState<UploadedFile | null>(null)
-  const [certificadoEnsinoMedio, setCertificadoEnsinoMedio] = useState<UploadedFile | null>(null)
-  const [documentoSecundario, setDocumentoSecundario] = useState<UploadedFile | null>(null)
-  const [vestibularAgendado, setVestibularAgendado] = useState<SchedulingOption | null>(null)
-
-  if (!course) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <p className="text-muted-foreground">Carregando...</p>
-      </div>
-    )
-  }
-
-  const isGraduacao = course.type === "Graduação"
-  const isPosGraduacao = course.type === "Pós-Graduação"
-  const isVestibular = metodoIngresso === "vestibular"
-
-  const needsVestibularScheduling = isGraduacao && isVestibular
-
   const step1Complete = emailValidado
-  const step2Complete =
-    isGraduacao && isVestibular
-      ? !!documentoPessoal && !!certificadoEnsinoMedio && !!documentoSecundario
-      : !!documentoPessoal && !!documentoSecundario
+  const step2Complete = needsVestibularScheduling
+    ? !!documentoPessoal && !!certificadoEnsinoMedio && !!documentoSecundario
+    : !!documentoPessoal && !!documentoSecundario
   const step3Complete = needsVestibularScheduling ? !!vestibularAgendado : true
   const allStepsComplete = step1Complete && step2Complete && step3Complete
 
@@ -126,6 +120,41 @@ function PosVendaContent() {
       ]
 
   const completedSteps = steps.filter((s) => s.completed).length
+
+  useEffect(() => {
+    console.log("[v0] Debug - Pós-Venda State:", {
+      courseType: course?.type,
+      metodoIngresso,
+      isGraduacao,
+      isVestibular,
+      needsVestibularScheduling,
+      step1Complete,
+      step2Complete,
+      step3Complete,
+      documentoPessoal: !!documentoPessoal,
+      certificadoEnsinoMedio: !!certificadoEnsinoMedio,
+      documentoSecundario: !!documentoSecundario,
+    })
+  }, [
+    course,
+    metodoIngresso,
+    isGraduacao,
+    isVestibular,
+    needsVestibularScheduling,
+    emailValidado,
+    documentoPessoal,
+    certificadoEnsinoMedio,
+    documentoSecundario,
+    vestibularAgendado,
+  ])
+
+  if (!course) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <p className="text-muted-foreground">Carregando...</p>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -293,7 +322,7 @@ function PosVendaContent() {
                     uploadedFile={documentoPessoal}
                   />
 
-                  {isGraduacao && isVestibular && (
+                  {needsVestibularScheduling && (
                     <DocumentUpload
                       label="Certificado do Ensino Médio"
                       description="Certificado de conclusão do Ensino Médio (frente e verso)"
@@ -342,42 +371,59 @@ function PosVendaContent() {
 
           {/* Step 3: Vestibular Scheduling (Graduação) or Confirmation (Pós) */}
           {needsVestibularScheduling ? (
-            step2Complete && (
-              <Card
-                className={cn(
-                  "mb-6 md:mb-8",
-                  step3Complete && "border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900",
-                )}
-              >
-                <CardContent className="p-4 md:p-6">
-                  <div className="mb-4 flex items-start gap-3 md:gap-4">
-                    <div
-                      className={cn(
-                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
-                        step3Complete ? "bg-gray-900 dark:bg-gray-100" : "bg-gray-700 dark:bg-gray-300",
-                      )}
-                    >
-                      {step3Complete ? (
-                        <CheckCircle2 className="h-5 w-5 text-white dark:text-gray-900" />
-                      ) : (
-                        <Calendar className="h-5 w-5 text-white dark:text-gray-900" />
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="mb-2 font-semibold">Agendamento do Vestibular</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Escolha a melhor data e horário para realizar sua prova
-                      </p>
-                    </div>
+            <Card
+              className={cn(
+                "mb-6 md:mb-8",
+                !step2Complete && "opacity-60",
+                step3Complete && "border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900",
+              )}
+            >
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-4 flex items-start gap-3 md:gap-4">
+                  <div
+                    className={cn(
+                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
+                      step3Complete
+                        ? "bg-gray-900 dark:bg-gray-100"
+                        : step2Complete
+                          ? "bg-gray-700 dark:bg-gray-300"
+                          : "bg-gray-300 dark:bg-gray-700",
+                    )}
+                  >
+                    {step3Complete ? (
+                      <CheckCircle2 className="h-5 w-5 text-white dark:text-gray-900" />
+                    ) : (
+                      <Calendar
+                        className={cn(
+                          "h-5 w-5",
+                          step2Complete ? "text-white dark:text-gray-900" : "text-gray-500 dark:text-gray-500",
+                        )}
+                      />
+                    )}
                   </div>
+                  <div className="flex-1">
+                    <h3 className="mb-2 font-semibold">Agendamento do Vestibular</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Escolha a melhor data e horário para realizar sua prova
+                    </p>
+                  </div>
+                </div>
 
+                {step2Complete ? (
                   <VestibularScheduling
                     onSchedulingComplete={setVestibularAgendado}
                     selectedOption={vestibularAgendado}
                   />
-                </CardContent>
-              </Card>
-            )
+                ) : (
+                  <div className="flex items-start gap-2 rounded-lg border border-gray-200 bg-gray-50 p-3 dark:border-gray-800 dark:bg-gray-900">
+                    <AlertCircle className="h-5 w-5 shrink-0 text-gray-500" />
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Complete o envio de documentos para desbloquear esta etapa
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           ) : (
             <Card className="mb-6 border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900 md:mb-8">
               <CardContent className="p-4 md:p-6">
@@ -392,7 +438,7 @@ function PosVendaContent() {
                     <p className="text-sm text-muted-foreground">
                       {isPosGraduacao
                         ? "Sua matrícula foi confirmada com sucesso. Você receberá mais informações sobre o início das aulas em breve."
-                        : "Sua inscrição foi confirmada com sucesso. Você receberá mais informações sobre os próximos passos em breve."}
+                        : "Sua inscrição foi confirmada com sucesso. Você receberá informações sobre os próximos passos em breve."}
                     </p>
                   </div>
                 </div>
