@@ -300,90 +300,93 @@ export function HomeHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Mobile Menu */}
-        <div className="flex items-center gap-4 md:hidden">
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                {menuItems.map((item) => (
-                  <div key={item.title} className="space-y-3">
-                    <Link href={item.href} className="text-lg font-semibold" onClick={() => setMobileMenuOpen(false)}>
-                      {item.title}
-                    </Link>
-                    <div className="pl-4 space-y-2">
-                      {item.items.map((subItem) => (
-                        <Link
-                          key={subItem.title}
-                          href={subItem.href}
-                          className="block text-sm text-muted-foreground hover:text-foreground"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
+      {/* Wrapper consistente com max-width para alinhar com megamenu */}
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex h-16 items-center justify-between">
+          {/* Mobile Menu */}
+          <div className="flex items-center gap-4 md:hidden">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-4 mt-8">
+                  {menuItems.map((item) => (
+                    <div key={item.title} className="space-y-3">
+                      <Link href={item.href} className="text-lg font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                        {item.title}
+                      </Link>
+                      <div className="pl-4 space-y-2">
+                        {item.items.map((subItem) => (
+                          <Link
+                            key={subItem.title}
+                            href={subItem.href}
+                            className="block text-sm text-muted-foreground hover:text-foreground"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Logo className="h-7 w-auto" variant="dark" />
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Logo className="h-7 w-auto" variant="dark" />
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
-          {menuItems.map((item) => (
-            <div
-              key={item.title}
-              className="relative"
-              onMouseEnter={() => handleOpenMegaMenu(item.title)}
-              onMouseLeave={handleCloseMegaMenu}
-            >
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
-                {item.title}
-                <ChevronDown className="h-4 w-4" />
-              </button>
-            </div>
-          ))}
-        </nav>
+          <nav className="hidden md:flex items-center gap-1">
+            {menuItems.map((item) => (
+              <div
+                key={item.title}
+                className="relative"
+                onMouseEnter={() => handleOpenMegaMenu(item.title)}
+                onMouseLeave={handleCloseMegaMenu}
+              >
+                <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
+                  {item.title}
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </div>
+            ))}
+          </nav>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-2">
-          {/* Search */}
-          {isSearchOpen ? (
-            <div className="flex items-center gap-2 animate-in fade-in slide-in-from-right-5">
-              <Input
-                type="search"
-                placeholder="Buscar cursos..."
-                className="w-[200px] md:w-[300px]"
-                autoFocus
-                onBlur={() => setIsSearchOpen(false)}
-              />
-            </div>
-          ) : (
-            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Buscar</span>
+          {/* Right Actions */}
+          <div className="flex items-center gap-2">
+            {/* Search */}
+            {isSearchOpen ? (
+              <div className="flex items-center gap-2 animate-in fade-in slide-in-from-right-5">
+                <Input
+                  type="search"
+                  placeholder="Buscar cursos..."
+                  className="w-[200px] md:w-[300px]"
+                  autoFocus
+                  onBlur={() => setIsSearchOpen(false)}
+                />
+              </div>
+            ) : (
+              <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
+                <Search className="h-5 w-5" />
+                <span className="sr-only">Buscar</span>
+              </Button>
+            )}
+
+            {/* User Login */}
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="/login">
+                <User className="h-5 w-5" />
+                <span className="sr-only">Área do aluno</span>
+              </Link>
             </Button>
-          )}
-
-          {/* User Login */}
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="/login">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Área do aluno</span>
-            </Link>
-          </Button>
+          </div>
         </div>
       </div>
 
@@ -393,7 +396,7 @@ export function HomeHeader() {
           onMouseEnter={() => handleOpenMegaMenu(activeMegaMenu)}
           onMouseLeave={handleCloseMegaMenu}
         >
-          <div className="container mx-auto max-w-7xl px-6 py-8">
+          <div className="mx-auto max-w-7xl px-6 py-8">
             {menuItems
               .filter((item) => item.title === activeMegaMenu)
               .map((item) => (
