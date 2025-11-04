@@ -53,7 +53,7 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                   >
                     {largeItem.tag}
                   </Badge>
-                  <h3 className="text-3xl md:text-4xl font-serif font-bold mb-4 leading-tight">{largeItem.title}</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{largeItem.title}</h3>
                   {largeItem.description && (
                     <p className="text-lg text-white/90 mb-4 max-w-2xl">{largeItem.description}</p>
                   )}
@@ -101,7 +101,7 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                     >
                       {item.tag}
                     </Badge>
-                    <h3 className="text-xl md:text-2xl font-serif font-bold leading-tight">{item.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight">{item.title}</h3>
                     {item.description && (
                       <p className={`text-sm mt-2 ${item.overlay ? "text-white/90" : "text-muted-foreground"}`}>
                         {item.description}
