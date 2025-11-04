@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import Link from "next/link"
+import { Logo } from "@/components/logo"
 import {
   Search,
   User,
@@ -337,7 +338,7 @@ export function HomeHeader() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <span className="text-2xl font-bold">IPOG</span>
+          <Logo className="h-7 w-auto" variant="dark" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
