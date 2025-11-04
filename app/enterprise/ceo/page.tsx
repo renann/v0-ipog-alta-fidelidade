@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { Trilha } from "@/components/trilha"
@@ -39,7 +39,7 @@ export default function CeoPage() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen">
         <BreadcrumbWithItems
           items={[{ label: "Início", href: "/" }, { label: "Enterprise", href: "/enterprise" }, { label: "CEO" }]}

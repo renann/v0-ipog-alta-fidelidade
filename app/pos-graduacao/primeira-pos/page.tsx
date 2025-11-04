@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoPrimeiraPos } from "@/components/primeira-pos/metodo-primeira-pos"
@@ -32,7 +32,7 @@ const PrimeiraPosContent = dynamic(
 
       return (
         <div className="min-h-screen bg-background">
-          <Header />
+          <HomeHeader />
           <main className="w-full">
             <div className="w-full">
               <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
