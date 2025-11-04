@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect } from "react"
 import { HomeHeader } from "@/components/home-header"
 import { HeroSection } from "@/components/hero-section"
 import { CourseSearch } from "@/components/course-search"
@@ -12,17 +11,10 @@ import { ProfessorsSection } from "@/components/professors-section"
 import { DepoimentosDeTexto } from "@/components/depoimentos-de-texto"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { useGeoLocation } from "@/hooks/use-geo-location"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
 
 export default function HomePage() {
-  const { openDialog } = useGeoLocation()
-
-  useEffect(() => {
-    openDialog()
-  }, [openDialog])
-
   return (
     <div className="min-h-screen flex flex-col">
       <HomeHeader />
