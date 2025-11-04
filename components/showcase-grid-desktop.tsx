@@ -25,14 +25,13 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
   const smallItems = items.filter((item) => item.size === "small")
 
   return (
-    <section className="w-full py-12 md:py-16 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Grid assimétrico: 2/3 + 1/3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <section className="w-full bg-background">
+      <div className="w-full max-w-none">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
           {/* Card grande à esquerda - ocupa 2 colunas */}
           {largeItem && (
             <Link href={largeItem.href} className="lg:col-span-2 group block h-full min-h-[500px] lg:min-h-[600px]">
-              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
                 {/* Imagem de fundo */}
                 {largeItem.image && (
                   <div
@@ -68,10 +67,10 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
           )}
 
           {/* Cards pequenos à direita - empilhados verticalmente */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-0">
             {smallItems.map((item, index) => (
-              <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[290px]">
-                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[300px]">
+                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
                   {/* Imagem ou ilustração de fundo */}
                   {item.image && (
                     <div
