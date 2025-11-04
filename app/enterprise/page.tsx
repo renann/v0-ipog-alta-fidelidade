@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { Trilha } from "@/components/trilha"
@@ -21,7 +21,7 @@ export default function EnterprisePage() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">

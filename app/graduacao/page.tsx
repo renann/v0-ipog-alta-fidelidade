@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { MetodoIpog } from "@/components/graduacao/metodo-ipog"
 import { Cursos } from "@/components/cursos"
@@ -19,7 +19,7 @@ import { openAssistantForConsultor } from "@/lib/assistant-events"
 export default function GraduacaoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">

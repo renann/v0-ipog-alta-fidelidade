@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CatalogPageContent } from "@/components/catalog/catalog-page-content"
@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic"
 export default function CatalogoPage() {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <div className="w-full py-4">
         <div className="max-w-screen-xl mx-auto px-4">
           <BreadcrumbWithItems items={[{ label: "Início", href: "/" }, { label: "Catálogo de Cursos" }]} />
