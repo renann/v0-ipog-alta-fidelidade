@@ -27,21 +27,9 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       <HomeHeader />
       <main className="flex-1">
-        <HeroSection />
-
-        <section className="w-full py-6 md:py-8 bg-background">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-                IPOG: A escolha inteligente para sua carreira
-              </h2>
-              <p className="text-base md:text-lg text-muted-foreground">
-                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
-                carreira
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="lg:hidden">
+          <HeroSection />
+        </div>
 
         <div className="hidden lg:block">
           <ShowcaseGridDesktop
@@ -76,6 +64,20 @@ export default function HomePage() {
             ]}
           />
         </div>
+
+        <section className="w-full py-6 md:py-8 bg-background">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
+                IPOG: A escolha inteligente para sua carreira
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground">
+                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
+                carreira
+              </p>
+            </div>
+          </div>
+        </section>
 
         <CourseSearch
           title="Ver todos os cursos"
