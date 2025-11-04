@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
 import { LocationIndicator } from "@/components/location-indicator"
+import { SearchDialog } from "@/components/search-dialog"
 import {
   Search,
   User,
@@ -23,7 +24,6 @@ import {
   BarChart,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const menuItems = [
@@ -368,22 +368,12 @@ export function HomeHeader() {
             </div>
 
             {/* Search */}
-            {isSearchOpen ? (
-              <div className="flex items-center gap-2 animate-in fade-in slide-in-from-right-5">
-                <Input
-                  type="search"
-                  placeholder="Buscar cursos..."
-                  className="w-[200px] md:w-[300px]"
-                  autoFocus
-                  onBlur={() => setIsSearchOpen(false)}
-                />
-              </div>
-            ) : (
-              <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-                <Search className="h-5 w-5" />
-                <span className="sr-only">Buscar</span>
-              </Button>
-            )}
+            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
+              <Search className="h-5 w-5" />
+              <span className="sr-only">Buscar</span>
+            </Button>
+
+            <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
 
             {/* User Login */}
             <Button variant="ghost" size="icon" asChild>
