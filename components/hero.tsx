@@ -38,6 +38,7 @@ export function Hero({
   valueBadges,
   primaryCTA,
   secondaryCTA,
+  backgroundImage = "/placeholder.svg?height=600&width=1920",
   minHeight = "auto",
 }: HeroProps) {
   const resolveOnClick = (onClick?: (() => void) | string) => {
@@ -50,35 +51,42 @@ export function Hero({
 
   return (
     <section className="w-full relative" style={{ minHeight }}>
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <div className="w-full h-full">
-          {/* Placeholder for background image */}
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            {/* Background image placeholder */}
-          </div>
-        </div>
+      {/* Background Image - Desktop only */}
+      <div className="absolute inset-0 -z-10 hidden lg:block">
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Hero Content */}
       <div className="max-w-screen-xl mx-auto px-4 py-16 md:py-24">
         <div className="mb-6">
-          <Badge variant="outline" className="text-xs py-1 px-3 font-semibold">
+          <Badge variant="outline" className="text-xs py-1 px-3 font-semibold lg:bg-white/90 lg:backdrop-blur-sm">
             {badge}
           </Badge>
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance max-w-4xl">{title}</h1>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance max-w-4xl lg:text-white">
+          {title}
+        </h1>
 
         {/* Description */}
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl text-pretty">{description}</p>
+        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl text-pretty lg:text-white/90">
+          {description}
+        </p>
 
         {/* Value Badges */}
         <div className="flex flex-wrap gap-3 mb-8">
           {valueBadges.map((valueBadge, index) => {
             return (
-              <div key={index} className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background">
+              <div
+                key={index}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background lg:bg-white/90 lg:backdrop-blur-sm lg:border-white/20"
+              >
                 {valueBadge.icon || <BadgeCheck className="w-5 h-5" />}
                 <span className="text-sm font-medium">{valueBadge.text}</span>
               </div>
@@ -112,7 +120,7 @@ export function Hero({
             <Button
               size="lg"
               variant={secondaryCTA.variant || "outline"}
-              className="text-base bg-transparent"
+              className="text-base bg-transparent lg:bg-white/10 lg:text-white lg:border-white/30 lg:hover:bg-white/20"
               asChild={!!secondaryCTA.href}
               onClick={resolveOnClick(secondaryCTA.onClick) || openAssistantForConsultor}
             >
