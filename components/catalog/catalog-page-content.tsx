@@ -595,7 +595,7 @@ export function CatalogPageContent() {
                 <div className="space-y-3 border-t pt-4 mt-auto">
                   {curso.modalidades.map((modalidade, idx) => {
                     const content = (
-                      <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-sm font-bold">{modalidade.tipo}</span>
                         <div className="flex flex-wrap gap-1">
                           {modalidade.opcoes.map((opcao, opIdx) => (
