@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoJovemIngresso } from "@/components/jovem-ingresso/metodo-jovem-ingresso"
@@ -15,7 +15,7 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 export default function JovemIngressoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">

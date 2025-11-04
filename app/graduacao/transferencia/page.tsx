@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
@@ -16,7 +16,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 export default function TransferenciaPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main>
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
