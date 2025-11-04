@@ -3,6 +3,7 @@
 import { useState, useRef } from "react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
+import { LocationIndicator } from "@/components/location-indicator"
 import {
   Search,
   User,
@@ -361,6 +362,11 @@ export function HomeHeader() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
+            {/* LocationIndicator */}
+            <div className="hidden md:block">
+              <LocationIndicator />
+            </div>
+
             {/* Search */}
             {isSearchOpen ? (
               <div className="flex items-center gap-2 animate-in fade-in slide-in-from-right-5">
