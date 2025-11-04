@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,7 +10,7 @@ import Link from "next/link"
 export default function IpogPlusPage() {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb + Header Section */}
         <section className="w-full border-b bg-background py-8">
