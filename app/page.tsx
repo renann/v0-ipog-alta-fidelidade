@@ -14,6 +14,7 @@ import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { useGeoLocation } from "@/hooks/use-geo-location"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
+import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
 
 export default function HomePage() {
   const { openDialog } = useGeoLocation()
@@ -41,6 +42,40 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <div className="hidden lg:block">
+          <ShowcaseGridDesktop
+            items={[
+              {
+                tag: "Pós-Graduação",
+                title: "Especialize-se com quem o mercado respeita",
+                description: "Mais de 20 anos formando especialistas reconhecidos nacionalmente",
+                image: "/placeholder.svg?height=600&width=800",
+                href: "/pos-graduacao",
+                size: "large",
+                overlay: true,
+              },
+              {
+                tag: "Novidade",
+                title: "Vestibular IPOG 2025 com bolsas de até 50%",
+                description: "Inscrições abertas para graduação EAD e presencial",
+                illustration: "/placeholder.svg?height=300&width=400",
+                href: "/graduacao",
+                size: "small",
+                overlay: false,
+              },
+              {
+                tag: "Evento",
+                title: "Semana de Carreiras: descubra sua próxima oportunidade",
+                description: "Workshops, palestras e networking com líderes de mercado",
+                image: "/placeholder.svg?height=300&width=400",
+                href: "/eventos",
+                size: "small",
+                overlay: true,
+              },
+            ]}
+          />
+        </div>
 
         <CourseSearch
           title="Ver todos os cursos"
