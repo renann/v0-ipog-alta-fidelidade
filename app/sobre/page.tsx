@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -15,7 +15,7 @@ export default function SobrePage() {
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <Header />
+      <HomeHeader />
 
       {/* Breadcrumb + Page Title */}
       <section className="w-full py-8 md:py-12">

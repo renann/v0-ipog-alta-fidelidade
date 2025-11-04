@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Autoridade } from "@/components/autoridade"
@@ -15,7 +15,7 @@ export default function HistoriaPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
+      <HomeHeader />
 
       {/* Header Contextual */}
       <section className="w-full py-8 md:py-12 bg-background">
