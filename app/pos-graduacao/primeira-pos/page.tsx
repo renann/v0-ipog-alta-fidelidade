@@ -59,8 +59,8 @@ const PrimeiraPosContent = dynamic(
             />
 
             <Dilema
-              titulo="Medo de investir e não ver retorno na carreira?"
-              subtitulo="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
+              title="Medo de investir e não ver retorno na carreira?"
+              subtitle="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
               dores={[
                 {
                   icon: <DollarSign className="h-5 w-5" />,
