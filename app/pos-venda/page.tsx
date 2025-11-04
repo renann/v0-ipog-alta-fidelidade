@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -158,7 +158,7 @@ function PosVendaContent() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header hideMenu={true} />
+      <HomeHeader hideMenu={true} />
 
       <div className="w-full py-4">
         <div className="max-w-screen-xl mx-auto px-4">

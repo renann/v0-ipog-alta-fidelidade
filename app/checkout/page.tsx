@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -1277,7 +1277,7 @@ function CheckoutContent() {
 export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header hideMenu={true} />
+      <HomeHeader hideMenu={true} />
       <main className="w-full">
         <div className="max-w-screen-xl mx-auto px-4 py-4">
           <Breadcrumb>
