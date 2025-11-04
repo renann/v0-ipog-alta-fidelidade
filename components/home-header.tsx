@@ -4,7 +4,6 @@ import { useState, useRef } from "react"
 import Link from "next/link"
 import { Logo } from "@/components/logo"
 import { LocationIndicator } from "@/components/location-indicator"
-import { SearchDialog } from "@/components/search-dialog"
 import {
   Search,
   User,
@@ -280,7 +279,6 @@ const menuItems = [
 ]
 
 export function HomeHeader() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -368,12 +366,12 @@ export function HomeHeader() {
             </div>
 
             {/* Search */}
-            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Buscar</span>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="/busca">
+                <Search className="h-5 w-5" />
+                <span className="sr-only">Buscar</span>
+              </Link>
             </Button>
-
-            <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
 
             {/* User Login */}
             <Button variant="ghost" size="icon" asChild>
