@@ -705,11 +705,13 @@ function CheckoutContent() {
             {/* Pagamento Section */}
             <AccordionItem value="pagamento">
               <AccordionTrigger className="text-lg font-semibold">Pagamento</AccordionTrigger>
-              <AccordionContent className="space-y-6">
+              <AccordionContent className="space-y-6 px-0">
+                {/* </CHANGE> */}
                 {!alumniDiscount && (
                   <>
                     {/* Seção de Convênio */}
-                    <div className="space-y-3 p-4 bg-muted rounded-lg">
+                    <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
+                      {/* </CHANGE> */}
                       <Label htmlFor="company-select" className="text-base font-medium">
                         Empresa Convênio (opcional)
                       </Label>
@@ -785,7 +787,8 @@ function CheckoutContent() {
                       )}
                     </div>
 
-                    <div className="space-y-3 p-4 bg-muted rounded-lg">
+                    <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
+                      {/* </CHANGE> */}
                       <Label htmlFor="coupon-input" className="text-base font-medium">
                         Cupom de Desconto (opcional)
                       </Label>
@@ -855,7 +858,8 @@ function CheckoutContent() {
                 )}
 
                 {alumniDiscount && (
-                  <div className="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg mx-0">
+                    {/* </CHANGE> */}
                     <div className="flex items-start gap-3">
                       <div className="flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full flex-shrink-0">
                         <Check className="h-5 w-5 text-gray-900 dark:text-gray-100" />
@@ -885,7 +889,8 @@ function CheckoutContent() {
                     </div>
 
                     {paymentMethod === "parcelado" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4">
+                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
+                        {/* </CHANGE> */}
                         <div className="grid gap-2">
                           <Label htmlFor="card-number">Número do cartão</Label>
                           <Input id="card-number" placeholder="0000 0000 0000 0000" />
@@ -941,7 +946,8 @@ function CheckoutContent() {
                     </div>
 
                     {paymentMethod === "recorrente" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4">
+                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
+                        {/* </CHANGE> */}
                         <div className="space-y-2">
                           <p className="text-sm font-medium">
                             1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
@@ -996,7 +1002,8 @@ function CheckoutContent() {
                     </div>
 
                     {paymentMethod === "pix" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4">
+                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
+                        {/* </CHANGE> */}
                         <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
                           <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
                             <span className="text-xs text-muted-foreground">QR Code</span>
@@ -1048,7 +1055,8 @@ function CheckoutContent() {
                     </div>
 
                     {paymentMethod === "boleto" && (
-                      <div className="ml-6 space-y-2 border-l-2 border-muted pl-4">
+                      <div className="ml-6 space-y-2 border-l-2 border-muted pl-4 pr-0">
+                        {/* </CHANGE> */}
                         <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
                         <p className="text-sm text-muted-foreground">
                           O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { HeroSection } from "@/components/hero-section"
 import { CourseSearch } from "@/components/course-search"
 import { AssistenteTrilha } from "@/components/assistente-trilha"
@@ -24,7 +24,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <HomeHeader />
       <main className="flex-1">
         <HeroSection />
 
