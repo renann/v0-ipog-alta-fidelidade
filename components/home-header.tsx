@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import {
   Search,
@@ -281,6 +281,21 @@ export function HomeHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleOpenMegaMenu = (title: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+    setActiveMegaMenu(title)
+  }
+
+  const handleCloseMegaMenu = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMegaMenu(null)
+    }, 150)
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -330,8 +345,8 @@ export function HomeHeader() {
             <div
               key={item.title}
               className="relative"
-              onMouseEnter={() => setActiveMegaMenu(item.title)}
-              onMouseLeave={() => setActiveMegaMenu(null)}
+              onMouseEnter={() => handleOpenMegaMenu(item.title)}
+              onMouseLeave={handleCloseMegaMenu}
             >
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
                 {item.title}
@@ -374,8 +389,8 @@ export function HomeHeader() {
       {activeMegaMenu && (
         <div
           className="absolute left-0 right-0 top-16 border-t bg-background shadow-lg animate-in slide-in-from-top-2 duration-200"
-          onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
-          onMouseLeave={() => setActiveMegaMenu(null)}
+          onMouseEnter={() => handleOpenMegaMenu(activeMegaMenu)}
+          onMouseLeave={handleCloseMegaMenu}
         >
           <div className="container mx-auto max-w-7xl px-6 py-8">
             {menuItems
