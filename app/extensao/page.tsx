@@ -124,7 +124,7 @@ export default function ExtensaoPage() {
                 buttonText: "Ver cursos de Extensão - Presencial",
               },
             ]}
-            bgColor="bg-muted/30"
+            backgroundColor="bg-muted/30"
           />
         </section>
 
@@ -298,7 +298,7 @@ export default function ExtensaoPage() {
                 bio: "Consultor em conformidade e gestão de riscos para empresas nacionais",
               },
             ]}
-            bgColor="bg-muted/30"
+            backgroundColor="bg-muted/30"
           />
         </section>
 
