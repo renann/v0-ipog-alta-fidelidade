@@ -157,10 +157,27 @@ export default function CompliancePage() {
             "Mentorias com especialistas em compliance",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto: "O curso me capacitou para estruturar o programa de compliance da empresa.",
-            autor: "Aluno IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto: "O curso me capacitou para estruturar o programa de compliance da empresa.",
+              autor: "Aluno IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Aprendi a implementar controles internos eficazes e reduzir riscos corporativos significativamente.",
+              autor: "Maria Santos",
+              cargo: "Compliance Officer",
+            },
+            {
+              tipo: "video",
+              nome: "Ricardo Oliveira",
+              cargo: "Gerente de Compliance",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",

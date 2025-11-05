@@ -173,10 +173,27 @@ export default function GestaoProjetosAgeisPage() {
             "Acesso a comunidade de gestores ágeis",
             "Mentoria com especialistas certificados",
           ]}
-          depoimento={{
-            texto: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
-            autor: "Aluno IPOG - Gestão de Projetos",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
+              autor: "Aluno IPOG - Gestão de Projetos",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "O curso me deu as ferramentas para transformar a gestão de projetos da empresa. Resultados visíveis em 30 dias.",
+              autor: "Beatriz Almeida",
+              cargo: "Scrum Master",
+            },
+            {
+              tipo: "video",
+              nome: "Thiago Ferreira",
+              cargo: "Agile Coach",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Falar com um Consultor",
             onClick: "openAssistantForConsultor",

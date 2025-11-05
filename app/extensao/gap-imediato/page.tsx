@@ -193,6 +193,20 @@ export default function GapImediatoPage() {
                 autor: "Carlos Mendes",
                 cargo: "Gerente de Marketing",
               },
+              {
+                tipo: "simples",
+                texto:
+                  "O curso resolveu um gap crítico na minha equipe. Aprendi técnicas de gestão que apliquei imediatamente e vi melhora no engajamento em menos de um mês.",
+                autor: "Fernanda Lima",
+                cargo: "Coordenadora de RH",
+              },
+              {
+                tipo: "video",
+                nome: "Roberto Silva",
+                cargo: "Analista de Compliance",
+                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                thumbnail: "/placeholder.svg?height=400&width=600",
+              },
             ]}
           />
         </section>

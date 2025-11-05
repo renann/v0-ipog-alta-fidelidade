@@ -148,10 +148,26 @@ export default function GestaoPessoasPage() {
             "Mentorias com especialistas de RH",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto: "O curso me deu ferramentas práticas para transformar o RH da minha empresa.",
-            autor: "Aluno IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto: "O curso me deu ferramentas práticas para transformar o RH da minha empresa.",
+              autor: "Aluno IPOG",
+            },
+            {
+              tipo: "simples",
+              texto: "Implementei programas de desenvolvimento que aumentaram o engajamento da equipe em 45%.",
+              autor: "Carla Mendes",
+              cargo: "Gerente de RH",
+            },
+            {
+              tipo: "video",
+              nome: "André Costa",
+              cargo: "Diretor de Pessoas",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",

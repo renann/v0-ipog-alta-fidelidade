@@ -162,11 +162,28 @@ export default function InteligenciaArtificialAplicadaPage() {
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
-            autor: "Marina S., Aluna de Extensão IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
+              autor: "Marina S., Aluna de Extensão IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Implementei IA nos processos da empresa e reduzi o tempo de análise de dados em 60%. Resultado imediato.",
+              autor: "Lucas Pereira",
+              cargo: "Analista de Dados",
+            },
+            {
+              tipo: "video",
+              nome: "Camila Rodrigues",
+              cargo: "Especialista em IA",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",

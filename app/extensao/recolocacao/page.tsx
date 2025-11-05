@@ -203,6 +203,20 @@ export default function RecolocacaoPage() {
                 depois:
                   "Construí um portfólio sólido durante o curso, fiz conexões valiosas e consegui uma posição de liderança em uma empresa que valoriza desenvolvimento humano. O IPOG foi essencial para minha recolocação.",
               },
+              {
+                tipo: "simples",
+                texto:
+                  "Após 10 meses desempregado, o curso me deu as ferramentas e a confiança que eu precisava. Em 3 meses consegui uma posição melhor do que a anterior.",
+                autor: "Paulo Henrique",
+                cargo: "Especialista em Marketing Digital",
+              },
+              {
+                tipo: "video",
+                nome: "Juliana Martins",
+                cargo: "Analista de Compliance",
+                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                thumbnail: "/placeholder.svg?height=400&width=600",
+              },
             ]}
             backgroundColor="bg-muted/30"
           />

@@ -255,6 +255,13 @@ export default function ExtensaoPage() {
                 impacto:
                   "O projeto prático do curso virou meu principal diferencial na entrevista. Consegui a vaga mostrando o que eu era capaz de fazer.",
               },
+              {
+                tipo: "video",
+                nome: "Ana Paula Rodrigues",
+                cargo: "Gestora de Projetos",
+                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                thumbnail: "/placeholder.svg?height=400&width=600",
+              },
             ]}
           />
         </section>

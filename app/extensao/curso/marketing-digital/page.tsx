@@ -126,11 +126,28 @@ export default function MarketingDigitalPage() {
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
-            autor: "Profissional de Marketing, Aluno IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
+              autor: "Profissional de Marketing, Aluno IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Aumentei o ROI das campanhas em 150% aplicando as técnicas do curso. Investimento que se pagou rapidamente.",
+              autor: "Daniela Souza",
+              cargo: "Gestora de Tráfego",
+            },
+            {
+              tipo: "video",
+              nome: "Rafael Santos",
+              cargo: "Especialista em Marketing Digital",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
