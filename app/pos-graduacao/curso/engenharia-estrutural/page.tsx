@@ -96,8 +96,8 @@ export default function EngenhariaEstruturalPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="O impacto da sua escolha na sua carreira:"
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="O impacto da sua escolha na sua carreira:"
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,

@@ -44,8 +44,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Dilema
-          titulo="A segurança que você precisa para dar o próximo passo"
-          subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
+          title="A segurança que você precisa para dar o próximo passo"
+          subtitle="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
@@ -70,8 +70,8 @@ export default function TransicaoAreaPage() {
         <MetodoTransicaoArea />
 
         <Modalidades
-          titulo="Encontre a modalidade ideal para sua jornada"
-          subtitulo="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
+          title="Encontre a modalidade ideal para sua jornada"
+          subtitle="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -155,8 +155,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Trilha
-          titulo="Uma jornada estruturada para sua nova carreira"
-          subtitulo="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
+          title="Uma jornada estruturada para sua nova carreira"
+          subtitle="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
           etapas={[
             {
               numero: "1",
@@ -197,8 +197,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que comprovam: sua transição é nosso compromisso."
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Resultados que comprovam: sua transição é nosso compromisso."
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
