@@ -57,7 +57,7 @@ export function CourseSearch({
     <section className="w-full px-4 py-6">
       <div className="max-w-screen-xl mx-auto">
         <div className="bg-white rounded-2xl p-6 md:p-8 space-y-6">
-          <div className="space-y-3">
+          <div className="space-y-3 md:text-center">
             <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
           </div>
