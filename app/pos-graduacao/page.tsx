@@ -273,6 +273,12 @@ export default function PosGraduacaoPage() {
               cargo: "MBA em Gestão - Turma 2023",
             },
             {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Juliana Santos",
+              cargo: "Especialização em Marketing Digital - Turma 2023",
+            },
+            {
               tipo: "simples",
               texto:
                 "A especialização em Psicologia Clínica me deu as ferramentas necessárias para atuar com segurança e competência. Networking de alto valor.",

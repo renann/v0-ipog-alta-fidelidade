@@ -11,8 +11,9 @@ import { CasesRecolocacao } from "@/components/transicao-area/cases-recolocacao"
 import { MentoriaNetworking } from "@/components/transicao-area/mentoria-networking"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { ArrowRightLeft, Users, Target, AlertCircle, MapPin, Clock, TrendingUp, Briefcase } from "lucide-react"
+import { ArrowRightLeft, Users, Target, AlertCircle, MapPin, Clock, TrendingUp, Briefcase, Award } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { ResultadosReais } from "@/components/resultados-reais"
 
 export default function TransicaoAreaPage() {
   return (
@@ -227,6 +228,53 @@ export default function TransicaoAreaPage() {
         <ROITransicaoArea />
         <CasesRecolocacao />
         <MentoriaNetworking />
+        <ResultadosReais
+          title="Histórias de transição bem-sucedidas"
+          subtitle="Conheça profissionais que mudaram de carreira com segurança e método através do IPOG."
+          estatisticas={[
+            {
+              icone: <TrendingUp className="w-12 h-12 text-primary" />,
+              valor: "78%",
+              label: "Transição completa",
+              descricao: "Em até 12 meses após conclusão",
+            },
+            {
+              icone: <Users className="w-12 h-12 text-primary" />,
+              valor: "92%",
+              label: "Satisfação",
+              descricao: "Recomendam a especialização",
+            },
+            {
+              icone: <Award className="w-12 h-12 text-primary" />,
+              valor: "+30%",
+              label: "Aumento salarial",
+              descricao: "Média na nova área",
+            },
+          ]}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "Migrei de engenharia para gestão de projetos com total segurança. A mentoria e o networking do IPOG foram fundamentais.",
+              nome: "Fernando Costa",
+              cargo: "Gerente de Projetos - Ex-Engenheiro Civil",
+            },
+            {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Mariana Oliveira",
+              cargo: "Analista de RH - Ex-Administradora",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "A transição de área parecia impossível, mas o método IPOG me deu a estrutura e confiança necessárias. Hoje atuo na área dos sonhos.",
+              nome: "Ricardo Santos",
+              cargo: "Consultor de Marketing - Ex-Contador",
+            },
+          ]}
+          corFundo="bg-muted/30"
+        />
         <AcaoFinal
           titulo="Sua nova carreira começa com a escolha certa."
           descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."

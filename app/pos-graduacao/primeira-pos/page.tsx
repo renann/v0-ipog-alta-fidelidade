@@ -309,6 +309,12 @@ const PrimeiraPosContent = dynamic(
                     "A pós-graduação IPOG foi decisiva para minha primeira promoção. Em 3 meses já estava aplicando o conteúdo no meu trabalho.",
                 },
                 {
+                  tipo: "video",
+                  videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                  nome: "Roberto Almeida",
+                  cargo: "Gerente de Operações",
+                },
+                {
                   tipo: "simples",
                   nome: "Carlos Eduardo",
                   cargo: "Analista Sênior",

@@ -11,6 +11,7 @@ import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
+import { ResultadosReais } from "@/components/resultados-reais"
 
 export default function EngenhariaEstruturalPage() {
   return (
@@ -135,6 +136,53 @@ export default function EngenhariaEstruturalPage() {
           }}
           observacao="* Dados baseados em pesquisa interna."
           bgColor="bg-white"
+        />
+        <ResultadosReais
+          title="Engenheiros que transformaram suas carreiras"
+          subtitle="Veja como a especialização em Engenharia Estrutural impulsionou profissionais para cargos de liderança."
+          estatisticas={[
+            {
+              icone: <TrendingUp className="w-12 h-12 text-primary" />,
+              valor: "90%",
+              label: "Promovidos",
+              descricao: "Em até 8 meses após conclusão",
+            },
+            {
+              icone: <Building2 className="w-12 h-12 text-primary" />,
+              valor: "+40%",
+              label: "Aumento salarial",
+              descricao: "Média após especialização",
+            },
+            {
+              icone: <Award className="w-12 h-12 text-primary" />,
+              valor: "95%",
+              label: "Satisfação",
+              descricao: "Recomendam o curso",
+            },
+          ]}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "A especialização me deu o conhecimento técnico e a confiança para assumir projetos de grande porte. Hoje lidero uma equipe de 15 engenheiros.",
+              nome: "Eng. Paulo Henrique",
+              cargo: "Coordenador de Projetos Estruturais",
+            },
+            {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Eng. Fernanda Lima",
+              cargo: "Engenheira Estrutural Sênior",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "O domínio de softwares como TQS e SAP2000 que adquiri no curso foi decisivo para minha promoção. Recomendo fortemente.",
+              nome: "Eng. Carlos Mendes",
+              cargo: "Engenheiro de Estruturas Pleno",
+            },
+          ]}
+          corFundo="bg-muted/30"
         />
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
