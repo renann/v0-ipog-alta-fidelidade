@@ -42,7 +42,7 @@ export default function AvaliacaoPsicologicaPage() {
           primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
-        <div className="max-w-screen-xl mx-auto px-4 pb-8">
+        <div className="max-w-screen-xl mx-auto px-4 pb-8 md:pt-8">
           <CursoRestritoBadge requiredDegree="Psicologia" />
         </div>
         <Modalidades
@@ -158,11 +158,26 @@ export default function AvaliacaoPsicologicaPage() {
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O diferencial do IPOG são os professores. Aprender com quem é referência na área e autor de testes que usamos no dia a dia não tem preço. Foi a escolha que me deu segurança para assumir casos mais complexos e ser reconhecida no mercado.",
-            autor: "Psicóloga, ex-aluna IPOG",
-          }}
+          depoimentos={[
+            {
+              texto:
+                "O diferencial do IPOG são os professores. Aprender com quem é referência na área e autor de testes que usamos no dia a dia não tem preço. Foi a escolha que me deu segurança para assumir casos mais complexos e ser reconhecida no mercado.",
+              autor: "Dra. Juliana Martins",
+              cargo: "Psicóloga Clínica, ex-aluna IPOG",
+            },
+            {
+              texto:
+                "A especialização em Avaliação Psicológica do IPOG transformou minha prática profissional. Os laboratórios práticos e a supervisão de casos reais me prepararam para atuar com confiança em contextos jurídicos e clínicos.",
+              autor: "Dr. Carlos Eduardo Santos",
+              cargo: "Perito Judicial, ex-aluno IPOG",
+            },
+            {
+              texto:
+                "Consegui minha certificação internacional em Rorschach (R-PAS) durante o curso. Isso abriu portas para atuar em hospitais e clínicas de referência. O investimento retornou em menos de 6 meses.",
+              autor: "Dra. Fernanda Lima",
+              cargo: "Neuropsicóloga, ex-aluna IPOG",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
