@@ -57,8 +57,8 @@ export default function GestoraRHPage() {
         />
 
         <Dilema
-          titulo="Desafios que impedem a performance da sua equipe"
-          subtitulo=""
+          title="Desafios que impedem a performance da sua equipe"
+          subtitle=""
           dores={[
             {
               icon: <Target className="w-8 h-8" />,
@@ -101,8 +101,8 @@ export default function GestoraRHPage() {
             </div>
 
             <Beneficios
-              titulo="Recursos que facilitam implantação"
-              subtitulo="Ferramentas e suporte para gestores de RH"
+              title="Recursos que facilitam implantação"
+              subtitle="Ferramentas e suporte para gestores de RH"
               beneficios={[
                 {
                   icone: <BarChart3 className="w-8 h-8" />,
@@ -153,8 +153,8 @@ export default function GestoraRHPage() {
 
             <div className="mt-12">
               <Trilha
-                titulo="Nossa Jornada para o Impacto Estratégico"
-                subtitulo=""
+                title="Nossa Jornada para o Impacto Estratégico"
+                subtitle=""
                 etapas={[
                   {
                     numero: "1",
@@ -199,8 +199,8 @@ export default function GestoraRHPage() {
             </div>
 
             <Modalidades
-              titulo="Soluções corporativas com suporte contínuo"
-              subtitulo="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
+              title="Soluções corporativas com suporte contínuo"
+              subtitle="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
               modalidades={[
                 {
                   badge: "RH",
@@ -243,8 +243,8 @@ export default function GestoraRHPage() {
 
         {/* Modalidades com Suporte Contínuo */}
         <Beneficios
-          titulo="Formatos com suporte contínuo e métricas comprovadas"
-          subtitulo="Escolha o formato ideal para sua empresa. Todas as modalidades incluem suporte contínuo e painéis de métricas"
+          title="Formatos com suporte contínuo e métricas comprovadas"
+          subtitle="Escolha o formato ideal para sua empresa. Todas as modalidades incluem suporte contínuo e painéis de métricas"
           corFundo="bg-muted/30"
           beneficios={[
             {
@@ -322,8 +322,8 @@ export default function GestoraRHPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Empregabilidade
-            titulo="Cases de implantação eficaz"
-            subtitulo="Mais de 500 empresas parceiras e 15.000 colaboradores capacitados anualmente, uma prova da nossa capacidade de execução em escala nacional e da confiança do mercado."
+            title="Cases de implantação eficaz"
+            subtitle="Mais de 500 empresas parceiras e 15.000 colaboradores capacitados anualmente, uma prova da nossa capacidade de execução em escala nacional e da confiança do mercado."
             estatisticas={[
               {
                 icon: <Users className="w-8 h-8" />,
@@ -378,8 +378,8 @@ export default function GestoraRHPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Aprenda com Especialistas que Transformam o Mercado"
-            subtitulo="Chancelas de Qualidade e Credibilidade - Estas certificações validam a excelência acadêmica e a gestão de qualidade do IPOG, reforçando nossa credibilidade como um parceiro estratégico para o desenvolvimento da sua empresa."
+            title="Aprenda com Especialistas que Transformam o Mercado"
+            subtitle="Chancelas de Qualidade e Credibilidade - Estas certificações validam a excelência acadêmica e a gestão de qualidade do IPOG, reforçando nossa credibilidade como um parceiro estratégico para o desenvolvimento da sua empresa."
             credenciais={[
               {
                 icone: <Award className="w-6 h-6" />,
@@ -419,7 +419,7 @@ export default function GestoraRHPage() {
         </section>
 
         <AcaoFinal
-          titulo="Implante programas ágeis e comprove engajamento"
+          title="Implante programas ágeis e comprove engajamento"
           descricao="Solicite um diagnóstico e entenda como as soluções IPOG podem transformar o desenvolvimento da sua equipe."
           botaoPrimario={{
             texto: "Agendar demonstração corporativa",

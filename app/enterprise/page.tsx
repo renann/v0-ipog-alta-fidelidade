@@ -76,8 +76,8 @@ export default function EnterprisePage() {
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          titulo="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
-          subtitulo="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
+          title="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
+          subtitle="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
           bgColor="bg-background"
           etapas={[
             {
