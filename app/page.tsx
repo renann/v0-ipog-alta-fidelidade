@@ -117,7 +117,7 @@ export default function HomePage() {
         />
 
         <AcaoFinal
-          titulo="Comece sua jornada de transformação profissional"
+          title="Comece sua jornada de transformação profissional"
           descricao="Mais de 20 anos formando especialistas e líderes de mercado. Escolha sua formação e acelere sua carreira"
           botaoPrimario={{
             texto: "Ver todos os cursos",
