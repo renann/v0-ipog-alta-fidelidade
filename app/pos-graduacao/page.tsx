@@ -317,8 +317,8 @@ export default function PosGraduacaoPage() {
               area: "Neuropsicologia",
             },
           ]}
-          titleProfessores="Conheça alguns de nossos professores executivos"
-          bgColor="bg-muted/30"
+          tituloProfessores="Conheça alguns de nossos professores executivos"
+          backgroundColor="bg-muted/30"
         />
 
         <AcaoFinal
