@@ -219,7 +219,7 @@ export default function SegundaGraduacaoPage() {
             },
           ]}
           tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
-          bgColor="bg-muted/30"
+          backgroundColor="bg-muted/30"
         />
         <FormasIngresso />
         <AcaoFinal
