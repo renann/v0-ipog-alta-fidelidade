@@ -46,8 +46,8 @@ export default function RecolocacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="Por que esta formação garante vantagem?"
-            subtitulo="Entregas do programa"
+            title="Por que esta formação garante vantagem?"
+            subtitle="Entregas do programa"
             dores={[
               {
                 icon: <Target className="h-5 w-5" />,
@@ -122,8 +122,8 @@ export default function RecolocacaoPage() {
         {/* 5. Modalidades Comparativas */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            titulo="Escolha o formato que se adapta à sua rotina"
-            subtitulo="O formato não é barreira, mas ferramenta para sua recolocação"
+            title="Escolha o formato que se adapta à sua rotina"
+            subtitle="O formato não é barreira, mas ferramenta para sua recolocação"
             modalidades={[
               {
                 badge: "EXTENSÃO",
@@ -172,21 +172,21 @@ export default function RecolocacaoPage() {
         <section className="w-full py-12 md:py-16">
           <ResultadosReais
             badge="Resultados Comprovados"
-            titulo="Profissionais que se recolocaram com sucesso"
-            subtitulo="Histórias reais de transformação e retorno ao mercado com confiança"
+            title="Profissionais que se recolocaram com sucesso"
+            subtitle="Histórias reais de transformação e retorno ao mercado com confiança"
             estatisticas={[
               {
-                icon: <TrendingUp className="h-6 w-6" />,
+                icone: <TrendingUp className="h-6 w-6" />,
                 valor: "89%",
                 descricao: "alcançaram recolocação em até 6 meses",
               },
               {
-                icon: <Briefcase className="h-6 w-6" />,
+                icone: <Briefcase className="h-6 w-6" />,
                 valor: "92%",
                 descricao: "construíram portfólio validado durante o curso",
               },
               {
-                icon: <Users className="h-6 w-6" />,
+                icone: <Users className="h-6 w-6" />,
                 valor: "85%",
                 descricao: "obtiveram novas oportunidades via networking",
               },
@@ -216,19 +216,19 @@ export default function RecolocacaoPage() {
         {/* 9. Autoridade */}
         <section className="w-full py-12 md:py-16">
           <Autoridade
-            titulo="Mentores que entendem sua jornada"
-            subtitulo="Profissionais experientes que já passaram por recolocação e sabem como te guiar"
+            title="Mentores que entendem sua jornada"
+            subtitle="Profissionais experientes que já passaram por recolocação e sabem como te guiar"
             credenciais={[
               {
-                icon: <Users className="h-5 w-5" />,
+                icone: <Users className="h-5 w-5" />,
                 texto: "Mentores com Vivência em Recolocação",
               },
               {
-                icon: <Award className="h-5 w-5" />,
+                icone: <Award className="h-5 w-5" />,
                 texto: "Consultores de Carreira Certificados",
               },
               {
-                icon: <Building className="h-5 w-5" />,
+                icone: <Building className="h-5 w-5" />,
                 texto: "Rede de Empresas Parceiras",
               },
             ]}
