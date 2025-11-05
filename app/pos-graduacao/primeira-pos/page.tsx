@@ -90,8 +90,8 @@ const PrimeiraPosContent = dynamic(
             <MetodoPrimeiraPos />
 
             <Modalidades
-              titulo="Compare as modalidades e escolha a que mais combina com você"
-              subtitulo="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+              title="Compare as modalidades e escolha a que mais combina com você"
+              subtitle="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
               modalidades={[
                 {
                   badge: "PÓS-GRADUAÇÃO",
@@ -107,7 +107,6 @@ const PrimeiraPosContent = dynamic(
                   buttonText: "Encontrar cursos EAD",
                 },
                 {
-                  icon: <Users className="h-5 w-5" />,
                   badge: "PÓS-GRADUAÇÃO",
                   titulo: "Ao Vivo: Interação Real sem Sair de Casa",
                   descricao: "Para quem quer interação em tempo real com flexibilidade",
@@ -121,7 +120,6 @@ const PrimeiraPosContent = dynamic(
                   buttonText: "Encontrar cursos Ao Vivo",
                 },
                 {
-                  icon: <Building className="h-5 w-5" />,
                   badge: "PÓS-GRADUAÇÃO",
                   titulo: "Presencial: Networking de Alto Valor e Vivência Prática",
                   descricao: "Para quem valoriza imersão e networking presencial",
