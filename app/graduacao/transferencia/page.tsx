@@ -42,8 +42,8 @@ export default function TransferenciaPage() {
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
         />
         <Dilema
-          titulo="Transferir não deveria ser um risco"
-          subtitulo="Processo transparente, reconhecimento justo e estrutura superior"
+          title="Transferir não deveria ser um risco"
+          subtitle="Processo transparente, reconhecimento justo e estrutura superior"
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
@@ -107,8 +107,8 @@ export default function TransferenciaPage() {
           }}
         />
         <Modalidades
-          titulo="Compare as modalidades e escolha a que mais combina com você"
-          subtitulo="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+          title="Compare as modalidades e escolha a que mais combina com você"
+          subtitle="A mesma graduação de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
           modalidades={[
             {
               badge: "GRADUAÇÃO",
@@ -141,19 +141,19 @@ export default function TransferenciaPage() {
           ]}
         />
         <Autoridade
-          titulo="Aprenda com quem o mercado respeita."
-          subtitulo="Infraestrutura moderna e reconhecimento que fazem diferença na sua formação"
+          title="Aprenda com quem o mercado respeita."
+          subtitle="Infraestrutura moderna e reconhecimento que fazem diferença na sua formação"
           credenciais={[
             {
-              icon: <Building className="h-5 w-5" />,
+              icone: <Building className="h-5 w-5" />,
               texto: "Reconhecimento MEC",
             },
             {
-              icon: <Users className="h-5 w-5" />,
+              icone: <Users className="h-5 w-5" />,
               texto: "Professores Mestres e Doutores",
             },
             {
-              icon: <Award className="h-5 w-5" />,
+              icone: <Award className="h-5 w-5" />,
               texto: "Infraestrutura Moderna",
             },
           ]}
