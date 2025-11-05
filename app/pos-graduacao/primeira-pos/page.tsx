@@ -107,6 +107,7 @@ const PrimeiraPosContent = dynamic(
                   buttonText: "Encontrar cursos EAD",
                 },
                 {
+                  icon: <Users className="h-5 w-5" />,
                   badge: "PÓS-GRADUAÇÃO",
                   titulo: "Ao Vivo: Interação Real sem Sair de Casa",
                   descricao: "Para quem quer interação em tempo real com flexibilidade",
@@ -120,6 +121,7 @@ const PrimeiraPosContent = dynamic(
                   buttonText: "Encontrar cursos Ao Vivo",
                 },
                 {
+                  icon: <Building className="h-5 w-5" />,
                   badge: "PÓS-GRADUAÇÃO",
                   titulo: "Presencial: Networking de Alto Valor e Vivência Prática",
                   descricao: "Para quem valoriza imersão e networking presencial",
@@ -209,7 +211,7 @@ const PrimeiraPosContent = dynamic(
             />
             <Trilha
               titulo="Sua trilha começa aqui"
-              subtitulo="Veja onde sua primeira pós pode te levar"
+              subtitle="Veja onde sua primeira pós pode te levar"
               etapas={[
                 {
                   numero: "1",
@@ -233,10 +235,8 @@ const PrimeiraPosContent = dynamic(
                   descricao: "Evolução contínua e comunidade Alumni+",
                 },
               ]}
-              botaoCta={{
-                texto: "Monte sua trilha personalizada",
-                onClick: handleConsultorClick,
-              }}
+              textoBotao="Monte sua trilha personalizada"
+              onClickBotao={handleConsultorClick}
             />
             <AplicacaoImediataPrimeiraPos />
             <Autoridade
