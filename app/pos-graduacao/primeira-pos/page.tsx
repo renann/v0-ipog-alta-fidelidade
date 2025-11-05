@@ -276,46 +276,47 @@ const PrimeiraPosContent = dynamic(
               ]}
             />
             <ResultadosReais
-              titulo="A Prova Real do Impacto IPOG"
-              subtitulo="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
+              title="A Prova Real do Impacto IPOG"
+              subtitle="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
               estatisticas={[
                 {
-                  icon: <TrendingUp className="h-8 w-8" />,
+                  icone: <TrendingUp className="h-8 w-8" />,
                   valor: "87%",
                   descricao: "promovidos ou recolocados em 12 meses",
                 },
                 {
-                  icon: <Clock className="h-8 w-8" />,
+                  icone: <Clock className="h-8 w-8" />,
                   valor: "6-9 meses",
                   descricao: "tempo médio para promoção",
                 },
                 {
-                  icon: <Briefcase className="h-8 w-8" />,
+                  icone: <Briefcase className="h-8 w-8" />,
                   valor: "+35%",
                   descricao: "aumento salarial médio",
                 },
                 {
-                  icon: <Award className="h-8 w-8" />,
+                  icone: <Award className="h-8 w-8" />,
                   valor: "92%",
                   descricao: "recomendam a especialização",
                 },
               ]}
               depoimentos={[
                 {
+                  tipo: "simples",
                   nome: "Ana Paula Silva",
                   cargo: "Coordenadora de Projetos",
                   texto:
                     "A pós-graduação IPOG foi decisiva para minha primeira promoção. Em 3 meses já estava aplicando o conteúdo no meu trabalho.",
                 },
                 {
+                  tipo: "simples",
                   nome: "Carlos Eduardo",
                   cargo: "Analista Sênior",
                   texto:
                     "O networking e a qualidade dos professores fizeram toda a diferença. Consegui minha promoção em 6 meses.",
                 },
               ]}
-              tipoDepoimento="simples"
-              bgColor="bg-muted/30"
+              corFundo="bg-muted/30"
             />
             <AcaoFinal
               titulo="A escolha que conecta você ao sucesso."
