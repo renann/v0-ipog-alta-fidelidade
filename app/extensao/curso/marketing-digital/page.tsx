@@ -98,8 +98,8 @@ export default function MarketingDigitalPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que comprovam a excelência IPOG"
-          subtitulo="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
+          title="Resultados que comprovam a excelência IPOG"
+          subtitle="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
           estatisticas={[
             {
               icon: <Award className="h-8 w-8" />,
@@ -140,8 +140,8 @@ export default function MarketingDigitalPage() {
         />
 
         <Trilha
-          titulo="DISCIPLINAS"
-          subtitulo="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
+          title="DISCIPLINAS"
+          subtitle="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
           etapas={[
             {
               titulo: "Máquina de Vendas 5.0",
@@ -305,8 +305,8 @@ export default function MarketingDigitalPage() {
         </section>
 
         <Autoridade
-          titulo="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
-          subtitulo="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
+          title="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
+          subtitle="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
           credenciais={[
             {
               icon: <Award className="h-5 w-5" />,

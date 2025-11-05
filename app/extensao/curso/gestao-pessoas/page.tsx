@@ -120,8 +120,8 @@ export default function GestaoPessoasPage() {
         />
 
         <Empregabilidade
-          titulo="Impacto na carreira"
-          subtitulo="Profissionais de RH são cada vez mais estratégicos nas organizações."
+          title="Impacto na carreira"
+          subtitle="Profissionais de RH são cada vez mais estratégicos nas organizações."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -161,8 +161,8 @@ export default function GestaoPessoasPage() {
         />
 
         <Trilha
-          titulo="Conteúdo Programático"
-          subtitulo="Módulos práticos e aplicáveis ao dia a dia do RH"
+          title="Conteúdo Programático"
+          subtitle="Módulos práticos e aplicáveis ao dia a dia do RH"
           etapas={[
             {
               titulo: "Fundamentos de RH Estratégico",

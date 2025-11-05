@@ -134,8 +134,8 @@ export default function InteligenciaArtificialAplicadaPage() {
         />
 
         <Empregabilidade
-          titulo="Profissionais com IA conquistam mais"
-          subtitulo="Dados reais de quem domina ferramentas de IA"
+          title="Profissionais com IA conquistam mais"
+          subtitle="Dados reais de quem domina ferramentas de IA"
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -176,8 +176,8 @@ export default function InteligenciaArtificialAplicadaPage() {
         />
 
         <Trilha
-          titulo="Sua jornada em IA Aplicada"
-          subtitulo="6 módulos de aprendizado prático com ferramentas de ponta"
+          title="Sua jornada em IA Aplicada"
+          subtitle="6 módulos de aprendizado prático com ferramentas de ponta"
           etapas={[
             {
               titulo: "Fundamentos de IA",

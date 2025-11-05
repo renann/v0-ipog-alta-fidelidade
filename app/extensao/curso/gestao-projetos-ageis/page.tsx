@@ -145,8 +145,8 @@ export default function GestaoProjetosAgeisPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Falam por Si"
-          subtitulo="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
+          title="Resultados que Falam por Si"
+          subtitle="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -186,8 +186,8 @@ export default function GestaoProjetosAgeisPage() {
         />
 
         <Trilha
-          titulo="Conteúdo Programático"
-          subtitulo="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
+          title="Conteúdo Programático"
+          subtitle="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
           etapas={[
             {
               titulo: "Fundamentos da Gestão Ágil",

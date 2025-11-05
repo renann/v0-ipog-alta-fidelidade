@@ -129,8 +129,8 @@ export default function CompliancePage() {
         />
 
         <Empregabilidade
-          titulo="Impacto na carreira"
-          subtitulo="Profissionais de compliance são essenciais em todas as organizações modernas."
+          title="Impacto na carreira"
+          subtitle="Profissionais de compliance são essenciais em todas as organizações modernas."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
