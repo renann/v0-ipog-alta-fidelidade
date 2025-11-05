@@ -204,7 +204,7 @@ export default function GraduacaoPage() {
             },
           ]}
           tituloProfessores="Conheça alguns de nossos professores"
-          bgColor="bg-muted/30"
+          backgroundColor="bg-muted/30"
         />
 
         <FormasIngresso />
@@ -255,7 +255,7 @@ export default function GraduacaoPage() {
             {
               pergunta: "Qual a duração dos cursos de graduação?",
               resposta:
-                "A duração varia de acordo com o curso e a modalidade escolhida. Em geral, os cursos de bacharelado têm duração de 4 a 5 anos. Para quem opta por segunda graduação ou transferência, o tempo pode ser reduzido conforme o aproveitamento de disciplinas.",
+                "A duração varia de acordo com o curso, modalidade e descontos aplicáveis. Em geral, os cursos de bacharelado têm duração de 4 a 5 anos. Para quem opta por segunda graduação ou transferência, o tempo pode ser reduzido conforme o aproveitamento de disciplinas.",
             },
             {
               pergunta: "Posso aproveitar disciplinas já cursadas em outras instituições?",
