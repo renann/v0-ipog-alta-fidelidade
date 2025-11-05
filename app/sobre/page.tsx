@@ -242,8 +242,8 @@ export default function SobrePage() {
 
       {/* Nosso Método e Diferenciais */}
       <Beneficios
-        titulo="Nosso método e diferenciais"
-        subtitulo="O que nos torna referência em educação de qualidade"
+        title="Nosso método e diferenciais"
+        subtitle="O que nos torna referência em educação de qualidade"
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,

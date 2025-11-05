@@ -65,8 +65,8 @@ export default function HistoriaPage() {
 
       {/* Nossos Líderes */}
       <Autoridade
-        titulo="Nossos líderes"
-        subtitulo="Conheça as pessoas que lideram a transformação educacional no IPOG"
+        title="Nossos líderes"
+        subtitle="Conheça as pessoas que lideram a transformação educacional no IPOG"
         credenciais={[
           {
             icone: <Award className="w-5 h-5 text-primary" />,
@@ -109,8 +109,8 @@ export default function HistoriaPage() {
 
       {/* Os 3 Pilares do IPOG */}
       <Beneficios
-        titulo="Os 3 Pilares do IPOG"
-        subtitulo="Nossos valores fundamentais que guiam cada decisão e ação institucional"
+        title="Os 3 Pilares do IPOG"
+        subtitle="Nossos valores fundamentais que guiam cada decisão e ação institucional"
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,
