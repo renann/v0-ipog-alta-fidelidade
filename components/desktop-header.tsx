@@ -7,6 +7,7 @@ import Link from "next/link"
 import { Logo } from "./logo"
 import { Search, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Pitchbar } from "@/components/pitchbar"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -109,181 +110,184 @@ export function DesktopHeader() {
   }
 
   return (
-    <header className="hidden lg:block border-b bg-background sticky top-0 z-50">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Logo className="h-8 w-auto" />
-          </Link>
+    <>
+      <Pitchbar />
+      <header className="hidden lg:block border-b bg-background sticky top-0 z-50">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0">
+              <Logo className="h-8 w-auto" />
+            </Link>
 
-          {/* Mega Menu */}
-          <NavigationMenu className="flex-1 mx-8">
-            <NavigationMenuList>
-              {/* Extensão */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">Extensão</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[800px] p-6">
-                    <div className="grid grid-cols-2 gap-8">
-                      {extensaoItems.map((section) => (
-                        <div key={section.title}>
-                          <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
-                          <ul className="space-y-3">
-                            {section.items.map((item) => (
-                              <li key={item.href}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={item.href}
-                                    className="block group hover:bg-accent rounded-md p-3 transition-colors"
-                                  >
-                                    <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
-                                    {item.description && (
-                                      <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
-                                    )}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+            {/* Mega Menu */}
+            <NavigationMenu className="flex-1 mx-8">
+              <NavigationMenuList>
+                {/* Extensão */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-base">Extensão</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[800px] p-6">
+                      <div className="grid grid-cols-2 gap-8">
+                        {extensaoItems.map((section) => (
+                          <div key={section.title}>
+                            <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
+                            <ul className="space-y-3">
+                              {section.items.map((item) => (
+                                <li key={item.href}>
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      href={item.href}
+                                      className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                                    >
+                                      <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
+                                      {item.description && (
+                                        <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
+                                      )}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              {/* Graduação */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">Graduação</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[800px] p-6">
-                    <div className="grid grid-cols-2 gap-8">
-                      {graduacaoItems.map((section) => (
-                        <div key={section.title}>
-                          <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
-                          <ul className="space-y-3">
-                            {section.items.map((item) => (
-                              <li key={item.href}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={item.href}
-                                    className="block group hover:bg-accent rounded-md p-3 transition-colors"
-                                  >
-                                    <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
-                                    {item.description && (
-                                      <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
-                                    )}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                {/* Graduação */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-base">Graduação</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[800px] p-6">
+                      <div className="grid grid-cols-2 gap-8">
+                        {graduacaoItems.map((section) => (
+                          <div key={section.title}>
+                            <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
+                            <ul className="space-y-3">
+                              {section.items.map((item) => (
+                                <li key={item.href}>
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      href={item.href}
+                                      className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                                    >
+                                      <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
+                                      {item.description && (
+                                        <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
+                                      )}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              {/* Pós-Graduação */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">Pós-Graduação</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[800px] p-6">
-                    <div className="grid grid-cols-2 gap-8">
-                      {posGraduacaoItems.map((section) => (
-                        <div key={section.title}>
-                          <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
-                          <ul className="space-y-3">
-                            {section.items.map((item) => (
-                              <li key={item.href}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={item.href}
-                                    className="block group hover:bg-accent rounded-md p-3 transition-colors"
-                                  >
-                                    <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
-                                    {item.description && (
-                                      <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
-                                    )}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                {/* Pós-Graduação */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-base">Pós-Graduação</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[800px] p-6">
+                      <div className="grid grid-cols-2 gap-8">
+                        {posGraduacaoItems.map((section) => (
+                          <div key={section.title}>
+                            <h3 className="font-semibold text-sm text-muted-foreground mb-4">{section.title}</h3>
+                            <ul className="space-y-3">
+                              {section.items.map((item) => (
+                                <li key={item.href}>
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      href={item.href}
+                                      className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                                    >
+                                      <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
+                                      {item.description && (
+                                        <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
+                                      )}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-              {/* Enterprise */}
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/enterprise"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  >
-                    Enterprise
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                {/* Enterprise */}
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/enterprise"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      Enterprise
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-              {/* Institucional */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">Institucional</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[500px] p-6">
-                    <ul className="grid grid-cols-2 gap-3">
-                      {institucionalItems.map((item) => (
-                        <li key={item.href}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              href={item.href}
-                              className="block group hover:bg-accent rounded-md p-3 transition-colors"
-                            >
-                              <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
-                              {item.description && (
-                                <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
-                              )}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                {/* Institucional */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-base">Institucional</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[500px] p-6">
+                      <ul className="grid grid-cols-2 gap-3">
+                        {institucionalItems.map((item) => (
+                          <li key={item.href}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={item.href}
+                                className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                              >
+                                <div className="font-medium text-sm group-hover:text-primary">{item.title}</div>
+                                {item.description && (
+                                  <div className="text-xs text-muted-foreground mt-1">{item.description}</div>
+                                )}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
-          {/* Search Bar & User Icon */}
-          <div className="flex items-center gap-4">
-            {/* Search */}
-            <form onSubmit={handleSearch} className="relative">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Buscar cursos..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 pl-10 pr-4"
-                />
-              </div>
-            </form>
+            {/* Search Bar & User Icon */}
+            <div className="flex items-center gap-4">
+              {/* Search */}
+              <form onSubmit={handleSearch} className="relative">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="search"
+                    placeholder="Buscar cursos..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-64 pl-10 pr-4"
+                  />
+                </div>
+              </form>
 
-            {/* User Login */}
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/login" aria-label="Área do aluno">
-                <User className="h-5 w-5" />
-              </Link>
-            </Button>
+              {/* User Login */}
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="/login" aria-label="Área do aluno">
+                  <User className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   )
 }

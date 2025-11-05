@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Logo } from "@/components/logo"
 import { LocationIndicator } from "@/components/location-indicator"
 import { GeoLink } from "@/components/geo-link"
+import { Pitchbar } from "@/components/pitchbar"
 import {
   Search,
   User,
@@ -303,386 +304,389 @@ export function HomeHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      {/* Wrapper consistente com max-width para alinhar com megamenu */}
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex h-16 items-center justify-between">
-          {/* Mobile Menu */}
-          <div className="flex items-center gap-4 md:hidden">
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[340px] overflow-y-auto">
-                <div className="flex flex-col h-full">
-                  {/* Header with home icon and close button */}
-                  <div className="flex items-center justify-between mb-8 pt-2">
-                    <div className="flex items-center gap-3">
-                      <GeoLink href="/" onClick={() => setMobileMenuOpen(false)}>
-                        <Home className="h-6 w-6 text-foreground" />
-                      </GeoLink>
-                      <LocationIndicator />
-                    </div>
-                  </div>
-
-                  <nav className="flex flex-col gap-8">
-                    {/* Experiência Educacional Section */}
-                    <div>
-                      <h2 className="text-xl font-bold mb-4 text-foreground">Experiência Educacional</h2>
-                      <div className="flex flex-col gap-3">
-                        <GeoLink
-                          href="/graduacao"
-                          className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <GraduationCap className="h-5 w-5" />
-                          <span>Graduação</span>
+    <>
+      <Pitchbar />
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        {/* Wrapper consistente com max-width para alinhar com megamenu */}
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex h-16 items-center justify-between">
+            {/* Mobile Menu */}
+            <div className="flex items-center gap-4 md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-[340px] overflow-y-auto">
+                  <div className="flex flex-col h-full">
+                    {/* Header with home icon and close button */}
+                    <div className="flex items-center justify-between mb-8 pt-2">
+                      <div className="flex items-center gap-3">
+                        <GeoLink href="/" onClick={() => setMobileMenuOpen(false)}>
+                          <Home className="h-6 w-6 text-foreground" />
                         </GeoLink>
-                        <GeoLink
-                          href="/pos-graduacao"
-                          className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <Building2 className="h-5 w-5" />
-                          <span>Pós Graduação</span>
-                        </GeoLink>
-                        <GeoLink
-                          href="/extensao"
-                          className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <TrendingUp className="h-5 w-5" />
-                          <span>Cursos de Extensão</span>
-                        </GeoLink>
-                        <GeoLink
-                          href="/enterprise"
-                          className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <Factory className="h-5 w-5" />
-                          <span>Enterprise</span>
-                        </GeoLink>
+                        <LocationIndicator />
                       </div>
                     </div>
 
-                    {/* Para você que busca por Section */}
-                    <div>
-                      <h2 className="text-xl font-bold mb-4 text-foreground">Para você que busca por</h2>
-                      <div className="flex flex-col gap-3">
-                        <GeoLink
-                          href="/graduacao/jovem-ingresso"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Primeira Graduação
-                        </GeoLink>
-                        <GeoLink
-                          href="/graduacao/segunda-graduacao"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Segunda Graduação
-                        </GeoLink>
-                        <GeoLink
-                          href="/graduacao/transferencia"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Transferência de Instituição
-                        </GeoLink>
-                        <GeoLink
-                          href="/pos-graduacao/primeira-pos"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Primeira Especializacao (Pós)
-                        </GeoLink>
-                        <GeoLink
-                          href="/pos-graduacao/transicao-area"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Mudar de Área
-                        </GeoLink>
-                        <GeoLink
-                          href="/pos-graduacao/lifelong-learning"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Lifelong Learning
-                        </GeoLink>
-                        <GeoLink
-                          href="/extensao/gap-imediato"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Desenvolver uma nova habilidade
-                        </GeoLink>
-                        <GeoLink
-                          href="/extensao/recolocacao"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Curso de extensão para recolocação
-                        </GeoLink>
-                        <GeoLink
-                          href="/extensao/atualizacao"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Atualização Profissional
-                        </GeoLink>
+                    <nav className="flex flex-col gap-8">
+                      {/* Experiência Educacional Section */}
+                      <div>
+                        <h2 className="text-xl font-bold mb-4 text-foreground">Experiência Educacional</h2>
+                        <div className="flex flex-col gap-3">
+                          <GeoLink
+                            href="/graduacao"
+                            className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <GraduationCap className="h-5 w-5" />
+                            <span>Graduação</span>
+                          </GeoLink>
+                          <GeoLink
+                            href="/pos-graduacao"
+                            className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <Building2 className="h-5 w-5" />
+                            <span>Pós Graduação</span>
+                          </GeoLink>
+                          <GeoLink
+                            href="/extensao"
+                            className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <TrendingUp className="h-5 w-5" />
+                            <span>Cursos de Extensão</span>
+                          </GeoLink>
+                          <GeoLink
+                            href="/enterprise"
+                            className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <Factory className="h-5 w-5" />
+                            <span>Enterprise</span>
+                          </GeoLink>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Institucional Section */}
-                    <div>
-                      <h2 className="text-xl font-bold mb-4 text-foreground">Institucional</h2>
-                      <div className="flex flex-col gap-3">
-                        <GeoLink
-                          href="/sobre"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Sobre nós
-                        </GeoLink>
-                        <GeoLink
-                          href="/sobre/estrutura"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Estrutura
-                        </GeoLink>
-                        <GeoLink
-                          href="/parceiros-internacionais"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Parceiros Internacionais
-                        </GeoLink>
-                        <GeoLink
-                          href="/unidades"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Unidades
-                        </GeoLink>
-                        <GeoLink
-                          href="/programas-beneficios/ipog-plus"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Programas e benefícios
-                        </GeoLink>
-                        <GeoLink
-                          href="/corpo-docente"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Corpo docente
-                        </GeoLink>
-                        <GeoLink
-                          href="/central-atendimento"
-                          className="text-base text-foreground hover:text-primary transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          Central de Atendimento
-                        </GeoLink>
+                      {/* Para você que busca por Section */}
+                      <div>
+                        <h2 className="text-xl font-bold mb-4 text-foreground">Para você que busca por</h2>
+                        <div className="flex flex-col gap-3">
+                          <GeoLink
+                            href="/graduacao/jovem-ingresso"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Primeira Graduação
+                          </GeoLink>
+                          <GeoLink
+                            href="/graduacao/segunda-graduacao"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Segunda Graduação
+                          </GeoLink>
+                          <GeoLink
+                            href="/graduacao/transferencia"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Transferência de Instituição
+                          </GeoLink>
+                          <GeoLink
+                            href="/pos-graduacao/primeira-pos"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Primeira Especializacao (Pós)
+                          </GeoLink>
+                          <GeoLink
+                            href="/pos-graduacao/transicao-area"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Mudar de Área
+                          </GeoLink>
+                          <GeoLink
+                            href="/pos-graduacao/lifelong-learning"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Lifelong Learning
+                          </GeoLink>
+                          <GeoLink
+                            href="/extensao/gap-imediato"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Desenvolver uma nova habilidade
+                          </GeoLink>
+                          <GeoLink
+                            href="/extensao/recolocacao"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Curso de extensão para recolocação
+                          </GeoLink>
+                          <GeoLink
+                            href="/extensao/atualizacao"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Atualização Profissional
+                          </GeoLink>
+                        </div>
                       </div>
-                    </div>
-                  </nav>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
 
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Logo className="h-7 w-auto" variant="dark" />
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-1">
-            {menuItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative"
-                onMouseEnter={() => handleOpenMegaMenu(item.title)}
-                onMouseLeave={handleCloseMegaMenu}
-              >
-                <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
-                  {item.title}
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-              </div>
-            ))}
-          </nav>
-
-          {/* Right Actions */}
-          <div className="flex items-center gap-2">
-            {/* LocationIndicator */}
-            <div className="hidden md:block">
-              <LocationIndicator />
-            </div>
-
-            {/* Search */}
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/busca">
-                <Search className="h-5 w-5" />
-                <span className="sr-only">Buscar</span>
-              </Link>
-            </Button>
-
-            <Sheet open={userMenuOpen} onOpenChange={setUserMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <User className="h-5 w-5" />
-                  <span className="sr-only">Área do aluno</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[340px]">
-                <div className="flex flex-col h-full">
-                  {/* Header with home icon */}
-                  <div className="flex items-center mb-8 pt-2">
-                    <GeoLink href="/" onClick={() => setUserMenuOpen(false)}>
-                      <Home className="h-6 w-6 text-foreground" />
-                    </GeoLink>
-                  </div>
-
-                  {/* Acesso Rápido Section */}
-                  <div>
-                    <h2 className="text-2xl font-bold mb-6 text-foreground">Acesso Rápido</h2>
-                    <nav className="flex flex-col gap-4">
-                      <a
-                        href="https://aluno.ipog.edu.br"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <GraduationCap className="h-5 w-5" />
-                        <span>Portal do Aluno</span>
-                      </a>
-                      <a
-                        href="https://professor.ipog.edu.br"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Building2 className="h-5 w-5" />
-                        <span>Portal do Professor</span>
-                      </a>
-                      <a
-                        href="https://coordenador.ipog.edu.br"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Compass className="h-5 w-5" />
-                        <span>Portal do Coordenador</span>
-                      </a>
-                      <a
-                        href="https://biblioteca.ipog.edu.br"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <BookOpen className="h-5 w-5" />
-                        <span>Biblioteca</span>
-                      </a>
+                      {/* Institucional Section */}
+                      <div>
+                        <h2 className="text-xl font-bold mb-4 text-foreground">Institucional</h2>
+                        <div className="flex flex-col gap-3">
+                          <GeoLink
+                            href="/sobre"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Sobre nós
+                          </GeoLink>
+                          <GeoLink
+                            href="/sobre/estrutura"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Estrutura
+                          </GeoLink>
+                          <GeoLink
+                            href="/parceiros-internacionais"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Parceiros Internacionais
+                          </GeoLink>
+                          <GeoLink
+                            href="/unidades"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Unidades
+                          </GeoLink>
+                          <GeoLink
+                            href="/programas-beneficios/ipog-plus"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Programas e benefícios
+                          </GeoLink>
+                          <GeoLink
+                            href="/corpo-docente"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Corpo docente
+                          </GeoLink>
+                          <GeoLink
+                            href="/central-atendimento"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Central de Atendimento
+                          </GeoLink>
+                        </div>
+                      </div>
                     </nav>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </div>
+                </SheetContent>
+              </Sheet>
+            </div>
 
-      {activeMegaMenu && (
-        <div
-          className="absolute left-0 right-0 top-16 border-t bg-background shadow-lg animate-in slide-in-from-top-2 duration-200"
-          onMouseEnter={() => handleOpenMegaMenu(activeMegaMenu)}
-          onMouseLeave={handleCloseMegaMenu}
-        >
-          <div className="mx-auto max-w-7xl px-6 py-8">
-            {menuItems
-              .filter((item) => item.title === activeMegaMenu)
-              .map((item) => (
-                <div key={item.title} className="grid grid-cols-12 gap-8">
-                  {/* Coluna 1: Perfis */}
-                  <div className="col-span-3 space-y-4">
-                    {item.profiles.map((profile) => {
-                      const Icon = profile.icon
-                      return (
-                        <Link
-                          key={profile.title}
-                          href={profile.href}
-                          className="group block rounded-lg bg-muted/40 p-4 transition-all hover:bg-muted hover:shadow-sm"
-                        >
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="space-y-1.5 flex-1">
-                              <div className="flex items-center gap-2">
-                                <Icon className="h-4 w-4 text-muted-foreground" />
-                                <h3 className="font-semibold text-sm leading-none">{profile.title}</h3>
-                              </div>
-                              <p className="text-xs text-muted-foreground leading-relaxed">{profile.description}</p>
-                            </div>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all flex-shrink-0" />
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Logo className="h-7 w-auto" variant="dark" />
+            </Link>
 
-                  {/* Coluna 2: Lista de itens */}
-                  <div className="col-span-5 space-y-1">
-                    {item.items.map((subItem) => {
-                      const Icon = subItem.icon
-                      return (
-                        <Link
-                          key={subItem.title}
-                          href={subItem.href}
-                          className="group flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-muted/50"
-                        >
-                          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-muted/60 group-hover:bg-muted transition-colors">
-                            <Icon className="h-4 w-4 text-muted-foreground" />
-                          </div>
-                          <span className="text-sm font-medium">{subItem.title}</span>
-                        </Link>
-                      )
-                    })}
-                  </div>
-
-                  {/* Coluna 3: Destaque */}
-                  <div className="col-span-4">
-                    <Link
-                      href={item.featured.href}
-                      className="group block h-full rounded-lg bg-muted/30 p-6 transition-all hover:bg-muted/50 hover:shadow-sm"
-                    >
-                      <div className="flex h-full flex-col">
-                        <div className="mb-4 aspect-video w-full rounded-md bg-muted flex items-center justify-center">
-                          <div className="h-16 w-16 rounded-lg bg-muted-foreground/10 flex items-center justify-center">
-                            <GraduationCap className="h-8 w-8 text-muted-foreground" />
-                          </div>
-                        </div>
-                        <div className="space-y-3 flex-1">
-                          <h3 className="text-base font-bold leading-tight">{item.featured.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{item.featured.description}</p>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm font-medium text-primary mt-4 pt-4 border-t">
-                          <span>Saiba mais</span>
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
+            <nav className="hidden md:flex items-center gap-1">
+              {menuItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="relative"
+                  onMouseEnter={() => handleOpenMegaMenu(item.title)}
+                  onMouseLeave={handleCloseMegaMenu}
+                >
+                  <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
+                    {item.title}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
                 </div>
               ))}
+            </nav>
+
+            {/* Right Actions */}
+            <div className="flex items-center gap-2">
+              {/* LocationIndicator */}
+              <div className="hidden md:block">
+                <LocationIndicator />
+              </div>
+
+              {/* Search */}
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="/busca">
+                  <Search className="h-5 w-5" />
+                  <span className="sr-only">Buscar</span>
+                </Link>
+              </Button>
+
+              <Sheet open={userMenuOpen} onOpenChange={setUserMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <User className="h-5 w-5" />
+                    <span className="sr-only">Área do aluno</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[340px]">
+                  <div className="flex flex-col h-full">
+                    {/* Header with home icon */}
+                    <div className="flex items-center mb-8 pt-2">
+                      <GeoLink href="/" onClick={() => setUserMenuOpen(false)}>
+                        <Home className="h-6 w-6 text-foreground" />
+                      </GeoLink>
+                    </div>
+
+                    {/* Acesso Rápido Section */}
+                    <div>
+                      <h2 className="text-2xl font-bold mb-6 text-foreground">Acesso Rápido</h2>
+                      <nav className="flex flex-col gap-4">
+                        <a
+                          href="https://aluno.ipog.edu.br"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <GraduationCap className="h-5 w-5" />
+                          <span>Portal do Aluno</span>
+                        </a>
+                        <a
+                          href="https://professor.ipog.edu.br"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <Building2 className="h-5 w-5" />
+                          <span>Portal do Professor</span>
+                        </a>
+                        <a
+                          href="https://coordenador.ipog.edu.br"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <Compass className="h-5 w-5" />
+                          <span>Portal do Coordenador</span>
+                        </a>
+                        <a
+                          href="https://biblioteca.ipog.edu.br"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <BookOpen className="h-5 w-5" />
+                          <span>Biblioteca</span>
+                        </a>
+                      </nav>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
-      )}
-    </header>
+
+        {activeMegaMenu && (
+          <div
+            className="absolute left-0 right-0 top-16 border-t bg-background shadow-lg animate-in slide-in-from-top-2 duration-200"
+            onMouseEnter={() => handleOpenMegaMenu(activeMegaMenu)}
+            onMouseLeave={handleCloseMegaMenu}
+          >
+            <div className="mx-auto max-w-7xl px-6 py-8">
+              {menuItems
+                .filter((item) => item.title === activeMegaMenu)
+                .map((item) => (
+                  <div key={item.title} className="grid grid-cols-12 gap-8">
+                    {/* Coluna 1: Perfis */}
+                    <div className="col-span-3 space-y-4">
+                      {item.profiles.map((profile) => {
+                        const Icon = profile.icon
+                        return (
+                          <Link
+                            key={profile.title}
+                            href={profile.href}
+                            className="group block rounded-lg bg-muted/40 p-4 transition-all hover:bg-muted hover:shadow-sm"
+                          >
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="space-y-1.5 flex-1">
+                                <div className="flex items-center gap-2">
+                                  <Icon className="h-4 w-4 text-muted-foreground" />
+                                  <h3 className="font-semibold text-sm leading-none">{profile.title}</h3>
+                                </div>
+                                <p className="text-xs text-muted-foreground leading-relaxed">{profile.description}</p>
+                              </div>
+                              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                            </div>
+                          </Link>
+                        )
+                      })}
+                    </div>
+
+                    {/* Coluna 2: Lista de itens */}
+                    <div className="col-span-5 space-y-1">
+                      {item.items.map((subItem) => {
+                        const Icon = subItem.icon
+                        return (
+                          <Link
+                            key={subItem.title}
+                            href={subItem.href}
+                            className="group flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-muted/50"
+                          >
+                            <div className="flex h-9 w-9 items-center justify-center rounded-md bg-muted/60 group-hover:bg-muted transition-colors">
+                              <Icon className="h-4 w-4 text-muted-foreground" />
+                            </div>
+                            <span className="text-sm font-medium">{subItem.title}</span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+
+                    {/* Coluna 3: Destaque */}
+                    <div className="col-span-4">
+                      <Link
+                        href={item.featured.href}
+                        className="group block h-full rounded-lg bg-muted/30 p-6 transition-all hover:bg-muted/50 hover:shadow-sm"
+                      >
+                        <div className="flex h-full flex-col">
+                          <div className="mb-4 aspect-video w-full rounded-md bg-muted flex items-center justify-center">
+                            <div className="h-16 w-16 rounded-lg bg-muted-foreground/10 flex items-center justify-center">
+                              <GraduationCap className="h-8 w-8 text-muted-foreground" />
+                            </div>
+                          </div>
+                          <div className="space-y-3 flex-1">
+                            <h3 className="text-base font-bold leading-tight">{item.featured.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{item.featured.description}</p>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm font-medium text-primary mt-4 pt-4 border-t">
+                            <span>Saiba mais</span>
+                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   )
 }
