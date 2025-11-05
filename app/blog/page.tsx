@@ -23,9 +23,9 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b bg-muted/30">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="mx-auto max-w-3xl text-center">
+      <section className="w-full border-b bg-muted/30">
+        <div className="max-w-screen-xl mx-auto px-4 py-12 md:py-16">
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">Blog IPOG</h1>
             <p className="mt-6 text-pretty text-lg text-muted-foreground md:text-xl">
               Insights, tendências e conhecimento sobre educação, carreira e inovação no ensino superior
@@ -45,11 +45,11 @@ export default function BlogPage() {
 
       {/* Featured Posts */}
       {mainFeatured && (
-        <section className="border-b">
-          <div className="container mx-auto px-4 py-12 md:py-16">
-            <h2 className="mb-8 text-2xl font-bold">Destaques</h2>
+        <section className="w-full border-b bg-background">
+          <div className="max-w-screen-xl mx-auto px-4 py-8 md:py-12">
+            <h2 className="mb-6 md:mb-8 text-2xl font-bold">Destaques</h2>
 
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
               {/* Main Featured */}
               <Link href={`/blog/${mainFeatured.slug}`} className="group">
                 <Card className="overflow-hidden transition-shadow hover:shadow-lg">
@@ -122,13 +122,13 @@ export default function BlogPage() {
       )}
 
       {/* Main Content */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+      <section className="w-full py-8 md:py-12 bg-muted/30">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
             {/* Posts Grid */}
             <div>
-              <h2 className="mb-8 text-2xl font-bold">Todos os artigos</h2>
-              <div className="grid gap-8 md:grid-cols-2">
+              <h2 className="mb-6 md:mb-8 text-2xl font-bold">Todos os artigos</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {regularPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                     <Card className="h-full overflow-hidden transition-shadow hover:shadow-lg">
@@ -168,7 +168,7 @@ export default function BlogPage() {
             </div>
 
             {/* Sidebar */}
-            <aside className="space-y-8">
+            <aside className="space-y-6">
               {/* Categories */}
               <Card>
                 <CardContent className="p-6">
