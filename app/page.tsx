@@ -13,6 +13,7 @@ import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
+import { Award, TrendingUp, Users, Lightbulb } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -67,6 +68,72 @@ export default function HomePage() {
                 A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
                 carreira
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-8 md:py-12 bg-muted/30">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {/* Card 1: Certificação MEC */}
+              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Certificação MEC</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    Diplomas reconhecidos nacionalmente com validade em todo território brasileiro
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: Tradição */}
+              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">+20 anos de tradição</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    Experiência consolidada formando especialistas e líderes de mercado
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3: Networking */}
+              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Networking qualificado</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    Conexões estratégicas com líderes, especialistas e profissionais de destaque
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 4: Metodologia */}
+              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-primary" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Metodologia prática</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    Aprendizado aplicado com cases reais e projetos voltados ao mercado
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
