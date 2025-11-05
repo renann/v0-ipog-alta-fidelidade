@@ -257,7 +257,7 @@ export default function LifelongLearningPage() {
           ]}
         />
         <Beneficios
-          titulo="Vantagens que só quem é IPOG+ tem"
+          title="Vantagens que só quem é IPOG+ tem"
           subtitle=""
           beneficios={[
             {
