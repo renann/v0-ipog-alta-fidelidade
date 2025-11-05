@@ -193,6 +193,15 @@ export default function EnterprisePage() {
                 "Fortalecimento da cultura de inovação, retenção de 85% dos talentos-chave e aumento de 40% na produtividade",
               impacto: "85% de retenção de talentos e +40% de produtividade",
             },
+            {
+              tipo: "video",
+              nome: "Fernanda Oliveira",
+              cargo: "VP de Pessoas - Varejo Nacional",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+              duracao: "3:45",
+              impacto: "Transformação cultural e 92% de satisfação dos colaboradores",
+            },
           ]}
         />
 
