@@ -59,11 +59,11 @@ export default function HomePage() {
 
         <section className="w-full py-6 md:py-8 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
                 IPOG: A escolha inteligente para sua carreira
               </h2>
-              <p className="text-base md:text-lg text-muted-foreground">
+              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
                 A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
                 carreira
               </p>
