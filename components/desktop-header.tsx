@@ -96,6 +96,7 @@ const institucionalItems: MegaMenuItem[] = [
   { title: "Corpo Docente", href: "/corpo-docente", description: "Nossos professores" },
   { title: "Unidades", href: "/unidades", description: "Encontre uma unidade" },
   { title: "Parcerias Internacionais", href: "/parceiros-internacionais", description: "Conexões globais" },
+  { title: "Blog", href: "/blog", description: "Insights e tendências" },
 ]
 
 export function DesktopHeader() {

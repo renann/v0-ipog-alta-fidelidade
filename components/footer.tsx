@@ -105,6 +105,12 @@ export function Footer() {
               Editais
             </GeoLink>
             <GeoLink
+              href="/blog"
+              className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
+            >
+              Blog
+            </GeoLink>
+            <GeoLink
               href="/sobre"
               className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
             >
@@ -223,6 +229,9 @@ export function Footer() {
             </GeoLink>
             <GeoLink href="/editais" className="block text-sm text-zinc-300 hover:text-white transition-colors">
               Editais
+            </GeoLink>
+            <GeoLink href="/blog" className="block text-sm text-zinc-300 hover:text-white transition-colors">
+              Blog
             </GeoLink>
             <GeoLink href="/sobre" className="block text-sm text-zinc-300 hover:text-white transition-colors">
               Institucional
