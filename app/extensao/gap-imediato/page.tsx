@@ -45,8 +45,8 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="Pressão por resultados imediatos?"
-            subtitulo="Nossos cursos são desenhados para gerar impacto rápido. Com aprendizado focado, você aplica o conhecimento imediatamente e justifica seu investimento com evidências."
+            title="Pressão por resultados imediatos?"
+            subtitle="Nossos cursos são desenhados para gerar impacto rápido. Com aprendizado focado, você aplica o conhecimento imediatamente e justifica seu investimento com evidências."
             dores={[
               {
                 icon: <Clock className="h-5 w-5" />,
@@ -117,8 +117,8 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Modalidades
-            titulo="Formatos que entregam resultado rápido"
-            subtitulo="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
+            title="Formatos que entregam resultado rápido"
+            subtitle="Escolha a modalidade que melhor se adapta à sua rotina e necessidade de aplicação imediata"
             modalidades={[
               {
                 badge: "EXTENSÃO",
@@ -166,27 +166,28 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16">
           <ResultadosReais
-            titulo="Profissionais que resolveram desafios técnicos com rapidez"
+            title="Profissionais que resolveram desafios técnicos com rapidez"
             estatisticas={[
               {
-                icon: <Zap className="h-8 w-8" />,
+                icone: <Zap className="h-8 w-8" />,
                 valor: "92%",
                 descricao:
                   "dos profissionais aplicam o conhecimento já na primeira semana, transformando aprendizado em resultado imediato",
               },
               {
-                icon: <TrendingUp className="h-8 w-8" />,
+                icone: <TrendingUp className="h-8 w-8" />,
                 valor: "80%",
                 descricao: "relataram aumento de desempenho no trabalho",
               },
               {
-                icon: <Target className="h-8 w-8" />,
+                icone: <Target className="h-8 w-8" />,
                 valor: "87%",
                 descricao: "resolveram desafio técnico em até 30 dias",
               },
             ]}
             depoimentos={[
               {
+                tipo: "simples",
                 texto:
                   "Precisava implementar uma estratégia de marketing digital urgente. O curso me deu templates prontos e ferramentas práticas. Em 2 semanas já estava aplicando e vendo resultados reais na empresa.",
                 autor: "Carlos Mendes",
@@ -198,19 +199,19 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Aprenda com quem Transforma o Mercado"
-            subtitulo="Especialistas atuantes que trazem cases reais e soluções práticas"
+            title="Aprenda com quem Transforma o Mercado"
+            subtitle="Especialistas atuantes que trazem cases reais e soluções práticas"
             credenciais={[
               {
-                icon: <Users className="h-5 w-5" />,
+                icone: <Users className="h-5 w-5" />,
                 texto: "Metodologia Prática e Interativa",
               },
               {
-                icon: <Award className="h-5 w-5" />,
+                icone: <Award className="h-5 w-5" />,
                 texto: "Professores que são Referência no Mercado",
               },
               {
-                icon: <Building className="h-5 w-5" />,
+                icone: <Building className="h-5 w-5" />,
                 texto: "Certificação que Impulsiona sua Carreira",
               },
             ]}
