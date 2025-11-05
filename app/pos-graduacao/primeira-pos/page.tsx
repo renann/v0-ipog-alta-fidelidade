@@ -210,7 +210,7 @@ const PrimeiraPosContent = dynamic(
               bgColor="bg-background"
             />
             <Trilha
-              titulo="Sua trilha começa aqui"
+              title="Sua trilha começa aqui"
               subtitle="Veja onde sua primeira pós pode te levar"
               etapas={[
                 {
