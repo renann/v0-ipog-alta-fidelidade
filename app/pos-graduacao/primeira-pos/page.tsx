@@ -240,19 +240,19 @@ const PrimeiraPosContent = dynamic(
             />
             <AplicacaoImediataPrimeiraPos />
             <Autoridade
-              titulo="Aprenda com os Profissionais que Lideram o Mercado"
-              subtitulo="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
+              title="Aprenda com os Profissionais que Lideram o Mercado"
+              subtitle="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
               credenciais={[
                 {
-                  icon: <Award className="h-5 w-5" />,
+                  icone: <Award className="h-5 w-5" />,
                   texto: "20+ anos formando especialistas",
                 },
                 {
-                  icon: <Users className="h-5 w-5" />,
+                  icone: <Users className="h-5 w-5" />,
                   texto: "Professores de Mercado",
                 },
                 {
-                  icon: <Building className="h-5 w-5" />,
+                  icone: <Building className="h-5 w-5" />,
                   texto: "Reconhecimento MEC",
                 },
               ]}
