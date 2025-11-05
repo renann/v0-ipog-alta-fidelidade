@@ -22,6 +22,8 @@ interface ModalidadesProps {
 }
 
 export function Modalidades({ title, subtitle, modalidades, backgroundColor = "bg-white" }: ModalidadesProps) {
+  const shouldCenter = modalidades.length <= 2
+
   return (
     <section className={`py-16 md:py-24 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
@@ -33,12 +35,12 @@ export function Modalidades({ title, subtitle, modalidades, backgroundColor = "b
         <div className="max-w-5xl mx-auto">
           <Carousel
             opts={{
-              align: "start",
+              align: shouldCenter ? "center" : "start",
               loop: true,
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className={shouldCenter ? "justify-center" : ""}>
               {modalidades.map((modalidade, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="p-6 flex flex-col h-full min-h-[480px]">
