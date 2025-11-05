@@ -178,8 +178,8 @@ const PrimeiraPosContent = dynamic(
 
             <ROIPrimeiraPos />
             <Empregabilidade
-              titulo="Empregabilidade que transforma carreiras"
-              subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+              title="Empregabilidade que transforma carreiras"
+              subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
               estatisticas={[
                 {
                   icon: <TrendingUp className="h-8 w-8" />,
