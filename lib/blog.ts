@@ -93,6 +93,77 @@ Estudos mostram que profissionais com pós-graduação têm salários até 118% 
     featured: true,
   },
   {
+    slug: "inteligencia-artificial-educacao",
+    title: "Inteligência Artificial na Educação: Personalização em Escala",
+    excerpt: "Como a IA está permitindo experiências de aprendizado personalizadas e adaptativas para cada estudante.",
+    content: `# Inteligência Artificial na Educação
+
+A inteligência artificial está revolucionando a forma como ensinamos e aprendemos. Pela primeira vez na história, é possível oferecer experiências de aprendizado verdadeiramente personalizadas em escala.
+
+## Aprendizado Adaptativo
+
+Sistemas de IA podem analisar o desempenho de cada aluno em tempo real, identificando pontos fortes e fracos, e ajustando o conteúdo e o ritmo de ensino de acordo com as necessidades individuais. Isso maximiza o potencial de aprendizado de cada estudante.
+
+## Feedback Instantâneo e Preciso
+
+Com IA, estudantes recebem feedback imediato sobre seu desempenho, permitindo correções rápidas e aprendizado mais eficiente. Professores também se beneficiam de insights detalhados sobre o progresso da turma.
+
+## Democratização do Acesso
+
+A IA está tornando educação de qualidade mais acessível, oferecendo tutoria personalizada 24/7, tradução automática de conteúdos e adaptação para diferentes estilos de aprendizagem, quebrando barreiras geográficas e socioeconômicas.
+
+## O Papel do Professor
+
+Longe de substituir educadores, a IA os libera de tarefas repetitivas, permitindo que foquem no que fazem de melhor: inspirar, mentorear e desenvolver o pensamento crítico dos alunos.`,
+    coverImage: "/placeholder.svg?height=600&width=1200",
+    author: {
+      name: "Dr. Ricardo Santos",
+      avatar: "/placeholder.svg?height=100&width=100",
+      role: "Especialista em IA Educacional",
+    },
+    publishedAt: "2024-01-20",
+    category: "Inovação",
+    tags: ["Inteligência Artificial", "Tecnologia Educacional", "Personalização"],
+    readingTime: 7,
+    featured: true,
+  },
+  {
+    slug: "networking-profissional-estrategico",
+    title: "Networking Estratégico: Construindo Conexões que Impulsionam Carreiras",
+    excerpt:
+      "Aprenda a construir e manter uma rede de contatos profissionais que realmente faz diferença na sua trajetória.",
+    content: `# Networking Estratégico
+
+Em um mercado cada vez mais conectado, sua rede de contatos pode ser tão importante quanto suas habilidades técnicas. Mas networking eficaz vai muito além de colecionar cartões de visita.
+
+## Qualidade Sobre Quantidade
+
+O networking estratégico foca em construir relacionamentos genuínos e mutuamente benéficos. Não se trata de conhecer milhares de pessoas, mas de cultivar conexões significativas com profissionais que compartilham seus valores e objetivos.
+
+## Onde Construir Sua Rede
+
+Programas de pós-graduação e extensão oferecem ambientes ideais para networking: você interage com profissionais de diversas áreas, em diferentes estágios de carreira, todos comprometidos com desenvolvimento contínuo. Essas conexões frequentemente se transformam em parcerias de longo prazo.
+
+## Mantendo Relacionamentos Ativos
+
+Networking não termina após o primeiro contato. É essencial manter relacionamentos ativos através de interações regulares, compartilhamento de conhecimento e apoio mútuo. Redes sociais profissionais facilitam essa manutenção.
+
+## Retorno do Investimento
+
+Pesquisas mostram que até 85% das vagas são preenchidas através de networking. Além disso, uma rede forte proporciona mentoria, oportunidades de negócio, parcerias e acesso a conhecimento privilegiado do mercado.`,
+    coverImage: "/placeholder.svg?height=600&width=1200",
+    author: {
+      name: "Prof. Marcelo Ferreira",
+      avatar: "/placeholder.svg?height=100&width=100",
+      role: "Consultor de Carreira",
+    },
+    publishedAt: "2024-01-18",
+    category: "Carreira",
+    tags: ["Networking", "Desenvolvimento Profissional", "Relacionamentos"],
+    readingTime: 6,
+    featured: true,
+  },
+  {
     slug: "metodologias-ativas-aprendizagem",
     title: "Metodologias Ativas: O Futuro da Aprendizagem Está Aqui",
     excerpt:
@@ -227,13 +298,13 @@ export const blogCategories: BlogCategory[] = [
     slug: "inovacao",
     name: "Inovação",
     description: "Tendências e novidades em educação e tecnologia",
-    postCount: 2,
+    postCount: 4,
   },
   {
     slug: "carreira",
     name: "Carreira",
     description: "Dicas e insights para desenvolvimento profissional",
-    postCount: 2,
+    postCount: 4,
   },
   {
     slug: "educacao",
