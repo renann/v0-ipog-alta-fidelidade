@@ -35,6 +35,7 @@ export default function HomePage() {
                 href: "/pos-graduacao",
                 size: "large",
                 overlay: true,
+                tagColor: "primary",
               },
               {
                 tag: "Novidade",
@@ -44,6 +45,7 @@ export default function HomePage() {
                 href: "/graduacao",
                 size: "small",
                 overlay: false,
+                tagColor: "secondary",
               },
               {
                 tag: "Evento",
@@ -53,95 +55,104 @@ export default function HomePage() {
                 href: "/eventos",
                 size: "small",
                 overlay: true,
+                tagColor: "wine",
               },
             ]}
           />
         </div>
 
-        <section className="w-full py-6 md:py-8 bg-background">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
-                IPOG: A escolha inteligente para sua carreira
-              </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
-                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
-                carreira
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-8 md:py-12 bg-muted/30">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {/* Card 1: Certificação MEC */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Certificação MEC</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    Diplomas reconhecidos nacionalmente com validade em todo território brasileiro
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 2: Tradição */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">+20 anos de tradição</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    Experiência consolidada formando especialistas e líderes de mercado
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 3: Networking */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Networking qualificado</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    Conexões estratégicas com líderes, especialistas e profissionais de destaque
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 4: Metodologia */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-primary" />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Metodologia prática</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    Aprendizado aplicado com cases reais e projetos voltados ao mercado
-                  </p>
-                </div>
+        <section className="w-full py-12 md:py-16">
+          <div className="max-w-screen-xl mx-auto px-6 md:px-8">
+            <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-12">
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
+                  IPOG: A escolha inteligente para sua carreira
+                </h2>
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+                  A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
+                  carreira
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <CourseSearch
-          title="Ver todos os cursos"
-          description="Busque por área de atuação e descubra os melhores cursos para sua carreira"
-        />
+        <section className="w-full py-12 md:py-16">
+          <div className="max-w-screen-xl mx-auto px-6 md:px-8">
+            <div className="bg-background rounded-[45px_45px_45px_15px] p-8 md:p-12 shadow-sm border border-border">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {/* Card 1: Certificação MEC */}
+                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Award className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Certificação MEC</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      Diplomas reconhecidos nacionalmente com validade em todo território brasileiro
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 2: Tradição */}
+                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">+20 anos de tradição</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      Experiência consolidada formando especialistas e líderes de mercado
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 3: Networking */}
+                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">
+                      Networking qualificado
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      Conexões estratégicas com líderes, especialistas e profissionais de destaque
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 4: Metodologia */}
+                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Lightbulb className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1">Metodologia prática</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      Aprendizado aplicado com cases reais e projetos voltados ao mercado
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="py-8 md:py-12">
+          <CourseSearch
+            title="Ver todos os cursos"
+            description="Busque por área de atuação e descubra os melhores cursos para sua carreira"
+          />
+        </div>
 
         <AssistenteTrilha />
         <QuatroVerticais titulo="Escolha o caminho que combina com sua trajetória" />

@@ -54,9 +54,9 @@ export function CourseSearch({
   }
 
   return (
-    <section className="w-full px-4 py-6">
+    <div className="w-full px-6 md:px-8">
       <div className="max-w-screen-xl mx-auto">
-        <div className="bg-white rounded-2xl p-6 md:p-8 space-y-6">
+        <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-10 space-y-6">
           <div className="space-y-3 md:text-center">
             <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
@@ -69,7 +69,7 @@ export function CourseSearch({
                   variant="outline"
                   role="combobox"
                   aria-expanded={open}
-                  className="flex-1 min-w-0 justify-between h-12 md:h-14 text-base border-gray-200 rounded-xl px-4 bg-transparent"
+                  className="flex-1 min-w-0 justify-between h-12 md:h-14 text-base border-gray-200 rounded-xl px-4 bg-background"
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
                     <Search className="h-5 w-5 text-muted-foreground shrink-0" />
@@ -114,7 +114,7 @@ export function CourseSearch({
 
             <Button
               size="icon"
-              className="shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-xl bg-black hover:bg-black/90"
+              className="shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-xl bg-foreground hover:bg-foreground/90"
               onClick={handleSearch}
             >
               <ArrowRight className="h-5 w-5" />
@@ -145,6 +145,6 @@ export function CourseSearch({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
