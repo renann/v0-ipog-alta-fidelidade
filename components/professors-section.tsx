@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import {
   Carousel,
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
 import { DocenteModal } from "@/components/docente-modal"
+import { ArrowRight } from "lucide-react"
 
 const professors = [
   {
@@ -162,6 +164,26 @@ export function ProfessorsSection() {
                 </Card>
               </CarouselItem>
             ))}
+
+            <CarouselItem className="pl-2 md:pl-4 basis-[70%] md:basis-[35%] lg:basis-[22%]">
+              <Link href="/corpo-docente" className="block h-full">
+                <Card
+                  className="h-full hover:shadow-xl transition-all cursor-pointer overflow-hidden border-0 p-0 bg-[#8A212E] text-white flex items-center justify-center"
+                  style={{ borderRadius: "45px 45px 45px 15px" }}
+                >
+                  <div className="p-8 text-center space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="font-bold text-2xl">Conheça todo o corpo docente</h3>
+                      <p className="text-white/90 text-sm">Mais de 500 professores especialistas atuantes no mercado</p>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-white font-semibold text-lg group">
+                      Ver todos os professores
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </CarouselItem>
           </CarouselContent>
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
