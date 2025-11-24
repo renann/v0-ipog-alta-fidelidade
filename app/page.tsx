@@ -41,10 +41,10 @@ export default function HomePage() {
                 tag: "Novidade",
                 title: "Vestibular IPOG 2025 com bolsas de até 50%",
                 description: "Inscrições abertas para graduação EAD e presencial",
-                illustration: "/placeholder.svg?height=300&width=400",
+                image: "/images/showcase-vestibular.jpg",
                 href: "/graduacao",
                 size: "small",
-                overlay: false,
+                overlay: true,
                 tagColor: "secondary",
               },
               {
