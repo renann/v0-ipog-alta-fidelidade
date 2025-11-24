@@ -107,7 +107,7 @@ export function ProfessorsSection() {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {professors.map((professor) => (
-              <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+              <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[70%] md:basis-[35%] lg:basis-[22%]">
                 <Card
                   className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0 p-0"
                   style={{ borderRadius: "45px 45px 45px 15px" }}
