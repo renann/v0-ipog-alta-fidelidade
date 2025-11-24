@@ -92,7 +92,7 @@ export function ProfessorsSection() {
   const [selectedProfessor, setSelectedProfessor] = useState<(typeof professors)[0] | null>(null)
 
   return (
-    <section className="w-full px-4 py-12 md:py-16">
+    <section className="w-full px-9 py-12 md:py-16">
       <div className="max-w-screen-xl mx-auto">
         <div className="space-y-8">
           <div className="text-center">
@@ -110,11 +110,11 @@ export function ProfessorsSection() {
               {professors.map((professor) => (
                 <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
                   <Card
-                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0"
+                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0 p-0"
                     style={{ borderRadius: "45px 45px 45px 15px" }}
                     onClick={() => setSelectedProfessor(professor)}
                   >
-                    <div className="aspect-square bg-muted relative overflow-hidden">
+                    <div className="aspect-square bg-muted relative">
                       <Image
                         src={professor.foto || "/placeholder.svg"}
                         alt={`Foto de ${professor.name}`}
