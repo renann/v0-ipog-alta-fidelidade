@@ -124,7 +124,7 @@ export function ProfessorsSection() {
           <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
         </div>
         <Carousel
-          className="w-full"
+          className="w-full pb-8"
           setApi={setApi}
           opts={{
             align: "start",
