@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoLifelongLearning } from "@/components/lifelong-learning/metodo-lifelong-learning"
@@ -31,7 +31,7 @@ import {
 export default function LifelongLearningPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -58,8 +58,8 @@ export default function LifelongLearningPage() {
         />
 
         <Dilema
-          titulo="Pouco tempo, muitas responsabilidades — mas a evolução não pode parar"
-          subtitulo="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-benefício de tempo."
+          title="Pouco tempo, muitas responsabilidades — mas a evolução não pode parar"
+          subtitle="Evite conteúdos repetidos e escolha trilhas que ampliem seu portfólio com o melhor custo-benefício de tempo."
           dores={[
             {
               icon: <Clock className="h-5 w-5" />,
@@ -85,7 +85,7 @@ export default function LifelongLearningPage() {
         <MetodoLifelongLearning />
 
         <Modalidades
-          titulo="Escolha a modalidade que se encaixa na sua rotina"
+          title="Escolha a modalidade que se encaixa na sua rotina"
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -167,7 +167,8 @@ export default function LifelongLearningPage() {
         />
 
         <Trilha
-          titulo="Sua trilha contínua, sem retrabalho"
+          title="Sua trilha contínua, sem retrabalho"
+          subtitle="Evolução escalável com aproveitamento de estudos anteriores"
           etapas={[
             {
               titulo: "Diagnóstico IPOG+",
@@ -193,7 +194,7 @@ export default function LifelongLearningPage() {
           backgroundColor="bg-muted/30"
         />
         <Empregabilidade
-          titulo="Evolução que aparece no cargo e na remuneração"
+          title="Evolução que aparece no cargo e na remuneração"
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -256,7 +257,7 @@ export default function LifelongLearningPage() {
           ]}
         />
         <Beneficios
-          titulo="Vantagens que só quem é IPOG+ tem"
+          title="Vantagens que só quem é IPOG+ tem"
           subtitle=""
           beneficios={[
             {

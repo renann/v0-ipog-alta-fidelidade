@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -77,7 +77,7 @@ function SearchResultsContent() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb Section */}
         <section className="w-full py-4">

@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Autoridade } from "@/components/autoridade"
@@ -15,7 +15,7 @@ export default function HistoriaPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
+      <HomeHeader />
 
       {/* Header Contextual */}
       <section className="w-full py-8 md:py-12 bg-background">
@@ -65,8 +65,8 @@ export default function HistoriaPage() {
 
       {/* Nossos Líderes */}
       <Autoridade
-        titulo="Nossos líderes"
-        subtitulo="Conheça as pessoas que lideram a transformação educacional no IPOG"
+        title="Nossos líderes"
+        subtitle="Conheça as pessoas que lideram a transformação educacional no IPOG"
         credenciais={[
           {
             icone: <Award className="w-5 h-5 text-primary" />,
@@ -109,8 +109,8 @@ export default function HistoriaPage() {
 
       {/* Os 3 Pilares do IPOG */}
       <Beneficios
-        titulo="Os 3 Pilares do IPOG"
-        subtitulo="Nossos valores fundamentais que guiam cada decisão e ação institucional"
+        title="Os 3 Pilares do IPOG"
+        subtitle="Nossos valores fundamentais que guiam cada decisão e ação institucional"
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,

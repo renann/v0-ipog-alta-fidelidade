@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoSegundaGraduacao } from "@/components/segunda-graduacao/metodo-segunda-graduacao"
@@ -18,7 +18,7 @@ import { Empregabilidade } from "@/components/empregabilidade"
 export default function SegundaGraduacaoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -219,7 +219,7 @@ export default function SegundaGraduacaoPage() {
             },
           ]}
           tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
-          bgColor="bg-muted/30"
+          backgroundColor="bg-muted/30"
         />
         <FormasIngresso />
         <AcaoFinal

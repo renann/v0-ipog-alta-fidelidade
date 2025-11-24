@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
@@ -14,7 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function CompliancePage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -129,8 +129,8 @@ export default function CompliancePage() {
         />
 
         <Empregabilidade
-          titulo="Impacto na carreira"
-          subtitulo="Profissionais de compliance são essenciais em todas as organizações modernas."
+          title="Impacto na carreira"
+          subtitle="Profissionais de compliance são essenciais em todas as organizações modernas."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -157,10 +157,27 @@ export default function CompliancePage() {
             "Mentorias com especialistas em compliance",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto: "O curso me capacitou para estruturar o programa de compliance da empresa.",
-            autor: "Aluno IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto: "O curso me capacitou para estruturar o programa de compliance da empresa.",
+              autor: "Aluno IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Aprendi a implementar controles internos eficazes e reduzir riscos corporativos significativamente.",
+              autor: "Maria Santos",
+              cargo: "Compliance Officer",
+            },
+            {
+              tipo: "video",
+              nome: "Ricardo Oliveira",
+              cargo: "Gerente de Compliance",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",

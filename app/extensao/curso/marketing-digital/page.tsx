@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
@@ -15,7 +15,7 @@ import { Autoridade } from "@/components/autoridade"
 export default function MarketingDigitalPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -98,8 +98,8 @@ export default function MarketingDigitalPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que comprovam a excelência IPOG"
-          subtitulo="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
+          title="Resultados que comprovam a excelência IPOG"
+          subtitle="Dados reais de uma instituição que transforma carreiras há mais de 20 anos"
           estatisticas={[
             {
               icon: <Award className="h-8 w-8" />,
@@ -126,11 +126,28 @@ export default function MarketingDigitalPage() {
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
-            autor: "Profissional de Marketing, Aluno IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "O curso foi um divisor de águas. As estratégias de funil e tráfego pago que aprendi foram aplicadas imediatamente, e os resultados apareceram na primeira semana. É conhecimento prático que gera retorno rápido.",
+              autor: "Profissional de Marketing, Aluno IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Aumentei o ROI das campanhas em 150% aplicando as técnicas do curso. Investimento que se pagou rapidamente.",
+              autor: "Daniela Souza",
+              cargo: "Gestora de Tráfego",
+            },
+            {
+              tipo: "video",
+              nome: "Rafael Santos",
+              cargo: "Especialista em Marketing Digital",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
@@ -140,8 +157,8 @@ export default function MarketingDigitalPage() {
         />
 
         <Trilha
-          titulo="DISCIPLINAS"
-          subtitulo="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
+          title="DISCIPLINAS"
+          subtitle="Uma grade curricular completa para você dominar as frentes que mais geram resultado no ambiente digital."
           etapas={[
             {
               titulo: "Máquina de Vendas 5.0",
@@ -305,8 +322,8 @@ export default function MarketingDigitalPage() {
         </section>
 
         <Autoridade
-          titulo="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
-          subtitulo="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
+          title="Aprenda com Profissionais que Gerenciam Milhões em Tráfego Pago"
+          subtitle="Professores com experiência em agências digitais e gestão de campanhas de grandes marcas."
           credenciais={[
             {
               icon: <Award className="h-5 w-5" />,

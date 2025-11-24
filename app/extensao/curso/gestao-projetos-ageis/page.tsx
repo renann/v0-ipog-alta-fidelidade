@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
@@ -13,7 +13,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function GestaoProjetosAgeisPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -145,8 +145,8 @@ export default function GestaoProjetosAgeisPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que Falam por Si"
-          subtitulo="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
+          title="Resultados que Falam por Si"
+          subtitle="Profissionais com certificação em metodologias ágeis têm maior empregabilidade e salários mais altos"
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -173,10 +173,27 @@ export default function GestaoProjetosAgeisPage() {
             "Acesso a comunidade de gestores ágeis",
             "Mentoria com especialistas certificados",
           ]}
-          depoimento={{
-            texto: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
-            autor: "Aluno IPOG - Gestão de Projetos",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto: "Implementei Scrum na minha equipe em 2 semanas e a produtividade aumentou 40%.",
+              autor: "Aluno IPOG - Gestão de Projetos",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "O curso me deu as ferramentas para transformar a gestão de projetos da empresa. Resultados visíveis em 30 dias.",
+              autor: "Beatriz Almeida",
+              cargo: "Scrum Master",
+            },
+            {
+              tipo: "video",
+              nome: "Thiago Ferreira",
+              cargo: "Agile Coach",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Falar com um Consultor",
             onClick: "openAssistantForConsultor",
@@ -186,8 +203,8 @@ export default function GestaoProjetosAgeisPage() {
         />
 
         <Trilha
-          titulo="Conteúdo Programático"
-          subtitulo="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
+          title="Conteúdo Programático"
+          subtitle="Aprenda na prática as metodologias ágeis mais utilizadas no mercado"
           etapas={[
             {
               titulo: "Fundamentos da Gestão Ágil",

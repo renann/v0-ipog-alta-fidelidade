@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -11,7 +11,7 @@ import Footer from "@/components/footer"
 export default function CalendarioAcademicoPage() {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb + Title Section */}
         <section className="w-full bg-white py-8 md:py-12">

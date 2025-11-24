@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -15,7 +15,7 @@ export default function SobrePage() {
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <Header />
+      <HomeHeader />
 
       {/* Breadcrumb + Page Title */}
       <section className="w-full py-8 md:py-12">
@@ -242,8 +242,8 @@ export default function SobrePage() {
 
       {/* Nosso Método e Diferenciais */}
       <Beneficios
-        titulo="Nosso método e diferenciais"
-        subtitulo="O que nos torna referência em educação de qualidade"
+        title="Nosso método e diferenciais"
+        subtitle="O que nos torna referência em educação de qualidade"
         beneficios={[
           {
             icone: <Target className="w-8 h-8 text-primary" />,

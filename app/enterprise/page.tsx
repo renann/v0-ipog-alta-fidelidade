@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { Trilha } from "@/components/trilha"
@@ -21,7 +21,7 @@ export default function EnterprisePage() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -76,8 +76,8 @@ export default function EnterprisePage() {
 
         {/* Método Enterprise - 6DS */}
         <Trilha
-          titulo="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
-          subtitulo="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
+          title="METODOLOGIA 6DS E A CHANCELA IPOG: A FÓRMULA PARA O IMPACTO REAL."
+          subtitle="Uma jornada de desenvolvimento corporativo que alinha diagnóstico, implementação e mensuração contínua para garantir performance."
           bgColor="bg-background"
           etapas={[
             {
@@ -192,6 +192,15 @@ export default function EnterprisePage() {
               depois:
                 "Fortalecimento da cultura de inovação, retenção de 85% dos talentos-chave e aumento de 40% na produtividade",
               impacto: "85% de retenção de talentos e +40% de produtividade",
+            },
+            {
+              tipo: "video",
+              nome: "Fernanda Oliveira",
+              cargo: "VP de Pessoas - Varejo Nacional",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+              duracao: "3:45",
+              impacto: "Transformação cultural e 92% de satisfação dos colaboradores",
             },
           ]}
         />

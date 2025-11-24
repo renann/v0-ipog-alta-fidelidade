@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { Jornadas } from "@/components/jornadas"
@@ -36,7 +36,7 @@ import { openAssistantForConsultor } from "@/lib/assistant-events"
 export default function PosGraduacaoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -273,6 +273,12 @@ export default function PosGraduacaoPage() {
               cargo: "MBA em Gestão - Turma 2023",
             },
             {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Juliana Santos",
+              cargo: "Especialização em Marketing Digital - Turma 2023",
+            },
+            {
               tipo: "simples",
               texto:
                 "A especialização em Psicologia Clínica me deu as ferramentas necessárias para atuar com segurança e competência. Networking de alto valor.",
@@ -317,8 +323,8 @@ export default function PosGraduacaoPage() {
               area: "Neuropsicologia",
             },
           ]}
-          titleProfessores="Conheça alguns de nossos professores executivos"
-          bgColor="bg-muted/30"
+          tituloProfessores="Conheça alguns de nossos professores executivos"
+          backgroundColor="bg-muted/30"
         />
 
         <AcaoFinal

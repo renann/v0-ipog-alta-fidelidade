@@ -210,6 +210,13 @@ export function Header({ hideMenu = false, onOpenLocationDialog }: HeaderProps) 
                           Corpo docente
                         </GeoLink>
                         <GeoLink
+                          href="/blog"
+                          className="text-base text-foreground hover:text-primary transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          Blog
+                        </GeoLink>
+                        <GeoLink
                           href="/central-atendimento"
                           className="text-base text-foreground hover:text-primary transition-colors"
                           onClick={() => setOpen(false)}

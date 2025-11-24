@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Footer } from "@/components/footer"
 import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
@@ -12,11 +12,12 @@ import { CtaFinal } from "@/components/cta-final"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
+import { ResultadosReais } from "@/components/resultados-reais"
 
 export default function IntervencaoAbaPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -132,6 +133,53 @@ export default function IntervencaoAbaPage() {
             texto: "Fale com um Consultor de Carreira",
           }}
           bgColor="bg-white"
+        />
+        <ResultadosReais
+          title="Psicólogos que se tornaram referência em ABA"
+          subtitle="Conheça profissionais que transformaram suas carreiras com a especialização em Intervenção ABA."
+          estatisticas={[
+            {
+              icone: <TrendingUp className="w-12 h-12 text-primary" />,
+              valor: "85%",
+              label: "Promovidos",
+              descricao: "Em até 7 meses após conclusão",
+            },
+            {
+              icone: <Users className="w-12 h-12 text-primary" />,
+              valor: "+38%",
+              label: "Aumento salarial",
+              descricao: "Média após especialização",
+            },
+            {
+              icone: <Award className="w-12 h-12 text-primary" />,
+              valor: "93%",
+              label: "Satisfação",
+              descricao: "Recomendam o curso",
+            },
+          ]}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "A especialização em ABA me deu segurança para atuar com casos complexos de TEA. Hoje tenho minha própria clínica e uma lista de espera de 3 meses.",
+              nome: "Dra. Patricia Almeida",
+              cargo: "Psicóloga Clínica Especialista em ABA",
+            },
+            {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Dr. Ricardo Santos",
+              cargo: "Coordenador de Equipe ABA",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "O curso me preparou para supervisionar equipes e desenvolver programas de intervenção eficazes. Minha carreira deu um salto.",
+              nome: "Dra. Juliana Costa",
+              cargo: "Supervisora Clínica em ABA",
+            },
+          ]}
+          corFundo="bg-muted/30"
         />
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">

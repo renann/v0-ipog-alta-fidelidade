@@ -1,5 +1,5 @@
 "use client"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodologiaUnificada } from "@/components/metodologia-unificada"
@@ -19,7 +19,7 @@ import { openAssistantForConsultor } from "@/lib/assistant-events"
 export default function AtualizacaoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -47,8 +47,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Dilema
-            titulo="O mercado não espera. Você está acompanhando?"
-            subtitulo="Mantenha sua relevância e vantagem competitiva com atualização contínua"
+            title="O mercado não espera. Você está acompanhando?"
+            subtitle="Mantenha sua relevância e vantagem competitiva com atualização contínua"
             dores={[
               {
                 icon: <Clock className="h-5 w-5" />,
@@ -196,8 +196,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Modalidades
-            titulo="Formatos que se adaptam à sua rotina"
-            subtitulo="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
+            title="Formatos que se adaptam à sua rotina"
+            subtitle="Escolha a modalidade que melhor se encaixa no seu ritmo de trabalho e atualização"
             modalidades={[
               {
                 badge: "EXTENSÃO",
@@ -245,8 +245,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Trilha
-            titulo="Sua jornada de atualização contínua"
-            subtitulo="Evolua de forma estruturada e mantenha-se sempre à frente"
+            title="Sua jornada de atualização contínua"
+            subtitle="Evolua de forma estruturada e mantenha-se sempre à frente"
             etapas={[
               {
                 numero: 1,
@@ -293,8 +293,8 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Empregabilidade
-            titulo="Profissionais atualizados conquistam mais"
-            subtitulo="Dados reais de quem mantém a vantagem competitiva com o IPOG"
+            title="Profissionais atualizados conquistam mais"
+            subtitle="Dados reais de quem mantém a vantagem competitiva com o IPOG"
             estatisticas={[
               {
                 icone: <TrendingUp className="h-8 w-8" />,
@@ -321,7 +321,7 @@ export default function AtualizacaoPage() {
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <DepoimentosDeTexto
             titulo="Resultados Reais na Carreira"
-            subtitulo="Histórias reais de quem escolheu a atualização contínua"
+            subtitle="Histórias reais de quem escolheu a atualização contínua"
             depoimentos={[
               {
                 nome: "Mariana Costa",
@@ -353,19 +353,19 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16">
           <Autoridade
-            titulo="Aprenda com Quem Lidera o Mercado"
-            subtitulo="Professores atuantes que trazem tendências e inovações do mercado"
+            title="Aprenda com Quem Lidera o Mercado"
+            subtitle="Professores atuantes que trazem tendências e inovações do mercado"
             credenciais={[
               {
-                icon: <Lightbulb className="h-5 w-5" />,
+                icone: <Lightbulb className="h-5 w-5" />,
                 texto: "Especialistas em Tendências e Inovação",
               },
               {
-                icon: <Award className="h-5 w-5" />,
+                icone: <Award className="h-5 w-5" />,
                 texto: "Conteúdo Autoral Exclusivo",
               },
               {
-                icon: <Building className="h-5 w-5" />,
+                icone: <Building className="h-5 w-5" />,
                 texto: "Líderes em Empresas de Tecnologia",
               },
             ]}

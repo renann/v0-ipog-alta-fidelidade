@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -12,7 +12,7 @@ import Footer from "@/components/footer"
 export default function CorpoDocentePage() {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb Section */}
         <section className="w-full py-4">
@@ -45,7 +45,7 @@ export default function CorpoDocentePage() {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold mb-4">Buscar por nome</h2>
-                  <form action="/sobre/corpo-docente/busca" method="get" className="flex gap-2">
+                  <form action="/corpo-docente/busca" method="get" className="flex gap-2">
                     <div className="relative flex-1">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                       <Input
@@ -67,7 +67,7 @@ export default function CorpoDocentePage() {
               <Card>
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold mb-4">Buscar por área</h2>
-                  <form action="/sobre/corpo-docente/busca" method="get" className="flex gap-2">
+                  <form action="/corpo-docente/busca" method="get" className="flex gap-2">
                     <Select name="area" required>
                       <SelectTrigger className="flex-1">
                         <SelectValue placeholder="Selecione uma área" />

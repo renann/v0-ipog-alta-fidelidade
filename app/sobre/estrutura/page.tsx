@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent } from "@/components/ui/card"
@@ -127,7 +127,7 @@ export default function EstruturaPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
+      <HomeHeader />
 
       {/* Header Contextual */}
       <section className="w-full py-12 md:py-16 bg-background">

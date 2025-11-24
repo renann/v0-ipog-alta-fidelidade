@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { Trilha } from "@/components/trilha"
@@ -39,7 +39,7 @@ export default function CeoPage() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen">
         <BreadcrumbWithItems
           items={[{ label: "Início", href: "/" }, { label: "Enterprise", href: "/enterprise" }, { label: "CEO" }]}
@@ -66,8 +66,8 @@ export default function CeoPage() {
 
         {/* Dilema do CEO */}
         <Dilema
-          titulo="O desafio das organizações: ROI da educação corporativa"
-          subtitulo="A velocidade do mercado exige líderes preparados e equipes alinhadas — mas o ROI da educação corporativa ainda é difícil de comprovar"
+          title="O desafio das organizações: ROI da educação corporativa"
+          subtitle="A velocidade do mercado exige líderes preparados e equipes alinhadas — mas o ROI da educação corporativa ainda é difícil de comprovar"
           dores={[
             {
               icon: <TrendingDown className="w-6 h-6" />,
@@ -108,8 +108,8 @@ export default function CeoPage() {
             </div>
 
             <Trilha
-              titulo="Nossa Jornada para o Impacto Estratégico"
-              subtitulo=""
+              title="Nossa Jornada para o Impacto Estratégico"
+              subtitle=""
               etapas={[
                 {
                   numero: "1",
@@ -152,8 +152,8 @@ export default function CeoPage() {
             </div>
 
             <Modalidades
-              titulo="Soluções corporativas com impacto estratégico"
-              subtitulo="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
+              title="Soluções corporativas com impacto estratégico"
+              subtitle="Programas customizados para diferentes necessidades de desenvolvimento organizacional"
               modalidades={[
                 {
                   badge: "MBA EXECUTIVO",
@@ -198,8 +198,8 @@ export default function CeoPage() {
 
         {/* Modalidades com Impacto Estratégico */}
         <Beneficios
-          titulo="Formatos que fortalecem cultura e comprovam resultados"
-          subtitulo="Escolha a modalidade que melhor se adapta à estratégia e cultura da sua organização"
+          title="Formatos que fortalecem cultura e comprovam resultados"
+          subtitle="Escolha a modalidade que melhor se adapta à estratégia e cultura da sua organização"
           corFundo="bg-muted/30"
           beneficios={[
             {
@@ -279,8 +279,8 @@ export default function CeoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Empregabilidade
-            titulo="Impacto Estratégico Mensurável"
-            subtitulo="Empresas que transformaram sua cultura de liderança com IPOG"
+            title="Impacto Estratégico Mensurável"
+            subtitle="Empresas que transformaram sua cultura de liderança com IPOG"
             estatisticas={[
               {
                 icon: <TrendingUp className="w-8 h-8" />,
@@ -336,8 +336,8 @@ export default function CeoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <Autoridade
-            titulo="Seu Time Aprenderá com Executivos que Já Enfrentaram os seus Desafios"
-            subtitulo="Professores de mercado, cases corporativos e presença nacional. Mais de 500 empresas já transformaram sua cultura"
+            title="Seu Time Aprenderá com Executivos que Já Enfrentaram os seus Desafios"
+            subtitle="Professores de mercado, cases corporativos e presença nacional. Mais de 500 empresas já transformaram sua cultura"
             credenciais={[
               { icone: <Award className="w-6 h-6" />, texto: "MEC - Ministério da Educação" },
               { icone: <CheckCircle2 className="w-6 h-6" />, texto: "ISO 9001 - Gestão da Qualidade" },
@@ -366,7 +366,7 @@ export default function CeoPage() {
 
         {/* Ação Final */}
         <AcaoFinal
-          titulo="Agende uma Sessão Estratégica e Desenhe o Futuro da sua Liderança."
+          title="Agende uma Sessão Estratégica e Desenhe o Futuro da sua Liderança."
           descricao="Solicite um diagnóstico gratuito e descubra como a educação corporativa pode acelerar a performance da sua empresa"
           botaoPrimario={{
             texto: "Solicitar diagnóstico corporativo",

@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoExtensao } from "@/components/extensao/metodo-extensao"
@@ -19,7 +19,7 @@ import { openAssistantForConsultor } from "@/lib/assistant-events"
 export default function ExtensaoPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -124,7 +124,7 @@ export default function ExtensaoPage() {
                 buttonText: "Ver cursos de Extensão - Presencial",
               },
             ]}
-            bgColor="bg-muted/30"
+            backgroundColor="bg-muted/30"
           />
         </section>
 
@@ -255,6 +255,13 @@ export default function ExtensaoPage() {
                 impacto:
                   "O projeto prático do curso virou meu principal diferencial na entrevista. Consegui a vaga mostrando o que eu era capaz de fazer.",
               },
+              {
+                tipo: "video",
+                nome: "Ana Paula Rodrigues",
+                cargo: "Gestora de Projetos",
+                videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                thumbnail: "/placeholder.svg?height=400&width=600",
+              },
             ]}
           />
         </section>
@@ -298,7 +305,7 @@ export default function ExtensaoPage() {
                 bio: "Consultor em conformidade e gestão de riscos para empresas nacionais",
               },
             ]}
-            bgColor="bg-muted/30"
+            backgroundColor="bg-muted/30"
           />
         </section>
 

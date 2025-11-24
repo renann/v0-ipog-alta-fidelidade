@@ -1,6 +1,6 @@
 "use client"
 
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoPrimeiraPos } from "@/components/primeira-pos/metodo-primeira-pos"
@@ -32,7 +32,7 @@ const PrimeiraPosContent = dynamic(
 
       return (
         <div className="min-h-screen bg-background">
-          <Header />
+          <HomeHeader />
           <main className="w-full">
             <div className="w-full">
               <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -59,8 +59,8 @@ const PrimeiraPosContent = dynamic(
             />
 
             <Dilema
-              titulo="Medo de investir e não ver retorno na carreira?"
-              subtitulo="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
+              title="Medo de investir e não ver retorno na carreira?"
+              subtitle="Você quer se especializar, mas teme investir tempo e dinheiro sem resultado concreto"
               dores={[
                 {
                   icon: <DollarSign className="h-5 w-5" />,
@@ -90,8 +90,8 @@ const PrimeiraPosContent = dynamic(
             <MetodoPrimeiraPos />
 
             <Modalidades
-              titulo="Compare as modalidades e escolha a que mais combina com você"
-              subtitulo="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
+              title="Compare as modalidades e escolha a que mais combina com você"
+              subtitle="A mesma especialização de excelência, com diferentes formatos — escolha pelo seu ritmo, rotina e objetivos profissionais."
               modalidades={[
                 {
                   badge: "PÓS-GRADUAÇÃO",
@@ -176,8 +176,8 @@ const PrimeiraPosContent = dynamic(
 
             <ROIPrimeiraPos />
             <Empregabilidade
-              titulo="Empregabilidade que transforma carreiras"
-              subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+              title="Empregabilidade que transforma carreiras"
+              subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
               estatisticas={[
                 {
                   icon: <TrendingUp className="h-8 w-8" />,
@@ -208,8 +208,8 @@ const PrimeiraPosContent = dynamic(
               bgColor="bg-background"
             />
             <Trilha
-              titulo="Sua trilha começa aqui"
-              subtitulo="Veja onde sua primeira pós pode te levar"
+              title="Sua trilha começa aqui"
+              subtitle="Veja onde sua primeira pós pode te levar"
               etapas={[
                 {
                   numero: "1",
@@ -233,26 +233,24 @@ const PrimeiraPosContent = dynamic(
                   descricao: "Evolução contínua e comunidade Alumni+",
                 },
               ]}
-              botaoCta={{
-                texto: "Monte sua trilha personalizada",
-                onClick: handleConsultorClick,
-              }}
+              textoBotao="Monte sua trilha personalizada"
+              onClickBotao={handleConsultorClick}
             />
             <AplicacaoImediataPrimeiraPos />
             <Autoridade
-              titulo="Aprenda com os Profissionais que Lideram o Mercado"
-              subtitulo="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
+              title="Aprenda com os Profissionais que Lideram o Mercado"
+              subtitle="Nosso corpo docente não apenas ensina, mas atua, inova e transforma o mercado. Tenha acesso direto a quem faz a diferença."
               credenciais={[
                 {
-                  icon: <Award className="h-5 w-5" />,
+                  icone: <Award className="h-5 w-5" />,
                   texto: "20+ anos formando especialistas",
                 },
                 {
-                  icon: <Users className="h-5 w-5" />,
+                  icone: <Users className="h-5 w-5" />,
                   texto: "Professores de Mercado",
                 },
                 {
-                  icon: <Building className="h-5 w-5" />,
+                  icone: <Building className="h-5 w-5" />,
                   texto: "Reconhecimento MEC",
                 },
               ]}
@@ -278,46 +276,53 @@ const PrimeiraPosContent = dynamic(
               ]}
             />
             <ResultadosReais
-              titulo="A Prova Real do Impacto IPOG"
-              subtitulo="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
+              title="A Prova Real do Impacto IPOG"
+              subtitle="Veja como nossos especialistas transformam conhecimento em avanço profissional com resultados comprovados."
               estatisticas={[
                 {
-                  icon: <TrendingUp className="h-8 w-8" />,
+                  icone: <TrendingUp className="h-8 w-8" />,
                   valor: "87%",
                   descricao: "promovidos ou recolocados em 12 meses",
                 },
                 {
-                  icon: <Clock className="h-8 w-8" />,
+                  icone: <Clock className="h-8 w-8" />,
                   valor: "6-9 meses",
                   descricao: "tempo médio para promoção",
                 },
                 {
-                  icon: <Briefcase className="h-8 w-8" />,
+                  icone: <Briefcase className="h-8 w-8" />,
                   valor: "+35%",
                   descricao: "aumento salarial médio",
                 },
                 {
-                  icon: <Award className="h-8 w-8" />,
+                  icone: <Award className="h-8 w-8" />,
                   valor: "92%",
                   descricao: "recomendam a especialização",
                 },
               ]}
               depoimentos={[
                 {
+                  tipo: "simples",
                   nome: "Ana Paula Silva",
                   cargo: "Coordenadora de Projetos",
                   texto:
                     "A pós-graduação IPOG foi decisiva para minha primeira promoção. Em 3 meses já estava aplicando o conteúdo no meu trabalho.",
                 },
                 {
+                  tipo: "video",
+                  videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+                  nome: "Roberto Almeida",
+                  cargo: "Gerente de Operações",
+                },
+                {
+                  tipo: "simples",
                   nome: "Carlos Eduardo",
                   cargo: "Analista Sênior",
                   texto:
                     "O networking e a qualidade dos professores fizeram toda a diferença. Consegui minha promoção em 6 meses.",
                 },
               ]}
-              tipoDepoimento="simples"
-              bgColor="bg-muted/30"
+              corFundo="bg-muted/30"
             />
             <AcaoFinal
               titulo="A escolha que conecta você ao sucesso."

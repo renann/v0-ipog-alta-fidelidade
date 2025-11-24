@@ -8,6 +8,7 @@ import { VirtualAssistant } from "@/components/virtual-assistant"
 import { Toaster } from "@/components/ui/toaster"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { LocationDialog } from "@/components/location-dialog"
+import { GeoLocationProvider } from "@/hooks/use-geo-location"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,14 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <ScrollToTop />
-        {children}
-        <Analytics />
-        <Toaster />
-        <VirtualAssistant />
-        <Suspense fallback={null}>
-          <LocationDialog />
-        </Suspense>
+        <GeoLocationProvider>
+          <ScrollToTop />
+          {children}
+          <Analytics />
+          <Toaster />
+          <VirtualAssistant />
+          <Suspense fallback={null}>
+            <LocationDialog />
+          </Suspense>
+        </GeoLocationProvider>
       </body>
     </html>
   )

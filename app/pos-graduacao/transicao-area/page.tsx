@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Dilema } from "@/components/dilema"
 import { MetodoTransicaoArea } from "@/components/transicao-area/metodo-transicao-area"
@@ -11,13 +11,14 @@ import { CasesRecolocacao } from "@/components/transicao-area/cases-recolocacao"
 import { MentoriaNetworking } from "@/components/transicao-area/mentoria-networking"
 import { AcaoFinal } from "@/components/acao-final"
 import { Footer } from "@/components/footer"
-import { ArrowRightLeft, Users, Target, AlertCircle, MapPin, Clock, TrendingUp, Briefcase } from "lucide-react"
+import { ArrowRightLeft, Users, Target, AlertCircle, MapPin, Clock, TrendingUp, Briefcase, Award } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
+import { ResultadosReais } from "@/components/resultados-reais"
 
 export default function TransicaoAreaPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -44,8 +45,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Dilema
-          titulo="A segurança que você precisa para dar o próximo passo"
-          subtitulo="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
+          title="A segurança que você precisa para dar o próximo passo"
+          subtitle="O medo de recomeçar do zero, a insegurança sobre a nova área e a falta de rede de contatos são barreiras reais. Mas é possível fazer essa transição com segurança, apoio e resultados concretos."
           dores={[
             {
               icon: <AlertCircle className="h-5 w-5" />,
@@ -70,8 +71,8 @@ export default function TransicaoAreaPage() {
         <MetodoTransicaoArea />
 
         <Modalidades
-          titulo="Encontre a modalidade ideal para sua jornada"
-          subtitulo="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
+          title="Encontre a modalidade ideal para sua jornada"
+          subtitle="A mesma especialização de excelência, com diferentes formatos para se adaptar ao seu momento de mudança."
           modalidades={[
             {
               badge: "PÓS-GRADUAÇÃO",
@@ -155,8 +156,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Trilha
-          titulo="Uma jornada estruturada para sua nova carreira"
-          subtitulo="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
+          title="Uma jornada estruturada para sua nova carreira"
+          subtitle="Um caminho estruturado desde o nivelamento até a recolocação na sua nova área."
           etapas={[
             {
               numero: "1",
@@ -197,8 +198,8 @@ export default function TransicaoAreaPage() {
         />
 
         <Empregabilidade
-          titulo="Resultados que comprovam: sua transição é nosso compromisso."
-          subtitulo="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
+          title="Resultados que comprovam: sua transição é nosso compromisso."
+          subtitle="Indicadores de empregabilidade e serviços de carreira para aumentar sua empregabilidade."
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -227,6 +228,53 @@ export default function TransicaoAreaPage() {
         <ROITransicaoArea />
         <CasesRecolocacao />
         <MentoriaNetworking />
+        <ResultadosReais
+          title="Histórias de transição bem-sucedidas"
+          subtitle="Conheça profissionais que mudaram de carreira com segurança e método através do IPOG."
+          estatisticas={[
+            {
+              icone: <TrendingUp className="w-12 h-12 text-primary" />,
+              valor: "78%",
+              label: "Transição completa",
+              descricao: "Em até 12 meses após conclusão",
+            },
+            {
+              icone: <Users className="w-12 h-12 text-primary" />,
+              valor: "92%",
+              label: "Satisfação",
+              descricao: "Recomendam a especialização",
+            },
+            {
+              icone: <Award className="w-12 h-12 text-primary" />,
+              valor: "+30%",
+              label: "Aumento salarial",
+              descricao: "Média na nova área",
+            },
+          ]}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "Migrei de engenharia para gestão de projetos com total segurança. A mentoria e o networking do IPOG foram fundamentais.",
+              nome: "Fernando Costa",
+              cargo: "Gerente de Projetos - Ex-Engenheiro Civil",
+            },
+            {
+              tipo: "video",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              nome: "Mariana Oliveira",
+              cargo: "Analista de RH - Ex-Administradora",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "A transição de área parecia impossível, mas o método IPOG me deu a estrutura e confiança necessárias. Hoje atuo na área dos sonhos.",
+              nome: "Ricardo Santos",
+              cargo: "Consultor de Marketing - Ex-Contador",
+            },
+          ]}
+          corFundo="bg-muted/30"
+        />
         <AcaoFinal
           titulo="Sua nova carreira começa com a escolha certa."
           descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."

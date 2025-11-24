@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -57,7 +57,7 @@ export default function ParceirosInternacionaisPage() {
 
   return (
     <>
-      <Header />
+      <HomeHeader />
       <main className="min-h-screen bg-background">
         {/* Breadcrumb + Title Section */}
         <section className="w-full border-b bg-muted/30 py-8">

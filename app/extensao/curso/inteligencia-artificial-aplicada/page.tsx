@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { HomeHeader } from "@/components/home-header"
 import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 export default function InteligenciaArtificialAplicadaPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <HomeHeader />
       <main className="w-full">
         <div className="w-full">
           <div className="max-w-screen-xl mx-auto px-4 pt-6 pb-4">
@@ -134,8 +134,8 @@ export default function InteligenciaArtificialAplicadaPage() {
         />
 
         <Empregabilidade
-          titulo="Profissionais com IA conquistam mais"
-          subtitulo="Dados reais de quem domina ferramentas de IA"
+          title="Profissionais com IA conquistam mais"
+          subtitle="Dados reais de quem domina ferramentas de IA"
           estatisticas={[
             {
               icon: <TrendingUp className="h-8 w-8" />,
@@ -162,11 +162,28 @@ export default function InteligenciaArtificialAplicadaPage() {
             "Mentorias com especialistas de mercado",
             "Indicações para vagas parceiras",
           ]}
-          depoimento={{
-            texto:
-              "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
-            autor: "Marina S., Aluna de Extensão IPOG",
-          }}
+          depoimentos={[
+            {
+              tipo: "simples",
+              texto:
+                "O que eu aprendi sobre automação me fez economizar 10 horas por semana na criação de relatórios. O curso se pagou no primeiro mês.",
+              autor: "Marina S., Aluna de Extensão IPOG",
+            },
+            {
+              tipo: "simples",
+              texto:
+                "Implementei IA nos processos da empresa e reduzi o tempo de análise de dados em 60%. Resultado imediato.",
+              autor: "Lucas Pereira",
+              cargo: "Analista de Dados",
+            },
+            {
+              tipo: "video",
+              nome: "Camila Rodrigues",
+              cargo: "Especialista em IA",
+              videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+              thumbnail: "/placeholder.svg?height=400&width=600",
+            },
+          ]}
           botaoCta={{
             texto: "Fale com um Consultor de Carreira",
             onClick: "openAssistantForConsultor",
@@ -176,8 +193,8 @@ export default function InteligenciaArtificialAplicadaPage() {
         />
 
         <Trilha
-          titulo="Sua jornada em IA Aplicada"
-          subtitulo="6 módulos de aprendizado prático com ferramentas de ponta"
+          title="Sua jornada em IA Aplicada"
+          subtitle="6 módulos de aprendizado prático com ferramentas de ponta"
           etapas={[
             {
               titulo: "Fundamentos de IA",

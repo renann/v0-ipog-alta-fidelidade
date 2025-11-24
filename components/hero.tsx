@@ -38,6 +38,7 @@ export function Hero({
   valueBadges,
   primaryCTA,
   secondaryCTA,
+  backgroundImage = "/placeholder.svg?height=600&width=1920",
   minHeight = "auto",
 }: HeroProps) {
   const resolveOnClick = (onClick?: (() => void) | string) => {
@@ -49,19 +50,15 @@ export function Hero({
   }
 
   return (
-    <section className="w-full relative" style={{ minHeight }}>
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <div className="w-full h-full">
-          {/* Placeholder for background image */}
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            {/* Background image placeholder */}
-          </div>
-        </div>
+    <section className="w-full relative overflow-hidden" style={{ minHeight }}>
+      <div className="absolute inset-0 hidden lg:block">
+        <img src={backgroundImage || "/placeholder.svg"} alt="" className="w-full h-full object-cover" />
+        {/* Light overlay to maintain text readability with dark text */}
+        <div className="absolute inset-0 bg-white/70" />
       </div>
 
       {/* Hero Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-16 md:py-24">
+      <div className="max-w-screen-xl mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="mb-6">
           <Badge variant="outline" className="text-xs py-1 px-3 font-semibold">
             {badge}
