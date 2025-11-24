@@ -147,17 +147,17 @@ export function ProfessorsSection() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6 space-y-3 bg-background">
-                    <h3 className="font-semibold text-lg">{professor.name}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
+                  <div className="p-6 space-y-3 bg-[#481A1F] text-white">
+                    <h3 className="font-semibold text-lg text-white">{professor.name}</h3>
+                    <p className="text-sm text-white/80 line-clamp-3">{professor.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {professor.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">
+                        <Badge key={tag} className="text-xs bg-white/20 text-white hover:bg-white/30 border-0">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
+                    <span className="text-sm text-white hover:underline pt-2 inline-block font-medium">
                       Ver bio completa →
                     </span>
                   </div>
