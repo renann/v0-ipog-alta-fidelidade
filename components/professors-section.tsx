@@ -110,11 +110,12 @@ export function ProfessorsSection() {
               {professors.map((professor) => (
                 <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
                   <Card
-                    className="h-full hover:shadow-lg transition-shadow cursor-pointer"
+                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden"
+                    style={{ borderRadius: "45px 45px 45px 15px" }}
                     onClick={() => setSelectedProfessor(professor)}
                   >
                     <CardContent className="p-0">
-                      <div className="aspect-square bg-muted relative rounded-t-lg overflow-hidden">
+                      <div className="aspect-square bg-muted relative overflow-hidden">
                         <Image
                           src={professor.foto || "/placeholder.svg"}
                           alt={`Foto de ${professor.name}`}
