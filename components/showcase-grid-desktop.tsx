@@ -31,7 +31,7 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
           {/* Card grande à esquerda - ocupa 2 colunas */}
           {largeItem && (
             <Link href={largeItem.href} className="lg:col-span-2 group block h-full min-h-[500px] lg:min-h-[600px]">
-              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
+              <Card className="relative h-full overflow-hidden border-0 shadow hover:shadow-xl transition-all duration-300 rounded-none lg:rounded-l-lg">
                 {/* Imagem de fundo */}
                 {largeItem.image && (
                   <div
@@ -40,24 +40,27 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                   />
                 )}
 
-                {/* Overlay escuro para legibilidade */}
                 {largeItem.overlay && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#D71921]/95 via-[#8C1E2E]/60 to-transparent" />
                 )}
 
                 {/* Conteúdo */}
                 <div className="relative h-full flex flex-col justify-end p-8 md:p-10 text-white">
                   <Badge
                     variant="secondary"
-                    className="w-fit mb-4 bg-white/20 backdrop-blur-sm text-white border-white/30"
+                    className="w-fit mb-4 bg-white/20 backdrop-blur-sm text-white border-white/30 rounded-md font-bold"
                   >
                     {largeItem.tag}
                   </Badge>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{largeItem.title}</h3>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-balance font-['Montserrat']">
+                    {largeItem.title}
+                  </h3>
                   {largeItem.description && (
-                    <p className="text-lg text-white/90 mb-4 max-w-2xl">{largeItem.description}</p>
+                    <p className="text-base md:text-lg text-white/95 mb-4 max-w-2xl leading-relaxed text-pretty font-['Montserrat']">
+                      {largeItem.description}
+                    </p>
                   )}
-                  <div className="flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity font-['Montserrat']">
                     <span>Saiba mais</span>
                     <ArrowRight className="h-4 w-4" />
                   </div>
@@ -70,8 +73,11 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
           <div className="flex flex-col gap-0">
             {smallItems.map((item, index) => (
               <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[300px]">
-                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
-                  {/* Imagem ou ilustração de fundo */}
+                <Card
+                  className={`relative h-full overflow-hidden border-0 shadow hover:shadow-xl transition-all duration-300 ${
+                    index === smallItems.length - 1 ? "rounded-none lg:rounded-br-lg" : "rounded-none"
+                  } ${index === 0 ? "lg:rounded-tr-lg" : ""}`}
+                >
                   {item.image && (
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -86,9 +92,8 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                     />
                   )}
 
-                  {/* Overlay se necessário */}
                   {item.overlay && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0033A0]/90 to-transparent" />
                   )}
 
                   {/* Conteúdo */}
@@ -97,18 +102,22 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                   >
                     <Badge
                       variant="secondary"
-                      className={`w-fit mb-3 ${item.overlay ? "bg-white/20 backdrop-blur-sm text-white border-white/30" : "bg-background/80 backdrop-blur-sm"}`}
+                      className={`w-fit mb-3 rounded-md font-bold ${item.overlay ? "bg-white text-[#0033A0]" : "bg-[#FFE5E6] text-[#D71921]"}`}
                     >
                       {item.tag}
                     </Badge>
-                    <h3 className="text-xl md:text-2xl font-bold leading-tight">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold leading-tight text-balance font-['Montserrat']">
+                      {item.title}
+                    </h3>
                     {item.description && (
-                      <p className={`text-sm mt-2 ${item.overlay ? "text-white/90" : "text-muted-foreground"}`}>
+                      <p
+                        className={`text-xs md:text-sm mt-2 leading-relaxed text-pretty font-['Montserrat'] ${item.overlay ? "text-white/90" : "text-muted-foreground"}`}
+                      >
                         {item.description}
                       </p>
                     )}
                     <div
-                      className={`flex items-center gap-2 text-xs font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity ${item.overlay ? "text-white" : "text-foreground"}`}
+                      className={`flex items-center gap-2 text-xs font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity font-['Montserrat'] ${item.overlay ? "text-white" : "text-foreground"}`}
                     >
                       <span>Saiba mais</span>
                       <ArrowRight className="h-3 w-3" />

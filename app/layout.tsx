@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -10,11 +10,11 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { LocationDialog } from "@/components/location-dialog"
 import { GeoLocationProvider } from "@/hooks/use-geo-location"
 
-const inter = Inter({ subsets: ["latin"] })
+const montserrat = Montserrat({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "IPOG - Instituto de Pós-Graduação e Graduação",
+  description: "Transforme sua carreira com o IPOG. Mais de 20 anos formando líderes e especialistas.",
   generator: "v0.app",
 }
 
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="pt-BR">
+      <body className={`${montserrat.className} antialiased`}>
         <GeoLocationProvider>
           <ScrollToTop />
           {children}

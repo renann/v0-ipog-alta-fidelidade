@@ -37,6 +37,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* IPOG brand colors */
+  --ipog-red: #d71921;
+  --ipog-wine: #8c1e2e;
+  --ipog-blue: #0033a0;
+  --ipog-gray-dark: #333333;
+  --ipog-gray-medium: #666666;
+  --ipog-gray-light: #f2f2f2;
 }
 
 .dark {
@@ -75,7 +83,8 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Changed font from Inter to Montserrat */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -113,7 +122,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Adicionando variável de blur customizada */
+  /* Added IPOG brand color variables */
+  --color-ipog-red: var(--ipog-red);
+  --color-ipog-wine: var(--ipog-wine);
+  --color-ipog-blue: var(--ipog-blue);
+  --color-ipog-gray-dark: var(--ipog-gray-dark);
+  --color-ipog-gray-medium: var(--ipog-gray-medium);
+  --color-ipog-gray-light: var(--ipog-gray-light);
   --blur-md: 8px;
 }
 
@@ -145,5 +160,50 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  /* Added IPOG brand color utility classes */
+  .bg-ipog-red {
+    background-color: var(--ipog-red);
+  }
+
+  .text-ipog-red {
+    color: var(--ipog-red);
+  }
+
+  .border-ipog-red {
+    border-color: var(--ipog-red);
+  }
+
+  .hover\:bg-ipog-red:hover {
+    background-color: var(--ipog-red);
+  }
+
+  .hover\:text-ipog-red:hover {
+    color: var(--ipog-red);
+  }
+
+  .bg-ipog-wine {
+    background-color: var(--ipog-wine);
+  }
+
+  .bg-ipog-blue {
+    background-color: var(--ipog-blue);
+  }
+
+  .text-ipog-blue {
+    color: var(--ipog-blue);
+  }
+
+  .bg-ipog-gray-light {
+    background-color: var(--ipog-gray-light);
+  }
+
+  .text-ipog-gray-dark {
+    color: var(--ipog-gray-dark);
+  }
+
+  .text-ipog-gray-medium {
+    color: var(--ipog-gray-medium);
   }
 }
