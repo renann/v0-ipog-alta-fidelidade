@@ -25,13 +25,13 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
   const smallItems = items.filter((item) => item.size === "small")
 
   return (
-    <section className="w-full bg-background">
-      <div className="w-full max-w-none">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+    <section className="w-full bg-background py-8">
+      <div className="w-[80%] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Card grande à esquerda - ocupa 2 colunas */}
           {largeItem && (
             <Link href={largeItem.href} className="lg:col-span-2 group block h-full min-h-[500px] lg:min-h-[600px]">
-              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
+              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
                 {/* Imagem de fundo */}
                 {largeItem.image && (
                   <div
@@ -67,10 +67,10 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
           )}
 
           {/* Cards pequenos à direita - empilhados verticalmente */}
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-6">
             {smallItems.map((item, index) => (
-              <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[300px]">
-                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-none">
+              <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[297px]">
+                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
                   {/* Imagem ou ilustração de fundo */}
                   {item.image && (
                     <div
