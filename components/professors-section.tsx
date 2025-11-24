@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
 import { DocenteModal } from "@/components/docente-modal"
@@ -110,34 +110,32 @@ export function ProfessorsSection() {
               {professors.map((professor) => (
                 <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
                   <Card
-                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden"
+                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0"
                     style={{ borderRadius: "45px 45px 45px 15px" }}
                     onClick={() => setSelectedProfessor(professor)}
                   >
-                    <CardContent className="p-0">
-                      <div className="aspect-square bg-muted relative overflow-hidden">
-                        <Image
-                          src={professor.foto || "/placeholder.svg"}
-                          alt={`Foto de ${professor.name}`}
-                          fill
-                          className="object-cover"
-                        />
+                    <div className="aspect-square bg-muted relative overflow-hidden">
+                      <Image
+                        src={professor.foto || "/placeholder.svg"}
+                        alt={`Foto de ${professor.name}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6 space-y-3 bg-background">
+                      <h3 className="font-semibold text-lg">{professor.name}</h3>
+                      <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {professor.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
                       </div>
-                      <div className="p-6 space-y-3">
-                        <h3 className="font-semibold text-lg">{professor.name}</h3>
-                        <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {professor.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                        <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
-                          Ver bio completa →
-                        </span>
-                      </div>
-                    </CardContent>
+                      <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
+                        Ver bio completa →
+                      </span>
+                    </div>
                   </Card>
                 </CarouselItem>
               ))}
