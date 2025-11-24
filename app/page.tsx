@@ -51,7 +51,7 @@ export default function HomePage() {
                 tag: "Evento",
                 title: "Semana de Carreiras: descubra sua próxima oportunidade",
                 description: "Workshops, palestras e networking com líderes de mercado",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/showcase-careers.jpg",
                 href: "/eventos",
                 size: "small",
                 overlay: true,
