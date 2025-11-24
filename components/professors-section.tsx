@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ImageIcon } from "lucide-react"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
@@ -14,7 +14,7 @@ const professors = [
     description:
       "Especialista em gestão estratégica com mais de 15 anos de experiência em transformação digital e liderança empresarial.",
     tags: ["Gestão Estratégica", "Transformação Digital", "Liderança"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/jose-maria.jpg",
     miniBio:
       "Especialista em gestão estratégica com mais de 15 anos de experiência em transformação digital e liderança empresarial.",
     bioCompleta:
@@ -27,7 +27,7 @@ const professors = [
     description:
       "Doutora em Administração, consultora empresarial focada em inovação, empreendedorismo e desenvolvimento organizacional.",
     tags: ["Inovação", "Empreendedorismo", "Consultoria"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/michela-silva.jpg",
     miniBio:
       "Doutora em Administração, consultora empresarial focada em inovação, empreendedorismo e desenvolvimento organizacional.",
     bioCompleta:
@@ -40,7 +40,7 @@ const professors = [
     description:
       "Especialista em marketing digital com 12 anos de experiência em estratégias de crescimento e transformação de marcas.",
     tags: ["Marketing Digital", "Growth", "Branding"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/carlos-eduardo.jpg",
     miniBio:
       "Especialista em marketing digital com 12 anos de experiência em estratégias de crescimento e transformação de marcas.",
     bioCompleta:
@@ -53,7 +53,7 @@ const professors = [
     description:
       "Doutora em Psicologia Organizacional com 18 anos de experiência em desenvolvimento humano e cultura corporativa.",
     tags: ["RH Estratégico", "Cultura", "Desenvolvimento"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/patricia-rodrigues.jpg",
     miniBio:
       "Doutora em Psicologia Organizacional com 18 anos de experiência em desenvolvimento humano e cultura corporativa.",
     bioCompleta:
@@ -66,7 +66,7 @@ const professors = [
     description:
       "Especialista em finanças corporativas com 20 anos de experiência em planejamento financeiro e controladoria estratégica.",
     tags: ["Finanças", "Controladoria", "Planejamento"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/ricardo-alves.jpg",
     miniBio:
       "Especialista em finanças corporativas com 20 anos de experiência em planejamento financeiro e controladoria estratégica.",
     bioCompleta:
@@ -79,7 +79,7 @@ const professors = [
     description:
       "Advogada especialista em direito empresarial com 14 anos de experiência em compliance, governança corporativa e M&A.",
     tags: ["Direito Empresarial", "Compliance", "Governança"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/amanda-costa.jpg",
     miniBio:
       "Advogada especialista em direito empresarial com 14 anos de experiência em compliance, governança corporativa e M&A.",
     bioCompleta:
@@ -114,8 +114,13 @@ export function ProfessorsSection() {
                     onClick={() => setSelectedProfessor(professor)}
                   >
                     <CardContent className="p-0">
-                      <div className="aspect-square bg-muted flex items-center justify-center rounded-t-lg">
-                        <ImageIcon className="h-12 w-12 text-muted-foreground" />
+                      <div className="aspect-square bg-muted relative rounded-t-lg overflow-hidden">
+                        <Image
+                          src={professor.foto || "/placeholder.svg"}
+                          alt={`Foto de ${professor.name}`}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                       <div className="p-6 space-y-3">
                         <h3 className="font-semibold text-lg">{professor.name}</h3>
