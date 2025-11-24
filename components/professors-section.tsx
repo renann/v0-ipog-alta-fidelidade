@@ -1,9 +1,16 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
 import { DocenteModal } from "@/components/docente-modal"
 
@@ -90,6 +97,22 @@ const professors = [
 
 export function ProfessorsSection() {
   const [selectedProfessor, setSelectedProfessor] = useState<(typeof professors)[0] | null>(null)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
 
   return (
     <section className="w-full px-8 py-12 md:py-16">
@@ -100,6 +123,7 @@ export function ProfessorsSection() {
         </div>
         <Carousel
           className="w-full"
+          setApi={setApi}
           opts={{
             align: "start",
             loop: false,
@@ -142,6 +166,19 @@ export function ProfessorsSection() {
           <CarouselPrevious className="hidden md:flex" />
           <CarouselNext className="hidden md:flex" />
         </Carousel>
+
+        <div className="flex justify-center gap-2 pt-4">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === current ? "w-8 bg-[#D71C37]" : "w-2 bg-[#7F7F7F] hover:bg-[#8A212E]"
+              }`}
+              aria-label={`Ir para slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {selectedProfessor && (
