@@ -14,6 +14,7 @@ export interface ShowcaseItem {
   href: string
   size: "large" | "small"
   overlay?: boolean
+  tagColor?: "primary" | "secondary" | "wine" | "excellence"
 }
 
 export interface ShowcaseGridDesktopProps {
@@ -24,15 +25,32 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
   const largeItem = items.find((item) => item.size === "large")
   const smallItems = items.filter((item) => item.size === "small")
 
+  const getTagColorClasses = (color?: string, hasOverlay?: boolean) => {
+    if (hasOverlay) {
+      return "bg-white/20 backdrop-blur-sm text-white border-white/30"
+    }
+
+    switch (color) {
+      case "primary":
+        return "bg-[#D71C37] text-white border-[#D71C37]"
+      case "wine":
+        return "bg-[#481A1F] text-white border-[#481A1F]"
+      case "excellence":
+        return "bg-[#8A212E] text-white border-[#8A212E]"
+      case "secondary":
+        return "bg-[#7F7F7F] text-white border-[#7F7F7F]"
+      default:
+        return "bg-[#D71C37] text-white border-[#D71C37]"
+    }
+  }
+
   return (
     <section className="w-full bg-background py-8">
       <div className="w-[80%] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Card grande à esquerda - ocupa 2 colunas */}
           {largeItem && (
             <Link href={largeItem.href} className="lg:col-span-2 group block h-full min-h-[500px] lg:min-h-[600px]">
               <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
-                {/* Imagem de fundo */}
                 {largeItem.image && (
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -40,16 +58,14 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                   />
                 )}
 
-                {/* Overlay escuro para legibilidade */}
                 {largeItem.overlay && (
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
                 )}
 
-                {/* Conteúdo */}
                 <div className="relative h-full flex flex-col justify-end p-8 md:p-10 text-white">
                   <Badge
                     variant="secondary"
-                    className="w-fit mb-4 bg-white/20 backdrop-blur-sm text-white border-white/30"
+                    className={`w-fit mb-4 ${getTagColorClasses(largeItem.tagColor, largeItem.overlay)}`}
                   >
                     {largeItem.tag}
                   </Badge>
@@ -66,12 +82,10 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
             </Link>
           )}
 
-          {/* Cards pequenos à direita - empilhados verticalmente */}
           <div className="flex flex-col gap-6">
             {smallItems.map((item, index) => (
               <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[297px]">
                 <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
-                  {/* Imagem ou ilustração de fundo */}
                   {item.image && (
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -86,18 +100,16 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
                     />
                   )}
 
-                  {/* Overlay se necessário */}
                   {item.overlay && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
                   )}
 
-                  {/* Conteúdo */}
                   <div
                     className={`relative h-full flex flex-col justify-end p-6 ${item.overlay ? "text-white" : "text-foreground"}`}
                   >
                     <Badge
                       variant="secondary"
-                      className={`w-fit mb-3 ${item.overlay ? "bg-white/20 backdrop-blur-sm text-white border-white/30" : "bg-background/80 backdrop-blur-sm"}`}
+                      className={`w-fit mb-3 ${getTagColorClasses(item.tagColor, item.overlay)}`}
                     >
                       {item.tag}
                     </Badge>
