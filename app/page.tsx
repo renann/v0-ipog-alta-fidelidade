@@ -61,25 +61,23 @@ export default function HomePage() {
           />
         </div>
 
-        <section className="w-full py-12 md:py-16">
-          <div className="max-w-screen-xl mx-auto px-6 md:px-8">
-            <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-12">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
-                  IPOG: A escolha inteligente para sua carreira
-                </h2>
-                <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
-                  A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
-                  carreira
-                </p>
-              </div>
+        <section className="w-full px-8 py-12 md:py-16">
+          <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-12">
+            <div className="max-w-screen-xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
+                IPOG: A escolha inteligente para sua carreira
+              </h2>
+              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
+                carreira
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-16">
-          <div className="max-w-screen-xl mx-auto px-6 md:px-8">
-            <div className="bg-background rounded-[45px_45px_45px_15px] p-8 md:p-12 shadow-sm border border-border">
+        <section className="w-full px-8 py-12 md:py-16">
+          <div className="bg-background rounded-[45px_45px_45px_15px] p-8 md:p-12 shadow-sm border border-border">
+            <div className="max-w-screen-xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {/* Card 1: Certificação MEC */}
                 <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
@@ -147,12 +145,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div className="py-8 md:py-12">
-          <CourseSearch
-            title="Ver todos os cursos"
-            description="Busque por área de atuação e descubra os melhores cursos para sua carreira"
-          />
-        </div>
+        <CourseSearch
+          title="Ver todos os cursos"
+          description="Busque por área de atuação e descubra os melhores cursos para sua carreira"
+        />
 
         <AssistenteTrilha />
         <QuatroVerticais titulo="Escolha o caminho que combina com sua trajetória" />

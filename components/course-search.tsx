@@ -54,9 +54,9 @@ export function CourseSearch({
   }
 
   return (
-    <div className="w-full px-6 md:px-8">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-10 space-y-6">
+    <div className="w-full px-8 py-12 md:py-16">
+      <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-10">
+        <div className="max-w-screen-xl mx-auto space-y-6">
           <div className="space-y-3 md:text-center">
             <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
