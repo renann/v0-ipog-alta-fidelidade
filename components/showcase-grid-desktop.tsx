@@ -50,10 +50,10 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {largeItem && (
             <Link href={largeItem.href} className="lg:col-span-2 group block h-full min-h-[500px] lg:min-h-[600px]">
-              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
+              <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px] will-change-transform">
                 {largeItem.image && (
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 will-change-transform"
                     style={{ backgroundImage: `url(${largeItem.image})` }}
                   />
                 )}
@@ -85,17 +85,17 @@ export function ShowcaseGridDesktop({ items }: ShowcaseGridDesktopProps) {
           <div className="flex flex-col gap-6">
             {smallItems.map((item, index) => (
               <Link key={index} href={item.href} className="group block h-full min-h-[240px] lg:min-h-[297px]">
-                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px]">
+                <Card className="relative h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-tl-[45px] rounded-tr-[45px] rounded-bl-[45px] rounded-br-[15px] will-change-transform">
                   {item.image && (
                     <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 will-change-transform"
                       style={{ backgroundImage: `url(${item.image})` }}
                     />
                   )}
 
                   {item.illustration && (
                     <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 will-change-transform"
                       style={{ backgroundImage: `url(${item.illustration})` }}
                     />
                   )}
