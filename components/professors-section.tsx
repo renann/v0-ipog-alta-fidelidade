@@ -92,58 +92,56 @@ export function ProfessorsSection() {
   const [selectedProfessor, setSelectedProfessor] = useState<(typeof professors)[0] | null>(null)
 
   return (
-    <section className="w-full px-9 py-12 md:py-16">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="space-y-8">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Professores atuantes</h2>
-            <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
-          </div>
-          <Carousel
-            className="w-full"
-            opts={{
-              align: "start",
-              loop: false,
-            }}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {professors.map((professor) => (
-                <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
-                  <Card
-                    className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0 p-0"
-                    style={{ borderRadius: "45px 45px 45px 15px" }}
-                    onClick={() => setSelectedProfessor(professor)}
-                  >
-                    <div className="aspect-square bg-muted relative">
-                      <Image
-                        src={professor.foto || "/placeholder.svg"}
-                        alt={`Foto de ${professor.name}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-6 space-y-3 bg-background">
-                      <h3 className="font-semibold text-lg">{professor.name}</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {professor.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
-                        Ver bio completa →
-                      </span>
-                    </div>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
+    <section className="w-full px-8 py-12 md:py-16">
+      <div className="space-y-8">
+        <div className="text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Professores atuantes</h2>
+          <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
         </div>
+        <Carousel
+          className="w-full"
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {professors.map((professor) => (
+              <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+                <Card
+                  className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0 p-0"
+                  style={{ borderRadius: "45px 45px 45px 15px" }}
+                  onClick={() => setSelectedProfessor(professor)}
+                >
+                  <div className="aspect-square bg-muted relative">
+                    <Image
+                      src={professor.foto || "/placeholder.svg"}
+                      alt={`Foto de ${professor.name}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 space-y-3 bg-background">
+                    <h3 className="font-semibold text-lg">{professor.name}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {professor.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
+                      Ver bio completa →
+                    </span>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
 
       {selectedProfessor && (
