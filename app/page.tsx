@@ -31,7 +31,7 @@ export default function HomePage() {
                 tag: "Pós-Graduação",
                 title: "Especialize-se com quem o mercado respeita",
                 description: "Mais de 20 anos formando especialistas reconhecidos nacionalmente",
-                image: "/placeholder.svg?height=600&width=800",
+                image: "/images/showcase-main.jpg",
                 href: "/pos-graduacao",
                 size: "large",
                 overlay: true,
