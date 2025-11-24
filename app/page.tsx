@@ -62,12 +62,12 @@ export default function HomePage() {
         </div>
 
         <section className="w-full px-8 py-12 md:py-16">
-          <div className="bg-muted/20 rounded-[45px_45px_45px_15px] p-8 md:p-12">
+          <div className="bg-[#8A212E] text-white rounded-[45px_45px_45px_15px] p-8 md:p-12">
             <div className="max-w-screen-xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-6">
                 IPOG: A escolha inteligente para sua carreira
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+              <p className="text-base md:text-lg lg:text-xl text-white/90">
                 A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
                 carreira
               </p>
@@ -76,14 +76,14 @@ export default function HomePage() {
         </section>
 
         <section className="w-full px-8 py-12 md:py-16">
-          <div className="bg-background rounded-[45px_45px_45px_15px] p-8 md:p-12 shadow-sm border border-border">
+          <div className="bg-white rounded-[45px_45px_45px_15px] p-8 md:p-12 shadow-sm border border-[#7F7F7F]/20">
             <div className="max-w-screen-xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {/* Card 1: Certificação MEC */}
-                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Award className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                      <Award className="w-6 h-6 text-[#D71C37]" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -95,10 +95,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Card 2: Tradição */}
-                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6 text-[#D71C37]" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -110,10 +110,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Card 3: Networking */}
-                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                      <Users className="w-6 h-6 text-[#D71C37]" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -127,10 +127,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Card 4: Metodologia */}
-                <div className="flex items-start gap-4 p-6 bg-muted/10 rounded-lg">
+                <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Lightbulb className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                      <Lightbulb className="w-6 h-6 text-[#D71C37]" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
