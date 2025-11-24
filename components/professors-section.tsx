@@ -124,14 +124,14 @@ export function ProfessorsSection() {
           <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
         </div>
         <Carousel
-          className="w-full pb-8"
+          className="w-full py-4"
           setApi={setApi}
           opts={{
             align: "start",
             loop: false,
           }}
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 pb-8">
             {professors.map((professor) => (
               <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[56%] md:basis-[28%] lg:basis-[18%]">
                 <Card
