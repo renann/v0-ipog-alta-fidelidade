@@ -135,7 +135,7 @@ export function ProfessorsSection() {
             {professors.map((professor) => (
               <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[56%] md:basis-[28%] lg:basis-[18%]">
                 <Card
-                  className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden border-0 p-0 group"
+                  className="h-full hover:shadow-lg transition-shadow duration-300 cursor-pointer overflow-hidden border-0 p-0 group will-change-transform"
                   style={{ borderRadius: "45px 45px 45px 15px" }}
                   onClick={() => setSelectedProfessor(professor)}
                 >
@@ -144,7 +144,8 @@ export function ProfessorsSection() {
                       src={professor.foto || "/placeholder.svg"}
                       alt={`Foto de ${professor.name}`}
                       fill
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                      className="object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105"
+                      style={{ transform: "translateZ(0)" }}
                     />
                   </div>
                   <div className="p-6 space-y-3 bg-white">
@@ -168,7 +169,7 @@ export function ProfessorsSection() {
             <CarouselItem className="pl-2 md:pl-4 basis-[56%] md:basis-[28%] lg:basis-[18%]">
               <Link href="/corpo-docente" className="block h-full">
                 <Card
-                  className="h-full hover:shadow-xl transition-all cursor-pointer overflow-hidden border-0 p-0 bg-[#8A212E] text-white flex items-center justify-center"
+                  className="h-full hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden border-0 p-0 bg-[#8A212E] text-white flex items-center justify-center will-change-transform"
                   style={{ borderRadius: "45px 45px 45px 15px" }}
                 >
                   <div className="p-8 text-center space-y-6">
