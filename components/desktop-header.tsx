@@ -126,9 +126,18 @@ export function DesktopHeader() {
               <NavigationMenuList>
                 {/* Extensão */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">Extensão</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/extensao" className="hover:underline">
+                      Extensão
+                    </Link>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-4 pb-4 border-b">
+                        <Link href="/extensao" className="text-sm font-medium text-primary hover:underline">
+                          Ver todos os cursos de Extensão →
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {extensaoItems.map((section) => (
                           <div key={section.title}>
@@ -159,9 +168,18 @@ export function DesktopHeader() {
 
                 {/* Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">Graduação</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/graduacao" className="hover:underline">
+                      Graduação
+                    </Link>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-4 pb-4 border-b">
+                        <Link href="/graduacao" className="text-sm font-medium text-primary hover:underline">
+                          Ver todos os cursos de Graduação →
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {graduacaoItems.map((section) => (
                           <div key={section.title}>
@@ -192,9 +210,18 @@ export function DesktopHeader() {
 
                 {/* Pós-Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">Pós-Graduação</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/pos-graduacao" className="hover:underline">
+                      Pós-Graduação
+                    </Link>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-4 pb-4 border-b">
+                        <Link href="/pos-graduacao" className="text-sm font-medium text-primary hover:underline">
+                          Ver todos os cursos de Pós-Graduação →
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {posGraduacaoItems.map((section) => (
                           <div key={section.title}>
@@ -225,21 +252,60 @@ export function DesktopHeader() {
 
                 {/* Enterprise */}
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href="/enterprise"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    >
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/enterprise" className="hover:underline">
                       Enterprise
                     </Link>
-                  </NavigationMenuLink>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[400px] p-6">
+                      <div className="mb-4 pb-4 border-b">
+                        <Link href="/enterprise" className="text-sm font-medium text-primary hover:underline">
+                          Ver soluções Enterprise →
+                        </Link>
+                      </div>
+                      <ul className="space-y-3">
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href="/enterprise/ceo"
+                              className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                            >
+                              <div className="font-medium text-sm group-hover:text-primary">Para CEOs</div>
+                              <div className="text-xs text-muted-foreground mt-1">Soluções para líderes executivos</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href="/enterprise/rh"
+                              className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                            >
+                              <div className="font-medium text-sm group-hover:text-primary">Para RH</div>
+                              <div className="text-xs text-muted-foreground mt-1">Desenvolvimento de equipes</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Institucional */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">Institucional</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/sobre" className="hover:underline">
+                      Institucional
+                    </Link>
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-6">
+                      <div className="mb-4 pb-4 border-b">
+                        <Link href="/sobre" className="text-sm font-medium text-primary hover:underline">
+                          Conheça o IPOG →
+                        </Link>
+                      </div>
                       <ul className="grid grid-cols-2 gap-3">
                         {institucionalItems.map((item) => (
                           <li key={item.href}>
