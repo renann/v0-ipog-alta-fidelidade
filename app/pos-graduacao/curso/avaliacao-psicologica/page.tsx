@@ -32,6 +32,7 @@ export default function AvaliacaoPsicologicaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Ao Vivo"
           title="Pós-Graduação em Avaliação Psicológica"
           description="Prepare-se para atuar com excelência nos contextos mais desafiadores da Psicologia, dominando as análises com profundidade, precisão e ética."
           valueBadges={[

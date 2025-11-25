@@ -25,6 +25,7 @@ export default function DireitoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="Presencial"
           title="Graduação em Direito"
           description="Construa uma carreira de impacto com a graduação em Direito do IPOG. Uma formação de excelência, com foco na prática jurídica e corpo docente de mercado, que prepara você para a OAB, para advogar em alto nível ou para os mais concorridos concursos públicos."
           valueBadges={[

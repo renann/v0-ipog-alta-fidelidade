@@ -22,6 +22,7 @@ interface CTA {
 
 interface HeroProps {
   badge: string
+  modalidade?: string
   title: string
   description: string
   valueBadges: ValueBadge[]
@@ -33,6 +34,7 @@ interface HeroProps {
 
 export function Hero({
   badge,
+  modalidade,
   title,
   description,
   valueBadges,
@@ -59,10 +61,15 @@ export function Hero({
 
       {/* Hero Content */}
       <div className="max-w-screen-xl mx-auto px-4 py-16 md:py-24 relative z-10">
-        <div className="mb-6">
+        <div className="mb-6 flex gap-2 flex-wrap">
           <Badge variant="outline" className="text-xs py-1 px-3 font-semibold">
             {badge}
           </Badge>
+          {modalidade && (
+            <Badge variant="secondary" className="text-xs py-1 px-3 font-semibold">
+              {modalidade}
+            </Badge>
+          )}
         </div>
 
         {/* Title */}

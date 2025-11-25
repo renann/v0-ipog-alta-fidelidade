@@ -35,6 +35,7 @@ export default function PsicologiaEadPage() {
         {/* Fim da adição */}
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Psicologia EAD"
           description="Forme-se em Psicologia com flexibilidade, qualidade e reconhecimento MEC."
           valueBadges={[

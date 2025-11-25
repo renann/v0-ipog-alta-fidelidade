@@ -32,6 +32,7 @@ export default function IntervencaoAbaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Ao Vivo"
           title="Pós-graduação em Intervenção ABA: Lidere a transformação no TEA e Desenvolvimento Intelectual"
           description="Desenvolva programas terapêuticos eficazes e torne-se a referência que o mercado, as escolas e as famílias procuram para intervir no Transtorno do Espectro Autista e Desenvolvimento Intelectual."
           valueBadges={[

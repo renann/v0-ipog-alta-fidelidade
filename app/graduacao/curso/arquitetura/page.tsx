@@ -29,6 +29,7 @@ export default function ArquiteturaPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="Presencial"
           title="Arquitetura e Urbanismo"
           description="Construa uma carreira de impacto com a graduação em Arquitetura e Urbanismo do IPOG. Uma formação de excelência, com foco em projetos reais e corpo docente de mercado, que prepara você para liderar transformações urbanas e criar espaços que promovem o desenvolvimento humano."
           valueBadges={[

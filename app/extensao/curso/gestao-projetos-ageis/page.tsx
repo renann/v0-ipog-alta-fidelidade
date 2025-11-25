@@ -29,6 +29,7 @@ export default function GestaoProjetosAgeisPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="EAD / Ao Vivo"
           title="Lidere Projetos Ágeis e Entregue Resultados de Alto Impacto"
           description="Domine Scrum e Kanban em 40 horas de imersão prática e transforme sua gestão com um método validado pelo mercado."
           valueBadges={[

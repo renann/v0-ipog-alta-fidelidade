@@ -35,6 +35,7 @@ export default function PsicologiaEadJovemIngressoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Psicologia EAD: Sua carreira começa aqui"
           description="Construa seu futuro com uma formação flexível, focada na prática, e acelere sua entrada no mercado de trabalho aprendendo com professores que vivem o dia a dia da profissão."
           valueBadges={[

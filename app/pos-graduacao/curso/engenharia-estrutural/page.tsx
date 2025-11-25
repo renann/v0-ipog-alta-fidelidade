@@ -32,6 +32,7 @@ export default function EngenhariaEstruturalPage() {
         {/* */}
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Presencial"
           title="Pós-Graduação em Engenharia Estrutural e Fundações"
           description="Domine projetos complexos e acelere sua carreira com uma especialização que conecta você à prática, ao mercado e a um networking de alto nível."
           valueBadges={[

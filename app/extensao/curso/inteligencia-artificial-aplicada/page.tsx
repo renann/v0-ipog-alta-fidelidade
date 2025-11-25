@@ -30,6 +30,7 @@ export default function InteligenciaArtificialAplicadaPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="EAD"
           title="Inteligência Artificial para Resultados Imediatos"
           description="Aprenda a usar IA para otimizar rotinas fiscais, garantir o compliance e construir cenários com análise preditiva, aplicando o conhecimento no seu trabalho imediatamente."
           valueBadges={[

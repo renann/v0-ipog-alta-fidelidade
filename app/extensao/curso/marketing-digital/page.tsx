@@ -31,6 +31,7 @@ export default function MarketingDigitalPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="Presencial"
           title="FORMAÇÃO EM MARKETING DIGITAL COM INTELIGÊNCIA ARTIFICIAL"
           description="Transforme cliques em clientes. Aprenda a criar funis de vendas inteligentes, dominar tráfego pago e usar IA para escalar resultados reais."
           valueBadges={[

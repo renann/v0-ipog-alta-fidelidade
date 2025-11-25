@@ -29,6 +29,7 @@ export default function GestaoPessoasPage() {
         </div>
         <Hero
           badge="EXTENSÃO"
+          modalidade="Online"
           title="Gestão de Pessoas"
           description="Desenvolva competências estratégicas para liderar equipes, construir culturas de alta performance e impulsionar resultados por meio de pessoas."
           valueBadges={[

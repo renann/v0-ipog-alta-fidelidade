@@ -29,6 +29,7 @@ export default function AdministracaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD / Presencial"
           title="Administração"
           description="Forme-se em Administração e desenvolva competências estratégicas para liderar organizações e impulsionar resultados."
           valueBadges={[

@@ -29,6 +29,7 @@ export default function CompliancePage() {
         </div>
         <Hero
           badge="EXTENSÃO"
+          modalidade="Online"
           title="Compliance"
           description="Domine as práticas de conformidade, gestão de riscos e governança corporativa para proteger organizações."
           valueBadges={[

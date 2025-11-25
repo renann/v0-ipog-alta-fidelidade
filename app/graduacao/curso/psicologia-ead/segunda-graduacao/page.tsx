@@ -35,6 +35,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Graduação em Psicologia EAD para sua Segunda Carreira"
           description="Valide sua experiência, conquiste um diploma de peso e acelere sua transição de carreira com a flexibilidade do EAD e o reconhecimento oficial do MEC."
           valueBadges={[

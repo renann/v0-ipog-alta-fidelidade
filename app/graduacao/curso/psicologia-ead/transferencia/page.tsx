@@ -35,6 +35,7 @@ export default function PsicologiaEadTransferenciaPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Transfira sua Graduação em Psicologia para o IPOG"
           description="Aproveite seus créditos, economize tempo e conclua sua formação com a qualidade e o reconhecimento que sua carreira merece."
           valueBadges={[
