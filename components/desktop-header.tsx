@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Logo } from "./logo"
 import { Search, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -100,13 +101,23 @@ const institucionalItems: MegaMenuItem[] = [
 ]
 
 export function DesktopHeader() {
-  const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
       window.location.href = `/busca?q=${encodeURIComponent(searchQuery)}`
+    }
+  }
+
+  const handleMenuClick = (e: React.MouseEvent, href: string) => {
+    // Se o clique foi diretamente no texto (não no chevron), navega
+    const target = e.target as HTMLElement
+    if (target.tagName === "SPAN" || target.closest("span")) {
+      e.preventDefault()
+      e.stopPropagation()
+      router.push(href)
     }
   }
 
@@ -126,10 +137,8 @@ export function DesktopHeader() {
               <NavigationMenuList>
                 {/* Extensão */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/extensao" className="hover:underline">
-                      Extensão
-                    </Link>
+                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/extensao")}>
+                    <span className="cursor-pointer hover:underline">Extensão</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -168,10 +177,8 @@ export function DesktopHeader() {
 
                 {/* Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/graduacao" className="hover:underline">
-                      Graduação
-                    </Link>
+                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/graduacao")}>
+                    <span className="cursor-pointer hover:underline">Graduação</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -210,10 +217,8 @@ export function DesktopHeader() {
 
                 {/* Pós-Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/pos-graduacao" className="hover:underline">
-                      Pós-Graduação
-                    </Link>
+                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/pos-graduacao")}>
+                    <span className="cursor-pointer hover:underline">Pós-Graduação</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -252,10 +257,8 @@ export function DesktopHeader() {
 
                 {/* Enterprise */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/enterprise" className="hover:underline">
-                      Enterprise
-                    </Link>
+                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/enterprise")}>
+                    <span className="cursor-pointer hover:underline">Enterprise</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-6">
@@ -294,10 +297,8 @@ export function DesktopHeader() {
 
                 {/* Institucional */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/sobre" className="hover:underline">
-                      Institucional
-                    </Link>
+                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/sobre")}>
+                    <span className="cursor-pointer hover:underline">Institucional</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-6">
