@@ -6,16 +6,15 @@ interface LogoProps {
 }
 
 export function Logo({ variant = "dark", className = "" }: LogoProps) {
-  const logoSrc = variant === "light" ? "/logo-ipog-light.svg" : "/logo-ipog-dark.svg"
-
   return (
     <div className={className}>
       <Image
-        src={logoSrc || "/placeholder.svg"}
+        src="/logo-ipog.svg"
         alt="IPOG - Instituto de Pós-Graduação & Graduação"
         width={200}
         height={28}
         priority
+        className={variant === "light" ? "brightness-0 invert" : ""}
       />
     </div>
   )
