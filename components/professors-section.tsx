@@ -186,8 +186,8 @@ export function ProfessorsSection() {
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === current ? "w-8 bg-[#D71C37]" : "w-2 bg-[#7F7F7F] hover:bg-[#8A212E]"
+              className={`h-4 rounded-full transition-all ${
+                index === current ? "w-16 bg-[#D71C37]" : "w-4 bg-[#7F7F7F] hover:bg-[#8A212E]"
               }`}
               aria-label={`Ir para slide ${index + 1}`}
             />
