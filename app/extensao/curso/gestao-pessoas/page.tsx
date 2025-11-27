@@ -34,7 +34,7 @@ export default function GestaoPessoasPage() {
           description="Desenvolva competências estratégicas para liderar equipes, construir culturas de alta performance e impulsionar resultados por meio de pessoas."
           valueBadges={[
             { icon: <GraduationCap className="h-5 w-5" />, text: "Certificado Reconhecido" },
-            { icon: <Clock className="h-5 w-5" />, text: "6 meses" },
+            { icon: <Clock className="h-5 w-5" />, text: "40 horas" },
             { icon: <Award className="h-5 w-5" />, text: "100% Online" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
@@ -272,7 +272,7 @@ export default function GestaoPessoasPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="6 meses" totalCost="R$ 1.794,00" />
+        <CtaFinal monthlyFee="R$ 299,00" duration="40 horas" totalCost="R$ 1.794,00" />
       </main>
       <Footer />
     </div>

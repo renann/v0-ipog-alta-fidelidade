@@ -34,7 +34,7 @@ export default function CompliancePage() {
           description="Domine as práticas de conformidade, gestão de riscos e governança corporativa para proteger organizações."
           valueBadges={[
             { icon: <GraduationCap className="h-5 w-5" />, text: "Certificado Reconhecido" },
-            { icon: <Clock className="h-5 w-5" />, text: "6 meses" },
+            { icon: <Clock className="h-5 w-5" />, text: "40 horas" },
             { icon: <Award className="h-5 w-5" />, text: "100% Online" },
           ]}
           primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}

@@ -83,7 +83,7 @@ export default function GapImediatoPage() {
             cursos={[
               {
                 nome: "Marketing Digital",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao:
                   "Resolva o desafio de gerar resultados rápidos em campanhas digitais. Domine ferramentas e estratégias atuais para otimizar seu investimento e comprovar o impacto das suas ações.",
                 modalidade: "EAD",
@@ -91,7 +91,7 @@ export default function GapImediatoPage() {
               },
               {
                 nome: "Gestão de Pessoas",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao:
                   "Desenvolva habilidades de liderança prática para engajar equipes, gerenciar conflitos e impulsionar a alta performance. Aplique técnicas imediatas para melhorar o clima e os resultados do seu time.",
                 modalidade: "Ao Vivo",
@@ -99,7 +99,7 @@ export default function GapImediatoPage() {
               },
               {
                 nome: "Compliance",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao:
                   "Implemente programas de conformidade e gestão de riscos de forma ágil e eficaz. Adquira o conhecimento prático para proteger sua empresa e garantir a integridade dos processos desde o primeiro dia.",
                 modalidade: "Presencial",

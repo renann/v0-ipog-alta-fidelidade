@@ -288,7 +288,7 @@ export default function MarketingDigitalPage() {
                 <AccordionItem value="item-0">
                   <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
                   <AccordionContent>
-                    O curso de extensão tem duração de 3 meses, com conteúdo prático e aplicável imediatamente.
+                    O curso de extensão tem duração de 100 horas, com conteúdo prático e aplicável imediatamente.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">

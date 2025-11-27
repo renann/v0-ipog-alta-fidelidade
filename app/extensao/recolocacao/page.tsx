@@ -87,7 +87,7 @@ export default function RecolocacaoPage() {
             cursos={[
               {
                 nome: "Marketing Digital",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao:
                   "Reposicione-se em uma das áreas mais aquecidas do mercado com estratégias práticas e portfólio digital.",
                 modalidade: "EAD",
@@ -95,7 +95,7 @@ export default function RecolocacaoPage() {
               },
               {
                 nome: "Gestão de Pessoas",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao:
                   "Lidere com empatia e propósito, desenvolvendo competências essenciais para cargos de liderança.",
                 modalidade: "Ao Vivo",
@@ -103,7 +103,7 @@ export default function RecolocacaoPage() {
               },
               {
                 nome: "Compliance",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao:
                   "Traga segurança e credibilidade ao seu perfil com conhecimento em governança e conformidade.",
                 modalidade: "Presencial",

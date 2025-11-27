@@ -304,7 +304,7 @@ export default function InteligenciaArtificialAplicadaPage() {
                 <AccordionItem value="item-0">
                   <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
                   <AccordionContent>
-                    O curso de extensão tem duração de 4 meses, com conteúdo prático e atualizado constantemente.
+                    O curso de extensão tem duração de 80 horas, com conteúdo prático e atualizado constantemente.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">
@@ -339,7 +339,7 @@ export default function InteligenciaArtificialAplicadaPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="4 meses" totalCost="R$ 1.196,00" />
+        <CtaFinal monthlyFee="R$ 299,00" duration="80 horas" totalCost="R$ 1.196,00" />
       </main>
       <Footer />
     </div>
