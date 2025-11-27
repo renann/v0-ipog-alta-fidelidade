@@ -616,6 +616,13 @@ export function HomeHeader() {
                   <div key={item.title} className="grid grid-cols-12 gap-8">
                     {/* Coluna 1: Perfis */}
                     <div className="col-span-3 space-y-4">
+                      <Link
+                        href={item.href}
+                        className="inline-flex items-center gap-2 w-full justify-center bg-foreground text-background px-4 py-2.5 rounded-md font-medium text-sm hover:bg-foreground/90 transition-colors mb-2"
+                      >
+                        Conheça {item.title === "Institucional" ? "o IPOG" : `a ${item.title} IPOG`}
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
                       {item.profiles.map((profile) => {
                         const Icon = profile.icon
                         return (
