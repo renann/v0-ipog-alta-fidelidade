@@ -40,7 +40,7 @@ export default function EngenhariaEstruturalPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Formação em 12 Meses" },
             { icon: <Award className="h-5 w-5" />, text: "Professores que são Referência de Mercado" },
           ]}
-          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         {/* </CHANGE> */}
