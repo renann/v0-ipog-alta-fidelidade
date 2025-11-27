@@ -656,7 +656,7 @@ export function CatalogPageContent() {
                             <Badge
                               key={opIdx}
                               variant="outline"
-                              className="text-xs font-medium px-2 py-0.5 rounded-full"
+                              className="text-xs font-medium px-2 py-0.5 rounded-full transition-colors hover:bg-black hover:text-white hover:border-black cursor-pointer"
                             >
                               {opcao}
                             </Badge>
@@ -667,8 +667,21 @@ export function CatalogPageContent() {
 
                     if (modalidade.link) {
                       return (
-                        <Link key={idx} href={modalidade.link} className="block hover:opacity-80 transition-opacity">
-                          {content}
+                        <Link key={idx} href={modalidade.link} className="block group transition-all">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm font-bold group-hover:underline">{modalidade.tipo}</span>
+                            <div className="flex flex-wrap gap-1">
+                              {modalidade.opcoes.map((opcao, opIdx) => (
+                                <Badge
+                                  key={opIdx}
+                                  variant="outline"
+                                  className="text-xs font-medium px-2 py-0.5 rounded-full transition-colors group-hover:bg-black group-hover:text-white group-hover:border-black"
+                                >
+                                  {opcao}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
                         </Link>
                       )
                     }
