@@ -37,8 +37,8 @@ export default function GestaoProjetosAgeisPage() {
             { icon: <Target className="h-5 w-5" />, text: "Ferramentas para aplicação imediata" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG que o mercado reconhece" },
           ]}
-          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
         <section className="w-full py-12 md:py-16 bg-muted/30">

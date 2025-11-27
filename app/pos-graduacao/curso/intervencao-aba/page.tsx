@@ -40,8 +40,8 @@ export default function IntervencaoAbaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "432h de imersão teórica e prática" },
             { icon: <Award className="h-5 w-5" />, text: "Aprenda com Doutores e Mestres atuantes no mercado" },
           ]}
-          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <div className="max-w-screen-xl mx-auto px-4 pb-8">
           <CursoRestritoBadge requiredDegree="Psicologia" />

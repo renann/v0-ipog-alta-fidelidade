@@ -38,8 +38,8 @@ export default function InteligenciaArtificialAplicadaPage() {
             { icon: <Zap className="h-5 w-5" />, text: "Produtividade Acelerada" },
             { icon: <Target className="h-5 w-5" />, text: "Retorno Rápido" },
           ]}
-          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">

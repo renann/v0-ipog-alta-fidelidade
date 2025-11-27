@@ -38,7 +38,7 @@ export default function TransferenciaPage() {
             { text: "Transferência ágil em até 30 dias" },
             { text: "Corpo docente de mestres e doutores" },
           ]}
-          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
         />
         <Dilema
@@ -227,7 +227,7 @@ export default function TransferenciaPage() {
           descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
           botaoPrimario={{
             texto: "Inicie sua transferência agora",
-            onClick: "openAssistantForConsultor",
+            href: "#preco",
           }}
           botaoSecundario={{
             texto: "Ver cursos de Graduação",
