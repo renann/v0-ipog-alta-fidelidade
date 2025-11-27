@@ -33,6 +33,7 @@ export interface CursosProps {
     text: string
     link: string
   }
+  isGraduacao?: boolean
 }
 
 export function Cursos({
@@ -44,6 +45,7 @@ export function Cursos({
   ctaLink = "#",
   carouselBasis = "md:basis-1/2 lg:basis-1/3",
   footerCTA,
+  isGraduacao = false,
 }: CursosProps) {
   return (
     <section className="w-full py-12 md:py-16">
@@ -78,6 +80,12 @@ export function Cursos({
                         <p className="text-xs text-muted-foreground line-clamp-2">
                           <span className="font-medium text-foreground">Ideal para:</span> {curso.descricao}
                         </p>
+                        {isGraduacao && (
+                          <p className="text-xs text-muted-foreground">
+                            <span className="font-medium text-foreground">Formas de Ingresso:</span> Vestibular, Boletim
+                            do ENEM, Portador de Diploma
+                          </p>
+                        )}
                       </div>
 
                       <div className="mt-auto">

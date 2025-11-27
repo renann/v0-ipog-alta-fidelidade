@@ -590,6 +590,12 @@ export function CatalogPageContent() {
                   <p className="text-xs text-muted-foreground line-clamp-2">
                     <span className="font-medium text-foreground">Ideal para:</span> {curso.idealPara}
                   </p>
+                  {curso.tipo === "GRADUAÇÃO" && (
+                    <p className="text-xs text-muted-foreground">
+                      <span className="font-medium text-foreground">Formas de Ingresso:</span> Vestibular, Boletim do
+                      ENEM, Portador de Diploma
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-3 border-t pt-4 mt-auto">
