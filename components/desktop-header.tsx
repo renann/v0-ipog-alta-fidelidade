@@ -138,8 +138,10 @@ export function DesktopHeader() {
               <NavigationMenuList>
                 {/* Extensão */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/extensao")}>
-                    <span className="cursor-pointer hover:underline">Extensão</span>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/extensao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                      Extensão
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -178,8 +180,10 @@ export function DesktopHeader() {
 
                 {/* Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/graduacao")}>
-                    <span className="cursor-pointer hover:underline">Graduação</span>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/graduacao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                      Graduação
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -218,8 +222,10 @@ export function DesktopHeader() {
 
                 {/* Pós-Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/pos-graduacao")}>
-                    <span className="cursor-pointer hover:underline">Pós-Graduação</span>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/pos-graduacao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                      Pós-Graduação
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
@@ -258,8 +264,10 @@ export function DesktopHeader() {
 
                 {/* Enterprise */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/enterprise")}>
-                    <span className="cursor-pointer hover:underline">Enterprise</span>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/enterprise" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                      Enterprise
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-6">
@@ -298,8 +306,10 @@ export function DesktopHeader() {
 
                 {/* Institucional */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base" onClick={(e) => handleMenuClick(e, "/sobre")}>
-                    <span className="cursor-pointer hover:underline">Institucional</span>
+                  <NavigationMenuTrigger className="text-base">
+                    <Link href="/sobre" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                      Institucional
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-6">
