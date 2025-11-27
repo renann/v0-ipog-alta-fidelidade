@@ -11,7 +11,7 @@ import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
-type SortOption = "relevancia" | "duracao-asc" | "duracao-desc" | "alfabetica-az" | "alfabetica-za"
+type SortOption = "relevancia" | "duracao-asc" | "duracao-desc" | "alfabetica-az" | "alfabetica-za" | "data-inicio"
 
 export function CatalogPageContent() {
   const router = useRouter()
@@ -211,6 +211,7 @@ export function CatalogPageContent() {
       tipo: "GRADUAÇÃO",
       nome: "Psicologia",
       duracao: "5 anos",
+      dataInicio: new Date("2025-01-15"),
       idealPara: "Jovens que desejam compreender o comportamento humano e transformar vidas",
       diferenciais: "Reconhecimento MEC, corpo docente especializado, metodologia prática com supervisão clínica",
       textoValor:
@@ -220,6 +221,7 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["JANEIRO"],
           link: "/graduacao/curso/psicologia-ead",
+          dataInicio: "2024-01-01",
         },
       ],
     },
@@ -227,6 +229,7 @@ export function CatalogPageContent() {
       tipo: "GRADUAÇÃO",
       nome: "Direito",
       duracao: "5 anos",
+      dataInicio: new Date("2025-02-10"),
       idealPara: "Profissionais que buscam atuar na defesa da justiça e dos direitos",
       diferenciais:
         "Aprovação OAB acima da média nacional, prática jurídica desde o 1º semestre, networking com escritórios parceiros",
@@ -237,11 +240,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["FEVEREIRO", "AGOSTO"],
           link: "/graduacao/curso/direito",
+          dataInicio: "2024-02-01",
         },
         {
           tipo: "PRESENCIAL",
           opcoes: ["SP", "RJ", "DF"],
           link: "/graduacao/curso/direito",
+          dataInicio: "2024-03-01",
         },
       ],
     },
@@ -249,6 +254,7 @@ export function CatalogPageContent() {
       tipo: "GRADUAÇÃO",
       nome: "Arquitetura e Urbanismo",
       duracao: "5 anos",
+      dataInicio: new Date("2025-03-05"),
       idealPara: "Criativos que desejam projetar espaços que transformam a vida das pessoas",
       diferenciais: "Ateliês equipados, projetos reais desde o início, parcerias com escritórios renomados",
       textoValor:
@@ -258,11 +264,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["MARÇO", "SETEMBRO"],
           link: "/graduacao/curso/arquitetura",
+          dataInicio: "2024-03-01",
         },
         {
           tipo: "PRESENCIAL",
           opcoes: ["SP", "MG"],
           link: "/graduacao/curso/arquitetura",
+          dataInicio: "2024-04-01",
         },
       ],
     },
@@ -270,6 +278,7 @@ export function CatalogPageContent() {
       tipo: "PÓS-GRADUAÇÃO",
       nome: "Avaliação Psicológica",
       duracao: "12 meses",
+      dataInicio: new Date("2025-01-20"),
       idealPara: "Psicólogos que buscam especialização em técnicas de avaliação",
       diferenciais:
         "Certificação reconhecida pelo CFP, prática com instrumentos atualizados, supervisão de casos reais",
@@ -280,11 +289,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["MARÇO", "SETEMBRO"],
           link: "/pos-graduacao/curso/avaliacao-psicologica",
+          dataInicio: "2024-03-01",
         },
         {
           tipo: "AO VIVO",
           opcoes: ["ABRIL"],
           link: "/pos-graduacao/curso/avaliacao-psicologica",
+          dataInicio: "2024-04-01",
         },
       ],
     },
@@ -292,7 +303,8 @@ export function CatalogPageContent() {
       tipo: "PÓS-GRADUAÇÃO",
       nome: "Engenharia Estrutural",
       duracao: "18 meses",
-      idealPara: "Engenheiros que desejam especialização em projetos estruturais",
+      dataInicio: new Date("2025-02-15"),
+      idealPara: "Engenheiros civis que desejam se especializar em cálculo estrutural",
       diferenciais:
         "Softwares profissionais inclusos, projetos estruturais complexos, professores com atuação em grandes obras",
       textoValor:
@@ -302,11 +314,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["FEVEREIRO", "AGOSTO"],
           link: "/pos-graduacao/curso/engenharia-estrutural",
+          dataInicio: "2024-02-01",
         },
         {
           tipo: "PRESENCIAL",
           opcoes: ["SP", "RJ"],
           link: "/pos-graduacao/curso/engenharia-estrutural",
+          dataInicio: "2024-03-01",
         },
       ],
     },
@@ -314,7 +328,8 @@ export function CatalogPageContent() {
       tipo: "PÓS-GRADUAÇÃO",
       nome: "Intervenção ABA",
       duracao: "12 meses",
-      idealPara: "Profissionais que buscam especialização em análise do comportamento aplicada",
+      dataInicio: new Date("2025-03-01"),
+      idealPara: "Profissionais de saúde e educação que trabalham com autismo",
       diferenciais: "Certificação internacional BACB, estágios supervisionados, metodologia baseada em evidências",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar comportamentos em desenvolvimento, intervenções em resultados, sua prática em transformação.",
@@ -323,11 +338,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["JANEIRO", "JULHO"],
           link: "/pos-graduacao/curso/intervencao-aba",
+          dataInicio: "2024-01-01",
         },
         {
           tipo: "AO VIVO",
           opcoes: ["MARÇO"],
           link: "/pos-graduacao/curso/intervencao-aba",
+          dataInicio: "2024-03-01",
         },
       ],
     },
@@ -335,7 +352,8 @@ export function CatalogPageContent() {
       tipo: "EXTENSÃO",
       nome: "Inteligência Artificial Aplicada",
       duracao: "3 meses",
-      idealPara: "Profissionais que desejam dominar IA e aplicar em seus projetos",
+      dataInicio: new Date("2025-01-10"),
+      idealPara: "Profissionais de tecnologia que desejam dominar ferramentas de IA",
       diferenciais:
         "Projetos práticos com IA generativa, acesso a ferramentas premium, certificado reconhecido pelo mercado",
       textoValor:
@@ -345,32 +363,13 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["FEVEREIRO", "MAIO"],
           link: "/extensao/curso/inteligencia-artificial-aplicada",
+          dataInicio: "2024-02-01",
         },
         {
           tipo: "AO VIVO",
           opcoes: ["MARÇO"],
           link: "/extensao/curso/inteligencia-artificial-aplicada",
-        },
-      ],
-    },
-    {
-      tipo: "EXTENSÃO",
-      nome: "Marketing Digital",
-      duracao: "2 meses",
-      idealPara: "Profissionais que desejam dominar estratégias digitais e aumentar resultados",
-      diferenciais: "Cases reais de mercado, ferramentas de análise incluídas, mentoria com especialistas",
-      textoValor:
-        "Você não está escolhendo apenas um curso. Está escolhendo transformar cliques em conversões, audiência em comunidade, sua marca em referência.",
-      modalidades: [
-        {
-          tipo: "EAD",
-          opcoes: ["JANEIRO", "ABRIL"],
-          link: "/extensao/curso/marketing-digital",
-        },
-        {
-          tipo: "PRESENCIAL",
-          opcoes: ["SP", "RJ"],
-          link: "/extensao/curso/marketing-digital",
+          dataInicio: "2024-03-01",
         },
       ],
     },
@@ -378,7 +377,8 @@ export function CatalogPageContent() {
       tipo: "EXTENSÃO",
       nome: "Gestão de Projetos Ágeis",
       duracao: "2 meses",
-      idealPara: "Profissionais que desejam implementar metodologias ágeis em suas equipes",
+      dataInicio: new Date("2025-02-05"),
+      idealPara: "Gestores e líderes que buscam metodologias ágeis",
       diferenciais: "Certificação Scrum incluída, simulações práticas de sprints, networking com agilistas",
       textoValor:
         "Você não está escolhendo apenas um curso. Está escolhendo transformar processos em agilidade, equipes em alta performance, sua gestão em resultados.",
@@ -387,11 +387,55 @@ export function CatalogPageContent() {
           tipo: "EAD",
           opcoes: ["MARÇO", "JUNHO"],
           link: "/extensao/curso/gestao-projetos-ageis",
+          dataInicio: "2024-03-01",
         },
         {
           tipo: "AO VIVO",
           opcoes: ["ABRIL"],
           link: "/extensao/curso/gestao-projetos-ageis",
+          dataInicio: "2024-04-01",
+        },
+      ],
+    },
+    {
+      tipo: "ENTERPRISE",
+      nome: "Liderança para C-Level",
+      duracao: "6 meses",
+      dataInicio: new Date("2025-04-01"),
+      idealPara: "Executivos e diretores em posições de alta gestão",
+      diferenciais: "Workshops com líderes de renome, networking com executivos, certificação internacional",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar liderança em excelência, estratégias em resultados, sua carreira em sucesso.",
+      modalidades: [
+        {
+          tipo: "PRESENCIAL",
+          opcoes: ["SP"],
+          link: "/enterprise/curso/lideranca-c-level",
+          dataInicio: "2025-04-01",
+        },
+      ],
+    },
+    {
+      tipo: "GRADUAÇÃO",
+      nome: "Administração",
+      duracao: "4 anos",
+      dataInicio: new Date("2025-02-20"),
+      idealPara: "Profissionais que desejam liderar negócios e organizações",
+      diferenciais: "Programa de estágio integrado, networking com empresas, corpo docente altamente qualificado",
+      textoValor:
+        "Você não está escolhendo apenas um curso. Está escolhendo transformar gestão em liderança, conhecimento em estratégia, sua carreira em sucesso.",
+      modalidades: [
+        {
+          tipo: "EAD",
+          opcoes: ["JANEIRO"],
+          link: "/graduacao/curso/administracao",
+          dataInicio: "2024-01-01",
+        },
+        {
+          tipo: "PRESENCIAL",
+          opcoes: ["SP", "RJ"],
+          link: "/graduacao/curso/administracao",
+          dataInicio: "2024-04-01",
         },
       ],
     },
@@ -458,6 +502,9 @@ export function CatalogPageContent() {
       case "alfabetica-za":
         sorted.sort((a, b) => b.nome.localeCompare(a.nome))
         break
+      case "data-inicio":
+        sorted.sort((a, b) => a.dataInicio.getTime() - b.dataInicio.getTime())
+        break
       case "relevancia":
       default:
         // Manter ordem original (relevância)
@@ -465,10 +512,11 @@ export function CatalogPageContent() {
     }
 
     return sorted
-  }, [cursos, activeFilters, searchQuery, sortBy])
+  }, [activeFilters, searchQuery, sortBy])
 
   const sortOptions = [
     { value: "relevancia" as SortOption, label: "Relevância" },
+    { value: "data-inicio" as SortOption, label: "Data de início" },
     { value: "duracao-asc" as SortOption, label: "Duração (menor para maior)" },
     { value: "duracao-desc" as SortOption, label: "Duração (maior para menor)" },
     { value: "alfabetica-az" as SortOption, label: "Alfabética (A-Z)" },
