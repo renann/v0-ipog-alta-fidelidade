@@ -80,7 +80,7 @@ export function CtaFinal({
   const taxaDescricao = isGraduacao
     ? "A inscrição garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial entrará em contato para apresentar as condições de mensalidade e formas de pagamento."
     : "A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial entrará em contato para apresentar as condições de mensalidade e formas de pagamento."
-  const botaoLabel = isGraduacao ? "Inscrever-se no processo seletivo" : "Pagar matrícula agora"
+  const botaoLabel = "Pagar agora"
 
   const formasPagamento = [
     {
