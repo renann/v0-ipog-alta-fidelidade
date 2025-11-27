@@ -219,10 +219,6 @@ export default function TransicaoAreaPage() {
             },
           ]}
           layoutEstatisticas="grid"
-          depoimento={{
-            texto: "Consegui fazer a transição de engenharia para gestão de projetos com o apoio da mentoria IPOG.",
-            autor: "Aluno IPOG",
-          }}
           bgColor="bg-background"
         />
         <ROITransicaoArea />
