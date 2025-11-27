@@ -139,6 +139,20 @@ export function Footer() {
               >
                 Perguntas frequentes
               </GeoLink>
+              <GeoLink
+                href="/unidades"
+                className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
+              >
+                Unidades IPOG
+              </GeoLink>
+              <a
+                href="https://portal.ipog.edu.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
+              >
+                Portal do Aluno
+              </a>
             </div>
 
             <div className="mt-8 space-y-4">
@@ -262,6 +276,17 @@ export function Footer() {
               <GeoLink href="/faq" className="block text-sm text-zinc-300 hover:text-white transition-colors">
                 Perguntas frequentes
               </GeoLink>
+              <GeoLink href="/unidades" className="block text-sm text-zinc-300 hover:text-white transition-colors">
+                Unidades IPOG
+              </GeoLink>
+              <a
+                href="https://portal.ipog.edu.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-zinc-300 hover:text-white transition-colors"
+              >
+                Portal do Aluno
+              </a>
             </div>
 
             {/* Coluna 4: Copyright e políticas */}
