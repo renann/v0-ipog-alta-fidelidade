@@ -54,7 +54,7 @@ export default function LifelongLearningPage() {
             { icon: <Users className="h-5 w-5" />, text: "Comunidade Exclusiva" },
           ]}
           primaryCTA={{ text: "Começar minha jornada", href: "#cursos" }}
-          secondaryCTA={{ text: "Ver benefícios", href: "#beneficios" }}
+          secondaryCTA={{ text: "Ver benefícios", href: "/programas-beneficios/ipog-plus" }}
         />
 
         <Dilema
@@ -337,7 +337,7 @@ export default function LifelongLearningPage() {
           }}
           botaoSecundario={{
             texto: "Ver benefícios",
-            href: "#beneficios",
+            href: "/programas-beneficios/ipog-plus",
           }}
         />
       </main>
