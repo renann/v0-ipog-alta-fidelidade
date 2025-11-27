@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Search, GraduationCap, BookOpen, Award, Building2, ChevronRight, ArrowLeft } from "lucide-react"
+import { Search, GraduationCap, BookOpen, Award, Building2, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -101,14 +101,6 @@ export function SearchPageContent() {
   return (
     <main className="flex-1 bg-gray-50">
       <div className="max-w-screen-lg mx-auto px-4 py-4">
-        <button
-          onClick={() => router.back()}
-          className="md:hidden flex items-center gap-2 text-gray-600 hover:text-black mb-4 -ml-1"
-        >
-          <ArrowLeft className="h-5 w-5" />
-          <span className="text-sm font-medium">Voltar</span>
-        </button>
-
         {/* Título */}
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Encontre seu curso</h1>
 
