@@ -487,55 +487,52 @@ function CheckoutContent() {
                 </Card>
 
                 {isGraduacao ? (
-                  <>
+                  <div className="space-y-6">
                     <CicloSelector value={selectedCiclo} onValueChange={setSelectedCiclo} />
 
-                    <div className="space-y-3">
-                      <Label htmlFor="metodo-ingresso" className="text-base font-medium">
-                        Método de ingresso *
+                    <div className="space-y-2">
+                      <Label>
+                        Método de ingresso <span className="text-destructive">*</span>
                       </Label>
                       <Select value={metodoIngresso} onValueChange={setMetodoIngresso}>
-                        <SelectTrigger id="metodo-ingresso">
+                        <SelectTrigger>
                           <SelectValue placeholder="Selecione o método de ingresso" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="vestibular">Vestibular</SelectItem>
-                          <SelectItem value="enem">ENEM</SelectItem>
-                          <SelectItem value="portador-diploma">Portador de Diploma</SelectItem>
+                          <SelectItem value="vestibular">Vestibular Online</SelectItem>
+                          <SelectItem value="enem">Nota do ENEM</SelectItem>
                           <SelectItem value="transferencia">Transferência</SelectItem>
+                          <SelectItem value="segunda-graduacao">Segunda Graduação</SelectItem>
                         </SelectContent>
                       </Select>
                       <p className="text-sm text-muted-foreground">
                         Selecione como você deseja ingressar no curso de graduação.
                       </p>
                     </div>
-
-                    {["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
-                      <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
-                        <Checkbox
-                          id="documento-ingresso"
-                          checked={documentoIngressoAceito}
-                          onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
-                        />
-                        <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
-                          Estou ciente de que é necessário apresentar um documento válido (
-                          {metodoIngresso === "enem" && "boletim do ENEM"}
-                          {metodoIngresso === "portador-diploma" && "diploma de graduação"}
-                          {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}) e
-                          que o mesmo passará por aprovação da secretaria acadêmica *
-                        </Label>
-                      </div>
-                    )}
-                    {/* </CHANGE> */}
-                  </>
+                  </div>
                 ) : (
-                  <TurmaSelector
-                    courseId={course.id}
-                    modality={course.modality}
-                    unit={course.unit}
-                    value={selectedTurma}
-                    onValueChange={handleTurmaChange}
-                  />
+                  <div className="space-y-2">
+                    <Label>Selecione a data de início</Label>
+                    <TurmaSelector value={selectedTurma} onValueChange={handleTurmaChange} />
+                  </div>
+                )}
+
+                {isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
+                  <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
+                    <Checkbox
+                      id="documento-ingresso"
+                      checked={documentoIngressoAceito}
+                      onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
+                    />
+                    <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
+                      Estou ciente de que é necessário apresentar um documento válido (
+                      {metodoIngresso === "enem" && "boletim do ENEM"}
+                      {metodoIngresso === "portador-diploma" && "diploma de graduação"}
+                      {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}
+                      {metodoIngresso === "segunda-graduacao" && "diploma de graduação"}) e que o mesmo passará por
+                      aprovação da secretaria acadêmica *
+                    </Label>
+                  </div>
                 )}
               </AccordionContent>
             </AccordionItem>
@@ -586,7 +583,7 @@ function CheckoutContent() {
                     )}
                     {alumniDiscount && (
                       <div className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
-                        <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex-shrink-0">
+                        <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full">
                           <Check className="h-4 w-4 text-gray-900 dark:text-gray-100" />
                         </div>
                         <div className="flex-1">
