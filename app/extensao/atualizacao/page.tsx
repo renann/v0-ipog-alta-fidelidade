@@ -391,7 +391,7 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Não espere o futuro chegar"
+            title="Não espere o futuro chegar"
             descricao="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
             botaoPrimario={{
               texto: "Inicie Sua Atualização Agora",

@@ -272,7 +272,7 @@ export default function RecolocacaoPage() {
         {/* 10. Ação Final */}
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Quer ajuda personalizada?"
+            title="Quer ajuda personalizada?"
             descricao="Nosso time de consultoria está pronto para ajudar você a definir o curso ideal e entender as melhores condições."
             botaoPrimario={{
               texto: "Quero ver os cursos",

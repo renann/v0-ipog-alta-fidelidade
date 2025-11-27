@@ -223,7 +223,7 @@ export default function TransferenciaPage() {
         />
         <FormasIngresso />
         <AcaoFinal
-          titulo="Faça a escolha que conecta você ao sucesso."
+          title="Faça a escolha que conecta você ao sucesso."
           descricao="Inicie sua transferência para o IPOG e conclua sua graduação com mais qualidade, agilidade e o suporte que sua carreira merece."
           botaoPrimario={{
             texto: "Inicie sua transferência agora",

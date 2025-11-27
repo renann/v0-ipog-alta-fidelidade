@@ -255,7 +255,7 @@ export default function GapImediatoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Pronto para transformar conhecimento em resultado?"
+            title="Pronto para transformar conhecimento em resultado?"
             descricao="IPOG: A escolha que conecta você ao sucesso."
             botaoPrimario={{
               texto: "Comece sua jornada hoje mesmo",

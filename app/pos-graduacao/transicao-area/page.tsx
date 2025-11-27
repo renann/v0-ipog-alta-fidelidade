@@ -276,7 +276,7 @@ export default function TransicaoAreaPage() {
           corFundo="bg-muted/30"
         />
         <AcaoFinal
-          titulo="Sua nova carreira começa com a escolha certa."
+          title="Sua nova carreira começa com a escolha certa."
           descricao="Receba um plano de transição personalizado e descubra como a mentoria, o networking e a credibilidade IPOG podem acelerar sua jornada profissional."
           botaoPrimario={{
             texto: "Receba seu plano de transição",

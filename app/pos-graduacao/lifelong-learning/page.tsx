@@ -329,7 +329,7 @@ export default function LifelongLearningPage() {
           corFundo="bg-muted/30"
         />
         <AcaoFinal
-          titulo="Mantenha sua curva de aprendizado ativa com o IPOG+"
+          title="Mantenha sua curva de aprendizado ativa com o IPOG+"
           descricao="Aprofunde-se com roteiros eficientes, evolução escalável e benefícios exclusivos. Aprendizado contínuo sem repetição de conteúdo."
           botaoPrimario={{
             texto: "Começar minha jornada",
