@@ -1,7 +1,7 @@
 import type React from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { GraduationCap, FileText, Award } from "lucide-react"
+import { GraduationCap, FileText, Award, ArrowRightLeft } from "lucide-react"
 
 interface FormaIngresso {
   icon: React.ReactNode
@@ -42,6 +42,13 @@ export function FormasIngresso({
       cta: "Ingressar com diploma",
       href: "/portador-diploma",
     },
+    {
+      icon: <ArrowRightLeft className="w-12 h-12 text-primary" />,
+      titulo: "Transferência",
+      descricao: "Traga seu curso para o IPOG e continue sua jornada com excelência.",
+      cta: "Solicitar transferência",
+      href: "/graduacao/transferencia",
+    },
   ]
 
   return (
@@ -52,7 +59,7 @@ export function FormasIngresso({
           {description && <p className="text-lg text-muted-foreground max-w-2xl">{description}</p>}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {formas.map((forma, index) => (
             <Card key={index} className="flex flex-col items-center text-center p-8 hover:shadow-lg transition-shadow">
               <div className="mb-6 p-4 rounded-full bg-primary/10">{forma.icon}</div>

@@ -593,7 +593,7 @@ export function CatalogPageContent() {
                   {curso.tipo === "GRADUAÇÃO" && (
                     <p className="text-xs text-muted-foreground">
                       <span className="font-medium text-foreground">Formas de Ingresso:</span> Vestibular, Boletim do
-                      ENEM, Portador de Diploma
+                      ENEM, Portador de Diploma, Transferência
                     </p>
                   )}
                 </div>
