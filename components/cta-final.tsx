@@ -4,12 +4,13 @@ import type React from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Check, Info } from "lucide-react"
+import { Check, Info, CreditCard, RefreshCw, Smartphone } from "lucide-react"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
+import { Badge } from "@/components/ui/badge"
 
 interface CtaFinalProps {
   title?: string
@@ -81,6 +82,34 @@ export function CtaFinal({
     : "A matrícula garante sua qualificação e análise de perfil. Após aprovação, nossa equipe comercial entrará em contato para apresentar as condições de mensalidade e formas de pagamento."
   const botaoLabel = isGraduacao ? "Inscrever-se no processo seletivo" : "Pagar matrícula agora"
 
+  const formasPagamento = [
+    {
+      icon: CreditCard,
+      nome: "Cartão parcelado",
+      descricao: "Até 18x sem juros",
+    },
+    {
+      icon: RefreshCw,
+      nome: "Mensalidade recorrente",
+      descricao: "Débito automático mensal",
+      badge: "1ª parcela no ato",
+    },
+    {
+      icon: CreditCard,
+      nome: "Cartão à vista",
+      descricao: "Pagamento único",
+      badge: "5% desconto",
+      badgeVariant: "success" as const,
+    },
+    {
+      icon: Smartphone,
+      nome: "Pix à vista",
+      descricao: "Pagamento instantâneo",
+      badge: "10% desconto",
+      badgeVariant: "success" as const,
+    },
+  ]
+
   return (
     <>
       <section id="preco" className="w-full py-12 md:py-16 bg-gray-100 scroll-mt-20">
@@ -119,6 +148,35 @@ export function CtaFinal({
                   <p className="text-sm text-gray-600">
                     Duração: {duration} • Total do curso: {totalCost}
                   </p>
+                </div>
+
+                <div className="border-t pt-6 space-y-4">
+                  <p className="text-sm font-medium text-gray-700">Formas de pagamento aceitas:</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {formasPagamento.map((forma) => (
+                      <div key={forma.nome} className="flex items-start gap-2 p-3 bg-muted/30 rounded-lg text-left">
+                        <div className="flex items-center justify-center w-8 h-8 bg-white rounded-full flex-shrink-0">
+                          <forma.icon className="h-4 w-4 text-muted-foreground" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-1 flex-wrap">
+                            <p className="text-xs font-medium">{forma.nome}</p>
+                            {forma.badge && (
+                              <Badge
+                                variant="secondary"
+                                className={`text-[10px] px-1 py-0 ${
+                                  forma.badgeVariant === "success" ? "bg-green-100 text-green-800" : ""
+                                }`}
+                              >
+                                {forma.badge}
+                              </Badge>
+                            )}
+                          </div>
+                          <p className="text-[10px] text-muted-foreground">{forma.descricao}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 

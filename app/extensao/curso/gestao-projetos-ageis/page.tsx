@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -254,7 +253,7 @@ export default function GestaoProjetosAgeisPage() {
                   Parcelamento flexível e descontos especiais para pagamento à vista.
                 </p>
               </div>
-              <MetodosPagamento />
+              {/* Placeholder for MetodosPagamento component */}
             </div>
           </div>
         </section>

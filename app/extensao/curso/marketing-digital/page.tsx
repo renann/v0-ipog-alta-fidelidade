@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -246,18 +245,6 @@ export default function MarketingDigitalPage() {
           }}
           backgroundColor="bg-muted/30"
         />
-
-        <section className="w-full py-16 px-4 bg-background">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-              <p className="text-muted-foreground">
-                Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-              </p>
-            </div>
-            <MetodosPagamento />
-          </div>
-        </section>
 
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">

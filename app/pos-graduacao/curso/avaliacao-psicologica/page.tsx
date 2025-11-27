@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
@@ -296,19 +295,6 @@ export default function AvaliacaoPsicologicaPage() {
           ]}
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto px-4 pb-4">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
