@@ -35,10 +35,16 @@ interface TurmaSelectorProps {
 export function TurmaSelector({ courseId, modality, unit, value, onValueChange }: TurmaSelectorProps) {
   const [selectedClass, setSelectedClass] = useState<string | undefined>(value)
 
-  // Filter classes for this course, modality, and unit
-  const availableClasses = mockClasses.filter(
-    (cls) => cls.courseId === courseId && cls.modality === modality && cls.unit === unit && cls.availableSeats > 0,
-  )
+  const isOnlineModality = modality === "EAD" || unit === "Online"
+
+  const availableClasses = mockClasses.filter((cls) => {
+    const matchesCourse = cls.courseId === courseId
+    const matchesModality = cls.modality === modality
+    const matchesUnit = isOnlineModality ? true : cls.unit === unit
+    const hasSeats = cls.availableSeats > 0
+
+    return matchesCourse && matchesModality && matchesUnit && hasSeats
+  })
 
   // Sort classes (confirmed + nearest first)
   const sortedClasses = sortClasses(availableClasses)
