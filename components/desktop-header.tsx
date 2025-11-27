@@ -6,7 +6,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Logo } from "./logo"
-import { Search, User } from "lucide-react"
+import { Search, User, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Pitchbar } from "@/components/pitchbar"
 import {
@@ -112,16 +112,6 @@ export function DesktopHeader() {
     }
   }
 
-  const handleMenuClick = (e: React.MouseEvent, href: string) => {
-    // Se o clique foi diretamente no texto (não no chevron), navega
-    const target = e.target as HTMLElement
-    if (target.tagName === "SPAN" || target.closest("span")) {
-      e.preventDefault()
-      e.stopPropagation()
-      router.push(href)
-    }
-  }
-
   return (
     <>
       <Pitchbar />
@@ -138,16 +128,16 @@ export function DesktopHeader() {
               <NavigationMenuList>
                 {/* Extensão */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/extensao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
-                      Extensão
-                    </Link>
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">Extensão</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
-                      <div className="mb-4 pb-4 border-b">
-                        <Link href="/extensao" className="text-sm font-medium text-primary hover:underline">
-                          Ver todos os cursos de Extensão →
+                      <div className="mb-6">
+                        <Link
+                          href="/extensao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Extensão IPOG
+                          <ArrowRight className="h-4 w-4" />
                         </Link>
                       </div>
                       <div className="grid grid-cols-2 gap-8">
@@ -180,16 +170,16 @@ export function DesktopHeader() {
 
                 {/* Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/graduacao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
-                      Graduação
-                    </Link>
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">Graduação</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
-                      <div className="mb-4 pb-4 border-b">
-                        <Link href="/graduacao" className="text-sm font-medium text-primary hover:underline">
-                          Ver todos os cursos de Graduação →
+                      <div className="mb-6">
+                        <Link
+                          href="/graduacao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Graduação IPOG
+                          <ArrowRight className="h-4 w-4" />
                         </Link>
                       </div>
                       <div className="grid grid-cols-2 gap-8">
@@ -222,16 +212,16 @@ export function DesktopHeader() {
 
                 {/* Pós-Graduação */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/pos-graduacao" className="hover:underline" onClick={(e) => e.stopPropagation()}>
-                      Pós-Graduação
-                    </Link>
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">Pós-Graduação</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
-                      <div className="mb-4 pb-4 border-b">
-                        <Link href="/pos-graduacao" className="text-sm font-medium text-primary hover:underline">
-                          Ver todos os cursos de Pós-Graduação →
+                      <div className="mb-6">
+                        <Link
+                          href="/pos-graduacao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Pós-Graduação IPOG
+                          <ArrowRight className="h-4 w-4" />
                         </Link>
                       </div>
                       <div className="grid grid-cols-2 gap-8">
@@ -264,16 +254,16 @@ export function DesktopHeader() {
 
                 {/* Enterprise */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/enterprise" className="hover:underline" onClick={(e) => e.stopPropagation()}>
-                      Enterprise
-                    </Link>
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">Enterprise</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-6">
-                      <div className="mb-4 pb-4 border-b">
-                        <Link href="/enterprise" className="text-sm font-medium text-primary hover:underline">
-                          Ver soluções Enterprise →
+                      <div className="mb-6">
+                        <Link
+                          href="/enterprise"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça o Enterprise IPOG
+                          <ArrowRight className="h-4 w-4" />
                         </Link>
                       </div>
                       <ul className="space-y-3">
@@ -306,16 +296,16 @@ export function DesktopHeader() {
 
                 {/* Institucional */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base">
-                    <Link href="/sobre" className="hover:underline" onClick={(e) => e.stopPropagation()}>
-                      Institucional
-                    </Link>
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base">Institucional</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-6">
-                      <div className="mb-4 pb-4 border-b">
-                        <Link href="/sobre" className="text-sm font-medium text-primary hover:underline">
-                          Conheça o IPOG →
+                      <div className="mb-6">
+                        <Link
+                          href="/sobre"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça o IPOG
+                          <ArrowRight className="h-4 w-4" />
                         </Link>
                       </div>
                       <ul className="grid grid-cols-2 gap-3">
