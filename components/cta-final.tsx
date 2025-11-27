@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -22,6 +23,7 @@ interface CtaFinalProps {
   nextClassDate?: string
   promotionDeadline?: string
   isGraduacao?: boolean
+  courseId?: string
 }
 
 export function CtaFinal({
@@ -34,6 +36,7 @@ export function CtaFinal({
   nextClassDate = "Novembro",
   promotionDeadline = "30 de Outubro",
   isGraduacao = description.includes("Taxa de Inscrição"),
+  courseId = "psicologia-ead",
 }: CtaFinalProps) {
   const [isPriceVisible, setIsPriceVisible] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -110,6 +113,8 @@ export function CtaFinal({
     },
   ]
 
+  const checkoutUrl = `/checkout?course=${courseId}`
+
   return (
     <>
       <section id="preco" className="w-full py-12 md:py-16 bg-gray-100 scroll-mt-20">
@@ -180,8 +185,8 @@ export function CtaFinal({
                 </div>
               </div>
 
-              <Button size="lg" className="w-full md:w-auto px-12 bg-black hover:bg-gray-800">
-                {botaoLabel}
+              <Button size="lg" className="w-full md:w-auto px-12 bg-black hover:bg-gray-800" asChild>
+                <Link href={checkoutUrl}>Pagar agora</Link>
               </Button>
 
               <div className="flex flex-col gap-3 pt-4">
