@@ -71,6 +71,16 @@ function CheckoutContent() {
   const [isValidatingAlumni, setIsValidatingAlumni] = useState(false)
   const [alumniDiscount, setAlumniDiscount] = useState<AlumniDiscount | null>(null)
 
+  const [nome, setNome] = useState("")
+  const [email, setEmail] = useState("")
+  const [telefone, setTelefone] = useState("")
+  const [cep, setCep] = useState("")
+  const [endereco, setEndereco] = useState("")
+  const [numero, setNumero] = useState("")
+  const [bairro, setBairro] = useState("")
+  const [cidade, setCidade] = useState("")
+  const [estado, setEstado] = useState("")
+
   const [selectedCompany, setSelectedCompany] = useState("")
   const [validatedAgreement, setValidatedAgreement] = useState<AgreementCode | null>(null)
   const [comprovante, setComprovante] = useState<File | null>(null)
@@ -159,6 +169,25 @@ function CheckoutContent() {
       setCouponError("")
     }
   }, [paymentMethod])
+
+  useEffect(() => {
+    const camposObrigatoriosPreenchidos =
+      nome.trim() !== "" &&
+      email.trim() !== "" &&
+      telefone.replace(/\D/g, "").length >= 10 &&
+      cpf.replace(/\D/g, "").length === 11 &&
+      !cpfError &&
+      cep.replace(/\D/g, "").length === 8 &&
+      endereco.trim() !== "" &&
+      numero.trim() !== "" &&
+      bairro.trim() !== "" &&
+      cidade.trim() !== "" &&
+      estado !== ""
+
+    if (camposObrigatoriosPreenchidos && openAccordion === "dados") {
+      setOpenAccordion("pagamento")
+    }
+  }, [nome, email, telefone, cpf, cpfError, cep, endereco, numero, bairro, cidade, estado, openAccordion])
 
   if (!course) {
     return (
@@ -303,6 +332,19 @@ function CheckoutContent() {
     }
   }
   // END CHANGE
+
+  const maskTelefone = (value: string) => {
+    const numbers = value.replace(/\D/g, "")
+    if (numbers.length <= 10) {
+      return numbers.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3").trim()
+    }
+    return numbers.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3").trim()
+  }
+
+  const maskCEP = (value: string) => {
+    const numbers = value.replace(/\D/g, "")
+    return numbers.replace(/(\d{5})(\d{0,3})/, "$1-$2").trim()
+  }
 
   const handleValidateCoupon = async () => {
     if (!couponCode.trim()) {
@@ -544,17 +586,29 @@ function CheckoutContent() {
                 <div className="grid gap-4">
                   <div className="grid gap-2">
                     <Label htmlFor="nome">Nome completo *</Label>
-                    <Input id="nome" required />
+                    <Input id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="email">Email *</Label>
-                      <Input id="email" type="email" required />
+                      <Input
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="telefone">Telefone *</Label>
-                      <Input id="telefone" placeholder="(00) 00000-0000" required />
+                      <Input
+                        id="telefone"
+                        placeholder="(00) 00000-0000"
+                        value={telefone}
+                        onChange={(e) => setTelefone(maskTelefone(e.target.value))}
+                        required
+                      />
                     </div>
                   </div>
 
@@ -601,18 +655,25 @@ function CheckoutContent() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="cep">CEP *</Label>
-                      <Input id="cep" placeholder="00000-000" required />
+                      <Input
+                        id="cep"
+                        placeholder="00000-000"
+                        value={cep}
+                        onChange={(e) => setCep(maskCEP(e.target.value))}
+                        maxLength={9}
+                        required
+                      />
                     </div>
                     <div className="grid gap-2 sm:col-span-2">
                       <Label htmlFor="endereco">Endereço *</Label>
-                      <Input id="endereco" required />
+                      <Input id="endereco" value={endereco} onChange={(e) => setEndereco(e.target.value)} required />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="numero">Número *</Label>
-                      <Input id="numero" required />
+                      <Input id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required />
                     </div>
                     <div className="grid gap-2 sm:col-span-2">
                       <Label htmlFor="complemento">Complemento</Label>
@@ -623,15 +684,15 @@ function CheckoutContent() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="bairro">Bairro *</Label>
-                      <Input id="bairro" required />
+                      <Input id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="cidade">Cidade *</Label>
-                      <Input id="cidade" required />
+                      <Input id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="estado">Estado *</Label>
-                      <Select>
+                      <Select value={estado} onValueChange={setEstado}>
                         <SelectTrigger id="estado">
                           <SelectValue placeholder="UF" />
                         </SelectTrigger>
