@@ -1,9 +1,6 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { ChevronDown } from "lucide-react"
 
 interface Etapa {
   numero: string
@@ -33,86 +30,106 @@ export function Trilha({
   observacao,
   bgColor = "bg-white",
 }: TrilhaProps) {
-  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set())
-
-  const toggleCard = (index: number) => {
-    const newExpanded = new Set(expandedCards)
-    if (newExpanded.has(index)) {
-      newExpanded.delete(index)
-    } else {
-      newExpanded.add(index)
-    }
-    setExpandedCards(newExpanded)
-  }
-
   return (
     <section className={`py-16 md:py-24 ${bgColor}`}>
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-lg text-gray-600">{subtitle}</p>
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">{title}</h2>
+          <p className="text-lg text-muted-foreground text-balance">{subtitle}</p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
-            {etapas.map((etapa, index) => {
-              const isExpanded = expandedCards.has(index)
+          <div className="relative">
+            {/* Linha vertical da timeline */}
+            <div className="absolute left-4 md:left-6 top-4 w-0.5 bg-border" style={{ height: `calc(100% - 2rem)` }} />
 
-              return (
-                <Card key={index} className="overflow-hidden border-2 hover:border-gray-400 transition-colors">
-                  <button
-                    onClick={() => toggleCard(index)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+            {/* Etapas */}
+            <div className="space-y-6 md:space-y-8">
+              {etapas.map((etapa, index) => (
+                <div key={index} className="relative pl-12 md:pl-16">
+                  {/* Dot na timeline */}
+                  <div
+                    className={`absolute left-0 md:left-2 top-4 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-4 border-background ${
+                      etapa.destaque ? "bg-foreground text-background" : "bg-muted text-foreground"
+                    }`}
                   >
-                    <div className="flex-grow">
-                      <h3 className="text-xl md:text-2xl font-bold">{etapa.titulo}</h3>
-                    </div>
-                    <ChevronDown
-                      className={`w-6 h-6 flex-shrink-0 transition-transform ${isExpanded ? "rotate-180" : ""}`}
-                    />
-                  </button>
+                    {etapa.numero}
+                  </div>
 
-                  {isExpanded && (
-                    <div className="px-6 pb-6 pt-0">
-                      <p className="text-gray-700 mb-4">{etapa.descricao}</p>
+                  {/* Card */}
+                  <div
+                    className={`rounded-xl p-5 md:p-6 transition-shadow ${
+                      etapa.destaque
+                        ? "bg-foreground text-background shadow-lg"
+                        : "bg-card border shadow-sm hover:shadow-md"
+                    }`}
+                  >
+                    <h3
+                      className={`text-lg md:text-xl font-bold mb-2 ${
+                        etapa.destaque ? "text-background" : "text-foreground"
+                      }`}
+                    >
+                      {etapa.titulo}
+                    </h3>
 
-                      {etapa.beneficios && etapa.beneficios.length > 0 && (
-                        <ul className="space-y-2 mb-4">
-                          {etapa.beneficios.map((beneficio, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm">
-                              <span>•</span>
-                              <span>{beneficio}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                    <p
+                      className={`text-sm md:text-base leading-relaxed ${
+                        etapa.destaque ? "text-background/80" : "text-muted-foreground"
+                      }`}
+                    >
+                      {etapa.descricao}
+                    </p>
 
-                      {etapa.badges && etapa.badges.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {etapa.badges.map((badge, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm font-medium"
-                            >
-                              {badge}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </Card>
-              )
-            })}
+                    {/* Benefícios */}
+                    {etapa.beneficios && etapa.beneficios.length > 0 && (
+                      <ul className="mt-3 space-y-1.5">
+                        {etapa.beneficios.map((beneficio, idx) => (
+                          <li
+                            key={idx}
+                            className={`flex items-start gap-2 text-sm ${
+                              etapa.destaque ? "text-background/80" : "text-muted-foreground"
+                            }`}
+                          >
+                            <span className={etapa.destaque ? "text-background" : "text-foreground"}>•</span>
+                            <span>{beneficio}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Badges */}
+                    {etapa.badges && etapa.badges.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {etapa.badges.map((badge, idx) => (
+                          <span
+                            key={idx}
+                            className={`px-3 py-1 text-xs font-medium rounded-full ${
+                              etapa.destaque ? "bg-background/20 text-background" : "bg-muted text-foreground"
+                            }`}
+                          >
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
+        {/* CTA */}
         {textoBotao && onClickBotao && (
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-black hover:bg-gray-800 text-white mb-6" onClick={onClickBotao}>
+          <div className="text-center mt-12 md:mt-16">
+            <Button
+              size="lg"
+              className="bg-foreground hover:bg-foreground/90 text-background mb-4"
+              onClick={onClickBotao}
+            >
               {textoBotao}
             </Button>
-            {observacao && <p className="text-sm text-gray-600 max-w-2xl mx-auto">{observacao}</p>}
+            {observacao && <p className="text-sm text-muted-foreground max-w-2xl mx-auto">{observacao}</p>}
           </div>
         )}
       </div>
