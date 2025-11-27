@@ -10,6 +10,7 @@ import { ResultadosComprovados } from "@/components/resultados-comprovados"
 import { ProfessorsSection } from "@/components/professors-section"
 import { DepoimentosDeTexto } from "@/components/depoimentos-de-texto"
 import { AcaoFinal } from "@/components/acao-final"
+import { LatestBlogPosts } from "@/components/latest-blog-posts"
 import { Footer } from "@/components/footer"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
@@ -195,6 +196,8 @@ export default function HomePage() {
             onClick: openAssistantForConsultor,
           }}
         />
+
+        <LatestBlogPosts />
       </main>
       <Footer />
     </div>

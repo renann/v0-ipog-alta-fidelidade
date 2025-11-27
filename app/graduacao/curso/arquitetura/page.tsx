@@ -10,6 +10,7 @@ import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { CtaFinal } from "@/components/cta-final"
+import { FormasIngresso } from "@/components/formas-ingresso"
 
 export default function ArquiteturaPage() {
   return (
@@ -304,44 +305,10 @@ export default function ArquiteturaPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 px-4 bg-muted/30">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Comece Sua Jornada no IPOG</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Seja para iniciar sua primeira graduação, usar sua experiência para uma segunda formação ou transferir
-                seu curso, temos o caminho certo para você.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Vestibular</h3>
-                <p className="text-muted-foreground">
-                  Faça nossa prova de ingresso e garanta sua vaga. Processo seletivo ágil e objetivo.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Nota do ENEM</h3>
-                <p className="text-muted-foreground">
-                  Use sua nota do ENEM para ingressar sem precisar fazer o vestibular.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Portador de Diploma</h3>
-                <p className="text-muted-foreground">
-                  Já tem graduação? Ingresse sem processo seletivo e acelere sua nova carreira.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Transferência</h3>
-                <p className="text-muted-foreground">
-                  Traga seu curso para o IPOG. Oferecemos uma análise de equivalências transparente e um plano de
-                  estudos personalizado para você concluir sua formação com excelência.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FormasIngresso
+          title="Comece Sua Jornada no IPOG"
+          description="Seja para iniciar sua primeira graduação, usar sua experiência para uma segunda formação ou transferir seu curso, temos o caminho certo para você."
+        />
 
         <CtaFinal
           title="Invista na sua carreira com a instituição que é referência nacional."
