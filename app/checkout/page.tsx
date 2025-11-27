@@ -13,7 +13,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb"
-import { Home, Copy, Loader2, Check, X, Info, AlertCircle } from "lucide-react"
+import { Home, Copy, Loader2, Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -23,7 +23,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import {
   type DiscountType,
   type AgreementCode,
@@ -59,13 +58,11 @@ function CheckoutContent() {
   const [selectedCiclo, setSelectedCiclo] = useState("")
   const [metodoIngresso, setMetodoIngresso] = useState("")
   const [documentoIngressoAceito, setDocumentoIngressoAceito] = useState(false)
-  // </CHANGE>
   const [paymentMethod, setPaymentMethod] = useState("")
   const [parcelas, setParcelas] = useState("1")
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [lgpdAccepted, setLgpdAccepted] = useState(false)
   const [contractAccepted, setContractAccepted] = useState(false)
-  // </CHANGE>
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [pixKeyCopied, setPixKeyCopied] = useState(false)
 
@@ -85,6 +82,8 @@ function CheckoutContent() {
 
   // PIX timer (30 minutes = 1800 seconds)
   const [pixTimer, setPixTimer] = useState(1800)
+
+  const [openAccordion, setOpenAccordion] = useState("curso")
 
   const empresasConvenio = [
     { value: "empresa-a", label: "Empresa A - Tecnologia", discount: 15 },
@@ -344,6 +343,13 @@ function CheckoutContent() {
     setCouponError("")
   }
 
+  const handleTurmaChange = (value: string) => {
+    setSelectedTurma(value)
+    if (value) {
+      setOpenAccordion("dados")
+    }
+  }
+
   const getDiscountInfo = () => {
     let discountType: DiscountType = null
 
@@ -453,43 +459,10 @@ function CheckoutContent() {
     <div className="max-w-screen-xl mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-8">Finalizar matrícula</h1>
 
-      {isPosGraduacao && (
-        <div className="mb-6 space-y-4">
-          {/* Enrollment Limit Alert */}
-          <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-            <Info className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-            <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-              As matrículas em cursos de pós-graduação estão disponíveis para alunos até o 4º módulo. Em caso de
-              dúvidas, entre em contato com o suporte acadêmico.
-            </AlertDescription>
-          </Alert>
-
-          {/* Graduation Requirement Alert */}
-          <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-            <AlertCircle className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-            <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-              <strong>Importante:</strong> A matrícula em cursos de pós-graduação exige comprovante de conclusão de
-              graduação. Você terá 60 dias após a matrícula para enviar a documentação.
-            </AlertDescription>
-          </Alert>
-
-          {/* Restricted Course Alert */}
-          {isRestricted && (
-            <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-              <AlertCircle className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-              <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-                <strong>Curso Restrito:</strong> Este curso é destinado exclusivamente a profissionais graduados em{" "}
-                <strong>{course.requiredDegree}</strong>. Ao prosseguir, você declara possuir a formação exigida.
-              </AlertDescription>
-            </Alert>
-          )}
-        </div>
-      )}
-
       <div className="grid lg:grid-cols-[1fr_400px] gap-8">
         {/* Left column - Accordions */}
         <div className="space-y-4">
-          <Accordion type="single" collapsible defaultValue="curso">
+          <Accordion type="single" collapsible value={openAccordion} onValueChange={setOpenAccordion}>
             {/* Curso Section */}
             <AccordionItem value="curso">
               <AccordionTrigger className="text-lg font-semibold">Curso</AccordionTrigger>
@@ -499,9 +472,8 @@ function CheckoutContent() {
                     <div className="flex items-start gap-3">
                       <div className="w-16 h-16 bg-border rounded flex-shrink-0" />
                       <div className="flex-1">
-                        <div className="mb-2 flex items-start justify-between gap-2">
+                        <div className="mb-2">
                           <h3 className="font-semibold">{course.name}</h3>
-                          {isRestricted && <CursoRestritoBadge requiredDegree={course.requiredDegree!} />}
                         </div>
                         <div className="flex items-center gap-2 mb-2">
                           <Badge variant="secondary">{course.modality}</Badge>
@@ -562,7 +534,7 @@ function CheckoutContent() {
                     modality={course.modality}
                     unit={course.unit}
                     value={selectedTurma}
-                    onValueChange={setSelectedTurma}
+                    onValueChange={handleTurmaChange}
                   />
                 )}
               </AccordionContent>
