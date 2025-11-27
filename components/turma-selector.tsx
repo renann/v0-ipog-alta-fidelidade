@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Calendar, CheckCircle2, AlertCircle, Info } from "lucide-react"
+import { CheckCircle2, AlertCircle } from "lucide-react"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
@@ -15,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   type Modality,
   formatConfirmedDate,
@@ -31,6 +31,14 @@ interface TurmaSelectorProps {
   value?: string
   onValueChange?: (value: string) => void
 }
+
+const DATAS_DISPONIVEIS = [
+  { id: "turma-jan-2025", label: "13 de Janeiro de 2025" },
+  { id: "turma-mar-2025", label: "10 de Março de 2025" },
+  { id: "turma-mai-2025", label: "12 de Maio de 2025" },
+  { id: "turma-ago-2025", label: "04 de Agosto de 2025" },
+  { id: "turma-out-2025", label: "06 de Outubro de 2025" },
+]
 
 export function TurmaSelector({ courseId, modality, unit, value, onValueChange }: TurmaSelectorProps) {
   const [selectedClass, setSelectedClass] = useState<string | undefined>(value)
@@ -119,64 +127,20 @@ export function TurmaSelector({ courseId, modality, unit, value, onValueChange }
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <Label>Selecione a data de início</Label>
-
-      <RadioGroup value={selectedClass} onValueChange={handleValueChange}>
-        <div className="space-y-3">
-          {sortedClasses.map((cls) => (
-            <div
-              key={cls.id}
-              className={`relative flex items-start space-x-3 rounded-lg border p-4 cursor-pointer transition-colors ${
-                selectedClass === cls.id ? "border-primary bg-primary/5" : "hover:bg-muted/50"
-              }`}
-            >
-              <RadioGroupItem value={cls.id} id={cls.id} className="mt-1" />
-
-              <div className="flex-1">
-                <Label htmlFor={cls.id} className="cursor-pointer">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span className="font-medium">
-                      {cls.status === "confirmed"
-                        ? formatConfirmedDate(cls.startDate)
-                        : formatUnconfirmedDate(cls.startDate)}
-                    </span>
-
-                    {cls.status === "confirmed" && (
-                      <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">
-                        <CheckCircle2 className="h-3 w-3 mr-1" />
-                        Confirmada
-                      </Badge>
-                    )}
-                  </div>
-
-                  <p className="text-sm text-muted-foreground">
-                    {cls.availableSeats} vagas disponíveis de {cls.totalSeats}
-                  </p>
-
-                  {cls.status === "unconfirmed" && (
-                    <div className="mt-2 flex items-start gap-2 text-xs text-muted-foreground">
-                      <Info className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                      <span>Data exata será confirmada em breve</span>
-                    </div>
-                  )}
-                </Label>
-              </div>
-            </div>
+      <Select value={selectedClass} onValueChange={handleValueChange}>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Selecione uma data de início" />
+        </SelectTrigger>
+        <SelectContent>
+          {DATAS_DISPONIVEIS.map((data) => (
+            <SelectItem key={data.id} value={data.id}>
+              {data.label}
+            </SelectItem>
           ))}
-        </div>
-      </RadioGroup>
-
-      {sortedClasses.some((cls) => cls.status === "unconfirmed") && (
-        <Alert className="bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
-          <Info className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-          <AlertDescription className="text-blue-900 dark:text-blue-100">
-            Para turmas não confirmadas, a data de inauguração (dia/hora) será comunicada por e-mail e WhatsApp após a
-            confirmação e 2 dias antes do início.
-          </AlertDescription>
-        </Alert>
-      )}
+        </SelectContent>
+      </Select>
     </div>
   )
 }
