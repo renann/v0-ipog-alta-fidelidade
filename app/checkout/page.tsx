@@ -530,7 +530,7 @@ function CheckoutContent() {
                   </>
                 ) : (
                   <TurmaSelector
-                    courseId={course.courseId}
+                    courseId={course.id}
                     modality={course.modality}
                     unit={course.unit}
                     value={selectedTurma}
