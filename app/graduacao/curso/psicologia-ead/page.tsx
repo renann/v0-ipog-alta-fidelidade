@@ -256,6 +256,7 @@ export default function PsicologiaEadPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Investa em sua carreira com a instituição de referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
           enrollmentFee="R$ 100,00"

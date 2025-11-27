@@ -329,6 +329,7 @@ export default function DireitoPage() {
         />
 
         <CtaFinal
+          courseId="direito"
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Matrícula: R$ 100,00 | Mensalidades: a partir de R$ 599,00+"
           enrollmentFee="R$ 100,00"

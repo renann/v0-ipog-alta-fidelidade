@@ -324,7 +324,12 @@ export default function InteligenciaArtificialAplicadaPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="80 horas" totalCost="R$ 1.196,00" />
+        <CtaFinal
+          courseId="inteligencia-artificial-aplicada"
+          monthlyFee="R$ 299,00"
+          duration="80 horas"
+          totalCost="R$ 1.196,00"
+        />
       </main>
       <Footer />
     </div>

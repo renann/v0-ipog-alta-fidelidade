@@ -300,7 +300,7 @@ export default function GestaoProjetosAgeisPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 279,00" duration="40 horas" totalCost="R$ 1.674,00" />
+        <CtaFinal courseId="gestao-projetos-ageis" monthlyFee="R$ 279,00" duration="40 horas" totalCost="R$ 1.674,00" />
       </main>
       <Footer />
     </div>

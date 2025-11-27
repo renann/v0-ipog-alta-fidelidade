@@ -340,6 +340,7 @@ export default function IntervencaoAbaPage() {
         </section>
 
         <CtaFinal
+          courseId="intervencao-aba"
           title="IPOG: A escolha que conecta você ao sucesso."
           description="Faça parte de uma instituição com mais de 20 anos de história, corpo docente renomado e uma metodologia focada em resultados reais para a sua carreira."
           monthlyFee="R$ 429,00"

@@ -257,6 +257,7 @@ export default function PsicologiaEadJovemIngressoPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Um Investimento Acessível no seu Futuro Profissional"
           description="O IPOG oferece condições facilitadas para viabilizar seu futuro profissional. A taxa de inscrição é o primeiro passo para garantir sua vaga e ter acesso às nossas opções de bolsas e parcelamento, tornando seu investimento mais acessível."
           enrollmentFee="R$ 100,00"

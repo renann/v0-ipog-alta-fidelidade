@@ -269,7 +269,7 @@ export default function CompliancePage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 349,00" duration="6 meses" totalCost="R$ 2.094,00" />
+        <CtaFinal courseId="compliance" monthlyFee="R$ 349,00" duration="6 meses" totalCost="R$ 2.094,00" />
       </main>
       <Footer />
     </div>

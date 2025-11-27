@@ -343,6 +343,7 @@ export default function EngenhariaEstruturalPage() {
         </section>
 
         <CtaFinal
+          courseId="engenharia-estrutural"
           title="Esta é a escolha que conecta você ao sucesso."
           description="Uma especialização para quem busca protagonismo, com metodologia aplicada, professores de mercado e o reconhecimento de uma marca com mais de 20 anos de história."
           monthlyFee="R$ 449,00"

@@ -342,13 +342,13 @@ export default function AvaliacaoPsicologicaPage() {
         </section>
         <div id="preco">
           <CtaFinal
+            courseId="avaliacao-psicologica"
             monthlyFee="R$ 399,00"
             duration="18 meses"
             totalCost="R$ 7.282,00"
             title="Invista na sua carreira com a instituição que é referência nacional."
             description="Taxa de Matrícula: R$ 100,00 | Mensalidades: a partir de R$ 399,00*"
             additionalText="*Consulte as condições com nossa equipe. O IPOG oferece uma formação de excelência com valor acessível e resultados reais na carreira. Seu investimento garante: Corpo docente com autores e peritos renomados, Acesso a laboratórios práticos e supervisão clínica, Networking com profissionais de todo o Brasil, Chancela de uma marca com 98% de satisfação e mais de 300 mil alunos especializados."
-            ctaText="Falar com consultor acadêmico"
           />
         </div>
       </main>

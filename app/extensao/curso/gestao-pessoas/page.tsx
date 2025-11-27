@@ -257,7 +257,7 @@ export default function GestaoPessoasPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="40 horas" totalCost="R$ 1.794,00" />
+        <CtaFinal courseId="gestao-pessoas" monthlyFee="R$ 299,00" duration="40 horas" totalCost="R$ 1.794,00" />
       </main>
       <Footer />
     </div>

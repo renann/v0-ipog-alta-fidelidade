@@ -334,6 +334,7 @@ export default function MarketingDigitalPage() {
         />
 
         <CtaFinal
+          courseId="marketing-digital"
           monthlyFee="R$ 249,00"
           duration="3 meses"
           totalCost="R$ 747,00"

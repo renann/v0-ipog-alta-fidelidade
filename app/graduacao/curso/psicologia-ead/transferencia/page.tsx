@@ -256,6 +256,7 @@ export default function PsicologiaEadTransferenciaPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Faça a transferência e invista na conclusão da sua carreira."
           description="A taxa de inscrição garante a análise completa do seu histórico escolar por nossa equipe acadêmica. Após a aprovação das equivalências, nossa equipe comercial entrará em contato para apresentar as condições personalizadas para você concluir sua graduação."
           enrollmentFee="R$ 100,00"

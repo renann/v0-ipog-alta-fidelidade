@@ -311,6 +311,7 @@ export default function ArquiteturaPage() {
         />
 
         <CtaFinal
+          courseId="arquitetura"
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 649,00+"
           enrollmentFee="R$ 100,00"

@@ -296,6 +296,7 @@ export default function AdministracaoPage() {
         </section>
 
         <CtaFinal
+          courseId="administracao"
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 549,00+"
           enrollmentFee="R$ 100,00"

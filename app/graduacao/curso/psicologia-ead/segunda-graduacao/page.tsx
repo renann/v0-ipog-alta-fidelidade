@@ -256,6 +256,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Invista na sua transição de carreira com um diploma de peso."
           description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
           enrollmentFee="R$ 100,00"
