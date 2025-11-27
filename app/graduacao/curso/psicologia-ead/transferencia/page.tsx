@@ -43,7 +43,7 @@ export default function PsicologiaEadTransferenciaPage() {
             { icon: <FileCheck className="h-5 w-5" />, text: "Aproveitamento de Disciplinas" },
             { icon: <Clock className="h-5 w-5" />, text: "Análise Rápida de Histórico" },
           ]}
-          primaryCTA={{ text: "Analisar meu histórico", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />

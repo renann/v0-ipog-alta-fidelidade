@@ -44,7 +44,7 @@ export default function PsicologiaEadJovemIngressoPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Atuantes no Mercado" },
             { icon: <Briefcase className="h-5 w-5" />, text: "Foco na sua Empregabilidade" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />

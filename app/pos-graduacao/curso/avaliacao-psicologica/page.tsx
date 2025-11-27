@@ -40,7 +40,7 @@ export default function AvaliacaoPsicologicaPage() {
             { icon: <Users className="h-5 w-5" />, text: "Corpo Docente de Referência" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação Internacional Rorschach (R-PAS)" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <div className="max-w-screen-xl mx-auto px-4 pb-8 md:pt-8">

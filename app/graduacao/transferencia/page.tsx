@@ -38,7 +38,7 @@ export default function TransferenciaPage() {
             { text: "Transferência ágil em até 30 dias" },
             { text: "Corpo docente de mestres e doutores" },
           ]}
-          primaryCTA={{ text: "Simule sua transferência", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForConsultor" }}
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
         />
         <Dilema

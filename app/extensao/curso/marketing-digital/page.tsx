@@ -39,7 +39,7 @@ export default function MarketingDigitalPage() {
             { icon: <Sparkles className="h-5 w-5" />, text: "Crie conteúdo com IA" },
             { icon: <TrendingUp className="h-5 w-5" />, text: "Funis de Vendas 5.0" },
           ]}
-          primaryCTA={{ text: "FALAR COM UM CONSULTOR", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 

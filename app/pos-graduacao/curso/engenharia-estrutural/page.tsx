@@ -40,7 +40,7 @@ export default function EngenhariaEstruturalPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Formação em 12 Meses" },
             { icon: <Award className="h-5 w-5" />, text: "Professores que são Referência de Mercado" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         {/* </CHANGE> */}
@@ -207,8 +207,8 @@ export default function EngenhariaEstruturalPage() {
                 <Briefcase className="h-12 w-12 mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2">Domínio das Ferramentas do Mercado</h3>
                 <p className="text-muted-foreground">
-                  Capacite-se nas plataformas de software mais exigidas, como TQS, Eberick e SAP2000, e torne-se um
-                  profissional disputado.
+                  Capacite-se nas plataformas de software mais exigidas, como TQS e SAP2000, e torne-se um profissional
+                  disputado.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">

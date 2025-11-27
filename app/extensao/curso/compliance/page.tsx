@@ -37,7 +37,7 @@ export default function CompliancePage() {
             { icon: <Clock className="h-5 w-5" />, text: "40 horas" },
             { icon: <Award className="h-5 w-5" />, text: "100% Online" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar conteúdo programático", href: "#grade" }}
         />
 

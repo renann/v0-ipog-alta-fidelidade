@@ -38,7 +38,7 @@ export default function InteligenciaArtificialAplicadaPage() {
             { icon: <Zap className="h-5 w-5" />, text: "Produtividade Acelerada" },
             { icon: <Target className="h-5 w-5" />, text: "Retorno Rápido" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
 

@@ -43,7 +43,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade para quem já atua" },
             { icon: <Award className="h-5 w-5" />, text: "Professores com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", onClick: "openAssistantForPrice" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />
