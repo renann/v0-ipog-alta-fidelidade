@@ -23,7 +23,7 @@ export default function JovemIngressoPage() {
               items={[
                 { label: "Início", href: "/" },
                 { label: "Graduação", href: "/graduacao" },
-                { label: "Jovem Ingresso" },
+                { label: "Primeira Graduação" },
               ]}
             />
           </div>

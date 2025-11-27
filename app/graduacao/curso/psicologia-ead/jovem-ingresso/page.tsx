@@ -27,7 +27,7 @@ export default function PsicologiaEadJovemIngressoPage() {
               items={[
                 { label: "Início", href: "/" },
                 { label: "Graduação", href: "/graduacao" },
-                { label: "Jovem Ingresso", href: "/graduacao/jovem-ingresso" },
+                { label: "Primeira Graduação", href: "/graduacao/jovem-ingresso" },
                 { label: "Psicologia EAD" },
               ]}
             />

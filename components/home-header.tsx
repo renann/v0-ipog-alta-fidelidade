@@ -36,7 +36,7 @@ const menuItems = [
     href: "/graduacao",
     profiles: [
       {
-        title: "Jovem Ingresso",
+        title: "Primeira Graduação",
         description: "Primeira graduação com metodologia inovadora",
         href: "/graduacao/jovem-ingresso",
         icon: GraduationCap,
@@ -270,9 +270,9 @@ const menuItems = [
         icon: Users,
       },
       {
-        title: "FAQ",
-        href: "/faq",
-        icon: Info,
+        title: "Programas de Benefícios",
+        href: "/programas-beneficios/ipog-plus",
+        icon: Award,
       },
     ],
     featured: {
@@ -471,14 +471,14 @@ export function HomeHeader() {
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            Unidades
+                            Unidades IPOG
                           </GeoLink>
                           <GeoLink
                             href="/programas-beneficios/ipog-plus"
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            Programas e benefícios
+                            Programas de Benefícios
                           </GeoLink>
                           <GeoLink
                             href="/corpo-docente"

@@ -117,6 +117,12 @@ export function Footer() {
               Institucional
             </GeoLink>
             <GeoLink
+              href="/programas-beneficios/ipog-plus"
+              className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
+            >
+              Programas de Benefícios
+            </GeoLink>
+            <GeoLink
               href="/calendario-academico"
               className="block w-full text-left text-sm text-zinc-200 hover:text-white transition-colors"
             >
@@ -235,6 +241,12 @@ export function Footer() {
             </GeoLink>
             <GeoLink href="/sobre" className="block text-sm text-zinc-300 hover:text-white transition-colors">
               Institucional
+            </GeoLink>
+            <GeoLink
+              href="/programas-beneficios/ipog-plus"
+              className="block text-sm text-zinc-300 hover:text-white transition-colors"
+            >
+              Programas de Benefícios
             </GeoLink>
             <GeoLink
               href="/calendario-academico"

@@ -55,7 +55,7 @@ const graduacaoItems: MegaMenuSection[] = [
   {
     title: "Perfis",
     items: [
-      { title: "Jovem Ingresso", href: "/graduacao/jovem-ingresso", description: "Primeira graduação" },
+      { title: "Primeira Graduação", href: "/graduacao/jovem-ingresso", description: "Primeira graduação" },
       { title: "Segunda Graduação", href: "/graduacao/segunda-graduacao", description: "Nova formação" },
       { title: "Transferência", href: "/graduacao/transferencia", description: "Transfira seu curso" },
     ],
@@ -97,6 +97,7 @@ const institucionalItems: MegaMenuItem[] = [
   { title: "Corpo Docente", href: "/corpo-docente", description: "Nossos professores" },
   { title: "Unidades", href: "/unidades", description: "Encontre uma unidade" },
   { title: "Parcerias Internacionais", href: "/parceiros-internacionais", description: "Conexões globais" },
+  { title: "Programas de Benefícios", href: "/programas-beneficios/ipog-plus", description: "Vantagens exclusivas" },
   { title: "Blog", href: "/blog", description: "Insights e tendências" },
 ]
 
