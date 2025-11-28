@@ -15,7 +15,7 @@ import { Footer } from "@/components/footer"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
 import { Award, TrendingUp, Users, Lightbulb } from "lucide-react"
-import { DestaquesIPOG } from "@/components/destaques-ipog"
+import { UltimosWebStories } from "@/components/ultimos-webstories"
 
 export default function HomePage() {
   return (
@@ -185,7 +185,7 @@ export default function HomePage() {
           ]}
         />
 
-        <DestaquesIPOG />
+        <UltimosWebStories />
 
         <AcaoFinal
           title="Comece sua jornada de transformação profissional"
