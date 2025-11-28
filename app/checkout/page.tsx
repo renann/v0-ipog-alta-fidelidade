@@ -1122,7 +1122,7 @@ function CheckoutContent() {
                   </div>
                 )}
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {/* Cartão Parcelado */}
                   <button
                     type="button"
@@ -1209,10 +1209,10 @@ function CheckoutContent() {
                         <Input id="card-cvv" placeholder="000" maxLength={3} />
                       </div>
                     </div>
-                    <div className="grid gap-2">
+                    <div className="grid gap-2 w-full">
                       <Label htmlFor="parcelas">Plano de parcelamento</Label>
                       <Select value={parcelas} onValueChange={setParcelas}>
-                        <SelectTrigger id="parcelas">
+                        <SelectTrigger id="parcelas" className="w-full">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -1329,7 +1329,7 @@ function CheckoutContent() {
                 )}
 
                 {/* Terms and Conditions */}
-                <div className="space-y-4 pt-4 border-t">
+                <div className="space-y-4 mt-6">
                   <div className="flex items-start gap-3">
                     <Checkbox
                       id="terms"
@@ -1378,6 +1378,8 @@ function CheckoutContent() {
                     </Label>
                   </div>
                 </div>
+
+                {/* </CHANGE> */}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
