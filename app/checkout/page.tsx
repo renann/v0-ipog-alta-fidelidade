@@ -32,7 +32,14 @@ import {
   mockValidateAlumni,
   DISCOUNT_CONFIG,
 } from "@/lib/discount-types"
-import { calculateInstallmentPayment, calculateRecurringPayment, calculateTotal } from "@/lib/payment-types"
+import {
+  calculateInstallmentPayment,
+  calculateRecurringPayment,
+  calculateTotal,
+  PLANOS_FINANCEIROS,
+  TAXA_INSCRICAO_POR_MODALIDADE,
+  getPlanoInfo,
+} from "@/lib/payment-types"
 import { TurmaSelector } from "@/components/turma-selector"
 import { CicloSelector } from "@/components/ciclo-selector"
 import { CursosAlternativos } from "@/components/pos-graduacao/cursos-alternativos"
@@ -65,7 +72,7 @@ function CheckoutContent() {
   const [metodoIngresso, setMetodoIngresso] = useState("")
   const [documentoIngressoAceito, setDocumentoIngressoAceito] = useState(false)
   const [paymentMethod, setPaymentMethod] = useState("")
-  const [parcelas, setParcelas] = useState("1")
+  const [parcelas, setParcelas] = useState("12")
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [lgpdAccepted, setLgpdAccepted] = useState(false)
   const [contractAccepted, setContractAccepted] = useState(false)
@@ -531,26 +538,42 @@ function CheckoutContent() {
     }
   }
 
+  const getDiscountPercentage = () => {
+    if (alumniDiscount) {
+      return alumniDiscount.discount
+    }
+    if (validatedAgreement) {
+      return validatedAgreement.discount
+    }
+    if (validatedCoupon) {
+      return validatedCoupon.discount
+    }
+    return 0
+  }
+
   const getDiscountInfo = () => {
     let discountType: DiscountType = null
+    let customDiscount = 0
 
     if (alumniDiscount) {
       discountType = "alumni"
+      customDiscount = alumniDiscount.discount
     } else if (validatedAgreement) {
       discountType = "agreement"
+      customDiscount = validatedAgreement.discount
     } else if (validatedCoupon) {
-      discountType = "agreement" // Usando o mesmo tipo para cálculo
+      discountType = "coupon" // Usando o mesmo tipo para cálculo
+      customDiscount = validatedCoupon.discount
     } else if (paymentMethod === "pix") {
       discountType = "pix"
+      customDiscount = DISCOUNT_CONFIG.pix.percentage
     } else if (paymentMethod === "boleto") {
       discountType = "cash"
+      customDiscount = DISCOUNT_CONFIG.cash.percentage
     }
 
     if (discountType) {
-      const totalValue = course.price + course.enrollmentValue
-      // Ensure customDiscount is only used when it's available from validated sources
-      const customDiscount =
-        (alumniDiscount?.discount || validatedAgreement?.discount || validatedCoupon?.discount) ?? 0
+      const totalValue = course.price // Matrícula não é incluída no cálculo de desconto aqui
       return calculateDiscount(totalValue, discountType, customDiscount)
     }
 
@@ -558,23 +581,20 @@ function CheckoutContent() {
   }
 
   const getPaymentCalculation = () => {
-    const discountInfo = getDiscountInfo()
-    const discountPercentage = discountInfo?.discountPercentage || 0
+    if (!course) return null
 
-    if (isGraduacao) {
-      return calculateTotal(0, INSCRICAO_GRADUACAO, discountPercentage)
-    }
+    const discountPercentage = getDiscountPercentage()
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
-      return calculateInstallmentPayment(course.price, course.enrollmentValue, numParcelas, discountPercentage)
+      return calculateInstallmentPayment(course.price, 0, numParcelas, discountPercentage)
     }
 
     if (paymentMethod === "recorrente") {
-      return calculateRecurringPayment(course.monthlyPrice, course.enrollmentValue, 18, discountPercentage)
+      return calculateRecurringPayment(course.price, 0, 18, discountPercentage, course.type)
     }
 
-    return calculateTotal(course.price, course.enrollmentValue, discountPercentage)
+    return calculateTotal(course.price, 0, discountPercentage)
   }
 
   const getPaymentLabel = () => {
@@ -586,24 +606,25 @@ function CheckoutContent() {
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
-      if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
+      const plano = getPlanoInfo(numParcelas)
+      if (numParcelas === 1) {
+        return `À vista: R$ ${formatCurrency(calculation.total)}`
       }
-      return `${parcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
+      return `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
     }
 
     if (paymentMethod === "recorrente") {
-      if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
+      const taxaInscricao = TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default
+      if (calculation.remainingInstallments) {
+        return `1ª: R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
       }
-      return `18x de R$ ${formatCurrency(course.monthlyPrice)}`
     }
 
     if (paymentMethod === "pix" || paymentMethod === "boleto") {
-      return `R$ ${formatCurrency(calculation.total)} à vista`
+      return `R$ ${formatCurrency(calculation.total)}`
     }
 
-    return "Selecione uma forma de pagamento"
+    return `R$ ${formatCurrency(calculation.total)}`
   }
 
   const isFormValid = () => {
@@ -927,7 +948,6 @@ function CheckoutContent() {
                             </div>
                           )}
                         </div>
-                        // </CHANGE>
                       ) : (
                         <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
                           <div className="flex items-center gap-2">
@@ -1160,26 +1180,39 @@ function CheckoutContent() {
                       </div>
                     </div>
                     <div className="grid gap-2">
-                      <Label htmlFor="parcelas">Número de parcelas</Label>
+                      <Label htmlFor="parcelas">Plano de parcelamento</Label>
                       <Select value={parcelas} onValueChange={setParcelas}>
                         <SelectTrigger id="parcelas">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
-                          {Array.from({ length: 18 }, (_, i) => i + 1).map((num) => {
-                            const calc = calculateInstallmentPayment(course.price, course.enrollmentValue, num)
+                          {PLANOS_FINANCEIROS.map((plano) => {
+                            const calc = calculateInstallmentPayment(course.price, 0, plano.parcelas)
+                            const valorParcela = calc.total / plano.parcelas
                             return (
-                              <SelectItem key={num} value={num.toString()}>
-                                {num === 1
-                                  ? `À vista: R$ ${formatCurrency(calc.total)}`
-                                  : `${num}x - 1ª: R$ ${formatCurrency(calc.firstInstallment!)} + ${num - 1}x de R$ ${formatCurrency(calc.remainingInstallments!.value)}`}
+                              <SelectItem key={plano.parcelas} value={plano.parcelas.toString()}>
+                                <div className="flex items-center justify-between w-full gap-4">
+                                  <span>
+                                    {plano.parcelas === 1
+                                      ? `À vista - R$ ${formatCurrency(calc.total)}`
+                                      : `${plano.parcelas}x de R$ ${formatCurrency(valorParcela)}`}
+                                  </span>
+                                  {plano.desconto > 0 && (
+                                    <span className="text-xs text-green-600 font-medium">{plano.desconto}% desc.</span>
+                                  )}
+                                  {plano.taxaJuros > 0 && (
+                                    <span className="text-xs text-amber-600 font-medium">
+                                      +{plano.taxaJuros}% juros
+                                    </span>
+                                  )}
+                                </div>
                               </SelectItem>
                             )
                           })}
                         </SelectContent>
                       </Select>
                       <p className="text-xs text-muted-foreground">
-                        A matrícula (R$ {formatCurrency(course.enrollmentValue)}) é paga 100% na primeira parcela
+                        O valor do curso é dividido igualmente entre as parcelas selecionadas.
                       </p>
                     </div>
                   </div>
@@ -1187,16 +1220,16 @@ function CheckoutContent() {
 
                 {paymentMethod === "recorrente" && (
                   <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
-                    <div className="space-y-2">
+                    <div className="space-y-2 p-3 bg-muted/50 rounded-lg">
                       <p className="text-sm font-medium">
-                        1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Matrícula (R$ {formatCurrency(course.enrollmentValue)}) + 1ª mensalidade (R${" "}
-                        {formatCurrency(course.monthlyPrice)})
+                        1ª parcela (Taxa de inscrição): R${" "}
+                        {formatCurrency(
+                          TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default,
+                        )}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Demais parcelas: 17x de R$ {formatCurrency(course.monthlyPrice)}
+                        A partir da 2ª parcela: 17x de R${" "}
+                        {formatCurrency((course.price * (1 - getDiscountPercentage() / 100)) / 17)}
                       </p>
                     </div>
                     <div className="grid gap-2">
@@ -1217,8 +1250,12 @@ function CheckoutContent() {
                         <Input id="card-cvv-rec" placeholder="000" maxLength={3} />
                       </div>
                     </div>
+                    <p className="text-xs text-muted-foreground">
+                      O cartão será cobrado automaticamente todo mês na data da matrícula.
+                    </p>
                   </div>
                 )}
+                {/* </CHANGE> */}
 
                 {paymentMethod === "pix" && (
                   <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
@@ -1260,7 +1297,6 @@ function CheckoutContent() {
                     </p>
                   </div>
                 )}
-                {/* </CHANGE> */}
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 pt-4 border-t">
@@ -1400,15 +1436,37 @@ function CheckoutContent() {
                       </span>
                     </div>
 
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Matrícula</span>
-                      <span className="font-medium">R$ {formatCurrency(course.enrollmentValue)}</span>
-                    </div>
+                    {/* Mostra info do plano selecionado */}
+                    {paymentMethod === "parcelado" && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Plano selecionado</span>
+                        <span className="font-medium">
+                          {(() => {
+                            const plano = getPlanoInfo(Number.parseInt(parcelas))
+                            if (plano?.desconto > 0) return `${parcelas}x (${plano.desconto}% desc.)`
+                            if (plano?.taxaJuros > 0) return `${parcelas}x (+${plano.taxaJuros}% juros)`
+                            return `${parcelas}x (sem juros)`
+                          })()}
+                        </span>
+                      </div>
+                    )}
+
+                    {paymentMethod === "recorrente" && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Taxa de inscrição</span>
+                        <span className="font-medium">
+                          R${" "}
+                          {formatCurrency(
+                            TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default,
+                          )}
+                        </span>
+                      </div>
+                    )}
 
                     <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                      <span>Subtotal</span>
+                      <span>Total</span>
                       <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
-                        R$ {formatCurrency(course.price + course.enrollmentValue)}
+                        R$ {formatCurrency(getPaymentCalculation()?.total || course.price)}
                       </span>
                     </div>
                   </>
