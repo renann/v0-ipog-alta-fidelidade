@@ -601,59 +601,30 @@ function CheckoutContent() {
     const calculation = getPaymentCalculation()
 
     if (isGraduacao) {
-      return {
-        value: `R$ ${formatCurrency(calculation.total)}`,
-        description: "Inscrição no processo seletivo",
-      }
+      return `R$ ${formatCurrency(calculation.total)} (Inscrição no processo seletivo)`
     }
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
       const plano = getPlanoInfo(numParcelas)
       if (numParcelas === 1) {
-        return {
-          value: `R$ ${formatCurrency(calculation.total)}`,
-          description: "À vista",
-        }
+        return `À vista: R$ ${formatCurrency(calculation.total)}`
       }
-      return {
-        value: `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`,
-        description: plano?.desconto
-          ? `${plano.desconto}% de desconto`
-          : plano?.taxaJuros
-            ? `+${plano.taxaJuros}% de juros`
-            : "Sem juros",
-      }
+      return `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
     }
 
     if (paymentMethod === "recorrente") {
       const taxaInscricao = TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default
       if (calculation.remainingInstallments) {
-        return {
-          value: `R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x`,
-          description: `Parcelas de R$ ${formatCurrency(calculation.remainingInstallments.value)}`,
-        }
+        return `1ª: R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
       }
     }
 
-    if (paymentMethod === "pix") {
-      return {
-        value: `R$ ${formatCurrency(calculation.total)}`,
-        description: "10% de desconto aplicado",
-      }
+    if (paymentMethod === "pix" || paymentMethod === "boleto") {
+      return `R$ ${formatCurrency(calculation.total)}`
     }
 
-    if (paymentMethod === "boleto") {
-      return {
-        value: `R$ ${formatCurrency(calculation.total)}`,
-        description: "5% de desconto aplicado",
-      }
-    }
-
-    return {
-      value: `R$ ${formatCurrency(calculation.total)}`,
-      description: null,
-    }
+    return `R$ ${formatCurrency(calculation.total)}`
   }
 
   const isFormValid = () => {
@@ -1391,18 +1362,19 @@ function CheckoutContent() {
         {/* Right column - Summary (Sticky) */}
         <div className="lg:sticky lg:top-4 h-fit">
           <Card>
-            <CardHeader className="pb-4">
-              <CardTitle className="text-lg">Resumo da matrícula</CardTitle>
+            <CardHeader>
+              <CardTitle>Resumo da matrícula</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex gap-4 items-start">
-                <div className="w-20 h-20 bg-muted rounded-lg shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-base leading-tight mb-1">{course.name}</h3>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Badge variant="secondary" className="text-xs">
-                      {course.modality}
-                    </Badge>
+              <div className="space-y-3">
+                <div className="w-full h-32 bg-muted rounded" />
+                <div>
+                  <div className="mb-2 flex items-start justify-between gap-2">
+                    <h3 className="font-semibold">{course.name}</h3>
+                    {isRestricted && <CursoRestritoBadge requiredDegree={course.requiredDegree!} />}
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="secondary">{course.modality}</Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {course.duration} • {course.type}
@@ -1410,16 +1382,10 @@ function CheckoutContent() {
                 </div>
               </div>
 
-              {isRestricted && (
-                <div className="pt-2">
-                  <CursoRestritoBadge requiredDegree={course.requiredDegree!} />
-                </div>
-              )}
-
-              <div className="space-y-2 pt-4 border-t text-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">{isGraduacao ? "Ciclo" : "Turma"}</span>
-                  <span className="font-medium text-right">
+              <div className="space-y-2 pt-4 border-t">
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">{isGraduacao ? "Ciclo:" : "Turma:"}</span>
+                  <span className="font-medium">
                     {isGraduacao
                       ? selectedCiclo || "Não selecionado"
                       : selectedTurma
@@ -1427,39 +1393,52 @@ function CheckoutContent() {
                         : "Não selecionada"}
                   </span>
                 </div>
+                {/* Adicionando exibição do método de ingresso para graduação */}
                 {isGraduacao && (
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Método de ingresso</span>
-                    <span className="font-medium text-right capitalize">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Método de ingresso:</span>
+                    <span className="font-medium">
                       {metodoIngresso ? metodoIngresso.replace("-", " ") : "Não selecionado"}
                     </span>
                   </div>
                 )}
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Forma de pagamento</span>
-                  <span className="font-medium text-right capitalize">{paymentMethod || "Não selecionada"}</span>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Forma de pagamento:</span>
+                  <span className="font-medium">
+                    {paymentMethod ? paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1) : "Não selecionada"}
+                  </span>
                 </div>
               </div>
 
-              <div className="space-y-3 pt-4 border-t">
+              <div className="space-y-2 pt-4 border-t">
                 {isGraduacao ? (
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Inscrição processo seletivo</span>
-                    <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
-                      R$ {formatCurrency(INSCRICAO_GRADUACAO)}
-                    </span>
-                  </div>
+                  <>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Inscrição no processo seletivo</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
+                        R$ {formatCurrency(INSCRICAO_GRADUACAO)}
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                      <span>Subtotal</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
+                        R$ {formatCurrency(INSCRICAO_GRADUACAO)}
+                      </span>
+                    </div>
+                  </>
                 ) : (
                   <>
-                    <div className="flex justify-between items-center text-sm">
+                    <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Valor do curso</span>
                       <span className={getDiscountInfo() ? "line-through text-muted-foreground" : "font-medium"}>
                         R$ {formatCurrency(course.price)}
                       </span>
                     </div>
 
+                    {/* Mostra info do plano selecionado */}
                     {paymentMethod === "parcelado" && (
-                      <div className="flex justify-between items-center text-sm">
+                      <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Plano selecionado</span>
                         <span className="font-medium">
                           {(() => {
@@ -1473,7 +1452,7 @@ function CheckoutContent() {
                     )}
 
                     {paymentMethod === "recorrente" && (
-                      <div className="flex justify-between items-center text-sm">
+                      <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Taxa de inscrição</span>
                         <span className="font-medium">
                           R${" "}
@@ -1483,35 +1462,59 @@ function CheckoutContent() {
                         </span>
                       </div>
                     )}
+
+                    <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                      <span>Total</span>
+                      <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
+                        R$ {formatCurrency(getPaymentCalculation()?.total || course.price)}
+                      </span>
+                    </div>
                   </>
                 )}
 
                 {getDiscountInfo() && (
-                  <div className="flex justify-between items-center text-sm text-green-600">
-                    <span>
-                      {alumniDiscount
-                        ? `${DISCOUNT_CONFIG.alumni.label} (${getDiscountInfo()!.discountPercentage}%)`
-                        : validatedAgreement
-                          ? `Convênio (${getDiscountInfo()!.discountPercentage}%)`
-                          : validatedCoupon
-                            ? `Cupom ${validatedCoupon.code} (${getDiscountInfo()!.discountPercentage}%)`
-                            : paymentMethod === "pix"
-                              ? `Desconto PIX (${DISCOUNT_CONFIG.pix.percentage}%)`
-                              : `Desconto à vista (${DISCOUNT_CONFIG.cash.percentage}%)`}
-                    </span>
-                    <span className="font-medium">- R$ {formatCurrency(getDiscountInfo()!.discountAmount)}</span>
+                  <>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {alumniDiscount
+                          ? `${DISCOUNT_CONFIG.alumni.label} (${getDiscountInfo()!.discountPercentage}%)`
+                          : validatedAgreement
+                            ? `Desconto convênio (${getDiscountInfo()!.discountPercentage}%)`
+                            : validatedCoupon
+                              ? `Cupom ${validatedCoupon.code} (${getDiscountInfo()!.discountPercentage}%)`
+                              : paymentMethod === "pix"
+                                ? `${DISCOUNT_CONFIG.pix.label} (${DISCOUNT_CONFIG.pix.percentage}%)`
+                                : `${DISCOUNT_CONFIG.cash.label} (${DISCOUNT_CONFIG.cash.percentage}%)`}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400 font-medium">
+                        - R$ {formatCurrency(getDiscountInfo()!.discountAmount)}
+                      </span>
+                    </div>
+                  </>
+                )}
+
+                <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                  <span>Você paga</span>
+                  <span className={getDiscountInfo() ? "text-gray-900 dark:text-gray-100" : ""}>
+                    {getPaymentLabel()}
+                  </span>
+                </div>
+
+                {!isGraduacao && paymentMethod === "recorrente" && (
+                  <div className="mt-3 p-3 bg-muted/50 rounded-lg">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      <strong>Como funciona:</strong> Na mensalidade recorrente, a 1ª parcela corresponde à taxa de
+                      inscrição. O valor do curso é dividido a partir da 2ª parcela. Exemplo: em 18x, você paga 1
+                      parcela de inscrição + 17 parcelas do curso.
+                    </p>
                   </div>
                 )}
-              </div>
 
-              <div className="pt-4 border-t">
-                <div className="bg-muted/50 rounded-lg p-4">
-                  <div className="text-sm text-muted-foreground mb-1">Você paga</div>
-                  <div className="text-2xl font-bold text-foreground">{getPaymentLabel().value}</div>
-                  {getPaymentLabel().description && (
-                    <div className="text-sm text-muted-foreground mt-1">{getPaymentLabel().description}</div>
-                  )}
-                </div>
+                {!isGraduacao && paymentMethod === "parcelado" && (
+                  <p className="text-xs text-muted-foreground pt-2">
+                    O valor total é dividido igualmente entre as parcelas selecionadas.
+                  </p>
+                )}
               </div>
 
               <Button className="w-full" size="lg" disabled={!isFormValid() || isSubmitting} onClick={handleSubmit}>
