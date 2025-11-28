@@ -6,8 +6,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { GraduationCap, BookOpen, Briefcase, ChevronRight, Clock, Check, ArrowRight } from "lucide-react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { GraduationCap, BookOpen, Briefcase, ChevronRight, Check, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Dados dos cursos disponíveis
@@ -272,36 +272,39 @@ export default function CentralMatriculaPage() {
                       <h2 className="text-xl font-semibold">Selecione o curso</h2>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {cursosFiltrados.map((c) => {
-                        const isSelected = cursoSelecionado === c.id
-                        return (
-                          <button
-                            key={c.id}
-                            onClick={() => handleCursoChange(c.id)}
-                            className={cn(
-                              "p-4 rounded-lg border-2 text-left transition-all",
-                              isSelected
-                                ? "border-foreground bg-foreground/5"
-                                : "border-border hover:border-foreground/50 hover:bg-muted/50",
-                            )}
-                          >
-                            <h3 className="font-semibold mb-1">{c.nome}</h3>
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <Clock className="h-4 w-4" />
-                              <span>{c.duracao}</span>
+                    <Select value={cursoSelecionado || ""} onValueChange={handleCursoChange}>
+                      <SelectTrigger
+                        className={cn(
+                          "w-full h-auto py-4 px-4 border-2 text-left",
+                          cursoSelecionado
+                            ? "border-foreground bg-foreground/5"
+                            : "border-border hover:border-foreground/50",
+                        )}
+                      >
+                        <SelectValue placeholder="Selecione um curso">
+                          {curso && (
+                            <div className="flex flex-col items-start gap-1">
+                              <span className="font-semibold">{curso.nome}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {curso.duracao} • {curso.modalidades.map((m) => m.label).join(", ")}
+                              </span>
                             </div>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {c.modalidades.map((m) => (
-                                <Badge key={m.tipo} variant="secondary" className="text-xs">
-                                  {m.label}
-                                </Badge>
-                              ))}
+                          )}
+                        </SelectValue>
+                      </SelectTrigger>
+                      <SelectContent>
+                        {cursosFiltrados.map((c) => (
+                          <SelectItem key={c.id} value={c.id} className="py-3 cursor-pointer">
+                            <div className="flex flex-col items-start gap-1">
+                              <span className="font-semibold">{c.nome}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {c.duracao} • {c.modalidades.map((m) => m.label).join(", ")}
+                              </span>
                             </div>
-                          </button>
-                        )
-                      })}
-                    </div>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 )}
 
