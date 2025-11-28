@@ -6,29 +6,10 @@ import { Logo } from "@/components/logo"
 import { LocationIndicator } from "@/components/location-indicator"
 import { GeoLink } from "@/components/geo-link"
 import { Pitchbar } from "@/components/pitchbar"
-import {
-  Search,
-  User,
-  Menu,
-  ArrowRight,
-  GraduationCap,
-  BookOpen,
-  Briefcase,
-  Building2,
-  Info,
-  ChevronDown,
-  Users,
-  TrendingUp,
-  Award,
-  Target,
-  Lightbulb,
-  BarChart,
-  Home,
-  Factory,
-  Compass,
-} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu, X, MapPin, ChevronRight, ArrowRight } from "lucide-react"
+import { BookOpen, Building2, Users, Gift, Newspaper, ClipboardCheck } from "lucide-react"
 
 const menuItems = [
   {
@@ -39,7 +20,7 @@ const menuItems = [
         title: "Primeira Graduação",
         description: "Primeira graduação com metodologia inovadora",
         href: "/graduacao/jovem-ingresso",
-        icon: GraduationCap,
+        icon: BookOpen,
       },
       {
         title: "Segunda Graduação",
@@ -58,7 +39,7 @@ const menuItems = [
       {
         title: "Administração",
         href: "/graduacao/curso/administracao",
-        icon: Briefcase,
+        icon: Building2,
       },
       {
         title: "Psicologia EAD",
@@ -91,19 +72,19 @@ const menuItems = [
         title: "Primeira Pós",
         description: "Especialize-se e destaque-se no mercado",
         href: "/pos-graduacao/primeira-pos",
-        icon: Award,
+        icon: Gift,
       },
       {
         title: "Lifelong Learning",
         description: "Aprendizado contínuo ao longo da carreira",
         href: "/pos-graduacao/lifelong-learning",
-        icon: TrendingUp,
+        icon: ArrowRight,
       },
       {
         title: "Transição de Área",
         description: "Mude de carreira com segurança",
         href: "/pos-graduacao/transicao-area",
-        icon: Target,
+        icon: ArrowRight,
       },
     ],
     items: [
@@ -120,7 +101,7 @@ const menuItems = [
       {
         title: "Intervenção ABA Aplicada ao TEA",
         href: "/pos-graduacao/curso/intervencao-aba",
-        icon: Lightbulb,
+        icon: ArrowRight,
       },
     ],
     featured: {
@@ -137,36 +118,36 @@ const menuItems = [
         title: "Atualização Profissional",
         description: "Mantenha-se atualizado no mercado",
         href: "/extensao/atualizacao",
-        icon: TrendingUp,
+        icon: ArrowRight,
       },
       {
         title: "Gap Imediato",
         description: "Preencha lacunas de conhecimento rapidamente",
         href: "/extensao/gap-imediato",
-        icon: Target,
+        icon: ArrowRight,
       },
       {
         title: "Recolocação Profissional",
         description: "Retorne ao mercado com novas competências",
         href: "/extensao/recolocacao",
-        icon: Briefcase,
+        icon: Building2,
       },
     ],
     items: [
       {
         title: "Gestão de Projetos Ágeis",
         href: "/extensao/curso/gestao-projetos-ageis",
-        icon: BarChart,
+        icon: ArrowRight,
       },
       {
         title: "Inteligência Artificial Aplicada",
         href: "/extensao/curso/inteligencia-artificial-aplicada",
-        icon: Lightbulb,
+        icon: ArrowRight,
       },
       {
         title: "Marketing Digital",
         href: "/extensao/curso/marketing-digital",
-        icon: TrendingUp,
+        icon: ArrowRight,
       },
       {
         title: "Gestão de Pessoas",
@@ -176,7 +157,7 @@ const menuItems = [
       {
         title: "Compliance",
         href: "/extensao/curso/compliance",
-        icon: Award,
+        icon: Gift,
       },
     ],
     featured: {
@@ -193,7 +174,7 @@ const menuItems = [
         title: "CEO / Diretor Executivo",
         description: "Soluções estratégicas para líderes",
         href: "/enterprise/ceo",
-        icon: Target,
+        icon: ArrowRight,
       },
       {
         title: "Gestora de RH",
@@ -211,12 +192,12 @@ const menuItems = [
       {
         title: "Programas In Company",
         href: "/enterprise",
-        icon: Briefcase,
+        icon: Building2,
       },
       {
         title: "Consultoria Educacional",
         href: "/enterprise",
-        icon: Lightbulb,
+        icon: ArrowRight,
       },
     ],
     featured: {
@@ -239,25 +220,49 @@ const menuItems = [
         title: "Governança",
         description: "Transparência e gestão responsável",
         href: "/sobre/governanca",
-        icon: Award,
+        icon: Building2,
       },
       {
-        title: "Nossa Estrutura",
-        description: "Infraestrutura de ponta para seu aprendizado",
-        href: "/sobre/estrutura",
-        icon: Building2,
+        title: "Corpo Docente",
+        description: "Professores especializados e referência",
+        href: "/corpo-docente",
+        icon: Users,
+      },
+      {
+        title: "Programas de Benefícios",
+        description: "Vantagens exclusivas para alunos",
+        href: "/programas-beneficios",
+        icon: Gift,
+      },
+      {
+        title: "Central de Matrículas",
+        description: "Finalize sua matrícula",
+        href: "/central-matricula",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Destaques IPOG",
+        description: "Novidades e histórias",
+        href: "/webstories",
+        icon: Newspaper,
+      },
+      {
+        title: "Blog",
+        description: "Artigos e insights",
+        href: "/blog",
+        icon: Newspaper,
       },
     ],
     items: [
       {
         title: "Sobre Nós",
         href: "/sobre",
-        icon: Info,
+        icon: BookOpen,
       },
       {
         title: "Parcerias Internacionais",
         href: "/parceiros-internacionais",
-        icon: Award,
+        icon: Building2,
       },
       {
         title: "Unidades IPOG",
@@ -271,8 +276,23 @@ const menuItems = [
       },
       {
         title: "Programas de Benefícios",
-        href: "/programas-beneficios/ipog-plus",
-        icon: Award,
+        href: "/programas-beneficios",
+        icon: Gift,
+      },
+      {
+        title: "Central de Matrículas",
+        href: "/central-matricula",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Destaques IPOG",
+        href: "/webstories",
+        icon: Newspaper,
+      },
+      {
+        title: "Blog",
+        href: "/blog",
+        icon: Newspaper,
       },
     ],
     featured: {
@@ -325,7 +345,7 @@ export function HomeHeader() {
                     <div className="flex items-center justify-between mb-8 pt-2">
                       <div className="flex items-center gap-3">
                         <GeoLink href="/" onClick={() => setMobileMenuOpen(false)}>
-                          <Home className="h-6 w-6 text-foreground" />
+                          <MapPin className="h-6 w-6 text-foreground" />
                         </GeoLink>
                         <LocationIndicator />
                       </div>
@@ -341,32 +361,28 @@ export function HomeHeader() {
                             className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <GraduationCap className="h-5 w-5" />
-                            <span>Graduação</span>
+                            Graduação
                           </GeoLink>
                           <GeoLink
                             href="/pos-graduacao"
                             className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <Building2 className="h-5 w-5" />
-                            <span>Pós Graduação</span>
+                            Pós Graduação
                           </GeoLink>
                           <GeoLink
                             href="/extensao"
                             className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <TrendingUp className="h-5 w-5" />
-                            <span>Cursos de Extensão</span>
+                            Cursos de Extensão
                           </GeoLink>
                           <GeoLink
                             href="/enterprise"
                             className="flex items-center gap-3 text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <Factory className="h-5 w-5" />
-                            <span>Enterprise</span>
+                            Enterprise
                           </GeoLink>
                         </div>
                       </div>
@@ -460,39 +476,39 @@ export function HomeHeader() {
                             Estrutura
                           </GeoLink>
                           <GeoLink
-                            href="/parceiros-internacionais"
+                            href="/corpo-docente"
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            Parceiros Internacionais
+                            Corpo Docente
                           </GeoLink>
                           <GeoLink
-                            href="/unidades"
-                            className="text-base text-foreground hover:text-primary transition-colors"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            Unidades IPOG
-                          </GeoLink>
-                          <GeoLink
-                            href="/programas-beneficios/ipog-plus"
+                            href="/programas-beneficios"
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             Programas de Benefícios
                           </GeoLink>
                           <GeoLink
-                            href="/corpo-docente"
+                            href="/central-matricula"
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            Corpo docente
+                            Central de Matrículas
                           </GeoLink>
                           <GeoLink
-                            href="/central-atendimento"
+                            href="/webstories"
                             className="text-base text-foreground hover:text-primary transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            Central de Atendimento
+                            Destaques IPOG
+                          </GeoLink>
+                          <GeoLink
+                            href="/blog"
+                            className="text-base text-foreground hover:text-primary transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            Blog
                           </GeoLink>
                         </div>
                       </div>
@@ -517,7 +533,7 @@ export function HomeHeader() {
                 >
                   <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary">
                     {item.title}
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
               ))}
@@ -533,7 +549,7 @@ export function HomeHeader() {
               {/* Search */}
               <Button variant="ghost" size="icon" asChild>
                 <Link href="/busca">
-                  <Search className="h-5 w-5" />
+                  <ArrowRight className="h-5 w-5" />
                   <span className="sr-only">Buscar</span>
                 </Link>
               </Button>
@@ -541,7 +557,7 @@ export function HomeHeader() {
               <Sheet open={userMenuOpen} onOpenChange={setUserMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <User className="h-5 w-5" />
+                    <X className="h-5 w-5" />
                     <span className="sr-only">Área do aluno</span>
                   </Button>
                 </SheetTrigger>
@@ -550,7 +566,7 @@ export function HomeHeader() {
                     {/* Header with home icon */}
                     <div className="flex items-center mb-8 pt-2">
                       <GeoLink href="/" onClick={() => setUserMenuOpen(false)}>
-                        <Home className="h-6 w-6 text-foreground" />
+                        <MapPin className="h-6 w-6 text-foreground" />
                       </GeoLink>
                     </div>
 
@@ -564,7 +580,7 @@ export function HomeHeader() {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          <GraduationCap className="h-5 w-5" />
+                          <BookOpen className="h-5 w-5" />
                           <span>Portal do Aluno</span>
                         </a>
                         <a
@@ -582,7 +598,7 @@ export function HomeHeader() {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          <Compass className="h-5 w-5" />
+                          <ArrowRight className="h-5 w-5" />
                           <span>Portal do Coordenador</span>
                         </a>
                         <a
@@ -591,7 +607,7 @@ export function HomeHeader() {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 text-base text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          <BookOpen className="h-5 w-5" />
+                          <Newspaper className="h-5 w-5" />
                           <span>Biblioteca</span>
                         </a>
                       </nav>
@@ -674,7 +690,7 @@ export function HomeHeader() {
                         <div className="flex h-full flex-col">
                           <div className="mb-4 aspect-video w-full rounded-md bg-muted flex items-center justify-center">
                             <div className="h-16 w-16 rounded-lg bg-muted-foreground/10 flex items-center justify-center">
-                              <GraduationCap className="h-8 w-8 text-muted-foreground" />
+                              <BookOpen className="h-8 w-8 text-muted-foreground" />
                             </div>
                           </div>
                           <div className="space-y-3 flex-1">
