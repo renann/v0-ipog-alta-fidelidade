@@ -110,12 +110,8 @@ export default function WebinarTrilhaCarreirasPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full relative overflow-hidden">
+      <section className="w-full relative overflow-hidden bg-muted/20">
         {/* Background com imagem e overlay */}
-        <div className="absolute inset-0 hidden lg:block">
-          <img src="/professional-career-development-webinar-audience-l.jpg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/70" />
-        </div>
 
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
