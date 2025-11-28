@@ -145,7 +145,7 @@ export function CourseSearch({
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base text-muted-foreground">
             <button
               onClick={() => handleFormationClick("Graduação")}
               className="hover:text-foreground transition-colors"
