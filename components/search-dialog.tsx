@@ -89,9 +89,9 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                       {areasDeAtuacao.map((area) => (
                         <CommandItem
                           key={area.value}
-                          value={area.value}
-                          onSelect={(currentValue) => {
-                            setSelectedArea(currentValue === selectedArea ? "" : currentValue)
+                          value={area.label}
+                          onSelect={() => {
+                            setSelectedArea(selectedArea === area.value ? "" : area.value)
                             setPopoverOpen(false)
                           }}
                         >
