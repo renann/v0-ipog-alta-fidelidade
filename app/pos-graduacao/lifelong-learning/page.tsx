@@ -6,7 +6,7 @@ import { Dilema } from "@/components/dilema"
 import { MetodoLifelongLearning } from "@/components/lifelong-learning/metodo-lifelong-learning"
 import { Modalidades } from "@/components/modalidades"
 import { Cursos } from "@/components/cursos"
-import { Trilha } from "@/components/trilha"
+import { TrilhaLifelongInterativa } from "@/components/lifelong-learning/trilha-lifelong-interativa"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { ROILifelongLearning } from "@/components/lifelong-learning/roi-lifelong-learning"
 import { DepoimentosDeTexto } from "@/components/depoimentos-de-texto"
@@ -166,33 +166,8 @@ export default function LifelongLearningPage() {
           }}
         />
 
-        <Trilha
-          title="Sua trilha contínua, sem retrabalho"
-          subtitle="Evolução escalável com aproveitamento de estudos anteriores"
-          etapas={[
-            {
-              titulo: "Diagnóstico IPOG+",
-              descricao: "Mapa do que você já tem e identificação de gaps estratégicos",
-            },
-            {
-              titulo: "Módulos Complementares",
-              descricao: "Evita repetição, foca no ganho marginal e na evolução real",
-            },
-            {
-              titulo: "Mentorias Executivas",
-              descricao: "Ajuste fino de estratégia, gestão de times e carreira",
-            },
-            {
-              titulo: "Certificações & Portfólio",
-              descricao: "Evidências concretas de impacto e competências desenvolvidas",
-            },
-            {
-              titulo: "Networking & Parcerias",
-              descricao: "Oportunidades de co-criação e conexões estratégicas",
-            },
-          ]}
-          backgroundColor="bg-muted/30"
-        />
+        <TrilhaLifelongInterativa backgroundColor="bg-muted/30" />
+
         <Empregabilidade
           title="Evolução que aparece no cargo e na remuneração"
           estatisticas={[
