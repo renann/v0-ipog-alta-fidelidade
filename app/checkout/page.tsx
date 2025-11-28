@@ -20,7 +20,6 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -1073,190 +1072,195 @@ function CheckoutContent() {
                   </div>
                 )}
 
-                <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
+                <div className="grid grid-cols-2 gap-3">
                   {/* Cartão Parcelado */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="parcelado" id="parcelado" />
-                      <Label htmlFor="parcelado" className="font-medium cursor-pointer">
-                        Cartão de crédito parcelado
-                      </Label>
-                    </div>
-
-                    {paymentMethod === "parcelado" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-number">Número do cartão</Label>
-                          <Input id="card-number" placeholder="0000 0000 0000 0000" />
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-name">Nome no cartão</Label>
-                          <Input id="card-name" />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-expiry">Validade</Label>
-                            <Input id="card-expiry" placeholder="MM/AA" />
-                          </div>
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-cvv">CVV</Label>
-                            <Input id="card-cvv" placeholder="000" maxLength={3} />
-                          </div>
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="parcelas">Número de parcelas</Label>
-                          <Select value={parcelas} onValueChange={setParcelas}>
-                            <SelectTrigger id="parcelas">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {Array.from({ length: 18 }, (_, i) => i + 1).map((num) => {
-                                const calc = calculateInstallmentPayment(course.price, course.enrollmentValue, num)
-                                return (
-                                  <SelectItem key={num} value={num.toString()}>
-                                    {num === 1
-                                      ? `À vista: R$ ${formatCurrency(calc.total)}`
-                                      : `${num}x - 1ª: R$ ${formatCurrency(calc.firstInstallment!)} + ${num - 1}x de R$ ${formatCurrency(calc.remainingInstallments!.value)}`}
-                                  </SelectItem>
-                                )
-                              })}
-                            </SelectContent>
-                          </Select>
-                          <p className="text-xs text-muted-foreground">
-                            A matrícula (R$ {formatCurrency(course.enrollmentValue)}) é paga 100% na primeira parcela
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("parcelado")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "parcelado"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Cartão de crédito</span>
+                    <span className="text-xs text-muted-foreground">Parcelado em até 18x</span>
+                  </button>
 
                   {/* Mensalidade Recorrente */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="recorrente" id="recorrente" />
-                      <Label htmlFor="recorrente" className="font-medium cursor-pointer">
-                        Mensalidade recorrente
-                      </Label>
-                    </div>
-
-                    {paymentMethod === "recorrente" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        <div className="space-y-2">
-                          <p className="text-sm font-medium">
-                            1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            Matrícula (R$ {formatCurrency(course.enrollmentValue)}) + 1ª mensalidade (R${" "}
-                            {formatCurrency(course.monthlyPrice)})
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            Demais parcelas: 17x de R$ {formatCurrency(course.monthlyPrice)}
-                          </p>
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-number-rec">Número do cartão</Label>
-                          <Input id="card-number-rec" placeholder="0000 0000 0000 0000" />
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-name-rec">Nome no cartão</Label>
-                          <Input id="card-name-rec" />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-expiry-rec">Validade</Label>
-                            <Input id="card-expiry-rec" placeholder="MM/AA" />
-                          </div>
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-cvv-rec">CVV</Label>
-                            <Input id="card-cvv-rec" placeholder="000" maxLength={3} />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("recorrente")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "recorrente"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Mensalidade</span>
+                    <span className="text-xs text-muted-foreground">Recorrente no cartão</span>
+                  </button>
 
                   {/* PIX */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="pix" id="pix" />
-                        <Label htmlFor="pix" className="font-medium cursor-pointer">
-                          PIX
-                        </Label>
-                      </div>
-                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                        >
-                          {DISCOUNT_CONFIG.pix.percentage}% de desconto
-                        </Badge>
-                      )}
-                    </div>
-
-                    {paymentMethod === "pix" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
-                          <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
-                            <span className="text-xs text-muted-foreground">QR Code</span>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-sm font-medium mb-1">Tempo restante</p>
-                            <p className="text-2xl font-bold">{formatTimer(pixTimer)}</p>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label>Chave PIX</Label>
-                          <div className="flex gap-2">
-                            <Input
-                              value="00020126580014br.gov.bcb.pix0136a1b2c3d4..."
-                              readOnly
-                              className="font-mono text-xs"
-                            />
-                            <Button type="button" variant="outline" size="icon" onClick={copyPixKey}>
-                              <Copy className="h-4 w-4" />
-                            </Button>
-                          </div>
-                          {pixKeyCopied && <p className="text-sm text-muted-foreground">Chave copiada!</p>}
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Escaneie o QR Code ou copie a chave PIX para realizar o pagamento. O pagamento deve ser
-                          confirmado em até 30 minutos.
-                        </p>
-                      </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("pix")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "pix" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">PIX</span>
+                    <span className="text-xs text-muted-foreground">Pagamento instantâneo</span>
+                    {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
+                      <span className="absolute top-2 right-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                        {DISCOUNT_CONFIG.pix.percentage}% OFF
+                      </span>
                     )}
-                  </div>
+                  </button>
 
                   {/* Boleto */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="boleto" id="boleto" />
-                        <Label htmlFor="boleto" className="font-medium cursor-pointer">
-                          Boleto bancário
-                        </Label>
-                      </div>
-                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100"
-                        >
-                          {DISCOUNT_CONFIG.cash.percentage}% de desconto
-                        </Badge>
-                      )}
-                    </div>
-
-                    {paymentMethod === "boleto" && (
-                      <div className="ml-6 space-y-2 border-l-2 border-muted pl-4 pr-0">
-                        <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
-                        <p className="text-sm text-muted-foreground">
-                          O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias
-                          úteis.
-                        </p>
-                      </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("boleto")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "boleto"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Boleto bancário</span>
+                    <span className="text-xs text-muted-foreground">Vencimento em 3 dias</span>
+                    {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
+                      <span className="absolute top-2 right-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                        {DISCOUNT_CONFIG.cash.percentage}% OFF
+                      </span>
                     )}
+                  </button>
+                </div>
+
+                {/* Detalhes do método de pagamento selecionado */}
+                {paymentMethod === "parcelado" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-number">Número do cartão</Label>
+                      <Input id="card-number" placeholder="0000 0000 0000 0000" />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-name">Nome no cartão</Label>
+                      <Input id="card-name" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-expiry">Validade</Label>
+                        <Input id="card-expiry" placeholder="MM/AA" />
+                      </div>
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-cvv">CVV</Label>
+                        <Input id="card-cvv" placeholder="000" maxLength={3} />
+                      </div>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="parcelas">Número de parcelas</Label>
+                      <Select value={parcelas} onValueChange={setParcelas}>
+                        <SelectTrigger id="parcelas">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Array.from({ length: 18 }, (_, i) => i + 1).map((num) => {
+                            const calc = calculateInstallmentPayment(course.price, course.enrollmentValue, num)
+                            return (
+                              <SelectItem key={num} value={num.toString()}>
+                                {num === 1
+                                  ? `À vista: R$ ${formatCurrency(calc.total)}`
+                                  : `${num}x - 1ª: R$ ${formatCurrency(calc.firstInstallment!)} + ${num - 1}x de R$ ${formatCurrency(calc.remainingInstallments!.value)}`}
+                              </SelectItem>
+                            )
+                          })}
+                        </SelectContent>
+                      </Select>
+                      <p className="text-xs text-muted-foreground">
+                        A matrícula (R$ {formatCurrency(course.enrollmentValue)}) é paga 100% na primeira parcela
+                      </p>
+                    </div>
                   </div>
-                </RadioGroup>
+                )}
+
+                {paymentMethod === "recorrente" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="space-y-2">
+                      <p className="text-sm font-medium">
+                        1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Matrícula (R$ {formatCurrency(course.enrollmentValue)}) + 1ª mensalidade (R${" "}
+                        {formatCurrency(course.monthlyPrice)})
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Demais parcelas: 17x de R$ {formatCurrency(course.monthlyPrice)}
+                      </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-number-rec">Número do cartão</Label>
+                      <Input id="card-number-rec" placeholder="0000 0000 0000 0000" />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-name-rec">Nome no cartão</Label>
+                      <Input id="card-name-rec" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-expiry-rec">Validade</Label>
+                        <Input id="card-expiry-rec" placeholder="MM/AA" />
+                      </div>
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-cvv-rec">CVV</Label>
+                        <Input id="card-cvv-rec" placeholder="000" maxLength={3} />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod === "pix" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
+                      <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
+                        <span className="text-xs text-muted-foreground">QR Code</span>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-sm font-medium mb-1">Tempo restante</p>
+                        <p className="text-2xl font-bold">{formatTimer(pixTimer)}</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Chave PIX</Label>
+                      <div className="flex gap-2">
+                        <Input
+                          value="00020126580014br.gov.bcb.pix0136a1b2c3d4..."
+                          readOnly
+                          className="font-mono text-xs"
+                        />
+                        <Button type="button" variant="outline" size="icon" onClick={copyPixKey}>
+                          <Copy className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      {pixKeyCopied && <p className="text-sm text-muted-foreground">Chave copiada!</p>}
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Escaneie o QR Code ou copie a chave PIX para realizar o pagamento. O pagamento deve ser confirmado
+                      em até 30 minutos.
+                    </p>
+                  </div>
+                )}
+
+                {paymentMethod === "boleto" && (
+                  <div className="mt-4 space-y-2 border-l-2 border-muted pl-4">
+                    <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
+                    <p className="text-sm text-muted-foreground">
+                      O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias úteis.
+                    </p>
+                  </div>
+                )}
+                {/* </CHANGE> */}
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 pt-4 border-t">
