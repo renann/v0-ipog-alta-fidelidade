@@ -4,7 +4,7 @@ import type React from "react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { BadgeCheck, ChevronRight } from "lucide-react"
+import { BadgeCheck, ChevronRight, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import { openAssistantForConsultor, openAssistantForPrice } from "@/lib/assistant-events"
 import type { ReactNode } from "react"
@@ -30,6 +30,7 @@ interface HeroProps {
   valueBadges: ValueBadge[]
   primaryCTA: CTA
   secondaryCTA?: CTA
+  tertiaryCTA?: CTA
   backgroundImage?: string
   minHeight?: string
 }
@@ -42,6 +43,7 @@ export function Hero({
   valueBadges,
   primaryCTA,
   secondaryCTA,
+  tertiaryCTA,
   backgroundImage = "/placeholder.svg?height=600&width=1920",
   minHeight = "auto",
 }: HeroProps) {
@@ -177,6 +179,46 @@ export function Hero({
                 >
                   {secondaryCTA.text}
                   {secondaryCTA.icon}
+                </Button>
+              )}
+            </>
+          )}
+
+          {tertiaryCTA && (
+            <>
+              {isAnchorLink(tertiaryCTA.href) ? (
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="text-base text-primary hover:text-primary/80"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const targetId = tertiaryCTA.href!.substring(1)
+                    const targetElement = document.getElementById(targetId)
+                    if (targetElement) {
+                      targetElement.scrollIntoView({ behavior: "smooth", block: "start" })
+                    }
+                  }}
+                >
+                  {tertiaryCTA.text}
+                  {tertiaryCTA.icon || <ChevronDown className="w-5 h-5 ml-1" />}
+                </Button>
+              ) : tertiaryCTA.href ? (
+                <Button size="lg" variant="ghost" className="text-base text-primary hover:text-primary/80" asChild>
+                  <Link href={tertiaryCTA.href}>
+                    {tertiaryCTA.text}
+                    {tertiaryCTA.icon || <ChevronDown className="w-5 h-5 ml-1" />}
+                  </Link>
+                </Button>
+              ) : (
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="text-base text-primary hover:text-primary/80"
+                  onClick={resolveOnClick(tertiaryCTA.onClick)}
+                >
+                  {tertiaryCTA.text}
+                  {tertiaryCTA.icon || <ChevronDown className="w-5 h-5 ml-1" />}
                 </Button>
               )}
             </>

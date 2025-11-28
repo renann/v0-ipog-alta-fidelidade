@@ -40,6 +40,7 @@ export default function TransferenciaPage() {
           ]}
           primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Ver cursos de Graduação", href: "/catalogo?tipo=graduacao" }}
+          tertiaryCTA={{ text: "Ver formas de ingresso", href: "#formas-ingresso" }}
         />
         <Dilema
           title="Transferir não deveria ser um risco"

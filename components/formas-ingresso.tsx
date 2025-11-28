@@ -26,33 +26,33 @@ export function FormasIngresso({
       titulo: "Vestibular",
       descricao: "Faça nossa prova de ingresso e garanta sua vaga. Processo seletivo ágil e objetivo.",
       cta: "Fazer prova agora",
-      href: "/vestibular",
+      href: "/catalogo?tipo=graduacao&ingresso=vestibular",
     },
     {
       icon: <FileText className="w-12 h-12 text-primary" />,
       titulo: "Boletim do ENEM",
       descricao: "Use sua nota do ENEM para ingressar sem precisar fazer vestibular.",
       cta: "Usar nota do ENEM",
-      href: "/enem",
+      href: "/catalogo?tipo=graduacao&ingresso=enem",
     },
     {
       icon: <Award className="w-12 h-12 text-primary" />,
       titulo: "Portador de Diploma",
       descricao: "Já tem diploma de graduação? Ingresse direto sem processo seletivo.",
       cta: "Ingressar com diploma",
-      href: "/portador-diploma",
+      href: "/catalogo?tipo=graduacao&ingresso=portador-diploma",
     },
     {
       icon: <ArrowRightLeft className="w-12 h-12 text-primary" />,
       titulo: "Transferência",
       descricao: "Traga seu curso para o IPOG e continue sua jornada com excelência.",
       cta: "Solicitar transferência",
-      href: "/graduacao/transferencia",
+      href: "/catalogo?tipo=graduacao&ingresso=transferencia",
     },
   ]
 
   return (
-    <section className="w-full py-16 md:py-24 bg-background">
+    <section id="formas-ingresso" className="w-full py-16 md:py-24 bg-background">
       <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{title}</h2>

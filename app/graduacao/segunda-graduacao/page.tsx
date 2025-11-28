@@ -42,6 +42,7 @@ export default function SegundaGraduacaoPage() {
           ]}
           primaryCTA={{ text: "Valide sua Experiência Agora", href: "/catalogo?tipo=graduacao" }}
           secondaryCTA={{ text: "Valide seus conhecimentos", href: "/central-atendimento" }}
+          tertiaryCTA={{ text: "Ver formas de ingresso", href: "#formas-ingresso" }}
         />
         <Dilema
           title="Você já tem experiência. Por que começar do zero?"
@@ -221,7 +222,7 @@ export default function SegundaGraduacaoPage() {
           tituloProfessores="Aprenda com os Profissionais que Lideram o Mercado"
           backgroundColor="bg-muted/30"
         />
-        <FormasIngresso />
+        <FormasIngresso id="formas-ingresso" />
         <AcaoFinal
           title="Sua Próxima Conquista Começa Aqui. A Escolha que Conecta Você ao Sucesso."
           descricao="Valide sua trajetória, otimize seu tempo e seu investimento. Conquiste um novo diploma com a qualidade e o reconhecimento que sua carreira merece."

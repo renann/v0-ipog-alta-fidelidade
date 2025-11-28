@@ -42,6 +42,7 @@ export default function JovemIngressoPage() {
             href: "/catalogo?tipo=graduacao&persona=jovem-ingresso",
           }}
           secondaryCTA={{ text: "Falar com consultor", onClick: "openAssistantForConsultor" }}
+          tertiaryCTA={{ text: "Ver formas de ingresso", href: "#formas-ingresso" }}
         />
         <Dilema
           title="Entendemos os desafios de começar a carreira"
@@ -184,7 +185,7 @@ export default function JovemIngressoPage() {
           bgColor="bg-background"
         />
         <SuporteAcompanhamento />
-        <FormasIngresso />
+        <FormasIngresso id="formas-ingresso" />
         <AcaoFinal
           title="A escolha que conecta você ao sucesso."
           descricao="Tudo o que você precisa para construir uma carreira de impacto está aqui. Dê o primeiro passo na direção do seu futuro."

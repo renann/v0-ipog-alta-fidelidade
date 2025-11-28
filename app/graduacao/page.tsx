@@ -38,6 +38,7 @@ export default function GraduacaoPage() {
           ]}
           primaryCTA={{ text: "Encontre seu curso", href: "/catalogo?tipo=graduacao" }}
           secondaryCTA={{ text: "Falar com consultor" }}
+          tertiaryCTA={{ text: "Ver formas de ingresso", href: "#formas-ingresso" }}
         />
 
         <Dilema
@@ -207,7 +208,7 @@ export default function GraduacaoPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <FormasIngresso />
+        <FormasIngresso id="formas-ingresso" />
 
         <AcaoFinal
           title="Dê o passo decisivo para sua carreira."
