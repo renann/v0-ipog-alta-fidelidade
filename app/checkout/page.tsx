@@ -679,11 +679,6 @@ function CheckoutContent() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
     setIsSubmitting(false)
 
-    if (isGraduacao && metodoIngresso === "vestibular") {
-      window.location.href = `/onboarding/vestibular?course=${courseId}`
-      return
-    }
-
     const params = new URLSearchParams({ course: courseId })
     if (isGraduacao && metodoIngresso) {
       params.append("metodo", metodoIngresso)
