@@ -22,21 +22,76 @@ const CURSOS_GRADUACAO = [
 ]
 
 const CURSOS_POS_GRADUACAO = [
+  // Psicologia
   { id: 1, nome: "Avaliação Psicológica", area: "Psicologia" },
   { id: 2, nome: "Neuropsicologia", area: "Psicologia" },
-  { id: 3, nome: "Psicologia Organizacional", area: "Psicologia" },
-  { id: 4, nome: "Direito Tributário", area: "Direito" },
-  { id: 5, nome: "Direito Empresarial", area: "Direito" },
-  { id: 6, nome: "Direito Trabalhista e Previdenciário", area: "Direito" },
-  { id: 7, nome: "Engenharia Estrutural e Fundações", area: "Engenharia" },
-  { id: 8, nome: "Gerenciamento de Projetos", area: "Engenharia" },
-  { id: 9, nome: "MBA em Gestão de Pessoas", area: "Administração" },
-  { id: 10, nome: "MBA em Finanças Corporativas", area: "Administração" },
-  { id: 11, nome: "Controladoria e Finanças", area: "Contabilidade" },
-  { id: 12, nome: "Perícia Contábil", area: "Contabilidade" },
-  { id: 13, nome: "Educação Infantil e Séries Iniciais", area: "Educação" },
-  { id: 14, nome: "Psicopedagogia Institucional", area: "Educação" },
-  { id: 15, nome: "Análises Clínicas", area: "Saúde" },
+  { id: 3, nome: "Psicologia Organizacional e do Trabalho", area: "Psicologia" },
+  { id: 4, nome: "Psicologia Clínica", area: "Psicologia" },
+  { id: 5, nome: "Psicologia Hospitalar", area: "Psicologia" },
+  { id: 6, nome: "Psicologia Jurídica", area: "Psicologia" },
+  { id: 7, nome: "Terapia Cognitivo-Comportamental", area: "Psicologia" },
+  { id: 8, nome: "Psicologia Social", area: "Psicologia" },
+
+  // Direito
+  { id: 9, nome: "Direito Tributário", area: "Direito" },
+  { id: 10, nome: "Direito Empresarial", area: "Direito" },
+  { id: 11, nome: "Direito Trabalhista e Previdenciário", area: "Direito" },
+  { id: 12, nome: "Direito Penal e Processo Penal", area: "Direito" },
+  { id: 13, nome: "Direito Civil e Processo Civil", area: "Direito" },
+  { id: 14, nome: "Direito Público", area: "Direito" },
+  { id: 15, nome: "Direito Imobiliário", area: "Direito" },
+  { id: 16, nome: "Direito Ambiental", area: "Direito" },
+
+  // Engenharia
+  { id: 17, nome: "Engenharia Estrutural e Fundações", area: "Engenharia" },
+  { id: 18, nome: "Gerenciamento de Projetos", area: "Engenharia" },
+  { id: 19, nome: "Engenharia de Segurança do Trabalho", area: "Engenharia" },
+  { id: 20, nome: "Engenharia de Produção", area: "Engenharia" },
+  { id: 21, nome: "Engenharia de Infraestrutura", area: "Engenharia" },
+  { id: 22, nome: "Planejamento e Controle de Obras", area: "Engenharia" },
+
+  // Administração
+  { id: 23, nome: "MBA em Gestão de Pessoas", area: "Administração" },
+  { id: 24, nome: "MBA em Finanças Corporativas", area: "Administração" },
+  { id: 25, nome: "MBA em Gestão Estratégica de Negócios", area: "Administração" },
+  { id: 26, nome: "MBA em Marketing Digital", area: "Administração" },
+  { id: 27, nome: "MBA em Logística e Supply Chain", area: "Administração" },
+  { id: 28, nome: "MBA em Gestão de Projetos", area: "Administração" },
+  { id: 29, nome: "MBA em Controladoria", area: "Administração" },
+
+  // Contabilidade
+  { id: 30, nome: "Controladoria e Finanças", area: "Contabilidade" },
+  { id: 31, nome: "Perícia Contábil", area: "Contabilidade" },
+  { id: 32, nome: "Auditoria e Compliance", area: "Contabilidade" },
+  { id: 33, nome: "Contabilidade Tributária", area: "Contabilidade" },
+
+  // Educação
+  { id: 34, nome: "Educação Infantil e Séries Iniciais", area: "Educação" },
+  { id: 35, nome: "Psicopedagogia Institucional", area: "Educação" },
+  { id: 36, nome: "Gestão Escolar", area: "Educação" },
+  { id: 37, nome: "Educação Especial e Inclusiva", area: "Educação" },
+  { id: 38, nome: "Alfabetização e Letramento", area: "Educação" },
+  { id: 39, nome: "Educação a Distância", area: "Educação" },
+
+  // Saúde
+  { id: 40, nome: "Análises Clínicas", area: "Saúde" },
+  { id: 41, nome: "Gestão em Saúde", area: "Saúde" },
+  { id: 42, nome: "Enfermagem do Trabalho", area: "Saúde" },
+  { id: 43, nome: "Urgência e Emergência", area: "Saúde" },
+  { id: 44, nome: "UTI e Cuidados Críticos", area: "Saúde" },
+  { id: 45, nome: "Biomedicina Estética", area: "Saúde" },
+
+  // Arquitetura
+  { id: 46, nome: "Arquitetura de Interiores", area: "Arquitetura" },
+  { id: 47, nome: "Paisagismo", area: "Arquitetura" },
+  { id: 48, nome: "Iluminação Arquitetônica", area: "Arquitetura" },
+  { id: 49, nome: "Arquitetura Sustentável", area: "Arquitetura" },
+
+  // Tecnologia
+  { id: 50, nome: "Gestão de TI", area: "Tecnologia" },
+  { id: 51, nome: "Segurança da Informação", area: "Tecnologia" },
+  { id: 52, nome: "Data Science e Analytics", area: "Tecnologia" },
+  { id: 53, nome: "Desenvolvimento de Software", area: "Tecnologia" },
 ]
 
 interface TrilhaLifelongInterativaProps {
@@ -48,6 +103,7 @@ export function TrilhaLifelongInterativa({ backgroundColor = "bg-muted/30" }: Tr
   const [graduacao, setGraduacao] = useState("")
   const [posGraduacoes, setPosGraduacoes] = useState<number[]>([])
   const [filtroPos, setFiltroPos] = useState("")
+  const [showPosDropdown, setShowPosDropdown] = useState(false)
 
   const calcularDesconto = () => {
     return Math.min(posGraduacoes.length * 10, 50) // 10% por curso, máximo 50%
@@ -64,7 +120,7 @@ export function TrilhaLifelongInterativa({ backgroundColor = "bg-muted/30" }: Tr
         return CURSOS_POS_GRADUACAO.filter((c) => c.area === "Direito")
       }
       if (areaGraduacao.includes("engenharia") || areaGraduacao.includes("arquitetura")) {
-        return CURSOS_POS_GRADUACAO.filter((c) => c.area === "Engenharia")
+        return CURSOS_POS_GRADUACAO.filter((c) => c.area === "Engenharia" || c.area === "Arquitetura")
       }
       if (areaGraduacao.includes("administração") || areaGraduacao.includes("contábeis")) {
         return CURSOS_POS_GRADUACAO.filter((c) => c.area === "Administração" || c.area === "Contabilidade")
@@ -237,7 +293,7 @@ export function TrilhaLifelongInterativa({ backgroundColor = "bg-muted/30" }: Tr
                         )}
 
                         {/* Campo de busca */}
-                        <div className="space-y-2">
+                        <div className="space-y-2 relative">
                           <Label htmlFor="pos" className="text-background">
                             Buscar curso
                           </Label>
@@ -246,19 +302,23 @@ export function TrilhaLifelongInterativa({ backgroundColor = "bg-muted/30" }: Tr
                             placeholder="Digite para buscar..."
                             value={filtroPos}
                             onChange={(e) => setFiltroPos(e.target.value)}
+                            onFocus={() => setShowPosDropdown(true)}
                             className="bg-background text-foreground"
                           />
 
                           {/* Lista de resultados */}
-                          {filtroPos && cursosFiltrados.length > 0 && (
-                            <div className="max-h-48 overflow-y-auto bg-background rounded-md border">
+                          {showPosDropdown && cursosFiltrados.length > 0 && (
+                            <div className="absolute z-10 w-full max-h-64 overflow-y-auto bg-background rounded-md border shadow-lg mt-1">
                               {cursosFiltrados.map((curso) => (
                                 <button
                                   key={curso.id}
-                                  onClick={() => handleAddPos(curso.id)}
-                                  className="w-full text-left px-4 py-2 hover:bg-muted transition-colors flex items-center justify-between group"
+                                  onClick={() => {
+                                    handleAddPos(curso.id)
+                                    setShowPosDropdown(false)
+                                  }}
+                                  className="w-full text-left px-4 py-3 hover:bg-muted transition-colors flex items-center justify-between group border-b last:border-b-0"
                                 >
-                                  <div>
+                                  <div className="flex-1">
                                     <div className="font-medium text-foreground">{curso.nome}</div>
                                     <div className="text-xs text-muted-foreground">{curso.area}</div>
                                   </div>
@@ -266,6 +326,10 @@ export function TrilhaLifelongInterativa({ backgroundColor = "bg-muted/30" }: Tr
                                 </button>
                               ))}
                             </div>
+                          )}
+
+                          {showPosDropdown && (
+                            <div className="fixed inset-0 z-0" onClick={() => setShowPosDropdown(false)} />
                           )}
                         </div>
 
