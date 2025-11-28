@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Badge } from "@/components/ui/badge"
 import { Logo } from "@/components/logo"
 import {
   Calendar,
@@ -14,13 +15,13 @@ import {
   Mail,
   Phone,
   CheckCircle2,
-  Play,
   Target,
   TrendingUp,
   Award,
   Users,
   Lightbulb,
   ArrowRight,
+  BadgeCheck,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -109,63 +110,67 @@ export default function WebinarTrilhaCarreirasPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="w-full relative overflow-hidden">
         {/* Background com imagem e overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hidden lg:block">
           <img src="/professional-career-development-meeting.jpg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/80" />
+          <div className="absolute inset-0 bg-white/70" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Content */}
-            <div className="text-foreground">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 bg-foreground/5 text-sm mb-6">
-                <Play className="w-4 h-4" />
-                <span>Webinar Gratuito e Online</span>
+            <div>
+              <div className="mb-6 flex gap-2 flex-wrap">
+                <Badge variant="outline" className="text-xs py-1 px-3 font-semibold">
+                  WEBINAR GRATUITO
+                </Badge>
+                <Badge variant="secondary" className="text-xs py-1 px-3 font-semibold">
+                  Online
+                </Badge>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance max-w-4xl">
                 Trilha de Carreiras com o IPOG
               </h1>
 
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl">
                 Descubra como planejar e acelerar sua trajetória profissional com estratégias comprovadas por milhares
                 de alunos.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                    <Calendar className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Data</p>
-                    <p className="font-semibold">15 de Dezembro, 2024</p>
-                  </div>
+              {/* Value Badges */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background">
+                  <Calendar className="w-5 h-5" />
+                  <span className="text-sm font-medium">15 de Dezembro, 2024</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Horário</p>
-                    <p className="font-semibold">19h00 (Brasília)</p>
-                  </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background">
+                  <Clock className="w-5 h-5" />
+                  <span className="text-sm font-medium">19h00 (Brasília)</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border bg-background">
+                  <Users className="w-5 h-5" />
+                  <span className="text-sm font-medium">+2.500 inscritos</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Users className="w-5 h-5" />
-                <span>+2.500 inscritos</span>
-              </div>
+              {/* CTA para scroll ao formulário no mobile */}
+              <Button
+                size="lg"
+                className="text-base lg:hidden"
+                onClick={() => document.getElementById("form-inscricao")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Garantir minha vaga
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
             </div>
 
             {/* Form */}
-            <div>
+            <div id="form-inscricao">
               {isSubmitted ? (
                 <Card className="p-8 text-center">
-                  <div className="w-20 h-20 rounded-full bg-foreground/10 flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-10 h-10 text-foreground" />
                   </div>
                   <h2 className="text-2xl font-bold mb-4">Inscrição confirmada!</h2>
@@ -270,7 +275,7 @@ export default function WebinarTrilhaCarreirasPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-lg bg-foreground/5 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
                   <topic.icon className="w-6 h-6 text-foreground" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{topic.title}</h3>
@@ -294,8 +299,8 @@ export default function WebinarTrilhaCarreirasPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {speakers.map((speaker, index) => (
               <Card key={index} className="p-6 flex gap-4">
-                <div className="w-20 h-20 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
-                  <User className="w-8 h-8 text-foreground/50" />
+                <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center shrink-0">
+                  <User className="w-8 h-8 text-muted-foreground" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{speaker.name}</h3>
@@ -319,7 +324,7 @@ export default function WebinarTrilhaCarreirasPage() {
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-foreground flex items-center justify-center shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-background" />
+                        <BadgeCheck className="w-4 h-4 text-background" />
                       </div>
                       <span>{benefit}</span>
                     </li>
@@ -327,17 +332,13 @@ export default function WebinarTrilhaCarreirasPage() {
                 </ul>
               </div>
 
-              <Card className="p-8 text-center bg-foreground text-background">
+              <Card className="p-8 text-center border-2">
                 <p className="text-lg mb-2">Evento 100% online e gratuito</p>
                 <p className="text-5xl font-bold mb-4">15/12</p>
-                <p className="text-xl mb-6">às 19h00 (Brasília)</p>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="w-full"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                >
+                <p className="text-xl mb-6 text-muted-foreground">às 19h00 (Brasília)</p>
+                <Button size="lg" className="w-full" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                   Garantir minha vaga
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Card>
             </div>
@@ -346,18 +347,13 @@ export default function WebinarTrilhaCarreirasPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 md:py-24 bg-foreground text-background">
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Não perca essa oportunidade</h2>
-          <p className="text-xl text-background/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Junte-se a milhares de profissionais que estão transformando suas carreiras com o IPOG
           </p>
-          <Button
-            variant="secondary"
-            size="lg"
-            className="text-lg px-8"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
+          <Button size="lg" className="text-lg px-8" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             Inscrever-se agora
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
