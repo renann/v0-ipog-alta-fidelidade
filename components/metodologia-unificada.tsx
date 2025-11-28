@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState } from "react"
+import { ModalidadeVideoModal } from "@/components/modalidade-video-modal"
 
 interface MetodologiaUnificadaProps {
   titulo?: string
@@ -37,6 +39,8 @@ const modalidades = [
 export function MetodologiaUnificada({
   titulo = "Metodologia IPOG: teoria + prática + mentoria",
 }: MetodologiaUnificadaProps) {
+  const [selectedModalidade, setSelectedModalidade] = useState<(typeof modalidades)[0] | null>(null)
+
   return (
     <section className="w-full px-4 py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto">
@@ -79,6 +83,12 @@ export function MetodologiaUnificada({
                           <Button asChild className="w-full mt-4">
                             <Link href={modalidade.href}>Ver cursos</Link>
                           </Button>
+                          <button
+                            onClick={() => setSelectedModalidade(modalidade)}
+                            className="text-sm text-primary hover:underline text-center mt-2"
+                          >
+                            Conheça mais esta modalidade
+                          </button>
                         </CardContent>
                       </Card>
                     </CarouselItem>
@@ -112,6 +122,12 @@ export function MetodologiaUnificada({
                     <Button asChild className="w-full mt-4">
                       <Link href={modalidade.href}>Ver cursos</Link>
                     </Button>
+                    <button
+                      onClick={() => setSelectedModalidade(modalidade)}
+                      className="text-sm text-primary hover:underline text-center mt-2"
+                    >
+                      Conheça mais esta modalidade
+                    </button>
                   </CardContent>
                 </Card>
               )
@@ -119,6 +135,14 @@ export function MetodologiaUnificada({
           </div>
         </div>
       </div>
+
+      {selectedModalidade && (
+        <ModalidadeVideoModal
+          isOpen={!!selectedModalidade}
+          onClose={() => setSelectedModalidade(null)}
+          modalidade={selectedModalidade}
+        />
+      )}
     </section>
   )
 }
