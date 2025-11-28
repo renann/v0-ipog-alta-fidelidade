@@ -275,7 +275,7 @@ export default function CentralMatriculaPage() {
                     <Select value={cursoSelecionado || ""} onValueChange={handleCursoChange}>
                       <SelectTrigger
                         className={cn(
-                          "w-full h-auto py-4 px-4 border-2 text-left",
+                          "w-full min-h-[72px] h-auto py-4 px-4 border-2 text-left [&>span]:flex [&>span]:flex-col [&>span]:items-start [&>span]:gap-0.5",
                           cursoSelecionado
                             ? "border-foreground bg-foreground/5"
                             : "border-border hover:border-foreground/50",
@@ -283,9 +283,9 @@ export default function CentralMatriculaPage() {
                       >
                         <SelectValue placeholder="Selecione um curso">
                           {curso && (
-                            <div className="flex flex-col items-start gap-1">
-                              <span className="font-semibold">{curso.nome}</span>
-                              <span className="text-sm text-muted-foreground">
+                            <div className="flex flex-col items-start gap-0.5 py-1">
+                              <span className="font-semibold text-base leading-tight">{curso.nome}</span>
+                              <span className="text-sm text-muted-foreground leading-tight">
                                 {curso.duracao} • {curso.modalidades.map((m) => m.label).join(", ")}
                               </span>
                             </div>
