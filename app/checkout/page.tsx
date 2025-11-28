@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 import { HomeHeader } from "@/components/home-header"
 import {
@@ -46,6 +46,13 @@ interface CouponCode {
   discount: number
   type: "coupon"
 }
+
+const validCoupons = [
+  { code: "IPOG10", discount: 10 },
+  { code: "IPOG20", discount: 20 },
+  { code: "IPOG30", discount: 30 },
+]
+
 const INSCRICAO_GRADUACAO = 80.0
 
 function CheckoutContent() {
@@ -96,22 +103,120 @@ function CheckoutContent() {
   const [openAccordion, setOpenAccordion] = useState("curso")
   const [hasMovedToDados, setHasMovedToDados] = useState(false)
   const [hasMovedToPagamento, setHasMovedToPagamento] = useState(false)
-  // </CHANGE>
 
   const empresasConvenio = [
-    { value: "empresa-a", label: "Empresa A - Tecnologia", discount: 15 },
-    { value: "empresa-b", label: "Empresa B - Saúde", discount: 20 },
-    { value: "empresa-c", label: "Empresa C - Educação", discount: 25 },
-    { value: "empresa-d", label: "Empresa D - Financeiro", discount: 10 },
-    { value: "empresa-e", label: "Empresa E - Varejo", discount: 12 },
+    { value: "accenture", label: "Accenture", discount: 15 },
+    { value: "ambev", label: "Ambev S.A.", discount: 20 },
+    { value: "americanas", label: "Americanas S.A.", discount: 12 },
+    { value: "banco-do-brasil", label: "Banco do Brasil", discount: 18 },
+    { value: "bradesco", label: "Bradesco", discount: 15 },
+    { value: "btg-pactual", label: "BTG Pactual", discount: 20 },
+    { value: "carrefour", label: "Carrefour Brasil", discount: 10 },
+    { value: "cielo", label: "Cielo S.A.", discount: 15 },
+    { value: "claro", label: "Claro Brasil", discount: 12 },
+    { value: "coca-cola", label: "Coca-Cola FEMSA", discount: 18 },
+    { value: "correios", label: "Correios", discount: 20 },
+    { value: "cpfl-energia", label: "CPFL Energia", discount: 15 },
+    { value: "dell", label: "Dell Technologies", discount: 18 },
+    { value: "deloitte", label: "Deloitte", discount: 20 },
+    { value: "embraer", label: "Embraer S.A.", discount: 22 },
+    { value: "eletrobras", label: "Eletrobras", discount: 18 },
+    { value: "ernst-young", label: "Ernst & Young (EY)", discount: 20 },
+    { value: "fiat", label: "Fiat Chrysler", discount: 15 },
+    { value: "gerdau", label: "Gerdau S.A.", discount: 18 },
+    { value: "globo", label: "Grupo Globo", discount: 15 },
+    { value: "google", label: "Google Brasil", discount: 25 },
+    { value: "hp", label: "HP Brasil", discount: 18 },
+    { value: "ibm", label: "IBM Brasil", discount: 20 },
+    { value: "ifood", label: "iFood", discount: 12 },
+    { value: "intel", label: "Intel Brasil", discount: 18 },
+    { value: "itau", label: "Itaú Unibanco", discount: 20 },
+    { value: "jbs", label: "JBS S.A.", discount: 15 },
+    { value: "kpmg", label: "KPMG", discount: 20 },
+    { value: "localiza", label: "Localiza", discount: 12 },
+    { value: "lojas-renner", label: "Lojas Renner", discount: 10 },
+    { value: "magazine-luiza", label: "Magazine Luiza", discount: 15 },
+    { value: "marfrig", label: "Marfrig Global Foods", discount: 12 },
+    { value: "mercado-livre", label: "Mercado Livre", discount: 18 },
+    { value: "microsoft", label: "Microsoft Brasil", discount: 25 },
+    { value: "natura", label: "Natura &Co", discount: 20 },
+    { value: "nestle", label: "Nestlé Brasil", discount: 18 },
+    { value: "nubank", label: "Nubank", discount: 15 },
+    { value: "oi", label: "Oi S.A.", discount: 12 },
+    { value: "oracle", label: "Oracle Brasil", discount: 20 },
+    { value: "petrobras", label: "Petrobras", discount: 22 },
+    { value: "porto-seguro", label: "Porto Seguro", discount: 15 },
+    { value: "pwc", label: "PwC Brasil", discount: 20 },
+    { value: "raizen", label: "Raízen", discount: 18 },
+    { value: "raia-drogasil", label: "Raia Drogasil", discount: 12 },
+    { value: "sabesp", label: "Sabesp", discount: 15 },
+    { value: "samsung", label: "Samsung Brasil", discount: 18 },
+    { value: "santander", label: "Santander Brasil", discount: 20 },
+    { value: "sap", label: "SAP Brasil", discount: 18 },
+    { value: "siemens", label: "Siemens Brasil", discount: 20 },
+    { value: "suzano", label: "Suzano S.A.", discount: 15 },
+    { value: "telefonica", label: "Telefônica Brasil (Vivo)", discount: 15 },
+    { value: "tim", label: "TIM Brasil", discount: 12 },
+    { value: "totvs", label: "TOTVS", discount: 18 },
+    { value: "uber", label: "Uber Brasil", discount: 10 },
+    { value: "unilever", label: "Unilever Brasil", discount: 18 },
+    { value: "vale", label: "Vale S.A.", discount: 22 },
+    { value: "volkswagen", label: "Volkswagen Brasil", discount: 18 },
+    { value: "walmart", label: "Walmart Brasil", discount: 12 },
+    { value: "whirlpool", label: "Whirlpool Brasil", discount: 15 },
+    { value: "xp-investimentos", label: "XP Investimentos", discount: 20 },
   ]
 
-  const validCoupons = [
-    { code: "IPOG2025", discount: 10 },
-    { code: "BEMVINDO", discount: 15 },
-    { code: "PRIMEIRACOMPRA", discount: 20 },
-    { code: "ESTUDANTE", discount: 12 },
-  ]
+  const [empresaSearch, setEmpresaSearch] = useState("")
+  const [showEmpresaDropdown, setShowEmpresaDropdown] = useState(false)
+  const empresaInputRef = useRef<HTMLInputElement>(null)
+  const empresaDropdownRef = useRef<HTMLDivElement>(null)
+
+  // Filtrar empresas baseado na busca
+  const filteredEmpresas = useMemo(() => {
+    if (!empresaSearch.trim()) return empresasConvenio
+    const searchLower = empresaSearch.toLowerCase()
+    return empresasConvenio.filter(
+      (empresa) =>
+        empresa.label.toLowerCase().includes(searchLower) || empresa.value.toLowerCase().includes(searchLower),
+    )
+  }, [empresaSearch])
+
+  // Fechar dropdown ao clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        empresaDropdownRef.current &&
+        !empresaDropdownRef.current.contains(event.target as Node) &&
+        empresaInputRef.current &&
+        !empresaInputRef.current.contains(event.target as Node)
+      ) {
+        setShowEmpresaDropdown(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Handler para selecionar empresa do autocomplete
+  const handleEmpresaSelect = (empresa: (typeof empresasConvenio)[0]) => {
+    setSelectedCompany(empresa.value)
+    setEmpresaSearch(empresa.label)
+    setShowEmpresaDropdown(false)
+    // Aplicar o convênio automaticamente
+    setValidatedAgreement({
+      name: empresa.label,
+      discount: empresa.discount,
+    })
+  }
+
+  // Handler para limpar empresa selecionada
+  const handleClearEmpresa = () => {
+    setSelectedCompany("")
+    setEmpresaSearch("")
+    setValidatedAgreement(null)
+    setComprovante(null)
+  }
 
   // All useEffect hooks must be called before any conditional returns
   useEffect(() => {
@@ -208,7 +313,6 @@ function CheckoutContent() {
     openAccordion,
     hasMovedToPagamento,
   ])
-  // </CHANGE>
 
   useEffect(() => {
     if (hasMovedToDados) return // Já foi para dados, não forçar novamente
@@ -219,7 +323,6 @@ function CheckoutContent() {
       setHasMovedToDados(true)
     }
   }, [documentoIngressoAceito, metodoIngresso, course.type, openAccordion, hasMovedToDados])
-  // </CHANGE>
 
   useEffect(() => {
     if (hasMovedToDados) return // Já foi para dados, não forçar novamente
@@ -230,7 +333,6 @@ function CheckoutContent() {
       setHasMovedToDados(true)
     }
   }, [selectedTurma, course.type, openAccordion, hasMovedToDados])
-  // </CHANGE>
 
   if (!course) {
     return (
@@ -332,7 +434,6 @@ function CheckoutContent() {
     setTimeout(() => setPixKeyCopied(false), 2000)
   }
 
-  // CHANGE: Nova função para aplicar convênio quando empresa é selecionada
   const handleCompanySelect = (companyValue: string) => {
     setSelectedCompany(companyValue)
 
@@ -354,10 +455,6 @@ function CheckoutContent() {
       setComprovante(null)
     }
   }
-  // END CHANGE
-
-  // CHANGE: Removendo handleValidateAgreement pois não é mais necessário
-  // END CHANGE
 
   const handleRemoveAgreement = () => {
     setValidatedAgreement(null)
@@ -451,8 +548,10 @@ function CheckoutContent() {
     }
 
     if (discountType) {
-      const customDiscount = alumniDiscount?.discount || validatedAgreement?.discount || validatedCoupon?.discount
       const totalValue = course.price + course.enrollmentValue
+      // Ensure customDiscount is only used when it's available from validated sources
+      const customDiscount =
+        (alumniDiscount?.discount || validatedAgreement?.discount || validatedCoupon?.discount) ?? 0
       return calculateDiscount(totalValue, discountType, customDiscount)
     }
 
@@ -512,7 +611,6 @@ function CheckoutContent() {
     const hasValidSelection = isGraduacao ? selectedCiclo && metodoIngresso : selectedTurma
     const requiresDocumentCheck = isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso)
     const hasDocumentAcceptance = !requiresDocumentCheck || documentoIngressoAceito
-    // </CHANGE>
     const hasComprovante = !selectedCompany || (selectedCompany && comprovante)
     return (
       hasValidSelection &&
@@ -523,7 +621,6 @@ function CheckoutContent() {
       hasComprovante &&
       hasDocumentAcceptance
     )
-    // </CHANGE>
   }
 
   const handleSubmit = async () => {
@@ -537,7 +634,6 @@ function CheckoutContent() {
       params.append("metodo", metodoIngresso)
     }
     window.location.href = `/pos-venda?${params.toString()}`
-    // </CHANGE>
   }
 
   return (
@@ -779,32 +875,60 @@ function CheckoutContent() {
             <AccordionItem value="pagamento">
               <AccordionTrigger className="text-lg font-semibold">Pagamento</AccordionTrigger>
               <AccordionContent className="space-y-6 px-0">
-                {/* </CHANGE> */}
                 {!alumniDiscount && (
                   <>
                     {/* Seção de Convênio */}
                     <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
-                      {/* </CHANGE> */}
-                      <Label htmlFor="company-select" className="text-base font-medium">
+                      <Label htmlFor="empresa-search" className="text-base font-medium">
                         Empresa Convênio (opcional)
                       </Label>
                       <p className="text-sm text-muted-foreground">
-                        Selecione sua empresa conveniada para obter desconto exclusivo.
+                        Digite o nome da sua empresa conveniada para obter desconto exclusivo.
                       </p>
 
                       {!validatedAgreement ? (
-                        <Select value={selectedCompany} onValueChange={handleCompanySelect}>
-                          <SelectTrigger id="company-select">
-                            <SelectValue placeholder="Selecione sua empresa" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {empresasConvenio.map((empresa) => (
-                              <SelectItem key={empresa.value} value={empresa.value}>
-                                {empresa.label} - {empresa.discount}% de desconto
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="relative">
+                          <Input
+                            ref={empresaInputRef}
+                            id="empresa-search"
+                            type="text"
+                            placeholder="Digite o nome da empresa..."
+                            value={empresaSearch}
+                            onChange={(e) => {
+                              setEmpresaSearch(e.target.value)
+                              setShowEmpresaDropdown(true)
+                            }}
+                            onFocus={() => setShowEmpresaDropdown(true)}
+                            className="w-full"
+                          />
+                          {showEmpresaDropdown && (
+                            <div
+                              ref={empresaDropdownRef}
+                              className="absolute z-50 w-full mt-1 max-h-60 overflow-auto bg-background border border-input rounded-md shadow-lg"
+                            >
+                              {filteredEmpresas.length > 0 ? (
+                                filteredEmpresas.map((empresa) => (
+                                  <button
+                                    key={empresa.value}
+                                    type="button"
+                                    onClick={() => handleEmpresaSelect(empresa)}
+                                    className="w-full px-3 py-2 text-left hover:bg-muted flex items-center justify-between text-sm"
+                                  >
+                                    <span>{empresa.label}</span>
+                                    <span className="text-muted-foreground text-xs">
+                                      {empresa.discount}% de desconto
+                                    </span>
+                                  </button>
+                                ))
+                              ) : (
+                                <div className="px-3 py-2 text-sm text-muted-foreground">
+                                  Nenhuma empresa encontrada
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                        // </CHANGE>
                       ) : (
                         <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
                           <div className="flex items-center gap-2">
@@ -823,7 +947,7 @@ function CheckoutContent() {
                             type="button"
                             variant="ghost"
                             size="icon"
-                            onClick={handleRemoveAgreement}
+                            onClick={handleClearEmpresa}
                             className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
                           >
                             <X className="h-4 w-4" />
@@ -861,7 +985,6 @@ function CheckoutContent() {
                     </div>
 
                     <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
-                      {/* </CHANGE> */}
                       <Label htmlFor="coupon-input" className="text-base font-medium">
                         Cupom de Desconto (opcional)
                       </Label>
@@ -932,7 +1055,6 @@ function CheckoutContent() {
 
                 {alumniDiscount && (
                   <div className="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg mx-0">
-                    {/* </CHANGE> */}
                     <div className="flex items-start gap-3">
                       <div className="flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full flex-shrink-0">
                         <Check className="h-5 w-5 text-gray-900 dark:text-gray-100" />
@@ -963,7 +1085,6 @@ function CheckoutContent() {
 
                     {paymentMethod === "parcelado" && (
                       <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
                         <div className="grid gap-2">
                           <Label htmlFor="card-number">Número do cartão</Label>
                           <Input id="card-number" placeholder="0000 0000 0000 0000" />
@@ -1020,7 +1141,6 @@ function CheckoutContent() {
 
                     {paymentMethod === "recorrente" && (
                       <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
                         <div className="space-y-2">
                           <p className="text-sm font-medium">
                             1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
@@ -1076,7 +1196,6 @@ function CheckoutContent() {
 
                     {paymentMethod === "pix" && (
                       <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
                         <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
                           <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
                             <span className="text-xs text-muted-foreground">QR Code</span>
@@ -1129,7 +1248,6 @@ function CheckoutContent() {
 
                     {paymentMethod === "boleto" && (
                       <div className="ml-6 space-y-2 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
                         <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
                         <p className="text-sm text-muted-foreground">
                           O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias
@@ -1189,7 +1307,6 @@ function CheckoutContent() {
                       *
                     </Label>
                   </div>
-                  {/* </CHANGE> */}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -1245,7 +1362,6 @@ function CheckoutContent() {
                     </span>
                   </div>
                 )}
-                {/* </CHANGE> */}
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Forma de pagamento:</span>
                   <span className="font-medium">
