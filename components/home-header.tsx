@@ -8,7 +8,7 @@ import { GeoLink } from "@/components/geo-link"
 import { Pitchbar } from "@/components/pitchbar"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, MapPin, ChevronRight, ArrowRight } from "lucide-react"
+import { Menu, User, MapPin, ChevronRight, ArrowRight } from "lucide-react"
 import { BookOpen, Building2, Users, Gift, Newspaper, ClipboardCheck } from "lucide-react"
 
 const menuItems = [
@@ -557,7 +557,7 @@ export function HomeHeader() {
               <Sheet open={userMenuOpen} onOpenChange={setUserMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <X className="h-5 w-5" />
+                    <User className="h-5 w-5" />
                     <span className="sr-only">Área do aluno</span>
                   </Button>
                 </SheetTrigger>
