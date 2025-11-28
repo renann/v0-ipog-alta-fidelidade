@@ -7,17 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  GraduationCap,
-  BookOpen,
-  Briefcase,
-  ChevronRight,
-  MapPin,
-  Calendar,
-  Clock,
-  CheckCircle2,
-  ArrowRight,
-} from "lucide-react"
+import { GraduationCap, BookOpen, Briefcase, ChevronRight, Clock, Check, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Dados dos cursos disponíveis
@@ -28,7 +18,7 @@ const cursos = [
     tipoLabel: "Graduação",
     nome: "Psicologia",
     duracao: "5 anos",
-    modalidades: [{ tipo: "EAD", label: "EAD", turmas: ["Janeiro/2025", "Julho/2025"] }],
+    modalidades: [{ tipo: "EAD", label: "EAD" }],
   },
   {
     id: "direito",
@@ -37,8 +27,8 @@ const cursos = [
     nome: "Direito",
     duracao: "5 anos",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Fevereiro/2025", "Agosto/2025"] },
-      { tipo: "Presencial", label: "Presencial", turmas: ["São Paulo", "Rio de Janeiro", "Brasília"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Presencial", label: "Presencial" },
     ],
   },
   {
@@ -48,8 +38,8 @@ const cursos = [
     nome: "Arquitetura e Urbanismo",
     duracao: "5 anos",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Março/2025", "Setembro/2025"] },
-      { tipo: "Presencial", label: "Presencial", turmas: ["São Paulo", "Minas Gerais"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Presencial", label: "Presencial" },
     ],
   },
   {
@@ -59,8 +49,8 @@ const cursos = [
     nome: "Administração",
     duracao: "4 anos",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Janeiro/2025"] },
-      { tipo: "Presencial", label: "Presencial", turmas: ["São Paulo", "Rio de Janeiro"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Presencial", label: "Presencial" },
     ],
   },
   {
@@ -70,8 +60,8 @@ const cursos = [
     nome: "Avaliação Psicológica",
     duracao: "12 meses",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Março/2025", "Setembro/2025"] },
-      { tipo: "Ao Vivo", label: "Ao Vivo", turmas: ["Abril/2025"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Ao Vivo", label: "Ao Vivo" },
     ],
   },
   {
@@ -81,8 +71,8 @@ const cursos = [
     nome: "Engenharia Estrutural",
     duracao: "18 meses",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Fevereiro/2025", "Agosto/2025"] },
-      { tipo: "Presencial", label: "Presencial", turmas: ["São Paulo", "Rio de Janeiro"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Presencial", label: "Presencial" },
     ],
   },
   {
@@ -92,8 +82,8 @@ const cursos = [
     nome: "Intervenção ABA",
     duracao: "12 meses",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Janeiro/2025", "Julho/2025"] },
-      { tipo: "Ao Vivo", label: "Ao Vivo", turmas: ["Março/2025"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Ao Vivo", label: "Ao Vivo" },
     ],
   },
   {
@@ -103,8 +93,8 @@ const cursos = [
     nome: "Inteligência Artificial Aplicada",
     duracao: "3 meses",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Fevereiro/2025", "Maio/2025"] },
-      { tipo: "Ao Vivo", label: "Ao Vivo", turmas: ["Março/2025"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Ao Vivo", label: "Ao Vivo" },
     ],
   },
   {
@@ -114,8 +104,8 @@ const cursos = [
     nome: "Gestão de Projetos Ágeis",
     duracao: "2 meses",
     modalidades: [
-      { tipo: "EAD", label: "EAD", turmas: ["Março/2025", "Junho/2025"] },
-      { tipo: "Ao Vivo", label: "Ao Vivo", turmas: ["Abril/2025"] },
+      { tipo: "EAD", label: "EAD" },
+      { tipo: "Ao Vivo", label: "Ao Vivo" },
     ],
   },
   {
@@ -124,7 +114,7 @@ const cursos = [
     tipoLabel: "Extensão",
     nome: "Compliance e Governança",
     duracao: "4 meses",
-    modalidades: [{ tipo: "EAD", label: "EAD", turmas: ["Fevereiro/2025", "Agosto/2025"] }],
+    modalidades: [{ tipo: "EAD", label: "EAD" }],
   },
 ]
 
@@ -154,7 +144,6 @@ export default function CentralMatriculaPage() {
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null)
   const [cursoSelecionado, setCursoSelecionado] = useState<string | null>(null)
   const [modalidadeSelecionada, setModalidadeSelecionada] = useState<string | null>(null)
-  const [turmaSelecionada, setTurmaSelecionada] = useState<string | null>(null)
 
   // Filtrar cursos pelo tipo selecionado
   const cursosFiltrados = useMemo(() => {
@@ -167,37 +156,23 @@ export default function CentralMatriculaPage() {
     return cursos.find((c) => c.id === cursoSelecionado)
   }, [cursoSelecionado])
 
-  // Obter modalidade selecionada
-  const modalidade = useMemo(() => {
-    if (!curso || !modalidadeSelecionada) return null
-    return curso.modalidades.find((m) => m.tipo === modalidadeSelecionada)
-  }, [curso, modalidadeSelecionada])
-
   // Reset quando muda o tipo
   const handleTipoChange = (tipo: string) => {
     setTipoSelecionado(tipo)
     setCursoSelecionado(null)
     setModalidadeSelecionada(null)
-    setTurmaSelecionada(null)
   }
 
   // Reset quando muda o curso
   const handleCursoChange = (cursoId: string) => {
     setCursoSelecionado(cursoId)
     setModalidadeSelecionada(null)
-    setTurmaSelecionada(null)
-  }
-
-  // Reset quando muda a modalidade
-  const handleModalidadeChange = (mod: string) => {
-    setModalidadeSelecionada(mod)
-    setTurmaSelecionada(null)
   }
 
   // Ir para checkout
   const handleCheckout = () => {
-    if (curso && modalidadeSelecionada && turmaSelecionada) {
-      const checkoutUrl = `/checkout?course=${curso.id}&modalidade=${modalidadeSelecionada.toLowerCase()}&turma=${encodeURIComponent(turmaSelecionada)}`
+    if (curso && modalidadeSelecionada) {
+      const checkoutUrl = `/checkout?course=${curso.id}&modalidade=${modalidadeSelecionada.toLowerCase()}`
       router.push(checkoutUrl)
     }
   }
@@ -206,27 +181,26 @@ export default function CentralMatriculaPage() {
   const step1Complete = !!tipoSelecionado
   const step2Complete = !!cursoSelecionado
   const step3Complete = !!modalidadeSelecionada
-  const step4Complete = !!turmaSelecionada
-  const canCheckout = step1Complete && step2Complete && step3Complete && step4Complete
+  const canCheckout = step1Complete && step2Complete && step3Complete
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="bg-foreground text-background py-12 md:py-16">
+        {/* Hero - removida faixa preta, usando fundo neutro */}
+        <section className="border-b py-10 md:py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <nav className="flex items-center gap-2 text-sm text-muted mb-4">
-                <a href="/" className="hover:text-background transition-colors">
+              <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                <a href="/" className="hover:text-foreground transition-colors">
                   Home
                 </a>
                 <ChevronRight className="h-4 w-4" />
-                <span>Central de Matrícula</span>
+                <span className="text-foreground">Central de Matrícula</span>
               </nav>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Central de Matrícula</h1>
-              <p className="text-lg md:text-xl text-muted-foreground">
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">Central de Matrícula</h1>
+              <p className="text-lg text-muted-foreground">
                 Selecione seu curso e finalize sua matrícula em poucos passos. Rápido, prático e 100% online.
               </p>
             </div>
@@ -238,17 +212,19 @@ export default function CentralMatriculaPage() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Coluna principal - Seleções */}
-              <div className="lg:col-span-2 space-y-8">
+              <div className="lg:col-span-2 space-y-10">
                 {/* Step 1: Tipo de Formação */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div
                       className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
-                        step1Complete ? "bg-green-500 text-white" : "bg-primary text-primary-foreground",
+                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold border-2",
+                        step1Complete
+                          ? "bg-foreground text-background border-foreground"
+                          : "bg-background text-foreground border-foreground",
                       )}
                     >
-                      {step1Complete ? <CheckCircle2 className="h-5 w-5" /> : "1"}
+                      {step1Complete ? <Check className="h-4 w-4" /> : "1"}
                     </div>
                     <h2 className="text-xl font-semibold">Escolha o tipo de formação</h2>
                   </div>
@@ -264,11 +240,13 @@ export default function CentralMatriculaPage() {
                           className={cn(
                             "p-4 rounded-lg border-2 text-left transition-all",
                             isSelected
-                              ? "border-primary bg-primary/5"
-                              : "border-border hover:border-primary/50 hover:bg-muted/50",
+                              ? "border-foreground bg-foreground/5"
+                              : "border-border hover:border-foreground/50 hover:bg-muted/50",
                           )}
                         >
-                          <Icon className={cn("h-8 w-8 mb-3", isSelected ? "text-primary" : "text-muted-foreground")} />
+                          <Icon
+                            className={cn("h-8 w-8 mb-3", isSelected ? "text-foreground" : "text-muted-foreground")}
+                          />
                           <h3 className="font-semibold mb-1">{tipo.label}</h3>
                           <p className="text-xs text-muted-foreground">{tipo.description}</p>
                         </button>
@@ -283,11 +261,13 @@ export default function CentralMatriculaPage() {
                     <div className="flex items-center gap-3">
                       <div
                         className={cn(
-                          "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
-                          step2Complete ? "bg-green-500 text-white" : "bg-primary text-primary-foreground",
+                          "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold border-2",
+                          step2Complete
+                            ? "bg-foreground text-background border-foreground"
+                            : "bg-background text-foreground border-foreground",
                         )}
                       >
-                        {step2Complete ? <CheckCircle2 className="h-5 w-5" /> : "2"}
+                        {step2Complete ? <Check className="h-4 w-4" /> : "2"}
                       </div>
                       <h2 className="text-xl font-semibold">Selecione o curso</h2>
                     </div>
@@ -302,8 +282,8 @@ export default function CentralMatriculaPage() {
                             className={cn(
                               "p-4 rounded-lg border-2 text-left transition-all",
                               isSelected
-                                ? "border-primary bg-primary/5"
-                                : "border-border hover:border-primary/50 hover:bg-muted/50",
+                                ? "border-foreground bg-foreground/5"
+                                : "border-border hover:border-foreground/50 hover:bg-muted/50",
                             )}
                           >
                             <h3 className="font-semibold mb-1">{c.nome}</h3>
@@ -325,17 +305,19 @@ export default function CentralMatriculaPage() {
                   </div>
                 )}
 
-                {/* Step 3: Modalidade */}
+                {/* Step 3: Modalidade - removido step 4 de turma */}
                 {curso && (
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div
                         className={cn(
-                          "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
-                          step3Complete ? "bg-green-500 text-white" : "bg-primary text-primary-foreground",
+                          "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold border-2",
+                          step3Complete
+                            ? "bg-foreground text-background border-foreground"
+                            : "bg-background text-foreground border-foreground",
                         )}
                       >
-                        {step3Complete ? <CheckCircle2 className="h-5 w-5" /> : "3"}
+                        {step3Complete ? <Check className="h-4 w-4" /> : "3"}
                       </div>
                       <h2 className="text-xl font-semibold">Escolha a modalidade</h2>
                     </div>
@@ -346,59 +328,15 @@ export default function CentralMatriculaPage() {
                         return (
                           <button
                             key={mod.tipo}
-                            onClick={() => handleModalidadeChange(mod.tipo)}
+                            onClick={() => setModalidadeSelecionada(mod.tipo)}
                             className={cn(
                               "px-6 py-3 rounded-lg border-2 font-medium transition-all",
                               isSelected
-                                ? "border-primary bg-primary text-primary-foreground"
-                                : "border-border hover:border-primary/50",
+                                ? "border-foreground bg-foreground text-background"
+                                : "border-border hover:border-foreground/50",
                             )}
                           >
                             {mod.label}
-                          </button>
-                        )
-                      })}
-                    </div>
-                  </div>
-                )}
-
-                {/* Step 4: Turma/Data de Início */}
-                {modalidade && (
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={cn(
-                          "w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
-                          step4Complete ? "bg-green-500 text-white" : "bg-primary text-primary-foreground",
-                        )}
-                      >
-                        {step4Complete ? <CheckCircle2 className="h-5 w-5" /> : "4"}
-                      </div>
-                      <h2 className="text-xl font-semibold">
-                        {modalidadeSelecionada === "Presencial" ? "Escolha a unidade" : "Escolha a turma"}
-                      </h2>
-                    </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      {modalidade.turmas.map((turma) => {
-                        const isSelected = turmaSelecionada === turma
-                        return (
-                          <button
-                            key={turma}
-                            onClick={() => setTurmaSelecionada(turma)}
-                            className={cn(
-                              "px-5 py-3 rounded-lg border-2 font-medium transition-all flex items-center gap-2",
-                              isSelected
-                                ? "border-primary bg-primary text-primary-foreground"
-                                : "border-border hover:border-primary/50",
-                            )}
-                          >
-                            {modalidadeSelecionada === "Presencial" ? (
-                              <MapPin className="h-4 w-4" />
-                            ) : (
-                              <Calendar className="h-4 w-4" />
-                            )}
-                            {turma}
                           </button>
                         )
                       })}
@@ -414,7 +352,7 @@ export default function CentralMatriculaPage() {
                     <CardContent className="p-6">
                       <h3 className="font-semibold text-lg mb-4">Resumo da seleção</h3>
 
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         {/* Tipo */}
                         <div className="flex justify-between items-center py-2 border-b">
                           <span className="text-sm text-muted-foreground">Formação</span>
@@ -433,14 +371,6 @@ export default function CentralMatriculaPage() {
                         <div className="flex justify-between items-center py-2 border-b">
                           <span className="text-sm text-muted-foreground">Modalidade</span>
                           <span className="font-medium">{modalidadeSelecionada || "—"}</span>
-                        </div>
-
-                        {/* Turma */}
-                        <div className="flex justify-between items-center py-2 border-b">
-                          <span className="text-sm text-muted-foreground">
-                            {modalidadeSelecionada === "Presencial" ? "Unidade" : "Turma"}
-                          </span>
-                          <span className="font-medium">{turmaSelecionada || "—"}</span>
                         </div>
 
                         {/* Duração */}
