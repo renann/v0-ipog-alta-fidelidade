@@ -1330,55 +1330,55 @@ function CheckoutContent() {
 
                 {/* Terms and Conditions */}
                 <div className="space-y-4 mt-6">
-                  <div className="flex items-start gap-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="terms"
                       checked={termsAccepted}
                       onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                      className="mt-0.5 shrink-0"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer text-left">
+                    <span className="text-sm leading-relaxed text-left">
                       Li e aceito os{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline hover:text-primary">
                         Termos de Uso
                       </a>{" "}
                       e a{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline hover:text-primary">
                         Política de Privacidade
                       </a>{" "}
-                      *
-                    </Label>
-                  </div>
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
 
-                  <div className="flex items-start gap-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="lgpd"
                       checked={lgpdAccepted}
                       onCheckedChange={(checked) => setLgpdAccepted(checked as boolean)}
-                      className="mt-0.5 shrink-0"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="lgpd" className="text-sm leading-relaxed cursor-pointer text-left">
-                      Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD) *
-                    </Label>
-                  </div>
+                    <span className="text-sm leading-relaxed text-left">
+                      Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD){" "}
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
 
-                  <div className="flex items-start gap-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="contract"
                       checked={contractAccepted}
                       onCheckedChange={(checked) => setContractAccepted(checked as boolean)}
-                      className="mt-0.5 shrink-0"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="contract" className="text-sm leading-relaxed cursor-pointer text-left">
+                    <span className="text-sm leading-relaxed text-left">
                       Li e aceito o{" "}
-                      <a href="#" className="underline">
+                      <a href="#" className="underline hover:text-primary">
                         Contrato de Prestação de Serviços Educacionais
                       </a>{" "}
-                      *
-                    </Label>
-                  </div>
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
                 </div>
-
                 {/* </CHANGE> */}
               </AccordionContent>
             </AccordionItem>
