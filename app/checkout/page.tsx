@@ -189,6 +189,20 @@ function CheckoutContent() {
     }
   }, [nome, email, telefone, cpf, cpfError, cep, endereco, numero, bairro, cidade, estado, openAccordion])
 
+  useEffect(() => {
+    const isGraduacao = course.type === "Graduação"
+    if (isGraduacao && metodoIngresso && documentoIngressoAceito && openAccordion === "curso") {
+      setOpenAccordion("dados")
+    }
+  }, [documentoIngressoAceito, metodoIngresso, course.type, openAccordion])
+
+  useEffect(() => {
+    const isGraduacao = course.type === "Graduação"
+    if (!isGraduacao && selectedTurma && openAccordion === "curso") {
+      setOpenAccordion("dados")
+    }
+  }, [selectedTurma, course.type, openAccordion])
+
   if (!course) {
     return (
       <div className="max-w-screen-xl mx-auto px-4 py-8">
