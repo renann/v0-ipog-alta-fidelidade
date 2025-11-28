@@ -679,6 +679,11 @@ function CheckoutContent() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
     setIsSubmitting(false)
 
+    if (isGraduacao && metodoIngresso === "vestibular") {
+      window.location.href = `/onboarding/vestibular?course=${courseId}`
+      return
+    }
+
     const params = new URLSearchParams({ course: courseId })
     if (isGraduacao && metodoIngresso) {
       params.append("metodo", metodoIngresso)
@@ -1285,7 +1290,6 @@ function CheckoutContent() {
                     </p>
                   </div>
                 )}
-                {/* </CHANGE> */}
 
                 {paymentMethod === "pix" && (
                   <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
@@ -1379,7 +1383,6 @@ function CheckoutContent() {
                     </span>
                   </label>
                 </div>
-                {/* </CHANGE> */}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
