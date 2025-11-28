@@ -94,9 +94,11 @@ export function CourseSearch({
                       {areasDeAtuacao.map((area) => (
                         <CommandItem
                           key={area.value}
-                          value={area.label}
-                          onSelect={() => {
-                            setSelectedArea(selectedArea === area.value ? "" : area.value)
+                          value={area.value}
+                          keywords={[area.label]}
+                          onSelect={(value) => {
+                            console.log("[v0] Selected value:", value)
+                            setSelectedArea(value === selectedArea ? "" : value)
                             setOpen(false)
                           }}
                         >
