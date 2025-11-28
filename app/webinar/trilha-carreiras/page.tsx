@@ -110,12 +110,17 @@ export default function WebinarTrilhaCarreirasPage() {
 
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-foreground" />
+        {/* Background com imagem e overlay */}
+        <div className="absolute inset-0">
+          <img src="/professional-career-development-meeting.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-white/80" />
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div className="text-background">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-background/20 bg-background/10 text-sm mb-6">
+            <div className="text-foreground">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 bg-foreground/5 text-sm mb-6">
                 <Play className="w-4 h-4" />
                 <span>Webinar Gratuito e Online</span>
               </div>
@@ -124,33 +129,33 @@ export default function WebinarTrilhaCarreirasPage() {
                 Trilha de Carreiras com o IPOG
               </h1>
 
-              <p className="text-xl md:text-2xl text-background/80 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
                 Descubra como planejar e acelerar sua trajetória profissional com estratégias comprovadas por milhares
                 de alunos.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <div className="flex items-center gap-3 text-background/90">
-                  <div className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-background/60">Data</p>
+                    <p className="text-sm text-muted-foreground">Data</p>
                     <p className="font-semibold">15 de Dezembro, 2024</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-background/90">
-                  <div className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-foreground/10 flex items-center justify-center">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-background/60">Horário</p>
+                    <p className="text-sm text-muted-foreground">Horário</p>
                     <p className="font-semibold">19h00 (Brasília)</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-background/70">
+              <div className="flex items-center gap-3 text-muted-foreground">
                 <Users className="w-5 h-5" />
                 <span>+2.500 inscritos</span>
               </div>
