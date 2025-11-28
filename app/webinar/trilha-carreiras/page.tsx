@@ -113,7 +113,7 @@ export default function WebinarTrilhaCarreirasPage() {
       <section className="w-full relative overflow-hidden">
         {/* Background com imagem e overlay */}
         <div className="absolute inset-0 hidden lg:block">
-          <img src="/professional-career-development-meeting.jpg" alt="" className="w-full h-full object-cover" />
+          <img src="/professional-career-development-webinar-audience-l.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/70" />
         </div>
 
