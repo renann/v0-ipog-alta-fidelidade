@@ -1390,7 +1390,7 @@ function CheckoutContent() {
         </div>
 
         {/* Right column - Summary (Sticky) */}
-        <div className="lg:sticky lg:top-4 h-fit">
+        <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto h-fit">
           <Card>
             <CardHeader>
               <CardTitle>Resumo da matrícula</CardTitle>
