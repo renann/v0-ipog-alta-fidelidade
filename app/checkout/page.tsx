@@ -94,6 +94,9 @@ function CheckoutContent() {
   const [pixTimer, setPixTimer] = useState(1800)
 
   const [openAccordion, setOpenAccordion] = useState("curso")
+  const [hasMovedToDados, setHasMovedToDados] = useState(false)
+  const [hasMovedToPagamento, setHasMovedToPagamento] = useState(false)
+  // </CHANGE>
 
   const empresasConvenio = [
     { value: "empresa-a", label: "Empresa A - Tecnologia", discount: 15 },
@@ -171,6 +174,8 @@ function CheckoutContent() {
   }, [paymentMethod])
 
   useEffect(() => {
+    if (hasMovedToPagamento) return // Já foi para pagamento, não forçar novamente
+
     const camposObrigatoriosPreenchidos =
       nome.trim() !== "" &&
       email.trim() !== "" &&
@@ -186,22 +191,46 @@ function CheckoutContent() {
 
     if (camposObrigatoriosPreenchidos && openAccordion === "dados") {
       setOpenAccordion("pagamento")
+      setHasMovedToPagamento(true)
     }
-  }, [nome, email, telefone, cpf, cpfError, cep, endereco, numero, bairro, cidade, estado, openAccordion])
+  }, [
+    nome,
+    email,
+    telefone,
+    cpf,
+    cpfError,
+    cep,
+    endereco,
+    numero,
+    bairro,
+    cidade,
+    estado,
+    openAccordion,
+    hasMovedToPagamento,
+  ])
+  // </CHANGE>
 
   useEffect(() => {
+    if (hasMovedToDados) return // Já foi para dados, não forçar novamente
+
     const isGraduacao = course.type === "Graduação"
     if (isGraduacao && metodoIngresso && documentoIngressoAceito && openAccordion === "curso") {
       setOpenAccordion("dados")
+      setHasMovedToDados(true)
     }
-  }, [documentoIngressoAceito, metodoIngresso, course.type, openAccordion])
+  }, [documentoIngressoAceito, metodoIngresso, course.type, openAccordion, hasMovedToDados])
+  // </CHANGE>
 
   useEffect(() => {
+    if (hasMovedToDados) return // Já foi para dados, não forçar novamente
+
     const isGraduacao = course.type === "Graduação"
     if (!isGraduacao && selectedTurma && openAccordion === "curso") {
       setOpenAccordion("dados")
+      setHasMovedToDados(true)
     }
-  }, [selectedTurma, course.type, openAccordion])
+  }, [selectedTurma, course.type, openAccordion, hasMovedToDados])
+  // </CHANGE>
 
   if (!course) {
     return (
