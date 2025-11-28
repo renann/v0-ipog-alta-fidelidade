@@ -6,7 +6,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Logo } from "./logo"
-import { Search, User, ArrowRight, ClipboardList } from "lucide-react"
+import { Search, User, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Pitchbar } from "@/components/pitchbar"
 import {
@@ -98,6 +98,7 @@ const institucionalItems: MegaMenuItem[] = [
   { title: "Unidades", href: "/unidades", description: "Encontre uma unidade" },
   { title: "Parcerias Internacionais", href: "/parceiros-internacionais", description: "Conexões globais" },
   { title: "Programas de Benefícios", href: "/programas-beneficios/ipog-plus", description: "Vantagens exclusivas" },
+  { title: "Central de Matrículas", href: "/central-matricula", description: "Finalize sua matrícula" },
   { title: "Destaques IPOG", href: "/webstories", description: "Novidades e histórias" },
   { title: "Blog", href: "/blog", description: "Insights e tendências" },
 ]
@@ -328,17 +329,6 @@ export function DesktopHeader() {
                       </ul>
                     </div>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                {/* Matrículas */}
-                <NavigationMenuItem>
-                  <Link
-                    href="/central-matricula"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-base font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <ClipboardList className="h-4 w-4" />
-                    Matrículas
-                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
