@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react"
@@ -198,6 +198,12 @@ const webStories: WebStory[] = [
 export default function WebStoriesPage() {
   const [selectedStory, setSelectedStory] = useState<WebStory | null>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    if (webStories.length > 0) {
+      openStory(webStories[0])
+    }
+  }, [])
 
   const openStory = (story: WebStory) => {
     setSelectedStory(story)
