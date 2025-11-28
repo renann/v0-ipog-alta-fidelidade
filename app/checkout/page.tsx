@@ -601,30 +601,60 @@ function CheckoutContent() {
     const calculation = getPaymentCalculation()
 
     if (isGraduacao) {
-      return `R$ ${formatCurrency(calculation.total)} (Inscrição no processo seletivo)`
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Inscrição no processo seletivo",
+      }
     }
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
       const plano = getPlanoInfo(numParcelas)
       if (numParcelas === 1) {
-        return `À vista: R$ ${formatCurrency(calculation.total)}`
+        return {
+          value: `R$ ${formatCurrency(calculation.total)}`,
+          description: "À vista",
+        }
       }
-      return `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
+      return {
+        value: `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`,
+        description:
+          plano?.desconto > 0
+            ? `${plano.desconto}% de desconto`
+            : plano?.taxaJuros > 0
+              ? `+${plano.taxaJuros}% de juros`
+              : "Sem juros",
+      }
     }
 
     if (paymentMethod === "recorrente") {
       const taxaInscricao = TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default
       if (calculation.remainingInstallments) {
-        return `1ª: R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
+        return {
+          value: `R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`,
+          description: "Mensalidade recorrente",
+        }
       }
     }
 
-    if (paymentMethod === "pix" || paymentMethod === "boleto") {
-      return `R$ ${formatCurrency(calculation.total)}`
+    if (paymentMethod === "pix") {
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Pagamento via PIX",
+      }
     }
 
-    return `R$ ${formatCurrency(calculation.total)}`
+    if (paymentMethod === "boleto") {
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Pagamento via boleto",
+      }
+    }
+
+    return {
+      value: `R$ ${formatCurrency(calculation.total)}`,
+      description: "Selecione uma forma de pagamento",
+    }
   }
 
   const isFormValid = () => {
@@ -1493,11 +1523,10 @@ function CheckoutContent() {
                   </>
                 )}
 
-                <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                  <span>Você paga</span>
-                  <span className={getDiscountInfo() ? "text-gray-900 dark:text-gray-100" : ""}>
-                    {getPaymentLabel()}
-                  </span>
+                <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="text-sm text-muted-foreground mb-1">Você paga</div>
+                  <div className="text-2xl font-bold text-primary">{getPaymentLabel().value}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{getPaymentLabel().description}</div>
                 </div>
 
                 {!isGraduacao && paymentMethod === "recorrente" && (
