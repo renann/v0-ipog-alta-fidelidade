@@ -98,6 +98,7 @@ const institucionalItems: MegaMenuItem[] = [
   { title: "Unidades", href: "/unidades", description: "Encontre uma unidade" },
   { title: "Parcerias Internacionais", href: "/parceiros-internacionais", description: "Conexões globais" },
   { title: "Programas de Benefícios", href: "/programas-beneficios/ipog-plus", description: "Vantagens exclusivas" },
+  { title: "Destaques IPOG", href: "/webstories", description: "Novidades e histórias" },
   { title: "Blog", href: "/blog", description: "Insights e tendências" },
 ]
 
