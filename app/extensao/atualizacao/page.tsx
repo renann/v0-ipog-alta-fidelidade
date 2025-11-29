@@ -143,7 +143,7 @@ export default function AtualizacaoPage() {
             cursos={[
               {
                 nome: "Inteligência Artificial Aplicada",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao:
                   "Desenvolva projetos com IA generativa e automação. Aplique ferramentas emergentes no seu trabalho na próxima semana.",
                 modalidade: "EAD",
@@ -151,35 +151,35 @@ export default function AtualizacaoPage() {
               },
               {
                 nome: "Transformação Digital",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao: "Estratégias e frameworks atuais para liderar mudanças tecnológicas na sua empresa.",
                 modalidade: "Ao Vivo",
                 link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Gestão Ágil Avançada",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao: "Metodologias ágeis de ponta e práticas de liderança para equipes de alta performance.",
                 modalidade: "Presencial",
                 link: "/extensao/curso/gestao-projetos-ageis",
               },
               {
                 nome: "Data Analytics & BI",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao: "Análise de dados, visualização e tomada de decisão baseada em dados.",
                 modalidade: "EAD",
                 link: "/extensao/curso/inteligencia-artificial-aplicada",
               },
               {
                 nome: "Cibersegurança Moderna",
-                duracao: "4 meses",
+                duracao: "80h",
                 descricao: "Proteção de dados, compliance e gestão de riscos digitais atualizados.",
                 modalidade: "Ao Vivo",
                 link: "/extensao/curso/marketing-digital",
               },
               {
                 nome: "Marketing Digital Avançado",
-                duracao: "3 meses",
+                duracao: "60h",
                 descricao: "Estratégias digitais, growth hacking e ferramentas de automação de marketing.",
                 modalidade: "Presencial",
                 link: "/extensao/curso/marketing-digital",
@@ -391,7 +391,7 @@ export default function AtualizacaoPage() {
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
           <AcaoFinal
-            titulo="Não espere o futuro chegar"
+            title="Não espere o futuro chegar"
             descricao="Domine as competências que garantem sua relevância com conteúdo prático, especialistas de mercado e uma metodologia focada em resultados. A ESCOLHA QUE CONECTA VOCÊ AO SUCESSO."
             botaoPrimario={{
               texto: "Inicie Sua Atualização Agora",

@@ -35,6 +35,7 @@ export default function PsicologiaEadPage() {
         {/* Fim da adição */}
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Psicologia EAD"
           description="Forme-se em Psicologia com flexibilidade, qualidade e reconhecimento MEC."
           valueBadges={[
@@ -42,7 +43,7 @@ export default function PsicologiaEadPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <PropostaValorPsicologia />
@@ -255,6 +256,7 @@ export default function PsicologiaEadPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Investa em sua carreira com a instituição de referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
           enrollmentFee="R$ 100,00"

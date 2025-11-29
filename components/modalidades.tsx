@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Link from "next/link"
+import { useState } from "react"
+import { ModalidadeVideoModal } from "@/components/modalidade-video-modal"
 
 interface Modalidade {
   badge: string
@@ -23,6 +25,7 @@ interface ModalidadesProps {
 
 export function Modalidades({ title, subtitle, modalidades, backgroundColor = "bg-white" }: ModalidadesProps) {
   const shouldCenter = modalidades.length <= 2
+  const [selectedModalidade, setSelectedModalidade] = useState<Modalidade | null>(null)
 
   return (
     <section className={`py-16 md:py-24 ${backgroundColor}`}>
@@ -62,6 +65,13 @@ export function Modalidades({ title, subtitle, modalidades, backgroundColor = "b
                     <Button asChild className="w-full bg-black hover:bg-gray-800 text-white mt-auto">
                       <Link href={modalidade.link}>{modalidade.buttonText}</Link>
                     </Button>
+
+                    <button
+                      onClick={() => setSelectedModalidade(modalidade)}
+                      className="text-sm text-primary hover:underline text-center mt-3"
+                    >
+                      Conheça mais esta modalidade
+                    </button>
                   </Card>
                 </CarouselItem>
               ))}
@@ -71,6 +81,17 @@ export function Modalidades({ title, subtitle, modalidades, backgroundColor = "b
           </Carousel>
         </div>
       </div>
+
+      {selectedModalidade && (
+        <ModalidadeVideoModal
+          isOpen={!!selectedModalidade}
+          onClose={() => setSelectedModalidade(null)}
+          modalidade={{
+            title: selectedModalidade.titulo,
+            description: selectedModalidade.descricao,
+          }}
+        />
+      )}
     </section>
   )
 }

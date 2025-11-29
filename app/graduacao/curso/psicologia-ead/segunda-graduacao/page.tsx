@@ -35,6 +35,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Graduação em Psicologia EAD para sua Segunda Carreira"
           description="Valide sua experiência, conquiste um diploma de peso e acelere sua transição de carreira com a flexibilidade do EAD e o reconhecimento oficial do MEC."
           valueBadges={[
@@ -42,8 +43,8 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade para quem já atua" },
             { icon: <Award className="h-5 w-5" />, text: "Professores com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <PropostaValorPsicologia />
         <JornadaAcademicaPsicologia />
@@ -255,6 +256,7 @@ export default function PsicologiaEadSegundaGraduacaoPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Invista na sua transição de carreira com um diploma de peso."
           description="Taxa de Inscrição: R$ 100,00 | Parcelas Mensais: a partir de R$ 499,00+"
           enrollmentFee="R$ 100,00"

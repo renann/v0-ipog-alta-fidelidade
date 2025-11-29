@@ -29,6 +29,7 @@ export default function AdministracaoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD / Presencial"
           title="Administração"
           description="Forme-se em Administração e desenvolva competências estratégicas para liderar organizações e impulsionar resultados."
           valueBadges={[
@@ -36,7 +37,7 @@ export default function AdministracaoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Flexibilidade Total" },
             { icon: <Award className="h-5 w-5" />, text: "Professores Especialistas" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
@@ -295,6 +296,7 @@ export default function AdministracaoPage() {
         </section>
 
         <CtaFinal
+          courseId="administracao"
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Inscrição: R$ 100,00 | Mensalidades: a partir de R$ 549,00+"
           enrollmentFee="R$ 100,00"
