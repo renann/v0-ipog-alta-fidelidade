@@ -27,7 +27,7 @@ export default function PsicologiaEadJovemIngressoPage() {
               items={[
                 { label: "Início", href: "/" },
                 { label: "Graduação", href: "/graduacao" },
-                { label: "Jovem Ingresso", href: "/graduacao/jovem-ingresso" },
+                { label: "Primeira Graduação", href: "/graduacao/jovem-ingresso" },
                 { label: "Psicologia EAD" },
               ]}
             />
@@ -35,6 +35,7 @@ export default function PsicologiaEadJovemIngressoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Psicologia EAD: Sua carreira começa aqui"
           description="Construa seu futuro com uma formação flexível, focada na prática, e acelere sua entrada no mercado de trabalho aprendendo com professores que vivem o dia a dia da profissão."
           valueBadges={[
@@ -43,8 +44,8 @@ export default function PsicologiaEadJovemIngressoPage() {
             { icon: <Award className="h-5 w-5" />, text: "Professores Atuantes no Mercado" },
             { icon: <Briefcase className="h-5 w-5" />, text: "Foco na sua Empregabilidade" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <PropostaValorPsicologia />
         <JornadaAcademicaPsicologia />
@@ -256,6 +257,7 @@ export default function PsicologiaEadJovemIngressoPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Um Investimento Acessível no seu Futuro Profissional"
           description="O IPOG oferece condições facilitadas para viabilizar seu futuro profissional. A taxa de inscrição é o primeiro passo para garantir sua vaga e ter acesso às nossas opções de bolsas e parcelamento, tornando seu investimento mais acessível."
           enrollmentFee="R$ 100,00"

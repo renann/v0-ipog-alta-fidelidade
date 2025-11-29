@@ -131,18 +131,18 @@ export function SearchPageContent() {
               return (
                 <Card
                   key={formacao.id}
-                  className={`p-4 cursor-pointer transition-all hover:shadow-md ${
+                  className={`p-4 md:p-3 cursor-pointer transition-all hover:shadow-md ${
                     selectedFormacoes.includes(formacao.id)
                       ? "border-2 border-black bg-white"
                       : "border border-gray-200 bg-white hover:border-gray-300"
                   }`}
                   onClick={() => toggleFormacao(formacao.id)}
                 >
-                  <div className="flex flex-col items-center text-center gap-2">
-                    <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
-                      <Icon className="h-8 w-8 text-gray-400" />
+                  <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-2 md:gap-3">
+                    <div className="w-20 h-20 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                      <Icon className="h-8 w-8 md:h-5 md:w-5 text-gray-400 md:text-gray-500" />
                     </div>
-                    <h3 className="text-base font-semibold">{formacao.title}</h3>
+                    <h3 className="text-base font-semibold md:text-sm">{formacao.title}</h3>
                   </div>
                 </Card>
               )

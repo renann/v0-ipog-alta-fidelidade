@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -29,14 +28,15 @@ export default function GestaoPessoasPage() {
         </div>
         <Hero
           badge="EXTENSÃO"
+          modalidade="Online"
           title="Gestão de Pessoas"
           description="Desenvolva competências estratégicas para liderar equipes, construir culturas de alta performance e impulsionar resultados por meio de pessoas."
           valueBadges={[
             { icon: <GraduationCap className="h-5 w-5" />, text: "Certificado Reconhecido" },
-            { icon: <Clock className="h-5 w-5" />, text: "6 meses" },
+            { icon: <Clock className="h-5 w-5" />, text: "40 horas" },
             { icon: <Award className="h-5 w-5" />, text: "100% Online" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Baixar conteúdo programático", href: "#grade" }}
         />
 
@@ -214,20 +214,6 @@ export default function GestaoPessoasPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-lg text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
-
         <FormasIngresso />
 
         <section className="w-full py-16 px-4">
@@ -271,7 +257,7 @@ export default function GestaoPessoasPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="6 meses" totalCost="R$ 1.794,00" />
+        <CtaFinal courseId="gestao-pessoas" monthlyFee="R$ 299,00" duration="40 horas" totalCost="R$ 1.794,00" />
       </main>
       <Footer />
     </div>

@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { useState } from "react"
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
+import { ImageIcon, ArrowRight, Users } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { ArrowRight, Linkedin } from "lucide-react"
@@ -110,88 +110,73 @@ export function ProfessorsSection() {
   }, [api])
 
   return (
-    <section className="w-full px-8 py-12 md:py-16">
-      <div className="space-y-8">
-        <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Professores atuantes</h2>
-          <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
-        </div>
-        <Carousel
-          className="w-full py-4"
-          setApi={setApi}
-          opts={{
-            align: "start",
-            loop: false,
-          }}
-        >
-          <CarouselContent className="-ml-2 md:-ml-4 pb-8">
-            {professors.map((professor) => (
-              <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[56%] md:basis-[28%] lg:basis-[18%]">
-                <Card
-                  className="h-full hover:shadow-lg transition-shadow duration-300 cursor-pointer overflow-hidden border-0 p-0 group will-change-transform"
-                  style={{ borderRadius: "45px 45px 45px 15px" }}
-                  onClick={() => setSelectedProfessor(professor)}
-                >
-                  <div className="aspect-square bg-muted relative overflow-hidden">
-                    <Image
-                      src={professor.foto || "/placeholder.svg"}
-                      alt={`Foto de ${professor.name}`}
-                      fill
-                      className="object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105"
-                      style={{ transform: "translateZ(0)" }}
-                    />
-                  </div>
-                  <div className="p-6 space-y-3 bg-white">
-                    <h3 className="font-semibold text-lg">{professor.name}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {professor.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <span className="text-sm text-primary hover:underline pt-2 inline-block font-medium">
-                      Ver bio completa →
-                    </span>
-                  </div>
-                </Card>
+    <section className="w-full px-4 py-12 md:py-16">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="space-y-8">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Professores atuantes</h2>
+            <p className="text-muted-foreground">Aprenda com quem atua e transforma o mercado</p>
+          </div>
+          <Carousel
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {professors.map((professor) => (
+                <CarouselItem key={professor.name} className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+                  <Card
+                    className="h-full hover:shadow-lg transition-shadow cursor-pointer"
+                    onClick={() => setSelectedProfessor(professor)}
+                  >
+                    <CardContent className="p-0">
+                      <div className="aspect-square bg-muted flex items-center justify-center rounded-t-lg">
+                        <ImageIcon className="h-12 w-12 text-muted-foreground" />
+                      </div>
+                      <div className="p-6 space-y-3">
+                        <h3 className="font-semibold text-lg">{professor.name}</h3>
+                        <p className="text-sm text-muted-foreground line-clamp-3">{professor.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {professor.tags.map((tag) => (
+                            <Badge key={tag} variant="secondary" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                        <span className="text-sm text-foreground hover:underline pt-2 inline-block font-medium">
+                          Ver bio completa →
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+              <CarouselItem className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+                <Link href="/corpo-docente">
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-dashed border-2">
+                    <CardContent className="p-0">
+                      <div className="aspect-square bg-muted/50 flex items-center justify-center rounded-t-lg">
+                        <Users className="h-16 w-16 text-muted-foreground" />
+                      </div>
+                      <div className="p-6 space-y-3 text-center">
+                        <h3 className="font-semibold text-lg">Conheça todo o corpo docente</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Explore todos os professores mestres e doutores do IPOG
+                        </p>
+                        <span className="text-sm font-medium flex items-center justify-center gap-2 text-foreground pt-2">
+                          Ver corpo docente <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               </CarouselItem>
-            ))}
-
-            <CarouselItem className="pl-2 md:pl-4 basis-[56%] md:basis-[28%] lg:basis-[18%]">
-              <Link href="/corpo-docente" className="block h-full">
-                <Card
-                  className="h-full hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden border-0 p-0 bg-[#8A212E] text-white flex items-center justify-center will-change-transform"
-                  style={{ borderRadius: "45px 45px 45px 15px" }}
-                >
-                  <div className="p-8 text-center space-y-6">
-                    <div className="space-y-3">
-                      <h3 className="font-bold text-2xl">Conheça todo o corpo docente</h3>
-                      <p className="text-white/90 text-sm">Mais de 500 professores especialistas atuantes no mercado</p>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 text-white font-semibold text-lg group">
-                      Ver todos os professores
-                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Card>
-              </Link>
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
-
-        <div className="flex justify-center gap-2 pt-4">
-          {Array.from({ length: count }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`h-4 rounded-full transition-all ${
-                index === current ? "w-16 bg-[#D71C37]" : "w-4 bg-[#7F7F7F] hover:bg-[#8A212E]"
-              }`}
-              aria-label={`Ir para slide ${index + 1}`}
-            />
-          ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </div>
 

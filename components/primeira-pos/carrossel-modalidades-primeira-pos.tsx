@@ -3,6 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Monitor, Video, Building2, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function CarrosselModalidadesPrimeiraPos() {
   const modalidades = [
@@ -10,6 +12,7 @@ export function CarrosselModalidadesPrimeiraPos() {
       icon: Monitor,
       nome: "EAD (Gravado)",
       descricao: "Autonomia total para estudar quando quiser",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=ead",
       indicadores: {
         flexibilidade: 5,
         networking: 2,
@@ -21,6 +24,7 @@ export function CarrosselModalidadesPrimeiraPos() {
       icon: Video,
       nome: "Ao Vivo (Online)",
       descricao: "Interação em tempo real com professores",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=ao-vivo",
       indicadores: {
         flexibilidade: 4,
         networking: 4,
@@ -32,6 +36,7 @@ export function CarrosselModalidadesPrimeiraPos() {
       icon: Building2,
       nome: "Presencial",
       descricao: "Imersão prática e networking ao vivo",
+      href: "/catalogo?formacao=pos-graduacao&modalidade=presencial",
       indicadores: {
         flexibilidade: 2,
         networking: 5,
@@ -99,6 +104,10 @@ export function CarrosselModalidadesPrimeiraPos() {
                           {renderStars(modalidade.indicadores.custoBeneficio)}
                         </div>
                       </div>
+
+                      <Button asChild className="w-full mt-6">
+                        <Link href={modalidade.href}>Ver cursos</Link>
+                      </Button>
                     </CardContent>
                   </Card>
                 </CarouselItem>

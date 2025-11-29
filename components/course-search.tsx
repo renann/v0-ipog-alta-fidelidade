@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Search, ArrowRight, Check, ChevronsUpDown } from "lucide-react"
+import { Search, ArrowRight, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
 interface CourseSearchProps {
@@ -38,6 +38,9 @@ export function CourseSearch({
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [selectedArea, setSelectedArea] = useState("")
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const filteredAreas = areasDeAtuacao.filter((area) => area.label.toLowerCase().includes(searchQuery.toLowerCase()))
 
   const handleSearch = () => {
     const params = new URLSearchParams()
@@ -51,6 +54,13 @@ export function CourseSearch({
     const params = new URLSearchParams()
     params.set("formacao", formationType)
     router.push(`/catalogo?${params.toString()}`)
+  }
+
+  const handleSelectArea = (areaValue: string) => {
+    console.log("[v0] Selecionando área:", areaValue)
+    setSelectedArea(areaValue === selectedArea ? "" : areaValue)
+    setOpen(false)
+    setSearchQuery("")
   }
 
   return (
@@ -67,48 +77,62 @@ export function CourseSearch({
               <PopoverTrigger asChild>
                 <Button
                   variant="outline"
-                  role="combobox"
-                  aria-expanded={open}
-                  className="flex-1 min-w-0 justify-between h-12 md:h-14 text-base border-gray-200 rounded-xl px-4 bg-background"
+                  className="flex-1 min-w-0 justify-between h-12 md:h-14 text-base border-gray-200 rounded-xl px-4 bg-transparent hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
                     <Search className="h-5 w-5 text-muted-foreground shrink-0" />
-                    <span className={cn("truncate", !selectedArea && "text-muted-foreground")}>
+                    <span className={cn("truncate text-left", !selectedArea && "text-muted-foreground")}>
                       {selectedArea
                         ? areasDeAtuacao.find((area) => area.value === selectedArea)?.label
                         : "Selecione uma área de atuação"}
                     </span>
                   </div>
-                  <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent
                 className="w-[var(--radix-popover-trigger-width)] max-w-[calc(100vw-2rem)] p-0"
                 align="start"
               >
-                <Command>
-                  <CommandInput placeholder="Digite para buscar..." />
-                  <CommandList>
-                    <CommandEmpty>Nenhuma área encontrada.</CommandEmpty>
-                    <CommandGroup>
-                      {areasDeAtuacao.map((area) => (
-                        <CommandItem
-                          key={area.value}
-                          value={area.value}
-                          onSelect={(currentValue) => {
-                            setSelectedArea(currentValue === selectedArea ? "" : currentValue)
-                            setOpen(false)
-                          }}
-                        >
-                          <Check
-                            className={cn("mr-2 h-4 w-4", selectedArea === area.value ? "opacity-100" : "opacity-0")}
-                          />
-                          {area.label}
-                        </CommandItem>
-                      ))}
-                    </CommandGroup>
-                  </CommandList>
-                </Command>
+                <div className="flex flex-col">
+                  <div className="p-3 border-b">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        placeholder="Digite para buscar..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-9 h-10 border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="max-h-[300px] overflow-y-auto">
+                    {filteredAreas.length === 0 ? (
+                      <div className="py-6 text-center text-sm text-muted-foreground">Nenhuma área encontrada.</div>
+                    ) : (
+                      <div className="p-1">
+                        {filteredAreas.map((area) => (
+                          <button
+                            key={area.value}
+                            onClick={() => handleSelectArea(area.value)}
+                            className={cn(
+                              "w-full flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-gray-100 transition-colors text-left",
+                              selectedArea === area.value && "bg-gray-50",
+                            )}
+                          >
+                            <Check
+                              className={cn(
+                                "h-4 w-4 shrink-0",
+                                selectedArea === area.value ? "opacity-100" : "opacity-0",
+                              )}
+                            />
+                            <span>{area.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
               </PopoverContent>
             </Popover>
 
@@ -121,7 +145,7 @@ export function CourseSearch({
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base text-muted-foreground">
             <button
               onClick={() => handleFormationClick("Graduação")}
               className="hover:text-foreground transition-colors"
