@@ -6,7 +6,8 @@ import { ImageIcon, ArrowRight, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
-import { DocenteModal } from "@/components/docente-modal"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
+import { ArrowRight, Linkedin } from "lucide-react"
 
 const professors = [
   {
@@ -15,7 +16,7 @@ const professors = [
     description:
       "Especialista em gestão estratégica com mais de 15 anos de experiência em transformação digital e liderança empresarial.",
     tags: ["Gestão Estratégica", "Transformação Digital", "Liderança"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/jose-maria.jpg",
     miniBio:
       "Especialista em gestão estratégica com mais de 15 anos de experiência em transformação digital e liderança empresarial.",
     bioCompleta:
@@ -28,7 +29,7 @@ const professors = [
     description:
       "Doutora em Administração, consultora empresarial focada em inovação, empreendedorismo e desenvolvimento organizacional.",
     tags: ["Inovação", "Empreendedorismo", "Consultoria"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/michela-silva.jpg",
     miniBio:
       "Doutora em Administração, consultora empresarial focada em inovação, empreendedorismo e desenvolvimento organizacional.",
     bioCompleta:
@@ -41,7 +42,7 @@ const professors = [
     description:
       "Especialista em marketing digital com 12 anos de experiência em estratégias de crescimento e transformação de marcas.",
     tags: ["Marketing Digital", "Growth", "Branding"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/carlos-eduardo.jpg",
     miniBio:
       "Especialista em marketing digital com 12 anos de experiência em estratégias de crescimento e transformação de marcas.",
     bioCompleta:
@@ -54,7 +55,7 @@ const professors = [
     description:
       "Doutora em Psicologia Organizacional com 18 anos de experiência em desenvolvimento humano e cultura corporativa.",
     tags: ["RH Estratégico", "Cultura", "Desenvolvimento"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/patricia-rodrigues.jpg",
     miniBio:
       "Doutora em Psicologia Organizacional com 18 anos de experiência em desenvolvimento humano e cultura corporativa.",
     bioCompleta:
@@ -67,7 +68,7 @@ const professors = [
     description:
       "Especialista em finanças corporativas com 20 anos de experiência em planejamento financeiro e controladoria estratégica.",
     tags: ["Finanças", "Controladoria", "Planejamento"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/ricardo-alves.jpg",
     miniBio:
       "Especialista em finanças corporativas com 20 anos de experiência em planejamento financeiro e controladoria estratégica.",
     bioCompleta:
@@ -80,7 +81,7 @@ const professors = [
     description:
       "Advogada especialista em direito empresarial com 14 anos de experiência em compliance, governança corporativa e M&A.",
     tags: ["Direito Empresarial", "Compliance", "Governança"],
-    foto: "/placeholder.svg?height=200&width=200",
+    foto: "/images/professors/amanda-costa.jpg",
     miniBio:
       "Advogada especialista em direito empresarial com 14 anos de experiência em compliance, governança corporativa e M&A.",
     bioCompleta:
@@ -91,6 +92,22 @@ const professors = [
 
 export function ProfessorsSection() {
   const [selectedProfessor, setSelectedProfessor] = useState<(typeof professors)[0] | null>(null)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
 
   return (
     <section className="w-full px-4 py-12 md:py-16">
@@ -163,20 +180,62 @@ export function ProfessorsSection() {
         </div>
       </div>
 
-      {selectedProfessor && (
-        <DocenteModal
-          docente={{
-            nome: selectedProfessor.name,
-            area: selectedProfessor.area,
-            miniBio: selectedProfessor.miniBio,
-            bioCompleta: selectedProfessor.bioCompleta,
-            linkedin: selectedProfessor.linkedin,
-            foto: selectedProfessor.foto,
-          }}
-          open={!!selectedProfessor}
-          onOpenChange={(open) => !open && setSelectedProfessor(null)}
-        />
-      )}
+      <Sheet open={!!selectedProfessor} onOpenChange={(open) => !open && setSelectedProfessor(null)}>
+        <SheetContent
+          side="right"
+          className="bg-[#8A212E] text-white border-l-0 w-full md:w-[30vw] overflow-y-auto p-0"
+          style={{ borderRadius: "45px 0 0 45px" }}
+        >
+          <div className="p-6">
+            {selectedProfessor && (
+              <div className="space-y-6">
+                <SheetHeader className="space-y-4">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
+                    <Image
+                      src={selectedProfessor.foto || "/placeholder.svg"}
+                      alt={`Foto de ${selectedProfessor.name}`}
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <SheetTitle className="text-white text-2xl text-center">{selectedProfessor.name}</SheetTitle>
+                  <SheetDescription className="text-white/90 text-center text-base">
+                    {selectedProfessor.area}
+                  </SheetDescription>
+                </SheetHeader>
+
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {selectedProfessor.tags.map((tag) => (
+                      <Badge key={tag} className="bg-white/20 hover:bg-white/30 text-white border-0">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3 pt-4">
+                    <h3 className="font-semibold text-lg text-white">Sobre</h3>
+                    <p className="text-white/90 text-sm leading-relaxed">{selectedProfessor.bioCompleta}</p>
+                  </div>
+
+                  {selectedProfessor.linkedin && (
+                    <a
+                      href={selectedProfessor.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-white hover:text-white/80 transition-colors pt-4"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      <span className="text-sm font-medium">Ver perfil no LinkedIn</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
     </section>
   )
 }

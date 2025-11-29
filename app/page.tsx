@@ -33,55 +33,56 @@ export default function HomePage() {
                 tag: "Pós-Graduação",
                 title: "Especialize-se com quem o mercado respeita",
                 description: "Mais de 20 anos formando especialistas reconhecidos nacionalmente",
-                image: "/placeholder.svg?height=600&width=800",
+                image: "/images/showcase-main.jpg",
                 href: "/pos-graduacao",
                 size: "large",
                 overlay: true,
+                tagColor: "primary",
               },
               {
                 tag: "Novidade",
                 title: "Vestibular IPOG 2025 com bolsas de até 50%",
                 description: "Inscrições abertas para graduação EAD e presencial",
-                illustration: "/placeholder.svg?height=300&width=400",
+                image: "/images/showcase-vestibular.jpg",
                 href: "/graduacao",
                 size: "small",
-                overlay: false,
+                overlay: true,
+                tagColor: "secondary",
               },
               {
                 tag: "Evento",
                 title: "Semana de Carreiras: descubra sua próxima oportunidade",
                 description: "Workshops, palestras e networking com líderes de mercado",
-                image: "/placeholder.svg?height=300&width=400",
+                image: "/images/showcase-careers.jpg",
                 href: "/eventos",
                 size: "small",
                 overlay: true,
+                tagColor: "wine",
               },
             ]}
           />
         </div>
 
-        <section className="w-full py-6 md:py-8 bg-background">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-6">
-                IPOG: A escolha inteligente para sua carreira
-              </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
-                A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
-                carreira
-              </p>
-            </div>
+        <section className="w-full px-8 py-12 md:py-16">
+          <div className="max-w-screen-xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-6">
+              IPOG: A escolha inteligente para sua carreira
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+              A melhor escolha para quem busca ensino de excelência, qualidade reconhecida e resultados reais na
+              carreira
+            </p>
           </div>
         </section>
 
-        <section className="w-full py-8 md:py-12 bg-muted/30">
-          <div className="max-w-screen-xl mx-auto px-4">
+        <section className="w-full px-8 py-12 md:py-16">
+          <div className="max-w-screen-xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {/* Card 1: Certificação MEC */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-[#D71C37]" />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -93,10 +94,10 @@ export default function HomePage() {
               </div>
 
               {/* Card 2: Tradição */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-[#D71C37]" />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -108,10 +109,10 @@ export default function HomePage() {
               </div>
 
               {/* Card 3: Networking */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-[#D71C37]" />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -123,10 +124,10 @@ export default function HomePage() {
               </div>
 
               {/* Card 4: Metodologia */}
-              <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4 p-6 bg-[#8A212E]/5 rounded-lg">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-[#D71C37]/10 flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-[#D71C37]" />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">

@@ -47,7 +47,7 @@ interface SheetContentProps extends React.ComponentPropsWithoutRef<typeof SheetP
 const SheetContent = React.forwardRef<React.ElementRef<typeof SheetPrimitive.Content>, SheetContentProps>(
   ({ side = "right", className, children, ...props }, ref) => (
     <SheetPortal>
-      <SheetOverlay />
+      {!className?.includes("no-overlay") && <SheetOverlay />}
       <SheetPrimitive.Content
         ref={ref}
         className={cn(

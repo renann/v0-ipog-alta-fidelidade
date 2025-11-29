@@ -56,19 +56,19 @@ const verticais = [
 
 export function QuatroVerticais({ titulo = "Escolha o caminho que combina com sua trajetória" }: QuatroVerticaisProps) {
   return (
-    <section className="w-full px-4 py-16">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="space-y-8">
+    <section className="w-full px-8 py-12 md:py-16">
+      <div className="bg-[#D71C37] text-white rounded-[45px_45px_45px_15px] p-8 md:p-12">
+        <div className="max-w-screen-xl mx-auto space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-3xl md:text-4xl font-bold">{titulo}</h2>
-            <p className="text-muted-foreground text-lg">Formação completa para cada momento da sua carreira</p>
+            <p className="text-white/90 text-lg">Formação completa para cada momento da sua carreira</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {verticais.map((vertical) => {
               const Icon = vertical.icon
               return (
-                <Card key={vertical.tag} className="hover:shadow-xl transition-shadow">
+                <Card key={vertical.tag} className="hover:shadow-xl transition-shadow bg-white">
                   <CardContent className="p-6 space-y-4">
                     <div className="flex items-start gap-4">
                       <div
@@ -78,17 +78,17 @@ export function QuatroVerticais({ titulo = "Escolha o caminho que combina com su
                       </div>
                       <div className="space-y-1">
                         <p className="text-sm font-semibold text-muted-foreground uppercase">{vertical.tag}</p>
-                        <h3 className="text-xl font-bold">{vertical.title}</h3>
+                        <h3 className="text-xl font-bold text-foreground">{vertical.title}</h3>
                       </div>
                     </div>
 
-                    <p className="text-lg font-medium">{vertical.promessa}</p>
+                    <p className="text-lg font-medium text-foreground">{vertical.promessa}</p>
 
                     <div className="space-y-2">
                       {vertical.diferenciais.map((diferencial) => (
                         <div key={diferencial} className="flex items-center gap-2">
                           <Check className="h-4 w-4 text-foreground shrink-0" />
-                          <span className="text-sm">{diferencial}</span>
+                          <span className="text-sm text-foreground">{diferencial}</span>
                         </div>
                       ))}
                     </div>

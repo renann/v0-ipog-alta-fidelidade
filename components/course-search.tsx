@@ -64,9 +64,9 @@ export function CourseSearch({
   }
 
   return (
-    <section className="w-full px-4 py-6">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="bg-white rounded-2xl p-6 md:p-8 space-y-6">
+    <div className="w-full px-8 py-12 md:py-16">
+      <div className="bg-[#7F7F7F]/10 rounded-[45px_45px_45px_15px] p-8 md:p-10">
+        <div className="max-w-screen-xl mx-auto space-y-6">
           <div className="space-y-3 md:text-center">
             <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{description}</p>
@@ -138,7 +138,7 @@ export function CourseSearch({
 
             <Button
               size="icon"
-              className="shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-xl bg-black hover:bg-black/90"
+              className="shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-xl bg-foreground hover:bg-foreground/90"
               onClick={handleSearch}
             >
               <ArrowRight className="h-5 w-5" />
@@ -169,6 +169,6 @@ export function CourseSearch({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
