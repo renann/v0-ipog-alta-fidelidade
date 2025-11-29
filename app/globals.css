@@ -3,6 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Updated :root with IPOG brand colors as primary */
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -10,19 +11,22 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  /* Primary now uses Vermelho Protagonismo #D71C37 */
+  --primary: #d71c37;
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  /* Muted foreground uses Cinza Conexão #7F7F7F */
+  --muted-foreground: #7f7f7f;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
+  /* Destructive uses Vermelho Excelência #8A212E */
+  --destructive: #8a212e;
+  --destructive-foreground: #ffffff;
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: #d71c37;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -31,12 +35,29 @@
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #d71c37;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: #d71c37;
+
+  /* IPOG Brand Colors */
+  --vermelho-protagonismo: #d71c37;
+  --cinza-conexao: #7f7f7f;
+  --branco-essencial: #ffffff;
+  --vinho-determinacao: #481a1f;
+  --vermelho-excelencia: #8a212e;
+
+  /* IPOG Shape Radius */
+  --radius-ipog-tl: 45px;
+  --radius-ipog-tr: 45px;
+  --radius-ipog-bl: 45px;
+  --radius-ipog-br: 15px;
+
+  /* Section Spacing */
+  --spacing-section: 5rem;
+  --spacing-container: 2rem;
 }
 
 .dark {
@@ -46,19 +67,19 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: #d71c37;
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: #7f7f7f;
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --destructive: #8a212e;
+  --destructive-foreground: #ffffff;
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --ring: #d71c37;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -66,12 +87,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #d71c37;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-ring: #d71c37;
 }
 
 @theme inline {
@@ -113,7 +134,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Adicionando variável de blur customizada */
+
+  /* IPOG Brand Color Tokens */
+  --color-vermelho-protagonismo: var(--vermelho-protagonismo);
+  --color-cinza-conexao: var(--cinza-conexao);
+  --color-branco-essencial: var(--branco-essencial);
+  --color-vinho-determinacao: var(--vinho-determinacao);
+  --color-vermelho-excelencia: var(--vermelho-excelencia);
+
   --blur-md: 8px;
 }
 
@@ -145,5 +173,51 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+  }
+
+  /* IPOG Shape utility class */
+  .ipog-shape {
+    border-top-left-radius: var(--radius-ipog-tl);
+    border-top-right-radius: var(--radius-ipog-tr);
+    border-bottom-left-radius: var(--radius-ipog-bl);
+    border-bottom-right-radius: var(--radius-ipog-br);
+  }
+
+  /* Section padding utility */
+  .section-padding {
+    @apply px-4 md:px-8 py-20;
+  }
+
+  /* IPOG Color utilities */
+  .text-vermelho-protagonismo {
+    color: var(--vermelho-protagonismo);
+  }
+
+  .bg-vermelho-protagonismo {
+    background-color: var(--vermelho-protagonismo);
+  }
+
+  .text-vermelho-excelencia {
+    color: var(--vermelho-excelencia);
+  }
+
+  .bg-vermelho-excelencia {
+    background-color: var(--vermelho-excelencia);
+  }
+
+  .text-vinho-determinacao {
+    color: var(--vinho-determinacao);
+  }
+
+  .bg-vinho-determinacao {
+    background-color: var(--vinho-determinacao);
+  }
+
+  .text-cinza-conexao {
+    color: var(--cinza-conexao);
+  }
+
+  .bg-cinza-conexao {
+    background-color: var(--cinza-conexao);
   }
 }
