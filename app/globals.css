@@ -3,75 +3,84 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Paleta de cores IPOG */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Cores principais IPOG */
+  --ipog-vermelho-protagonismo: #d71c37;
+  --ipog-vermelho-excelencia: #8a212e;
+  --ipog-vinho-determinacao: #481a1f;
+  --ipog-cinza-conexao: #7f7f7f;
+  --ipog-branco-essencial: #ffffff;
+
+  /* Mapeamento para tokens do sistema */
+  --background: var(--ipog-branco-essencial);
+  --foreground: var(--ipog-vinho-determinacao);
+  --card: var(--ipog-branco-essencial);
+  --card-foreground: var(--ipog-vinho-determinacao);
+  --popover: var(--ipog-branco-essencial);
+  --popover-foreground: var(--ipog-vinho-determinacao);
+  --primary: var(--ipog-vermelho-protagonismo);
+  --primary-foreground: var(--ipog-branco-essencial);
+  --secondary: #f5f5f5;
+  --secondary-foreground: var(--ipog-vinho-determinacao);
+  --muted: #f5f5f5;
+  --muted-foreground: var(--ipog-cinza-conexao);
+  --accent: var(--ipog-vermelho-excelencia);
+  --accent-foreground: var(--ipog-branco-essencial);
+  --destructive: var(--ipog-vermelho-protagonismo);
+  --destructive-foreground: var(--ipog-branco-essencial);
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: var(--ipog-vermelho-protagonismo);
+  --chart-1: var(--ipog-vermelho-protagonismo);
+  --chart-2: var(--ipog-vermelho-excelencia);
+  --chart-3: var(--ipog-vinho-determinacao);
+  --chart-4: var(--ipog-cinza-conexao);
+  --chart-5: #b8b8b8;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--ipog-branco-essencial);
+  --sidebar-foreground: var(--ipog-vinho-determinacao);
+  --sidebar-primary: var(--ipog-vermelho-protagonismo);
+  --sidebar-primary-foreground: var(--ipog-branco-essencial);
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: var(--ipog-vinho-determinacao);
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: var(--ipog-vermelho-protagonismo);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: var(--ipog-vinho-determinacao);
+  --foreground: var(--ipog-branco-essencial);
+  --card: #2d1215;
+  --card-foreground: var(--ipog-branco-essencial);
+  --popover: #2d1215;
+  --popover-foreground: var(--ipog-branco-essencial);
+  --primary: var(--ipog-vermelho-protagonismo);
+  --primary-foreground: var(--ipog-branco-essencial);
+  --secondary: #3d2225;
+  --secondary-foreground: var(--ipog-branco-essencial);
+  --muted: #3d2225;
+  --muted-foreground: #b8b8b8;
+  --accent: var(--ipog-vermelho-excelencia);
+  --accent-foreground: var(--ipog-branco-essencial);
+  --destructive: var(--ipog-vermelho-protagonismo);
+  --destructive-foreground: var(--ipog-branco-essencial);
+  --border: #3d2225;
+  --input: #3d2225;
+  --ring: var(--ipog-vermelho-protagonismo);
+  --chart-1: var(--ipog-vermelho-protagonismo);
+  --chart-2: var(--ipog-vermelho-excelencia);
+  --chart-3: #b8b8b8;
+  --chart-4: var(--ipog-cinza-conexao);
+  --chart-5: #d4d4d4;
+  --sidebar: #2d1215;
+  --sidebar-foreground: var(--ipog-branco-essencial);
+  --sidebar-primary: var(--ipog-vermelho-protagonismo);
+  --sidebar-primary-foreground: var(--ipog-branco-essencial);
+  --sidebar-accent: #3d2225;
+  --sidebar-accent-foreground: var(--ipog-branco-essencial);
+  --sidebar-border: #3d2225;
+  --sidebar-ring: var(--ipog-vermelho-protagonismo);
 }
 
 @theme inline {
@@ -113,6 +122,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Cores IPOG como classes utilitárias */
+  --color-ipog-vermelho: var(--ipog-vermelho-protagonismo);
+  --color-ipog-vermelho-escuro: var(--ipog-vermelho-excelencia);
+  --color-ipog-vinho: var(--ipog-vinho-determinacao);
+  --color-ipog-cinza: var(--ipog-cinza-conexao);
+  --color-ipog-branco: var(--ipog-branco-essencial);
+
   /* Adicionando variável de blur customizada */
   --blur-md: 8px;
 }
