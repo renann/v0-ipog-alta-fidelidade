@@ -4,14 +4,20 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Clock } from "lucide-react"
 import Link from "next/link"
+
+export interface Modalidade {
+  tipo: string
+  opcoes: string[]
+  link?: string
+}
 
 export interface Curso {
   nome: string
   duracao: string
   descricao: string
-  modalidade: string
+  modalidade?: string // formato legado (ex: "EAD • Presencial")
+  modalidades?: Modalidade[] // novo formato estruturado
   link?: string
 }
 
@@ -27,6 +33,7 @@ export interface CursosProps {
     text: string
     link: string
   }
+  isGraduacao?: boolean
 }
 
 export function Cursos({
@@ -38,6 +45,7 @@ export function Cursos({
   ctaLink = "#",
   carouselBasis = "md:basis-1/2 lg:basis-1/3",
   footerCTA,
+  isGraduacao = false,
 }: CursosProps) {
   return (
     <section className="w-full py-12 md:py-16">
@@ -58,24 +66,64 @@ export function Cursos({
             <CarouselContent>
               {cursos.map((curso, index) => (
                 <CarouselItem key={index} className={carouselBasis}>
-                  <Card className="h-full min-h-[500px] border-border bg-background">
-                    <CardContent className="flex h-full min-h-[500px] flex-col p-6">
-                      <Badge variant="outline" className="mb-4 w-fit">
+                  <Card className="h-full min-h-[420px] border-border bg-background">
+                    <CardContent className="flex h-full min-h-[420px] flex-col p-6">
+                      <Badge variant="outline" className="mb-4 w-fit text-xs font-bold px-3 py-1 rounded-full">
                         {badge}
                       </Badge>
-                      <h3 className="mb-2 text-xl font-bold text-foreground">{curso.nome}</h3>
-                      <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        <span>Duração: {curso.duracao}</span>
+                      <h3 className="mb-4 text-xl font-bold text-foreground text-balance">{curso.nome}</h3>
+
+                      <div className="mb-4 space-y-2 flex-1">
+                        <p className="text-xs text-muted-foreground">
+                          <span className="font-medium text-foreground">Duração:</span> {curso.duracao}
+                        </p>
+                        <p className="text-xs text-muted-foreground line-clamp-2">
+                          <span className="font-medium text-foreground">Ideal para:</span> {curso.descricao}
+                        </p>
+                        {isGraduacao && (
+                          <p className="text-xs text-muted-foreground">
+                            <span className="font-medium text-foreground">Formas de Ingresso:</span> Vestibular, Boletim
+                            do ENEM, Portador de Diploma, Transferência
+                          </p>
+                        )}
                       </div>
-                      <p className="mb-6 flex-1 text-sm text-muted-foreground">{curso.descricao}</p>
-                      <div className="mt-auto space-y-4">
-                        <div className="flex flex-wrap gap-2">
-                          <Badge variant="outline" className="gap-1">
-                            Modalidade: {curso.modalidade}
-                          </Badge>
-                        </div>
-                        <Button className="w-full" asChild>
+
+                      <div className="mt-auto">
+                        {curso.modalidades ? (
+                          // Novo formato estruturado
+                          <div className="space-y-3 border-t pt-4">
+                            {curso.modalidades.map((modalidade, idx) => (
+                              <div key={idx} className="flex items-center gap-2 flex-wrap">
+                                <span className="text-sm font-bold">{modalidade.tipo}</span>
+                                <div className="flex flex-wrap gap-1">
+                                  {modalidade.opcoes.map((opcao, opIdx) => (
+                                    <Badge
+                                      key={opIdx}
+                                      variant="outline"
+                                      className="text-xs font-medium px-2 py-0.5 rounded-full"
+                                    >
+                                      {opcao}
+                                    </Badge>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : curso.modalidade ? (
+                          // Formato legado - converte para o novo formato visual
+                          <div className="space-y-3 border-t pt-4">
+                            {curso.modalidade.split(" • ").map((mod, idx) => (
+                              <div key={idx} className="flex items-center gap-2 flex-wrap">
+                                <span className="text-sm font-bold">{mod.trim()}</span>
+                                <Badge variant="outline" className="text-xs font-medium px-2 py-0.5 rounded-full">
+                                  {mod.trim() === "EAD" ? "ONLINE" : "DIVERSAS"}
+                                </Badge>
+                              </div>
+                            ))}
+                          </div>
+                        ) : null}
+
+                        <Button className="w-full mt-4" asChild>
                           <Link href={curso.link || ctaLink}>{ctaText}</Link>
                         </Button>
                       </div>

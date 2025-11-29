@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ImageIcon } from "lucide-react"
+import Link from "next/link"
+import { ImageIcon, ArrowRight, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
@@ -135,6 +136,26 @@ export function ProfessorsSection() {
                   </Card>
                 </CarouselItem>
               ))}
+              <CarouselItem className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+                <Link href="/corpo-docente">
+                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-dashed border-2">
+                    <CardContent className="p-0">
+                      <div className="aspect-square bg-muted/50 flex items-center justify-center rounded-t-lg">
+                        <Users className="h-16 w-16 text-muted-foreground" />
+                      </div>
+                      <div className="p-6 space-y-3 text-center">
+                        <h3 className="font-semibold text-lg">Conheça todo o corpo docente</h3>
+                        <p className="text-sm text-muted-foreground">
+                          Explore todos os professores mestres e doutores do IPOG
+                        </p>
+                        <span className="text-sm font-medium flex items-center justify-center gap-2 text-foreground pt-2">
+                          Ver corpo docente <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />

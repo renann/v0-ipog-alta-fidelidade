@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { Autoridade } from "@/components/autoridade"
 import { CtaFinal } from "@/components/cta-final"
+import { FormasIngresso } from "@/components/formas-ingresso"
 
 export default function DireitoPage() {
   return (
@@ -25,6 +26,7 @@ export default function DireitoPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="Presencial"
           title="Graduação em Direito"
           description="Construa uma carreira de impacto com a graduação em Direito do IPOG. Uma formação de excelência, com foco na prática jurídica e corpo docente de mercado, que prepara você para a OAB, para advogar em alto nível ou para os mais concorridos concursos públicos."
           valueBadges={[
@@ -32,8 +34,8 @@ export default function DireitoPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Metodologia Flexível" },
             { icon: <Award className="h-5 w-5" />, text: "Docentes com Experiência de Mercado" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <section className="w-full py-16 px-4 bg-muted/30">
           <div className="max-w-screen-xl mx-auto">
@@ -248,40 +250,10 @@ export default function DireitoPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 px-4 bg-muted/30">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Escolha Como Iniciar Sua Jornada no IPOG</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Oferecemos diferentes caminhos para você começar sua graduação em Direito. Veja qual se encaixa melhor
-                no seu perfil.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Vestibular Digital</h3>
-                <p className="text-muted-foreground">
-                  Ideal para quem concluiu o ensino médio. Faça nossa prova online de forma rápida e segura para
-                  garantir sua vaga.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Nota do ENEM</h3>
-                <p className="text-muted-foreground">
-                  Aproveite seu desempenho no ENEM. Apresente sua nota e matricule-se no IPOG sem necessidade de novo
-                  processo seletivo.
-                </p>
-              </div>
-              <div className="bg-background p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Portador de Diploma ou Transferência</h3>
-                <p className="text-muted-foreground">
-                  Se você já possui diploma ou deseja transferir seu curso, aproveite um processo de matrícula
-                  simplificado e valide suas disciplinas já cursadas.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FormasIngresso
+          title="Escolha Como Iniciar Sua Jornada no IPOG"
+          description="Oferecemos diferentes caminhos para você começar sua graduação em Direito. Veja qual se encaixa melhor no seu perfil."
+        />
 
         <Autoridade
           title="Corpo Docente do Curso"
@@ -357,6 +329,7 @@ export default function DireitoPage() {
         />
 
         <CtaFinal
+          courseId="direito"
           title="Invista na sua carreira com a instituição que é referência nacional."
           description="Taxa de Matrícula: R$ 100,00 | Mensalidades: a partir de R$ 599,00+"
           enrollmentFee="R$ 100,00"

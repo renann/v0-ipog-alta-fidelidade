@@ -10,10 +10,12 @@ import { ResultadosComprovados } from "@/components/resultados-comprovados"
 import { ProfessorsSection } from "@/components/professors-section"
 import { DepoimentosDeTexto } from "@/components/depoimentos-de-texto"
 import { AcaoFinal } from "@/components/acao-final"
+import { LatestBlogPosts } from "@/components/latest-blog-posts"
 import { Footer } from "@/components/footer"
 import { openAssistantForConsultor } from "@/lib/assistant-events"
 import { ShowcaseGridDesktop } from "@/components/showcase-grid-desktop"
 import { Award, TrendingUp, Users, Lightbulb } from "lucide-react"
+import { UltimosWebStories } from "@/components/ultimos-webstories"
 
 export default function HomePage() {
   return (
@@ -183,6 +185,8 @@ export default function HomePage() {
           ]}
         />
 
+        <UltimosWebStories />
+
         <AcaoFinal
           title="Comece sua jornada de transformação profissional"
           descricao="Mais de 20 anos formando especialistas e líderes de mercado. Escolha sua formação e acelere sua carreira"
@@ -195,6 +199,8 @@ export default function HomePage() {
             onClick: openAssistantForConsultor,
           }}
         />
+
+        <LatestBlogPosts />
       </main>
       <Footer />
     </div>

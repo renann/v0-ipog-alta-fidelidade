@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -31,6 +30,7 @@ export default function MarketingDigitalPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="Presencial"
           title="FORMAÇÃO EM MARKETING DIGITAL COM INTELIGÊNCIA ARTIFICIAL"
           description="Transforme cliques em clientes. Aprenda a criar funis de vendas inteligentes, dominar tráfego pago e usar IA para escalar resultados reais."
           valueBadges={[
@@ -38,8 +38,8 @@ export default function MarketingDigitalPage() {
             { icon: <Sparkles className="h-5 w-5" />, text: "Crie conteúdo com IA" },
             { icon: <TrendingUp className="h-5 w-5" />, text: "Funis de Vendas 5.0" },
           ]}
-          primaryCTA={{ text: "FALAR COM UM CONSULTOR", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">
@@ -246,36 +246,9 @@ export default function MarketingDigitalPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <section className="w-full py-16 px-4 bg-background">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Para quem é esta formação?</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Para empreendedores, gestores, profissionais de marketing, analistas, social media, criadores de
-                conteúdo e profissionais liberais que desejam utilizar o marketing digital com foco em resultados,
-                usando o poder da IA como diferencial competitivo.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
-
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="max-w-3xl mx-auto mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas frequentes sobre o curso</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Tire suas dúvidas sobre o curso, ferramentas e aplicação prática.
@@ -287,7 +260,7 @@ export default function MarketingDigitalPage() {
                 <AccordionItem value="item-0">
                   <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
                   <AccordionContent>
-                    O curso de extensão tem duração de 3 meses, com conteúdo prático e aplicável imediatamente.
+                    O curso de extensão tem duração de 100 horas, com conteúdo prático e aplicável imediatamente.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">
@@ -360,19 +333,8 @@ export default function MarketingDigitalPage() {
           ]}
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Formas de Pagamento</h2>
-              <p className="text-muted-foreground">
-                Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-              </p>
-            </div>
-            <MetodosPagamento />
-          </div>
-        </section>
-
         <CtaFinal
+          courseId="marketing-digital"
           monthlyFee="R$ 249,00"
           duration="3 meses"
           totalCost="R$ 747,00"
