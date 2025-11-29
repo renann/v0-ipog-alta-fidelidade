@@ -37,6 +37,23 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Adicionando cores IPOG */
+  --vermelho-protagonismo: #d71c37;
+  --cinza-conexao: #7f7f7f;
+  --branco-essencial: #ffffff;
+  --vinho-determinacao: #481a1f;
+  --vermelho-excelencia: #8a212e;
+
+  /* Adicionando IPOG Shape radius */
+  --radius-ipog-tl: 45px;
+  --radius-ipog-tr: 45px;
+  --radius-ipog-bl: 45px;
+  --radius-ipog-br: 15px;
+
+  /* Adicionando espaçamentos padrão */
+  --spacing-section: 5rem;
+  --spacing-container: 2rem;
 }
 
 .dark {
@@ -75,7 +92,7 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -113,8 +130,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* Adicionando variável de blur customizada */
-  --blur-md: 8px;
+
+  /* Adicionando cores IPOG ao theme inline */
+  --color-vermelho-protagonismo: var(--vermelho-protagonismo);
+  --color-cinza-conexao: var(--cinza-conexao);
+  --color-branco-essencial: var(--branco-essencial);
+  --color-vinho-determinacao: var(--vinho-determinacao);
+  --color-vermelho-excelencia: var(--vermelho-excelencia);
 }
 
 @layer base {
@@ -124,26 +146,56 @@
   body {
     @apply bg-background text-foreground;
   }
-  html,
-  body {
-    @apply overflow-x-hidden;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
 }
 
+/* Adicionando classes utilitárias IPOG personalizadas */
 @layer utilities {
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
+  .ipog-shape {
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
+  .text-vermelho-protagonismo {
+    color: var(--vermelho-protagonismo);
+  }
+
+  .bg-vermelho-protagonismo {
+    background-color: var(--vermelho-protagonismo);
+  }
+
+  .bg-vermelho-excelencia {
+    background-color: var(--vermelho-excelencia);
+  }
+
+  .bg-vinho-determinacao {
+    background-color: var(--vinho-determinacao);
+  }
+
+  .text-cinza-conexao {
+    color: var(--cinza-conexao);
+  }
+
+  .bg-cinza-conexao {
+    background-color: var(--cinza-conexao);
+  }
+
+  .border-vermelho-protagonismo {
+    border-color: var(--vermelho-protagonismo);
   }
 }
