@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Search, ArrowRight, Check, ChevronsUpDown } from "lucide-react"
+import { Search, ArrowRight, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
 interface SearchDialogProps {
@@ -36,6 +36,9 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   const router = useRouter()
   const [popoverOpen, setPopoverOpen] = useState(false)
   const [selectedArea, setSelectedArea] = useState("")
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const filteredAreas = areasDeAtuacao.filter((area) => area.label.toLowerCase().includes(searchQuery.toLowerCase()))
 
   const handleSearch = () => {
     const params = new URLSearchParams()
@@ -53,6 +56,13 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     onOpenChange(false)
   }
 
+  const handleSelectArea = (areaValue: string) => {
+    console.log("[v0] Selecionando área:", areaValue)
+    setSelectedArea(areaValue === selectedArea ? "" : areaValue)
+    setPopoverOpen(false)
+    setSearchQuery("")
+  }
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px]">
@@ -65,45 +75,59 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
               <PopoverTrigger asChild>
                 <Button
                   variant="outline"
-                  role="combobox"
-                  aria-expanded={popoverOpen}
-                  className="flex-1 justify-between h-12 text-base border-gray-200 rounded-xl px-4 bg-transparent"
+                  className="flex-1 justify-between h-12 text-base border-gray-200 rounded-xl px-4 bg-transparent hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
                     <Search className="h-5 w-5 text-muted-foreground shrink-0" />
-                    <span className={cn("truncate", !selectedArea && "text-muted-foreground")}>
+                    <span className={cn("truncate text-left", !selectedArea && "text-muted-foreground")}>
                       {selectedArea
                         ? areasDeAtuacao.find((area) => area.value === selectedArea)?.label
                         : "Selecione uma área de atuação"}
                     </span>
                   </div>
-                  <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-(--radix-popover-trigger-width) p-0" align="start">
-                <Command>
-                  <CommandInput placeholder="Digite para buscar..." />
-                  <CommandList>
-                    <CommandEmpty>Nenhuma área encontrada.</CommandEmpty>
-                    <CommandGroup>
-                      {areasDeAtuacao.map((area) => (
-                        <CommandItem
-                          key={area.value}
-                          value={area.value}
-                          onSelect={(currentValue) => {
-                            setSelectedArea(currentValue === selectedArea ? "" : currentValue)
-                            setPopoverOpen(false)
-                          }}
-                        >
-                          <Check
-                            className={cn("mr-2 h-4 w-4", selectedArea === area.value ? "opacity-100" : "opacity-0")}
-                          />
-                          {area.label}
-                        </CommandItem>
-                      ))}
-                    </CommandGroup>
-                  </CommandList>
-                </Command>
+              <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
+                <div className="flex flex-col">
+                  <div className="p-3 border-b">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        placeholder="Digite para buscar..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-9 h-10 border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="max-h-[300px] overflow-y-auto">
+                    {filteredAreas.length === 0 ? (
+                      <div className="py-6 text-center text-sm text-muted-foreground">Nenhuma área encontrada.</div>
+                    ) : (
+                      <div className="p-1">
+                        {filteredAreas.map((area) => (
+                          <button
+                            key={area.value}
+                            onClick={() => handleSelectArea(area.value)}
+                            className={cn(
+                              "w-full flex items-center gap-2 px-3 py-2.5 text-sm rounded-md hover:bg-gray-100 transition-colors text-left",
+                              selectedArea === area.value && "bg-gray-50",
+                            )}
+                          >
+                            <Check
+                              className={cn(
+                                "h-4 w-4 shrink-0",
+                                selectedArea === area.value ? "opacity-100" : "opacity-0",
+                              )}
+                            />
+                            <span>{area.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
               </PopoverContent>
             </Popover>
 

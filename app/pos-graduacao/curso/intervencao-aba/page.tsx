@@ -32,6 +32,7 @@ export default function IntervencaoAbaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Ao Vivo"
           title="Pós-graduação em Intervenção ABA: Lidere a transformação no TEA e Desenvolvimento Intelectual"
           description="Desenvolva programas terapêuticos eficazes e torne-se a referência que o mercado, as escolas e as famílias procuram para intervir no Transtorno do Espectro Autista e Desenvolvimento Intelectual."
           valueBadges={[
@@ -39,8 +40,8 @@ export default function IntervencaoAbaPage() {
             { icon: <Clock className="h-5 w-5" />, text: "432h de imersão teórica e prática" },
             { icon: <Award className="h-5 w-5" />, text: "Aprenda com Doutores e Mestres atuantes no mercado" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <div className="max-w-screen-xl mx-auto px-4 pb-8">
           <CursoRestritoBadge requiredDegree="Psicologia" />
@@ -339,6 +340,7 @@ export default function IntervencaoAbaPage() {
         </section>
 
         <CtaFinal
+          courseId="intervencao-aba"
           title="IPOG: A escolha que conecta você ao sucesso."
           description="Faça parte de uma instituição com mais de 20 anos de história, corpo docente renomado e uma metodologia focada em resultados reais para a sua carreira."
           monthlyFee="R$ 429,00"

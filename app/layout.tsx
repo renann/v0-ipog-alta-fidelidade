@@ -27,7 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <GeoLocationProvider>
-          <ScrollToTop />
+          <Suspense fallback={null}>
+            <ScrollToTop />
+          </Suspense>
           {children}
           <Analytics />
           <Toaster />

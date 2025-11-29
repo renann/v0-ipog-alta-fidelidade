@@ -4,8 +4,9 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Logo } from "./logo"
-import { Search, User } from "lucide-react"
+import { Search, User, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Pitchbar } from "@/components/pitchbar"
 import {
@@ -54,7 +55,7 @@ const graduacaoItems: MegaMenuSection[] = [
   {
     title: "Perfis",
     items: [
-      { title: "Jovem Ingresso", href: "/graduacao/jovem-ingresso", description: "Primeira graduação" },
+      { title: "Primeira Graduação", href: "/graduacao/jovem-ingresso", description: "Primeira graduação" },
       { title: "Segunda Graduação", href: "/graduacao/segunda-graduacao", description: "Nova formação" },
       { title: "Transferência", href: "/graduacao/transferencia", description: "Transfira seu curso" },
     ],
@@ -96,12 +97,15 @@ const institucionalItems: MegaMenuItem[] = [
   { title: "Corpo Docente", href: "/corpo-docente", description: "Nossos professores" },
   { title: "Unidades", href: "/unidades", description: "Encontre uma unidade" },
   { title: "Parcerias Internacionais", href: "/parceiros-internacionais", description: "Conexões globais" },
+  { title: "Programas de Benefícios", href: "/programas-beneficios/ipog-plus", description: "Vantagens exclusivas" },
+  { title: "Central de Matrículas", href: "/central-matricula", description: "Finalize sua matrícula" },
+  { title: "Destaques IPOG", href: "/webstories", description: "Novidades e histórias" },
   { title: "Blog", href: "/blog", description: "Insights e tendências" },
 ]
 
 export function DesktopHeader() {
-  const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -129,6 +133,15 @@ export function DesktopHeader() {
                   <NavigationMenuTrigger className="text-base">Extensão</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-6">
+                        <Link
+                          href="/extensao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Extensão IPOG
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {extensaoItems.map((section) => (
                           <div key={section.title}>
@@ -162,6 +175,15 @@ export function DesktopHeader() {
                   <NavigationMenuTrigger className="text-base">Graduação</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-6">
+                        <Link
+                          href="/graduacao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Graduação IPOG
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {graduacaoItems.map((section) => (
                           <div key={section.title}>
@@ -195,6 +217,15 @@ export function DesktopHeader() {
                   <NavigationMenuTrigger className="text-base">Pós-Graduação</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-6">
+                      <div className="mb-6">
+                        <Link
+                          href="/pos-graduacao"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça a Pós-Graduação IPOG
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-8">
                         {posGraduacaoItems.map((section) => (
                           <div key={section.title}>
@@ -225,14 +256,44 @@ export function DesktopHeader() {
 
                 {/* Enterprise */}
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href="/enterprise"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    >
-                      Enterprise
-                    </Link>
-                  </NavigationMenuLink>
+                  <NavigationMenuTrigger className="text-base">Enterprise</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[400px] p-6">
+                      <div className="mb-6">
+                        <Link
+                          href="/enterprise"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça o Enterprise IPOG
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                      <ul className="space-y-3">
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href="/enterprise/ceo"
+                              className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                            >
+                              <div className="font-medium text-sm group-hover:text-primary">Para CEOs</div>
+                              <div className="text-xs text-muted-foreground mt-1">Soluções para líderes executivos</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href="/enterprise/rh"
+                              className="block group hover:bg-accent rounded-md p-3 transition-colors"
+                            >
+                              <div className="font-medium text-sm group-hover:text-primary">Para RH</div>
+                              <div className="text-xs text-muted-foreground mt-1">Desenvolvimento de equipes</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Institucional */}
@@ -240,6 +301,15 @@ export function DesktopHeader() {
                   <NavigationMenuTrigger className="text-base">Institucional</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-6">
+                      <div className="mb-6">
+                        <Link
+                          href="/sobre"
+                          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium text-sm hover:bg-primary/90 transition-colors"
+                        >
+                          Conheça o IPOG
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
                       <ul className="grid grid-cols-2 gap-3">
                         {institucionalItems.map((item) => (
                           <li key={item.href}>

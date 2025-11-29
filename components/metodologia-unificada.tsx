@@ -3,6 +3,10 @@
 import { Monitor, Video, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { useState } from "react"
+import { ModalidadeVideoModal } from "@/components/modalidade-video-modal"
 
 interface MetodologiaUnificadaProps {
   titulo?: string
@@ -14,24 +18,29 @@ const modalidades = [
     title: "EAD (Gravado)",
     description: "Flexibilidade total para aprender no seu ritmo",
     features: ["Acesso 24/7", "Conteúdo gravado", "Estude de onde estiver"],
+    href: "/catalogo?modalidade=ead",
   },
   {
     icon: Video,
     title: "Ao Vivo (Online)",
     description: "Interação em tempo real com especialistas",
     features: ["Aulas síncronas", "Tire dúvidas ao vivo", "Networking online"],
+    href: "/catalogo?modalidade=ao-vivo",
   },
   {
     icon: Users,
     title: "Presencial",
     description: "Imersão e networking de alto valor",
     features: ["Experiência completa", "Networking presencial", "Laboratórios práticos"],
+    href: "/catalogo?modalidade=presencial",
   },
 ]
 
 export function MetodologiaUnificada({
   titulo = "Metodologia IPOG: teoria + prática + mentoria",
 }: MetodologiaUnificadaProps) {
+  const [selectedModalidade, setSelectedModalidade] = useState<(typeof modalidades)[0] | null>(null)
+
   return (
     <section className="w-full px-4 py-16 bg-muted/30">
       <div className="max-w-screen-xl mx-auto">
@@ -55,7 +64,7 @@ export function MetodologiaUnificada({
                   return (
                     <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%]">
                       <Card className="hover:shadow-lg transition-shadow h-full">
-                        <CardContent className="p-6 space-y-4">
+                        <CardContent className="p-6 space-y-4 flex flex-col h-full">
                           <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
                             <Icon className="h-8 w-8 text-primary" />
                           </div>
@@ -63,7 +72,7 @@ export function MetodologiaUnificada({
                             <h3 className="text-xl font-bold">{modalidade.title}</h3>
                             <p className="text-muted-foreground">{modalidade.description}</p>
                           </div>
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 flex-grow">
                             {modalidade.features.map((feature) => (
                               <li key={feature} className="text-sm flex items-center gap-2">
                                 <div className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -71,6 +80,15 @@ export function MetodologiaUnificada({
                               </li>
                             ))}
                           </ul>
+                          <Button asChild className="w-full mt-4">
+                            <Link href={modalidade.href}>Ver cursos</Link>
+                          </Button>
+                          <button
+                            onClick={() => setSelectedModalidade(modalidade)}
+                            className="text-sm text-primary hover:underline text-center mt-2"
+                          >
+                            Conheça mais esta modalidade
+                          </button>
                         </CardContent>
                       </Card>
                     </CarouselItem>
@@ -85,7 +103,7 @@ export function MetodologiaUnificada({
               const Icon = modalidade.icon
               return (
                 <Card key={modalidade.title} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className="p-6 space-y-4 flex flex-col h-full">
                     <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
                       <Icon className="h-8 w-8 text-primary" />
                     </div>
@@ -93,7 +111,7 @@ export function MetodologiaUnificada({
                       <h3 className="text-xl font-bold">{modalidade.title}</h3>
                       <p className="text-muted-foreground">{modalidade.description}</p>
                     </div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 flex-grow">
                       {modalidade.features.map((feature) => (
                         <li key={feature} className="text-sm flex items-center gap-2">
                           <div className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -101,6 +119,15 @@ export function MetodologiaUnificada({
                         </li>
                       ))}
                     </ul>
+                    <Button asChild className="w-full mt-4">
+                      <Link href={modalidade.href}>Ver cursos</Link>
+                    </Button>
+                    <button
+                      onClick={() => setSelectedModalidade(modalidade)}
+                      className="text-sm text-primary hover:underline text-center mt-2"
+                    >
+                      Conheça mais esta modalidade
+                    </button>
                   </CardContent>
                 </Card>
               )
@@ -108,6 +135,14 @@ export function MetodologiaUnificada({
           </div>
         </div>
       </div>
+
+      {selectedModalidade && (
+        <ModalidadeVideoModal
+          isOpen={!!selectedModalidade}
+          onClose={() => setSelectedModalidade(null)}
+          modalidade={selectedModalidade}
+        />
+      )}
     </section>
   )
 }

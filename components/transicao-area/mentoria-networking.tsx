@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Award, Users, BookOpen, GraduationCap } from "lucide-react"
+import { Award, Users, BookOpen, GraduationCap, ArrowRight } from "lucide-react"
 import { DocenteModal } from "@/components/docente-modal"
 
 export function MentoriaNetworking() {
@@ -57,7 +58,7 @@ export function MentoriaNetworking() {
       miniBio:
         "Especialista em desenvolvimento de lideranças com 16 anos de experiência em programas de formação executiva.",
       bioCompleta:
-        "Doutora em Administração pela FGV (2012), com MBA em Liderança pela Fundação Dom Cabral. Consultora de desenvolvimento de lideranças em grandes corporações por 16 anos. Professora do IPOG desde 2014, ministra disciplinas de Liderança Estratégica e Desenvolvimento Executivo. Autora do livro 'Liderança em Tempos de Mudança'.",
+        "Doutora em Administração pela FGV (2012), com MBA em Liderança pela Fundação Dom Cabral. Consultora de desenvolvimento de lideranças em grandes corporações por 16 anos. Professor do IPOG desde 2014, ministra disciplinas de Liderança Estratégica e Desenvolvimento Executivo. Autora do livro 'Liderança em Tempos de Mudança'.",
       linkedin: "https://linkedin.com/in/fernandamartins",
     },
     {
@@ -156,6 +157,22 @@ export function MentoriaNetworking() {
                   </Card>
                 </CarouselItem>
               ))}
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Link href="/corpo-docente">
+                  <Card className="p-6 text-center h-full hover:shadow-lg transition-shadow cursor-pointer border-dashed border-2 flex flex-col items-center justify-center min-h-[320px]">
+                    <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
+                      <Users className="w-10 h-10 text-muted-foreground" />
+                    </div>
+                    <h4 className="font-bold text-lg mb-2">Conheça todo o corpo docente</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Explore todos os professores mestres e doutores do IPOG
+                    </p>
+                    <span className="text-sm font-medium flex items-center gap-2 text-foreground">
+                      Ver corpo docente <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Card>
+                </Link>
+              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious className="-left-12" />
             <CarouselNext className="-right-12" />

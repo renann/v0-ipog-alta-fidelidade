@@ -3,6 +3,8 @@
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { MonitorPlay, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function MetodoIpog() {
   const modalidades = [
@@ -10,11 +12,13 @@ export function MetodoIpog() {
       icon: MonitorPlay,
       title: "EAD (Gravado)",
       description: "Autonomia e flexibilidade total para aprender no seu ritmo",
+      href: "/catalogo?formacao=graduacao&modalidade=ead",
     },
     {
       icon: Users,
       title: "Presencial",
       description: "Imersão e networking de alto valor",
+      href: "/catalogo?formacao=graduacao&modalidade=presencial",
     },
   ]
 
@@ -41,14 +45,17 @@ export function MetodoIpog() {
                 const Icon = modalidade.icon
                 return (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%]">
-                    <Card className="p-6 text-center h-full">
+                    <Card className="p-6 text-center h-full flex flex-col">
                       <div className="flex justify-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                           <Icon className="w-8 h-8 text-primary" />
                         </div>
                       </div>
                       <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
-                      <p className="text-sm text-muted-foreground">{modalidade.description}</p>
+                      <p className="text-sm text-muted-foreground flex-grow">{modalidade.description}</p>
+                      <Button asChild className="w-full mt-4">
+                        <Link href={modalidade.href}>Ver cursos</Link>
+                      </Button>
                     </Card>
                   </CarouselItem>
                 )
@@ -61,14 +68,17 @@ export function MetodoIpog() {
           {modalidades.map((modalidade, index) => {
             const Icon = modalidade.icon
             return (
-              <Card key={index} className="p-6 text-center">
+              <Card key={index} className="p-6 text-center flex flex-col">
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{modalidade.title}</h3>
-                <p className="text-sm text-muted-foreground">{modalidade.description}</p>
+                <p className="text-sm text-muted-foreground flex-grow">{modalidade.description}</p>
+                <Button asChild className="w-full mt-4">
+                  <Link href={modalidade.href}>Ver cursos</Link>
+                </Button>
               </Card>
             )
           })}

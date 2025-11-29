@@ -11,6 +11,7 @@ import {
   Factory,
   BookOpen,
   Compass,
+  ClipboardList,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -89,6 +90,14 @@ export function Header({ hideMenu = false, onOpenLocationDialog }: HeaderProps) 
                         >
                           <Factory className="h-5 w-5" />
                           <span>Enterprise</span>
+                        </GeoLink>
+                        <GeoLink
+                          href="/central-matricula"
+                          className="flex items-center gap-3 text-base text-primary font-medium hover:text-primary/80 transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          <ClipboardList className="h-5 w-5" />
+                          <span>Matrículas</span>
                         </GeoLink>
                       </div>
                     </div>
@@ -208,6 +217,20 @@ export function Header({ hideMenu = false, onOpenLocationDialog }: HeaderProps) 
                           onClick={() => setOpen(false)}
                         >
                           Corpo docente
+                        </GeoLink>
+                        <GeoLink
+                          href="/central-matricula"
+                          className="text-base text-foreground hover:text-primary transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          Central de Matrículas
+                        </GeoLink>
+                        <GeoLink
+                          href="/webstories"
+                          className="text-base text-foreground hover:text-primary transition-colors"
+                          onClick={() => setOpen(false)}
+                        >
+                          Destaques IPOG
                         </GeoLink>
                         <GeoLink
                           href="/blog"

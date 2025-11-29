@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Clock, Award, Zap, TrendingUp, Briefcase, Target } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -29,6 +28,7 @@ export default function GestaoProjetosAgeisPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="EAD / Ao Vivo"
           title="Lidere Projetos Ágeis e Entregue Resultados de Alto Impacto"
           description="Domine Scrum e Kanban em 40 horas de imersão prática e transforme sua gestão com um método validado pelo mercado."
           valueBadges={[
@@ -36,8 +36,8 @@ export default function GestaoProjetosAgeisPage() {
             { icon: <Target className="h-5 w-5" />, text: "Ferramentas para aplicação imediata" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação IPOG que o mercado reconhece" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
         <section className="w-full py-12 md:py-16 bg-muted/30">
@@ -253,7 +253,7 @@ export default function GestaoProjetosAgeisPage() {
                   Parcelamento flexível e descontos especiais para pagamento à vista.
                 </p>
               </div>
-              <MetodosPagamento />
+              {/* Placeholder for MetodosPagamento component */}
             </div>
           </div>
         </section>
@@ -300,7 +300,7 @@ export default function GestaoProjetosAgeisPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 279,00" duration="40 horas" totalCost="R$ 1.674,00" />
+        <CtaFinal courseId="gestao-projetos-ageis" monthlyFee="R$ 279,00" duration="40 horas" totalCost="R$ 1.674,00" />
       </main>
       <Footer />
     </div>

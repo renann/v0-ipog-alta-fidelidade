@@ -179,7 +179,7 @@ export default function ExtensaoPage() {
                   "Você precisa resolver um problema específico agora, mas não tem tempo para cursos longos ou teoria excessiva.",
                 ganho: "Ferramentas prontas, aplicação imediata e resultados mensuráveis em dias, não meses.",
                 cta: "Resolver meu gap agora",
-                href: "/catalogo?tipo=extensao",
+                href: "/extensao/gap-imediato",
               },
               {
                 icon: <TrendingUp className="h-6 w-6" />,
@@ -191,7 +191,7 @@ export default function ExtensaoPage() {
                 ganho:
                   "Portfólio prático, projetos reais e certificação IPOG que validam suas habilidades para o mercado.",
                 cta: "Construir meu portfólio",
-                href: "/catalogo?tipo=extensao",
+                href: "/extensao/recolocacao",
               },
               {
                 icon: <RefreshCw className="h-6 w-6" />,
@@ -203,7 +203,7 @@ export default function ExtensaoPage() {
                 ganho:
                   "Acesso a conteúdo atualizado, ferramentas emergentes e networking com profissionais da sua área.",
                 cta: "Ver cursos de atualização",
-                href: "/catalogo?tipo=extensao",
+                href: "/extensao/atualizacao",
               },
             ]}
           />
