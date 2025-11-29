@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 import { HomeHeader } from "@/components/home-header"
 import {
@@ -13,17 +13,15 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb"
-import { Home, Copy, Loader2, Check, X, Info, AlertCircle } from "lucide-react"
+import { Home, Copy, Loader2, Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import {
   type DiscountType,
   type AgreementCode,
@@ -34,7 +32,14 @@ import {
   mockValidateAlumni,
   DISCOUNT_CONFIG,
 } from "@/lib/discount-types"
-import { calculateInstallmentPayment, calculateRecurringPayment, calculateTotal } from "@/lib/payment-types"
+import {
+  calculateInstallmentPayment,
+  calculateRecurringPayment,
+  calculateTotal,
+  PLANOS_FINANCEIROS,
+  TAXA_INSCRICAO_POR_MODALIDADE,
+  getPlanoInfo,
+} from "@/lib/payment-types"
 import { TurmaSelector } from "@/components/turma-selector"
 import { CicloSelector } from "@/components/ciclo-selector"
 import { CursosAlternativos } from "@/components/pos-graduacao/cursos-alternativos"
@@ -47,6 +52,13 @@ interface CouponCode {
   discount: number
   type: "coupon"
 }
+
+const validCoupons = [
+  { code: "IPOG10", discount: 10 },
+  { code: "IPOG20", discount: 20 },
+  { code: "IPOG30", discount: 30 },
+]
+
 const INSCRICAO_GRADUACAO = 80.0
 
 function CheckoutContent() {
@@ -59,13 +71,11 @@ function CheckoutContent() {
   const [selectedCiclo, setSelectedCiclo] = useState("")
   const [metodoIngresso, setMetodoIngresso] = useState("")
   const [documentoIngressoAceito, setDocumentoIngressoAceito] = useState(false)
-  // </CHANGE>
   const [paymentMethod, setPaymentMethod] = useState("")
-  const [parcelas, setParcelas] = useState("1")
+  const [parcelas, setParcelas] = useState("12")
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [lgpdAccepted, setLgpdAccepted] = useState(false)
   const [contractAccepted, setContractAccepted] = useState(false)
-  // </CHANGE>
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [pixKeyCopied, setPixKeyCopied] = useState(false)
 
@@ -73,6 +83,16 @@ function CheckoutContent() {
   const [cpfError, setCpfError] = useState("")
   const [isValidatingAlumni, setIsValidatingAlumni] = useState(false)
   const [alumniDiscount, setAlumniDiscount] = useState<AlumniDiscount | null>(null)
+
+  const [nome, setNome] = useState("")
+  const [email, setEmail] = useState("")
+  const [telefone, setTelefone] = useState("")
+  const [cep, setCep] = useState("")
+  const [endereco, setEndereco] = useState("")
+  const [numero, setNumero] = useState("")
+  const [bairro, setBairro] = useState("")
+  const [cidade, setCidade] = useState("")
+  const [estado, setEstado] = useState("")
 
   const [selectedCompany, setSelectedCompany] = useState("")
   const [validatedAgreement, setValidatedAgreement] = useState<AgreementCode | null>(null)
@@ -86,20 +106,123 @@ function CheckoutContent() {
   // PIX timer (30 minutes = 1800 seconds)
   const [pixTimer, setPixTimer] = useState(1800)
 
+  const [openAccordion, setOpenAccordion] = useState("curso")
+  const [hasMovedToDados, setHasMovedToDados] = useState(false)
+  const [hasMovedToPagamento, setHasMovedToPagamento] = useState(false)
+
   const empresasConvenio = [
-    { value: "empresa-a", label: "Empresa A - Tecnologia", discount: 15 },
-    { value: "empresa-b", label: "Empresa B - Saúde", discount: 20 },
-    { value: "empresa-c", label: "Empresa C - Educação", discount: 25 },
-    { value: "empresa-d", label: "Empresa D - Financeiro", discount: 10 },
-    { value: "empresa-e", label: "Empresa E - Varejo", discount: 12 },
+    { value: "accenture", label: "Accenture", discount: 15 },
+    { value: "ambev", label: "Ambev S.A.", discount: 20 },
+    { value: "americanas", label: "Americanas S.A.", discount: 12 },
+    { value: "banco-do-brasil", label: "Banco do Brasil", discount: 18 },
+    { value: "bradesco", label: "Bradesco", discount: 15 },
+    { value: "btg-pactual", label: "BTG Pactual", discount: 20 },
+    { value: "carrefour", label: "Carrefour Brasil", discount: 10 },
+    { value: "cielo", label: "Cielo S.A.", discount: 15 },
+    { value: "claro", label: "Claro Brasil", discount: 12 },
+    { value: "coca-cola", label: "Coca-Cola FEMSA", discount: 18 },
+    { value: "correios", label: "Correios", discount: 20 },
+    { value: "cpfl-energia", label: "CPFL Energia", discount: 15 },
+    { value: "dell", label: "Dell Technologies", discount: 18 },
+    { value: "deloitte", label: "Deloitte", discount: 20 },
+    { value: "embraer", label: "Embraer S.A.", discount: 22 },
+    { value: "eletrobras", label: "Eletrobras", discount: 18 },
+    { value: "ernst-young", label: "Ernst & Young (EY)", discount: 20 },
+    { value: "fiat", label: "Fiat Chrysler", discount: 15 },
+    { value: "gerdau", label: "Gerdau S.A.", discount: 18 },
+    { value: "globo", label: "Grupo Globo", discount: 15 },
+    { value: "google", label: "Google Brasil", discount: 25 },
+    { value: "hp", label: "HP Brasil", discount: 18 },
+    { value: "ibm", label: "IBM Brasil", discount: 20 },
+    { value: "ifood", label: "iFood", discount: 12 },
+    { value: "intel", label: "Intel Brasil", discount: 18 },
+    { value: "itau", label: "Itaú Unibanco", discount: 20 },
+    { value: "jbs", label: "JBS S.A.", discount: 15 },
+    { value: "kpmg", label: "KPMG", discount: 20 },
+    { value: "localiza", label: "Localiza", discount: 12 },
+    { value: "lojas-renner", label: "Lojas Renner", discount: 10 },
+    { value: "magazine-luiza", label: "Magazine Luiza", discount: 15 },
+    { value: "marfrig", label: "Marfrig Global Foods", discount: 12 },
+    { value: "mercado-livre", label: "Mercado Livre", discount: 18 },
+    { value: "microsoft", label: "Microsoft Brasil", discount: 25 },
+    { value: "natura", label: "Natura &Co", discount: 20 },
+    { value: "nestle", label: "Nestlé Brasil", discount: 18 },
+    { value: "nubank", label: "Nubank", discount: 15 },
+    { value: "oi", label: "Oi S.A.", discount: 12 },
+    { value: "oracle", label: "Oracle Brasil", discount: 20 },
+    { value: "petrobras", label: "Petrobras", discount: 22 },
+    { value: "porto-seguro", label: "Porto Seguro", discount: 15 },
+    { value: "pwc", label: "PwC Brasil", discount: 20 },
+    { value: "raizen", label: "Raízen", discount: 18 },
+    { value: "raia-drogasil", label: "Raia Drogasil", discount: 12 },
+    { value: "sabesp", label: "Sabesp", discount: 15 },
+    { value: "samsung", label: "Samsung Brasil", discount: 18 },
+    { value: "santander", label: "Santander Brasil", discount: 20 },
+    { value: "sap", label: "SAP Brasil", discount: 18 },
+    { value: "siemens", label: "Siemens Brasil", discount: 20 },
+    { value: "suzano", label: "Suzano S.A.", discount: 15 },
+    { value: "telefonica", label: "Telefônica Brasil (Vivo)", discount: 15 },
+    { value: "tim", label: "TIM Brasil", discount: 12 },
+    { value: "totvs", label: "TOTVS", discount: 18 },
+    { value: "uber", label: "Uber Brasil", discount: 10 },
+    { value: "unilever", label: "Unilever Brasil", discount: 18 },
+    { value: "vale", label: "Vale S.A.", discount: 22 },
+    { value: "volkswagen", label: "Volkswagen Brasil", discount: 18 },
+    { value: "walmart", label: "Walmart Brasil", discount: 12 },
+    { value: "whirlpool", label: "Whirlpool Brasil", discount: 15 },
+    { value: "xp-investimentos", label: "XP Investimentos", discount: 20 },
   ]
 
-  const validCoupons = [
-    { code: "IPOG2025", discount: 10 },
-    { code: "BEMVINDO", discount: 15 },
-    { code: "PRIMEIRACOMPRA", discount: 20 },
-    { code: "ESTUDANTE", discount: 12 },
-  ]
+  const [empresaSearch, setEmpresaSearch] = useState("")
+  const [showEmpresaDropdown, setShowEmpresaDropdown] = useState(false)
+  const empresaInputRef = useRef<HTMLInputElement>(null)
+  const empresaDropdownRef = useRef<HTMLDivElement>(null)
+
+  // Filtrar empresas baseado na busca
+  const filteredEmpresas = useMemo(() => {
+    if (!empresaSearch.trim()) return empresasConvenio
+    const searchLower = empresaSearch.toLowerCase()
+    return empresasConvenio.filter(
+      (empresa) =>
+        empresa.label.toLowerCase().includes(searchLower) || empresa.value.toLowerCase().includes(searchLower),
+    )
+  }, [empresaSearch])
+
+  // Fechar dropdown ao clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        empresaDropdownRef.current &&
+        !empresaDropdownRef.current.contains(event.target as Node) &&
+        empresaInputRef.current &&
+        !empresaInputRef.current.contains(event.target as Node)
+      ) {
+        setShowEmpresaDropdown(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Handler para selecionar empresa do autocomplete
+  const handleEmpresaSelect = (empresa: (typeof empresasConvenio)[0]) => {
+    setSelectedCompany(empresa.value)
+    setEmpresaSearch(empresa.label)
+    setShowEmpresaDropdown(false)
+    // Aplicar o convênio automaticamente
+    setValidatedAgreement({
+      name: empresa.label,
+      discount: empresa.discount,
+    })
+  }
+
+  // Handler para limpar empresa selecionada
+  const handleClearEmpresa = () => {
+    setSelectedCompany("")
+    setEmpresaSearch("")
+    setValidatedAgreement(null)
+    setComprovante(null)
+  }
 
   // All useEffect hooks must be called before any conditional returns
   useEffect(() => {
@@ -160,6 +283,62 @@ function CheckoutContent() {
       setCouponError("")
     }
   }, [paymentMethod])
+
+  useEffect(() => {
+    if (hasMovedToPagamento) return // Já foi para pagamento, não forçar novamente
+
+    const camposObrigatoriosPreenchidos =
+      nome.trim() !== "" &&
+      email.trim() !== "" &&
+      telefone.replace(/\D/g, "").length >= 10 &&
+      cpf.replace(/\D/g, "").length === 11 &&
+      !cpfError &&
+      cep.replace(/\D/g, "").length === 8 &&
+      endereco.trim() !== "" &&
+      numero.trim() !== "" &&
+      bairro.trim() !== "" &&
+      cidade.trim() !== "" &&
+      estado !== ""
+
+    if (camposObrigatoriosPreenchidos && openAccordion === "dados") {
+      setOpenAccordion("pagamento")
+      setHasMovedToPagamento(true)
+    }
+  }, [
+    nome,
+    email,
+    telefone,
+    cpf,
+    cpfError,
+    cep,
+    endereco,
+    numero,
+    bairro,
+    cidade,
+    estado,
+    openAccordion,
+    hasMovedToPagamento,
+  ])
+
+  useEffect(() => {
+    if (hasMovedToDados) return // Já foi para dados, não forçar novamente
+
+    const isGraduacao = course.type === "Graduação"
+    if (isGraduacao && metodoIngresso && documentoIngressoAceito && openAccordion === "curso") {
+      setOpenAccordion("dados")
+      setHasMovedToDados(true)
+    }
+  }, [documentoIngressoAceito, metodoIngresso, course.type, openAccordion, hasMovedToDados])
+
+  useEffect(() => {
+    if (hasMovedToDados) return // Já foi para dados, não forçar novamente
+
+    const isGraduacao = course.type === "Graduação"
+    if (!isGraduacao && selectedTurma && openAccordion === "curso") {
+      setOpenAccordion("dados")
+      setHasMovedToDados(true)
+    }
+  }, [selectedTurma, course.type, openAccordion, hasMovedToDados])
 
   if (!course) {
     return (
@@ -261,7 +440,6 @@ function CheckoutContent() {
     setTimeout(() => setPixKeyCopied(false), 2000)
   }
 
-  // CHANGE: Nova função para aplicar convênio quando empresa é selecionada
   const handleCompanySelect = (companyValue: string) => {
     setSelectedCompany(companyValue)
 
@@ -283,10 +461,6 @@ function CheckoutContent() {
       setComprovante(null)
     }
   }
-  // END CHANGE
-
-  // CHANGE: Removendo handleValidateAgreement pois não é mais necessário
-  // END CHANGE
 
   const handleRemoveAgreement = () => {
     setValidatedAgreement(null)
@@ -304,6 +478,19 @@ function CheckoutContent() {
     }
   }
   // END CHANGE
+
+  const maskTelefone = (value: string) => {
+    const numbers = value.replace(/\D/g, "")
+    if (numbers.length <= 10) {
+      return numbers.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3").trim()
+    }
+    return numbers.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3").trim()
+  }
+
+  const maskCEP = (value: string) => {
+    const numbers = value.replace(/\D/g, "")
+    return numbers.replace(/(\d{5})(\d{0,3})/, "$1-$2").trim()
+  }
 
   const handleValidateCoupon = async () => {
     if (!couponCode.trim()) {
@@ -344,24 +531,49 @@ function CheckoutContent() {
     setCouponError("")
   }
 
+  const handleTurmaChange = (value: string) => {
+    setSelectedTurma(value)
+    if (value) {
+      setOpenAccordion("dados")
+    }
+  }
+
+  const getDiscountPercentage = () => {
+    if (alumniDiscount) {
+      return alumniDiscount.discount
+    }
+    if (validatedAgreement) {
+      return validatedAgreement.discount
+    }
+    if (validatedCoupon) {
+      return validatedCoupon.discount
+    }
+    return 0
+  }
+
   const getDiscountInfo = () => {
     let discountType: DiscountType = null
+    let customDiscount = 0
 
     if (alumniDiscount) {
       discountType = "alumni"
+      customDiscount = alumniDiscount.discount
     } else if (validatedAgreement) {
       discountType = "agreement"
+      customDiscount = validatedAgreement.discount
     } else if (validatedCoupon) {
-      discountType = "agreement" // Usando o mesmo tipo para cálculo
+      discountType = "coupon" // Usando o mesmo tipo para cálculo
+      customDiscount = validatedCoupon.discount
     } else if (paymentMethod === "pix") {
       discountType = "pix"
+      customDiscount = DISCOUNT_CONFIG.pix.percentage
     } else if (paymentMethod === "boleto") {
       discountType = "cash"
+      customDiscount = DISCOUNT_CONFIG.cash.percentage
     }
 
     if (discountType) {
-      const customDiscount = alumniDiscount?.discount || validatedAgreement?.discount || validatedCoupon?.discount
-      const totalValue = course.price + course.enrollmentValue
+      const totalValue = course.price // Matrícula não é incluída no cálculo de desconto aqui
       return calculateDiscount(totalValue, discountType, customDiscount)
     }
 
@@ -369,59 +581,86 @@ function CheckoutContent() {
   }
 
   const getPaymentCalculation = () => {
-    const discountInfo = getDiscountInfo()
-    const discountPercentage = discountInfo?.discountPercentage || 0
+    if (!course) return null
 
-    if (isGraduacao) {
-      return calculateTotal(0, INSCRICAO_GRADUACAO, discountPercentage)
-    }
+    const discountPercentage = getDiscountPercentage()
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
-      return calculateInstallmentPayment(course.price, course.enrollmentValue, numParcelas, discountPercentage)
+      return calculateInstallmentPayment(course.price, 0, numParcelas, discountPercentage)
     }
 
     if (paymentMethod === "recorrente") {
-      return calculateRecurringPayment(course.monthlyPrice, course.enrollmentValue, 18, discountPercentage)
+      return calculateRecurringPayment(course.price, 0, 18, discountPercentage, course.type)
     }
 
-    return calculateTotal(course.price, course.enrollmentValue, discountPercentage)
+    return calculateTotal(course.price, 0, discountPercentage)
   }
 
   const getPaymentLabel = () => {
     const calculation = getPaymentCalculation()
 
     if (isGraduacao) {
-      return `R$ ${formatCurrency(calculation.total)} (Inscrição no processo seletivo)`
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Inscrição no processo seletivo",
+      }
     }
 
     if (paymentMethod === "parcelado") {
       const numParcelas = Number.parseInt(parcelas)
-      if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
+      const plano = getPlanoInfo(numParcelas)
+      if (numParcelas === 1) {
+        return {
+          value: `R$ ${formatCurrency(calculation.total)}`,
+          description: "À vista",
+        }
       }
-      return `${parcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`
+      return {
+        value: `${numParcelas}x de R$ ${formatCurrency(calculation.total / numParcelas)}`,
+        description:
+          plano?.desconto > 0
+            ? `${plano.desconto}% de desconto`
+            : plano?.taxaJuros > 0
+              ? `+${plano.taxaJuros}% de juros`
+              : "Sem juros",
+      }
     }
 
     if (paymentMethod === "recorrente") {
-      if (calculation.firstInstallment && calculation.remainingInstallments) {
-        return `1ª parcela: R$ ${formatCurrency(calculation.firstInstallment)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`
+      const taxaInscricao = TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default
+      if (calculation.remainingInstallments) {
+        return {
+          value: `R$ ${formatCurrency(taxaInscricao)} + ${calculation.remainingInstallments.quantity}x de R$ ${formatCurrency(calculation.remainingInstallments.value)}`,
+          description: "Mensalidade recorrente",
+        }
       }
-      return `18x de R$ ${formatCurrency(course.monthlyPrice)}`
     }
 
-    if (paymentMethod === "pix" || paymentMethod === "boleto") {
-      return `R$ ${formatCurrency(calculation.total)} à vista`
+    if (paymentMethod === "pix") {
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Pagamento via PIX",
+      }
     }
 
-    return "Selecione uma forma de pagamento"
+    if (paymentMethod === "boleto") {
+      return {
+        value: `R$ ${formatCurrency(calculation.total)}`,
+        description: "Pagamento via boleto",
+      }
+    }
+
+    return {
+      value: `R$ ${formatCurrency(calculation.total)}`,
+      description: "Selecione uma forma de pagamento",
+    }
   }
 
   const isFormValid = () => {
     const hasValidSelection = isGraduacao ? selectedCiclo && metodoIngresso : selectedTurma
     const requiresDocumentCheck = isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso)
     const hasDocumentAcceptance = !requiresDocumentCheck || documentoIngressoAceito
-    // </CHANGE>
     const hasComprovante = !selectedCompany || (selectedCompany && comprovante)
     return (
       hasValidSelection &&
@@ -432,7 +671,6 @@ function CheckoutContent() {
       hasComprovante &&
       hasDocumentAcceptance
     )
-    // </CHANGE>
   }
 
   const handleSubmit = async () => {
@@ -446,50 +684,16 @@ function CheckoutContent() {
       params.append("metodo", metodoIngresso)
     }
     window.location.href = `/pos-venda?${params.toString()}`
-    // </CHANGE>
   }
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-8">Finalizar matrícula</h1>
 
-      {isPosGraduacao && (
-        <div className="mb-6 space-y-4">
-          {/* Enrollment Limit Alert */}
-          <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-            <Info className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-            <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-              As matrículas em cursos de pós-graduação estão disponíveis para alunos até o 4º módulo. Em caso de
-              dúvidas, entre em contato com o suporte acadêmico.
-            </AlertDescription>
-          </Alert>
-
-          {/* Graduation Requirement Alert */}
-          <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-            <AlertCircle className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-            <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-              <strong>Importante:</strong> A matrícula em cursos de pós-graduação exige comprovante de conclusão de
-              graduação. Você terá 60 dias após a matrícula para enviar a documentação.
-            </AlertDescription>
-          </Alert>
-
-          {/* Restricted Course Alert */}
-          {isRestricted && (
-            <Alert className="border-gray-300 bg-gray-50 dark:border-gray-700 dark:bg-gray-900">
-              <AlertCircle className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-              <AlertDescription className="text-sm text-gray-700 dark:text-gray-300">
-                <strong>Curso Restrito:</strong> Este curso é destinado exclusivamente a profissionais graduados em{" "}
-                <strong>{course.requiredDegree}</strong>. Ao prosseguir, você declara possuir a formação exigida.
-              </AlertDescription>
-            </Alert>
-          )}
-        </div>
-      )}
-
       <div className="grid lg:grid-cols-[1fr_400px] gap-8">
         {/* Left column - Accordions */}
         <div className="space-y-4">
-          <Accordion type="single" collapsible defaultValue="curso">
+          <Accordion type="single" collapsible value={openAccordion} onValueChange={setOpenAccordion}>
             {/* Curso Section */}
             <AccordionItem value="curso">
               <AccordionTrigger className="text-lg font-semibold">Curso</AccordionTrigger>
@@ -499,9 +703,8 @@ function CheckoutContent() {
                     <div className="flex items-start gap-3">
                       <div className="w-16 h-16 bg-border rounded flex-shrink-0" />
                       <div className="flex-1">
-                        <div className="mb-2 flex items-start justify-between gap-2">
+                        <div className="mb-2">
                           <h3 className="font-semibold">{course.name}</h3>
-                          {isRestricted && <CursoRestritoBadge requiredDegree={course.requiredDegree!} />}
                         </div>
                         <div className="flex items-center gap-2 mb-2">
                           <Badge variant="secondary">{course.modality}</Badge>
@@ -515,55 +718,52 @@ function CheckoutContent() {
                 </Card>
 
                 {isGraduacao ? (
-                  <>
+                  <div className="space-y-6">
                     <CicloSelector value={selectedCiclo} onValueChange={setSelectedCiclo} />
 
-                    <div className="space-y-3">
-                      <Label htmlFor="metodo-ingresso" className="text-base font-medium">
-                        Método de ingresso *
+                    <div className="space-y-2">
+                      <Label>
+                        Método de ingresso <span className="text-destructive">*</span>
                       </Label>
                       <Select value={metodoIngresso} onValueChange={setMetodoIngresso}>
-                        <SelectTrigger id="metodo-ingresso">
+                        <SelectTrigger>
                           <SelectValue placeholder="Selecione o método de ingresso" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="vestibular">Vestibular</SelectItem>
-                          <SelectItem value="enem">ENEM</SelectItem>
-                          <SelectItem value="portador-diploma">Portador de Diploma</SelectItem>
+                          <SelectItem value="vestibular">Vestibular Online</SelectItem>
+                          <SelectItem value="enem">Nota do ENEM</SelectItem>
                           <SelectItem value="transferencia">Transferência</SelectItem>
+                          <SelectItem value="segunda-graduacao">Segunda Graduação</SelectItem>
                         </SelectContent>
                       </Select>
                       <p className="text-sm text-muted-foreground">
                         Selecione como você deseja ingressar no curso de graduação.
                       </p>
                     </div>
-
-                    {["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
-                      <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
-                        <Checkbox
-                          id="documento-ingresso"
-                          checked={documentoIngressoAceito}
-                          onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
-                        />
-                        <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
-                          Estou ciente de que é necessário apresentar um documento válido (
-                          {metodoIngresso === "enem" && "boletim do ENEM"}
-                          {metodoIngresso === "portador-diploma" && "diploma de graduação"}
-                          {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}) e
-                          que o mesmo passará por aprovação da secretaria acadêmica *
-                        </Label>
-                      </div>
-                    )}
-                    {/* </CHANGE> */}
-                  </>
+                  </div>
                 ) : (
-                  <TurmaSelector
-                    courseId={course.courseId}
-                    modality={course.modality}
-                    unit={course.unit}
-                    value={selectedTurma}
-                    onValueChange={setSelectedTurma}
-                  />
+                  <div className="space-y-2">
+                    <Label>Selecione a data de início</Label>
+                    <TurmaSelector value={selectedTurma} onValueChange={handleTurmaChange} />
+                  </div>
+                )}
+
+                {isGraduacao && ["enem", "portador-diploma", "transferencia"].includes(metodoIngresso) && (
+                  <div className="flex items-start space-x-2 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-md">
+                    <Checkbox
+                      id="documento-ingresso"
+                      checked={documentoIngressoAceito}
+                      onCheckedChange={(checked) => setDocumentoIngressoAceito(checked as boolean)}
+                    />
+                    <Label htmlFor="documento-ingresso" className="text-sm leading-relaxed cursor-pointer">
+                      Estou ciente de que é necessário apresentar um documento válido (
+                      {metodoIngresso === "enem" && "boletim do ENEM"}
+                      {metodoIngresso === "portador-diploma" && "diploma de graduação"}
+                      {metodoIngresso === "transferencia" && "histórico escolar e declaração de transferência"}
+                      {metodoIngresso === "segunda-graduacao" && "diploma de graduação"}) e que o mesmo passará por
+                      aprovação da secretaria acadêmica *
+                    </Label>
+                  </div>
                 )}
               </AccordionContent>
             </AccordionItem>
@@ -575,17 +775,29 @@ function CheckoutContent() {
                 <div className="grid gap-4">
                   <div className="grid gap-2">
                     <Label htmlFor="nome">Nome completo *</Label>
-                    <Input id="nome" required />
+                    <Input id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="email">Email *</Label>
-                      <Input id="email" type="email" required />
+                      <Input
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="telefone">Telefone *</Label>
-                      <Input id="telefone" placeholder="(00) 00000-0000" required />
+                      <Input
+                        id="telefone"
+                        placeholder="(00) 00000-0000"
+                        value={telefone}
+                        onChange={(e) => setTelefone(maskTelefone(e.target.value))}
+                        required
+                      />
                     </div>
                   </div>
 
@@ -614,7 +826,7 @@ function CheckoutContent() {
                     )}
                     {alumniDiscount && (
                       <div className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
-                        <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex-shrink-0">
+                        <div className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full">
                           <Check className="h-4 w-4 text-gray-900 dark:text-gray-100" />
                         </div>
                         <div className="flex-1">
@@ -632,18 +844,25 @@ function CheckoutContent() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="cep">CEP *</Label>
-                      <Input id="cep" placeholder="00000-000" required />
+                      <Input
+                        id="cep"
+                        placeholder="00000-000"
+                        value={cep}
+                        onChange={(e) => setCep(maskCEP(e.target.value))}
+                        maxLength={9}
+                        required
+                      />
                     </div>
                     <div className="grid gap-2 sm:col-span-2">
                       <Label htmlFor="endereco">Endereço *</Label>
-                      <Input id="endereco" required />
+                      <Input id="endereco" value={endereco} onChange={(e) => setEndereco(e.target.value)} required />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="numero">Número *</Label>
-                      <Input id="numero" required />
+                      <Input id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required />
                     </div>
                     <div className="grid gap-2 sm:col-span-2">
                       <Label htmlFor="complemento">Complemento</Label>
@@ -654,15 +873,15 @@ function CheckoutContent() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="grid gap-2">
                       <Label htmlFor="bairro">Bairro *</Label>
-                      <Input id="bairro" required />
+                      <Input id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="cidade">Cidade *</Label>
-                      <Input id="cidade" required />
+                      <Input id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="estado">Estado *</Label>
-                      <Select>
+                      <Select value={estado} onValueChange={setEstado}>
                         <SelectTrigger id="estado">
                           <SelectValue placeholder="UF" />
                         </SelectTrigger>
@@ -706,32 +925,59 @@ function CheckoutContent() {
             <AccordionItem value="pagamento">
               <AccordionTrigger className="text-lg font-semibold">Pagamento</AccordionTrigger>
               <AccordionContent className="space-y-6 px-0">
-                {/* </CHANGE> */}
                 {!alumniDiscount && (
                   <>
                     {/* Seção de Convênio */}
                     <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
-                      {/* </CHANGE> */}
-                      <Label htmlFor="company-select" className="text-base font-medium">
+                      <Label htmlFor="empresa-search" className="text-base font-medium">
                         Empresa Convênio (opcional)
                       </Label>
                       <p className="text-sm text-muted-foreground">
-                        Selecione sua empresa conveniada para obter desconto exclusivo.
+                        Digite o nome da sua empresa conveniada para obter desconto exclusivo.
                       </p>
 
                       {!validatedAgreement ? (
-                        <Select value={selectedCompany} onValueChange={handleCompanySelect}>
-                          <SelectTrigger id="company-select">
-                            <SelectValue placeholder="Selecione sua empresa" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {empresasConvenio.map((empresa) => (
-                              <SelectItem key={empresa.value} value={empresa.value}>
-                                {empresa.label} - {empresa.discount}% de desconto
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="relative">
+                          <Input
+                            ref={empresaInputRef}
+                            id="empresa-search"
+                            type="text"
+                            placeholder="Digite o nome da empresa..."
+                            value={empresaSearch}
+                            onChange={(e) => {
+                              setEmpresaSearch(e.target.value)
+                              setShowEmpresaDropdown(true)
+                            }}
+                            onFocus={() => setShowEmpresaDropdown(true)}
+                            className="w-full"
+                          />
+                          {showEmpresaDropdown && (
+                            <div
+                              ref={empresaDropdownRef}
+                              className="absolute z-50 w-full mt-1 max-h-60 overflow-auto bg-background border border-input rounded-md shadow-lg"
+                            >
+                              {filteredEmpresas.length > 0 ? (
+                                filteredEmpresas.map((empresa) => (
+                                  <button
+                                    key={empresa.value}
+                                    type="button"
+                                    onClick={() => handleEmpresaSelect(empresa)}
+                                    className="w-full px-3 py-2 text-left hover:bg-muted flex items-center justify-between text-sm"
+                                  >
+                                    <span>{empresa.label}</span>
+                                    <span className="text-muted-foreground text-xs">
+                                      {empresa.discount}% de desconto
+                                    </span>
+                                  </button>
+                                ))
+                              ) : (
+                                <div className="px-3 py-2 text-sm text-muted-foreground">
+                                  Nenhuma empresa encontrada
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       ) : (
                         <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md">
                           <div className="flex items-center gap-2">
@@ -750,7 +996,7 @@ function CheckoutContent() {
                             type="button"
                             variant="ghost"
                             size="icon"
-                            onClick={handleRemoveAgreement}
+                            onClick={handleClearEmpresa}
                             className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
                           >
                             <X className="h-4 w-4" />
@@ -788,7 +1034,6 @@ function CheckoutContent() {
                     </div>
 
                     <div className="space-y-3 p-4 bg-muted rounded-lg mx-0">
-                      {/* </CHANGE> */}
                       <Label htmlFor="coupon-input" className="text-base font-medium">
                         Cupom de Desconto (opcional)
                       </Label>
@@ -859,7 +1104,6 @@ function CheckoutContent() {
 
                 {alumniDiscount && (
                   <div className="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg mx-0">
-                    {/* </CHANGE> */}
                     <div className="flex items-start gap-3">
                       <div className="flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full flex-shrink-0">
                         <Check className="h-5 w-5 text-gray-900 dark:text-gray-100" />
@@ -878,245 +1122,261 @@ function CheckoutContent() {
                   </div>
                 )}
 
-                <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {/* Cartão Parcelado */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="parcelado" id="parcelado" />
-                      <Label htmlFor="parcelado" className="font-medium cursor-pointer">
-                        Cartão de crédito parcelado
-                      </Label>
-                    </div>
-
-                    {paymentMethod === "parcelado" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-number">Número do cartão</Label>
-                          <Input id="card-number" placeholder="0000 0000 0000 0000" />
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-name">Nome no cartão</Label>
-                          <Input id="card-name" />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-expiry">Validade</Label>
-                            <Input id="card-expiry" placeholder="MM/AA" />
-                          </div>
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-cvv">CVV</Label>
-                            <Input id="card-cvv" placeholder="000" maxLength={3} />
-                          </div>
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="parcelas">Número de parcelas</Label>
-                          <Select value={parcelas} onValueChange={setParcelas}>
-                            <SelectTrigger id="parcelas">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {Array.from({ length: 18 }, (_, i) => i + 1).map((num) => {
-                                const calc = calculateInstallmentPayment(course.price, course.enrollmentValue, num)
-                                return (
-                                  <SelectItem key={num} value={num.toString()}>
-                                    {num === 1
-                                      ? `À vista: R$ ${formatCurrency(calc.total)}`
-                                      : `${num}x - 1ª: R$ ${formatCurrency(calc.firstInstallment!)} + ${num - 1}x de R$ ${formatCurrency(calc.remainingInstallments!.value)}`}
-                                  </SelectItem>
-                                )
-                              })}
-                            </SelectContent>
-                          </Select>
-                          <p className="text-xs text-muted-foreground">
-                            A matrícula (R$ {formatCurrency(course.enrollmentValue)}) é paga 100% na primeira parcela
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("parcelado")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "parcelado"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Cartão de crédito</span>
+                    <span className="text-xs text-muted-foreground">Parcelado em até 18x</span>
+                  </button>
 
                   {/* Mensalidade Recorrente */}
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="recorrente" id="recorrente" />
-                      <Label htmlFor="recorrente" className="font-medium cursor-pointer">
-                        Mensalidade recorrente
-                      </Label>
-                    </div>
-
-                    {paymentMethod === "recorrente" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
-                        <div className="space-y-2">
-                          <p className="text-sm font-medium">
-                            1ª parcela: R$ {formatCurrency(course.enrollmentValue + course.monthlyPrice)}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            Matrícula (R$ {formatCurrency(course.enrollmentValue)}) + 1ª mensalidade (R${" "}
-                            {formatCurrency(course.monthlyPrice)})
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            Demais parcelas: 17x de R$ {formatCurrency(course.monthlyPrice)}
-                          </p>
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-number-rec">Número do cartão</Label>
-                          <Input id="card-number-rec" placeholder="0000 0000 0000 0000" />
-                        </div>
-                        <div className="grid gap-2">
-                          <Label htmlFor="card-name-rec">Nome no cartão</Label>
-                          <Input id="card-name-rec" />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-expiry-rec">Validade</Label>
-                            <Input id="card-expiry-rec" placeholder="MM/AA" />
-                          </div>
-                          <div className="grid gap-2">
-                            <Label htmlFor="card-cvv-rec">CVV</Label>
-                            <Input id="card-cvv-rec" placeholder="000" maxLength={3} />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("recorrente")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "recorrente"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Mensalidade</span>
+                    <span className="text-xs text-muted-foreground">Recorrente no cartão</span>
+                  </button>
 
                   {/* PIX */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="pix" id="pix" />
-                        <Label htmlFor="pix" className="font-medium cursor-pointer">
-                          PIX
-                        </Label>
-                      </div>
-                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100"
-                        >
-                          {DISCOUNT_CONFIG.pix.percentage}% de desconto
-                        </Badge>
-                      )}
-                    </div>
-
-                    {paymentMethod === "pix" && (
-                      <div className="ml-6 space-y-4 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
-                        <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
-                          <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
-                            <span className="text-xs text-muted-foreground">QR Code</span>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-sm font-medium mb-1">Tempo restante</p>
-                            <p className="text-2xl font-bold">{formatTimer(pixTimer)}</p>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label>Chave PIX</Label>
-                          <div className="flex gap-2">
-                            <Input
-                              value="00020126580014br.gov.bcb.pix0136a1b2c3d4..."
-                              readOnly
-                              className="font-mono text-xs"
-                            />
-                            <Button type="button" variant="outline" size="icon" onClick={copyPixKey}>
-                              <Copy className="h-4 w-4" />
-                            </Button>
-                          </div>
-                          {pixKeyCopied && <p className="text-sm text-muted-foreground">Chave copiada!</p>}
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Escaneie o QR Code ou copie a chave PIX para realizar o pagamento. O pagamento deve ser
-                          confirmado em até 30 minutos.
-                        </p>
-                      </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("pix")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "pix" ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">PIX</span>
+                    <span className="text-xs text-muted-foreground">Pagamento instantâneo</span>
+                    {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
+                      <span className="absolute top-2 right-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                        {DISCOUNT_CONFIG.pix.percentage}% OFF
+                      </span>
                     )}
-                  </div>
+                  </button>
 
                   {/* Boleto */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="boleto" id="boleto" />
-                        <Label htmlFor="boleto" className="font-medium cursor-pointer">
-                          Boleto bancário
-                        </Label>
-                      </div>
-                      {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100"
-                        >
-                          {DISCOUNT_CONFIG.cash.percentage}% de desconto
-                        </Badge>
-                      )}
-                    </div>
-
-                    {paymentMethod === "boleto" && (
-                      <div className="ml-6 space-y-2 border-l-2 border-muted pl-4 pr-0">
-                        {/* </CHANGE> */}
-                        <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
-                        <p className="text-sm text-muted-foreground">
-                          O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias
-                          úteis.
-                        </p>
-                      </div>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("boleto")}
+                    className={`relative flex flex-col items-start p-4 rounded-lg border-2 transition-all text-left ${
+                      paymentMethod === "boleto"
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <span className="font-medium text-sm">Boleto bancário</span>
+                    <span className="text-xs text-muted-foreground">Vencimento em 3 dias</span>
+                    {!validatedAgreement && !alumniDiscount && !validatedCoupon && (
+                      <span className="absolute top-2 right-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                        {DISCOUNT_CONFIG.cash.percentage}% OFF
+                      </span>
                     )}
+                  </button>
+                </div>
+
+                {/* Detalhes do método de pagamento selecionado */}
+                {paymentMethod === "parcelado" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-number">Número do cartão</Label>
+                      <Input id="card-number" placeholder="0000 0000 0000 0000" />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-name">Nome no cartão</Label>
+                      <Input id="card-name" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-expiry">Validade</Label>
+                        <Input id="card-expiry" placeholder="MM/AA" />
+                      </div>
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-cvv">CVV</Label>
+                        <Input id="card-cvv" placeholder="000" maxLength={3} />
+                      </div>
+                    </div>
+                    <div className="grid gap-2 w-full">
+                      <Label htmlFor="parcelas">Plano de parcelamento</Label>
+                      <Select value={parcelas} onValueChange={setParcelas}>
+                        <SelectTrigger id="parcelas" className="w-full">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {PLANOS_FINANCEIROS.map((plano) => {
+                            const calc = calculateInstallmentPayment(course.price, 0, plano.parcelas)
+                            const valorParcela = calc.total / plano.parcelas
+                            return (
+                              <SelectItem key={plano.parcelas} value={plano.parcelas.toString()}>
+                                <div className="flex items-center justify-between w-full gap-4">
+                                  <span>
+                                    {plano.parcelas === 1
+                                      ? `À vista - R$ ${formatCurrency(calc.total)}`
+                                      : `${plano.parcelas}x de R$ ${formatCurrency(valorParcela)}`}
+                                  </span>
+                                  {plano.desconto > 0 && (
+                                    <span className="text-xs text-green-600 font-medium">{plano.desconto}% desc.</span>
+                                  )}
+                                  {plano.taxaJuros > 0 && (
+                                    <span className="text-xs text-amber-600 font-medium">
+                                      +{plano.taxaJuros}% juros
+                                    </span>
+                                  )}
+                                </div>
+                              </SelectItem>
+                            )
+                          })}
+                        </SelectContent>
+                      </Select>
+                      <p className="text-xs text-muted-foreground">
+                        O valor do curso é dividido igualmente entre as parcelas selecionadas.
+                      </p>
+                    </div>
                   </div>
-                </RadioGroup>
+                )}
+
+                {paymentMethod === "recorrente" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="space-y-2 p-3 bg-muted/50 rounded-lg">
+                      <p className="text-sm font-medium">
+                        1ª parcela (Taxa de inscrição): R${" "}
+                        {formatCurrency(
+                          TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default,
+                        )}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        A partir da 2ª parcela: 17x de R${" "}
+                        {formatCurrency((course.price * (1 - getDiscountPercentage() / 100)) / 17)}
+                      </p>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-number-rec">Número do cartão</Label>
+                      <Input id="card-number-rec" placeholder="0000 0000 0000 0000" />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="card-name-rec">Nome no cartão</Label>
+                      <Input id="card-name-rec" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-expiry-rec">Validade</Label>
+                        <Input id="card-expiry-rec" placeholder="MM/AA" />
+                      </div>
+                      <div className="grid gap-2">
+                        <Label htmlFor="card-cvv-rec">CVV</Label>
+                        <Input id="card-cvv-rec" placeholder="000" maxLength={3} />
+                      </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      O cartão será cobrado automaticamente todo mês na data da matrícula.
+                    </p>
+                  </div>
+                )}
+
+                {paymentMethod === "pix" && (
+                  <div className="mt-4 space-y-4 border-l-2 border-muted pl-4">
+                    <div className="flex flex-col items-center gap-4 p-4 bg-muted rounded-lg">
+                      <div className="w-48 h-48 bg-border rounded flex items-center justify-center">
+                        <span className="text-xs text-muted-foreground">QR Code</span>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-sm font-medium mb-1">Tempo restante</p>
+                        <p className="text-2xl font-bold">{formatTimer(pixTimer)}</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Chave PIX</Label>
+                      <div className="flex gap-2">
+                        <Input
+                          value="00020126580014br.gov.bcb.pix0136a1b2c3d4..."
+                          readOnly
+                          className="font-mono text-xs"
+                        />
+                        <Button type="button" variant="outline" size="icon" onClick={copyPixKey}>
+                          <Copy className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      {pixKeyCopied && <p className="text-sm text-muted-foreground">Chave copiada!</p>}
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Escaneie o QR Code ou copie a chave PIX para realizar o pagamento. O pagamento deve ser confirmado
+                      em até 30 minutos.
+                    </p>
+                  </div>
+                )}
+
+                {paymentMethod === "boleto" && (
+                  <div className="mt-4 space-y-2 border-l-2 border-muted pl-4">
+                    <p className="text-sm text-muted-foreground">Vencimento em 3 dias úteis</p>
+                    <p className="text-sm text-muted-foreground">
+                      O boleto será gerado após a confirmação da matrícula. A compensação pode levar até 2 dias úteis.
+                    </p>
+                  </div>
+                )}
 
                 {/* Terms and Conditions */}
-                <div className="space-y-4 pt-4 border-t">
-                  <div className="flex items-start space-x-3">
+                <div className="space-y-4 mt-6">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="terms"
                       checked={termsAccepted}
                       onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                      className="mt-0.5"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="terms" className="text-sm leading-normal cursor-pointer text-left flex-1">
+                    <span className="text-sm leading-relaxed text-left">
                       Li e aceito os{" "}
-                      <a href="#" className="underline whitespace-nowrap">
+                      <a href="#" className="underline hover:text-primary">
                         Termos de Uso
                       </a>{" "}
                       e a{" "}
-                      <a href="#" className="underline whitespace-nowrap">
+                      <a href="#" className="underline hover:text-primary">
                         Política de Privacidade
                       </a>{" "}
-                      *
-                    </Label>
-                  </div>
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
 
-                  <div className="flex items-start space-x-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="lgpd"
                       checked={lgpdAccepted}
                       onCheckedChange={(checked) => setLgpdAccepted(checked as boolean)}
-                      className="mt-0.5"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="lgpd" className="text-sm leading-normal cursor-pointer text-left flex-1">
-                      Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD) *
-                    </Label>
-                  </div>
+                    <span className="text-sm leading-relaxed text-left">
+                      Autorizo o uso dos meus dados para fins educacionais e comunicação sobre o curso (LGPD){" "}
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
 
-                  <div className="flex items-start space-x-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <Checkbox
                       id="contract"
                       checked={contractAccepted}
                       onCheckedChange={(checked) => setContractAccepted(checked as boolean)}
-                      className="mt-0.5"
+                      className="mt-1 shrink-0"
                     />
-                    <Label htmlFor="contract" className="text-sm leading-normal cursor-pointer text-left flex-1">
+                    <span className="text-sm leading-relaxed text-left">
                       Li e aceito o{" "}
-                      <a href="#" className="underline whitespace-nowrap">
+                      <a href="#" className="underline hover:text-primary">
                         Contrato de Prestação de Serviços Educacionais
                       </a>{" "}
-                      *
-                    </Label>
-                  </div>
-                  {/* </CHANGE> */}
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -1130,7 +1390,7 @@ function CheckoutContent() {
         </div>
 
         {/* Right column - Summary (Sticky) */}
-        <div className="lg:sticky lg:top-4 h-fit">
+        <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto h-fit">
           <Card>
             <CardHeader>
               <CardTitle>Resumo da matrícula</CardTitle>
@@ -1172,7 +1432,6 @@ function CheckoutContent() {
                     </span>
                   </div>
                 )}
-                {/* </CHANGE> */}
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Forma de pagamento:</span>
                   <span className="font-medium">
@@ -1207,15 +1466,37 @@ function CheckoutContent() {
                       </span>
                     </div>
 
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Matrícula</span>
-                      <span className="font-medium">R$ {formatCurrency(course.enrollmentValue)}</span>
-                    </div>
+                    {/* Mostra info do plano selecionado */}
+                    {paymentMethod === "parcelado" && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Plano selecionado</span>
+                        <span className="font-medium">
+                          {(() => {
+                            const plano = getPlanoInfo(Number.parseInt(parcelas))
+                            if (plano?.desconto > 0) return `${parcelas}x (${plano.desconto}% desc.)`
+                            if (plano?.taxaJuros > 0) return `${parcelas}x (+${plano.taxaJuros}% juros)`
+                            return `${parcelas}x (sem juros)`
+                          })()}
+                        </span>
+                      </div>
+                    )}
+
+                    {paymentMethod === "recorrente" && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground">Taxa de inscrição</span>
+                        <span className="font-medium">
+                          R${" "}
+                          {formatCurrency(
+                            TAXA_INSCRICAO_POR_MODALIDADE[course.type] || TAXA_INSCRICAO_POR_MODALIDADE.default,
+                          )}
+                        </span>
+                      </div>
+                    )}
 
                     <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                      <span>Subtotal</span>
+                      <span>Total</span>
                       <span className={getDiscountInfo() ? "line-through text-muted-foreground" : ""}>
-                        R$ {formatCurrency(course.price + course.enrollmentValue)}
+                        R$ {formatCurrency(getPaymentCalculation()?.total || course.price)}
                       </span>
                     </div>
                   </>
@@ -1242,15 +1523,26 @@ function CheckoutContent() {
                   </>
                 )}
 
-                <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                  <span>Você paga</span>
-                  <span className={getDiscountInfo() ? "text-gray-900 dark:text-gray-100" : ""}>
-                    {getPaymentLabel()}
-                  </span>
+                <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="text-sm text-muted-foreground mb-1">Você paga</div>
+                  <div className="text-2xl font-bold text-primary">{getPaymentLabel().value}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{getPaymentLabel().description}</div>
                 </div>
 
-                {!isGraduacao && (paymentMethod === "parcelado" || paymentMethod === "recorrente") && (
-                  <p className="text-xs text-muted-foreground pt-2">* Matrícula paga 100% na primeira parcela</p>
+                {!isGraduacao && paymentMethod === "recorrente" && (
+                  <div className="mt-3 p-3 bg-muted/50 rounded-lg">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      <strong>Como funciona:</strong> Na mensalidade recorrente, a 1ª parcela corresponde à taxa de
+                      inscrição. O valor do curso é dividido a partir da 2ª parcela. Exemplo: em 18x, você paga 1
+                      parcela de inscrição + 17 parcelas do curso.
+                    </p>
+                  </div>
+                )}
+
+                {!isGraduacao && paymentMethod === "parcelado" && (
+                  <p className="text-xs text-muted-foreground pt-2">
+                    O valor total é dividido igualmente entre as parcelas selecionadas.
+                  </p>
                 )}
               </div>
 

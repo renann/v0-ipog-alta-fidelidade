@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { CursoRestritoBadge } from "@/components/curso-restrito-badge"
 import { TrilhaAprendizado } from "@/components/trilha-aprendizado"
@@ -32,6 +31,7 @@ export default function AvaliacaoPsicologicaPage() {
         </div>
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Ao Vivo"
           title="Pós-Graduação em Avaliação Psicológica"
           description="Prepare-se para atuar com excelência nos contextos mais desafiadores da Psicologia, dominando as análises com profundidade, precisão e ética."
           valueBadges={[
@@ -39,7 +39,7 @@ export default function AvaliacaoPsicologicaPage() {
             { icon: <Users className="h-5 w-5" />, text: "Corpo Docente de Referência" },
             { icon: <Award className="h-5 w-5" />, text: "Certificação Internacional Rorschach (R-PAS)" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Inscrever-se agora", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         <div className="max-w-screen-xl mx-auto px-4 pb-8 md:pt-8">
@@ -295,19 +295,6 @@ export default function AvaliacaoPsicologicaPage() {
           ]}
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto px-4 pb-4">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
@@ -355,13 +342,13 @@ export default function AvaliacaoPsicologicaPage() {
         </section>
         <div id="preco">
           <CtaFinal
+            courseId="avaliacao-psicologica"
             monthlyFee="R$ 399,00"
             duration="18 meses"
             totalCost="R$ 7.282,00"
             title="Invista na sua carreira com a instituição que é referência nacional."
             description="Taxa de Matrícula: R$ 100,00 | Mensalidades: a partir de R$ 399,00*"
             additionalText="*Consulte as condições com nossa equipe. O IPOG oferece uma formação de excelência com valor acessível e resultados reais na carreira. Seu investimento garante: Corpo docente com autores e peritos renomados, Acesso a laboratórios práticos e supervisão clínica, Networking com profissionais de todo o Brasil, Chancela de uma marca com 98% de satisfação e mais de 300 mil alunos especializados."
-            ctaText="Falar com consultor acadêmico"
           />
         </div>
       </main>

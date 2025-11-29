@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Calendar, Clock, Monitor, MapPin, Check } from "lucide-react"
+import { Calendar, Clock, Monitor, MapPin, Check, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -11,6 +11,7 @@ interface SchedulingOption {
   time: string
   mode: "remote" | "presencial"
   location?: string
+  testUrl?: string
 }
 
 interface VestibularSchedulingProps {
@@ -32,12 +33,14 @@ export function VestibularScheduling({
       date: "15-Novembro-2024",
       time: "14:00",
       mode: "remote",
+      testUrl: "https://vestibular.ipog.edu.br/prova/abc123",
     },
     {
       id: "2",
       date: "20-Novembro-2024",
       time: "10:00",
       mode: "remote",
+      testUrl: "https://vestibular.ipog.edu.br/prova/def456",
     },
     {
       id: "3",
@@ -104,62 +107,78 @@ export function VestibularScheduling({
                 )}
               </div>
             </div>
+
+            {selectedOption?.mode === "remote" && selectedOption?.testUrl && (
+              <div className="mt-4 pt-4 border-t border-green-200">
+                <p className="text-sm text-gray-600 mb-2">
+                  No dia e horário agendados, acesse o link abaixo para realizar sua prova:
+                </p>
+                <a
+                  href={selectedOption.testUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Acessar prova online
+                </a>
+                <p className="mt-2 text-xs text-gray-500">Link: {selectedOption.testUrl}</p>
+              </div>
+            )}
           </div>
         </div>
       ) : (
-        <>
-          <div className="space-y-3">
-            {availableOptions.map((option) => (
-              <button
-                key={option.id}
-                type="button"
-                onClick={() => setSelectedOption(option)}
-                className={cn(
-                  "w-full rounded-lg border-2 p-4 text-left transition-all",
-                  selectedOption?.id === option.id
-                    ? "border-blue-600 bg-blue-50"
-                    : "border-gray-200 bg-white hover:border-gray-300",
-                )}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
-                      <Calendar className="h-4 w-4" />
-                      <span>{option.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700">
-                      <Clock className="h-4 w-4" />
-                      <span>{option.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700">
-                      {option.mode === "remote" ? (
-                        <>
-                          <Monitor className="h-4 w-4" />
-                          <span>Remoto (Online)</span>
-                        </>
-                      ) : (
-                        <>
-                          <MapPin className="h-4 w-4" />
-                          <span>{option.location}</span>
-                        </>
-                      )}
-                    </div>
+        <div className="space-y-3">
+          {availableOptions.map((option) => (
+            <button
+              key={option.id}
+              type="button"
+              onClick={() => setSelectedOption(option)}
+              className={cn(
+                "w-full rounded-lg border-2 p-4 text-left transition-all",
+                selectedOption?.id === option.id
+                  ? "border-blue-600 bg-blue-50"
+                  : "border-gray-200 bg-white hover:border-gray-300",
+              )}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex-1 space-y-2">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
+                    <Calendar className="h-4 w-4" />
+                    <span>{option.date}</span>
                   </div>
-                  {selectedOption?.id === option.id && (
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-600">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    <Clock className="h-4 w-4" />
+                    <span>{option.time}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
+                    {option.mode === "remote" ? (
+                      <>
+                        <Monitor className="h-4 w-4" />
+                        <span>Remoto (Online)</span>
+                      </>
+                    ) : (
+                      <>
+                        <MapPin className="h-4 w-4" />
+                        <span>{option.location}</span>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </button>
-            ))}
-          </div>
-
-          <Button onClick={handleConfirm} disabled={!selectedOption || isConfirming} className="w-full" size="lg">
-            {isConfirming ? "Confirmando..." : "Confirmar agendamento"}
-          </Button>
-        </>
+                {selectedOption?.id === option.id && (
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-600">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                )}
+              </div>
+            </button>
+          ))}
+        </div>
       )}
+
+      <Button onClick={handleConfirm} disabled={!selectedOption || isConfirming} className="w-full" size="lg">
+        {isConfirming ? "Confirmando..." : "Confirmar agendamento"}
+      </Button>
     </div>
   )
 }

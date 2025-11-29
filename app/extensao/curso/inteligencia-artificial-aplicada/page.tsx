@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { CtaFinal } from "@/components/cta-final"
 import { Footer } from "@/components/footer"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
@@ -30,6 +29,7 @@ export default function InteligenciaArtificialAplicadaPage() {
 
         <Hero
           badge="EXTENSÃO"
+          modalidade="EAD"
           title="Inteligência Artificial para Resultados Imediatos"
           description="Aprenda a usar IA para otimizar rotinas fiscais, garantir o compliance e construir cenários com análise preditiva, aplicando o conhecimento no seu trabalho imediatamente."
           valueBadges={[
@@ -37,8 +37,8 @@ export default function InteligenciaArtificialAplicadaPage() {
             { icon: <Zap className="h-5 w-5" />, text: "Produtividade Acelerada" },
             { icon: <Target className="h-5 w-5" />, text: "Retorno Rápido" },
           ]}
-          primaryCTA={{ text: "Inscrever-se agora", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
 
         <section className="w-full py-16 px-4 bg-muted/30">
@@ -275,20 +275,6 @@ export default function InteligenciaArtificialAplicadaPage() {
           backgroundColor="bg-muted/30"
         />
 
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
-            </div>
-          </div>
-        </section>
-
         <section className="w-full py-12 md:py-16 bg-background">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
@@ -303,7 +289,7 @@ export default function InteligenciaArtificialAplicadaPage() {
                 <AccordionItem value="item-0">
                   <AccordionTrigger className="text-left">Qual é a duração do curso?</AccordionTrigger>
                   <AccordionContent>
-                    O curso de extensão tem duração de 4 meses, com conteúdo prático e atualizado constantemente.
+                    O curso de extensão tem duração de 80 horas, com conteúdo prático e atualizado constantemente.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">
@@ -338,7 +324,12 @@ export default function InteligenciaArtificialAplicadaPage() {
           </div>
         </section>
 
-        <CtaFinal monthlyFee="R$ 299,00" duration="4 meses" totalCost="R$ 1.196,00" />
+        <CtaFinal
+          courseId="inteligencia-artificial-aplicada"
+          monthlyFee="R$ 299,00"
+          duration="80 horas"
+          totalCost="R$ 1.196,00"
+        />
       </main>
       <Footer />
     </div>

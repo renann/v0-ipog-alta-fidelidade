@@ -35,6 +35,7 @@ export default function PsicologiaEadTransferenciaPage() {
         </div>
         <Hero
           badge="GRADUAÇÃO"
+          modalidade="EAD"
           title="Transfira sua Graduação em Psicologia para o IPOG"
           description="Aproveite seus créditos, economize tempo e conclua sua formação com a qualidade e o reconhecimento que sua carreira merece."
           valueBadges={[
@@ -42,8 +43,8 @@ export default function PsicologiaEadTransferenciaPage() {
             { icon: <FileCheck className="h-5 w-5" />, text: "Aproveitamento de Disciplinas" },
             { icon: <Clock className="h-5 w-5" />, text: "Análise Rápida de Histórico" },
           ]}
-          primaryCTA={{ text: "Analisar meu histórico", onClick: "openAssistantForPrice" }}
-          secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
+          secondaryCTA={{ text: "Baixar grade curricular", href: "#grade" }}
         />
         <PropostaValorPsicologia />
         <JornadaAcademicaPsicologia />
@@ -255,6 +256,7 @@ export default function PsicologiaEadTransferenciaPage() {
         />
 
         <CtaFinal
+          courseId="psicologia-ead"
           title="Faça a transferência e invista na conclusão da sua carreira."
           description="A taxa de inscrição garante a análise completa do seu histórico escolar por nossa equipe acadêmica. Após a aprovação das equivalências, nossa equipe comercial entrará em contato para apresentar as condições personalizadas para você concluir sua graduação."
           enrollmentFee="R$ 100,00"

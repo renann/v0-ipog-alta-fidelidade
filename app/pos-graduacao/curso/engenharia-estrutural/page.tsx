@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero"
 import { Modalidades } from "@/components/modalidades"
 import { Empregabilidade } from "@/components/empregabilidade"
 import { Trilha } from "@/components/trilha"
-import { MetodosPagamento } from "@/components/metodos-pagamento"
 import { GraduationCap, Clock, Award, TrendingUp, Briefcase, Building2, Users } from "lucide-react"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { CtaFinal } from "@/components/cta-final"
@@ -32,6 +31,7 @@ export default function EngenhariaEstruturalPage() {
         {/* */}
         <Hero
           badge="PÓS-GRADUAÇÃO"
+          modalidade="Presencial"
           title="Pós-Graduação em Engenharia Estrutural e Fundações"
           description="Domine projetos complexos e acelere sua carreira com uma especialização que conecta você à prática, ao mercado e a um networking de alto nível."
           valueBadges={[
@@ -39,7 +39,7 @@ export default function EngenhariaEstruturalPage() {
             { icon: <Clock className="h-5 w-5" />, text: "Formação em 12 Meses" },
             { icon: <Award className="h-5 w-5" />, text: "Professores que são Referência de Mercado" },
           ]}
-          primaryCTA={{ text: "Garanta sua vaga", onClick: "openAssistantForPrice" }}
+          primaryCTA={{ text: "Quero me inscrever", href: "#preco" }}
           secondaryCTA={{ text: "Baixar grade curricular", onClick: "openAssistantForConsultor" }}
         />
         {/* </CHANGE> */}
@@ -206,8 +206,8 @@ export default function EngenhariaEstruturalPage() {
                 <Briefcase className="h-12 w-12 mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2">Domínio das Ferramentas do Mercado</h3>
                 <p className="text-muted-foreground">
-                  Capacite-se nas plataformas de software mais exigidas, como TQS, Eberick e SAP2000, e torne-se um
-                  profissional disputado.
+                  Capacite-se nas plataformas de software mais exigidas, como TQS e SAP2000, e torne-se um profissional
+                  disputado.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg">
@@ -261,20 +261,6 @@ export default function EngenhariaEstruturalPage() {
                   especialização.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 px-4">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Formas de Pagamento</h2>
-                <p className="text-muted-foreground">
-                  Escolha a melhor opção para você. Parcelamento flexível e descontos especiais.
-                </p>
-              </div>
-              <MetodosPagamento />
             </div>
           </div>
         </section>
@@ -357,6 +343,7 @@ export default function EngenhariaEstruturalPage() {
         </section>
 
         <CtaFinal
+          courseId="engenharia-estrutural"
           title="Esta é a escolha que conecta você ao sucesso."
           description="Uma especialização para quem busca protagonismo, com metodologia aplicada, professores de mercado e o reconhecimento de uma marca com mais de 20 anos de história."
           monthlyFee="R$ 449,00"

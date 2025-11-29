@@ -1,12 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { HomeHeader } from "@/components/home-header"
 import { BreadcrumbWithItems } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Phone, Mail, MapPin, Search } from "lucide-react"
 import Footer from "@/components/footer"
 
 // Sample data for units by state
@@ -89,6 +91,19 @@ const unitsByState = {
 }
 
 export default function UnidadesPage() {
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const getFilteredUnits = (units: typeof unitsByState.RS) => {
+    if (!searchQuery.trim()) return units
+    const query = searchQuery.toLowerCase()
+    return units.filter(
+      (unit) =>
+        unit.name.toLowerCase().includes(query) ||
+        unit.category.toLowerCase().includes(query) ||
+        unit.email.toLowerCase().includes(query),
+    )
+  }
+
   return (
     <>
       <HomeHeader />
@@ -126,7 +141,7 @@ export default function UnidadesPage() {
         <section className="w-full py-12">
           <div className="max-w-screen-xl mx-auto px-4 md:px-6">
             <Tabs defaultValue="RS" className="w-full">
-              <TabsList className="w-full justify-start overflow-x-auto flex-nowrap mb-8">
+              <TabsList className="w-full justify-start overflow-x-auto flex-nowrap mb-4">
                 <TabsTrigger value="RS">RS</TabsTrigger>
                 <TabsTrigger value="SC">SC</TabsTrigger>
                 <TabsTrigger value="PR">PR</TabsTrigger>
@@ -135,65 +150,85 @@ export default function UnidadesPage() {
                 <TabsTrigger value="GO">GO</TabsTrigger>
               </TabsList>
 
-              {Object.entries(unitsByState).map(([state, units]) => (
-                <TabsContent key={state} value={state} className="space-y-6">
-                  {units.map((unit, index) => (
-                    <Card key={index} className="shadow-sm">
-                      <CardHeader>
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="space-y-2">
-                            <Badge variant="secondary" className="text-xs font-semibold">
-                              {unit.category}
-                            </Badge>
-                            <CardTitle className="text-2xl">IPOG {unit.name.replace("Unidade ", "")}</CardTitle>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
-                        <div className="grid gap-4 md:grid-cols-2">
-                          {/* Phone */}
-                          <div className="flex items-start gap-3">
-                            <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
-                            <div>
-                              <p className="text-xs font-semibold uppercase text-muted-foreground mb-1">Telefone</p>
-                              <a
-                                href={`tel:${unit.phone.replace(/\D/g, "")}`}
-                                className="text-base hover:text-primary transition-colors"
-                              >
-                                {unit.phone}
-                              </a>
-                            </div>
-                          </div>
+              <div className="relative mb-8">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Buscar por nome da unidade, categoria ou e-mail..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 w-full md:max-w-md"
+                />
+              </div>
 
-                          {/* Email */}
-                          <div className="flex items-start gap-3">
-                            <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
-                            <div>
-                              <p className="text-xs font-semibold uppercase text-muted-foreground mb-1">E-mail</p>
-                              <a
-                                href={`mailto:${unit.email}`}
-                                className="text-base hover:text-primary transition-colors"
-                              >
-                                {unit.email}
-                              </a>
+              {Object.entries(unitsByState).map(([state, units]) => {
+                const filteredUnits = getFilteredUnits(units)
+                return (
+                  <TabsContent key={state} value={state} className="space-y-6">
+                    {filteredUnits.length === 0 ? (
+                      <p className="text-muted-foreground text-center py-8">
+                        Nenhuma unidade encontrada para "{searchQuery}" neste estado.
+                      </p>
+                    ) : (
+                      filteredUnits.map((unit, index) => (
+                        <Card key={index} className="shadow-sm">
+                          <CardHeader>
+                            <div className="flex items-start justify-between gap-4">
+                              <div className="space-y-2">
+                                <Badge variant="secondary" className="text-xs font-semibold">
+                                  {unit.category}
+                                </Badge>
+                                <CardTitle className="text-2xl">IPOG {unit.name.replace("Unidade ", "")}</CardTitle>
+                              </div>
                             </div>
-                          </div>
-                        </div>
+                          </CardHeader>
+                          <CardContent className="space-y-4">
+                            <div className="grid gap-4 md:grid-cols-2">
+                              {/* Phone */}
+                              <div className="flex items-start gap-3">
+                                <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
+                                <div>
+                                  <p className="text-xs font-semibold uppercase text-muted-foreground mb-1">Telefone</p>
+                                  <a
+                                    href={`tel:${unit.phone.replace(/\D/g, "")}`}
+                                    className="text-base hover:text-primary transition-colors"
+                                  >
+                                    {unit.phone}
+                                  </a>
+                                </div>
+                              </div>
 
-                        {/* Maps Button */}
-                        <div className="pt-2 border-t">
-                          <Button variant="outline" className="w-full md:w-auto bg-transparent" asChild>
-                            <a href={unit.mapsUrl} target="_blank" rel="noopener noreferrer">
-                              <MapPin className="h-4 w-4 mr-2" />
-                              Ver no Maps
-                            </a>
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </TabsContent>
-              ))}
+                              {/* Email */}
+                              <div className="flex items-start gap-3">
+                                <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
+                                <div>
+                                  <p className="text-xs font-semibold uppercase text-muted-foreground mb-1">E-mail</p>
+                                  <a
+                                    href={`mailto:${unit.email}`}
+                                    className="text-base hover:text-primary transition-colors"
+                                  >
+                                    {unit.email}
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Maps Button */}
+                            <div className="pt-2 border-t">
+                              <Button variant="outline" className="w-full md:w-auto bg-transparent" asChild>
+                                <a href={unit.mapsUrl} target="_blank" rel="noopener noreferrer">
+                                  <MapPin className="h-4 w-4 mr-2" />
+                                  Ver no Maps
+                                </a>
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))
+                    )}
+                  </TabsContent>
+                )
+              })}
             </Tabs>
           </div>
         </section>

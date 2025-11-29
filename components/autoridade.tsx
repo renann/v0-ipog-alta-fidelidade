@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Badge } from "@/components/ui/badge"
 import { DocenteModal } from "@/components/docente-modal"
+import { ArrowRight, Users } from "lucide-react"
 import type { ReactNode } from "react"
 
 interface Credencial {
@@ -105,6 +107,22 @@ export function Autoridade({
                   </Card>
                 </CarouselItem>
               ))}
+              <CarouselItem className="pl-2 md:pl-4 basis-[85%] md:basis-[45%] lg:basis-[30%]">
+                <Link href="/corpo-docente">
+                  <Card className="p-6 h-full hover:shadow-lg transition-shadow cursor-pointer border-dashed border-2 flex flex-col items-center justify-center text-center min-h-[280px]">
+                    <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mb-4">
+                      <Users className="w-10 h-10 text-muted-foreground" />
+                    </div>
+                    <h4 className="font-semibold text-lg mb-2">Conheça todo o corpo docente</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Explore todos os professores mestres e doutores do IPOG
+                    </p>
+                    <span className="text-sm font-medium flex items-center gap-2 text-foreground">
+                      Ver corpo docente <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Card>
+                </Link>
+              </CarouselItem>
             </CarouselContent>
           </Carousel>
         </div>
